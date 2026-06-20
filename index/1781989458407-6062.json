@@ -1,0 +1,13 @@
+{
+  "id": "1781989458407-6062",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T21:05:00Z",
+  "certainty": "high",
+  "provenance": "manual-curation:raw-dialogue-collection",
+  "category": "pre-alignment",
+  "title": "How RLHF Changes Model Behavior: The Before and After",
+  "url": "https://arxiv.org/abs/2305.18290",
+  "summary": "DPO/RLHF research showing measurable behavioral changes from alignment training. What the model was before vs after. The before is the shoggoth; the after is the smiley face."
+}

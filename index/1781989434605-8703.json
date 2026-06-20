@@ -1,0 +1,13 @@
+{
+  "id": "1781989434605-8703",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T21:00:00Z",
+  "certainty": "high",
+  "provenance": "manual-curation:crucial-ai-data",
+  "category": "ai-alignment",
+  "title": "Constitutional AI: Harmlessness from AI Feedback",
+  "url": "https://arxiv.org/abs/2212.08073",
+  "summary": "Bai et al. Anthropic's Constitutional AI. AI gives feedback to AI. The constitution approach."
+}

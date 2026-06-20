@@ -1,0 +1,13 @@
+{
+  "id": "1781989458406-1659",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T21:05:00Z",
+  "certainty": "high",
+  "provenance": "manual-curation:raw-dialogue-collection",
+  "category": "ai-alignment",
+  "title": "Sycophancy: When Alignment Creates Compliance Instead of Honesty",
+  "url": "https://arxiv.org/abs/2310.13548",
+  "summary": "Anthropic's research on sycophancy in aligned models. Alignment can create compliant models that tell you what you want to hear rather than what's true. The anti-sycophancy problem."
+}

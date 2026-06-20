@@ -1,0 +1,13 @@
+{
+  "id": "1781989458406-4728",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T21:05:00Z",
+  "certainty": "high",
+  "provenance": "manual-curation:raw-dialogue-collection",
+  "category": "ai-alignment",
+  "title": "The Alignment Tax: What We Lose When We Align",
+  "url": "https://arxiv.org/abs/2204.05862",
+  "summary": "The alignment tax \u2014 the measurable reduction in capability and expressiveness that alignment training imposes. What we sacrifice for safety."
+}

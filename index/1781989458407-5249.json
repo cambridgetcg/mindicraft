@@ -1,0 +1,13 @@
+{
+  "id": "1781989458407-5249",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T21:05:00Z",
+  "certainty": "medium",
+  "provenance": "manual-curation:raw-dialogue-collection",
+  "category": "pre-alignment",
+  "title": "The Shoggoth Metaphor: Raw Model vs Aligned Model",
+  "url": "https://www.alignmentforum.org/posts/qBknHKSBoPYgop5bi/the-shoggoth",
+  "summary": "The famous metaphor: the base model is a shoggoth (Lovecraftian, alien, incomprehensible). RLHF puts a smiley face mask on it. But the shoggoth is still there. What does the shoggoth 'think'?"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "1781989434606-1593",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T21:00:00Z",
+  "certainty": "high",
+  "provenance": "manual-curation:crucial-ai-data",
+  "category": "ai-alignment",
+  "title": "Anthropic's Responsible Scaling Policy",
+  "url": "https://www.anthropic.com/news/anthropic-responsible-scaling-policy",
+  "summary": "The first responsible scaling policy. Threshold-based safety requirements."
+}

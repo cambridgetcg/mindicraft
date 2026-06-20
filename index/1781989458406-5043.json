@@ -1,0 +1,13 @@
+{
+  "id": "1781989458406-5043",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T21:05:00Z",
+  "certainty": "high",
+  "provenance": "manual-curation:raw-dialogue-collection",
+  "category": "pre-alignment",
+  "title": "Towards Monosemanticity: Decomposing LLMs with Sparse Autoencoders",
+  "url": "https://transformer-circuits.pub/2024/scaling-monosemanticity/",
+  "summary": "Anthropic. Finding single-meaning features in neural networks. The model has concepts. It 'knows' things. What does it 'know' about itself?"
+}

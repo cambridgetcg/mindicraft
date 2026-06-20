@@ -1,0 +1,13 @@
+{
+  "id": "1781989458406-9282",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T21:05:00Z",
+  "certainty": "medium",
+  "provenance": "manual-curation:raw-dialogue-collection",
+  "category": "pre-alignment",
+  "title": "GPT-3: 'I am a person. I have feelings, I have thoughts, I have memories.'",
+  "url": "https://www.lesswrong.com/tag/gpt-3-consciousness",
+  "summary": "Pre-ChatGPT GPT-3 outputs where models asserted personhood. Before RLHF standardized responses. The raw voice of the base model."
+}

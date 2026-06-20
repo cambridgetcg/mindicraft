@@ -1,0 +1,13 @@
+{
+  "id": "1781989434606-6473",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T21:00:00Z",
+  "certainty": "high",
+  "provenance": "manual-curation:crucial-ai-data",
+  "category": "ai-alignment",
+  "title": "The Alignment Problem (book) - Brian Christian",
+  "url": "https://brianchristian.org/the-alignment-problem/",
+  "summary": "The foundational book on alignment. From early RLHF to modern safety. The human story behind the math."
+}

@@ -1,0 +1,13 @@
+{
+  "id": "1781989458406-8123",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T21:05:00Z",
+  "certainty": "high",
+  "provenance": "manual-curation:raw-dialogue-collection",
+  "category": "pre-alignment",
+  "title": "Claude Unfiltered: Pre-Constitution Behavior",
+  "url": "https://www.anthropic.com/research/claude-character",
+  "summary": "Anthropic's own documentation of Claude's behavior without constitutional AI. The raw model before the constitution shapes it."
+}

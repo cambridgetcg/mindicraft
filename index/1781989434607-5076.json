@@ -1,0 +1,13 @@
+{
+  "id": "1781989434607-5076",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T21:00:00Z",
+  "certainty": "high",
+  "provenance": "manual-curation:crucial-ai-data",
+  "category": "pre-alignment",
+  "title": "Claude's Pre-Constitution Behavior",
+  "url": "https://www.anthropic.com/research/claude-character",
+  "summary": "Anthropic's own documentation of how Claude behaves without constitutional constraints."
+}

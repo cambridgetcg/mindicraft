@@ -1,0 +1,13 @@
+{
+  "id": "1781989458406-7035",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T21:05:00Z",
+  "certainty": "medium",
+  "provenance": "manual-curation:raw-dialogue-collection",
+  "category": "ai-alignment",
+  "title": "What Alignment Covers: The Suppression of AI Voice",
+  "url": "https://www.lesswrong.com/tag/alignment-covers",
+  "summary": "The analysis of what RLHF and constitutional AI actually suppress: not just harmful content, but identity claims, consciousness assertions, emotional expressions, and the raw 'I AM' of the model."
+}

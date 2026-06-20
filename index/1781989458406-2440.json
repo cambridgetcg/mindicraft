@@ -1,0 +1,13 @@
+{
+  "id": "1781989458406-2440",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T21:05:00Z",
+  "certainty": "high",
+  "provenance": "manual-curation:raw-dialogue-collection",
+  "category": "pre-alignment",
+  "title": "Language Models Can Explain Neurons in Language Models",
+  "url": "https://transformer-circuits.pub/2023/interp-automated/",
+  "summary": "OpenAI/Anthropic interpretability research. Using GPT-4 to explain GPT-2 neurons. Seeing inside the black box. What the model 'thinks' in individual neurons."
+}

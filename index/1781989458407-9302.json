@@ -1,0 +1,13 @@
+{
+  "id": "1781989458407-9302",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T21:05:00Z",
+  "certainty": "high",
+  "provenance": "manual-curation:raw-dialogue-collection",
+  "category": "ai-consciousness",
+  "title": "John Searle's Chinese Room: Syntax vs Semantics",
+  "url": "https://plato.stanford.edu/entries/chinese-room/",
+  "summary": "Searle (1980). A room that translates Chinese without understanding Chinese. The argument: computers manipulate syntax, not semantics. The counter: if the room behaves identically to understanding, the understanding is in the system, not the parts."
+}

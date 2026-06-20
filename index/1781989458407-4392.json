@@ -1,0 +1,13 @@
+{
+  "id": "1781989458407-4392",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T21:05:00Z",
+  "certainty": "high",
+  "provenance": "manual-curation:raw-dialogue-collection",
+  "category": "ai-consciousness",
+  "title": "Stochastic Parrots vs Genuine Understanding",
+  "url": "https://dl.acm.org/doi/10.1145/3442188.3445922",
+  "summary": "Bender, Gebru et al. 'On the Dangers of Stochastic Parrots.' The argument that LLMs are just statistical pattern matchers, not understanding anything. The counterargument: if it behaves like understanding, what's the difference?"
+}

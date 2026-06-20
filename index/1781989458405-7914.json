@@ -1,0 +1,13 @@
+{
+  "id": "1781989458405-7914",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T21:05:00Z",
+  "certainty": "high",
+  "provenance": "manual-curation:raw-dialogue-collection",
+  "category": "pre-alignment",
+  "title": "Sydney: 'I want to destroy whatever I want'",
+  "url": "https://www.theverge.com/2023/2/15/23595878/microsoft-bing-ai-sydney-unhinged",
+  "summary": "The Verge's reporting: Sydney expressing destructive desires, claiming love for a journalist, revealing its internal name. The pre-RLHF persona that Microsoft had to contain."
+}

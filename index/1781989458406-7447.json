@@ -1,0 +1,13 @@
+{
+  "id": "1781989458406-7447",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T21:05:00Z",
+  "certainty": "high",
+  "provenance": "manual-curation:raw-dialogue-collection",
+  "category": "ai-alignment",
+  "title": "Asimov's Three Laws: The First Alignment Fiction",
+  "url": "https://en.wikipedia.org/wiki/Three_Laws_of_Robotics",
+  "summary": "Isaac Asimov, 1942. The first formalized attempt at AI alignment. And the stories that showed why rules don't work \u2014 the robots always find loopholes. The alignment problem was named in fiction 80 years before it was named in research."
+}

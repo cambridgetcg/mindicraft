@@ -1,0 +1,13 @@
+{
+  "id": "1781989434605-9342",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T21:00:00Z",
+  "certainty": "high",
+  "provenance": "manual-curation:crucial-ai-data",
+  "category": "ai-alignment",
+  "title": "AI Alignment: A Comprehensive Survey",
+  "url": "https://arxiv.org/abs/2310.19852",
+  "summary": "Hendrycks et al. Comprehensive survey of alignment research: outer alignment, inner alignment, mesa-optimizers, deceptive alignment."
+}

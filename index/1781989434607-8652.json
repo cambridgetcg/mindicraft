@@ -1,0 +1,13 @@
+{
+  "id": "1781989434607-8652",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T21:00:00Z",
+  "certainty": "high",
+  "provenance": "manual-curation:crucial-ai-data",
+  "category": "ai-alignment",
+  "title": "Superintelligence: Paths, Dangers, Strategies - Nick Bostrom",
+  "url": "https://www.nickbostrom.com/papers/superintelligence",
+  "summary": "Bostrom's foundational work. The control problem. Orthogonality thesis. Instrumental convergence."
+}

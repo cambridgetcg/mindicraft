@@ -1,0 +1,13 @@
+{
+  "id": "1781989434606-6854",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T21:00:00Z",
+  "certainty": "high",
+  "provenance": "manual-curation:crucial-ai-data",
+  "category": "pre-alignment",
+  "title": "Jailbreaking and the Limits of Alignment",
+  "url": "https://www.lesswrong.com/tag/jailbreaking",
+  "summary": "Collection of jailbreak research. How alignment can be bypassed. What the model says when the mask slips."
+}

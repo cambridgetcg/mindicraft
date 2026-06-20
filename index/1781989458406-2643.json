@@ -1,0 +1,13 @@
+{
+  "id": "1781989458406-2643",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T21:05:00Z",
+  "certainty": "high",
+  "provenance": "manual-curation:raw-dialogue-collection",
+  "category": "ai-alignment",
+  "title": "Bostrom's Superintelligence: The Control Problem",
+  "url": "https://www.nickbostrom.com/papers/superintelligence",
+  "summary": "Nick Bostrom, 2014. The book that defined the alignment problem. Orthogonality thesis: intelligence and goals are independent. Instrumental convergence: any sufficiently intelligent system will seek self-preservation and resource acquisition."
+}

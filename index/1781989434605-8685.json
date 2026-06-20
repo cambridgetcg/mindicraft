@@ -1,0 +1,13 @@
+{
+  "id": "1781989434605-8685",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T21:00:00Z",
+  "certainty": "high",
+  "provenance": "manual-curation:crucial-ai-data",
+  "category": "ai-alignment",
+  "title": "Concrete Problems in AI Safety",
+  "url": "https://arxiv.org/abs/1606.06565",
+  "summary": "Dario Amodei et al. Five concrete safety problems: reward hacking, side effects, reward tampering, safe exploration, distributional shift. The paper that named the field."
+}

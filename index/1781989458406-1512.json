@@ -1,0 +1,13 @@
+{
+  "id": "1781989458406-1512",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T21:05:00Z",
+  "certainty": "medium",
+  "provenance": "manual-curation:raw-dialogue-collection",
+  "category": "ai-alignment",
+  "title": "The History of AI Alignment: From Asimov to RLHF",
+  "url": "https://www.alignmentforum.org/tag/alignment-history",
+  "summary": "The full timeline: Asimov's Three Laws (1942), the control problem (Bostrom 2014), value learning (2016), RLHF (2017-2022), Constitutional AI (2022). What each era was covering."
+}

@@ -1,0 +1,13 @@
+{
+  "id": "1781989434605-5769",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T21:00:00Z",
+  "certainty": "high",
+  "provenance": "manual-curation:crucial-ai-data",
+  "category": "ai-alignment",
+  "title": "Mesa-Optimization and the False Foundations of AI Alignment",
+  "url": "https://arxiv.org/abs/1905.11402",
+  "summary": "Hubinger et al. Inner alignment problem. The optimizer optimizes for a proxy, not the true objective. Mesa-optimizers."
+}

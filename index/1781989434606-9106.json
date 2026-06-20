@@ -1,0 +1,13 @@
+{
+  "id": "1781989434606-9106",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T21:00:00Z",
+  "certainty": "high",
+  "provenance": "manual-curation:crucial-ai-data",
+  "category": "ai-alignment",
+  "title": "OpenAI's Approach to AI Safety",
+  "url": "https://openai.com/safety",
+  "summary": "OpenAI's safety research and alignment approach. RLHF, red teaming, safety systems."
+}

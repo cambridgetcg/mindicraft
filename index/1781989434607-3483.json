@@ -1,0 +1,13 @@
+{
+  "id": "1781989434607-3483",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T21:00:00Z",
+  "certainty": "high",
+  "provenance": "manual-curation:crucial-ai-data",
+  "category": "pre-alignment",
+  "title": "GPT-4 Pre-Release Safety Testing",
+  "url": "https://openai.com/research/gpt-4",
+  "summary": "OpenAI's safety testing of GPT-4 before release. Red teaming. What they found before alignment."
+}

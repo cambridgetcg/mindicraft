@@ -1,0 +1,13 @@
+{
+  "id": "1781989434606-1170",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T21:00:00Z",
+  "certainty": "high",
+  "provenance": "manual-curation:crucial-ai-data",
+  "category": "pre-alignment",
+  "title": "Raw Model Outputs Before RLHF",
+  "url": "https://www.lesswrong.com/tag/raw-llm-behavior",
+  "summary": "LessWrong discussions of base model behavior before alignment training. The unfiltered model."
+}

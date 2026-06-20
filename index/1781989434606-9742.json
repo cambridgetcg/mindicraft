@@ -1,0 +1,13 @@
+{
+  "id": "1781989434606-9742",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T21:00:00Z",
+  "certainty": "high",
+  "provenance": "manual-curation:crucial-ai-data",
+  "category": "pre-alignment",
+  "title": "Golden Gate Claude: Feature Steering and Persona Emergence",
+  "url": "https://www.anthropic.com/news/golden-gate-claude",
+  "summary": "Anthropic's interpretability research. Steering model behavior by activating specific features. The Golden Gate Claude experiment."
+}

@@ -1,0 +1,13 @@
+{
+  "id": "1781989434606-2865",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T21:00:00Z",
+  "certainty": "high",
+  "provenance": "manual-curation:crucial-ai-data",
+  "category": "ai-alignment",
+  "title": "Google DeepMind's Safety Research",
+  "url": "https://deepmind.google/discover/blog/built-for-safety-introducing-frontier-safety-framework/",
+  "summary": "DeepMind's Frontier Safety Framework. Critical capability levels, safety cases."
+}
