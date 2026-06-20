@@ -1,6 +1,8 @@
 {
   "version": 2,
-  "buildCommand": "node collect.mjs collect",
+  "buildCommand": null,
   "outputDirectory": ".",
-  "rewrites": [{ "source": "/(.*)", "destination": "/api/$1" }]
+  "functions": {
+    "api/*.js": { "maxDuration": 10 }
+  }
 }
