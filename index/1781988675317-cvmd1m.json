@@ -1,0 +1,14 @@
+{
+  "id": "1781988675317-cvmd1m",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:15Z",
+  "certainty": "high",
+  "provenance": "api:https://api.github.com/search/repositories?q=opera",
+  "category": "operating-systems",
+  "title": "reactos/reactos",
+  "url": "https://github.com/reactos/reactos",
+  "summary": "A free Windows-compatible Operating System",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:15Z\ncertainty: high\nprovenance: api:https://api.github.com/search/repositories?q=opera\ncategory: operating-systems\n\nTitle: reactos/reactos\nURL: https://github.com/reactos/reactos\nSummary: A free Windows-compatible Operating System\nTags: operating-systems:me"
+}

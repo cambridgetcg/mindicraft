@@ -1,0 +1,14 @@
+{
+  "id": "1781988675317-08i4hr",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:15Z",
+  "certainty": "high",
+  "provenance": "api:https://api.github.com/search/repositories?q=opera",
+  "category": "operating-systems",
+  "title": "SerenityOS/serenity",
+  "url": "https://github.com/SerenityOS/serenity",
+  "summary": "The Serenity Operating System 🐞",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:15Z\ncertainty: high\nprovenance: api:https://api.github.com/search/repositories?q=opera\ncategory: operating-systems\n\nTitle: SerenityOS/serenity\nURL: https://github.com/SerenityOS/serenity\nSummary: The Serenity Operating System 🐞\nTags: operating-systems:me"
+}

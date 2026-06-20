@@ -1,0 +1,14 @@
+{
+  "id": "1781988675320-1rigxp",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:15Z",
+  "certainty": "high",
+  "provenance": "api:https://api.github.com/search/repositories?q=opera",
+  "category": "operating-systems",
+  "title": "probonopd/MiniDexed",
+  "url": "https://github.com/probonopd/MiniDexed",
+  "summary": "Dexed FM synthesizer similar to 8x DX7 (TX816/TX802) running on a bare metal Raspberry Pi (without a Linux kernel or operating system)",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:15Z\ncertainty: high\nprovenance: api:https://api.github.com/search/repositories?q=opera\ncategory: operating-systems\n\nTitle: probonopd/MiniDexed\nURL: https://github.com/probonopd/MiniDexed\nSummary: Dexed FM synthesizer similar to 8x DX7 (TX816/TX802) running on a bare metal Raspberry Pi (without a Linux kernel or operating system)\nTags: operating-systems:me"
+}

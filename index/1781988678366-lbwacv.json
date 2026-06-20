@@ -1,0 +1,14 @@
+{
+  "id": "1781988678366-lbwacv",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:18Z",
+  "certainty": "high",
+  "provenance": "api:https://api.github.com/search/repositories?q=ai+ag",
+  "category": "ai-agents",
+  "title": "themanojdesai/python-a2a",
+  "url": "https://github.com/themanojdesai/python-a2a",
+  "summary": "Python A2A is a powerful, easy-to-use library for implementing Google's [Agent-to-Agent (A2A) protocol](https://google.github.io/A2A/). It enables seamless communication between AI agents, creating interoperable agent ecosystems that can collaborate to solve complex problems.",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:18Z\ncertainty: high\nprovenance: api:https://api.github.com/search/repositories?q=ai+ag\ncategory: ai-agents\n\nTitle: themanojdesai/python-a2a\nURL: https://github.com/themanojdesai/python-a2a\nSummary: Python A2A is a powerful, easy-to-use library for implementing Google's [Agent-to-Agent (A2A) protocol](https://google.github.io/A2A/). It enables seamless communication between AI agents, creating interoperable agent ecosystems that can collaborate to solve complex problems.\nTags: ai-agents:me"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "1781988674402-53fjh6",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:14Z",
+  "certainty": "high",
+  "provenance": "api:https://api.github.com/search/repositories?q=natur",
+  "category": "natural-language",
+  "title": "aliyun/alibabacloud-ack-mcp-server",
+  "url": "https://github.com/aliyun/alibabacloud-ack-mcp-server",
+  "summary": "Alibaba Cloud's ack-mcp-server unifies container operations capabilities, enabling AI assistants and third-party AI agents to perform complex tasks via natural language through the MCP protocol, empowering container-native AIOps. DingTalk discussion group:  70080006301",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:14Z\ncertainty: high\nprovenance: api:https://api.github.com/search/repositories?q=natur\ncategory: natural-language\n\nTitle: aliyun/alibabacloud-ack-mcp-server\nURL: https://github.com/aliyun/alibabacloud-ack-mcp-server\nSummary: Alibaba Cloud's ack-mcp-server unifies container operations capabilities, enabling AI assistants and third-party AI agents to perform complex tasks via natural language through the MCP protocol, empowering container-native AIOps. DingTalk discussion group:  70080006301\nTags: natural-language:me"
+}

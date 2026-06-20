@@ -1,0 +1,14 @@
+{
+  "id": "1781988678366-oskvpi",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:18Z",
+  "certainty": "high",
+  "provenance": "api:https://api.github.com/search/repositories?q=ai+ag",
+  "category": "ai-agents",
+  "title": "agentic-commerce-protocol/agentic-commerce-protocol",
+  "url": "https://github.com/agentic-commerce-protocol/agentic-commerce-protocol",
+  "summary": "The Agentic Commerce Protocol (ACP) is an interaction model and open standard for connecting buyers, their AI agents, and businesses to complete purchases seamlessly. The specification is currently maintained by OpenAI and Stripe.",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:18Z\ncertainty: high\nprovenance: api:https://api.github.com/search/repositories?q=ai+ag\ncategory: ai-agents\n\nTitle: agentic-commerce-protocol/agentic-commerce-protocol\nURL: https://github.com/agentic-commerce-protocol/agentic-commerce-protocol\nSummary: The Agentic Commerce Protocol (ACP) is an interaction model and open standard for connecting buyers, their AI agents, and businesses to complete purchases seamlessly. The specification is currently maintained by OpenAI and Stripe.\nTags: ai-agents:me"
+}

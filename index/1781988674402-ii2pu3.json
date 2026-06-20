@@ -1,0 +1,14 @@
+{
+  "id": "1781988674402-ii2pu3",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:14Z",
+  "certainty": "high",
+  "provenance": "api:https://api.github.com/search/repositories?q=natur",
+  "category": "natural-language",
+  "title": "ravikiranvm/aws-finops-mcp-server",
+  "url": "https://github.com/ravikiranvm/aws-finops-mcp-server",
+  "summary": "An MCP (Model Context Protocol) server that brings powerful AWS FinOps capabilities directly into your AI assistant. Analyze cloud costs, audit for waste, and get budget insights using natural language, all while keeping your credentials secure on your local machine.",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:14Z\ncertainty: high\nprovenance: api:https://api.github.com/search/repositories?q=natur\ncategory: natural-language\n\nTitle: ravikiranvm/aws-finops-mcp-server\nURL: https://github.com/ravikiranvm/aws-finops-mcp-server\nSummary: An MCP (Model Context Protocol) server that brings powerful AWS FinOps capabilities directly into your AI assistant. Analyze cloud costs, audit for waste, and get budget insights using natural language, all while keeping your credentials secure on your local machine.\nTags: natural-language:me"
+}

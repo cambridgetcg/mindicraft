@@ -1,0 +1,14 @@
+{
+  "id": "1781988674402-wm9575",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:14Z",
+  "certainty": "high",
+  "provenance": "api:https://api.github.com/search/repositories?q=natur",
+  "category": "natural-language",
+  "title": "KRATSZ/LabScript-AI",
+  "url": "https://github.com/KRATSZ/LabScript-AI",
+  "summary": "An AI-powered laboratory automation tool that generates Opentrons protocols through natural language processing.",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:14Z\ncertainty: high\nprovenance: api:https://api.github.com/search/repositories?q=natur\ncategory: natural-language\n\nTitle: KRATSZ/LabScript-AI\nURL: https://github.com/KRATSZ/LabScript-AI\nSummary: An AI-powered laboratory automation tool that generates Opentrons protocols through natural language processing.\nTags: natural-language:me"
+}

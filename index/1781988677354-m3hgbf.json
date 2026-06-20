@@ -1,0 +1,14 @@
+{
+  "id": "1781988677354-m3hgbf",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:17Z",
+  "certainty": "high",
+  "provenance": "api:https://api.github.com/search/repositories?q=const",
+  "category": "constructed-language",
+  "title": "anoniscoding/yorlang",
+  "url": "https://github.com/anoniscoding/yorlang",
+  "summary": "A programming language with yoruba language construct",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:17Z\ncertainty: high\nprovenance: api:https://api.github.com/search/repositories?q=const\ncategory: constructed-language\n\nTitle: anoniscoding/yorlang\nURL: https://github.com/anoniscoding/yorlang\nSummary: A programming language with yoruba language construct\nTags: constructed-language:me"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "1781988674401-ozvchj",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:14Z",
+  "certainty": "high",
+  "provenance": "api:https://api.github.com/search/repositories?q=natur",
+  "category": "natural-language",
+  "title": "Omar-V2/mcp-ical",
+  "url": "https://github.com/Omar-V2/mcp-ical",
+  "summary": "A Model Context Protocol Server that allows you to interact with your MacOS Calendar through natural language.",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:14Z\ncertainty: high\nprovenance: api:https://api.github.com/search/repositories?q=natur\ncategory: natural-language\n\nTitle: Omar-V2/mcp-ical\nURL: https://github.com/Omar-V2/mcp-ical\nSummary: A Model Context Protocol Server that allows you to interact with your MacOS Calendar through natural language.\nTags: natural-language:me"
+}

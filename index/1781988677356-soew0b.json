@@ -1,0 +1,14 @@
+{
+  "id": "1781988677356-soew0b",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:17Z",
+  "certainty": "medium",
+  "provenance": "api:https://api.github.com/search/repositories?q=const",
+  "category": "constructed-language",
+  "title": "marcosomma/orka-reasoning",
+  "url": "https://github.com/marcosomma/orka-reasoning",
+  "summary": "Orchestrator Kit for Agentic Reasoning - OrKa is a modular AI orchestration system that transforms Large Language Models (LLMs) into composable agents capable of reasoning, fact-checking, and constructing answers with transparent traceability.",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:17Z\ncertainty: medium\nprovenance: api:https://api.github.com/search/repositories?q=const\ncategory: constructed-language\n\nTitle: marcosomma/orka-reasoning\nURL: https://github.com/marcosomma/orka-reasoning\nSummary: Orchestrator Kit for Agentic Reasoning - OrKa is a modular AI orchestration system that transforms Large Language Models (LLMs) into composable agents capable of reasoning, fact-checking, and constructing answers with transparent traceability.\nTags: constructed-language:me"
+}

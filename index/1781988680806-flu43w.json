@@ -1,0 +1,14 @@
+{
+  "id": "1781988680806-flu43w",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:20Z",
+  "certainty": "medium",
+  "provenance": "rss:https://hnrss.org/frontpage",
+  "category": "heurekin",
+  "title": "PostgresBench: A Reproducible Benchmark for Postgres Services",
+  "url": "https://clickhouse.com/blog/postgresbench",
+  "summary": "\nArticle URL: https://clickhouse.com/blog/postgresbench\nComments URL: https://news.ycombinator.com/item?id=48611942\nPoints: 22\n# Comments: 2\n",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:20Z\ncertainty: medium\nprovenance: rss:https://hnrss.org/frontpage\ncategory: heurekin\n\nTitle: PostgresBench: A Reproducible Benchmark for Postgres Services\nURL: https://clickhouse.com/blog/postgresbench\nSummary: \nArticle URL: https://clickhouse.com/blog/postgresbench\nComments URL: https://news.ycombinator.com/item?id=48611942\nPoints: 22\n# Comments: 2\n\nTags: heurekin:me"
+}

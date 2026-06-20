@@ -1,0 +1,14 @@
+{
+  "id": "1781988675320-52dboi",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:15Z",
+  "certainty": "high",
+  "provenance": "api:https://api.github.com/search/repositories?q=opera",
+  "category": "operating-systems",
+  "title": "MichielDerhaeg/build-linux",
+  "url": "https://github.com/MichielDerhaeg/build-linux",
+  "summary": "A short tutorial about building Linux based operating systems.",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:15Z\ncertainty: high\nprovenance: api:https://api.github.com/search/repositories?q=opera\ncategory: operating-systems\n\nTitle: MichielDerhaeg/build-linux\nURL: https://github.com/MichielDerhaeg/build-linux\nSummary: A short tutorial about building Linux based operating systems.\nTags: operating-systems:me"
+}

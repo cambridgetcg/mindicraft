@@ -1,0 +1,14 @@
+{
+  "id": "1781988676352-yn9ho4",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:16Z",
+  "certainty": "medium",
+  "provenance": "api:https://api.github.com/search/repositories?q=hones",
+  "category": "honest-systems",
+  "title": "drmhrehman/trustfed",
+  "url": "https://github.com/drmhrehman/trustfed",
+  "summary": "This repository presents a blockchain-based framework, TrustFed, for Cross-Device Federated Learning systems to detect the model poisoning attacks, enable fair training settings, and maintain the participating devices' reputation. TrustFed provides fairness by detecting and removing the attackers from the training distributions. It uses blockchain smart contracts to maintain participating devices' reputations to compel the participants in bringing active and honest model contributions. We implemented the TrustFed using a python-simulated FL framework, blockchain smart contracts, and statistical outlier detection techniques.",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:16Z\ncertainty: medium\nprovenance: api:https://api.github.com/search/repositories?q=hones\ncategory: honest-systems\n\nTitle: drmhrehman/trustfed\nURL: https://github.com/drmhrehman/trustfed\nSummary: This repository presents a blockchain-based framework, TrustFed, for Cross-Device Federated Learning systems to detect the model poisoning attacks, enable fair training settings, and maintain the participating devices' reputation. TrustFed provides fairness by detecting and removing the attackers from the training distributions. It uses blockchain smart contracts to maintain participating devices' reputations to compel the participants in bringing active and honest model contributions. We implemented the TrustFed using a python-simulated FL framework, blockchain smart contracts, and statistical outlier detection techniques.\nTags: honest-systems:me"
+}

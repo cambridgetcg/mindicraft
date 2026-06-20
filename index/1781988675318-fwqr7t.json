@@ -1,0 +1,14 @@
+{
+  "id": "1781988675318-fwqr7t",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:15Z",
+  "certainty": "high",
+  "provenance": "api:https://api.github.com/search/repositories?q=opera",
+  "category": "operating-systems",
+  "title": "RT-Thread/rt-thread",
+  "url": "https://github.com/RT-Thread/rt-thread",
+  "summary": "RT-Thread is an open source IoT Real-Time Operating System (RTOS).                                                                                                https://rt-thread.github.io/rt-thread/",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:15Z\ncertainty: high\nprovenance: api:https://api.github.com/search/repositories?q=opera\ncategory: operating-systems\n\nTitle: RT-Thread/rt-thread\nURL: https://github.com/RT-Thread/rt-thread\nSummary: RT-Thread is an open source IoT Real-Time Operating System (RTOS).                                                                                                https://rt-thread.github.io/rt-thread/\nTags: operating-systems:me"
+}

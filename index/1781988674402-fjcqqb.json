@@ -1,0 +1,14 @@
+{
+  "id": "1781988674402-fjcqqb",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:14Z",
+  "certainty": "medium",
+  "provenance": "api:https://api.github.com/search/repositories?q=natur",
+  "category": "natural-language",
+  "title": "ComPDFKit/ComIDP-MCP-Server",
+  "url": "https://github.com/ComPDFKit/ComIDP-MCP-Server",
+  "summary": "A lightweight MCP (Model Context Protocol) server for integrating ComPDF AI with Claude Desktop, enabling AI-powered intelligent document processing and data extraction from PDFs via natural language.",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:14Z\ncertainty: medium\nprovenance: api:https://api.github.com/search/repositories?q=natur\ncategory: natural-language\n\nTitle: ComPDFKit/ComIDP-MCP-Server\nURL: https://github.com/ComPDFKit/ComIDP-MCP-Server\nSummary: A lightweight MCP (Model Context Protocol) server for integrating ComPDF AI with Claude Desktop, enabling AI-powered intelligent document processing and data extraction from PDFs via natural language.\nTags: natural-language:me"
+}

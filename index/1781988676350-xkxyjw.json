@@ -1,0 +1,14 @@
+{
+  "id": "1781988676350-xkxyjw",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:16Z",
+  "certainty": "medium",
+  "provenance": "api:https://api.github.com/search/repositories?q=hones",
+  "category": "honest-systems",
+  "title": "pim97/anti-detect-browser-tools-tech-comparison",
+  "url": "https://github.com/pim97/anti-detect-browser-tools-tech-comparison",
+  "summary": "Technical deep-dives into web scraping & anti-bot bypass tools. Honest analysis of Botasaurus, Patchright, XDriver and more. Learn what actually works to bypass Cloudflare, DataDome, Akamai and other bot detection systems.",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:16Z\ncertainty: medium\nprovenance: api:https://api.github.com/search/repositories?q=hones\ncategory: honest-systems\n\nTitle: pim97/anti-detect-browser-tools-tech-comparison\nURL: https://github.com/pim97/anti-detect-browser-tools-tech-comparison\nSummary: Technical deep-dives into web scraping & anti-bot bypass tools. Honest analysis of Botasaurus, Patchright, XDriver and more. Learn what actually works to bypass Cloudflare, DataDome, Akamai and other bot detection systems.\nTags: honest-systems:me"
+}

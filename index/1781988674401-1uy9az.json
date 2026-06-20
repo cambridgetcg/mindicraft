@@ -1,0 +1,14 @@
+{
+  "id": "1781988674401-1uy9az",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:14Z",
+  "certainty": "high",
+  "provenance": "api:https://api.github.com/search/repositories?q=natur",
+  "category": "natural-language",
+  "title": "chongdashu/unreal-mcp",
+  "url": "https://github.com/chongdashu/unreal-mcp",
+  "summary": "Enable AI assistant clients like Cursor, Windsurf and Claude Desktop to control Unreal Engine through natural language using the Model Context Protocol (MCP).",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:14Z\ncertainty: high\nprovenance: api:https://api.github.com/search/repositories?q=natur\ncategory: natural-language\n\nTitle: chongdashu/unreal-mcp\nURL: https://github.com/chongdashu/unreal-mcp\nSummary: Enable AI assistant clients like Cursor, Windsurf and Claude Desktop to control Unreal Engine through natural language using the Model Context Protocol (MCP).\nTags: natural-language:me"
+}

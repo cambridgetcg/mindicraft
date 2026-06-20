@@ -1,0 +1,14 @@
+{
+  "id": "1781988675320-xu1kml",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:15Z",
+  "certainty": "high",
+  "provenance": "api:https://api.github.com/search/repositories?q=opera",
+  "category": "operating-systems",
+  "title": "nuta/kerla",
+  "url": "https://github.com/nuta/kerla",
+  "summary": "A new operating system kernel with Linux binary compatibility written in Rust.",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:15Z\ncertainty: high\nprovenance: api:https://api.github.com/search/repositories?q=opera\ncategory: operating-systems\n\nTitle: nuta/kerla\nURL: https://github.com/nuta/kerla\nSummary: A new operating system kernel with Linux binary compatibility written in Rust.\nTags: operating-systems:me"
+}

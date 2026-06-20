@@ -1,0 +1,14 @@
+{
+  "id": "1781988674402-n5rcb4",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:14Z",
+  "certainty": "high",
+  "provenance": "api:https://api.github.com/search/repositories?q=natur",
+  "category": "natural-language",
+  "title": "themotionmachine/OmniFocus-MCP",
+  "url": "https://github.com/themotionmachine/OmniFocus-MCP",
+  "summary": "Let LLMs interface with your tasks and projects through the Model Context Protocol. Add, organize, and query your OmniFocus database with natural language commands.",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:14Z\ncertainty: high\nprovenance: api:https://api.github.com/search/repositories?q=natur\ncategory: natural-language\n\nTitle: themotionmachine/OmniFocus-MCP\nURL: https://github.com/themotionmachine/OmniFocus-MCP\nSummary: Let LLMs interface with your tasks and projects through the Model Context Protocol. Add, organize, and query your OmniFocus database with natural language commands.\nTags: natural-language:me"
+}

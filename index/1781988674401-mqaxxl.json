@@ -1,0 +1,14 @@
+{
+  "id": "1781988674401-mqaxxl",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:14Z",
+  "certainty": "high",
+  "provenance": "api:https://api.github.com/search/repositories?q=natur",
+  "category": "natural-language",
+  "title": "GongRzhe/Gmail-MCP-Server",
+  "url": "https://github.com/GongRzhe/Gmail-MCP-Server",
+  "summary": "A Model Context Protocol (MCP) server for Gmail integration in Claude Desktop with auto authentication support. This server enables AI assistants to manage Gmail through natural language interactions.",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:14Z\ncertainty: high\nprovenance: api:https://api.github.com/search/repositories?q=natur\ncategory: natural-language\n\nTitle: GongRzhe/Gmail-MCP-Server\nURL: https://github.com/GongRzhe/Gmail-MCP-Server\nSummary: A Model Context Protocol (MCP) server for Gmail integration in Claude Desktop with auto authentication support. This server enables AI assistants to manage Gmail through natural language interactions.\nTags: natural-language:me"
+}

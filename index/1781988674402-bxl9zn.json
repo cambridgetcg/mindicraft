@@ -1,0 +1,14 @@
+{
+  "id": "1781988674402-bxl9zn",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:14Z",
+  "certainty": "high",
+  "provenance": "api:https://api.github.com/search/repositories?q=natur",
+  "category": "natural-language",
+  "title": "XGenerationLab/xiyan_mcp_server",
+  "url": "https://github.com/XGenerationLab/xiyan_mcp_server",
+  "summary": "A Model Context Protocol (MCP) server that enables natural language queries to databases",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:14Z\ncertainty: high\nprovenance: api:https://api.github.com/search/repositories?q=natur\ncategory: natural-language\n\nTitle: XGenerationLab/xiyan_mcp_server\nURL: https://github.com/XGenerationLab/xiyan_mcp_server\nSummary: A Model Context Protocol (MCP) server that enables natural language queries to databases\nTags: natural-language:me"
+}

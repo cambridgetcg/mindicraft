@@ -1,0 +1,14 @@
+{
+  "id": "1781988677355-1ns9w6",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:17Z",
+  "certainty": "high",
+  "provenance": "api:https://api.github.com/search/repositories?q=const",
+  "category": "constructed-language",
+  "title": "ros/xacro",
+  "url": "https://github.com/ros/xacro",
+  "summary": "Xacro is an XML macro language. With xacro, you can construct shorter and more readable XML files by using macros that expand to larger XML expressions.",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:17Z\ncertainty: high\nprovenance: api:https://api.github.com/search/repositories?q=const\ncategory: constructed-language\n\nTitle: ros/xacro\nURL: https://github.com/ros/xacro\nSummary: Xacro is an XML macro language. With xacro, you can construct shorter and more readable XML files by using macros that expand to larger XML expressions.\nTags: constructed-language:me"
+}

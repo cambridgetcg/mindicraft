@@ -1,0 +1,14 @@
+{
+  "id": "1781988675321-rr0tqq",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:15Z",
+  "certainty": "high",
+  "provenance": "api:https://api.github.com/search/repositories?q=opera",
+  "category": "operating-systems",
+  "title": "intermezzOS/kernel",
+  "url": "https://github.com/intermezzOS/kernel",
+  "summary": "A hobby operating system, in Rust",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:15Z\ncertainty: high\nprovenance: api:https://api.github.com/search/repositories?q=opera\ncategory: operating-systems\n\nTitle: intermezzOS/kernel\nURL: https://github.com/intermezzOS/kernel\nSummary: A hobby operating system, in Rust\nTags: operating-systems:me"
+}

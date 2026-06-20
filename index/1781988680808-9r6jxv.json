@@ -1,0 +1,14 @@
+{
+  "id": "1781988680808-9r6jxv",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:20Z",
+  "certainty": "medium",
+  "provenance": "rss:https://hnrss.org/frontpage",
+  "category": "heurekin",
+  "title": "Show HN: We post-trained a model that pen tests instead of refusing",
+  "url": "https://www.argusred.com/cli",
+  "summary": "\nAnthropic and OpenAI's publicly available models are explicitly guard-railed so that they refuse offensive tasks. And their cyber-focussed models are gated for enterprises. This leaves SMEs and mid m",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:20Z\ncertainty: medium\nprovenance: rss:https://hnrss.org/frontpage\ncategory: heurekin\n\nTitle: Show HN: We post-trained a model that pen tests instead of refusing\nURL: https://www.argusred.com/cli\nSummary: \nAnthropic and OpenAI's publicly available models are explicitly guard-railed so that they refuse offensive tasks. And their cyber-focussed models are gated for enterprises. This leaves SMEs and mid m\nTags: heurekin:me"
+}

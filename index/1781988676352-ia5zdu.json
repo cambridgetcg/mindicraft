@@ -1,0 +1,14 @@
+{
+  "id": "1781988676352-ia5zdu",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:16Z",
+  "certainty": "medium",
+  "provenance": "api:https://api.github.com/search/repositories?q=hones",
+  "category": "honest-systems",
+  "title": "gmasson/systemprompt",
+  "url": "https://github.com/gmasson/systemprompt",
+  "summary": "A general-purpose system prompt that makes LLMs more rigorous, honest, and genuinely useful, regardless of the task.",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:16Z\ncertainty: medium\nprovenance: api:https://api.github.com/search/repositories?q=hones\ncategory: honest-systems\n\nTitle: gmasson/systemprompt\nURL: https://github.com/gmasson/systemprompt\nSummary: A general-purpose system prompt that makes LLMs more rigorous, honest, and genuinely useful, regardless of the task.\nTags: honest-systems:me"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "1781988675318-pz6t11",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:15Z",
+  "certainty": "high",
+  "provenance": "api:https://api.github.com/search/repositories?q=opera",
+  "category": "operating-systems",
+  "title": "s-matyukevich/raspberry-pi-os",
+  "url": "https://github.com/s-matyukevich/raspberry-pi-os",
+  "summary": "Learning operating system development using Linux kernel and Raspberry Pi",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:15Z\ncertainty: high\nprovenance: api:https://api.github.com/search/repositories?q=opera\ncategory: operating-systems\n\nTitle: s-matyukevich/raspberry-pi-os\nURL: https://github.com/s-matyukevich/raspberry-pi-os\nSummary: Learning operating system development using Linux kernel and Raspberry Pi\nTags: operating-systems:me"
+}

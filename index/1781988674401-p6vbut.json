@@ -1,0 +1,14 @@
+{
+  "id": "1781988674401-p6vbut",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:14Z",
+  "certainty": "high",
+  "provenance": "api:https://api.github.com/search/repositories?q=natur",
+  "category": "natural-language",
+  "title": "MorDavid/BloodHound-MCP-AI",
+  "url": "https://github.com/MorDavid/BloodHound-MCP-AI",
+  "summary": "BloodHound-MCP-AI is integration that connects BloodHound with AI through Model Context Protocol, allowing security professionals to analyze Active Directory attack paths using natural language instead of complex Cypher queries.",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:14Z\ncertainty: high\nprovenance: api:https://api.github.com/search/repositories?q=natur\ncategory: natural-language\n\nTitle: MorDavid/BloodHound-MCP-AI\nURL: https://github.com/MorDavid/BloodHound-MCP-AI\nSummary: BloodHound-MCP-AI is integration that connects BloodHound with AI through Model Context Protocol, allowing security professionals to analyze Active Directory attack paths using natural language instead of complex Cypher queries.\nTags: natural-language:me"
+}

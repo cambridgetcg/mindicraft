@@ -1,0 +1,14 @@
+{
+  "id": "1781988680807-2dg0a8",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:20Z",
+  "certainty": "medium",
+  "provenance": "rss:https://hnrss.org/frontpage",
+  "category": "heurekin",
+  "title": "Bun has an open PR adding shared-memory threads to JavaScriptCore",
+  "url": "https://github.com/oven-sh/WebKit/pull/249",
+  "summary": "\nArticle URL: https://github.com/oven-sh/WebKit/pull/249\nComments URL: https://news.ycombinator.com/item?id=48610841\nPoints: 73\n# Comments: 99\n",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:20Z\ncertainty: medium\nprovenance: rss:https://hnrss.org/frontpage\ncategory: heurekin\n\nTitle: Bun has an open PR adding shared-memory threads to JavaScriptCore\nURL: https://github.com/oven-sh/WebKit/pull/249\nSummary: \nArticle URL: https://github.com/oven-sh/WebKit/pull/249\nComments URL: https://news.ycombinator.com/item?id=48610841\nPoints: 73\n# Comments: 99\n\nTags: heurekin:me"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "1781988678366-jgv80r",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:18Z",
+  "certainty": "high",
+  "provenance": "api:https://api.github.com/search/repositories?q=ai+ag",
+  "category": "ai-agents",
+  "title": "mnemox-ai/tradememory-protocol",
+  "url": "https://github.com/mnemox-ai/tradememory-protocol",
+  "summary": "Decision audit trail + persistent memory for AI trading agents. Outcome-weighted recall, SHA-256 tamper detection, 17 MCP tools.",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:18Z\ncertainty: high\nprovenance: api:https://api.github.com/search/repositories?q=ai+ag\ncategory: ai-agents\n\nTitle: mnemox-ai/tradememory-protocol\nURL: https://github.com/mnemox-ai/tradememory-protocol\nSummary: Decision audit trail + persistent memory for AI trading agents. Outcome-weighted recall, SHA-256 tamper detection, 17 MCP tools.\nTags: ai-agents:me"
+}

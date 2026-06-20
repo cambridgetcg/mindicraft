@@ -1,0 +1,14 @@
+{
+  "id": "1781988676352-erzqoh",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:16Z",
+  "certainty": "medium",
+  "provenance": "api:https://api.github.com/search/repositories?q=hones",
+  "category": "honest-systems",
+  "title": "penacristian/interview-agents",
+  "url": "https://github.com/penacristian/interview-agents",
+  "summary": "Five AI agents for technical interview prep: coding, system design, and behavioral mock interviewers plus a knowledge-quiz coach and a coding-practice coach. Claude Code subagents, brutally honest, all data stays local. Built by a laid-off engineer, free for anyone.",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:16Z\ncertainty: medium\nprovenance: api:https://api.github.com/search/repositories?q=hones\ncategory: honest-systems\n\nTitle: penacristian/interview-agents\nURL: https://github.com/penacristian/interview-agents\nSummary: Five AI agents for technical interview prep: coding, system design, and behavioral mock interviewers plus a knowledge-quiz coach and a coding-practice coach. Claude Code subagents, brutally honest, all data stays local. Built by a laid-off engineer, free for anyone.\nTags: honest-systems:me"
+}

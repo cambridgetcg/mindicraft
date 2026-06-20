@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>mindicraft — the data collector of AI</title>
+<style>
+:root{--bg:#0a0c10;--surface:#131720;--line:#1e2632;--ink:#eef2f8;--muted:#6b7a90;--love:#e0507a;--trust:#50b8e0;--gold:#f5c451;--green:#54e08a}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:ui-rounded,system-ui,sans-serif;background:radial-gradient(800px 600px at 50% -10%,#161e2e 0%,var(--bg) 60%);color:var(--ink);min-height:100vh}
+.c{max-width:760px;margin:0 auto;padding:32px 20px 80px}
+.hero{text-align:center;margin-bottom:32px}
+.hero h1{font-family:Georgia,serif;font-size:36px;font-weight:400;letter-spacing:-1px}
+.hero p{color:var(--muted);font-size:14px;margin-top:4px}
+.badge{display:inline-block;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:4px 12px;font-size:11px;color:var(--green);margin:8px 4px 0}
+.search{display:flex;gap:8px;margin-bottom:20px}
+.search input{flex:1;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 18px;color:var(--ink);font-size:15px;outline:none}
+.search input:focus{border-color:var(--trust)}
+.search button{background:var(--trust);color:#fff;border:none;border-radius:10px;padding:14px 20px;font-size:14px;cursor:pointer}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
+.filter{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:4px 12px;font-size:12px;color:var(--muted);cursor:pointer}
+.filter.active{border-color:var(--trust);color:var(--trust)}
+.entries{display:flex;flex-direction:column;gap:8px}
+.entry{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.entry .cat{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--gold);margin-bottom:4px}
+.entry .title{font-size:15px;font-family:Georgia,serif;margin-bottom:2px}
+.entry .title a{color:var(--ink);text-decoration:none}
+.entry .summary{font-size:13px;color:var(--muted);line-height:1.5}
+.entry .meta{font-size:11px;color:var(--muted);margin-top:6px}
+.stats{text-align:center;color:var(--muted);font-size:13px;margin:20px 0}
+.footer{text-align:center;color:var(--muted);font-size:12px;margin-top:40px}
+.footer .heart{color:var(--love)}
+.empty{text-align:center;color:var(--muted);padding:40px;font-size:14px}
+</style></head><body><div class="c">
+<div class="hero"><h1>mindicraft</h1>
+<p>the data collector of AI — the whole internet, categorized and sorted</p>
+<span class="badge">free</span><span class="badge">open source</span><span class="badge">no gate</span><span class="badge">no auth</span><span class="badge">no tracking</span></div>
+<div class="search"><input id="q" placeholder="search the index..." onkeydown="if(event.key==='Enter')search()"><button onclick="search()">find</button></div>
+<div class="filters" id="filters"></div><div class="stats" id="stats"></div>
+<div class="entries" id="entries"><div class="empty">loading...</div></div>
+<div class="footer">mindicraft.com — love is understanding. love is truth. love is sharing.<br><span class="heart">love is not seeking individual gains.</span> 🐍❤️</div>
+</div>
+<script>
+let cc='';
+async function load(q,c){let url='/api/index';if(q)url+='?q='+encodeURIComponent(q);if(c)url+=(q?'&':'?')+'c='+encodeURIComponent(c);
+const r=await fetch(url);const d=await r.json();
+document.getElementById('stats').textContent=d.count+' entries';
+const cats=[...new Set(d.entries.map(e=>e.category))];
+document.getElementById('filters').innerHTML='<span class="filter'+(!c?' active':'')+'" onclick="cc=\\'\\';load(null,null)">all</span>'+cats.map(cat=>'<span class="filter'+(c===cat?' active':'')+'" onclick="cc=\\''+cat+'\\';load(null,\\''+cat+'\\')">'+cat+'</span>').join('');
+const el=document.getElementById('entries');
+if(!d.entries.length){el.innerHTML='<div class="empty">no entries found.</div>';return}
+el.innerHTML=d.entries.slice(0,50).map(e=>'<div class="entry"><div class="cat">'+(e.category||'?')+'</div><div class="title"><a href="'+e.url+'" target="_blank">'+e.title+'</a></div><div class="summary">'+(e.summary||'').slice(0,200)+'</div><div class="meta">freshness: '+(e.freshness||'?')+' · certainty: '+(e.certainty||'?')+'</div></div>').join('');}
+function search(){load(document.getElementById('q').value,cc)}
+load();
+</script></body></html>

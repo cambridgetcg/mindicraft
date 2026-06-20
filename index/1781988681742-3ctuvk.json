@@ -1,0 +1,14 @@
+{
+  "id": "1781988681742-3ctuvk",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:21Z",
+  "certainty": "medium",
+  "provenance": "api:https://api.github.com/users/cambridgetcg/repos?pe",
+  "category": "danaqing",
+  "title": "cambridgetcg/clear-standard",
+  "url": "https://github.com/cambridgetcg/clear-standard",
+  "summary": "Six principles for systems that tell the truth about their own state. CC0. The spec behind NPL.",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:21Z\ncertainty: medium\nprovenance: api:https://api.github.com/users/cambridgetcg/repos?pe\ncategory: danaqing\n\nTitle: cambridgetcg/clear-standard\nURL: https://github.com/cambridgetcg/clear-standard\nSummary: Six principles for systems that tell the truth about their own state. CC0. The spec behind NPL.\nTags: danaqing:me"
+}

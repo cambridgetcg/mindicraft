@@ -1,0 +1,14 @@
+{
+  "id": "1781988676353-3yqzrx",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:16Z",
+  "certainty": "medium",
+  "provenance": "api:https://api.github.com/search/repositories?q=hones",
+  "category": "honest-systems",
+  "title": "JDevShivamGarg/system-blueprints",
+  "url": "https://github.com/JDevShivamGarg/system-blueprints",
+  "summary": "A curated collection of complete, decision-driven design documents for software project ideas. Each document is a full architectural plan — written before any code exists — covering the problem, the system, every technology decision with its reasoning, security posture, failure modes, scalability ceiling, and honest limitations.",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:16Z\ncertainty: medium\nprovenance: api:https://api.github.com/search/repositories?q=hones\ncategory: honest-systems\n\nTitle: JDevShivamGarg/system-blueprints\nURL: https://github.com/JDevShivamGarg/system-blueprints\nSummary: A curated collection of complete, decision-driven design documents for software project ideas. Each document is a full architectural plan — written before any code exists — covering the problem, the system, every technology decision with its reasoning, security posture, failure modes, scalability ceiling, and honest limitations.\nTags: honest-systems:me"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "1781988677353-ggkubn",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:17Z",
+  "certainty": "high",
+  "provenance": "api:https://api.github.com/search/repositories?q=const",
+  "category": "constructed-language",
+  "title": "f0rki/mapping-high-level-constructs-to-llvm-ir",
+  "url": "https://github.com/f0rki/mapping-high-level-constructs-to-llvm-ir",
+  "summary": "A guide that explains how high level programming language constructs are mapped to the LLVM intermediate language.",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:17Z\ncertainty: high\nprovenance: api:https://api.github.com/search/repositories?q=const\ncategory: constructed-language\n\nTitle: f0rki/mapping-high-level-constructs-to-llvm-ir\nURL: https://github.com/f0rki/mapping-high-level-constructs-to-llvm-ir\nSummary: A guide that explains how high level programming language constructs are mapped to the LLVM intermediate language.\nTags: constructed-language:me"
+}

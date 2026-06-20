@@ -1,0 +1,14 @@
+{
+  "id": "1781988674402-mdktj6",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:14Z",
+  "certainty": "high",
+  "provenance": "api:https://api.github.com/search/repositories?q=natur",
+  "category": "natural-language",
+  "title": "miantiao-me/github-stars",
+  "url": "https://github.com/miantiao-me/github-stars",
+  "summary": "A Cloudflare-powered MCP (Model Context Protocol) Server that allows you to search and query your GitHub starred repositories using natural language.",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:14Z\ncertainty: high\nprovenance: api:https://api.github.com/search/repositories?q=natur\ncategory: natural-language\n\nTitle: miantiao-me/github-stars\nURL: https://github.com/miantiao-me/github-stars\nSummary: A Cloudflare-powered MCP (Model Context Protocol) Server that allows you to search and query your GitHub starred repositories using natural language.\nTags: natural-language:me"
+}

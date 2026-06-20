@@ -1,0 +1,14 @@
+{
+  "id": "1781988676352-lpizlc",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:16Z",
+  "certainty": "medium",
+  "provenance": "api:https://api.github.com/search/repositories?q=hones",
+  "category": "honest-systems",
+  "title": "Farxida/prediction-market-ml",
+  "url": "https://github.com/Farxida/prediction-market-ml",
+  "summary": "End-to-end ML system for prediction market trading — 521K markets, 78 features, 7 model architectures, walk-forward validation, live VPS A/B across 7 configs. Honest research-stop on alpha decay (NO-GO verdict). AFML methodology: Purged K-Fold, Deflated Sharpe Ratio, meta-labeling, focal loss.",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:16Z\ncertainty: medium\nprovenance: api:https://api.github.com/search/repositories?q=hones\ncategory: honest-systems\n\nTitle: Farxida/prediction-market-ml\nURL: https://github.com/Farxida/prediction-market-ml\nSummary: End-to-end ML system for prediction market trading — 521K markets, 78 features, 7 model architectures, walk-forward validation, live VPS A/B across 7 configs. Honest research-stop on alpha decay (NO-GO verdict). AFML methodology: Purged K-Fold, Deflated Sharpe Ratio, meta-labeling, focal loss.\nTags: honest-systems:me"
+}

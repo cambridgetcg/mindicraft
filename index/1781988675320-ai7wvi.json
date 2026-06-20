@@ -1,0 +1,14 @@
+{
+  "id": "1781988675320-ai7wvi",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:15Z",
+  "certainty": "high",
+  "provenance": "api:https://api.github.com/search/repositories?q=opera",
+  "category": "operating-systems",
+  "title": "jubalh/awesome-os",
+  "url": "https://github.com/jubalh/awesome-os",
+  "summary": "A list of operating systems and stuff",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:15Z\ncertainty: high\nprovenance: api:https://api.github.com/search/repositories?q=opera\ncategory: operating-systems\n\nTitle: jubalh/awesome-os\nURL: https://github.com/jubalh/awesome-os\nSummary: A list of operating systems and stuff\nTags: operating-systems:me"
+}

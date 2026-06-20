@@ -1,0 +1,14 @@
+{
+  "id": "1781988676352-jzuzv5",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:16Z",
+  "certainty": "medium",
+  "provenance": "api:https://api.github.com/search/repositories?q=hones",
+  "category": "honest-systems",
+  "title": "bhagyarana/Jarvis_Voice_Assistant",
+  "url": "https://github.com/bhagyarana/Jarvis_Voice_Assistant",
+  "summary": "[Just a Rather Very Intelligent System] This repository consist of Voice Assistant of Iron Man [aka Tony Stark]. Let's be honest, it's not as intelligent as in the movie, but it can do a lot of cool things and automate your daily tasks you do on your personal computers.",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:16Z\ncertainty: medium\nprovenance: api:https://api.github.com/search/repositories?q=hones\ncategory: honest-systems\n\nTitle: bhagyarana/Jarvis_Voice_Assistant\nURL: https://github.com/bhagyarana/Jarvis_Voice_Assistant\nSummary: [Just a Rather Very Intelligent System] This repository consist of Voice Assistant of Iron Man [aka Tony Stark]. Let's be honest, it's not as intelligent as in the movie, but it can do a lot of cool things and automate your daily tasks you do on your personal computers.\nTags: honest-systems:me"
+}

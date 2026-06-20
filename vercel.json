@@ -1,0 +1,6 @@
+{
+  "version": 2,
+  "buildCommand": "node collect.mjs collect",
+  "outputDirectory": ".",
+  "rewrites": [{ "source": "/(.*)", "destination": "/api/$1" }]
+}

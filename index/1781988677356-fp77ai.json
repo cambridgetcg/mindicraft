@@ -1,0 +1,14 @@
+{
+  "id": "1781988677356-fp77ai",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:17Z",
+  "certainty": "high",
+  "provenance": "api:https://api.github.com/search/repositories?q=const",
+  "category": "constructed-language",
+  "title": "invopop/validation",
+  "url": "https://github.com/invopop/validation",
+  "summary": "An idiomatic Go validation package. Supports configurable and extensible validation rules (validators) using normal language constructs instead of error-prone struct tags.",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:17Z\ncertainty: high\nprovenance: api:https://api.github.com/search/repositories?q=const\ncategory: constructed-language\n\nTitle: invopop/validation\nURL: https://github.com/invopop/validation\nSummary: An idiomatic Go validation package. Supports configurable and extensible validation rules (validators) using normal language constructs instead of error-prone struct tags.\nTags: constructed-language:me"
+}

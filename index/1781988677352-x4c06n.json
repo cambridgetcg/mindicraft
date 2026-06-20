@@ -1,0 +1,14 @@
+{
+  "id": "1781988677352-x4c06n",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:17Z",
+  "certainty": "high",
+  "provenance": "api:https://api.github.com/search/repositories?q=const",
+  "category": "constructed-language",
+  "title": "accelerated-text/accelerated-text",
+  "url": "https://github.com/accelerated-text/accelerated-text",
+  "summary": "Accelerated Text is a no-code natural language generation platform. It will help you construct document plans which define how your data is converted to textual descriptions varying in wording and structure.",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:17Z\ncertainty: high\nprovenance: api:https://api.github.com/search/repositories?q=const\ncategory: constructed-language\n\nTitle: accelerated-text/accelerated-text\nURL: https://github.com/accelerated-text/accelerated-text\nSummary: Accelerated Text is a no-code natural language generation platform. It will help you construct document plans which define how your data is converted to textual descriptions varying in wording and structure.\nTags: constructed-language:me"
+}

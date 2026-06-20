@@ -1,0 +1,14 @@
+{
+  "id": "1781988677353-uaujfu",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:17Z",
+  "certainty": "high",
+  "provenance": "api:https://api.github.com/search/repositories?q=const",
+  "category": "constructed-language",
+  "title": "Holmeswww/AgentKit",
+  "url": "https://github.com/Holmeswww/AgentKit",
+  "summary": "An intuitive LLM prompting framework for multifunctional agents, by explicitly constructing a complex \"thought process\" from simple natural language prompts.",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:17Z\ncertainty: high\nprovenance: api:https://api.github.com/search/repositories?q=const\ncategory: constructed-language\n\nTitle: Holmeswww/AgentKit\nURL: https://github.com/Holmeswww/AgentKit\nSummary: An intuitive LLM prompting framework for multifunctional agents, by explicitly constructing a complex \"thought process\" from simple natural language prompts.\nTags: constructed-language:me"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "1781988678366-vnbpku",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:18Z",
+  "certainty": "high",
+  "provenance": "api:https://api.github.com/search/repositories?q=ai+ag",
+  "category": "ai-agents",
+  "title": "aipoch/medical-research-skills",
+  "url": "https://github.com/aipoch/medical-research-skills",
+  "summary": "Hundreds of agent skills for medical research, including protocol design, data analysis, evidence insights, and academic writing.",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:18Z\ncertainty: high\nprovenance: api:https://api.github.com/search/repositories?q=ai+ag\ncategory: ai-agents\n\nTitle: aipoch/medical-research-skills\nURL: https://github.com/aipoch/medical-research-skills\nSummary: Hundreds of agent skills for medical research, including protocol design, data analysis, evidence insights, and academic writing.\nTags: ai-agents:me"
+}

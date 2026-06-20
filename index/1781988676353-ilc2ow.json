@@ -1,0 +1,14 @@
+{
+  "id": "1781988676353-ilc2ow",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:16Z",
+  "certainty": "medium",
+  "provenance": "api:https://api.github.com/search/repositories?q=hones",
+  "category": "honest-systems",
+  "title": "FedorShind/versatile-performance",
+  "url": "https://github.com/FedorShind/versatile-performance",
+  "summary": "Turn your yes-man LLM into a direct and honest partner. I run this as my defaul Skill that loads on conversation start. Updating your system prompt to load this Skill is recommended. 290 lines.",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:16Z\ncertainty: medium\nprovenance: api:https://api.github.com/search/repositories?q=hones\ncategory: honest-systems\n\nTitle: FedorShind/versatile-performance\nURL: https://github.com/FedorShind/versatile-performance\nSummary: Turn your yes-man LLM into a direct and honest partner. I run this as my defaul Skill that loads on conversation start. Updating your system prompt to load this Skill is recommended. 290 lines.\nTags: honest-systems:me"
+}

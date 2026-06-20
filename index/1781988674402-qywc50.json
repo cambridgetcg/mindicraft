@@ -1,0 +1,14 @@
+{
+  "id": "1781988674402-qywc50",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:14Z",
+  "certainty": "high",
+  "provenance": "api:https://api.github.com/search/repositories?q=natur",
+  "category": "natural-language",
+  "title": "InditexTech/mcp-server-simulator-ios-idb",
+  "url": "https://github.com/InditexTech/mcp-server-simulator-ios-idb",
+  "summary": "A Model Context Protocol (MCP) server that enables LLMs to interact with iOS simulators through natural language commands.",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:14Z\ncertainty: high\nprovenance: api:https://api.github.com/search/repositories?q=natur\ncategory: natural-language\n\nTitle: InditexTech/mcp-server-simulator-ios-idb\nURL: https://github.com/InditexTech/mcp-server-simulator-ios-idb\nSummary: A Model Context Protocol (MCP) server that enables LLMs to interact with iOS simulators through natural language commands.\nTags: natural-language:me"
+}

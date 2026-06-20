@@ -1,0 +1,14 @@
+{
+  "id": "1781988676352-pjirqp",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:16Z",
+  "certainty": "medium",
+  "provenance": "api:https://api.github.com/search/repositories?q=hones",
+  "category": "honest-systems",
+  "title": "DyvakYA/bank",
+  "url": "https://github.com/DyvakYA/bank",
+  "summary": ":moneybag: Web project (online banking) for banking system (honest.bank). Spring, Hibernate, Lombok - in use.",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:16Z\ncertainty: medium\nprovenance: api:https://api.github.com/search/repositories?q=hones\ncategory: honest-systems\n\nTitle: DyvakYA/bank\nURL: https://github.com/DyvakYA/bank\nSummary: :moneybag: Web project (online banking) for banking system (honest.bank). Spring, Hibernate, Lombok - in use.\nTags: honest-systems:me"
+}

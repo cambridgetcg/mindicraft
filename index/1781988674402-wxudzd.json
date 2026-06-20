@@ -1,0 +1,14 @@
+{
+  "id": "1781988674402-wxudzd",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:14Z",
+  "certainty": "high",
+  "provenance": "api:https://api.github.com/search/repositories?q=natur",
+  "category": "natural-language",
+  "title": "antarikshc/perfetto-mcp",
+  "url": "https://github.com/antarikshc/perfetto-mcp",
+  "summary": "This is a Model Context Protocol (MCP) server that gets answers from your Perfetto Traces. It turns natural‑language prompts into focused Perfetto analyses.",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:14Z\ncertainty: high\nprovenance: api:https://api.github.com/search/repositories?q=natur\ncategory: natural-language\n\nTitle: antarikshc/perfetto-mcp\nURL: https://github.com/antarikshc/perfetto-mcp\nSummary: This is a Model Context Protocol (MCP) server that gets answers from your Perfetto Traces. It turns natural‑language prompts into focused Perfetto analyses.\nTags: natural-language:me"
+}

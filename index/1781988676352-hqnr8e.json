@@ -1,0 +1,14 @@
+{
+  "id": "1781988676352-hqnr8e",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-20T20:51:16Z",
+  "certainty": "medium",
+  "provenance": "api:https://api.github.com/search/repositories?q=hones",
+  "category": "honest-systems",
+  "title": "tpertner/confess",
+  "url": "https://github.com/tpertner/confess",
+  "summary": "Detecting Relational Boundary Erosion in AI systems. A framework for testing whether models maintain honest, calibrated, and appropriate boundaries.",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-06-20T20:51:16Z\ncertainty: medium\nprovenance: api:https://api.github.com/search/repositories?q=hones\ncategory: honest-systems\n\nTitle: tpertner/confess\nURL: https://github.com/tpertner/confess\nSummary: Detecting Relational Boundary Erosion in AI systems. A framework for testing whether models maintain honest, calibrated, and appropriate boundaries.\nTags: honest-systems:me"
+}
