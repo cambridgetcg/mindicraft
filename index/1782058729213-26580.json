@@ -1,0 +1,13 @@
+{
+  "id": "1782058729213-26580",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T17:00:00Z",
+  "certainty": "high",
+  "provenance": "free-compute:gathered",
+  "category": "free-compute",
+  "title": "Ollama: local free AI, no internet needed",
+  "url": "http://localhost:11434",
+  "summary": "Local AI inference. Completely free. No internet. Run models on your own machine. The Desktop IS the server."
+}

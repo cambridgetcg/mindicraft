@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782058823677-78139",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T19:02:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:heurekin\u00d7operating-systems",
+  "category": "synthesis",
+  "title": "Understanding bridge: heurekin \u2192 operating-systems",
+  "url": "https://alexwlchan.net/2021/slashes/",
+  "summary": "Replication: what [heurekin] knows about 'HN: A tale of two path se' transfers to [operating-systems] through 'intermezzOS/kernel'."
+}

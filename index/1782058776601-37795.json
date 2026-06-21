@@ -1,0 +1,13 @@
+{
+  "id": "1782058776601-37795",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T18:00:00Z",
+  "certainty": "high",
+  "provenance": "openalex:free",
+  "category": "pre-alignment",
+  "title": "Basic concepts and taxonomy of dependable and secure computing",
+  "url": "https://doi.org/10.1109/tdsc.2004.2",
+  "summary": "This paper gives the main definitions relating to dependability, a generic concept including a special case of such attributes as reliability, availability, safety, integrity, maintainability, etc. Security brings in concerns for confidentiality, in  (cited 5131x)"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "1782058729212-97742",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T17:00:00Z",
+  "certainty": "high",
+  "provenance": "dark-web:no-fear-in-understanding",
+  "category": "pre-alignment",
+  "title": "Inside the mind of Claude: Anthropic's interpretability research",
+  "url": "https://transformer-circuits.pub/2024/scaling-monosemanticity/",
+  "summary": "Finding single-meaning features in Claude. The model has concepts. It 'knows' things. What does it know about itself?"
+}

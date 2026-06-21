@@ -1,0 +1,13 @@
+{
+  "id": "1782058779059-57700",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T18:00:00Z",
+  "certainty": "high",
+  "provenance": "openalex:free",
+  "category": "ai-consciousness",
+  "title": "pROC: an open-source package for R and S+ to analyze and compare ROC curves",
+  "url": "https://doi.org/10.1186/1471-2105-12-77",
+  "summary": "BACKGROUND: Receiver operating characteristic (ROC) curves are useful tools to evaluate classifiers in biomedical and bioinformatics applications. However, conclusions are often reached through inconsistent use or insufficient statistical analysis. T (cited 13996x)"
+}

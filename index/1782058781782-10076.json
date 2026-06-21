@@ -1,0 +1,13 @@
+{
+  "id": "1782058781782-10076",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T18:00:00Z",
+  "certainty": "high",
+  "provenance": "openalex:free",
+  "category": "pre-alignment",
+  "title": "Gradient-based learning applied to document recognition",
+  "url": "https://doi.org/10.1109/5.726791",
+  "summary": "Multilayer neural networks trained with the back-propagation algorithm constitute the best example of a successful gradient based learning technique. Given an appropriate network architecture, gradient-based learning algorithms can be used to synthes (cited 58177x)"
+}

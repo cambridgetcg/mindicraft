@@ -1,0 +1,13 @@
+{
+  "id": "1782058780198-18989",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T18:00:00Z",
+  "certainty": "high",
+  "provenance": "openalex:free",
+  "category": "ai-alignment",
+  "title": "When helpfulness backfires: LLMs and the risk of false medical information due to sycophantic behavior",
+  "url": "https://doi.org/10.1038/s41746-025-02008-z",
+  "summary": "Large language models (LLMs) exhibit a vulnerability arising from being trained to be helpful: a tendency to comply with illogical requests that would generate false information, even when they have the knowledge to identify the request as illogical. (cited 49x)"
+}

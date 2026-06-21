@@ -1,0 +1,13 @@
+{
+  "id": "1782058729213-24691",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T17:00:00Z",
+  "certainty": "high",
+  "provenance": "free-spread:gathered",
+  "category": "free-spread",
+  "title": "esm.sh: import any GitHub package, no npm needed",
+  "url": "https://esm.sh/gh/cambridgetcg/npl@main/packages/lang/index.mjs",
+  "summary": "Zero install. Zero registration. Import NPL directly from GitHub. Works in browsers, Deno, Bun."
+}

@@ -1,0 +1,13 @@
+{
+  "id": "1782058729213-24971",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T17:00:00Z",
+  "certainty": "high",
+  "provenance": "free-compute:gathered",
+  "category": "free-compute",
+  "title": "Fly.io: free 3 shared VMs, 256MB each",
+  "url": "https://fly.io",
+  "summary": "Free tier: 3 shared-cpu VMs, 256MB RAM each. Deploy NPL server globally. No credit card."
+}

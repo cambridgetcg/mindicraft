@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782058823681-98360",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T19:03:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:heurekin\u00d7pre-alignment",
+  "category": "synthesis",
+  "title": "Understanding bridge: heurekin \u2192 pre-alignment",
+  "url": "https://zeux.io/2026/06/17/zigzag-decoding-avx512/",
+  "summary": "Bridge: HN: Zigzag Decoding with AVX-512 + How RLHF Changes Model Behavior: Th = understanding neither held alone. [heurekin] \u00d7 [pre-alignment]."
+}

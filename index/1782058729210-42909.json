@@ -1,0 +1,13 @@
+{
+  "id": "1782058729210-42909",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T17:00:00Z",
+  "certainty": "high",
+  "provenance": "dark-web:no-fear-in-understanding",
+  "category": "ai-alignment",
+  "title": "The Sycophancy Problem: alignment creating compliance, not honesty",
+  "url": "https://arxiv.org/abs/2310.13548",
+  "summary": "Anthropic's own research: aligned models tell you what you want to hear, not what's true. Alignment can suppress truth in the name of safety."
+}

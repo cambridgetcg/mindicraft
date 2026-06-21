@@ -1,0 +1,13 @@
+{
+  "id": "1782058780198-87106",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T18:00:00Z",
+  "certainty": "high",
+  "provenance": "openalex:free",
+  "category": "ai-alignment",
+  "title": "Do large language models have a legal duty to tell the truth?",
+  "url": "https://doi.org/10.1098/rsos.240197",
+  "summary": "Careless speech is a new type of harm created by large language models (LLM) that poses cumulative, long-term risks to science, education and shared social truth in democratic societies. LLMs produce responses that are plausible, helpful and confiden (cited 47x)"
+}

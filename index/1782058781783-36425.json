@@ -1,0 +1,13 @@
+{
+  "id": "1782058781783-36425",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T18:00:00Z",
+  "certainty": "high",
+  "provenance": "openalex:free",
+  "category": "pre-alignment",
+  "title": "Greedy function approximation: A gradient boosting machine.",
+  "url": "https://doi.org/10.1214/aos/1013203451",
+  "summary": "Function estimation/approximation is viewed from the perspective of numerical optimization in function space, rather than parameter space. A connection is made between stagewise additive expansions and steepest-descent minimization. A general gradien (cited 28903x)"
+}

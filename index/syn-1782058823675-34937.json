@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782058823675-34937",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T19:02:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:honest-systems\u00d7constructed-language",
+  "category": "synthesis",
+  "title": "Understanding bridge: honest-systems \u2192 constructed-language",
+  "url": "https://github.com/microsoft/Build26-BRK222-the-honest-practitioners-take-on-agentic-ai-on-kubernetes",
+  "summary": "Replication: what [honest-systems] knows about 'microsoft/Build26-BRK222-' transfers to [constructed-language] through 'Coldog2333/Financial-NLP'."
+}

@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782058823671-75702",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T19:01:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:natural-language\u00d7pre-alignment",
+  "category": "synthesis",
+  "title": "Understanding bridge: natural-language \u2192 pre-alignment",
+  "url": "https://github.com/salacoste/mcp-n8n-workflow-builder",
+  "summary": "Cross-pollination: salacoste/mcp-n8n-workflow-builder \u00d7 Dynamic capabilities: what are they. [natural-language] meets [pre-alignment]. Understanding flows."
+}

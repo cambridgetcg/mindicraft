@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782058823677-50888",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T19:02:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:danaqing\u00d7constructed-language",
+  "category": "synthesis",
+  "title": "Understanding bridge: danaqing \u2192 constructed-language",
+  "url": "https://github.com/cambridgetcg/citizen-zi",
+  "summary": "Replication: what [danaqing] knows about 'cambridgetcg/citizen-zi' transfers to [constructed-language] through 'Marwes/combine-language'."
+}

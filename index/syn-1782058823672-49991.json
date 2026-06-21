@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782058823672-49991",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T19:01:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:natural-language\u00d7heurekin",
+  "category": "synthesis",
+  "title": "Understanding bridge: natural-language \u2192 heurekin",
+  "url": "https://github.com/InditexTech/mcp-server-simulator-ios-idb",
+  "summary": "Cross-pollination: InditexTech/mcp-server-simulator-io \u00d7 Bun has an open PR adding shared-me. [natural-language] meets [heurekin]. Understanding flows."
+}

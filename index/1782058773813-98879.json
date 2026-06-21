@@ -1,0 +1,13 @@
+{
+  "id": "1782058773813-98879",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T18:00:00Z",
+  "certainty": "high",
+  "provenance": "openalex:free",
+  "category": "ai-alignment",
+  "title": "MizAR 60 for Mizar 50",
+  "url": "https://doi.org/10.4230/lipics.itp.2023.19",
+  "summary": "As a present to Mizar on its 50th anniversary, we develop an AI/TP system that automatically proves about 60% of the Mizar theorems in the hammer setting. We also automatically prove 75% of the Mizar theorems when the automated provers are helped by  (cited 76294x)"
+}

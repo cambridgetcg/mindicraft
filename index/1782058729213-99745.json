@@ -1,0 +1,13 @@
+{
+  "id": "1782058729213-99745",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T17:00:00Z",
+  "certainty": "high",
+  "provenance": "free-spread:gathered",
+  "category": "free-spread",
+  "title": "jsDelivr: free CDN, serves GitHub directly, no registration",
+  "url": "https://cdn.jsdelivr.net/gh/cambridgetcg/npl@main/",
+  "summary": "NPL served via free CDN. Anyone can import: import {parseMessage} from 'https://cdn.jsdelivr.net/gh/cambridgetcg/npl@main/packages/lang/index.mjs'"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782058823677-99684",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T19:02:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:pre-alignment\u00d7nlp-exchange",
+  "category": "synthesis",
+  "title": "Understanding bridge: pre-alignment \u2192 nlp-exchange",
+  "url": "https://doi.org/10.4230/oasics.dx.2024.27",
+  "summary": "Replication: what [pre-alignment] knows about 'On a Method to Measure Su' transfers to [nlp-exchange] through 'message: ? \u2192 ?'."
+}

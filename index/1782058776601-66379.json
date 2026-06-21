@@ -1,0 +1,13 @@
+{
+  "id": "1782058776601-66379",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T18:00:00Z",
+  "certainty": "high",
+  "provenance": "openalex:free",
+  "category": "pre-alignment",
+  "title": "Physics-informed machine learning",
+  "url": "https://doi.org/10.1038/s42254-021-00314-5",
+  "summary": "Physics-informed machine learning (cited 6585x)"
+}

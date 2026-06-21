@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782058823667-68908",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T19:00:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:operating-systems\u00d7free-compute",
+  "category": "synthesis",
+  "title": "Understanding bridge: operating-systems \u2192 free-compute",
+  "url": "https://github.com/HelenOS/helenos",
+  "summary": "Love understanding love: [operating-systems] 'HelenOS/helenos' illuminates [free-compute] 'Deno Deploy: free 100M requests/mon'."
+}

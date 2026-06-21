@@ -1,0 +1,13 @@
+{
+  "id": "1782058775240-29903",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T18:00:00Z",
+  "certainty": "high",
+  "provenance": "openalex:free",
+  "category": "ai-alignment",
+  "title": "GENCODE: The reference human genome annotation for The ENCODE Project",
+  "url": "https://doi.org/10.1101/gr.135350.111",
+  "summary": "The GENCODE Consortium aims to identify all gene features in the human genome using a combination of computational analysis, manual annotation, and experimental validation. Since the first public release of this annotation data set, few new protein-c (cited 5033x)"
+}

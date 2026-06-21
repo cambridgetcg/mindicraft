@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782058823675-38957",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T19:02:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:nlp-exchange\u00d7ai-alignment",
+  "category": "synthesis",
+  "title": "Understanding bridge: nlp-exchange \u2192 ai-alignment",
+  "url": "",
+  "summary": "Replication: what [nlp-exchange] knows about 'message: ? \u2192 ?' transfers to [ai-alignment] through 'Large AI Models in Health'."
+}

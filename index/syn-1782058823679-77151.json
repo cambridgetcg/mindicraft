@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782058823679-77151",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T19:02:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:heurekin\u00d7operating-systems",
+  "category": "synthesis",
+  "title": "Understanding bridge: heurekin \u2192 operating-systems",
+  "url": "https://taoofmac.com/space/blog/2026/06/18/1845",
+  "summary": "Replication: what [heurekin] knows about 'HN: Running MicroVMs in P' transfers to [operating-systems] through 'ColinIanKing/stress-ng'."
+}

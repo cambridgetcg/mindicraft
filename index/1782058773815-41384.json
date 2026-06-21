@@ -1,0 +1,13 @@
+{
+  "id": "1782058773815-41384",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T18:00:00Z",
+  "certainty": "high",
+  "provenance": "openalex:free",
+  "category": "ai-alignment",
+  "title": "Review of deep learning: concepts, CNN architectures, challenges, applications, future directions",
+  "url": "https://doi.org/10.1186/s40537-021-00444-8",
+  "summary": "In the last few years, the deep learning (DL) computing paradigm has been deemed the Gold Standard in the machine learning (ML) community. Moreover, it has gradually become the most widely used computational approach in the field of ML, thus achievin (cited 7542x)"
+}

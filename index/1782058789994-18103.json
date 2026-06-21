@@ -1,0 +1,13 @@
+{
+  "id": "1782058789994-18103",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T18:00:00Z",
+  "certainty": "high",
+  "provenance": "wikipedia:free",
+  "category": "ai-research",
+  "title": "Wikipedia: Large language model",
+  "url": "https://en.wikipedia.org/wiki/Large_language_model",
+  "summary": "A large language model (LLM) is a neural network trained on a vast amount of text for natural language processing tasks, especially language generation. LLMs can typically generate, summarize, translate, and analyze text in many contexts, and are a foundational technology behind modern chatbots. Bia"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782058823685-85545",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T19:03:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:heurekin\u00d7honest-systems",
+  "category": "synthesis",
+  "title": "Understanding bridge: heurekin \u2192 honest-systems",
+  "url": "https://github.com/proteanthread/bcg",
+  "summary": "Bridge: HN: David Ahl's Basic Computer Game + tpertner/confess = understanding neither held alone. [heurekin] \u00d7 [honest-systems]."
+}

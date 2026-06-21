@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782058823673-87561",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T19:01:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:ai-alignment\u00d7operating-systems",
+  "category": "synthesis",
+  "title": "Understanding bridge: ai-alignment \u2192 operating-systems",
+  "url": "https://doi.org/10.18653/v1/2024.acl-demos.38",
+  "summary": "Cross-pollination: LlamaFactory: Unified Efficient Fin \u00d7 s-matyukevich/raspberry-pi-os. [ai-alignment] meets [operating-systems]. Understanding flows."
+}

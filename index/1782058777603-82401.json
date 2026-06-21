@@ -1,0 +1,13 @@
+{
+  "id": "1782058777603-82401",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T18:00:00Z",
+  "certainty": "medium",
+  "provenance": "openalex:free",
+  "category": "ai-consciousness",
+  "title": "Scheming AIs: Will AIs fake alignment during training in order to get power?",
+  "url": "https://doi.org/10.48550/arxiv.2311.08379",
+  "summary": "This report examines whether advanced AIs that perform well in training will be doing so in order to gain power later -- a behavior I call \"scheming\" (also sometimes called \"deceptive alignment\"). I conclude that scheming is a disturbingly plausible  (cited 7x)"
+}

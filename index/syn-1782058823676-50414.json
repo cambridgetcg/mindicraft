@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782058823676-50414",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T19:02:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:heurekin\u00d7honest-systems",
+  "category": "synthesis",
+  "title": "Understanding bridge: heurekin \u2192 honest-systems",
+  "url": "https://norvig.com/lispy.html",
+  "summary": "Replication: what [heurekin] knows about 'HN: (How to Write a (Lisp' transfers to [honest-systems] through 'tpertner/confess'."
+}

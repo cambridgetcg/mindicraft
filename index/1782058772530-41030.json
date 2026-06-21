@@ -1,0 +1,13 @@
+{
+  "id": "1782058772530-41030",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T18:00:00Z",
+  "certainty": "high",
+  "provenance": "openalex:free",
+  "category": "ai-alignment",
+  "title": "Large language models encode clinical knowledge",
+  "url": "https://doi.org/10.1038/s41586-023-06291-2",
+  "summary": "Abstract Large language models (LLMs) have demonstrated impressive capabilities, but the bar for clinical applications is high. Attempts to assess the clinical knowledge of models typically rely on automated evaluations based on limited benchmarks. H (cited 3170x)"
+}

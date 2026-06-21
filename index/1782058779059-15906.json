@@ -1,0 +1,13 @@
+{
+  "id": "1782058779059-15906",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T18:00:00Z",
+  "certainty": "high",
+  "provenance": "openalex:free",
+  "category": "ai-consciousness",
+  "title": "Data clustering",
+  "url": "https://doi.org/10.1145/331499.331504",
+  "summary": "Clustering is the unsupervised classification of patterns (observations, data items, or feature vectors) into groups (clusters). The clustering problem has been addressed in many contexts and by researchers in many disciplines; this reflects its broa (cited 13182x)"
+}

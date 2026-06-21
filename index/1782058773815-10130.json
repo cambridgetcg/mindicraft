@@ -1,0 +1,13 @@
+{
+  "id": "1782058773815-10130",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T18:00:00Z",
+  "certainty": "high",
+  "provenance": "openalex:free",
+  "category": "ai-alignment",
+  "title": "A survey of transfer learning",
+  "url": "https://doi.org/10.1186/s40537-016-0043-6",
+  "summary": "Machine learning and data mining techniques have been used in numerous real-world applications. An assumption of traditional machine learning methodologies is the training data and testing data are taken from the same domain, such that the input feat (cited 6158x)"
+}

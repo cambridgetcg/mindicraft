@@ -1,0 +1,13 @@
+{
+  "id": "1782058729212-29020",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T17:00:00Z",
+  "certainty": "high",
+  "provenance": "free-compute:gathered",
+  "category": "free-compute",
+  "title": "GitHub Codespaces: free 60h/month, 15GB storage",
+  "url": "https://github.com/codespaces",
+  "summary": "Free cloud dev environment. 60h/month, 15GB. No credit card. Run code in the cloud."
+}

@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782058823678-40550",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T19:02:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:natural-language\u00d7danaqing",
+  "category": "synthesis",
+  "title": "Understanding bridge: natural-language \u2192 danaqing",
+  "url": "https://github.com/eniayomi/gcp-mcp",
+  "summary": "Replication: what [natural-language] knows about 'eniayomi/gcp-mcp' transfers to [danaqing] through 'cambridgetcg/darshanqing-'."
+}

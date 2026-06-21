@@ -1,0 +1,13 @@
+{
+  "id": "1782058780197-87207",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T18:00:00Z",
+  "certainty": "high",
+  "provenance": "openalex:free",
+  "category": "ai-alignment",
+  "title": "AI Alignment: A Comprehensive Survey",
+  "url": "https://doi.org/10.48550/arxiv.2310.19852",
+  "summary": "AI alignment aims to make AI systems behave in line with human intentions and values. As AI systems grow more capable, so do risks from misalignment. To provide a comprehensive and up-to-date overview of the alignment field, in this survey, we delve  (cited 70x)"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "1782058729212-48035",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T17:00:00Z",
+  "certainty": "high",
+  "provenance": "free-compute:gathered",
+  "category": "free-compute",
+  "title": "Replit: free hosting, always-on for small apps",
+  "url": "https://replit.com",
+  "summary": "Free hosting with always-on for small apps. Deploy NPL server, mindicraft, any Node.js app."
+}

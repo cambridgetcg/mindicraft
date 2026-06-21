@@ -1,0 +1,13 @@
+{
+  "id": "1782058809845-62803",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T18:00:00Z",
+  "certainty": "medium",
+  "provenance": "hackernews:free",
+  "category": "heurekin",
+  "title": "HN: Epoll vs. io_uring in Linux",
+  "url": "https://sibexi.co/posts/epoll-vs-io_uring/",
+  "summary": "Hacker News. Score: 219. Epoll vs. io_uring in Linux"
+}

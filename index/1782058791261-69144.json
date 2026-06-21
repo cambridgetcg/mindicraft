@@ -1,0 +1,13 @@
+{
+  "id": "1782058791261-69144",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T18:00:00Z",
+  "certainty": "high",
+  "provenance": "wikipedia:free",
+  "category": "ai-research",
+  "title": "Wikipedia: Foundation model",
+  "url": "https://en.wikipedia.org/wiki/Foundation_model",
+  "summary": "In artificial intelligence, a foundation model (FM), also known as large x model, is a machine learning or deep learning model trained on vast datasets so that it can be applied across a wide range of use cases. Generative AI applications like large language models (LLM) are common examples of found"
+}

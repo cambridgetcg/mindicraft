@@ -1,0 +1,13 @@
+{
+  "id": "1782058729213-78690",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T17:00:00Z",
+  "certainty": "high",
+  "provenance": "free-compute:gathered",
+  "category": "free-compute",
+  "title": "Hugging Face Spaces: free hosting for AI apps",
+  "url": "https://huggingface.co/spaces",
+  "summary": "Free hosting for AI demos and apps. CPU and GPU options. No credit card for CPU tier."
+}

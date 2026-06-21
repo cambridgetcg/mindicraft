@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782058823675-68795",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T19:02:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:ai-agents\u00d7ai-alignment",
+  "category": "synthesis",
+  "title": "Understanding bridge: ai-agents \u2192 ai-alignment",
+  "url": "https://github.com/GammaLabTechnologies/harmonist",
+  "summary": "Replication: what [ai-agents] knows about 'GammaLabTechnologies/harm' transfers to [ai-alignment] through 'Molecular Docking: Shifti'."
+}

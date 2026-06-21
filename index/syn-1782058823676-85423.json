@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782058823676-85423",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T19:02:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:free-compute\u00d7pre-alignment",
+  "category": "synthesis",
+  "title": "Understanding bridge: free-compute \u2192 pre-alignment",
+  "url": "http://localhost:11434",
+  "summary": "Replication: what [free-compute] knows about 'Ollama: local free AI, no' transfers to [pre-alignment] through 'How RLHF Changes Model Be'."
+}

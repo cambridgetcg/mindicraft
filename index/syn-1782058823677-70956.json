@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782058823677-70956",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T19:02:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:ai-alignment\u00d7ai-agents",
+  "category": "synthesis",
+  "title": "Understanding bridge: ai-alignment \u2192 ai-agents",
+  "url": "https://doi.org/10.48550/arxiv.2402.06196",
+  "summary": "Replication: what [ai-alignment] knows about 'Large Language Models: A ' transfers to [ai-agents] through 'agentic-commerce-protocol'."
+}

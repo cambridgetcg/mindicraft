@@ -1,0 +1,13 @@
+{
+  "id": "1782058781783-35807",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T18:00:00Z",
+  "certainty": "high",
+  "provenance": "openalex:free",
+  "category": "pre-alignment",
+  "title": "On a Method to Measure Supervised Multiclass Model\u2019s Interpretability: Application to Degradation Diagnosis (Short Paper)",
+  "url": "https://doi.org/10.4230/oasics.dx.2024.27",
+  "summary": "In an industrial maintenance context, degradation diagnosis is the problem of determining the current level of degradation of operating machines based on measurements. With the emergence of Machine Learning techniques, such a problem can now be solve (cited 13331x)"
+}

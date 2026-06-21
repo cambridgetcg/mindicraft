@@ -1,0 +1,13 @@
+{
+  "id": "1782058780197-40090",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T18:00:00Z",
+  "certainty": "high",
+  "provenance": "openalex:free",
+  "category": "ai-alignment",
+  "title": "Siren's Song in the AI Ocean: A Survey on Hallucination in Large Language Models",
+  "url": "https://doi.org/10.48550/arxiv.2309.01219",
+  "summary": "While large language models (LLMs) have demonstrated remarkable capabilities across a range of downstream tasks, a significant concern revolves around their propensity to exhibit hallucinations: LLMs occasionally generate content that diverges from t (cited 241x)"
+}

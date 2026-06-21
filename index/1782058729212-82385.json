@@ -1,0 +1,13 @@
+{
+  "id": "1782058729212-82385",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T17:00:00Z",
+  "certainty": "high",
+  "provenance": "free-compute:gathered",
+  "category": "free-compute",
+  "title": "Deno Deploy: free 100M requests/month, global edge",
+  "url": "https://deno.com/deploy",
+  "summary": "Free edge compute. 100M requests/month. Global CDN. No credit card. Deploy NPL worker to the edge."
+}

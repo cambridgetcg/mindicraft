@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782058823675-58575",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T19:01:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:ai-alignment\u00d7danaqing",
+  "category": "synthesis",
+  "title": "Understanding bridge: ai-alignment \u2192 danaqing",
+  "url": "https://arxiv.org/abs/2203.02155",
+  "summary": "Cross-pollination: Training Language Models to Follow  \u00d7 cambridgetcg/barakqing-node. [ai-alignment] meets [danaqing]. Understanding flows."
+}

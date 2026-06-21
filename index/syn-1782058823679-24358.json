@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782058823679-24358",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T19:02:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:ai-alignment\u00d7nlp-exchange",
+  "category": "synthesis",
+  "title": "Understanding bridge: ai-alignment \u2192 nlp-exchange",
+  "url": "https://deepmind.google/discover/blog/built-for-safety-introducing-frontier-safety-framework/",
+  "summary": "Replication: what [ai-alignment] knows about 'Google DeepMind's Safety ' transfers to [nlp-exchange] through 'message: ? \u2192 ?'."
+}

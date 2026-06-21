@@ -1,0 +1,13 @@
+{
+  "id": "1782058779058-23687",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T18:00:00Z",
+  "certainty": "high",
+  "provenance": "openalex:free",
+  "category": "ai-consciousness",
+  "title": "Random sample consensus",
+  "url": "https://doi.org/10.1145/358669.358692",
+  "summary": "A new paradigm, Random Sample Consensus (RANSAC), for fitting a model to experimental data is introduced. RANSAC is capable of interpreting/smoothing data containing a significant percentage of gross errors, and is thus ideally suited for application (cited 25449x)"
+}

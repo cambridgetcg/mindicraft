@@ -1,0 +1,13 @@
+{
+  "id": "1782058781783-52128",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T18:00:00Z",
+  "certainty": "high",
+  "provenance": "openalex:free",
+  "category": "pre-alignment",
+  "title": "Array programming with NumPy",
+  "url": "https://openalex.org/https://openalex.org/W3099878876",
+  "summary": "Array programming provides a powerful, compact and expressive syntax for accessing, manipulating and operating on data in vectors, matrices and higher-dimensional arrays. NumPy is the primary array programming library for the Python language. It has  (cited 18805x)"
+}

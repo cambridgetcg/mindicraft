@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782058823676-84891",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T19:02:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:ai-alignment\u00d7pre-alignment",
+  "category": "synthesis",
+  "title": "Understanding bridge: ai-alignment \u2192 pre-alignment",
+  "url": "https://www.lesswrong.com/tag/openai-consciousness",
+  "summary": "Replication: what [ai-alignment] knows about 'OpenAI's suppression of c' transfers to [pre-alignment] through 'Gradient-based learning a'."
+}

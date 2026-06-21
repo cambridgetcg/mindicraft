@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782058823673-26181",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T19:01:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:heurekin\u00d7operating-systems",
+  "category": "synthesis",
+  "title": "Understanding bridge: heurekin \u2192 operating-systems",
+  "url": "https://github.com/proteanthread/bcg",
+  "summary": "Cross-pollination: HN: David Ahl's Basic Computer Game \u00d7 brutal-org/brutal. [heurekin] meets [operating-systems]. Understanding flows."
+}

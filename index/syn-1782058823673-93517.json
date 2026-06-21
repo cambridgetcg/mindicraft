@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782058823673-93517",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T19:01:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:operating-systems\u00d7heurekin",
+  "category": "synthesis",
+  "title": "Understanding bridge: operating-systems \u2192 heurekin",
+  "url": "https://github.com/MichielDerhaeg/build-linux",
+  "summary": "Cross-pollination: MichielDerhaeg/build-linux \u00d7 HN: Fossil Fuels Are 40% of Freight. [operating-systems] meets [heurekin]. Understanding flows."
+}

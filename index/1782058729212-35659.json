@@ -1,0 +1,13 @@
+{
+  "id": "1782058729212-35659",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T17:00:00Z",
+  "certainty": "high",
+  "provenance": "free-compute:gathered",
+  "category": "free-compute",
+  "title": "Kaggle: free P100 GPU, 30h/week, free TPU",
+  "url": "https://www.kaggle.com",
+  "summary": "Free GPU and TPU compute. 30h/week GPU, 20h/week TPU. No paywall. Run models, train, infer."
+}

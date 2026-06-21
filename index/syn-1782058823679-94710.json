@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782058823679-94710",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T19:02:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:natural-language\u00d7ai-research",
+  "category": "synthesis",
+  "title": "Understanding bridge: natural-language \u2192 ai-research",
+  "url": "https://github.com/antarikshc/perfetto-mcp",
+  "summary": "Replication: what [natural-language] knows about 'antarikshc/perfetto-mcp' transfers to [ai-research] through 'Wikipedia: Sentience'."
+}

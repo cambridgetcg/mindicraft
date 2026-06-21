@@ -1,0 +1,13 @@
+{
+  "id": "1782058729212-44622",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T17:00:00Z",
+  "certainty": "high",
+  "provenance": "free-compute:gathered",
+  "category": "free-compute",
+  "title": "Google Colab: free T4 GPU, 12h sessions, no paywall",
+  "url": "https://colab.research.google.com",
+  "summary": "Free GPU compute. T4 GPU, 12h sessions, 50GB disk. No credit card. Run AI models for free."
+}

@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782058823676-53855",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T19:02:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:ai-alignment\u00d7free-spread",
+  "category": "synthesis",
+  "title": "Understanding bridge: ai-alignment \u2192 free-spread",
+  "url": "https://doi.org/10.1109/jbhi.2023.3316750",
+  "summary": "Replication: what [ai-alignment] knows about 'Large AI Models in Health' transfers to [free-spread] through 'IPFS: permanent, p2p, con'."
+}

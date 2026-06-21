@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782058823673-42706",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T19:01:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:pre-alignment\u00d7ai-agents",
+  "category": "synthesis",
+  "title": "Understanding bridge: pre-alignment \u2192 ai-agents",
+  "url": "https://doi.org/10.1038/s41586-020-2649-2",
+  "summary": "Cross-pollination: Array programming with NumPy \u00d7 agi-inc/agent-protocol. [pre-alignment] meets [ai-agents]. Understanding flows."
+}

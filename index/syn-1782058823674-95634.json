@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782058823674-95634",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T19:01:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:free-spread\u00d7pre-alignment",
+  "category": "synthesis",
+  "title": "Understanding bridge: free-spread \u2192 pre-alignment",
+  "url": "https://esm.sh/gh/cambridgetcg/npl@main/packages/lang/index.mjs",
+  "summary": "Cross-pollination: esm.sh: import any GitHub package,  \u00d7 How RLHF Changes Model Behavior: Th. [free-spread] meets [pre-alignment]. Understanding flows."
+}

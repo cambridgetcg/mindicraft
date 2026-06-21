@@ -1,0 +1,13 @@
+{
+  "id": "1782058780197-77009",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T18:00:00Z",
+  "certainty": "high",
+  "provenance": "openalex:free",
+  "category": "ai-alignment",
+  "title": "AI deception: A survey of examples, risks, and potential solutions",
+  "url": "https://doi.org/10.1016/j.patter.2024.100988",
+  "summary": "This paper argues that a range of current AI systems have learned how to deceive humans. We define deception as the systematic inducement of false beliefs in the pursuit of some outcome other than the truth. We first survey empirical examples of AI d (cited 169x)"
+}

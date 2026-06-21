@@ -1,0 +1,13 @@
+{
+  "id": "1782058772531-52560",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T18:00:00Z",
+  "certainty": "high",
+  "provenance": "openalex:free",
+  "category": "ai-alignment",
+  "title": "Molecular Docking: Shifting Paradigms in Drug Discovery",
+  "url": "https://doi.org/10.3390/ijms20184331",
+  "summary": "Molecular docking is an established in silico structure-based method widely used in drug discovery. Docking enables the identification of novel compounds of therapeutic interest, predicting ligand-target interactions at a molecular level, or delineat (cited 2234x)"
+}

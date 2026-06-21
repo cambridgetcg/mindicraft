@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782058823683-12589",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T19:03:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:honest-systems\u00d7ai-agents",
+  "category": "synthesis",
+  "title": "Understanding bridge: honest-systems \u2192 ai-agents",
+  "url": "https://github.com/Farxida/prediction-market-ml",
+  "summary": "Bridge: Farxida/prediction-market-ml + PennyroyalTea/gibberlink = understanding neither held alone. [honest-systems] \u00d7 [ai-agents]."
+}
