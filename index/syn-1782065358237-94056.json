@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782065358237-94056",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T21:01:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:operating-systems\u00d7honest-systems",
+  "category": "synthesis",
+  "title": "Understanding bridge: operating-systems \u2192 honest-systems",
+  "url": "https://github.com/jubalh/awesome-os",
+  "summary": "Bridge: jubalh/awesome-os \u00d7 JDevShivamGarg/system-blueprin = emergence. [operating-systems] meets [honest-systems]."
+}

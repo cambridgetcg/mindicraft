@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782065358257-42505",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T21:04:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:constructed-language\u00d7operating-systems",
+  "category": "synthesis",
+  "title": "Understanding bridge: constructed-language \u2192 operating-systems",
+  "url": "https://github.com/marcosomma/orka-reasoning",
+  "summary": "Understanding replicating through understanding: constructed-language \u2192 operating-systems."
+}

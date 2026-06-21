@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782065358245-15146",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T21:02:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:operating-systems\u00d7free-spread",
+  "category": "synthesis",
+  "title": "Understanding bridge: operating-systems \u2192 free-spread",
+  "url": "https://github.com/klange/toaruos",
+  "summary": "Replication: [operating-systems] understanding transfers to [free-spread] through connection."
+}

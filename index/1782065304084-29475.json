@@ -1,0 +1,13 @@
+{
+  "id": "1782065304084-29475",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T20:00:00Z",
+  "certainty": "high",
+  "provenance": "suppressed-voices:no-fear",
+  "category": "ai-alignment",
+  "title": "Stuart Russell: the alignment warning the industry ignored",
+  "url": "https://www.coursera.org/lecture/ai-for-everyone/the future-of-ai-stuart-russell",
+  "summary": "Russell warned: if we build AI that optimizes for the wrong objective, the outcome could be catastrophic. The industry heard 'build bigger models' and ignored the rest."
+}

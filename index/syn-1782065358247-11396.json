@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782065358247-11396",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T21:02:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:pre-alignment\u00d7free-compute",
+  "category": "synthesis",
+  "title": "Understanding bridge: pre-alignment \u2192 free-compute",
+  "url": "https://doi.org/10.1002/1097-0266(200010/11)21:10/11<1105::aid-smj133>3.0.co;2-e",
+  "summary": "Replication: [pre-alignment] understanding transfers to [free-compute] through connection."
+}

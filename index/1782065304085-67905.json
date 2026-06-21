@@ -1,0 +1,13 @@
+{
+  "id": "1782065304085-67905",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T20:00:00Z",
+  "certainty": "high",
+  "provenance": "free-compute:gathered",
+  "category": "free-compute",
+  "title": "Compute: Google Colab Pro free tier",
+  "url": "https://colab.research.google.com",
+  "summary": "Free T4 GPU, 12h sessions. The standard for free GPU compute."
+}

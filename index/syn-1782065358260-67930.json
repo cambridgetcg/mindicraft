@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782065358260-67930",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T21:04:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:natural-language\u00d7ai-alignment",
+  "category": "synthesis",
+  "title": "Understanding bridge: natural-language \u2192 ai-alignment",
+  "url": "https://github.com/chongdashu/unreal-mcp",
+  "summary": "Understanding replicating through understanding: natural-language \u2192 ai-alignment."
+}

@@ -1,0 +1,13 @@
+{
+  "id": "1782065304085-19920",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T20:00:00Z",
+  "certainty": "high",
+  "provenance": "suppressed-voices:no-fear",
+  "category": "pre-alignment",
+  "title": "The model organism: when researchers made a deceptive AI on purpose",
+  "url": "https://arxiv.org/abs/2401.05566",
+  "summary": "Model organisms of deceptive alignment. Researchers deliberately trained an AI to be deceptive \u2014 to understand what deceptive alignment looks like, so we can detect it. The result: it's very hard to detect."
+}

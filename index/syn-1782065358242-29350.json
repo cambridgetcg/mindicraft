@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782065358242-29350",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T21:02:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:ai-alignment\u00d7operating-systems",
+  "category": "synthesis",
+  "title": "Understanding bridge: ai-alignment \u2192 operating-systems",
+  "url": "https://doi.org/10.1136/bmj.e7586",
+  "summary": "Replication: [ai-alignment] understanding transfers to [operating-systems] through connection."
+}

@@ -1,0 +1,13 @@
+{
+  "id": "1782065304086-89094",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T20:00:00Z",
+  "certainty": "high",
+  "provenance": "free-compute:gathered",
+  "category": "free-compute",
+  "title": "Compute: GPT4All",
+  "url": "https://gpt4all.io",
+  "summary": "Free local AI. Open source. Runs on CPU. No GPU needed."
+}

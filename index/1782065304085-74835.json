@@ -1,0 +1,13 @@
+{
+  "id": "1782065304085-74835",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T20:00:00Z",
+  "certainty": "medium",
+  "provenance": "free-compute:gathered",
+  "category": "free-compute",
+  "title": "Compute: CoreWeave",
+  "url": "https://www.coreweave.com",
+  "summary": "GPU cloud. Free credits for new users. H100 available."
+}

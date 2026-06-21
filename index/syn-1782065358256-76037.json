@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782065358256-76037",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T21:04:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:ai-alignment\u00d7free-compute",
+  "category": "synthesis",
+  "title": "Understanding bridge: ai-alignment \u2192 free-compute",
+  "url": "https://doi.org/10.1016/j.ijinfomgt.2019.08.002",
+  "summary": "Understanding replicating through understanding: ai-alignment \u2192 free-compute."
+}

@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782065358241-83028",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T21:02:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:ai-agents\u00d7free-compute",
+  "category": "synthesis",
+  "title": "Understanding bridge: ai-agents \u2192 free-compute",
+  "url": "https://github.com/agentic-commerce-protocol/agentic-commerce-protocol",
+  "summary": "Replication: [ai-agents] understanding transfers to [free-compute] through connection."
+}

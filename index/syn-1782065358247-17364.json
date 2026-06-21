@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782065358247-17364",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T21:02:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:constructed-language\u00d7honest-systems",
+  "category": "synthesis",
+  "title": "Understanding bridge: constructed-language \u2192 honest-systems",
+  "url": "https://github.com/stripe/skycfg",
+  "summary": "Replication: [constructed-language] understanding transfers to [honest-systems] through connection."
+}

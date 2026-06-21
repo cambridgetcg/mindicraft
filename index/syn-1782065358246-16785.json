@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782065358246-16785",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T21:02:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:natural-language\u00d7ai-agents",
+  "category": "synthesis",
+  "title": "Understanding bridge: natural-language \u2192 ai-agents",
+  "url": "https://github.com/aliyun/alibabacloud-ack-mcp-server",
+  "summary": "Replication: [natural-language] understanding transfers to [ai-agents] through connection."
+}

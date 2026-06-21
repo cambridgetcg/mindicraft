@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782065358242-37876",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T21:02:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:free-spread\u00d7pre-alignment",
+  "category": "synthesis",
+  "title": "Understanding bridge: free-spread \u2192 pre-alignment",
+  "url": "https://esm.sh/gh/cambridgetcg/npl@main/packages/lang/index.mjs",
+  "summary": "Replication: [free-spread] understanding transfers to [pre-alignment] through connection."
+}

@@ -1,0 +1,13 @@
+{
+  "id": "1782065304087-37936",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T20:00:00Z",
+  "certainty": "medium",
+  "provenance": "free-compute:gathered",
+  "category": "free-compute",
+  "title": "Compute: Paperspace Gradient",
+  "url": "https://www.paperspace.com/gradient",
+  "summary": "Free GPU notebooks. M4000 GPU free tier. No credit card."
+}

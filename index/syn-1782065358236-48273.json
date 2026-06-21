@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782065358236-48273",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T21:01:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:ai-agents\u00d7ai-alignment",
+  "category": "synthesis",
+  "title": "Understanding bridge: ai-agents \u2192 ai-alignment",
+  "url": "https://github.com/i-am-bee/acp",
+  "summary": "Bridge: i-am-bee/acp \u00d7 Concrete Problems in AI Safety = emergence. [ai-agents] meets [ai-alignment]."
+}

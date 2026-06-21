@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782065358235-93147",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T21:01:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:pre-alignment\u00d7ai-alignment",
+  "category": "synthesis",
+  "title": "Understanding bridge: pre-alignment \u2192 ai-alignment",
+  "url": "https://arxiv.org/abs/2305.18290",
+  "summary": "Bridge: How RLHF Changes Model Behavio \u00d7 Bostrom's Superintelligence: T = emergence. [pre-alignment] meets [ai-alignment]."
+}

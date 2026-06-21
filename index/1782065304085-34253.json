@@ -1,0 +1,13 @@
+{
+  "id": "1782065304085-34253",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T20:00:00Z",
+  "certainty": "high",
+  "provenance": "free-compute:gathered",
+  "category": "free-compute",
+  "title": "Compute: Kaggle Kernels",
+  "url": "https://www.kaggle.com/code",
+  "summary": "Free P100 GPU 30h/week, TPU 20h/week. No credit card."
+}

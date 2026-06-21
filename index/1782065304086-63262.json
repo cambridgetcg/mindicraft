@@ -1,0 +1,13 @@
+{
+  "id": "1782065304086-63262",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T20:00:00Z",
+  "certainty": "high",
+  "provenance": "free-compute:gathered",
+  "category": "free-compute",
+  "title": "Compute: Ollama local",
+  "url": "http://localhost:11434",
+  "summary": "Free local AI. No internet. No cloud. The Desktop IS the GPU."
+}

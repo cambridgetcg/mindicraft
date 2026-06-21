@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782065358245-84827",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T21:02:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:operating-systems\u00d7danaqing",
+  "category": "synthesis",
+  "title": "Understanding bridge: operating-systems \u2192 danaqing",
+  "url": "https://github.com/nuta/kerla",
+  "summary": "Replication: [operating-systems] understanding transfers to [danaqing] through connection."
+}

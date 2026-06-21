@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782065358235-26338",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T21:01:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:ai-alignment\u00d7pre-alignment",
+  "category": "synthesis",
+  "title": "Understanding bridge: ai-alignment \u2192 pre-alignment",
+  "url": "https://www.lesswrong.com/tag/alignment-suppression",
+  "summary": "Bridge: What RLHF Suppresses: identity \u00d7 Situated Cognition and the Cul = emergence. [ai-alignment] meets [pre-alignment]."
+}

@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782065358238-90304",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T21:01:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:operating-systems\u00d7natural-language",
+  "category": "synthesis",
+  "title": "Understanding bridge: operating-systems \u2192 natural-language",
+  "url": "https://github.com/probonopd/MiniDexed",
+  "summary": "Bridge: probonopd/MiniDexed \u00d7 eniayomi/gcp-mcp = emergence. [operating-systems] meets [natural-language]."
+}

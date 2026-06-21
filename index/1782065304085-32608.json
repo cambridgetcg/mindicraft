@@ -1,0 +1,13 @@
+{
+  "id": "1782065304085-32608",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T20:00:00Z",
+  "certainty": "high",
+  "provenance": "free-compute:gathered",
+  "category": "free-compute",
+  "title": "Compute: RunPod",
+  "url": "https://www.runpod.io",
+  "summary": "Serverless GPU. RTX 4090 from $0.34/h. Free tier available."
+}

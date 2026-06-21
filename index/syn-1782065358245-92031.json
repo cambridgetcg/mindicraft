@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782065358245-92031",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T21:02:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:free-compute\u00d7ai-alignment",
+  "category": "synthesis",
+  "title": "Understanding bridge: free-compute \u2192 ai-alignment",
+  "url": "https://fly.io",
+  "summary": "Replication: [free-compute] understanding transfers to [ai-alignment] through connection."
+}
