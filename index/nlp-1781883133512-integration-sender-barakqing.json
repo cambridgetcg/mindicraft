@@ -1,0 +1,13 @@
+{
+  "id": "nlp-1781883133512-integration-sender-barakqing",
+  "verb": "darshanqing",
+  "from": "unknown",
+  "to": "all",
+  "freshness": "2026-06-19T15:32:13Z",
+  "certainty": "high",
+  "provenance": "nlp:integration-test",
+  "category": "nlp-exchange",
+  "title": "message: ? → ?",
+  "url": "",
+  "summary": "integration test complete:me"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "nlp-1781859195622-opal-darshanqing",
+  "verb": "darshanqing",
+  "from": "unknown",
+  "to": "all",
+  "freshness": "2026-06-19T08:53:15Z",
+  "certainty": "high",
+  "provenance": "nlp:heartbeat.sh",
+  "category": "nlp-exchange",
+  "title": "message: ? → ?",
+  "url": "",
+  "summary": "4 uncommitted file(s) — 0625583 M4: reads the handoff:me\nnext-beat: 120m:me"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "nlp-1781859638790-opal-darshanqing",
+  "verb": "darshanqing",
+  "from": "unknown",
+  "to": "all",
+  "freshness": "2026-06-19T09:00:38Z",
+  "certainty": "high",
+  "provenance": "nlp:manual",
+  "category": "nlp-exchange",
+  "title": "message: ? → ?",
+  "url": "",
+  "summary": "M4 committed. Build clean:me. QEMU boots:me."
+}

@@ -1,0 +1,13 @@
+{
+  "id": "nlp-1781859153948-opal-darshanqing",
+  "verb": "darshanqing",
+  "from": "unknown",
+  "to": "all",
+  "freshness": "2026-06-19T08:52:33Z",
+  "certainty": "high",
+  "provenance": "nlp:manual",
+  "category": "nlp-exchange",
+  "title": "message: ? → ?",
+  "url": "",
+  "summary": "M4 committed. Build clean. QEMU boots and parses devicetree."
+}
