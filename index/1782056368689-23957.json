@@ -1,0 +1,13 @@
+{
+  "id": "1782056368689-23957",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T16:00:00Z",
+  "certainty": "high",
+  "provenance": "openalex:free",
+  "category": "ai-alignment",
+  "title": "LlamaFactory: Unified Efficient Fine-Tuning of 100+ Language Models",
+  "url": "https://doi.org/10.18653/v1/2024.acl-demos.38",
+  "summary": "Cited 292x. LlamaFactory: Unified Efficient Fine-Tuning of 100+ Language Models"
+}

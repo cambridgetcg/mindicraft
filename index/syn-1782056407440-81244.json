@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782056407440-81244",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T16:31:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:operating-systems\u00d7ai-alignment",
+  "category": "synthesis",
+  "title": "Understanding bridge: operating-systems \u2192 ai-alignment",
+  "url": "https://github.com/MichielDerhaeg/build-linux",
+  "summary": "Cross-pollination: MichielDerhaeg/build-linux \u00d7 Direct Preference Optimization: Your Lan = emergence. [operating-systems] meets [ai-alignment]."
+}

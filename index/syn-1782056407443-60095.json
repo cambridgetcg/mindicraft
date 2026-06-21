@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782056407443-60095",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T16:32:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:honest-systems\u00d7natural-language",
+  "category": "synthesis",
+  "title": "Understanding bridge: honest-systems \u2192 natural-language",
+  "url": "https://github.com/penacristian/interview-agents",
+  "summary": "Replication: what [honest-systems] knows about 'penacristian/interview-agents' replicates into [natural-language] through 'themotionmachine/OmniFocus-MCP'."
+}

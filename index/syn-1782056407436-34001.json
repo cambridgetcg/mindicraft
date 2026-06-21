@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782056407436-34001",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T16:30:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:operating-systems\u00d7ai-alignment",
+  "category": "synthesis",
+  "title": "Understanding bridge: operating-systems \u2192 ai-alignment",
+  "url": "https://github.com/brutal-org/brutal",
+  "summary": "Understanding bridge: [operating-systems] 'brutal-org/brutal' illuminates [ai-alignment] 'OpenAI's Approach to AI Safety'. \ud83c\udfe2 An operating system inspired by brutalist design that combines the ideals of U \u2194 OpenAI's safety research and alignment approach. RLHF, red teaming, safety syste"
+}

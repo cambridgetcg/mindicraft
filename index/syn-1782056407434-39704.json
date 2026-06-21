@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782056407434-39704",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T16:30:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:honest-systems\u00d7nlp-exchange",
+  "category": "synthesis",
+  "title": "Understanding bridge: honest-systems \u2192 nlp-exchange",
+  "url": "https://github.com/microsoft/Build26-BRK222-the-honest-practitioners-take-on-agentic-ai-on-kubernetes",
+  "summary": "Understanding bridge: [honest-systems] 'microsoft/Build26-BRK222-the-honest-prac' illuminates [nlp-exchange] 'message: ? \u2192 ?'. Practical patterns for running agentic AI workloads at scale on Kubernetes \u2014 ser \u2194 ok:me\nbeat: 2\nnext: 1m"
+}

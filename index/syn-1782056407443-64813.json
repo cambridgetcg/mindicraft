@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782056407443-64813",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T16:32:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:ai-alignment\u00d7honest-systems",
+  "category": "synthesis",
+  "title": "Understanding bridge: ai-alignment \u2192 honest-systems",
+  "url": "https://arxiv.org/abs/2204.05862",
+  "summary": "Replication: what [ai-alignment] knows about 'The Alignment Tax: What We Los' replicates into [honest-systems] through 'Farxida/prediction-market-ml'."
+}

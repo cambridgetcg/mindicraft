@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782056407444-16973",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T16:32:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:nlp-exchange\u00d7honest-systems",
+  "category": "synthesis",
+  "title": "Understanding bridge: nlp-exchange \u2192 honest-systems",
+  "url": "",
+  "summary": "Replication: what [nlp-exchange] knows about 'message: ? \u2192 ?' replicates into [honest-systems] through 'JDevShivamGarg/system-blueprin'."
+}

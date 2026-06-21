@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782056407445-68371",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T16:32:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:ai-alignment\u00d7honest-systems",
+  "category": "synthesis",
+  "title": "Understanding bridge: ai-alignment \u2192 honest-systems",
+  "url": "https://en.wikipedia.org/wiki/Three_Laws_of_Robotics",
+  "summary": "Replication: what [ai-alignment] knows about 'Asimov's Three Laws: The First' replicates into [honest-systems] through 'DyvakYA/bank'."
+}

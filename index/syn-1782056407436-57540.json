@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782056407436-57540",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T16:30:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:natural-language\u00d7ai-agents",
+  "category": "synthesis",
+  "title": "Understanding bridge: natural-language \u2192 ai-agents",
+  "url": "https://github.com/themotionmachine/OmniFocus-MCP",
+  "summary": "Understanding bridge: [natural-language] 'themotionmachine/OmniFocus-MCP' illuminates [ai-agents] 'agi-inc/agent-protocol'. Let LLMs interface with your tasks and projects through the Model Context Protoc \u2194 Common interface for interacting with AI agents. The protocol is tech stack agno"
+}

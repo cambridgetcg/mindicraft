@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782056407441-94655",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T16:31:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:ai-agents\u00d7ai-alignment",
+  "category": "synthesis",
+  "title": "Understanding bridge: ai-agents \u2192 ai-alignment",
+  "url": "https://github.com/rinadelph/Agent-MCP",
+  "summary": "Cross-pollination: rinadelph/Agent-MCP \u00d7 Google DeepMind's Safety Research = emergence. [ai-agents] meets [ai-alignment]."
+}

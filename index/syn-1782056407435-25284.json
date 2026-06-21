@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782056407435-25284",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T16:30:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:constructed-language\u00d7nlp-exchange",
+  "category": "synthesis",
+  "title": "Understanding bridge: constructed-language \u2192 nlp-exchange",
+  "url": "https://github.com/Holmeswww/AgentKit",
+  "summary": "Understanding bridge: [constructed-language] 'Holmeswww/AgentKit' illuminates [nlp-exchange] 'message: ? \u2192 ?'. An intuitive LLM prompting framework for multifunctional agents, by explicitly c \u2194 integration test complete:me"
+}

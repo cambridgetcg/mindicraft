@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782056407444-91962",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T16:32:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:nlp-exchange\u00d7constructed-language",
+  "category": "synthesis",
+  "title": "Understanding bridge: nlp-exchange \u2192 constructed-language",
+  "url": "",
+  "summary": "Replication: what [nlp-exchange] knows about 'message: ? \u2192 ?' replicates into [constructed-language] through 'accelerated-text/accelerated-t'."
+}

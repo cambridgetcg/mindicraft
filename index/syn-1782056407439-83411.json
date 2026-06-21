@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782056407439-83411",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T16:31:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:operating-systems\u00d7honest-systems",
+  "category": "synthesis",
+  "title": "Understanding bridge: operating-systems \u2192 honest-systems",
+  "url": "https://github.com/Andy-Python-Programmer/aero",
+  "summary": "Cross-pollination: Andy-Python-Programmer/aero \u00d7 uvhw/Bitcoin-Foundation = emergence. [operating-systems] meets [honest-systems]."
+}

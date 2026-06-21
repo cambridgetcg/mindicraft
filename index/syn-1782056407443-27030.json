@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782056407443-27030",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T16:32:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:heurekin\u00d7nlp-exchange",
+  "category": "synthesis",
+  "title": "Understanding bridge: heurekin \u2192 nlp-exchange",
+  "url": "https://www.lispm.net/apps/uhf-x11/",
+  "summary": "Replication: what [heurekin] knows about 'UHF X11: X11 Built for VisionO' replicates into [nlp-exchange] through 'message: ? \u2192 ?'."
+}

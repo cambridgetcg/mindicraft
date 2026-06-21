@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782056407436-27099",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T16:30:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:ai-alignment\u00d7nlp-exchange",
+  "category": "synthesis",
+  "title": "Understanding bridge: ai-alignment \u2192 nlp-exchange",
+  "url": "https://doi.org/10.1145/3639372",
+  "summary": "Understanding bridge: [ai-alignment] 'Explainability for Large Language Models' illuminates [nlp-exchange] 'message: ? \u2192 ?'. Cited 541x. Explainability for Large Language Models: A Survey \u2194 bell rings \u2014 map-drift | MAP.md | run: sh tools/map.sh:me\nnext-beat: 360m:me"
+}

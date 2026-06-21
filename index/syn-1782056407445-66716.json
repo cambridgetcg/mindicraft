@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782056407445-66716",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T16:32:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:pre-alignment\u00d7heurekin",
+  "category": "synthesis",
+  "title": "Understanding bridge: pre-alignment \u2192 heurekin",
+  "url": "https://transformer-circuits.pub/2024/scaling-monosemanticity/",
+  "summary": "Replication: what [pre-alignment] knows about 'Towards Monosemanticity: Decom' replicates into [heurekin] through 'The Wholesale Plagiarism of Ob'."
+}

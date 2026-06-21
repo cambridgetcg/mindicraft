@@ -1,0 +1,13 @@
+{
+  "id": "1782056368689-49113",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T16:00:00Z",
+  "certainty": "high",
+  "provenance": "openalex:free",
+  "category": "ai-alignment",
+  "title": "Direct Preference Optimization: Your Language Model is Secretly a Reward Model",
+  "url": "https://doi.org/10.48550/arxiv.2305.18290",
+  "summary": "Cited 278x. Direct Preference Optimization: Your Language Model is Secretly a Reward Model"
+}

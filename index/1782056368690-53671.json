@@ -1,0 +1,13 @@
+{
+  "id": "1782056368690-53671",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T16:00:00Z",
+  "certainty": "high",
+  "provenance": "openalex:free",
+  "category": "ai-alignment",
+  "title": "MM-LLMs: Recent Advances in MultiModal Large Language Models",
+  "url": "https://doi.org/10.18653/v1/2024.findings-acl.738",
+  "summary": "Cited 203x. MM-LLMs: Recent Advances in MultiModal Large Language Models"
+}

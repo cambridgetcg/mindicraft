@@ -1,0 +1,13 @@
+{
+  "id": "1782056367915-15972",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T16:00:00Z",
+  "certainty": "high",
+  "provenance": "openalex:free",
+  "category": "ai-consciousness",
+  "title": "Large Language Models and the Reverse Turing Test",
+  "url": "https://doi.org/10.1162/neco_a_01563",
+  "summary": "Large language models (LLMs) have been transformative. They are pretrained foundational models that are self-supervised and can be adapted with fine-tuning to a wide range of natural language tasks, e (cited 164x)"
+}

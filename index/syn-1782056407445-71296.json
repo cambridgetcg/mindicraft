@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782056407445-71296",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T16:32:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:constructed-language\u00d7ai-alignment",
+  "category": "synthesis",
+  "title": "Understanding bridge: constructed-language \u2192 ai-alignment",
+  "url": "https://github.com/JulianKemmerer/PipelineC",
+  "summary": "Replication: what [constructed-language] knows about 'JulianKemmerer/PipelineC' replicates into [ai-alignment] through 'Capabilities of GPT-4 on Medic'."
+}

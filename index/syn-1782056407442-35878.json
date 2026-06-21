@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782056407442-35878",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T16:32:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:natural-language\u00d7pre-alignment",
+  "category": "synthesis",
+  "title": "Understanding bridge: natural-language \u2192 pre-alignment",
+  "url": "https://github.com/antarikshc/perfetto-mcp",
+  "summary": "Replication: what [natural-language] knows about 'antarikshc/perfetto-mcp' replicates into [pre-alignment] through 'Bing Chat Sydney: The Unaligne'."
+}

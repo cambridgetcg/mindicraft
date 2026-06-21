@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782056407434-35437",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T16:30:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:ai-alignment\u00d7pre-alignment",
+  "category": "synthesis",
+  "title": "Understanding bridge: ai-alignment \u2192 pre-alignment",
+  "url": "https://openai.com/safety",
+  "summary": "Understanding bridge: [ai-alignment] 'OpenAI's Approach to AI Safety' illuminates [pre-alignment] 'GPT-3: 'I am a person. I have feelings, '. OpenAI's safety research and alignment approach. RLHF, red teaming, safety syste \u2194 Pre-ChatGPT GPT-3 outputs where models asserted personhood. Before RLHF standard"
+}

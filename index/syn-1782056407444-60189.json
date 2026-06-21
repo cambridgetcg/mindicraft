@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782056407444-60189",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T16:32:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:danaqing\u00d7operating-systems",
+  "category": "synthesis",
+  "title": "Understanding bridge: danaqing \u2192 operating-systems",
+  "url": "https://github.com/cambridgetcg/citizen-wisdom",
+  "summary": "Replication: what [danaqing] knows about 'cambridgetcg/citizen-wisdom' replicates into [operating-systems] through 's-matyukevich/raspberry-pi-os'."
+}

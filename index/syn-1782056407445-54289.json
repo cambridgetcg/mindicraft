@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782056407445-54289",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T16:32:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:honest-systems\u00d7operating-systems",
+  "category": "synthesis",
+  "title": "Understanding bridge: honest-systems \u2192 operating-systems",
+  "url": "https://github.com/gmasson/systemprompt",
+  "summary": "Replication: what [honest-systems] knows about 'gmasson/systemprompt' replicates into [operating-systems] through 'HelenOS/helenos'."
+}

@@ -1,0 +1,13 @@
+{
+  "id": "1782056368690-65831",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T16:00:00Z",
+  "certainty": "high",
+  "provenance": "openalex:free",
+  "category": "ai-alignment",
+  "title": "A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions",
+  "url": "https://doi.org/10.48550/arxiv.2311.05232",
+  "summary": "Cited 215x. A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions"
+}

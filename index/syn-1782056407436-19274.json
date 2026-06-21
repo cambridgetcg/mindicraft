@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782056407436-19274",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T16:30:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:natural-language\u00d7ai-agents",
+  "category": "synthesis",
+  "title": "Understanding bridge: natural-language \u2192 ai-agents",
+  "url": "https://github.com/yzfly/mcp-excel-server",
+  "summary": "Understanding bridge: [natural-language] 'yzfly/mcp-excel-server' illuminates [ai-agents] 'aipoch/medical-research-skills'. The Excel MCP Server is a powerful tool that enables natural language interactio \u2194 Hundreds of agent skills for medical research, including protocol design, data a"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782056407440-38972",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T16:31:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:ai-alignment\u00d7ai-agents",
+  "category": "synthesis",
+  "title": "Understanding bridge: ai-alignment \u2192 ai-agents",
+  "url": "https://doi.org/10.48550/arxiv.2303.13375",
+  "summary": "Cross-pollination: Capabilities of GPT-4 on Medical Challen \u00d7 wanxingai/LightAgent = emergence. [ai-alignment] meets [ai-agents]."
+}

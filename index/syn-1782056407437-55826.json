@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782056407437-55826",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T16:30:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:operating-systems\u00d7heurekin",
+  "category": "synthesis",
+  "title": "Understanding bridge: operating-systems \u2192 heurekin",
+  "url": "https://github.com/LemonOSProject/LemonOS",
+  "summary": "Understanding bridge: [operating-systems] 'LemonOSProject/LemonOS' illuminates [heurekin] 'Show HN: We post-trained a model that pe'. The Lemon Operating System \u2194 \nAnthropic and OpenAI's publicly available models are explicitly guard-railed so"
+}

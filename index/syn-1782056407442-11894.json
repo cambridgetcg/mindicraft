@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782056407442-11894",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T16:32:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:natural-language\u00d7nlp-exchange",
+  "category": "synthesis",
+  "title": "Understanding bridge: natural-language \u2192 nlp-exchange",
+  "url": "https://github.com/miantiao-me/github-stars",
+  "summary": "Replication: what [natural-language] knows about 'miantiao-me/github-stars' replicates into [nlp-exchange] through 'message: ? \u2192 ?'."
+}

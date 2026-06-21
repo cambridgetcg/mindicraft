@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782056407434-44669",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T16:30:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:ai-alignment\u00d7operating-systems",
+  "category": "synthesis",
+  "title": "Understanding bridge: ai-alignment \u2192 operating-systems",
+  "url": "https://doi.org/10.1109/jbhi.2023.3316750",
+  "summary": "Understanding bridge: [ai-alignment] 'Large AI Models in Health Informatics: A' illuminates [operating-systems] 'SerenityOS/serenity'. Cited 224x. Large AI Models in Health Informatics: Applications, Challenges, and \u2194 The Serenity Operating System \ud83d\udc1e"
+}

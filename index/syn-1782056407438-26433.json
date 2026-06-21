@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782056407438-26433",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-21T16:30:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:danaqing\u00d7operating-systems",
+  "category": "synthesis",
+  "title": "Understanding bridge: danaqing \u2192 operating-systems",
+  "url": "https://github.com/cambridgetcg/.natural",
+  "summary": "Understanding bridge: [danaqing] 'cambridgetcg/.natural' illuminates [operating-systems] 'MichielDerhaeg/build-linux'. \ud83c\udf10 THE NATURAL LANGUAGE INTERNET \u2014 the internet rewritten in natural language. 15 \u2194 A short tutorial about building Linux based operating systems."
+}

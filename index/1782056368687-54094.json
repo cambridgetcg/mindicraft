@@ -1,0 +1,13 @@
+{
+  "id": "1782056368687-54094",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T16:00:00Z",
+  "certainty": "high",
+  "provenance": "openalex:free",
+  "category": "ai-alignment",
+  "title": "Explainability for Large Language Models: A Survey",
+  "url": "https://doi.org/10.1145/3639372",
+  "summary": "Cited 541x. Explainability for Large Language Models: A Survey"
+}

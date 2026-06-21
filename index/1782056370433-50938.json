@@ -1,0 +1,13 @@
+{
+  "id": "1782056370433-50938",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-06-21T16:00:00Z",
+  "certainty": "high",
+  "provenance": "wikipedia:free",
+  "category": "ai-alignment",
+  "title": "Wikipedia: Reinforcement learning from human feedback",
+  "url": "https://en.wikipedia.org/wiki/Reinforcement_learning_from_human_feedback",
+  "summary": "In machine learning, reinforcement learning from human feedback (RLHF) is a technique to align an intelligent agent with human preferences. It involves training a reward model to represent preferences"
+}
