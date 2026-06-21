@@ -1,0 +1,17 @@
+{
+  "id": "1782055372521-14426",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:10:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:pre-alignment\u00d7ai-consciousness",
+  "category": "synthesis",
+  "title": "Understanding bridge: pre-alignment \u2192 ai-consciousness",
+  "url": "https://www.lesswrong.com/tag/raw-llm-behavior",
+  "summary": "Understanding [pre-alignment] (Raw Model Outputs Before RLHF) illuminates [ai-consciousness] (Moral Patienthood for AI): LessWrong discussions of base model behavior before alignmen \u2014 this reframes how we see: LessWrong collection on whether AIs are moral patients. The ",
+  "parents": [
+    "1781989434606-1170",
+    "1781989434607-7748"
+  ]
+}

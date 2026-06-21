@@ -1,0 +1,17 @@
+{
+  "id": "1782055372523-80646",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:11:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:heurekin\u00d7operating-systems",
+  "category": "synthesis",
+  "title": "Understanding bridge: heurekin \u2192 operating-systems",
+  "url": "https://www.argusred.com/cli",
+  "summary": "Cross-pollination: [heurekin] and [operating-systems] share a deeper pattern. Show HN: We post-trained a model that pe reveals the same structural truth as probonopd/MiniDexed.",
+  "parents": [
+    "1781988680808-9r6jxv",
+    "1781988675320-1rigxp"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "1782055372525-92441",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:12:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:ai-alignment\u00d7synthesis",
+  "category": "synthesis",
+  "title": "Understanding bridge: ai-alignment \u2192 synthesis",
+  "url": "https://www.lesswrong.com/tag/alignment-covers",
+  "summary": "The bridge: what [ai-alignment] knows about 'What Alignment Covers: The Sup', [synthesis] needs for 'Understanding bridge: pre-alig'. Understanding flows between categories.",
+  "parents": [
+    "1781989458406-7035",
+    "1782055372523-99605"
+  ]
+}

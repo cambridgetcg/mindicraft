@@ -1,0 +1,17 @@
+{
+  "id": "1782055372521-34500",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:10:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:natural-language\u00d7operating-systems",
+  "category": "synthesis",
+  "title": "Understanding bridge: natural-language \u2192 operating-systems",
+  "url": "https://github.com/GongRzhe/Gmail-MCP-Server",
+  "summary": "Understanding [natural-language] (GongRzhe/Gmail-MCP-Server) illuminates [operating-systems] (tomaka/redshirt): A Model Context Protocol (MCP) server for Gmail integration  \u2014 this reframes how we see: \ud83e\uddd1\u200d\ud83d\udd2c Operating system",
+  "parents": [
+    "1781988674401-mqaxxl",
+    "1781988675321-j9q2t3"
+  ]
+}

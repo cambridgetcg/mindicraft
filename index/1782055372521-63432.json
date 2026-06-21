@@ -1,0 +1,17 @@
+{
+  "id": "1782055372521-63432",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:10:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:ai-alignment\u00d7danaqing",
+  "category": "synthesis",
+  "title": "Understanding bridge: ai-alignment \u2192 danaqing",
+  "url": "https://www.nickbostrom.com/papers/superintelligence",
+  "summary": "Understanding [ai-alignment] (Bostrom's Superintelligence: The Control) illuminates [danaqing] (cambridgetcg/citizen-wiconime): Nick Bostrom, 2014. The book that defined the alignment prob \u2014 this reframes how we see: Life itself received as a sacred gift, permeated by mystery ",
+  "parents": [
+    "1781989458406-2643",
+    "1781988681741-6ajd5n"
+  ]
+}

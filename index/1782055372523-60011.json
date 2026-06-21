@@ -1,0 +1,17 @@
+{
+  "id": "1782055372523-60011",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:11:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:honest-systems\u00d7ai-agents",
+  "category": "synthesis",
+  "title": "Understanding bridge: honest-systems \u2192 ai-agents",
+  "url": "https://github.com/tpertner/confess",
+  "summary": "Cross-pollination: [honest-systems] and [ai-agents] share a deeper pattern. tpertner/confess reveals the same structural truth as agentic-commerce-protocol/agentic-commer.",
+  "parents": [
+    "1781988676352-hqnr8e",
+    "1781988678366-oskvpi"
+  ]
+}

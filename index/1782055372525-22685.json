@@ -1,0 +1,17 @@
+{
+  "id": "1782055372525-22685",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:12:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:operating-systems\u00d7pre-alignment",
+  "category": "synthesis",
+  "title": "Understanding bridge: operating-systems \u2192 pre-alignment",
+  "url": "https://github.com/probonopd/MiniDexed",
+  "summary": "The bridge: what [operating-systems] knows about 'probonopd/MiniDexed', [pre-alignment] needs for 'Raw Model Outputs Before RLHF'. Understanding flows between categories.",
+  "parents": [
+    "1781988675320-1rigxp",
+    "1781989434606-1170"
+  ]
+}

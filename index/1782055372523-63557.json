@@ -1,0 +1,17 @@
+{
+  "id": "1782055372523-63557",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:11:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:honest-systems\u00d7ai-alignment",
+  "category": "synthesis",
+  "title": "Understanding bridge: honest-systems \u2192 ai-alignment",
+  "url": "https://github.com/DyvakYA/bank",
+  "summary": "Cross-pollination: [honest-systems] and [ai-alignment] share a deeper pattern. DyvakYA/bank reveals the same structural truth as Constitutional AI: Harmlessness from AI .",
+  "parents": [
+    "1781988676352-pjirqp",
+    "1781989434605-8703"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "1782055372521-29626",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:10:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:natural-language\u00d7constructed-language",
+  "category": "synthesis",
+  "title": "Understanding bridge: natural-language \u2192 constructed-language",
+  "url": "https://github.com/InditexTech/mcp-server-simulator-ios-idb",
+  "summary": "Understanding [natural-language] (InditexTech/mcp-server-simulator-ios-idb) illuminates [constructed-language] (williamcotton/empirical-philosophy): A Model Context Protocol (MCP) server that enables LLMs to i \u2014 this reframes how we see: A collection of empirical experiments using large language m",
+  "parents": [
+    "1781988674402-qywc50",
+    "1781988677354-rc9lr0"
+  ]
+}

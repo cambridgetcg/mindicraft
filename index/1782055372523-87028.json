@@ -1,0 +1,17 @@
+{
+  "id": "1782055372523-87028",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:11:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:constructed-language\u00d7operating-systems",
+  "category": "synthesis",
+  "title": "Understanding bridge: constructed-language \u2192 operating-systems",
+  "url": "https://github.com/anoniscoding/yorlang",
+  "summary": "Cross-pollination: [constructed-language] and [operating-systems] share a deeper pattern. anoniscoding/yorlang reveals the same structural truth as HelenOS/helenos.",
+  "parents": [
+    "1781988677354-m3hgbf",
+    "1781988675321-h41q4y"
+  ]
+}

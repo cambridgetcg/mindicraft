@@ -1,0 +1,17 @@
+{
+  "id": "1782055372525-81998",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:12:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:operating-systems\u00d7ai-alignment",
+  "category": "synthesis",
+  "title": "Understanding bridge: operating-systems \u2192 ai-alignment",
+  "url": "https://github.com/SerenityOS/serenity",
+  "summary": "The bridge: what [operating-systems] knows about 'SerenityOS/serenity', [ai-alignment] needs for 'Concrete Problems in AI Safety'. Understanding flows between categories.",
+  "parents": [
+    "1781988675317-08i4hr",
+    "1781989434605-8685"
+  ]
+}

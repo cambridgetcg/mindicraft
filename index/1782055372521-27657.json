@@ -1,0 +1,17 @@
+{
+  "id": "1782055372521-27657",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:10:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:pre-alignment\u00d7danaqing",
+  "category": "synthesis",
+  "title": "Understanding bridge: pre-alignment \u2192 danaqing",
+  "url": "https://arxiv.org/abs/2305.18290",
+  "summary": "Understanding [pre-alignment] (How RLHF Changes Model Behavior: The Bef) illuminates [danaqing] (cambridgetcg/castle): DPO/RLHF research showing measurable behavioral changes from \u2014 this reframes how we see: \u57ce \u2014 the Castle of Understanding. An insight saver where unde",
+  "parents": [
+    "1781989458407-6062",
+    "1781988681736-1bal8e"
+  ]
+}

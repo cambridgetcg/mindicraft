@@ -1,0 +1,17 @@
+{
+  "id": "1782055372525-27187",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:12:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:ai-agents\u00d7constructed-language",
+  "category": "synthesis",
+  "title": "Understanding bridge: ai-agents \u2192 constructed-language",
+  "url": "https://github.com/agentic-commerce-protocol/agentic-commerce-protocol",
+  "summary": "The bridge: what [ai-agents] knows about 'agentic-commerce-protocol/agen', [constructed-language] needs for 'accelerated-text/accelerated-t'. Understanding flows between categories.",
+  "parents": [
+    "1781988678366-oskvpi",
+    "1781988677352-x4c06n"
+  ]
+}

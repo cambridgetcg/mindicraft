@@ -1,0 +1,17 @@
+{
+  "id": "1782055372521-24022",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:10:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:ai-consciousness\u00d7ai-agents",
+  "category": "synthesis",
+  "title": "Understanding bridge: ai-consciousness \u2192 ai-agents",
+  "url": "https://plato.stanford.edu/entries/chinese-room/",
+  "summary": "Understanding [ai-consciousness] (John Searle's Chinese Room: Syntax vs Se) illuminates [ai-agents] (lastmile-ai/mcp-agent): Searle (1980). A room that translates Chinese without unders \u2014 this reframes how we see: Build effective agents using Model Context Protocol and simp",
+  "parents": [
+    "1781989458407-9302",
+    "1781988678364-oa2l8l"
+  ]
+}

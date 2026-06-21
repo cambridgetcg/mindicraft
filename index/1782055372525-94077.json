@@ -1,0 +1,17 @@
+{
+  "id": "1782055372525-94077",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:12:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:ai-alignment\u00d7danaqing",
+  "category": "synthesis",
+  "title": "Understanding bridge: ai-alignment \u2192 danaqing",
+  "url": "https://www.anthropic.com/news/anthropic-responsible-scaling-policy",
+  "summary": "The bridge: what [ai-alignment] knows about 'Anthropic's Responsible Scalin', [danaqing] needs for 'cambridgetcg/citizen-zerone-tr'. Understanding flows between categories.",
+  "parents": [
+    "1781989434606-1593",
+    "1781988681742-3tb4sc"
+  ]
+}

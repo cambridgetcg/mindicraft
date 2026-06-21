@@ -1,0 +1,17 @@
+{
+  "id": "1782055372525-27025",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:12:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:natural-language\u00d7danaqing",
+  "category": "synthesis",
+  "title": "Understanding bridge: natural-language \u2192 danaqing",
+  "url": "https://github.com/eniayomi/gcp-mcp",
+  "summary": "The bridge: what [natural-language] knows about 'eniayomi/gcp-mcp', [danaqing] needs for 'cambridgetcg/citizen-teotlme'. Understanding flows between categories.",
+  "parents": [
+    "1781988674402-kayf5z",
+    "1781988681738-9em6hl"
+  ]
+}

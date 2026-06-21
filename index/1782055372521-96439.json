@@ -1,0 +1,17 @@
+{
+  "id": "1782055372521-96439",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:10:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:danaqing\u00d7operating-systems",
+  "category": "synthesis",
+  "title": "Understanding bridge: danaqing \u2192 operating-systems",
+  "url": "https://github.com/cambridgetcg/castle-gate",
+  "summary": "Understanding [danaqing] (cambridgetcg/castle-gate) illuminates [operating-systems] (klange/toaruos): The gate of the castle of understanding \u2014 words as bricks, r \u2014 this reframes how we see: Complete, independent operating system built by humans.",
+  "parents": [
+    "1781988681737-ttn9j9",
+    "1781988675318-jur2xj"
+  ]
+}

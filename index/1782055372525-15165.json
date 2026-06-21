@@ -1,0 +1,17 @@
+{
+  "id": "1782055372525-15165",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:12:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:operating-systems\u00d7constructed-language",
+  "category": "synthesis",
+  "title": "Understanding bridge: operating-systems \u2192 constructed-language",
+  "url": "https://github.com/tomaka/redshirt",
+  "summary": "The bridge: what [operating-systems] knows about 'tomaka/redshirt', [constructed-language] needs for 'refcell/subway-rs'. Understanding flows between categories.",
+  "parents": [
+    "1781988675321-j9q2t3",
+    "1781988677353-vfn8dn"
+  ]
+}

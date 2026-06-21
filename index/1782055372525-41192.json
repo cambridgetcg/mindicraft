@@ -1,0 +1,17 @@
+{
+  "id": "1782055372525-41192",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:12:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:synthesis\u00d7operating-systems",
+  "category": "synthesis",
+  "title": "Understanding bridge: synthesis \u2192 operating-systems",
+  "url": "https://plato.stanford.edu/entries/chinese-room/",
+  "summary": "The bridge: what [synthesis] knows about 'Understanding bridge: ai-consc', [operating-systems] needs for 'intermezzOS/kernel'. Understanding flows between categories.",
+  "parents": [
+    "1782055372521-50447",
+    "1781988675321-rr0tqq"
+  ]
+}

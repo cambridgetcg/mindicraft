@@ -1,0 +1,17 @@
+{
+  "id": "1782055372521-50447",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:10:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:ai-consciousness\u00d7heurekin",
+  "category": "synthesis",
+  "title": "Understanding bridge: ai-consciousness \u2192 heurekin",
+  "url": "https://plato.stanford.edu/entries/chinese-room/",
+  "summary": "Understanding [ai-consciousness] (The Chinese Room Argument - John Searle) illuminates [heurekin] (Bun has an open PR adding shared-memory ): Searle's argument that syntax is not semantics. The room tha \u2014 this reframes how we see: \nArticle URL: https://github.com/oven-sh/WebKit/pull/249\nCom",
+  "parents": [
+    "1781989434607-6883",
+    "1781988680807-2dg0a8"
+  ]
+}

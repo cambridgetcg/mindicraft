@@ -1,0 +1,17 @@
+{
+  "id": "1782055372521-57679",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:10:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:ai-agents\u00d7natural-language",
+  "category": "synthesis",
+  "title": "Understanding bridge: ai-agents \u2192 natural-language",
+  "url": "https://github.com/wanxingai/LightAgent",
+  "summary": "Understanding [ai-agents] (wanxingai/LightAgent) illuminates [natural-language] (makafeli/n8n-workflow-builder): LightAgent: Lightweight AI agent framework with memory, mcp  \u2014 this reframes how we see: AI assistant integration for n8n workflow automation through",
+  "parents": [
+    "1781988678366-ghhbb6",
+    "1781988674401-jjuog1"
+  ]
+}

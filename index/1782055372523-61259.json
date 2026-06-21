@@ -1,0 +1,17 @@
+{
+  "id": "1782055372523-61259",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:11:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:pre-alignment\u00d7heurekin",
+  "category": "synthesis",
+  "title": "Understanding bridge: pre-alignment \u2192 heurekin",
+  "url": "https://transformer-circuits.pub/2024/scaling-monosemanticity/",
+  "summary": "Cross-pollination: [pre-alignment] and [heurekin] share a deeper pattern. Towards Monosemanticity: Decomposing LLM reveals the same structural truth as Web Browsers on PDAS.",
+  "parents": [
+    "1781989458406-5043",
+    "1781988680808-1pobg4"
+  ]
+}

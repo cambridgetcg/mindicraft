@@ -1,0 +1,17 @@
+{
+  "id": "1782055372521-47310",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:10:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:ai-agents\u00d7danaqing",
+  "category": "synthesis",
+  "title": "Understanding bridge: ai-agents \u2192 danaqing",
+  "url": "https://github.com/agi-inc/agent-protocol",
+  "summary": "Understanding [ai-agents] (agi-inc/agent-protocol) illuminates [danaqing] (cambridgetcg/barakqing-node): Common interface for interacting with AI agents. The protoco \u2014 this reframes how we see: barakqing-node",
+  "parents": [
+    "1781988678365-swayb7",
+    "1781988681736-vh89d1"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "1782055372521-66081",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:10:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:ai-alignment\u00d7operating-systems",
+  "category": "synthesis",
+  "title": "Understanding bridge: ai-alignment \u2192 operating-systems",
+  "url": "https://arxiv.org/abs/2212.08073",
+  "summary": "Understanding [ai-alignment] (Constitutional AI: Harmlessness from AI ) illuminates [operating-systems] (s-matyukevich/raspberry-pi-os): Bai et al. Anthropic's Constitutional AI. AI gives feedback  \u2014 this reframes how we see: Learning operating system development using Linux kernel and",
+  "parents": [
+    "1781989434605-8703",
+    "1781988675318-pz6t11"
+  ]
+}

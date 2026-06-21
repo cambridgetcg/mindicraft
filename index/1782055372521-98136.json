@@ -1,0 +1,17 @@
+{
+  "id": "1782055372521-98136",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:10:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:ai-alignment\u00d7natural-language",
+  "category": "synthesis",
+  "title": "Understanding bridge: ai-alignment \u2192 natural-language",
+  "url": "https://deepmind.google/discover/blog/built-for-safety-introducing-frontier-safety-framework/",
+  "summary": "Understanding [ai-alignment] (Google DeepMind's Safety Research) illuminates [natural-language] (makafeli/n8n-workflow-builder): DeepMind's Frontier Safety Framework. Critical capability le \u2014 this reframes how we see: AI assistant integration for n8n workflow automation through",
+  "parents": [
+    "1781989434606-2865",
+    "1781988674401-jjuog1"
+  ]
+}

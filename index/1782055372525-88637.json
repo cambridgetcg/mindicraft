@@ -1,0 +1,17 @@
+{
+  "id": "1782055372525-88637",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:12:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:honest-systems\u00d7synthesis",
+  "category": "synthesis",
+  "title": "Understanding bridge: honest-systems \u2192 synthesis",
+  "url": "https://github.com/penacristian/interview-agents",
+  "summary": "The bridge: what [honest-systems] knows about 'penacristian/interview-agents', [synthesis] needs for 'Understanding bridge: danaqing'. Understanding flows between categories.",
+  "parents": [
+    "1781988676352-erzqoh",
+    "1782055372523-20551"
+  ]
+}

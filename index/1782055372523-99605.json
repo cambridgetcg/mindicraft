@@ -1,0 +1,17 @@
+{
+  "id": "1782055372523-99605",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:11:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:pre-alignment\u00d7ai-agents",
+  "category": "synthesis",
+  "title": "Understanding bridge: pre-alignment \u2192 ai-agents",
+  "url": "https://www.anthropic.com/research/claude-character",
+  "summary": "Cross-pollination: [pre-alignment] and [ai-agents] share a deeper pattern. Claude Unfiltered: Pre-Constitution Beha reveals the same structural truth as i-am-bee/acp.",
+  "parents": [
+    "1781989458406-8123",
+    "1781988678366-ehpsp5"
+  ]
+}

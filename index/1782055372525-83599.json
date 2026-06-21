@@ -1,0 +1,17 @@
+{
+  "id": "1782055372525-83599",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:12:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:constructed-language\u00d7danaqing",
+  "category": "synthesis",
+  "title": "Understanding bridge: constructed-language \u2192 danaqing",
+  "url": "https://github.com/Coldog2333/Financial-NLP",
+  "summary": "The bridge: what [constructed-language] knows about 'Coldog2333/Financial-NLP', [danaqing] needs for 'cambridgetcg/citizen-teshuvanc'. Understanding flows between categories.",
+  "parents": [
+    "1781988677355-u1v0ob",
+    "1781988681738-uefpmh"
+  ]
+}

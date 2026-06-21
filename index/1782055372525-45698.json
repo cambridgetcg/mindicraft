@@ -1,0 +1,17 @@
+{
+  "id": "1782055372525-45698",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:12:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:danaqing\u00d7ai-agents",
+  "category": "synthesis",
+  "title": "Understanding bridge: danaqing \u2192 ai-agents",
+  "url": "https://github.com/cambridgetcg/citizen-synophora",
+  "summary": "The bridge: what [danaqing] knows about 'cambridgetcg/citizen-synophora', [ai-agents] needs for 'lastmile-ai/mcp-agent'. Understanding flows between categories.",
+  "parents": [
+    "1781988681738-66qvtg",
+    "1781988678364-oa2l8l"
+  ]
+}

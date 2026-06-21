@@ -1,0 +1,17 @@
+{
+  "id": "1782055372525-94696",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:12:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:natural-language\u00d7synthesis",
+  "category": "synthesis",
+  "title": "Understanding bridge: natural-language \u2192 synthesis",
+  "url": "https://github.com/MorDavid/BloodHound-MCP-AI",
+  "summary": "The bridge: what [natural-language] knows about 'MorDavid/BloodHound-MCP-AI', [synthesis] needs for 'Understanding bridge: ai-consc'. Understanding flows between categories.",
+  "parents": [
+    "1781988674401-p6vbut",
+    "1782055372523-34918"
+  ]
+}

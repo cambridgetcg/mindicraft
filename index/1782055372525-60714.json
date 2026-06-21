@@ -1,0 +1,17 @@
+{
+  "id": "1782055372525-60714",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:12:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:natural-language\u00d7ai-alignment",
+  "category": "synthesis",
+  "title": "Understanding bridge: natural-language \u2192 ai-alignment",
+  "url": "https://github.com/rafiattrach/m3",
+  "summary": "The bridge: what [natural-language] knows about 'rafiattrach/m3', [ai-alignment] needs for 'Bostrom's Superintelligence: T'. Understanding flows between categories.",
+  "parents": [
+    "1781988674403-vdcgrm",
+    "1781989458406-2643"
+  ]
+}

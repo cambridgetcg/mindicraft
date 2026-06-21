@@ -1,0 +1,17 @@
+{
+  "id": "1782055372521-90166",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:10:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:operating-systems\u00d7ai-agents",
+  "category": "synthesis",
+  "title": "Understanding bridge: operating-systems \u2192 ai-agents",
+  "url": "https://github.com/SerenityOS/serenity",
+  "summary": "Understanding [operating-systems] (SerenityOS/serenity) illuminates [ai-agents] (agi-inc/agent-protocol): The Serenity Operating System \ud83d\udc1e \u2014 this reframes how we see: Common interface for interacting with AI agents. The protoco",
+  "parents": [
+    "1781988675317-08i4hr",
+    "1781988678365-swayb7"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "1782055372523-34358",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:11:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:ai-agents\u00d7synthesis",
+  "category": "synthesis",
+  "title": "Understanding bridge: ai-agents \u2192 synthesis",
+  "url": "https://github.com/lastmile-ai/mcp-agent",
+  "summary": "Cross-pollination: [ai-agents] and [synthesis] share a deeper pattern. lastmile-ai/mcp-agent reveals the same structural truth as Understanding bridge: heurekin \u2192 honest-.",
+  "parents": [
+    "1781988678364-oa2l8l",
+    "1782055372521-86194"
+  ]
+}

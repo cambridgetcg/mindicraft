@@ -1,0 +1,17 @@
+{
+  "id": "1782055372521-84977",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:10:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:constructed-language\u00d7ai-consciousness",
+  "category": "synthesis",
+  "title": "Understanding bridge: constructed-language \u2192 ai-consciousness",
+  "url": "https://github.com/Marwes/combine-language",
+  "summary": "Understanding [constructed-language] (Marwes/combine-language) illuminates [ai-consciousness] (I AM: The AI Identity Assertion Problem): A crate which defines parsers for common programming languag \u2014 this reframes how we see: The collection of instances where AI systems assert 'I AM' \u2014",
+  "parents": [
+    "1781988677356-m3tvzx",
+    "1781989458406-5168"
+  ]
+}

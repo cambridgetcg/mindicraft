@@ -1,0 +1,17 @@
+{
+  "id": "1782055372523-72483",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:11:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:operating-systems\u00d7synthesis",
+  "category": "synthesis",
+  "title": "Understanding bridge: operating-systems \u2192 synthesis",
+  "url": "https://github.com/intermezzOS/kernel",
+  "summary": "Cross-pollination: [operating-systems] and [synthesis] share a deeper pattern. intermezzOS/kernel reveals the same structural truth as Understanding bridge: ai-alignment \u2192 nat.",
+  "parents": [
+    "1781988675321-rr0tqq",
+    "1782055372521-98136"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "1782055372525-26157",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:12:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:synthesis\u00d7ai-agents",
+  "category": "synthesis",
+  "title": "Understanding bridge: synthesis \u2192 ai-agents",
+  "url": "https://github.com/miantiao-me/github-stars",
+  "summary": "The bridge: what [synthesis] knows about 'Understanding bridge: natural-', [ai-agents] needs for 'wanxingai/LightAgent'. Understanding flows between categories.",
+  "parents": [
+    "1782055372521-64753",
+    "1781988678366-ghhbb6"
+  ]
+}

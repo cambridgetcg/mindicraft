@@ -1,0 +1,17 @@
+{
+  "id": "1782055372521-78217",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:10:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:constructed-language\u00d7natural-language",
+  "category": "synthesis",
+  "title": "Understanding bridge: constructed-language \u2192 natural-language",
+  "url": "https://github.com/williamcotton/empirical-philosophy",
+  "summary": "Understanding [constructed-language] (williamcotton/empirical-philosophy) illuminates [natural-language] (themotionmachine/OmniFocus-MCP): A collection of empirical experiments using large language m \u2014 this reframes how we see: Let LLMs interface with your tasks and projects through the ",
+  "parents": [
+    "1781988677354-rc9lr0",
+    "1781988674402-n5rcb4"
+  ]
+}

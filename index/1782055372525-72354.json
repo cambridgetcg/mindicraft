@@ -1,0 +1,17 @@
+{
+  "id": "1782055372525-72354",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:12:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:ai-agents\u00d7honest-systems",
+  "category": "synthesis",
+  "title": "Understanding bridge: ai-agents \u2192 honest-systems",
+  "url": "https://github.com/themanojdesai/python-a2a",
+  "summary": "The bridge: what [ai-agents] knows about 'themanojdesai/python-a2a', [honest-systems] needs for 'Mdshobu/Liberty-House-Club-Whi'. Understanding flows between categories.",
+  "parents": [
+    "1781988678366-lbwacv",
+    "1781988676351-n9rddi"
+  ]
+}

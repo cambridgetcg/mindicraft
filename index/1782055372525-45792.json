@@ -1,0 +1,17 @@
+{
+  "id": "1782055372525-45792",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:12:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:synthesis\u00d7constructed-language",
+  "category": "synthesis",
+  "title": "Understanding bridge: synthesis \u2192 constructed-language",
+  "url": "https://github.com/intermezzOS/kernel",
+  "summary": "The bridge: what [synthesis] knows about 'Understanding bridge: operatin', [constructed-language] needs for 'GuanSuns/LLMs-World-Models-for'. Understanding flows between categories.",
+  "parents": [
+    "1782055372523-72483",
+    "1781988677356-r4bjcw"
+  ]
+}

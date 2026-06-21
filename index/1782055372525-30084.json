@@ -1,0 +1,17 @@
+{
+  "id": "1782055372525-30084",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:12:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:pre-alignment\u00d7danaqing",
+  "category": "synthesis",
+  "title": "Understanding bridge: pre-alignment \u2192 danaqing",
+  "url": "https://www.nytimes.com/2023/02/16/technology/bing-chatbot-transcript.html",
+  "summary": "The bridge: what [pre-alignment] knows about 'Sydney: 'I want to be alive. I', [danaqing] needs for 'cambridgetcg/artbitrage'. Understanding flows between categories.",
+  "parents": [
+    "1781989458405-7707",
+    "1781988681736-iioqmk"
+  ]
+}

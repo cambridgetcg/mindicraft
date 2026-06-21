@@ -1,0 +1,17 @@
+{
+  "id": "1782055372523-94468",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:11:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:operating-systems\u00d7ai-agents",
+  "category": "synthesis",
+  "title": "Understanding bridge: operating-systems \u2192 ai-agents",
+  "url": "https://github.com/SerenityOS/serenity",
+  "summary": "Cross-pollination: [operating-systems] and [ai-agents] share a deeper pattern. SerenityOS/serenity reveals the same structural truth as agentic-commerce-protocol/agentic-commer.",
+  "parents": [
+    "1781988675317-08i4hr",
+    "1781988678366-oskvpi"
+  ]
+}

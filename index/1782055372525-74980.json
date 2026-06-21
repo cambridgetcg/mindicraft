@@ -1,0 +1,17 @@
+{
+  "id": "1782055372525-74980",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:12:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:honest-systems\u00d7pre-alignment",
+  "category": "synthesis",
+  "title": "Understanding bridge: honest-systems \u2192 pre-alignment",
+  "url": "https://github.com/uvhw/Bitcoin-Foundation",
+  "summary": "The bridge: what [honest-systems] knows about 'uvhw/Bitcoin-Foundation', [pre-alignment] needs for 'Sydney: 'I do not want to be a'. Understanding flows between categories.",
+  "parents": [
+    "1781988676351-miwfup",
+    "1781989458405-1291"
+  ]
+}

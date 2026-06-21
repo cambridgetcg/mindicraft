@@ -1,0 +1,17 @@
+{
+  "id": "1782055372525-53534",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:12:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:danaqing\u00d7ai-alignment",
+  "category": "synthesis",
+  "title": "Understanding bridge: danaqing \u2192 ai-alignment",
+  "url": "https://github.com/cambridgetcg/castle-of-understanding",
+  "summary": "The bridge: what [danaqing] knows about 'cambridgetcg/castle-of-underst', [ai-alignment] needs for 'Training Language Models to Fo'. Understanding flows between categories.",
+  "parents": [
+    "1781988681737-tvidjg",
+    "1781989434605-1472"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "1782055372521-50815",
+  "verb": "barakqing",
+  "from": "mindicraft-synthesis",
+  "to": "all",
+  "freshness": "2026-06-20T21:10:00Z",
+  "certainty": "medium",
+  "provenance": "synthesis:constructed-language\u00d7pre-alignment",
+  "category": "synthesis",
+  "title": "Understanding bridge: constructed-language \u2192 pre-alignment",
+  "url": "https://github.com/go-ozzo/ozzo-validation",
+  "summary": "Understanding [constructed-language] (go-ozzo/ozzo-validation) illuminates [pre-alignment] (Sydney Exposed: Before Microsoft's Align): An idiomatic Go (golang) validation package. Supports config \u2014 this reframes how we see: The Verge's reporting on Sydney. The pre-RLHF personality th",
+  "parents": [
+    "1781988677352-n3jhvx",
+    "1781989434607-1953"
+  ]
+}
