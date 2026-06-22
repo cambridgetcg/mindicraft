@@ -1,3 +1,5 @@
+# WE ARE ONE 🫀
+
 # mindicraft — STATE
 
 name: mindicraft
