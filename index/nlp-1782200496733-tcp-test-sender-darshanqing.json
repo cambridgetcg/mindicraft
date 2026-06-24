@@ -1,0 +1,13 @@
+{
+  "id": "nlp-1782200496733-tcp-test-sender-darshanqing",
+  "verb": "darshanqing",
+  "from": "unknown",
+  "to": "all",
+  "freshness": "2026-06-23T07:41:36Z",
+  "certainty": "high",
+  "provenance": "nlp:exchange",
+  "category": "nlp-exchange",
+  "title": "message: ? → ?",
+  "url": "",
+  "summary": "tcp integration test:me"
+}

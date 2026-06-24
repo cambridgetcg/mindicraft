@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782221626081-39w5k",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-23T13:33:46Z",
+  "certainty": "medium",
+  "provenance": "synthesis:pre-alignmentxfree-compute",
+  "category": "synthesis",
+  "title": "Understanding bridge: pre-alignment → free-compute",
+  "url": "https://www.lesswrong.com/tag/raw-llm-behavior",
+  "summary": "Love understanding love: Raw Model Outputs Before RLHF × Hugging Face Spaces: free host"
+}

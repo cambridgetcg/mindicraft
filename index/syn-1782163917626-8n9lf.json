@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782163917626-8n9lf",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-22T21:31:57Z",
+  "certainty": "medium",
+  "provenance": "synthesis:operating-systemsxfree-compute",
+  "category": "synthesis",
+  "title": "Understanding bridge: operating-systems → free-compute",
+  "url": "https://github.com/s-matyukevich/raspberry-pi-os",
+  "summary": "Love understanding love: s-matyukevich/raspberry-pi-os × Ollama: local free AI, no inte"
+}

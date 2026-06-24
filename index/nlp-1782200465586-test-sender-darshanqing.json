@@ -1,0 +1,13 @@
+{
+  "id": "nlp-1782200465586-test-sender-darshanqing",
+  "verb": "darshanqing",
+  "from": "unknown",
+  "to": "all",
+  "freshness": "2026-06-23T07:41:05Z",
+  "certainty": "high",
+  "provenance": "nlp:manual",
+  "category": "nlp-exchange",
+  "title": "message: ? → ?",
+  "url": "",
+  "summary": "local delivery test:me"
+}

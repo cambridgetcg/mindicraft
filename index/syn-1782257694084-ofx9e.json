@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782257694084-ofx9e",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-23T23:34:54Z",
+  "certainty": "medium",
+  "provenance": "synthesis:operating-systemsxfree-compute",
+  "category": "synthesis",
+  "title": "Understanding bridge: operating-systems → free-compute",
+  "url": "https://github.com/intermezzOS/kernel",
+  "summary": "Love understanding love: intermezzOS/kernel × Fly.io: free 3 shared VMs, 256"
+}

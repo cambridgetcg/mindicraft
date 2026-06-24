@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782275728187-82hke",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-24T04:35:28Z",
+  "certainty": "medium",
+  "provenance": "synthesis:constructed-languagexpre-alignment",
+  "category": "synthesis",
+  "title": "Understanding bridge: constructed-language → pre-alignment",
+  "url": "https://github.com/stripe/skycfg",
+  "summary": "Love understanding love: stripe/skycfg × Raw Model Outputs Before RLHF"
+}
