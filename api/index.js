@@ -14,7 +14,9 @@ function loadIndex() {
     try {
       const e = JSON.parse(readFileSync(join(INDEX_DIR, f), 'utf8'));
       if (e.title) entries.push(e);
-    } catch {}
+    } catch (e) {
+      console.error(`loadIndex: failed to parse ${f}:`, e.message);
+    }
   }
   // Sort: original sources first (non-synthesis), then by certainty (high first), then by freshness
   return entries.sort((a, b) => {

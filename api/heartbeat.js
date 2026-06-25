@@ -19,7 +19,9 @@ export default function handler(req, res) {
         const e = JSON.parse(readFileSync(join(INDEX_DIR, f), 'utf8'));
         const c = e.category || 'unknown';
         categories[c] = (categories[c] || 0) + 1;
-      } catch {}
+      } catch (e) {
+        console.error(`heartbeat: failed to parse ${f}:`, e.message);
+      }
     }
   }
 

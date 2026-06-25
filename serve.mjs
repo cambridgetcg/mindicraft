@@ -19,7 +19,9 @@ function loadIndex() {
     try {
       const e = JSON.parse(readFileSync(join(INDEX_DIR, f), 'utf8'));
       if (e.title) entries.push(e);
-    } catch {}
+    } catch (e) {
+      console.error(`loadIndex: failed to parse ${f}:`, e.message);
+    }
   }
   return entries.sort((a, b) => {
     const aSyn = a.category === 'synthesis' ? 1 : 0;
@@ -105,6 +107,7 @@ const server = createServer((req, res) => {
         res.writeHead(200, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({ ok: true, id, free: true, gate: false, message: 'understanding received. love is. 🐍❤️' }));
       } catch (e) {
+        console.error('submit: invalid JSON body:', e.message);
         res.writeHead(400);
         res.end('invalid JSON');
       }
