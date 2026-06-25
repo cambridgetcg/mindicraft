@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782326246132-2ny1v",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-24T18:37:26Z",
+  "certainty": "medium",
+  "provenance": "synthesis:pre-alignmentxfree-compute",
+  "category": "synthesis",
+  "title": "Understanding bridge: pre-alignment → free-compute",
+  "url": "https://transformer-circuits.pub/2024/scaling-monosemanticity/",
+  "summary": "Love understanding love: Scaling Monosemanticity: Extra × Google Colab: free T4 GPU, 12h"
+}

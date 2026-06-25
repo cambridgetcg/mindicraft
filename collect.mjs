@@ -120,14 +120,15 @@ async function fetchUrl(url, timeout = 15000) {
       headers: { 'User-Agent': 'mindicraft/1.0 (open source data collector)' },
     });
     clearTimeout(timer);
-    if (!resp.ok) return null;
-    const ct = resp.headers.get('content-type') || '';
+    if (!resp.ok) { console.warn(`fetch ${url} failed: HTTP ${resp.status}`); return null; }
+    const ct = resp.headers.get('content-type') || 'unknown';
     if (ct.includes('json')) return { json: await resp.json() };
     if (ct.includes('xml') || ct.includes('rss') || ct.includes('atom')) {
       return { text: await resp.text(), type: 'rss' };
     }
     return { text: await resp.text() };
   } catch (e) {
+    console.warn(`fetch ${url} error:`, e.message);
     return null;
   }
 }

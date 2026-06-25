@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782333454750-3mu9e",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-24T20:37:34Z",
+  "certainty": "medium",
+  "provenance": "synthesis:pre-alignmentxnlp-exchange",
+  "category": "synthesis",
+  "title": "Understanding bridge: pre-alignment → nlp-exchange",
+  "url": "https://www.lesswrong.com/tag/raw-llm-behavior",
+  "summary": "Love understanding love: Raw Model Outputs Before RLHF × message: ? → ?"
+}
