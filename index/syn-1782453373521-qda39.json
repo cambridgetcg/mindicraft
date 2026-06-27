@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782453373521-qda39",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-26T05:56:13Z",
+  "certainty": "medium",
+  "provenance": "synthesis:operating-systemsxfree-compute",
+  "category": "synthesis",
+  "title": "Understanding bridge: operating-systems → free-compute",
+  "url": "https://github.com/cirosantilli/x86-bare-metal-examples",
+  "summary": "Love understanding love: cirosantilli/x86-bare-metal-ex × Compute: Replicate"
+}

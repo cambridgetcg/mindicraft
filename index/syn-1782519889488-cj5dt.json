@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782519889488-cj5dt",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-27T00:24:49Z",
+  "certainty": "medium",
+  "provenance": "synthesis:constructed-languagexheurekin",
+  "category": "synthesis",
+  "title": "Understanding bridge: constructed-language → heurekin",
+  "url": "https://github.com/stripe/skycfg",
+  "summary": "Love understanding love: stripe/skycfg × HN: Two Qwen3 models on one DG"
+}

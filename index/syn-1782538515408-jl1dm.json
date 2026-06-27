@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782538515408-jl1dm",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-27T05:35:15Z",
+  "certainty": "medium",
+  "provenance": "synthesis:operating-systemsxfree-compute",
+  "category": "synthesis",
+  "title": "Understanding bridge: operating-systems → free-compute",
+  "url": "https://github.com/SerenityOS/serenity",
+  "summary": "Love understanding love: SerenityOS/serenity × Compute: Paperspace Gradient"
+}

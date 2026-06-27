@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782398398142-goqb8",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-25T14:39:58Z",
+  "certainty": "medium",
+  "provenance": "synthesis:operating-systemsxfree-compute",
+  "category": "synthesis",
+  "title": "Understanding bridge: operating-systems → free-compute",
+  "url": "https://github.com/HelenOS/helenos",
+  "summary": "Love understanding love: HelenOS/helenos × Compute: Groq"
+}

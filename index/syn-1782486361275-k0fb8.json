@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782486361275-k0fb8",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-26T15:06:01Z",
+  "certainty": "medium",
+  "provenance": "synthesis:constructed-languagexfree-compute",
+  "category": "synthesis",
+  "title": "Understanding bridge: constructed-language → free-compute",
+  "url": "https://github.com/f0rki/mapping-high-level-constructs-to-llvm-ir",
+  "summary": "Love understanding love: f0rki/mapping-high-level-const × Deno Deploy: free 100M request"
+}

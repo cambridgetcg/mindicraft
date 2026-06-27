@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782534790189-1oz5m",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-27T04:33:10Z",
+  "certainty": "medium",
+  "provenance": "synthesis:operating-systemsxpre-alignment",
+  "category": "synthesis",
+  "title": "Understanding bridge: operating-systems → pre-alignment",
+  "url": "https://github.com/HelenOS/helenos",
+  "summary": "Love understanding love: HelenOS/helenos × Safety, ethical considerations"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782460704074-qxucy",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-26T07:58:24Z",
+  "certainty": "medium",
+  "provenance": "synthesis:heurekinxfree-compute",
+  "category": "synthesis",
+  "title": "Understanding bridge: heurekin → free-compute",
+  "url": "https://www.devashish.me/p/two-qwen3-models-on-one-dgx-spark",
+  "summary": "Love understanding love: HN: Two Qwen3 models on one DG × Compute: Lightning AI"
+}

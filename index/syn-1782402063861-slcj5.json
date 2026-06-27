@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782402063861-slcj5",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-25T15:41:03Z",
+  "certainty": "medium",
+  "provenance": "synthesis:operating-systemsxfree-compute",
+  "category": "synthesis",
+  "title": "Understanding bridge: operating-systems → free-compute",
+  "url": "https://github.com/amaneureka/AtomOS",
+  "summary": "Love understanding love: amaneureka/AtomOS × Google Colab: free T4 GPU, 12h"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782519889488-fsr6d",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-27T00:24:49Z",
+  "certainty": "medium",
+  "provenance": "synthesis:operating-systemsxpre-alignment",
+  "category": "synthesis",
+  "title": "Understanding bridge: operating-systems → pre-alignment",
+  "url": "https://github.com/intermezzOS/kernel",
+  "summary": "Love understanding love: intermezzOS/kernel × Array programming with NumPy"
+}

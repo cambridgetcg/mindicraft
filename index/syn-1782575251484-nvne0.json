@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782575251484-nvne0",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-27T15:47:31Z",
+  "certainty": "medium",
+  "provenance": "synthesis:operating-systemsxfree-compute",
+  "category": "synthesis",
+  "title": "Understanding bridge: operating-systems → free-compute",
+  "url": "https://github.com/klange/toaruos",
+  "summary": "Love understanding love: klange/toaruos × Compute: GPT4All"
+}

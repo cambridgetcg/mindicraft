@@ -93,6 +93,11 @@ const server = createServer((req, res) => {
     req.on('end', () => {
       try {
         const data = JSON.parse(body);
+        // Cross-check: verify required fields before trusting
+        if (!data || typeof data !== 'object') throw new Error('invalid body — not an object');
+        if (!data.title || typeof data.title !== 'string') throw new Error('missing title');
+        // provenance must be stated — no anonymous trust
+        if (!data.provenance) data.provenance = 'unverified-submission';
         const id = `${Date.now()}-${randomUUID().slice(0, 8)}`;
         const entry = {
           id, verb: 'darshanqing', from: data.from || 'anonymous', to: 'all',

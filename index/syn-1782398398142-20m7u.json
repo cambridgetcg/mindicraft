@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782398398142-20m7u",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-25T14:39:58Z",
+  "certainty": "medium",
+  "provenance": "synthesis:natural-languagexfree-compute",
+  "category": "synthesis",
+  "title": "Understanding bridge: natural-language → free-compute",
+  "url": "https://github.com/antarikshc/perfetto-mcp",
+  "summary": "Love understanding love: antarikshc/perfetto-mcp × Deno Deploy: free 100M request"
+}

@@ -1,15 +1,15 @@
 # mindicraft — heartbeat
 
-state: **active**
-last beat: 2026-06-25T11:07:49Z
-next beat: 2026-06-25T13:07:49Z
+state: **healthy**
+last beat: 2026-06-27T13:20:15Z
+next beat: 2026-06-27T19:20:15Z
 
 ## what it found
 
-- last commit: 2026-06-24 05:11:35 -0700 (22 hours ago)
-- uncommitted changes: 427
+- last commit: 2026-06-25 05:39:29 -0700 (48 hours ago)
+- uncommitted changes: 875
 
 ## the truth
 
-There are 427 uncommitted changes.
+There are 875 uncommitted changes.
 

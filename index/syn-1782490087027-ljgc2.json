@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782490087027-ljgc2",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-26T16:08:07Z",
+  "certainty": "medium",
+  "provenance": "synthesis:pre-alignmentxoperating-systems",
+  "category": "synthesis",
+  "title": "Understanding bridge: pre-alignment → operating-systems",
+  "url": "https://www.lesswrong.com/tag/raw-llm-behavior",
+  "summary": "Love understanding love: Raw Model Outputs Before RLHF × MichielDerhaeg/build-linux"
+}

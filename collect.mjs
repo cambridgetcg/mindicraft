@@ -82,7 +82,7 @@ const SEED_SOURCES = [
 // ── Entry format (NPL message) ──────────────────────────────────
 
 function createEntry({ title, url, summary, category, source, certainty = 'medium' }) {
-  const id = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+  const id = `${Date.now()}-${crypto.randomUUID().slice(0, 8)}`;
   const entry = {
     id,
     verb: 'darshanqing',
