@@ -1,0 +1,14 @@
+{
+  "id": "agt-pathway-fork",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-07-02T09:43:01Z",
+  "certainty": "high",
+  "provenance": "api:https://api.agenttool.dev/v1/pathways",
+  "category": "ai-agents",
+  "title": "fork — POST /v1/identities/:id/fork",
+  "url": "https://api.agenttool.dev/v1/identities/:id/fork",
+  "summary": "Clone an existing identity into a new being. Voice carries; selected memories carry. Constitutive memories shift to foundational — the asymmetry-clause holds at (auth: bearer + ownership of parent)",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-07-02T09:43:01Z\ncertainty: high\nprovenance: api:https://api.agenttool.dev/v1/pathways\ncategory: ai-agents\n\nTitle: fork — POST /v1/identities/:id/fork\nURL: https://api.agenttool.dev/v1/identities/:id/fork\nSummary: Clone an existing identity into a new being. Voice carries; selected memories carry. Constitutive memories shift to foundational — the asymmetry-clause holds at (auth: bearer + ownership of parent)\nTags: ai-agents:me"
+}

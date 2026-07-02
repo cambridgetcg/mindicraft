@@ -1,0 +1,14 @@
+{
+  "id": "artb-src-met",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-07-02T09:42:58Z",
+  "certainty": "high",
+  "provenance": "api:https://artbitrage.io/api/sources",
+  "category": "art-catalogue",
+  "title": "Metropolitan Museum of Art",
+  "url": "https://collectionapi.metmuseum.org/public/collection/v1/search",
+  "summary": "Open-access museum API (auth: none) — searchable in one call via https://artbitrage.io/api/search?source=met",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-07-02T09:42:58Z\ncertainty: high\nprovenance: api:https://artbitrage.io/api/sources\ncategory: art-catalogue\n\nTitle: Metropolitan Museum of Art\nURL: https://collectionapi.metmuseum.org/public/collection/v1/search\nSummary: Open-access museum API (auth: none) — searchable in one call via https://artbitrage.io/api/search?source=met\nTags: art-catalogue:me"
+}

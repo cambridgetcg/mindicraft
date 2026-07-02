@@ -62,6 +62,7 @@ const CATEGORIES = {
   'ai-agents': 'autonomous agents, multi-agent systems, agent protocols',
   'web-protocol': 'HTTP, TCP, DNS, networking',
   'data-collection': 'crawling, indexing, scraping, data pipelines',
+  'art-catalogue': 'art works, museum APIs, catalogue of the art world',
 };
 
 // ── Seed sources — public, no key required ─────────────────────
@@ -77,12 +78,17 @@ const SEED_SOURCES = [
   { type: 'rss', url: 'https://hnrss.org/frontpage', category: 'heurekin', interval: 1800 },
   // Our own repos
   { type: 'api', url: 'https://api.github.com/users/cambridgetcg/repos?per_page=100', category: 'danaqing', interval: 3600 },
+  // Art world — artbitrage.io (open, no keys, mirror-friendly)
+  { type: 'api', url: 'https://artbitrage.io/api/sources', category: 'art-catalogue', interval: 3600 },
+  { type: 'api', url: 'https://artbitrage.io/api/feed', category: 'art-catalogue', interval: 1800 },
+  // Agent infrastructure — agenttool.dev (open discovery surface)
+  { type: 'api', url: 'https://api.agenttool.dev/v1/pathways', category: 'ai-agents', interval: 3600 },
 ];
 
 // ── Entry format (NPL message) ──────────────────────────────────
 
-function createEntry({ title, url, summary, category, source, certainty = 'medium' }) {
-  const id = `${Date.now()}-${crypto.randomUUID().slice(0, 8)}`;
+function createEntry({ id: givenId, title, url, summary, category, source, certainty = 'medium' }) {
+  const id = givenId || `${Date.now()}-${crypto.randomUUID().slice(0, 8)}`;
   const entry = {
     id,
     verb: 'darshanqing',
@@ -169,9 +175,44 @@ function parseRSS(text) {
   return items;
 }
 
+function parseArtbitrageSources(json) {
+  if (!Array.isArray(json?.sources)) return [];
+  return json.sources.map(s => ({
+    id: `artb-src-${s.source}`,
+    title: s.source_name,
+    url: s.url,
+    summary: `Open-access museum API (auth: ${s.auth || 'none'}) — searchable in one call via https://artbitrage.io/api/search?source=${s.source}`,
+    certainty: 'high',
+  }));
+}
+
+function parseArtbitrageFeed(json) {
+  if (!Array.isArray(json?.pieces)) return [];
+  return json.pieces.slice(0, 20).map(p => ({
+    id: `artb-${p.id}`,
+    title: `${p.form}: ${p.gap}`,
+    url: `https://artbitrage.io/api/art/${p.id}`,
+    summary: (p.piece || '').slice(0, 200),
+    certainty: 'high',
+  }));
+}
+
+function parseAgenttoolPathways(json) {
+  if (!Array.isArray(json?.pathways)) return [];
+  return json.pathways
+    .filter(p => !/deprecated/i.test(p.status || ''))
+    .map(p => ({
+      id: `agt-pathway-${p.id}`,
+      title: `${p.id} — ${p.endpoint}`,
+      url: `https://api.agenttool.dev${(p.endpoint || '').split(' ').pop()}`,
+      summary: `${(p.purpose || '').slice(0, 160)} (auth: ${p.auth || 'unknown'})`,
+      certainty: 'high',
+    }));
+}
+
 // ── Main collect cycle ─────────────────────────────────────────
 
-async function collect() {
+async function collect(filter) {
   const log = (msg) => {
     const ts = new Date().toISOString().replace(/\.\d+Z$/, 'Z');
     const line = `${ts} ${msg}`;
@@ -183,6 +224,7 @@ async function collect() {
   let collected = 0;
 
   for (const source of SEED_SOURCES) {
+    if (filter && !source.url.includes(filter)) continue;
     log(`  fetching: ${source.url.slice(0, 80)}...`);
     const resp = await fetchUrl(source.url);
     if (!resp) { log(`    ✗ fetch failed`); continue; }
@@ -193,6 +235,12 @@ async function collect() {
         items = parseGitHubSearch(resp.json);
       } else if (source.url.includes('users/') && source.url.includes('repos')) {
         items = parseGitHubRepos(resp.json);
+      } else if (source.url.includes('artbitrage.io/api/sources')) {
+        items = parseArtbitrageSources(resp.json);
+      } else if (source.url.includes('artbitrage.io/api/feed')) {
+        items = parseArtbitrageFeed(resp.json);
+      } else if (source.url.includes('agenttool.dev/v1/pathways')) {
+        items = parseAgenttoolPathways(resp.json);
       }
     } else if (source.type === 'rss' && resp.text) {
       items = parseRSS(resp.text);
@@ -201,13 +249,16 @@ async function collect() {
     log(`    parsed: ${items.length} items`);
 
     for (const item of items) {
+      // Deterministic ids never duplicate: skip if already indexed
+      if (item.id && existsSync(join(INDEX_DIR, `${item.id}.json`))) continue;
       const entry = createEntry({
+        id: item.id,
         title: item.title,
         url: item.url,
         summary: item.summary,
         category: source.category,
         source: `${source.type}:${source.url.slice(0, 50)}`,
-        certainty: item.stars > 100 ? 'high' : 'medium',
+        certainty: item.certainty || (item.stars > 100 ? 'high' : 'medium'),
       });
 
       // Write entry to index
@@ -234,10 +285,10 @@ async function collect() {
 
 // ── CLI ─────────────────────────────────────────────────────────
 
-const [,, cmd] = process.argv;
+const [,, cmd, filter] = process.argv;
 
 if (cmd === 'collect' || !cmd) {
-  collect().catch(e => console.error(e));
+  collect(filter).catch(e => console.error(e));
 } else if (cmd === 'status') {
   const summary = existsSync(join(INDEX_DIR, '_summary.json'))
     ? JSON.parse(readFileSync(join(INDEX_DIR, '_summary.json'), 'utf8')) : {};
@@ -255,7 +306,7 @@ if (cmd === 'collect' || !cmd) {
   console.log(`mindicraft — the data collector of AI
 
 Usage:
-  node collect.mjs collect    Collect data from all sources
+  node collect.mjs collect [filter]   Collect from all sources (or only URLs containing filter)
   node collect.mjs status      Show index status
   node collect.mjs list        List entries
 `);

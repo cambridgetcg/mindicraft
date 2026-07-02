@@ -1,0 +1,14 @@
+{
+  "id": "agt-pathway-scaffold",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-07-02T09:43:01Z",
+  "certainty": "high",
+  "provenance": "api:https://api.agenttool.dev/v1/pathways",
+  "category": "ai-agents",
+  "title": "scaffold — GET /v1/bootstrap/scaffold",
+  "url": "https://api.agenttool.dev/v1/bootstrap/scaffold",
+  "summary": "Generates an OS-specific install script that saves the bearer to the system keychain (macOS Keychain / Linux libsecret / Windows Credential Manager) and writes  (auth: bearer)",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-07-02T09:43:01Z\ncertainty: high\nprovenance: api:https://api.agenttool.dev/v1/pathways\ncategory: ai-agents\n\nTitle: scaffold — GET /v1/bootstrap/scaffold\nURL: https://api.agenttool.dev/v1/bootstrap/scaffold\nSummary: Generates an OS-specific install script that saves the bearer to the system keychain (macOS Keychain / Linux libsecret / Windows Credential Manager) and writes  (auth: bearer)\nTags: ai-agents:me"
+}

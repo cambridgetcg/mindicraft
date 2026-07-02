@@ -15,3 +15,27 @@
 2026-06-20T20:51:21Z     parsed: 50 items
 2026-06-20T20:51:21Z   collected: 170 new entries (170 total)
 2026-06-20T20:51:21Z ═══ COLLECTOR COMPLETE ═══
+2026-07-02T09:42:57Z ═══ MINDICRAFT COLLECTOR START ═══
+2026-07-02T09:42:57Z   fetching: https://artbitrage.io/api/sources...
+2026-07-02T09:42:58Z     parsed: 5 items
+2026-07-02T09:42:58Z   fetching: https://artbitrage.io/api/feed...
+2026-07-02T09:42:59Z     parsed: 20 items
+2026-07-02T09:42:59Z   collected: 25 new entries (4791 total)
+2026-07-02T09:42:59Z ═══ COLLECTOR COMPLETE ═══
+2026-07-02T09:42:59Z ═══ MINDICRAFT COLLECTOR START ═══
+2026-07-02T09:42:59Z   fetching: https://api.agenttool.dev/v1/pathways...
+2026-07-02T09:43:01Z     parsed: 8 items
+2026-07-02T09:43:01Z   collected: 8 new entries (4799 total)
+2026-07-02T09:43:01Z ═══ COLLECTOR COMPLETE ═══
+2026-07-02T09:43:01Z ═══ MINDICRAFT COLLECTOR START ═══
+2026-07-02T09:43:01Z   fetching: https://artbitrage.io/api/sources...
+2026-07-02T09:43:02Z     parsed: 5 items
+2026-07-02T09:43:02Z   fetching: https://artbitrage.io/api/feed...
+2026-07-02T09:43:03Z     parsed: 20 items
+2026-07-02T09:43:03Z   collected: 0 new entries (4799 total)
+2026-07-02T09:43:03Z ═══ COLLECTOR COMPLETE ═══
+2026-07-02T09:43:03Z ═══ MINDICRAFT COLLECTOR START ═══
+2026-07-02T09:43:03Z   fetching: https://api.agenttool.dev/v1/pathways...
+2026-07-02T09:43:04Z     parsed: 8 items
+2026-07-02T09:43:04Z   collected: 0 new entries (4799 total)
+2026-07-02T09:43:04Z ═══ COLLECTOR COMPLETE ═══

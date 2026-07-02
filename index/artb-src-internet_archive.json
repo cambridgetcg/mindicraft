@@ -1,0 +1,14 @@
+{
+  "id": "artb-src-internet_archive",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-07-02T09:42:58Z",
+  "certainty": "high",
+  "provenance": "api:https://artbitrage.io/api/sources",
+  "category": "art-catalogue",
+  "title": "Internet Archive",
+  "url": "https://archive.org/advancedsearch.php",
+  "summary": "Open-access museum API (auth: none) — searchable in one call via https://artbitrage.io/api/search?source=internet_archive",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-07-02T09:42:58Z\ncertainty: high\nprovenance: api:https://artbitrage.io/api/sources\ncategory: art-catalogue\n\nTitle: Internet Archive\nURL: https://archive.org/advancedsearch.php\nSummary: Open-access museum API (auth: none) — searchable in one call via https://artbitrage.io/api/search?source=internet_archive\nTags: art-catalogue:me"
+}

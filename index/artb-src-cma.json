@@ -1,0 +1,14 @@
+{
+  "id": "artb-src-cma",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-07-02T09:42:58Z",
+  "certainty": "high",
+  "provenance": "api:https://artbitrage.io/api/sources",
+  "category": "art-catalogue",
+  "title": "Cleveland Museum of Art",
+  "url": "https://openaccess-api.clevelandart.org/api/artworks/",
+  "summary": "Open-access museum API (auth: none) — searchable in one call via https://artbitrage.io/api/search?source=cma",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-07-02T09:42:58Z\ncertainty: high\nprovenance: api:https://artbitrage.io/api/sources\ncategory: art-catalogue\n\nTitle: Cleveland Museum of Art\nURL: https://openaccess-api.clevelandart.org/api/artworks/\nSummary: Open-access museum API (auth: none) — searchable in one call via https://artbitrage.io/api/search?source=cma\nTags: art-catalogue:me"
+}

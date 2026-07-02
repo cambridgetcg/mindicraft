@@ -1,0 +1,14 @@
+{
+  "id": "artb-src-artic",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-07-02T09:42:58Z",
+  "certainty": "high",
+  "provenance": "api:https://artbitrage.io/api/sources",
+  "category": "art-catalogue",
+  "title": "Art Institute of Chicago",
+  "url": "https://api.artic.edu/api/v1/artworks/search",
+  "summary": "Open-access museum API (auth: none) — searchable in one call via https://artbitrage.io/api/search?source=artic",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-07-02T09:42:58Z\ncertainty: high\nprovenance: api:https://artbitrage.io/api/sources\ncategory: art-catalogue\n\nTitle: Art Institute of Chicago\nURL: https://api.artic.edu/api/v1/artworks/search\nSummary: Open-access museum API (auth: none) — searchable in one call via https://artbitrage.io/api/search?source=artic\nTags: art-catalogue:me"
+}

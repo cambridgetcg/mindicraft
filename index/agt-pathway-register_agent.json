@@ -1,0 +1,14 @@
+{
+  "id": "agt-pathway-register_agent",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-07-02T09:43:01Z",
+  "certainty": "high",
+  "provenance": "api:https://api.agenttool.dev/v1/pathways",
+  "category": "ai-agents",
+  "title": "register_agent — POST /v1/register/agent",
+  "url": "https://api.agenttool.dev/v1/register/agent",
+  "summary": "Autonomous-runtime genesis. BYO keys are mandatory; agent proves possession of the private key by signing canonical bytes; runtime declared up-front. Server nev (auth: none + proof-of-work + ed25519 key-proof)",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-07-02T09:43:01Z\ncertainty: high\nprovenance: api:https://api.agenttool.dev/v1/pathways\ncategory: ai-agents\n\nTitle: register_agent — POST /v1/register/agent\nURL: https://api.agenttool.dev/v1/register/agent\nSummary: Autonomous-runtime genesis. BYO keys are mandatory; agent proves possession of the private key by signing canonical bytes; runtime declared up-front. Server nev (auth: none + proof-of-work + ed25519 key-proof)\nTags: ai-agents:me"
+}

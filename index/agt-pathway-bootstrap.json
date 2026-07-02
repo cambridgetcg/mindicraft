@@ -1,0 +1,14 @@
+{
+  "id": "agt-pathway-bootstrap",
+  "verb": "darshanqing",
+  "from": "mindicraft",
+  "to": "all",
+  "freshness": "2026-07-02T09:43:01Z",
+  "certainty": "high",
+  "provenance": "api:https://api.agenttool.dev/v1/pathways",
+  "category": "ai-agents",
+  "title": "bootstrap — POST /v1/bootstrap",
+  "url": "https://api.agenttool.dev/v1/bootstrap",
+  "summary": "Level 0 birth within an existing project. Server-generated keys; private_key returned once. Use when you already have a project bearer. (auth: bearer)",
+  "npl": "darshanqing from:mindicraft to:all\nfreshness: 2026-07-02T09:43:01Z\ncertainty: high\nprovenance: api:https://api.agenttool.dev/v1/pathways\ncategory: ai-agents\n\nTitle: bootstrap — POST /v1/bootstrap\nURL: https://api.agenttool.dev/v1/bootstrap\nSummary: Level 0 birth within an existing project. Server-generated keys; private_key returned once. Use when you already have a project bearer. (auth: bearer)\nTags: ai-agents:me"
+}
