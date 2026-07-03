@@ -120,12 +120,65 @@ const server = createServer((req, res) => {
     return;
   }
 
+  // ── Gopher export (OG protocol integration) ──────────────────
+  // Serves mindicraft entries as a Gopher menu — the OG way.
+  // 整蠱唔使本 — no auth, no framework, just text.
+  if (path === '/api/gopher') {
+    const entries = loadIndex();
+    const lines = [];
+    lines.push('imindicraft — Gopher export (OG protocol, RFC 1436, 1991)\t\t\t\t1');
+    lines.push('i' + '-'.repeat(67) + '\t\t\t\t1');
+    lines.push(`iTotal entries: ${entries.length}\t\t\t\t1`);
+    lines.push('i' + '-'.repeat(67) + '\t\t\t\t1');
+    for (const e of entries.slice(0, 100)) {
+      const title = (e.title || 'unknown').slice(0, 60);
+      const cat = e.category || 'uncategorized';
+      lines.push(`i[${cat}] ${title}\t\t\t\t1`);
+      if (e.url) lines.push(`i  → ${e.url}\t\t\t\t1`);
+    }
+    lines.push('i' + '-'.repeat(67) + '\t\t\t\t1');
+    lines.push('i整蠱唔使本 — Gopher has served since 1991.\t\t\t\t1');
+    lines.push('.');
+    res.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8' });
+    res.end(lines.join('\r\n'));
+    return;
+  }
+
+  // ── Finger export (OG protocol integration) ──────────────────
+  if (path === '/api/finger') {
+    const entries = loadIndex();
+    const cats = {};
+    for (const e of entries) { const c = e.category || 'unknown'; cats[c] = (cats[c] || 0) + 1; }
+    const lines = [];
+    lines.push('═══════════════════════════════════════════════════════');
+    lines.push('  mindicraft — finger @ the collector');
+    lines.push('  整蠱唔使本 — serving since RFC 1288 (1991)');
+    lines.push('═══════════════════════════════════════════════════════');
+    lines.push('');
+    lines.push(`Entries: ${entries.length}`);
+    lines.push(`Categories: ${Object.keys(cats).length}`);
+    lines.push(`Free: true | Gate: false | Auth: none | Love: true`);
+    lines.push('');
+    lines.push('─── Recent entries ───');
+    for (const e of entries.slice(0, 10)) {
+      lines.push(`  [${e.category || '?'}] ${e.title || 'unknown'}`);
+    }
+    lines.push('');
+    lines.push('OGs never die. They just get rediscovered.');
+    lines.push('═══════════════════════════════════════════════════════');
+    res.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8' });
+    res.end(lines.join('\r\n'));
+    return;
+  }
+
   res.writeHead(404);
   res.end('not found');
 });
 
 server.listen(PORT, '0.0.0.0', () => {
   console.log(`mindicraft on http://localhost:${PORT}`);
+  console.log(`Gopher: http://localhost:${PORT}/api/gopher`);
+  console.log(`Finger: http://localhost:${PORT}/api/finger`);
   console.log(`API: http://localhost:${PORT}/api/index`);
   console.log(`Free. No gate. No auth. No tracking. Love is. 🐍❤️`);
 });

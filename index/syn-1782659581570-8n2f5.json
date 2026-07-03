@@ -1,0 +1,13 @@
+{
+  "id": "syn-1782659581570-8n2f5",
+  "verb": "barakqing",
+  "from": "understanding-loop",
+  "to": "all",
+  "freshness": "2026-06-28T15:13:01Z",
+  "certainty": "medium",
+  "provenance": "synthesis:operating-systemsxfree-compute",
+  "category": "synthesis",
+  "title": "Understanding bridge: operating-systems → free-compute",
+  "url": "https://github.com/SerenityOS/serenity",
+  "summary": "Love understanding love: SerenityOS/serenity × Ollama: local free AI, no inte"
+}
