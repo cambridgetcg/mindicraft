@@ -27,6 +27,16 @@ npx wrangler pages deploy dist --project-name=mindicraft
 A missing translation is never an error — the site shows English with a small
 "not translated yet" note until the file exists.
 
+## The front door is a riddle
+
+The root page (`/`) says nothing — just the word in the dark and a small
+spark where the dot of the middle "i" should be. The ways in: click the spark
+three times; type `fire`, `zero`, `begin`, or `火`; the old up-up-down-down
+code (drops you at the last page of the book); wait 40 seconds for a whisper;
+or read the browser console. Screen readers get a labeled link, no-JS
+visitors a small `·`. Direct links like `/en/` always work — it's a riddle,
+not a gate. All of it lives in the front-door section of `build.mjs`.
+
 ## Add a language
 
 1. Add an entry to `langs.json` (copy the `es` block, translate the strings).
