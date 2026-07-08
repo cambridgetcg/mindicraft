@@ -1,0 +1,1661 @@
+{
+ "domains": [
+  {
+   "key": "begin",
+   "title": "Begin Here",
+   "emoji": "🧭",
+   "intro": "How to think when you have nothing, and how to use this guide as a ladder from the first night to a working village.",
+   "guides": [
+    {
+     "slug": "read-this-guide",
+     "title": "How to use this guide",
+     "summary": "See how every guide unlocks the next like branches of a tree, and learn to pick the right next step for where you are.",
+     "needs": [],
+     "difficulty": "easy",
+     "time": "an hour"
+    },
+    {
+     "slug": "rule-of-threes",
+     "title": "What matters first",
+     "summary": "You can live weeks without food but only hours in bad cold, so fix things in this order: shelter, water, fire, food.",
+     "needs": [
+      "read-this-guide"
+     ],
+     "difficulty": "easy",
+     "time": "an hour"
+    },
+    {
+     "slug": "stay-calm-take-stock",
+     "title": "Stop, breathe, take stock",
+     "summary": "Slow your breathing, check what you have and what hurts, and make a simple plan before doing anything else.",
+     "needs": [],
+     "difficulty": "easy",
+     "time": "ten minutes"
+    },
+    {
+     "slug": "spot-danger",
+     "title": "Spot danger before it finds you",
+     "summary": "Learn to stay away from flood channels, dead hanging branches, cliff edges, and animal dens.",
+     "needs": [
+      "stay-calm-take-stock"
+     ],
+     "difficulty": "easy",
+     "time": "an hour"
+    },
+    {
+     "slug": "get-found",
+     "title": "Help rescuers find you",
+     "summary": "Stay in one place, make big bright marks, and use sound and shine so searching people can spot you.",
+     "needs": [
+      "rule-of-threes"
+     ],
+     "difficulty": "easy",
+     "time": "an hour"
+    }
+   ],
+   "i18n": {
+    "zh": {
+     "title": "从这里开始",
+     "intro": "一无所有时该怎么想，以及怎么把这本指南当作梯子，从第一夜一步步爬到一座能运转的村庄。"
+    },
+    "es": {
+     "title": "Empieza aquí",
+     "intro": "Cómo pensar cuando no tienes nada, y cómo usar esta guía como una escalera: de la primera noche a una aldea que funciona."
+    }
+   }
+  },
+  {
+   "key": "first-night",
+   "title": "The First Night",
+   "emoji": "🌒",
+   "intro": "Stay warm, dry, and unlost through the first nights, before you own a single tool.",
+   "guides": [
+    {
+     "slug": "find-shelter-now",
+     "title": "Find shelter fast",
+     "summary": "Use what is already there — thick trees, rock overhangs, dry hollows — to get out of the wind and rain.",
+     "needs": [
+      "rule-of-threes"
+     ],
+     "difficulty": "easy",
+     "time": "an hour"
+    },
+    {
+     "slug": "stay-warm-no-fire",
+     "title": "Stay warm without fire",
+     "summary": "Stuff dry leaves and grass around your body and get off the cold ground so your own heat keeps you warm.",
+     "needs": [
+      "find-shelter-now"
+     ],
+     "difficulty": "easy",
+     "time": "an hour"
+    },
+    {
+     "slug": "debris-hut",
+     "title": "Build a leaf hut for the night",
+     "summary": "Lean sticks against a ridge pole and pile leaves on thick until it is a warm nest you can crawl into.",
+     "needs": [
+      "find-shelter-now"
+     ],
+     "difficulty": "easy",
+     "time": "three hours"
+    },
+    {
+     "slug": "find-water",
+     "title": "Find water",
+     "summary": "Follow low ground, green plants, and animal trails downhill until you reach a stream, spring, or pool.",
+     "needs": [
+      "rule-of-threes"
+     ],
+     "difficulty": "easy",
+     "time": "half a day"
+    },
+    {
+     "slug": "read-the-weather",
+     "title": "Read the sky",
+     "summary": "Watch clouds, wind, and animals to tell if rain or cold is coming before it arrives.",
+     "needs": [],
+     "difficulty": "easy",
+     "time": "a week of watching"
+    },
+    {
+     "slug": "find-your-way",
+     "title": "Find your way",
+     "summary": "Use the sun by day and the stars by night so you can leave camp and always get back.",
+     "needs": [],
+     "difficulty": "easy",
+     "time": "a day"
+    }
+   ],
+   "i18n": {
+    "zh": {
+     "title": "第一夜",
+     "intro": "在你还没有任何工具之前，先熬过最初几夜：不冷、不湿、不迷路。"
+    },
+    "es": {
+     "title": "La primera noche",
+     "intro": "Pasa las primeras noches caliente, seco y sin perderte, antes de tener una sola herramienta."
+    }
+   }
+  },
+  {
+   "key": "first-tools",
+   "title": "First Tools",
+   "emoji": "🪨",
+   "intro": "Sharp edges, string, knots, and handles — the small things every other craft is built on.",
+   "guides": [
+    {
+     "slug": "stone-tools",
+     "title": "Make sharp tools from stone",
+     "summary": "Break the right rocks the right way to get cutting edges, scrapers, and hammers.",
+     "needs": [],
+     "difficulty": "steady",
+     "time": "a day"
+    },
+    {
+     "slug": "bone-tools",
+     "title": "Make needles and hooks from bone",
+     "summary": "Split and grind bones into needles, fish hooks, and hole-pokers that stone cannot match.",
+     "needs": [
+      "stone-tools"
+     ],
+     "difficulty": "steady",
+     "time": "a day"
+    },
+    {
+     "slug": "make-cordage",
+     "title": "Twist plants into string and rope",
+     "summary": "Roll and twist bark, nettle, or grass fibers into cord strong enough to trust your work to.",
+     "needs": [],
+     "difficulty": "easy",
+     "time": "half a day"
+    },
+    {
+     "slug": "useful-knots",
+     "title": "Tie knots and lashings that hold",
+     "summary": "Learn a small set of knots for tying things down, binding poles into frames, and hanging things up.",
+     "needs": [
+      "make-cordage"
+     ],
+     "difficulty": "easy",
+     "time": "an afternoon"
+    },
+    {
+     "slug": "weave-basket",
+     "title": "Weave a basket",
+     "summary": "Bend fresh green shoots over and under each other until they hold a shape that carries things.",
+     "needs": [],
+     "difficulty": "steady",
+     "time": "a day"
+    },
+    {
+     "slug": "carve-wood-tools",
+     "title": "Carve wooden tools",
+     "summary": "Use your stone edge to make a digging stick, a mallet, a spoon, and pegs.",
+     "needs": [
+      "stone-tools"
+     ],
+     "difficulty": "steady",
+     "time": "a day"
+    },
+    {
+     "slug": "haft-a-tool",
+     "title": "Put a handle on a stone head",
+     "summary": "Notch, lash, and wedge a stone blade onto a wooden handle to make an axe you can really swing.",
+     "needs": [
+      "stone-tools",
+      "useful-knots"
+     ],
+     "difficulty": "steady",
+     "time": "a day"
+    },
+    {
+     "slug": "sharpen-and-care",
+     "title": "Sharpen and care for your tools",
+     "summary": "Grind edges on a wet stone and keep wood and cord dry so your tools outlast the seasons.",
+     "needs": [
+      "stone-tools"
+     ],
+     "difficulty": "easy",
+     "time": "an afternoon"
+    }
+   ],
+   "i18n": {
+    "zh": {
+     "title": "最初的工具",
+     "intro": "锋利的刃口、绳子、绳结和手柄——其他所有手艺都建立在这些小东西上。"
+    },
+    "es": {
+     "title": "Primeras herramientas",
+     "intro": "Filos, cuerda, nudos y mangos: las cosas pequeñas sobre las que se construye todo lo demás."
+    }
+   }
+  },
+  {
+   "key": "fire",
+   "title": "Fire",
+   "emoji": "🔥",
+   "intro": "Make fire, keep it alive, and put it to work — the single biggest branch point in the whole tree.",
+   "guides": [
+    {
+     "slug": "gather-tinder",
+     "title": "Gather tinder and firewood",
+     "summary": "Collect the fluffy dry stuff that catches a spark, and sort wood from thin sticks to thick logs.",
+     "needs": [],
+     "difficulty": "easy",
+     "time": "an hour"
+    },
+    {
+     "slug": "fire-pit-and-lay",
+     "title": "Make a safe fire pit and lay a fire",
+     "summary": "Clear the ground, ring it with stone or bare earth, stack tinder and sticks so a tiny flame can grow, and know how you will put it out.",
+     "needs": [
+      "gather-tinder"
+     ],
+     "difficulty": "easy",
+     "time": "an hour"
+    },
+    {
+     "slug": "spark-fire",
+     "title": "Start a fire with sparks",
+     "summary": "Strike sparks from hard stone and steel into your tinder and blow the glow gently into flame.",
+     "needs": [
+      "fire-pit-and-lay"
+     ],
+     "difficulty": "steady",
+     "time": "a day"
+    },
+    {
+     "slug": "bow-drill",
+     "title": "Make fire with a bow drill",
+     "summary": "Spin a wooden stick with a small bow until the rubbing makes a glowing ember, then breathe it into flame.",
+     "needs": [
+      "fire-pit-and-lay",
+      "make-cordage",
+      "carve-wood-tools"
+     ],
+     "difficulty": "hard",
+     "time": "a few days of practice"
+    },
+    {
+     "slug": "keep-fire-alive",
+     "title": "Keep a fire day and night",
+     "summary": "Bank the coals at night, wake them in the morning, and carry a wrapped ember to a new camp so you never start from zero.",
+     "needs": [
+      "fire-pit-and-lay"
+     ],
+     "difficulty": "easy",
+     "time": "a day"
+    },
+    {
+     "slug": "cook-on-fire",
+     "title": "Cook food over fire",
+     "summary": "Roast food on sticks and hot stones so it is safe to eat and tastes good.",
+     "needs": [
+      "keep-fire-alive"
+     ],
+     "difficulty": "easy",
+     "time": "an hour"
+    },
+    {
+     "slug": "pit-oven",
+     "title": "Cook in a pit oven",
+     "summary": "Bury food with fire-hot stones and let the ground bake it slow and even while you work.",
+     "needs": [
+      "cook-on-fire"
+     ],
+     "difficulty": "steady",
+     "time": "half a day"
+    },
+    {
+     "slug": "make-charcoal",
+     "title": "Make charcoal",
+     "summary": "Cook wood slowly with almost no air so it becomes light black fuel that burns far hotter than wood — the key to lime, glass, and metal.",
+     "needs": [
+      "keep-fire-alive"
+     ],
+     "difficulty": "steady",
+     "time": "two days"
+    }
+   ],
+   "i18n": {
+    "zh": {
+     "title": "火",
+     "intro": "生火、养火、用火——整棵树上最重要的分岔点。"
+    },
+    "es": {
+     "title": "Fuego",
+     "intro": "Haz fuego, mantenlo vivo y ponlo a trabajar: la rama más importante de todo el árbol."
+    }
+   }
+  },
+  {
+   "key": "water-and-wild-food",
+   "title": "Safe Water and Wild Food",
+   "emoji": "🎣",
+   "intro": "Drink without getting sick and eat from the wild while your garden is still a dream.",
+   "guides": [
+    {
+     "slug": "boil-water",
+     "title": "Boil water to make it safe",
+     "summary": "Bring water to a rolling boil — even clear water can carry sickness you cannot see.",
+     "needs": [
+      "find-water",
+      "cook-on-fire"
+     ],
+     "difficulty": "easy",
+     "time": "an hour"
+    },
+    {
+     "slug": "filter-water",
+     "title": "Make a charcoal and sand filter",
+     "summary": "Layer cloth, sand, and crushed charcoal so cloudy water runs out clear — then boil it anyway.",
+     "needs": [
+      "boil-water",
+      "make-charcoal"
+     ],
+     "difficulty": "steady",
+     "time": "half a day"
+    },
+    {
+     "slug": "carry-and-store-water",
+     "title": "Carry and store water",
+     "summary": "Turn gourds, bark, and hollow wood into bottles, catch rain when it falls, and keep stored water covered and clean.",
+     "needs": [
+      "make-cordage"
+     ],
+     "difficulty": "easy",
+     "time": "a day"
+    },
+    {
+     "slug": "forage-safely",
+     "title": "Pick wild plants without being poisoned",
+     "summary": "Learn the iron rule that keeps foragers alive: never eat anything you cannot surely name.",
+     "needs": [],
+     "difficulty": "steady",
+     "time": "a week"
+    },
+    {
+     "slug": "easy-wild-foods",
+     "title": "Find the easy wild foods",
+     "summary": "Gather the nuts, berries, roots, and greens that are hard to mistake for anything bad, and learn what ripens when.",
+     "needs": [
+      "forage-safely"
+     ],
+     "difficulty": "easy",
+     "time": "a day"
+    },
+    {
+     "slug": "small-sure-protein",
+     "title": "Gather eggs, shellfish, and insects",
+     "summary": "Collect the small easy proteins most people walk right past, and cook them well.",
+     "needs": [
+      "cook-on-fire"
+     ],
+     "difficulty": "easy",
+     "time": "a day"
+    },
+    {
+     "slug": "catch-fish",
+     "title": "Catch fish with lines and traps",
+     "summary": "Make a hook from bone or thorn for a hand line, and build a woven funnel trap that fishes while you sleep.",
+     "needs": [
+      "make-cordage",
+      "bone-tools"
+     ],
+     "difficulty": "steady",
+     "time": "two days"
+    },
+    {
+     "slug": "simple-snare",
+     "title": "Set a snare for small animals",
+     "summary": "Hang a small cord loop on an animal trail, and check it often so nothing suffers.",
+     "needs": [
+      "make-cordage"
+     ],
+     "difficulty": "steady",
+     "time": "two days"
+    },
+    {
+     "slug": "clean-your-catch",
+     "title": "Clean and cook your catch",
+     "summary": "Gut and skin a fish or small animal, waste nothing, and cook it all the way through.",
+     "needs": [
+      "stone-tools",
+      "cook-on-fire"
+     ],
+     "difficulty": "steady",
+     "time": "half a day"
+    }
+   ],
+   "i18n": {
+    "zh": {
+     "title": "净水与野食",
+     "intro": "喝水不生病；菜园还只是个梦的时候，先靠野外吃饱。"
+    },
+    "es": {
+     "title": "Agua segura y comida silvestre",
+     "intro": "Bebe sin enfermarte y come del campo mientras tu huerto sigue siendo un sueño."
+    }
+   }
+  },
+  {
+   "key": "clay-and-kilns",
+   "title": "Clay and Kilns",
+   "emoji": "🏺",
+   "intro": "Sticky earth plus fire gives you pots to boil in, bricks to build with, and kilns hot enough for everything that comes later.",
+   "guides": [
+    {
+     "slug": "find-clay",
+     "title": "Find and clean clay",
+     "summary": "Dig sticky earth from stream banks, test it with a squeeze and a roll, and knead out the stones and air.",
+     "needs": [
+      "find-water"
+     ],
+     "difficulty": "easy",
+     "time": "half a day"
+    },
+    {
+     "slug": "shape-pots",
+     "title": "Shape pots by pinch and coil",
+     "summary": "Pinch a ball of clay into a small bowl, then roll clay snakes and stack them into pots big enough to cook in.",
+     "needs": [
+      "find-clay"
+     ],
+     "difficulty": "easy",
+     "time": "a day"
+    },
+    {
+     "slug": "pit-fire-pottery",
+     "title": "Fire pots in an open pit",
+     "summary": "Dry your pots slowly, then bake them in a hot pit so soft clay turns hard as stone.",
+     "needs": [
+      "shape-pots",
+      "keep-fire-alive"
+     ],
+     "difficulty": "steady",
+     "time": "two days"
+    },
+    {
+     "slug": "cook-in-pots",
+     "title": "Cook and boil in clay pots",
+     "summary": "At last: soup, stew, and easy safe water straight over the fire.",
+     "needs": [
+      "pit-fire-pottery"
+     ],
+     "difficulty": "easy",
+     "time": "half a day"
+    },
+    {
+     "slug": "build-kiln",
+     "title": "Build a simple kiln",
+     "summary": "Build a clay oven with a fire hole and a draft so pots fire harder and fewer of them crack.",
+     "needs": [
+      "pit-fire-pottery"
+     ],
+     "difficulty": "hard",
+     "time": "a week"
+    },
+    {
+     "slug": "make-bricks",
+     "title": "Make mud bricks and fired bricks",
+     "summary": "Press clay and straw into molds, dry the blocks in the sun, and fire the best ones hard in the kiln.",
+     "needs": [
+      "find-clay",
+      "build-kiln"
+     ],
+     "difficulty": "steady",
+     "time": "a week, mostly drying"
+    },
+    {
+     "slug": "clay-oven",
+     "title": "Build a bread oven",
+     "summary": "Shape a clay dome that soaks up fire and bakes with its stored heat.",
+     "needs": [
+      "make-bricks"
+     ],
+     "difficulty": "steady",
+     "time": "a week"
+    },
+    {
+     "slug": "potters-wheel",
+     "title": "Spin a potter's wheel",
+     "summary": "A heavy spinning disc lets you pull up round, even pots in minutes instead of hours.",
+     "needs": [
+      "shape-pots",
+      "carve-wood-tools"
+     ],
+     "difficulty": "hard",
+     "time": "two weeks of practice"
+    }
+   ],
+   "i18n": {
+    "zh": {
+     "title": "陶土与窑",
+     "intro": "黏土加上火，就有了能煮饭的锅、能盖房的砖，和之后一切所需的高温窑。"
+    },
+    "es": {
+     "title": "Arcilla y hornos",
+     "intro": "Tierra pegajosa más fuego: ollas para hervir, ladrillos para construir y hornos con calor para todo lo que viene después."
+    }
+   }
+  },
+  {
+   "key": "keeping-food",
+   "title": "Keeping Food",
+   "emoji": "🧂",
+   "intro": "Salt, smoke, sourness, and cool dark places make the good harvest days feed the empty winter days.",
+   "guides": [
+    {
+     "slug": "dry-food",
+     "title": "Dry food in sun and wind",
+     "summary": "Slice food thin and let moving air take out the water that rot needs to live.",
+     "needs": [
+      "easy-wild-foods"
+     ],
+     "difficulty": "easy",
+     "time": "two days"
+    },
+    {
+     "slug": "smoke-food",
+     "title": "Smoke fish and meat",
+     "summary": "Hang food in cool smoke for hours so it dries, keeps for weeks, and tastes wonderful.",
+     "needs": [
+      "dry-food",
+      "keep-fire-alive"
+     ],
+     "difficulty": "steady",
+     "time": "two days"
+    },
+    {
+     "slug": "make-salt",
+     "title": "Make salt",
+     "summary": "Boil seawater or salty spring water down and down until white salt crystals are left in the pot.",
+     "needs": [
+      "cook-in-pots"
+     ],
+     "difficulty": "steady",
+     "time": "two days"
+    },
+    {
+     "slug": "ferment-vegetables",
+     "title": "Ferment vegetables in brine",
+     "summary": "Pack vegetables with salt under their own juice and let a friendly sourness keep them safe all winter.",
+     "needs": [
+      "make-salt",
+      "cook-in-pots"
+     ],
+     "difficulty": "steady",
+     "time": "two weeks, mostly waiting"
+    },
+    {
+     "slug": "make-vinegar",
+     "title": "Make vinegar",
+     "summary": "Let fruit juice ferment and then sour in open air into vinegar for keeping food and cleaning.",
+     "needs": [
+      "cook-in-pots"
+     ],
+     "difficulty": "steady",
+     "time": "a month, mostly waiting"
+    },
+    {
+     "slug": "render-fat",
+     "title": "Render and store fat",
+     "summary": "Melt fat down slow and clean so it keeps for cooking, for lamps, and for soap later.",
+     "needs": [
+      "clean-your-catch",
+      "cook-in-pots"
+     ],
+     "difficulty": "steady",
+     "time": "half a day"
+    },
+    {
+     "slug": "root-cellar",
+     "title": "Dig a cool food store",
+     "summary": "Store roots, fruits, and jars in the cool steady earth so they last for months instead of days.",
+     "needs": [
+      "carve-wood-tools"
+     ],
+     "difficulty": "steady",
+     "time": "a week"
+    }
+   ],
+   "i18n": {
+    "zh": {
+     "title": "存住食物",
+     "intro": "盐、烟、酸味和阴凉的地窖，让丰收的日子喂饱挨饿的冬天。"
+    },
+    "es": {
+     "title": "Conservar la comida",
+     "intro": "Sal, humo, acidez y lugares frescos y oscuros hacen que los días de buena cosecha alimenten los días vacíos del invierno."
+    }
+   }
+  },
+  {
+   "key": "a-home-that-lasts",
+   "title": "A Home That Lasts",
+   "emoji": "🏠",
+   "intro": "Wood, mud, stone, and thatch come together into a dry, warm house with a fire that stays where it belongs.",
+   "guides": [
+    {
+     "slug": "pick-a-site",
+     "title": "Choose where to build",
+     "summary": "Pick ground that is dry, safe from floods and falling trees, facing the sun, and near water but not too near.",
+     "needs": [
+      "find-water",
+      "spot-danger"
+     ],
+     "difficulty": "easy",
+     "time": "a day"
+    },
+    {
+     "slug": "move-heavy-things",
+     "title": "Move heavy things with levers, ramps, and rollers",
+     "summary": "A long pole over a stone, a gentle slope, and logs under the load let one person move what ten could not lift.",
+     "needs": [],
+     "difficulty": "easy",
+     "time": "an afternoon"
+    },
+    {
+     "slug": "fell-and-split-wood",
+     "title": "Fell trees and split planks",
+     "summary": "Cut small trees safely, then hammer wooden wedges along the grain to split out posts and flat boards without a saw.",
+     "needs": [
+      "haft-a-tool",
+      "sharpen-and-care"
+     ],
+     "difficulty": "steady",
+     "time": "a week"
+    },
+    {
+     "slug": "timber-frame",
+     "title": "Raise a wooden frame",
+     "summary": "Cut, notch, lash, and peg posts and beams into a strong skeleton that will carry the roof.",
+     "needs": [
+      "fell-and-split-wood",
+      "useful-knots"
+     ],
+     "difficulty": "hard",
+     "time": "two weeks"
+    },
+    {
+     "slug": "wattle-and-daub",
+     "title": "Weave and mud the walls",
+     "summary": "Weave springy branches between the posts and press on mud, straw, and dung until the wind cannot find a way in.",
+     "needs": [
+      "timber-frame",
+      "weave-basket",
+      "find-clay"
+     ],
+     "difficulty": "steady",
+     "time": "a week"
+    },
+    {
+     "slug": "thatch-roof",
+     "title": "Thatch a roof",
+     "summary": "Tie bundles of reeds or straw in overlapping rows, layered like a bird's feathers, so rain runs off for years.",
+     "needs": [
+      "timber-frame",
+      "make-cordage"
+     ],
+     "difficulty": "hard",
+     "time": "a week"
+    },
+    {
+     "slug": "indoor-hearth",
+     "title": "Build a hearth and chimney",
+     "summary": "Make a safe brick-and-stone place for fire inside, with a way for smoke to leave without you leaving too.",
+     "needs": [
+      "fire-pit-and-lay",
+      "wattle-and-daub",
+      "make-bricks"
+     ],
+     "difficulty": "steady",
+     "time": "a week"
+    },
+    {
+     "slug": "door-bed-stool",
+     "title": "Fit a door and make simple furniture",
+     "summary": "Hang a plank door that shuts, build a bed off the cold ground, and make a stool and shelf to live with.",
+     "needs": [
+      "fell-and-split-wood"
+     ],
+     "difficulty": "steady",
+     "time": "a week"
+    },
+    {
+     "slug": "one-room-house",
+     "title": "Raise a one-room house",
+     "summary": "Put it all together — frame, woven walls, mud plaster, thatch, door, and hearth — into a home.",
+     "needs": [
+      "thatch-roof",
+      "indoor-hearth",
+      "door-bed-stool"
+     ],
+     "difficulty": "hard",
+     "time": "a season"
+    }
+   ],
+   "i18n": {
+    "zh": {
+     "title": "一座耐久的房子",
+     "intro": "木头、泥巴、石头和茅草，合起来就是一间干燥暖和的房子，火乖乖待在该待的地方。"
+    },
+    "es": {
+     "title": "Una casa que dura",
+     "intro": "Madera, barro, piedra y paja se unen en una casa seca y cálida, con un fuego que se queda donde debe."
+    }
+   }
+  },
+  {
+   "key": "staying-well",
+   "title": "Staying Well",
+   "emoji": "🩹",
+   "intro": "Stop sickness before it starts, handle hurts calmly, and know exactly when to go find real medical care.",
+   "guides": [
+    {
+     "slug": "keep-clean",
+     "title": "Wash hands and keep clean",
+     "summary": "Wash hands with clean water before food and after the latrine — the single habit that stops most sickness.",
+     "needs": [
+      "boil-water"
+     ],
+     "difficulty": "easy",
+     "time": "an hour"
+    },
+    {
+     "slug": "dig-a-latrine",
+     "title": "Dig a latrine far from water",
+     "summary": "Put body waste in a covered pit downhill and far away from any water or food.",
+     "needs": [
+      "pick-a-site"
+     ],
+     "difficulty": "easy",
+     "time": "half a day"
+    },
+    {
+     "slug": "treat-cuts",
+     "title": "Clean and cover cuts",
+     "summary": "Wash a wound well with clean water, cover it, watch for redness, and get real medical help for deep ones.",
+     "needs": [
+      "boil-water",
+      "keep-clean"
+     ],
+     "difficulty": "easy",
+     "time": "an hour"
+    },
+    {
+     "slug": "burns-breaks-sprains",
+     "title": "Handle burns, breaks, and sprains",
+     "summary": "Cool burns with clean water, splint broken bones straight and still, rest sprains — and get the hurt person to real care.",
+     "needs": [
+      "treat-cuts"
+     ],
+     "difficulty": "steady",
+     "time": "a day"
+    },
+    {
+     "slug": "fever-and-belly-care",
+     "title": "Care for fever and gut sickness",
+     "summary": "Give rest and lots of safe water with a pinch of salt and sweet, and learn the danger signs that mean go for help now.",
+     "needs": [
+      "boil-water",
+      "make-salt"
+     ],
+     "difficulty": "steady",
+     "time": "half a day"
+    },
+    {
+     "slug": "stop-sickness-spreading",
+     "title": "Stop sickness from spreading",
+     "summary": "When someone is ill, let them rest apart, wash often, share no cups, and keep their water and food separate.",
+     "needs": [
+      "keep-clean",
+      "dig-a-latrine"
+     ],
+     "difficulty": "steady",
+     "time": "a day"
+    },
+    {
+     "slug": "care-for-teeth",
+     "title": "Care for your teeth",
+     "summary": "Clean teeth every day with chew sticks and rinses, because teeth do not grow back.",
+     "needs": [],
+     "difficulty": "easy",
+     "time": "an hour"
+    },
+    {
+     "slug": "when-to-get-help",
+     "title": "Know when to go for real help",
+     "summary": "Learn the signs that home care is not enough and reaching a doctor matters more than anything else in this book.",
+     "needs": [],
+     "difficulty": "easy",
+     "time": "an hour"
+    }
+   ],
+   "i18n": {
+    "zh": {
+     "title": "保持健康",
+     "intro": "让病没机会开始，冷静处理伤痛，并且清楚什么时候必须去找真正的医生。"
+    },
+    "es": {
+     "title": "Mantenerse sano",
+     "intro": "Detén la enfermedad antes de que empiece, atiende las heridas con calma y sabe exactamente cuándo buscar atención médica real."
+    }
+   }
+  },
+  {
+   "key": "growing-food",
+   "title": "Growing Food",
+   "emoji": "🌱",
+   "intro": "Stop chasing food every day and turn a patch of ground into food that comes back every year.",
+   "guides": [
+    {
+     "slug": "read-seasons",
+     "title": "Learn your seasons",
+     "summary": "Watch a full year — frost, rain, heat — so you know when to plant and when to store.",
+     "needs": [
+      "read-the-weather"
+     ],
+     "difficulty": "steady",
+     "time": "a year"
+    },
+    {
+     "slug": "garden-beds",
+     "title": "Choose ground and dig garden beds",
+     "summary": "Find a sunny patch with dark crumbly soil and water close by, then loosen it deep so roots and rain can get in.",
+     "needs": [
+      "carve-wood-tools"
+     ],
+     "difficulty": "easy",
+     "time": "two days"
+    },
+    {
+     "slug": "compost",
+     "title": "Make compost",
+     "summary": "Pile green stuff, brown stuff, and dung, keep it damp, and let it rot into rich dark food for the soil.",
+     "needs": [],
+     "difficulty": "easy",
+     "time": "a season, mostly waiting"
+    },
+    {
+     "slug": "plant-and-tend",
+     "title": "Plant seeds and keep them alive",
+     "summary": "Sow at the right depth and time, keep weeds out and water in, and guard young plants from hungry animals.",
+     "needs": [
+      "garden-beds"
+     ],
+     "difficulty": "steady",
+     "time": "a season"
+    },
+    {
+     "slug": "save-seeds",
+     "title": "Save seeds for next year",
+     "summary": "Let your best plants ripen fully, dry their seeds well, and store them cool and dry — that jar is next year's food.",
+     "needs": [
+      "plant-and-tend",
+      "dry-food"
+     ],
+     "difficulty": "steady",
+     "time": "a day at harvest"
+    },
+    {
+     "slug": "grow-grain",
+     "title": "Grow a patch of grain",
+     "summary": "Sow wheat, barley, or corn thick in a guarded field — the food that stores all through winter.",
+     "needs": [
+      "plant-and-tend",
+      "read-seasons"
+     ],
+     "difficulty": "hard",
+     "time": "a season"
+    },
+    {
+     "slug": "harvest-and-thresh",
+     "title": "Harvest, thresh, and store grain",
+     "summary": "Cut the ripe grain, beat the seeds free, let the wind blow the husks away, and store it dry away from mice.",
+     "needs": [
+      "grow-grain",
+      "weave-basket"
+     ],
+     "difficulty": "steady",
+     "time": "two weeks"
+    },
+    {
+     "slug": "grind-and-bake",
+     "title": "Grind flour and bake bread",
+     "summary": "Rub grain between two stones into flour, catch wild yeast in a jar, and bake your first real loaf in the clay oven.",
+     "needs": [
+      "harvest-and-thresh",
+      "clay-oven"
+     ],
+     "difficulty": "steady",
+     "time": "a week"
+    }
+   ],
+   "i18n": {
+    "zh": {
+     "title": "种出粮食",
+     "intro": "别再天天找吃的——把一块地变成年年长回来的粮食。"
+    },
+    "es": {
+     "title": "Cultivar comida",
+     "intro": "Deja de perseguir comida cada día y convierte un pedazo de tierra en alimento que vuelve cada año."
+    }
+   }
+  },
+  {
+   "key": "keeping-animals",
+   "title": "Keeping Animals",
+   "emoji": "🐐",
+   "intro": "Eggs, milk, wool, and honey — food and materials that walk to you.",
+   "guides": [
+    {
+     "slug": "build-fences",
+     "title": "Build pens and fences",
+     "summary": "Set posts and weave or rail between them so your animals stay in and hungry visitors stay out.",
+     "needs": [
+      "carve-wood-tools",
+      "useful-knots"
+     ],
+     "difficulty": "steady",
+     "time": "a week"
+    },
+    {
+     "slug": "keep-chickens",
+     "title": "Keep chickens",
+     "summary": "Build a coop that foxes cannot open, feed the birds your scraps, and collect eggs almost every day.",
+     "needs": [
+      "build-fences"
+     ],
+     "difficulty": "steady",
+     "time": "a season"
+    },
+    {
+     "slug": "keep-goats",
+     "title": "Keep goats or sheep",
+     "summary": "Raise the tough animals that turn thorny brush into milk, wool, hides, and more animals.",
+     "needs": [
+      "build-fences"
+     ],
+     "difficulty": "hard",
+     "time": "a season"
+    },
+    {
+     "slug": "milk-an-animal",
+     "title": "Milk an animal",
+     "summary": "With clean hands, a calm animal, and a clean pot, get fresh milk morning and evening.",
+     "needs": [
+      "keep-goats",
+      "keep-clean"
+     ],
+     "difficulty": "steady",
+     "time": "a week"
+    },
+    {
+     "slug": "butter-and-cheese",
+     "title": "Make butter and simple cheese",
+     "summary": "Shake cream until it turns to butter, and let milk sour and drain into soft cheese that keeps longer than milk.",
+     "needs": [
+      "milk-an-animal",
+      "make-salt"
+     ],
+     "difficulty": "steady",
+     "time": "two days"
+    },
+    {
+     "slug": "keep-bees",
+     "title": "Keep bees for honey",
+     "summary": "Give a wild swarm a good home and take a fair share of honey and wax without harming them.",
+     "needs": [
+      "carve-wood-tools"
+     ],
+     "difficulty": "hard",
+     "time": "a season"
+    },
+    {
+     "slug": "animal-health",
+     "title": "Keep animals healthy and raise their young",
+     "summary": "Give clean water, dry bedding, and a daily look-over, spot one sick animal before the whole flock is, and help at births when needed.",
+     "needs": [
+      "keep-chickens"
+     ],
+     "difficulty": "steady",
+     "time": "a season"
+    }
+   ],
+   "i18n": {
+    "zh": {
+     "title": "养起牲口",
+     "intro": "蛋、奶、羊毛和蜂蜜——会自己走到你跟前的食物和材料。"
+    },
+    "es": {
+     "title": "Criar animales",
+     "intro": "Huevos, leche, lana y miel: comida y materiales que caminan hacia ti."
+    }
+   }
+  },
+  {
+   "key": "everyday-chemistry",
+   "title": "Everyday Chemistry",
+   "emoji": "🧪",
+   "intro": "Ash, fat, bark, limestone, and sand — with fire, ordinary things transform into soap, glue, mortar, leather, light, and glass.",
+   "guides": [
+    {
+     "slug": "pitch-glue",
+     "title": "Make glue and pitch",
+     "summary": "Melt tree resin with charcoal dust into a strong glue that sets hard and a black pitch that seals leaks.",
+     "needs": [
+      "keep-fire-alive"
+     ],
+     "difficulty": "steady",
+     "time": "half a day"
+    },
+    {
+     "slug": "ash-lye",
+     "title": "Make lye from wood ash",
+     "summary": "Drip water slowly through hardwood ash to draw out a strong cleaning liquid — handle it with care, it bites skin.",
+     "needs": [
+      "cook-in-pots"
+     ],
+     "difficulty": "steady",
+     "time": "a day"
+    },
+    {
+     "slug": "make-soap",
+     "title": "Make soap from fat and lye",
+     "summary": "Cook fat and lye together — carefully — until they become the soap that keeps your whole village healthier.",
+     "needs": [
+      "ash-lye",
+      "render-fat"
+     ],
+     "difficulty": "steady",
+     "time": "two days, plus weeks of curing"
+    },
+    {
+     "slug": "burn-lime",
+     "title": "Burn limestone into lime",
+     "summary": "Roast crushed limestone or seashells white-hot in the kiln, then wake the lime carefully with water — it gets hot and it bites.",
+     "needs": [
+      "build-kiln",
+      "make-charcoal"
+     ],
+     "difficulty": "hard",
+     "time": "three days"
+    },
+    {
+     "slug": "lime-mortar",
+     "title": "Mix mortar, plaster, and whitewash",
+     "summary": "Blend lime with sand and water to glue stones together, seal walls smooth, and paint rooms bright and clean.",
+     "needs": [
+      "burn-lime"
+     ],
+     "difficulty": "steady",
+     "time": "two days"
+    },
+    {
+     "slug": "tan-hides",
+     "title": "Tan a hide into leather",
+     "summary": "Scrape a skin clean, soak it in crushed-bark water for weeks, and work it soft into leather that lasts years.",
+     "needs": [
+      "clean-your-catch",
+      "stone-tools"
+     ],
+     "difficulty": "hard",
+     "time": "a month, mostly waiting"
+    },
+    {
+     "slug": "lamps-and-candles",
+     "title": "Make lamps and candles",
+     "summary": "Float a wick in a dish of fat, or dip a wick again and again into melted fat or beeswax, and push back the dark.",
+     "needs": [
+      "render-fat",
+      "make-cordage"
+     ],
+     "difficulty": "easy",
+     "time": "an afternoon"
+    },
+    {
+     "slug": "melt-glass",
+     "title": "Melt sand into glass",
+     "summary": "In your very hottest furnace, sand with plant ash and lime melts into glass for beads and small vessels.",
+     "needs": [
+      "build-kiln",
+      "make-charcoal",
+      "burn-lime"
+     ],
+     "difficulty": "mastery",
+     "time": "a season of tries"
+    }
+   ],
+   "i18n": {
+    "zh": {
+     "title": "日常化学",
+     "intro": "草木灰、油脂、树皮、石灰石和沙子——遇上火，普通东西就变成肥皂、胶、灰浆、皮革、灯光和玻璃。"
+    },
+    "es": {
+     "title": "Química de todos los días",
+     "intro": "Ceniza, grasa, corteza, caliza y arena: con fuego, lo ordinario se transforma en jabón, pegamento, mortero, cuero, luz y vidrio."
+    }
+   }
+  },
+  {
+   "key": "thread-and-cloth",
+   "title": "Thread and Cloth",
+   "emoji": "🧵",
+   "intro": "From plant stems and sheep's backs to thread, cloth, color, and clothes that keep the weather out.",
+   "guides": [
+    {
+     "slug": "plant-fibers",
+     "title": "Free fibers from plants",
+     "summary": "Soak nettle or flax stems in water until the woody parts rot away and the long strong fibers come free.",
+     "needs": [
+      "make-cordage"
+     ],
+     "difficulty": "steady",
+     "time": "two weeks"
+    },
+    {
+     "slug": "wool-ready",
+     "title": "Get wool ready to spin",
+     "summary": "Shear a sheep or comb a goat, wash the wool, and comb it fluffy and straight.",
+     "needs": [
+      "keep-goats"
+     ],
+     "difficulty": "steady",
+     "time": "two days"
+    },
+    {
+     "slug": "spin-thread",
+     "title": "Spin thread with a drop spindle",
+     "summary": "Twirl a weighted stick so it twists wool or plant fiber into long, even thread while you walk or talk.",
+     "needs": [
+      "plant-fibers",
+      "carve-wood-tools"
+     ],
+     "difficulty": "steady",
+     "time": "a week of practice"
+    },
+    {
+     "slug": "weave-cloth",
+     "title": "Weave cloth on a simple loom",
+     "summary": "Stretch threads tight on a frame and weave over and under until real cloth grows row by row under your hands.",
+     "needs": [
+      "spin-thread"
+     ],
+     "difficulty": "hard",
+     "time": "two weeks"
+    },
+    {
+     "slug": "make-felt",
+     "title": "Make felt from wool",
+     "summary": "Rub wet soapy wool until it tangles into thick warm fabric for hats, boots, and blankets — no weaving needed.",
+     "needs": [
+      "wool-ready",
+      "make-soap"
+     ],
+     "difficulty": "steady",
+     "time": "a day"
+    },
+    {
+     "slug": "sew-clothes",
+     "title": "Make a needle and sew clothes",
+     "summary": "Stitch with a bone needle, then cut cloth into simple shapes and sew a tunic, a wrap, and a cloak that fit.",
+     "needs": [
+      "bone-tools",
+      "weave-cloth"
+     ],
+     "difficulty": "steady",
+     "time": "a week"
+    },
+    {
+     "slug": "dye-cloth",
+     "title": "Dye cloth with plants",
+     "summary": "Simmer onion skins, roots, and bark with a fixer so cloth takes color that stays through washing.",
+     "needs": [
+      "weave-cloth",
+      "cook-in-pots"
+     ],
+     "difficulty": "steady",
+     "time": "two days"
+    },
+    {
+     "slug": "leather-goods",
+     "title": "Make shoes and bags from leather",
+     "summary": "Cut, punch, and stitch leather into the shoes, belts, and bags that outlast cloth.",
+     "needs": [
+      "tan-hides",
+      "sew-clothes"
+     ],
+     "difficulty": "hard",
+     "time": "a week"
+    }
+   ],
+   "i18n": {
+    "zh": {
+     "title": "线与布",
+     "intro": "从植物茎秆和羊背上的毛，到线、布、颜色和挡风遮雨的衣服。"
+    },
+    "es": {
+     "title": "Hilo y tela",
+     "intro": "De tallos de plantas y lomos de oveja a hilo, tela, color y ropa que deja el clima afuera."
+    }
+   }
+  },
+  {
+   "key": "metal",
+   "title": "Metal",
+   "emoji": "⚒️",
+   "intro": "Charcoal, bellows, and a clay furnace pull metal out of rock — the hardest and most rewarding climb in the book.",
+   "guides": [
+    {
+     "slug": "find-ore",
+     "title": "Find metal in rocks",
+     "summary": "Learn the heavy, oddly colored rocks — green-stained copper, rusty red iron, black stream sand — and where they hide.",
+     "needs": [],
+     "difficulty": "steady",
+     "time": "a week"
+    },
+    {
+     "slug": "make-bellows",
+     "title": "Make bellows",
+     "summary": "Sew a leather-and-wood air pump, because metal-melting fire must breathe harder than lungs can blow.",
+     "needs": [
+      "tan-hides",
+      "pitch-glue"
+     ],
+     "difficulty": "steady",
+     "time": "two days"
+    },
+    {
+     "slug": "bloomery-furnace",
+     "title": "Build a smelting furnace",
+     "summary": "Stack a clay chimney-furnace that holds charcoal and ore while the bellows drive the heat higher than any campfire.",
+     "needs": [
+      "build-kiln",
+      "make-bricks",
+      "make-bellows"
+     ],
+     "difficulty": "hard",
+     "time": "a week"
+    },
+    {
+     "slug": "smelt-copper",
+     "title": "Smelt and cast copper",
+     "summary": "Roast green-stained ore with charcoal until beads of shining metal form, then pour melted copper into clay molds.",
+     "needs": [
+      "find-ore",
+      "make-charcoal",
+      "bloomery-furnace"
+     ],
+     "difficulty": "hard",
+     "time": "a week"
+    },
+    {
+     "slug": "smelt-iron",
+     "title": "Smelt iron in a bloomery",
+     "summary": "Feed ore and charcoal into the furnace for hours of pumping to win a glowing spongy lump of real iron.",
+     "needs": [
+      "find-ore",
+      "make-charcoal",
+      "bloomery-furnace"
+     ],
+     "difficulty": "mastery",
+     "time": "a season of tries"
+    },
+    {
+     "slug": "forge-basics",
+     "title": "Hammer hot iron",
+     "summary": "With an anvil stone, tongs, and a hammer, glowing iron moves like stiff clay under your blows.",
+     "needs": [
+      "smelt-iron"
+     ],
+     "difficulty": "mastery",
+     "time": "a season of practice"
+    },
+    {
+     "slug": "make-iron-tools",
+     "title": "Forge nails, hooks, hinges, and a knife",
+     "summary": "Hammer out the small everyday iron things that make every other job in this book easier.",
+     "needs": [
+      "forge-basics"
+     ],
+     "difficulty": "hard",
+     "time": "a month"
+    },
+    {
+     "slug": "harden-and-temper",
+     "title": "Harden and temper a blade",
+     "summary": "Heat, quench, and gently re-warm iron so an edge stays sharp without snapping.",
+     "needs": [
+      "make-iron-tools"
+     ],
+     "difficulty": "mastery",
+     "time": "a month"
+    }
+   ],
+   "i18n": {
+    "zh": {
+     "title": "金属",
+     "intro": "木炭、风箱和一座黏土炉，把金属从石头里拽出来——全书最难爬、也最值得爬的一段。"
+    },
+    "es": {
+     "title": "Metal",
+     "intro": "Carbón, fuelles y un horno de arcilla sacan el metal de la roca: la subida más dura y más gratificante del libro."
+    }
+   }
+  },
+  {
+   "key": "moving-things",
+   "title": "Paths, Wheels and Water",
+   "emoji": "🛞",
+   "intro": "Sleds, bridges, wheels, boats, and a wheel the stream turns for you — how to move more than your own back can carry.",
+   "guides": [
+    {
+     "slug": "make-a-sled",
+     "title": "Build a sled to drag heavy loads",
+     "summary": "Two smooth runners and a lashed frame let you drag what you could never lift.",
+     "needs": [
+      "carve-wood-tools",
+      "useful-knots"
+     ],
+     "difficulty": "easy",
+     "time": "half a day"
+    },
+    {
+     "slug": "lift-with-pulleys",
+     "title": "Lift heavy things with ropes and poles",
+     "summary": "A tripod of poles and a good rope let one person raise a beam or pull a log out of a river.",
+     "needs": [
+      "useful-knots",
+      "move-heavy-things"
+     ],
+     "difficulty": "steady",
+     "time": "half a day"
+    },
+    {
+     "slug": "paths-and-bridges",
+     "title": "Lay paths and small bridges",
+     "summary": "Firm dry paths and a safe log bridge tie your fields, water, and neighbors together.",
+     "needs": [
+      "move-heavy-things"
+     ],
+     "difficulty": "steady",
+     "time": "a week"
+    },
+    {
+     "slug": "wheel-and-axle",
+     "title": "Make a wheel and axle",
+     "summary": "Build a solid wooden wheel that turns true — the shape that carries civilisation.",
+     "needs": [
+      "fell-and-split-wood",
+      "carve-wood-tools"
+     ],
+     "difficulty": "hard",
+     "time": "a week"
+    },
+    {
+     "slug": "build-a-barrow",
+     "title": "Build a hand barrow or cart",
+     "summary": "One wheel, two handles, and a frame move a whole harvest with half the work.",
+     "needs": [
+      "wheel-and-axle",
+      "haft-a-tool"
+     ],
+     "difficulty": "hard",
+     "time": "a week"
+    },
+    {
+     "slug": "simple-raft",
+     "title": "Lash a raft",
+     "summary": "Dry logs and good knots make a raft that carries you and your load across calm water.",
+     "needs": [
+      "useful-knots",
+      "fell-and-split-wood"
+     ],
+     "difficulty": "steady",
+     "time": "a day"
+    },
+    {
+     "slug": "dugout-canoe",
+     "title": "Burn and carve a dugout canoe",
+     "summary": "Hollow a single log with careful fire and a scraper until it floats light and true.",
+     "needs": [
+      "keep-fire-alive",
+      "carve-wood-tools"
+     ],
+     "difficulty": "hard",
+     "time": "two weeks"
+    },
+    {
+     "slug": "water-wheel",
+     "title": "Build a water wheel",
+     "summary": "Let the stream turn a wheel that grinds grain or lifts water — the first worker that never tires.",
+     "needs": [
+      "wheel-and-axle",
+      "grind-and-bake"
+     ],
+     "difficulty": "mastery",
+     "time": "a season"
+    }
+   ],
+   "i18n": {
+    "zh": {
+     "title": "路、轮子和水",
+     "intro": "雪橇、桥、轮子、船，还有溪水替你转的水轮——搬动远超你脊背能扛的东西。"
+    },
+    "es": {
+     "title": "Caminos, ruedas y agua",
+     "intro": "Trineos, puentes, ruedas, botes y una rueda que el arroyo gira por ti: cómo mover más de lo que carga tu espalda."
+    }
+   }
+  },
+  {
+   "key": "counting-and-writing",
+   "title": "Counting, Measuring and Writing",
+   "emoji": "✍️",
+   "intro": "Marks that remember for you — numbers, honest measures, a calendar, and words that outlive the speaker.",
+   "guides": [
+    {
+     "slug": "tally-count",
+     "title": "Count with tallies",
+     "summary": "Use notches and pebbles so you can count sheep, days, and sacks without holding them all in your head.",
+     "needs": [],
+     "difficulty": "easy",
+     "time": "an hour"
+    },
+    {
+     "slug": "measure-things",
+     "title": "Measure length, weight, and amounts",
+     "summary": "Agree on units — a stick, a balance with two pans, a marked cup — so 'a lot' becomes a number everyone trusts.",
+     "needs": [
+      "tally-count"
+     ],
+     "difficulty": "steady",
+     "time": "a day"
+    },
+    {
+     "slug": "keep-a-calendar",
+     "title": "Keep a calendar",
+     "summary": "Track the moon's faces and the sun's swing along the horizon so planting, harvest, and feasts come at the right time.",
+     "needs": [
+      "tally-count",
+      "read-seasons"
+     ],
+     "difficulty": "steady",
+     "time": "a season"
+    },
+    {
+     "slug": "ink-and-pages",
+     "title": "Make ink, pens, and pages",
+     "summary": "Grind soot into ink, cut a reed or feather into a pen, and write on clay tablets, smooth bark, and boards.",
+     "needs": [
+      "make-charcoal",
+      "find-clay"
+     ],
+     "difficulty": "steady",
+     "time": "two days"
+    },
+    {
+     "slug": "learn-letters",
+     "title": "Write with an alphabet",
+     "summary": "Turn the sounds of speech into a small set of marks, and read the marks back into speech.",
+     "needs": [
+      "ink-and-pages"
+     ],
+     "difficulty": "hard",
+     "time": "a month of practice"
+    },
+    {
+     "slug": "keep-records",
+     "title": "Keep records and accounts",
+     "summary": "Write down harvests, stores, and debts so memory stops arguing with itself.",
+     "needs": [
+      "learn-letters",
+      "measure-things"
+     ],
+     "difficulty": "steady",
+     "time": "a week"
+    },
+    {
+     "slug": "draw-a-map",
+     "title": "Draw a map of your land",
+     "summary": "Pace out paths, water, and fields and draw them small, so plans can be made on a table.",
+     "needs": [
+      "measure-things",
+      "ink-and-pages"
+     ],
+     "difficulty": "steady",
+     "time": "two days"
+    },
+    {
+     "slug": "make-paper",
+     "title": "Make paper",
+     "summary": "Beat plant fiber into mush, lift a thin layer out on a screen, and press and dry it into a sheet.",
+     "needs": [
+      "plant-fibers"
+     ],
+     "difficulty": "hard",
+     "time": "a week"
+    }
+   ],
+   "i18n": {
+    "zh": {
+     "title": "数、量与书写",
+     "intro": "替你记住事情的记号——数字、诚实的度量、历法，和比说话人活得更久的文字。"
+    },
+    "es": {
+     "title": "Contar, medir y escribir",
+     "intro": "Marcas que recuerdan por ti: números, medidas honestas, un calendario y palabras que sobreviven a quien las dijo."
+    }
+   }
+  },
+  {
+   "key": "living-together",
+   "title": "Living Together",
+   "emoji": "🤝",
+   "intro": "Fair work, honest trade, shared joy, and rules everyone agreed to — the soft skills that turn houses into a village.",
+   "guides": [
+    {
+     "slug": "share-work-fairly",
+     "title": "Share work and food fairly",
+     "summary": "Split the jobs and the harvest in ways everyone can see are fair, and take turns at the jobs nobody loves.",
+     "needs": [],
+     "difficulty": "steady",
+     "time": "a week"
+    },
+    {
+     "slug": "barter-and-trade",
+     "title": "Trade what you have for what you need",
+     "summary": "Swap your extra for a neighbor's extra with honest measures and clear promises.",
+     "needs": [
+      "measure-things"
+     ],
+     "difficulty": "steady",
+     "time": "a week"
+    },
+    {
+     "slug": "what-money-is",
+     "title": "Understand what money is",
+     "summary": "Hear the story of how tokens and coins grew out of trade and promises — and why trust is the real coin.",
+     "needs": [
+      "barter-and-trade"
+     ],
+     "difficulty": "easy",
+     "time": "an afternoon"
+    },
+    {
+     "slug": "hold-a-council",
+     "title": "Hold a council and decide together",
+     "summary": "Sit in a circle, let everyone speak in turn, decide as a group, and write the decision down.",
+     "needs": [
+      "share-work-fairly"
+     ],
+     "difficulty": "steady",
+     "time": "a week"
+    },
+    {
+     "slug": "settle-disputes",
+     "title": "Settle disputes with agreed rules",
+     "summary": "Hear both sides all the way through before rules everyone agreed to, so quarrels end without wounds.",
+     "needs": [
+      "hold-a-council"
+     ],
+     "difficulty": "hard",
+     "time": "a season of practice"
+    },
+    {
+     "slug": "teach-children",
+     "title": "Teach the young everything here",
+     "summary": "Pass every skill on by showing, telling, and letting them try — or the village lasts one lifetime.",
+     "needs": [
+      "share-work-fairly"
+     ],
+     "difficulty": "steady",
+     "time": "years"
+    },
+    {
+     "slug": "stories-and-feasts",
+     "title": "Tell stories, make music, hold feasts",
+     "summary": "Songs, games, rest days, and shared celebrations keep hands strong and hearts glad — a village that only works soon breaks.",
+     "needs": [],
+     "difficulty": "easy",
+     "time": "an evening to start"
+    },
+    {
+     "slug": "common-works",
+     "title": "Build things everyone shares",
+     "summary": "Join hands on the well, the path, the bridge, and the meeting hall that no one could build alone.",
+     "needs": [
+      "hold-a-council",
+      "one-room-house"
+     ],
+     "difficulty": "hard",
+     "time": "a year"
+    },
+    {
+     "slug": "plant-a-village",
+     "title": "Plant a village",
+     "summary": "Put the whole book together — site, water, houses, fields, stores, and council — and start a place that outlives you.",
+     "needs": [
+      "common-works",
+      "harvest-and-thresh",
+      "hold-a-council"
+     ],
+     "difficulty": "mastery",
+     "time": "a generation"
+    }
+   ],
+   "i18n": {
+    "zh": {
+     "title": "共同生活",
+     "intro": "公平的分工、诚实的交易、共享的欢乐，和大家都点头的规矩——把一堆房子变成一座村庄的软功夫。"
+    },
+    "es": {
+     "title": "Vivir juntos",
+     "intro": "Trabajo justo, comercio honesto, alegría compartida y reglas acordadas por todos: lo que convierte casas en una aldea."
+    }
+   }
+  }
+ ]
+}

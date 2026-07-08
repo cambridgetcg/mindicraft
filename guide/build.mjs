@@ -1,0 +1,296 @@
+// Mindicraft guide builder — turns the markdown guides into a static site.
+//
+//   content/<lang>/<domain>/<slug>.md  --->  dist/<lang>/<domain>/<slug>/index.html
+//
+// Run once:  npm install   (or: bun install)   — brings in `marked` (markdown -> HTML)
+// Build:     node build.mjs
+// Deploy:    npx wrangler pages deploy dist --project-name=mindicraft
+//
+// The map of everything is tree.json (domains -> guides, with prerequisites).
+// UI words for every language live in langs.json. Adding a language = one new
+// entry in langs.json + translated files under content/<code>/. Nothing else.
+
+import { readFileSync, writeFileSync, mkdirSync, existsSync, cpSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { marked } from 'marked';
+
+const ROOT = dirname(fileURLToPath(import.meta.url));
+const DIST = join(ROOT, 'dist');
+
+const tree = JSON.parse(readFileSync(join(ROOT, 'tree.json'), 'utf8'));
+const langs = JSON.parse(readFileSync(join(ROOT, 'langs.json'), 'utf8')).languages;
+
+// ---------- small helpers ----------
+
+const esc = (s = '') =>
+  String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+
+// Frontmatter: the block between the first two `---` lines.
+// Lines are `key: value`; a value like [a, b, c] becomes an array.
+function parseFrontmatter(raw) {
+  const m = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);
+  if (!m) return { meta: {}, body: raw };
+  const meta = {};
+  for (const line of m[1].split(/\r?\n/)) {
+    const i = line.indexOf(':');
+    if (i < 1) continue;
+    const key = line.slice(0, i).trim();
+    let val = line.slice(i + 1).trim();
+    if (val.startsWith('[') && val.endsWith(']')) {
+      meta[key] = val
+        .slice(1, -1)
+        .split(',')
+        .map((s) => s.trim().replace(/^["']|["']$/g, ''))
+        .filter(Boolean);
+    } else {
+      meta[key] = val.replace(/^["']|["']$/g, '');
+    }
+  }
+  return { meta, body: m[2] };
+}
+
+function write(path, html) {
+  mkdirSync(dirname(path), { recursive: true });
+  writeFileSync(path, html);
+}
+
+// ---------- index the tree ----------
+
+// slug -> { domain, guide } for linking prerequisites across domains
+const bySlug = new Map();
+for (const domain of tree.domains)
+  for (const guide of domain.guides) bySlug.set(guide.slug, { domain, guide });
+
+// slug -> [slugs it unlocks] (the reverse of `needs`)
+const unlocks = new Map();
+for (const domain of tree.domains)
+  for (const guide of domain.guides)
+    for (const need of guide.needs || []) {
+      if (!unlocks.has(need)) unlocks.set(need, []);
+      unlocks.get(need).push(guide.slug);
+    }
+
+// ---------- load content (with English fallback for missing translations) ----------
+
+// content[lang code][slug] = { meta, body }
+const content = {};
+const missing = {}; // lang -> [paths] — reported at the end, never fatal
+for (const lang of langs) {
+  content[lang.code] = {};
+  missing[lang.code] = [];
+  for (const domain of tree.domains)
+    for (const guide of domain.guides) {
+      const path = join(ROOT, 'content', lang.code, domain.key, `${guide.slug}.md`);
+      if (existsSync(path)) content[lang.code][guide.slug] = parseFrontmatter(readFileSync(path, 'utf8'));
+      else missing[lang.code].push(`${lang.code}/${domain.key}/${guide.slug}.md`);
+    }
+}
+
+// ---------- page pieces ----------
+
+const langSwitch = (currentCode, pathAfterLang) =>
+  `<nav class="langs">${langs
+    .map((l) =>
+      l.code === currentCode
+        ? `<span class="lang on">${esc(l.name)}</span>`
+        : `<a class="lang" href="/${l.code}/${pathAfterLang}">${esc(l.name)}</a>`
+    )
+    .join('')}</nav>`;
+
+function page({ lang, title, path, body }) {
+  const S = lang.strings;
+  return `<!doctype html>
+<html lang="${lang.code}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>${esc(title)} · ${esc(S.siteTitle)}</title>
+<meta name="description" content="${esc(S.tagline)}">
+<link rel="stylesheet" href="/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="/${lang.code}/">${esc(S.siteTitle)}</a>
+  ${langSwitch(lang.code, path)}
+</header>
+<main>
+${body}
+</main>
+<footer class="foot">${esc(S.footer)}</footer>
+</body>
+</html>`;
+}
+
+const diffChip = (S, d) =>
+  d ? `<span class="chip diff-${esc(d)}">${esc(S.difficultyWords[d] || d)}</span>` : '';
+
+const guideCard = (lang, domain, guide) => {
+  const S = lang.strings;
+  const local = content[lang.code][guide.slug]?.meta || {};
+  return `<a class="card" href="/${lang.code}/${domain.key}/${guide.slug}/" data-search="${esc(
+    `${local.title || guide.title} ${local.summary || guide.summary}`.toLowerCase()
+  )}">
+  <strong>${esc(local.title || guide.title)}</strong>
+  <span class="sum">${esc(local.summary || guide.summary)}</span>
+  <span class="meta">${diffChip(S, guide.difficulty)}<span class="chip">${esc(local.time || guide.time || '')}</span></span>
+</a>`;
+};
+
+// ---------- build every language ----------
+
+for (const lang of langs) {
+  const S = lang.strings;
+
+  // home: the whole tree on one page, searchable
+  const domainsHtml = tree.domains
+    .map(
+      (domain, i) => `<section class="domain" id="${domain.key}">
+  <h2><span class="dnum">${i + 1}</span> ${esc(domain.emoji)} <a href="/${lang.code}/${domain.key}/">${esc(
+        (lang.code !== 'en' && domain.i18n?.[lang.code]?.title) || domain.title
+      )}</a> <span class="count">${domain.guides.length} ${esc(S.guides)}</span></h2>
+  <p class="intro">${esc((lang.code !== 'en' && domain.i18n?.[lang.code]?.intro) || domain.intro)}</p>
+  <div class="grid">${domain.guides.map((g) => guideCard(lang, domain, g)).join('\n')}</div>
+</section>`
+    )
+    .join('\n');
+
+  write(
+    join(DIST, lang.code, 'index.html'),
+    page({
+      lang,
+      title: S.tagline,
+      path: '',
+      body: `<section class="hero">
+  <h1>${esc(S.tagline)}</h1>
+  <p>${esc(S.hero)}</p>
+  <input id="q" type="search" placeholder="${esc(S.searchPlaceholder)}" autocomplete="off">
+  <p id="noresults" hidden>${esc(S.noResults)}</p>
+</section>
+${domainsHtml}
+<script>
+const q = document.getElementById('q');
+q.addEventListener('input', () => {
+  const t = q.value.trim().toLowerCase();
+  let any = false;
+  document.querySelectorAll('.card').forEach(c => {
+    const hit = !t || c.dataset.search.includes(t);
+    c.hidden = !hit; if (hit) any = true;
+  });
+  document.querySelectorAll('.domain').forEach(d => {
+    d.hidden = !!t && ![...d.querySelectorAll('.card')].some(c => !c.hidden);
+  });
+  document.getElementById('noresults').hidden = any;
+});
+</script>`,
+    })
+  );
+
+  for (const domain of tree.domains) {
+    const dTitle = (lang.code !== 'en' && domain.i18n?.[lang.code]?.title) || domain.title;
+    const dIntro = (lang.code !== 'en' && domain.i18n?.[lang.code]?.intro) || domain.intro;
+
+    // domain page
+    write(
+      join(DIST, lang.code, domain.key, 'index.html'),
+      page({
+        lang,
+        title: dTitle,
+        path: `${domain.key}/`,
+        body: `<p class="crumb"><a href="/${lang.code}/">${esc(S.home)}</a></p>
+<h1>${esc(domain.emoji)} ${esc(dTitle)}</h1>
+<p class="intro">${esc(dIntro)}</p>
+<div class="grid">${domain.guides.map((g) => guideCard(lang, domain, g)).join('\n')}</div>`,
+      })
+    );
+
+    // guide pages
+    domain.guides.forEach((guide, gi) => {
+      const own = content[lang.code][guide.slug];
+      const fallback = content.en[guide.slug];
+      const doc = own || fallback;
+      if (!doc) return; // no content in any language yet — home/domain cards still show tree info
+
+      const meta = doc.meta;
+      const title = meta.title || guide.title;
+      const localTitle = (slug) => {
+        const c = content[lang.code][slug]?.meta || content.en[slug]?.meta;
+        return c?.title || bySlug.get(slug)?.guide.title || slug;
+      };
+      const linkTo = (slug) => {
+        const hit = bySlug.get(slug);
+        return hit ? `<a href="/${lang.code}/${hit.domain.key}/${slug}/">${esc(localTitle(slug))}</a>` : '';
+      };
+
+      const needs = (guide.needs || []).map(linkTo).filter(Boolean);
+      const opens = (unlocks.get(guide.slug) || []).map(linkTo).filter(Boolean);
+      const prev = domain.guides[gi - 1];
+      const next = domain.guides[gi + 1];
+      const pn = (g, cls, label) =>
+        g
+          ? `<a class="${cls}" href="/${lang.code}/${domain.key}/${g.slug}/">${esc(label)}: ${esc(
+              localTitle(g.slug)
+            )}</a>`
+          : '<span></span>';
+
+      write(
+        join(DIST, lang.code, domain.key, guide.slug, 'index.html'),
+        page({
+          lang,
+          title,
+          path: `${domain.key}/${guide.slug}/`,
+          body: `<p class="crumb"><a href="/${lang.code}/">${esc(S.home)}</a> / <a href="/${lang.code}/${
+            domain.key
+          }/">${esc(domain.emoji)} ${esc(dTitle)}</a></p>
+${own ? '' : `<p class="notice">${esc(S.notYetTranslated)}</p>`}
+<article class="guide">
+<h1>${esc(title)}</h1>
+<p class="lede">${esc(meta.summary || guide.summary)}</p>
+<p class="meta">${diffChip(S, guide.difficulty)}<span class="chip">⏳ ${esc(meta.time || guide.time || '')}</span></p>
+${needs.length ? `<div class="box needs"><strong>${esc(S.youNeedFirst)}:</strong> ${needs.join(' · ')}</div>` : ''}
+${marked.parse(doc.body)}
+${opens.length ? `<div class="box opens"><strong>${esc(S.unlocks)}:</strong> ${opens.join(' · ')}</div>` : ''}
+</article>
+<nav class="prevnext">${pn(prev, 'prev', S.prev)}${pn(next, 'next', S.next)}</nav>`,
+        })
+      );
+    });
+  }
+}
+
+// ---------- root redirect (picks the browser's language, remembers nothing) ----------
+
+const codes = langs.map((l) => l.code);
+write(
+  join(DIST, 'index.html'),
+  `<!doctype html>
+<html><head><meta charset="utf-8"><title>Mindicraft</title>
+<script>
+const want = (navigator.languages || [navigator.language || 'en']).map(l => l.slice(0,2).toLowerCase());
+const have = ${JSON.stringify(codes)};
+location.replace('/' + (want.find(w => have.includes(w)) || 'en') + '/');
+</script>
+<meta http-equiv="refresh" content="1;url=/en/">
+</head><body><a href="/en/">Mindicraft</a></body></html>`
+);
+
+write(
+  join(DIST, '404.html'),
+  `<!doctype html><html><head><meta charset="utf-8"><title>404</title>
+<link rel="stylesheet" href="/style.css"></head>
+<body><main style="text-align:center;padding:4rem 1rem"><h1>404</h1>
+<p><a href="/en/">Mindicraft</a></p></main></body></html>`
+);
+
+cpSync(join(ROOT, 'style.css'), join(DIST, 'style.css'));
+
+// ---------- report ----------
+
+const total = tree.domains.reduce((n, d) => n + d.guides.length, 0);
+console.log(`built ${langs.length} languages × (${tree.domains.length} domains, ${total} guides) -> ${DIST}`);
+for (const lang of langs)
+  if (missing[lang.code].length)
+    console.log(`  ${lang.code}: ${missing[lang.code].length} file(s) missing (English shown instead):\n    ${missing[
+      lang.code
+    ].slice(0, 10).join('\n    ')}${missing[lang.code].length > 10 ? '\n    …' : ''}`);

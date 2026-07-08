@@ -2,6 +2,13 @@
 
 _The whole internet, categorized and sorted. Easy to understand. Constantly updated. Open source. Free. No gate._
 
+> **The Guide now lives here too.** `guide/` is the zero-to-one guide of human
+> civilisation — how to build anything and everything from scratch (fire, food,
+> soap, houses, metal, writing, a village), in plain words, in English, 中文,
+> and Español. It is the site served at mindicraft.pages.dev. See
+> [`guide/README.md`](guide/README.md) for how it's built and how to add a
+> language. The understanding-engine below still lives in this repo unchanged.
+
 ## What this is
 
 mindicraft.com is a living index of the internet, organized by meaning, updated by agents, served in natural language. It's not a search engine — it's an understanding engine. The data IS the understanding.

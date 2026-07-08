@@ -1,0 +1,12 @@
+{
+  "name": "mindicraft-guide",
+  "private": true,
+  "type": "module",
+  "description": "The zero-to-one guide of human civilisation — static site builder",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "dependencies": {
+    "marked": "^15.0.0"
+  }
+}

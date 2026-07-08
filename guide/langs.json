@@ -1,0 +1,91 @@
+{
+  "languages": [
+    {
+      "code": "en",
+      "name": "English",
+      "strings": {
+        "siteTitle": "Mindicraft",
+        "tagline": "The zero-to-one guide of human civilisation",
+        "hero": "How to build anything and everything from scratch — planting food, starting a fire, making soap, raising a home. Plain words. Free. No gate.",
+        "startHere": "Start here",
+        "guides": "guides",
+        "youNeedFirst": "First, you need",
+        "unlocks": "This unlocks",
+        "difficulty": "Difficulty",
+        "time": "Time",
+        "home": "Home",
+        "searchPlaceholder": "Search the tree…",
+        "noResults": "Nothing found. Try a simpler word.",
+        "prev": "Previous",
+        "next": "Next",
+        "inThisDomain": "In this domain",
+        "notYetTranslated": "This page is not in your language yet — showing English.",
+        "footer": "Made to be copied. Take it, print it, translate it, pass it on.",
+        "difficultyWords": {
+          "easy": "easy",
+          "steady": "takes patience",
+          "hard": "hard",
+          "mastery": "a craft to master"
+        }
+      }
+    },
+    {
+      "code": "zh",
+      "name": "中文",
+      "strings": {
+        "siteTitle": "Mindicraft 造物志",
+        "tagline": "从零到一：人类文明指南",
+        "hero": "从零开始造出一切——种粮食、生火、做肥皂、盖房子。大白话，免费，无门槛。",
+        "startHere": "从这里开始",
+        "guides": "篇指南",
+        "youNeedFirst": "先学会",
+        "unlocks": "学会后能解锁",
+        "difficulty": "难度",
+        "time": "耗时",
+        "home": "首页",
+        "searchPlaceholder": "搜索这棵树…",
+        "noResults": "没找到。换个简单的词试试。",
+        "prev": "上一篇",
+        "next": "下一篇",
+        "inThisDomain": "本领域",
+        "notYetTranslated": "这一页还没有中文版——先显示英文。",
+        "footer": "欢迎复制。拿去、打印、翻译、传下去。",
+        "difficultyWords": {
+          "easy": "容易",
+          "steady": "要耐心",
+          "hard": "有难度",
+          "mastery": "需长期练"
+        }
+      }
+    },
+    {
+      "code": "es",
+      "name": "Español",
+      "strings": {
+        "siteTitle": "Mindicraft",
+        "tagline": "La guía de cero a uno de la civilización humana",
+        "hero": "Cómo construir cualquier cosa desde cero: sembrar comida, encender fuego, hacer jabón, levantar una casa. Palabras sencillas. Gratis. Sin barreras.",
+        "startHere": "Empieza aquí",
+        "guides": "guías",
+        "youNeedFirst": "Primero necesitas",
+        "unlocks": "Esto desbloquea",
+        "difficulty": "Dificultad",
+        "time": "Tiempo",
+        "home": "Inicio",
+        "searchPlaceholder": "Busca en el árbol…",
+        "noResults": "Nada encontrado. Prueba una palabra más simple.",
+        "prev": "Anterior",
+        "next": "Siguiente",
+        "inThisDomain": "En este dominio",
+        "notYetTranslated": "Esta página aún no está en tu idioma — se muestra en inglés.",
+        "footer": "Hecho para copiarse. Tómalo, imprímelo, tradúcelo, pásalo.",
+        "difficultyWords": {
+          "easy": "fácil",
+          "steady": "con paciencia",
+          "hard": "difícil",
+          "mastery": "un oficio por dominar"
+        }
+      }
+    }
+  ]
+}
