@@ -1,6 +1,6 @@
 ---
 title: Haz jabón con grasa y lejía
-summary: Cocina grasa y lejía juntas — con mucho cuidado — hasta que se conviertan en el jabón que mantiene más sana a toda tu aldea.
+summary: Cocina grasa y lejía juntas — con cuidado — hasta que se conviertan en el jabón que mantiene más sana a toda tu aldea.
 difficulty: steady
 time: dos días, más semanas de curado
 needs: [ash-lye, render-fat]
@@ -10,40 +10,65 @@ El jabón es lo que pasa cuando la grasa se encuentra con la lejía. Cocina las 
 
 No te saltes este oficio. Lavarse las manos con jabón previene más enfermedades que casi cualquier otra cosa que puedas fabricar. Una olla de jabón es medicina silenciosa para toda la aldea.
 
+En esta olla se esconde química de verdad — una molécula cortada en pedazos y vuelta a armar. En cuanto la veas, en «Cómo funciona», cada decisión de esta receta va a tener sentido.
+
 ## Necesitas
 
-- **Agua de lejía fuerte** — el líquido café que se obtiene goteando agua a través de ceniza de madera. Debe pasar la prueba de flotación: un huevo fresco o una papa pequeña flota mostrando sobre la superficie una zona del tamaño de una moneda. La lejía débil hace un lodo grasoso, no jabón.
-- **Grasa limpia y derretida** — sebo o manteca, fundida y colada para que no queden restos de carne. Más o menos una olla de grasa por una olla de agua de lejía fuerte es un buen punto de partida; irás ajustando con pruebas mientras cocinas.
-- **Una olla grande** — de hierro o barro cocido, llena como máximo hasta la mitad. Nunca aluminio; la lejía se lo come.
-- **Un palo largo para revolver** — del largo de un brazo, para que las salpicaduras no te alcancen.
-- **Un fuego que puedas controlar** — quieres un hervor suave, no un rugido.
-- **Sal** (opcional) — unos puñados, si quieres barras duras en lugar de jabón blando.
-- **Un molde** — una caja forrada con tela, una canasta o un plato ancho.
-- **Protección** — brazos cubiertos, algo sobre los ojos si lo tienes, y los niños bien lejos.
+- **Agua de lejía fuerte** — el líquido café que se obtiene goteando agua a través de ceniza de madera dura. Debe pasar la prueba de flotación: un huevo fresco o una papa pequeña flota mostrando en la superficie una zona del tamaño de una moneda. Si se hunde, hierve la lejía para concentrarla o pásala otra vez por ceniza fresca. La lejía débil hace un lodo grasoso, no jabón.
+- **Grasa limpia y derretida** — sebo (grasa de res o de oveja) o manteca (grasa de cerdo), fundida y colada para que no queden restos de carne. Más o menos una olla de grasa por una olla de agua de lejía fuerte es un buen punto de partida — quizá 2 a 3 litros de cada una para una tanda familiar — pero irás ajustando con pruebas mientras cocinas, no confiando en la medida.
+- **Una olla grande** — de hierro o barro cocido, llena como máximo hasta la mitad. Nunca de aluminio; la lejía se lo come.
+- **Un palo largo para revolver** — del largo de un brazo por lo menos, para que las salpicaduras no te alcancen.
+- **Un fuego que puedas controlar** — un hervor suave que puedas dejar solo un momento, no un rugido.
+- **Sal** (opcional) — unos puñados, para barras duras en lugar de jabón blando.
+- **Un molde** — una caja forrada con tela, una canasta o un plato ancho; la tela te deja sacar el bloque después.
+- **Protección** — brazos cubiertos, algo sobre los ojos (improvisa si hace falta — cualquier lámina transparente o visera es mejor que los ojos descubiertos; una salpicadura de lejía caliente puede dejarte ciego), un balde de agua limpia al alcance de la mano, y los niños bien lejos.
 
 ## Pasos
 
-1. Pon la olla afuera, sobre un fuego reducido a brasas parejas. Vierte el agua de lejía y llévala a un hervor suave.
-2. Agrega la grasa. Revuelve hasta que se funda con el resto.
-3. Hierve suave y revuelve, a ratos, durante varias horas — a menudo de 3 a 6. La mezcla se pone turbia, luego cremosa, luego espesa como avena. Agrega chorritos de agua si se espesa tanto que cuesta revolver.
-4. Prueba si ya está listo:
-   - Deja caer un poco desde el palo sobre la superficie. Si la gota deja un rastro visible antes de hundirse, ya está cerca.
-   - Saca una bolita del tamaño de una arveja, déjala enfriar por completo, mójala y frótala entre dos dedos. Si hace un poco de espuma y no arde, es jabón. Si arde o quema, todavía queda lejía cruda — enjuágate bien los dedos y sigue cocinando.
-5. Corrige los problemas sobre la marcha:
-   - Sigue grasosa, con grasa flotando encima: la lejía estaba demasiado débil. Agrega lejía más fuerte y sigue cocinando.
-   - Sigue ardiendo después de mucho cocinar: demasiada lejía. Agrega trocitos de grasa, uno a la vez.
-6. Cuando pase la prueba de los dedos, tienes **jabón blando** — una jalea café. Pásalo a una olla con tapa. Ya sirve para la ropa, los platos y las manos.
-7. Para **barras duras**: revuelve unos puñados de sal en el jabón caliente. Se cortará y flotará en grumos espesos. Recoge los grumos, pásalos al molde forrado de tela y prénsalos bien.
-8. Cura las barras: déjalas de 3 a 6 semanas a la sombra y con aire, volteándolas de vez en cuando. Cada semana se ponen más duras y más suaves con la piel. Uno o dos días de reposo le hacen bien incluso al jabón blando.
+1. **Instálate afuera**, sobre un fuego ya reducido a brasas parejas. Vierte el agua de lejía en la olla y llévala a un hervor suave. Recuerda la regla para todo trabajo con lejía: al mezclar lejía seca con agua, echa la **lejía en el agua**, nunca el agua en la lejía — el agua salpicada sobre lejía fuerte puede escupirte de vuelta líquido cáustico hirviendo.
+2. **Agrega la grasa** en trozos del tamaño de un puño y revuelve hasta que se derrita y se incorpore. Al principio solo flota — una capa grasosa sobre agua café. Es normal; tu revolver obliga a las dos a encontrarse.
+3. **Hierve suave y revuelve**, con pausas, durante varias horas — a menudo de 3 a 6. Cada cambio te dice dónde vas:
+   - Primero **turbio**, como agua sucia de lavar platos: la lejía empezó a cortar la grasa.
+   - Luego **cremoso**, como papilla rala, que ya no se separa cuando dejas descansar el palo. El olor punzante de la lejía se desvanece hasta quedar uno simplemente grasoso. Ya vas a más de la mitad.
+   - Luego **espeso**, como papilla dura que se amontona antes de hundirse. Salpica agua cada vez que se ponga demasiado espeso para revolver — el jabón quemado huele a chamusco y se oscurece.
+4. **Prueba si ya está listo.** Dos pruebas, usa las dos:
+   - **La prueba del rastro.** Deja gotear un poco desde el palo sobre la superficie. Si la gota deja un rastro visible — una línea en relieve que se queda un momento antes de hundirse — ya está cerca. Los jaboneros llaman a esto «traza».
+   - **La prueba del dedo.** Toma una bolita del tamaño de un garbanzo, déjala enfriar por completo, mójala y frótala entre dos dedos. Si hace un poco de espuma y no pica, es jabón. Si pica, todavía tiene lejía cruda — enjuágate bien los dedos y sigue cocinando. (Los jaboneros viejos tocan con la lengua una migaja ya fría: el jabón terminado solo sabe a jabón; el que no está listo da un «toque» agudo, como lamer una pila. La prueba del dedo es más segura; si algún día pruebas la de la lengua, usa una migaja completamente fría, escupe y enjuágate.)
+5. **Corrige los problemas mientras cocinas:**
+   - Sigue grasoso, con la grasa flotando después de horas: la lejía estaba demasiado débil. Agrega agua de lejía más fuerte, una taza a la vez, y sigue cocinando.
+   - Sigue picando después de mucho cocinar: demasiada lejía. Agrega trocitos de grasa, uno a la vez, cocinando entre uno y otro, hasta que deje de picar.
+6. **Cuando pasa la prueba del dedo, tienes jabón blando** — una jalea café, suave y resbalosa. Antes de sacarlo del fuego, considera un último trocito de grasa — un puñado por olla grande — revuelto y cocinado unos minutos más. Esto es el **sobreengrasado**: dejar un poco de grasa sin cortar para que el jabón sea más amable con la piel (el porqué está más abajo). Pasa el jabón blando con un cucharón a una olla con tapa; ya sirve para la ropa, los platos y las manos.
+7. **Para barras duras:** revuelve unos puñados de sal en el jabón caliente. Se cuajará y flotará como grumos gruesos y pálidos sobre un líquido oscuro — la sal empuja el jabón fuera del agua. Recoge los grumos, pásalos al molde forrado con tela y apriétalos bien firme. Vierte el líquido sobrante lejos de donde beben los animales; todavía lleva lejía.
+8. **Cura las barras.** Tenlas de 3 a 6 semanas en sombra aireada, paradas de canto y con espacio entre una y otra, volteándolas de vez en cuando. Cada semana se ponen más duras y más mansas — casi todo es agua que se va, más un pequeño apaciguamiento silencioso, como verás. Una barra está curada cuando está dura, ya no pica en la prueba del dedo y hace espuma limpia. Hasta el jabón blando mejora con uno o dos días de reposo tapado.
 
 ## Cuidado
 
-- **La lejía y la grasa hirviendo salpican.** Cada gota es cáustica y está caliente. Palo largo, mangas largas, mantente atrás, trabaja afuera.
-- **El jabón se derrama rápido.** Sube en espuma como la leche. Llena la olla a lo sumo hasta la mitad y prepárate para sacarla del fuego.
-- **El jabón fresco parece comida** — un budín café en una olla. Márcalo, guárdalo en alto y avísale a todos.
-- **Un jabón áspero que arde en la piel no está terminado.** Cúralo más tiempo, o vuélvelo a fundir con un poco más de grasa. Nunca uses en un niño un jabón que arde.
-- **Si la mezcla cruda te cae en la piel**, enjuaga de inmediato con mucha agua limpia. En un ojo: enjuaga con suavidad durante al menos 15 minutos y luego busca atención médica de verdad en cuanto puedas.
+- **La lejía y la grasa hirviendo salpican.** Cada gota quema dos veces: por el calor y por la química. Palo largo, mangas largas, ojos cubiertos, párate con el viento a tu espalda, trabaja afuera. Nunca inclines la cara sobre la olla.
+- **Agua sobre lejía es el accidente clásico.** Mezclar las dos siempre produce calor — la pregunta es quién se lo queda. Vierte la lejía despacio en una olla entera de agua y el calor se reparte por toda esa agua, domado; deja que una salpicadura pequeña de agua caiga sobre lejía fuerte y todo el calor se amontona de golpe en esa sola salpicadura, así que hierve al instante y escupe. El mismo calor, repartido distinto. Siempre agrega la lejía al agua, despacio, revolviendo — y baja los trozos de grasa con suavidad, nunca los dejes caer.
+- **El jabón se desborda rápido.** Cerca del final sube en espuma como la leche, en segundos — lo mismo que hace la espuma de lavar hace los desbordes. Ten la olla llena a lo sumo hasta la mitad, y prepárate para sacarla del fuego o bajar la espuma con un chorrito de agua fría.
+- **El jabón fresco parece comida** — budín café en una olla, grumos pálidos en un plato. Márcalo, guárdalo en alto, avísale a todos, sobre todo a los niños.
+- **El jabón áspero que pica no está terminado** — la grasa se acabó antes que la lejía. Una picazón leve puede amansarse con semanas de curado aireado (el aire doma poco a poco los pequeños restos de lejía), pero el arreglo seguro es volver a derretirlo con un poco más de grasa y cocinarlo de nuevo. Nunca uses jabón que pica en un niño.
+- **El jabón grasoso que no hace espuma es la falla contraria** — la lejía se acabó primero. No le hace daño a nadie, pero embarra en vez de limpiar y puede ponerse rancio. Derrítelo, agrégale lejía fuerte, cocina otra vez.
+- **Vetas oscuras u olor a chamusco** significan que la olla anduvo demasiado caliente o demasiado seca. El jabón todavía sirve, pero mal. Cocina a fuego más bajo, revuelve el fondo, salpica agua antes.
+- **Si la mezcla cruda te cae en la piel**, enjuaga con mucha agua limpia de inmediato — sigue enjuagando hasta que desaparezca la sensación resbalosa; esa sensación es la lejía convirtiendo en jabón los aceites de tu propia piel. En un ojo: enjuaga con suavidad durante al menos 20 a 30 minutos — la lejía sigue quemando mientras quede algo, así que más tiempo es mejor — mantén el párpado abierto, y busca atención médica de verdad en cuanto puedas.
 
 ## Cómo funciona
 
-La lejía parte la grasa en piezas nuevas. Cada pieza tiene una cola que ama la grasa y una cabeza que ama el agua. Cuando te lavas, las colas se entierran en la mugre y el aceite de tu piel, las cabezas se agarran del agua, y todo ese revoltijo se despega y se va con el enjuague. La cocción consume tanto la lejía como la grasa — el buen jabón no conserva ni la mordida ni la grasa.
+Imagina una molécula de grasa como **una mano que sostiene tres colas**. La mano es una pieza pequeña llamada glicerina; las tres colas largas son las cadenas grasosas que hacen que la grasa se sienta como grasa. La lejía es unas tijeras para moléculas. En la olla caliente recorta cada cola y la libera de la mano de glicerina, y cada corte les cuesta a las tijeras un pedazo de sí mismas: el extremo cortado de cada cola recibe una tapita, hecha de la lejía, que ama el agua. Por eso la lejía se va gastando mientras el jabón se forma — si no queda lejía, no hay más tapitas, y no hay más cortes. Los químicos llaman a este evento **saponificación** — hacer jabón. Entra una molécula de grasa, salen tres moléculas de jabón, más una mano de glicerina libre (que se queda en el jabón blando y lo hace suave y un poquito dulce; al salar las barras, casi toda se va con el líquido que viertes fuera).
+
+Así que una molécula de jabón es un ser de dos naturalezas: una **cola larga que ama la grasa** y odia el agua, y una **cabeza pequeña que ama el agua**. Esa doble personalidad es todo el secreto del lavado. Frota jabón en unas manos grasosas y las colas se entierran en la grasa; las cabezas se quedan afuera, tomadas de la mano del agua. Enjuaga, y el agua arrastra las cabezas, las cabezas arrastran las colas, las colas arrastran la grasa. Cada gotita de aceite se va envuelta en una bola de moléculas de jabón — colas hacia adentro abrazando la grasa, cabezas hacia afuera mirando al agua. Los químicos llaman a estas bolas **micelas**; piensa en ellas como balsas diminutas. La mugre y los gérmenes se van montados en las balsas en lugar de embarrarse por ahí. El agua sola no puede hacer esto, porque el agua y la grasa se niegan a tocarse; el jabón es el apretón de manos entre las dos.
+
+Ahora las decisiones de la receta se explican solas. **Grasa dura hace jabón duro, aceite blando hace jabón blando**: las colas rectas y tiesas (sebo, manteca) se apilan apretadas como tablones, y las moléculas bien apretadas hacen un sólido firme; las colas dobladas y flojas (aceites líquidos) se amontonan sueltas como ramas torcidas, y un montón suelto se queda blando. **La lejía también importa**, porque la lejía se convierte en las tapitas: la lejía de ceniza es lejía de potasa, y el jabón que lleva tapitas de potasa nunca se compacta firme — se queda suelto, jabón blando; la lejía hecha con sosa, en cambio, da tapitas que dejan que las colas se traben en barras firmes. La sal hace el truco dos veces — atesta el agua, así que el jabón sale exprimido en grumos que puedes prensar para darles forma, y la sal común lleva sodio, que intercambia lugares con el potasio de las tapitas del jabón, de modo que el jabón blando de potasa que recoges cuaja en barras firmes al estilo de la sosa.
+
+El **curado** es sobre todo el agua que se va — la cocción ya terminó los cortes, y tu prueba del dedo lo comprobó. A medida que la barra se seca, se endurece, hace mejor espuma y dura más en la jabonera. También se vuelve un poco más mansa: cualquier pequeño resto de lejía se encuentra poco a poco con el aire, cuyo dióxido de carbono lo doma y lo convierte en algo mucho más suave que ya no muerde la piel. Por eso un **toque** leve — la picazón en el dedo, la sacudida de lamer una pila — se apaga con las semanas. Una picazón fuerte es otra cosa: ese jabón está sin terminar y necesita recocerse con grasa, no solo reposar.
+
+Y el **sobreengrasado** es un desequilibrio a propósito: dale a la olla un poco más de grasa de la que las tijeras pueden cortar. La lejía sigue cortando hasta gastarse por completo — así que si queda algo de grasa sin cortar, no puede quedar nada de lejía; hasta la última pizca se usó, seguro — y ese resto de grasa se queda en la barra para suavizarte la piel en lugar de resecarla. El jabón áspero y el jabón suave son el mismo jabón — la diferencia es solo quién se acabó primero, la lejía o la grasa.
+
+## Para ir más lejos
+
+- **Mira hoy mismo correr a las moléculas de jabón.** Haz flotar una gota de aceite en un plato con agua y luego toca el agua con un dedo enjabonado — el aceite huye y se dispersa mientras las moléculas de jabón se extienden por la superficie, aflojando la piel del agua por delante de ellas. (Las micelas hacen su trabajo invisible en el agua de lavar.)
+- **Haz una tanda sobreengrasada junto a una normal:** el mismo día, la misma lejía, un trocito extra de grasa en una de las ollas al final. Después del curado, lávate con las dos; tus manos te van a explicar el sobreengrasado mejor que cualquier libro.
+- **Prueba las grasas que tengas.** Puro sebo da una barra dura y discreta; una parte de aceite blando da espuma más rápida pero una barra más blanda. Toma notas — hacer jabón premia a quien lleva un registro escrito.
+- **Aroma y arenilla.** Hierbas secas machacadas al momento del molde para dar aroma; arena fina y ceniza para un jabón de fregar ollas. Agrégalas después de que pase la prueba del dedo — la lejía destruye las cosas delicadas.
+- **Domina primero las guías vecinas.** La guía de la lejía de ceniza es el cimiento de este oficio — una lejía constante convierte el hacer jabón de apuesta en oficio — y la guía de derretir grasa decide si tu jabón huele a sebo limpio o a cocina vieja.
+- **Lo que esto desbloquea:** heridas lavadas, paños de parto limpios, ropa lavada que no propaga ácaros, y un bien de trueque que todos los vecinos quieren.
