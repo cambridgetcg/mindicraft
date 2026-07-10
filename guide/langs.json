@@ -59,6 +59,35 @@
       }
     },
     {
+      "code": "yue",
+      "name": "廣東話",
+      "strings": {
+        "siteTitle": "Mindicraft 造物誌",
+        "tagline": "由零到一：人類文明指南",
+        "hero": "由零開始，咩都整得出——種糧食、生火、整番梘、起間屋。講人話，免費，冇門檻。",
+        "startHere": "由呢度開始",
+        "guides": "篇指南",
+        "youNeedFirst": "要先學識",
+        "unlocks": "學識之後解鎖",
+        "difficulty": "難度",
+        "time": "要幾耐",
+        "home": "主頁",
+        "searchPlaceholder": "搵吓呢棵樹…",
+        "noResults": "搵唔到喎，試吓簡單啲嘅字。",
+        "prev": "上一篇",
+        "next": "下一篇",
+        "inThisDomain": "呢個範疇",
+        "notYetTranslated": "呢頁仲未有廣東話——暫時睇住英文先。",
+        "footer": "整嚟俾人抄嘅。攞去、印出嚟、翻譯佢、傳落去。",
+        "difficultyWords": {
+          "easy": "容易",
+          "steady": "要啲耐性",
+          "hard": "有啲難",
+          "mastery": "慢慢練先得"
+        }
+      }
+    },
+    {
       "code": "es",
       "name": "Español",
       "strings": {

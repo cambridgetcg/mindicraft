@@ -319,9 +319,16 @@ write(
 <div class="flash" id="flash"></div>
 <script>
 const have=${JSON.stringify(codes)};
-const lang=(navigator.languages||[navigator.language||'en']).map(l=>l.slice(0,2).toLowerCase()).find(w=>have.includes(w))||'en';
-const whispers={en:'everything begins with a spark',zh:'一切从一粒火星开始',es:'todo empieza con una chispa'};
-const enters={en:'enter',zh:'进',es:'entra'};
+const tags=(navigator.languages||[navigator.language||'en']).map(t=>String(t).toLowerCase());
+let lang='en';
+for(const t of tags){
+  if(t.startsWith('yue')||t.startsWith('zh-hk')||t.startsWith('zh-mo')){lang='yue';break}
+  const two=t.slice(0,2);
+  if(have.includes(two)){lang=two;break}
+}
+if(!have.includes(lang))lang='en';
+const whispers={en:'everything begins with a spark',zh:'一切从一粒火星开始',yue:'所有嘢，都由一粒火花開始',es:'todo empieza con una chispa'};
+const enters={en:'enter',zh:'进',yue:'入嚟',es:'entra'};
 const spark=document.getElementById('spark'),flash=document.getElementById('flash');
 let stage=0;
 function open(to){try{localStorage.setItem('mindicraft','lit')}catch(e){}

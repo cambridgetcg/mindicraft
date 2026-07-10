@@ -61,6 +61,10 @@
     "es": {
      "title": "Empieza aquí",
      "intro": "Cómo pensar cuando no tienes nada, y cómo usar esta guía como una escalera: de la primera noche a una aldea que funciona."
+    },
+    "yue": {
+     "title": "由呢度開始",
+     "intro": "咩都冇嘅時候點樣諗，同埋點樣用呢本指南做梯子，由第一晚一步步爬到一條行得順嘅村。"
     }
    }
   },
@@ -135,6 +139,10 @@
     "es": {
      "title": "La primera noche",
      "intro": "Pasa las primeras noches caliente, seco y sin perderte, antes de tener una sola herramienta."
+    },
+    "yue": {
+     "title": "第一晚",
+     "intro": "喺你未有任何工具之前，先捱過最初嗰幾晚：唔凍、唔濕、唔蕩失路。"
     }
    }
   },
@@ -228,6 +236,10 @@
     "es": {
      "title": "Primeras herramientas",
      "intro": "Filos, cuerda, nudos y mangos: las cosas pequeñas sobre las que se construye todo lo demás."
+    },
+    "yue": {
+     "title": "最初嘅工具",
+     "intro": "鋒利嘅刀口、繩、繩結同手柄——之後所有手藝都係砌喺呢啲小嘢上面。"
     }
    }
   },
@@ -326,6 +338,10 @@
     "es": {
      "title": "Fuego",
      "intro": "Haz fuego, mantenlo vivo y ponlo a trabajar: la rama más importante de todo el árbol."
+    },
+    "yue": {
+     "title": "火",
+     "intro": "生火、養火、用火——成棵樹入面最重要嘅分岔位。"
     }
    }
   },
@@ -436,6 +452,10 @@
     "es": {
      "title": "Agua segura y comida silvestre",
      "intro": "Bebe sin enfermarte y come del campo mientras tu huerto sigue siendo un sueño."
+    },
+    "yue": {
+     "title": "乾淨水同野外食物",
+     "intro": "飲水唔會病；菜園仲係一個夢嘅時候，先靠山野食飽。"
     }
    }
   },
@@ -537,6 +557,10 @@
     "es": {
      "title": "Arcilla y hornos",
      "intro": "Tierra pegajosa más fuego: ollas para hervir, ladrillos para construir y hornos con calor para todo lo que viene después."
+    },
+    "yue": {
+     "title": "泥同窯",
+     "intro": "黏土加火，就有煮飯嘅煲、起屋嘅磚，同埋之後樣樣都要用嘅高溫窯。"
     }
    }
   },
@@ -628,6 +652,10 @@
     "es": {
      "title": "Conservar la comida",
      "intro": "Sal, humo, acidez y lugares frescos y oscuros hacen que los días de buena cosecha alimenten los días vacíos del invierno."
+    },
+    "yue": {
+     "title": "留得住嘅食物",
+     "intro": "鹽、煙、酸味同陰涼嘅地窖，令豐收嘅日子養得起捱餓嘅冬天。"
     }
    }
   },
@@ -744,6 +772,10 @@
     "es": {
      "title": "Una casa que dura",
      "intro": "Madera, barro, piedra y paja se unen en una casa seca y cálida, con un fuego que se queda donde debe."
+    },
+    "yue": {
+     "title": "一間住得耐嘅屋",
+     "intro": "木、泥、石同茅草，夾埋就係一間又乾又暖嘅屋，火乖乖留喺佢應該喺嘅地方。"
     }
    }
   },
@@ -841,6 +873,10 @@
     "es": {
      "title": "Mantenerse sano",
      "intro": "Detén la enfermedad antes de que empiece, atiende las heridas con calma y sabe exactamente cuándo buscar atención médica real."
+    },
+    "yue": {
+     "title": "身體健健康康",
+     "intro": "唔俾病有機會開始，冷靜咁處理傷痛，仲要清楚幾時一定要搵真正嘅醫生。"
     }
    }
   },
@@ -941,6 +977,10 @@
     "es": {
      "title": "Cultivar comida",
      "intro": "Deja de perseguir comida cada día y convierte un pedazo de tierra en alimento que vuelve cada año."
+    },
+    "yue": {
+     "title": "種得出糧食",
+     "intro": "唔使日日撲食——將一塊地變成年年都長返出嚟嘅糧食。"
     }
    }
   },
@@ -1032,6 +1072,10 @@
     "es": {
      "title": "Criar animales",
      "intro": "Huevos, leche, lana y miel: comida y materiales que caminan hacia ti."
+    },
+    "yue": {
+     "title": "養埋啲牲口",
+     "intro": "蛋、奶、羊毛同蜂蜜——識自己行埋嚟嘅食物同材料。"
     }
    }
   },
@@ -1136,6 +1180,10 @@
     "es": {
      "title": "Química de todos los días",
      "intro": "Ceniza, grasa, corteza, caliza y arena: con fuego, lo ordinario se transforma en jabón, pegamento, mortero, cuero, luz y vidrio."
+    },
+    "yue": {
+     "title": "日常化學",
+     "intro": "火灰、油脂、樹皮、石灰石同沙——遇上火，平平無奇嘅嘢就變成番梘、膠水、灰漿、皮革、燈光同玻璃。"
     }
    }
   },
@@ -1239,6 +1287,10 @@
     "es": {
      "title": "Hilo y tela",
      "intro": "De tallos de plantas y lomos de oveja a hilo, tela, color y ropa que deja el clima afuera."
+    },
+    "yue": {
+     "title": "線同布",
+     "intro": "由植物莖稈同羊背上嘅毛，變成線、布、顏色，同埋擋風擋雨嘅衫。"
     }
    }
   },
@@ -1342,6 +1394,10 @@
     "es": {
      "title": "Metal",
      "intro": "Carbón, fuelles y un horno de arcilla sacan el metal de la roca: la subida más dura y más gratificante del libro."
+    },
+    "yue": {
+     "title": "金屬",
+     "intro": "木炭、風箱同一座黏土爐，將金屬由石頭入面拉出嚟——成本書最難爬、又最抵爬嗰段。"
     }
    }
   },
@@ -1447,6 +1503,10 @@
     "es": {
      "title": "Caminos, ruedas y agua",
      "intro": "Trineos, puentes, ruedas, botes y una rueda que el arroyo gira por ti: cómo mover más de lo que carga tu espalda."
+    },
+    "yue": {
+     "title": "路、轆同水",
+     "intro": "雪橇、橋、車轆、船，仲有溪水幫你轉嘅水車——搬郁遠超你膊頭孭得起嘅嘢。"
     }
    }
   },
@@ -1547,6 +1607,10 @@
     "es": {
      "title": "Contar, medir y escribir",
      "intro": "Marcas que recuerdan por ti: números, medidas honestas, un calendario y palabras que sobreviven a quien las dijo."
+    },
+    "yue": {
+     "title": "數數、量度同寫字",
+     "intro": "幫你記住嘢嘅記號——數字、老實嘅度量衡、曆法，同埋比講嘢嗰個人活得更耐嘅文字。"
     }
    }
   },
@@ -1654,6 +1718,10 @@
     "es": {
      "title": "Vivir juntos",
      "intro": "Trabajo justo, comercio honesto, alegría compartida y reglas acordadas por todos: lo que convierte casas en una aldea."
+    },
+    "yue": {
+     "title": "一齊生活",
+     "intro": "公道嘅分工、老實嘅交易、共享嘅開心，同埋大家都點頭嘅規矩——將一堆屋變成一條村嘅軟功夫。"
     }
    }
   }
