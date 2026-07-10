@@ -290,7 +290,7 @@ write(
   .word{font-size:clamp(2.4rem,9vw,4.2rem);line-height:1;letter-spacing:.05em;color:#57504a;user-select:none}
   .pivot{position:relative;display:inline-block}
   .spark{position:absolute;left:50%;bottom:.74em;width:.1em;height:.1em;border-radius:50%;border:0;padding:0;
-    background:#e07a4a;box-shadow:0 0 .3em .04em rgba(224,122,74,.5);cursor:pointer;
+    font-size:inherit;line-height:0;background:#e07a4a;box-shadow:0 0 .3em .04em rgba(224,122,74,.5);cursor:pointer;
     animation:breathe 4.5s ease-in-out infinite;transform:translateX(-50%);transition:all .6s ease}
   .spark::after{content:"";position:absolute;inset:-.3em;border-radius:50%}
   .spark:focus-visible{outline:1px dotted #8a6a50;outline-offset:.3em}
