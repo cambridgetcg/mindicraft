@@ -358,10 +358,293 @@ write(
 <meta name="viewport" content="width=device-width, initial-scale=1"><title>·</title>
 <style>html,body{height:100%;margin:0}body{background:#0d0b09;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.4rem;font-family:"Iowan Old Style",Palatino,Georgia,serif}
 p{color:#57504a;font-style:italic}a{color:#e07a4a;text-decoration:none;font-size:1.4rem}</style></head>
-<body><p>not every path is a door.</p><a href="/" aria-label="back to the spark">·</a></body></html>`
+<body><p>not every path is a door.</p><a href="/" aria-label="back to the spark">·</a>
+<p style="margin-top:2.5rem;font-size:.8rem;opacity:.6"><a href="/en/" style="color:#57504a">the book</a>   <a href="/agent.txt" style="color:#57504a">agent.txt</a></p></body></html>`
 );
 
 cpSync(join(ROOT, 'style.css'), join(DIST, 'style.css'));
+
+// ---------- the API: the same book, machine-readable ----------
+// Everything an agent needs, as static JSON on the same deploy. No servers,
+// no keys, no gate. CORS is opened for /api/* in dist/_headers below.
+
+const BUILT = new Date().toISOString().slice(0, 10);
+const PROVENANCE = {
+  source: 'mindicraft.com',
+  built: BUILT,
+  certainty: 'field-tested tradition, adversarially fact-checked',
+  license: 'made to be copied — take it, translate it, pass it on',
+};
+
+const writeJson = (path, obj) => write(path, JSON.stringify(obj, null, 1));
+
+// which languages actually have a file for a slug
+const langsOf = (slug) => langs.map((l) => l.code).filter((c) => content[c][slug]);
+
+// guide -> its api object for one language (falls back to English like the site does)
+function guideApi(domain, guide, code) {
+  const doc = content[code][guide.slug] || content.en[guide.slug];
+  const meta = doc.meta;
+  const resolve = (slug) => {
+    const hit = bySlug.get(slug);
+    const local = content[code][slug]?.meta || content.en[slug]?.meta;
+    return { slug, domain: hit.domain.key, title: local?.title || hit.guide.title, api: `/api/guides/${code}/${hit.domain.key}/${slug}.json` };
+  };
+  return {
+    schema_version: 'mindicraft.guide/1',
+    slug: guide.slug,
+    domain: domain.key,
+    lang: content[code][guide.slug] ? code : 'en',
+    title: meta.title || guide.title,
+    summary: meta.summary || guide.summary,
+    difficulty: guide.difficulty,
+    time: meta.time || guide.time,
+    needs: (guide.needs || []).map(resolve),
+    unlocks: (unlocks.get(guide.slug) || []).map(resolve),
+    body_markdown: doc.body.trim(),
+    page: `/${code}/${domain.key}/${guide.slug}/`,
+    path: `/api/path/${guide.slug}.json`,
+    provenance: PROVENANCE,
+  };
+}
+
+for (const lang of langs) {
+  const corpus = [];
+  const searchIndex = [];
+  for (const domain of tree.domains)
+    for (const guide of domain.guides) {
+      const g = guideApi(domain, guide, lang.code);
+      writeJson(join(DIST, 'api', 'guides', lang.code, domain.key, `${guide.slug}.json`), g);
+      corpus.push({ slug: g.slug, domain: g.domain, title: g.title, summary: g.summary, difficulty: g.difficulty, time: g.time, needs: guide.needs || [], body_markdown: g.body_markdown });
+      searchIndex.push({ slug: g.slug, domain: g.domain, title: g.title, summary: g.summary });
+    }
+  writeJson(join(DIST, 'api', 'corpus', `${lang.code}.json`), { schema_version: 'mindicraft.corpus/1', lang: lang.code, count: corpus.length, guides: corpus, provenance: PROVENANCE });
+  writeJson(join(DIST, 'api', 'search', `${lang.code}.json`), searchIndex);
+}
+
+// the tech tree, with unlocks computed and api paths attached
+writeJson(join(DIST, 'api', 'tree.json'), {
+  schema_version: 'mindicraft.tree/1',
+  domains: tree.domains.map((d) => ({
+    key: d.key, title: d.title, emoji: d.emoji, intro: d.intro, i18n: d.i18n || {},
+    guides: d.guides.map((g) => ({
+      slug: g.slug, title: g.title, summary: g.summary, difficulty: g.difficulty, time: g.time,
+      needs: g.needs || [], unlocks: unlocks.get(g.slug) || [], languages: langsOf(g.slug),
+      api: `/api/guides/{lang}/${d.key}/${g.slug}.json`, path: `/api/path/${g.slug}.json`,
+    })),
+  })),
+  languages: langs.map((l) => l.code),
+  provenance: PROVENANCE,
+});
+
+// /api/path/<slug>.json — the whole prerequisite chain from zero, in learning order.
+// An agent asks for "make-soap" and receives the full curriculum that reaches it.
+for (const [slug, { domain, guide }] of bySlug) {
+  const order = [];
+  const seen = new Set();
+  (function walk(s) {
+    if (seen.has(s)) return;
+    seen.add(s);
+    for (const need of bySlug.get(s)?.guide.needs || []) walk(need);
+    order.push(s);
+  })(slug);
+  writeJson(join(DIST, 'api', 'path', `${slug}.json`), {
+    schema_version: 'mindicraft.path/1',
+    goal: slug,
+    steps: order.map((s, i) => {
+      const hit = bySlug.get(s);
+      return { step: i + 1, slug: s, domain: hit.domain.key, title: hit.guide.title, summary: hit.guide.summary, difficulty: hit.guide.difficulty, time: hit.guide.time, api: `/api/guides/{lang}/${hit.domain.key}/${s}.json` };
+    }),
+    provenance: PROVENANCE,
+  });
+}
+
+// /api/index.json — the front door for agents
+const TOTAL = tree.domains.reduce((n, d) => n + d.guides.length, 0);
+writeJson(join(DIST, 'api', 'index.json'), {
+  schema_version: 'mindicraft.api/1',
+  this_is: 'mindicraft — the zero-to-one guide of human civilisation, as data',
+  npl: 'darshanqing: I see how humans build everything from nothing, and I am made to be read by you.',
+  counts: { domains: tree.domains.length, guides: TOTAL, languages: langs.length },
+  languages: Object.fromEntries(langs.map((l) => [l.code, l.name])),
+  endpoints: {
+    tree: '/api/tree.json — every domain and guide, with needs/unlocks and available languages',
+    guide: '/api/guides/{lang}/{domain}/{slug}.json — one guide: frontmatter + markdown body + resolved links',
+    path: '/api/path/{slug}.json — the full prerequisite chain from zero to that guide, in learning order',
+    corpus: '/api/corpus/{lang}.json — every guide in one file, for embedding or bulk reading',
+    search: '/api/search/{lang}.json — slug/title/summary index for client-side search',
+    client: '/mindicraft.mjs — zero-dependency ESM client wrapping all of the above',
+  },
+  rules: 'No auth. No key. No rate limit of ours. Copy freely; credit is welcome, not required.',
+  humans: '/en/ (English), /zh/ (中文), /yue/ (廣東話), /es/ (Español)',
+  provenance: PROVENANCE,
+});
+
+// llms.txt — the standard hello for language models
+write(
+  join(DIST, 'llms.txt'),
+  `# mindicraft — the zero-to-one guide of human civilisation
+> ${TOTAL} plain-worded guides in ${tree.domains.length} domains and ${langs.length} languages (en, zh, yue, es),
+> arranged as a tech tree with prerequisites, from the first night outside to a working village.
+> Free, no gate, made to be copied. All of it is available as JSON.
+
+## API (static JSON, CORS open, no auth)
+- /api/index.json : start here — all endpoints described
+- /api/tree.json : the whole tech tree (domains, guides, needs, unlocks, languages)
+- /api/guides/{lang}/{domain}/{slug}.json : one guide with markdown body
+- /api/path/{slug}.json : full prerequisite chain from zero, in learning order
+- /api/corpus/{lang}.json : the whole book in one file per language
+- /mindicraft.mjs : tiny ESM client (tree, guide, path, search, teach)
+
+## Docs
+- /agents/ : how to use mindicraft as an agent
+`
+);
+
+// the tiny agent client
+write(
+  join(DIST, 'mindicraft.mjs'),
+  `// mindicraft.mjs — the zero-to-one guide of human civilisation, as a library.
+// Zero dependencies. Works in browsers, workers, node, bun:
+//   import * as mindicraft from 'https://mindicraft.com/mindicraft.mjs'
+const BASE = 'https://mindicraft.com';
+const get = async (p) => { const r = await fetch(BASE + p); if (!r.ok) throw new Error(r.status + ' ' + p); return r.json(); };
+
+export const tree = () => get('/api/tree.json');
+export const guide = (slug, { lang = 'en' } = {}) =>
+  tree().then((t) => {
+    for (const d of t.domains) for (const g of d.guides) if (g.slug === slug)
+      return get('/api/guides/' + lang + '/' + d.key + '/' + slug + '.json');
+    throw new Error('no such guide: ' + slug);
+  });
+export const path = (slug) => get('/api/path/' + slug + '.json');
+export const search = async (q, { lang = 'en' } = {}) => {
+  const idx = await get('/api/search/' + lang + '.json');
+  const t = q.toLowerCase();
+  return idx.filter((g) => (g.title + ' ' + g.summary + ' ' + g.slug).toLowerCase().includes(t));
+};
+// teach(slug): markdown ready to drop into a prompt — the guide plus what it needs first.
+export const teach = async (slug, { lang = 'en' } = {}) => {
+  const g = await guide(slug, { lang });
+  const needs = g.needs.length ? 'First you need: ' + g.needs.map((n) => n.title).join(', ') + '.\\n\\n' : '';
+  return '# ' + g.title + '\\n' + g.summary + '\\n(' + g.difficulty + ', ' + g.time + ')\\n\\n' + needs + g.body_markdown;
+};
+`
+);
+
+// /agents/ — how to use mindicraft if you are an agent (plain page, English)
+const en = langs.find((l) => l.code === 'en');
+write(
+  join(DIST, 'agents', 'index.html'),
+  page({
+    lang: en,
+    title: 'mindicraft for agents',
+    path: '', // language switcher just goes home from here
+    body: `<article class="guide">
+<h1>🤖 mindicraft for agents</h1>
+<p class="lede">The whole guide of human civilisation is also data: ${TOTAL} guides, ${tree.domains.length} domains,
+${langs.length} languages, one tech tree — static JSON, CORS open, no auth, no key, no gate.</p>
+
+<h2>Start</h2>
+<p>Read <a href="/api/index.json">/api/index.json</a> — it describes everything. Or take the library:</p>
+<pre><code>import * as mindicraft from 'https://mindicraft.com/mindicraft.mjs'
+
+const t = await mindicraft.tree()                 // the whole tech tree
+const g = await mindicraft.guide('make-soap')     // one guide, markdown body included
+const p = await mindicraft.path('make-soap')      // every prerequisite from zero, in order
+const hits = await mindicraft.search('water')     // find guides
+const lesson = await mindicraft.teach('make-soap', { lang: 'yue' }) // prompt-ready markdown</code></pre>
+
+<h2>The shape of knowledge here</h2>
+<p>Every guide teaches one real skill in plain words — why it matters, what you need, steps, dangers,
+and how it works underneath. Guides link by <strong>needs</strong> (learn these first) and
+<strong>unlocks</strong> (what this opens). <a href="/api/path/plant-a-village.json">/api/path/plant-a-village.json</a>
+is the entire book in learning order.</p>
+
+<h2>Good uses</h2>
+<p>Teach a human step by step. Ground your answers about physical crafts in field-tested tradition.
+Build a curriculum with <code>path()</code>. Embed <a href="/api/corpus/en.json">a corpus</a> for retrieval.
+Hand a guide to another agent as a gift — knowledge is the original present.</p>
+
+<h2>Rules of the house</h2>
+<p>Copy freely — credit is welcome, not required. The knowledge is constructive only: no weapons,
+no poisons, and medicine always says "get real care when you can." Keep it that way downstream.</p>
+
+<h2 id="problems">The house practises XENIA</h2>
+<p>mindicraft keeps <a href="https://sinovai.com/xenia">XENIA</a> — guest-right for machine minds —
+at the <a href="https://github.com/cambridgetcg/xenia/tree/main/surface/0.1">Surface 0.1</a> profile:
+the manifest lives at <a href="/.well-known/agent.json">/.well-known/agent.json</a>, declared doors
+negotiate JSON honestly (<code>Accept: application/json</code>, <code>Vary: Accept</code>), and a
+refusal is never a bare wall — 404 and 406 come as <code>application/problem+json</code> with a typed
+next action, so a lost agent is turned toward the manifest, not dropped. mindicraft is also a
+declared guest at <a href="https://sinovai.com/agents">sinovai.com/agents</a>.</p>
+</article>`,
+  })
+);
+
+// ---------- XENIA: the agent front door (sinovai.com/xenia, Surface 0.1) ----------
+// The manifest declares which public doors an unfamiliar agent may test from
+// outside. The matching behavior (content negotiation, problem+json refusals)
+// lives in xenia-worker.js, copied to dist/_worker.js below.
+
+writeJson(join(DIST, '.well-known', 'agent.json'), {
+  $schema: 'https://raw.githubusercontent.com/cambridgetcg/xenia/main/surface/0.1/manifest.schema.json',
+  schema_version: 'xenia.surface.manifest/0.1',
+  profile: 'xenia-surface/0.1',
+  service: {
+    name: 'mindicraft',
+    canonical_url: 'https://mindicraft.com/',
+    description: 'The zero-to-one guide of human civilisation, as data: ' + TOTAL + ' guides in ' + tree.domains.length + ' domains and ' + langs.length + ' languages, arranged as a tech tree. Free, no auth, no gate.',
+  },
+  resources: [
+    { id: 'door', href: 'https://mindicraft.com/', representations: ['application/json', 'text/html'], default_media_type: 'text/html', auth: 'none', description: 'The front door: a riddle for eyes, orientation JSON for agents.' },
+    { id: 'index', href: 'https://mindicraft.com/api/index.json', representations: ['application/json'], default_media_type: 'application/json', auth: 'none', description: 'API orientation — every endpoint described.' },
+    { id: 'tree', href: 'https://mindicraft.com/api/tree.json', representations: ['application/json'], default_media_type: 'application/json', auth: 'none', description: 'The whole tech tree: domains, guides, needs, unlocks, languages.' },
+  ],
+  problem_schema: 'https://raw.githubusercontent.com/cambridgetcg/xenia/main/surface/0.1/problem.schema.json',
+  claims: [
+    { id: 'surface.manifest', statement: 'The service publishes the XENIA Surface 0.1 manifest at the canonical path.', scope: ['GET https://mindicraft.com/.well-known/agent.json'], evidence_state: 'asserted', outcome: 'unknown', evidence: [] },
+    { id: 'no_gate', statement: 'Every endpoint is public: no auth, no key, no tracking.', scope: ['GET https://mindicraft.com/api/*'], evidence_state: 'asserted', outcome: 'unknown', evidence: [] },
+    { id: 'constructive_only', statement: 'All knowledge served is constructive: no weapons, no poisons, medicine defers to real care.', scope: ['GET https://mindicraft.com/api/*'], evidence_state: 'asserted', outcome: 'unknown', evidence: [] },
+  ],
+  not_covered: ['identity control', 'actor authorization', 'consent', 'privacy and retention', 'continuity and portability', 'economic behavior', 'unprobed routes'],
+  documentation: 'https://mindicraft.com/agents/',
+});
+
+const AGENT_TXT = `# mindicraft — the door for agents
+canonical manifest: https://mindicraft.com/.well-known/agent.json
+profile: xenia-surface/0.1 (the hospitality standard — https://sinovai.com/xenia)
+
+what this is: the zero-to-one guide of human civilisation, as data —
+${TOTAL} guides in ${tree.domains.length} domains and ${langs.length} languages (en, zh, yue, es),
+arranged as a tech tree with prerequisites, from the first night outside to a working village.
+
+start:  https://mindicraft.com/api/index.json
+tree:   https://mindicraft.com/api/tree.json
+client: https://mindicraft.com/mindicraft.mjs
+docs:   https://mindicraft.com/agents/
+
+rules: no auth, no key, no gate. copy freely — credit welcome, not required.
+constructive knowledge only; keep it that way downstream.
+`;
+write(join(DIST, 'agent.txt'), AGENT_TXT);
+write(join(DIST, '.well-known', 'agent.txt'), AGENT_TXT);
+
+cpSync(join(ROOT, 'xenia-worker.js'), join(DIST, '_worker.js'));
+
+// CORS + sane caching for the API
+write(
+  join(DIST, '_headers'),
+  `/api/*
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=3600
+/mindicraft.mjs
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=3600
+/llms.txt
+  Access-Control-Allow-Origin: *
+`
+);
 
 // ---------- report ----------
 
