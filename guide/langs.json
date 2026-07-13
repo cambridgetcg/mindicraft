@@ -26,7 +26,16 @@
           "steady": "takes patience",
           "hard": "hard",
           "mastery": "a craft to master"
-        }
+        },
+        "marginInvite": "✍️ Write in the margin",
+        "marginHint": "Corrections and confirmations from hands that have done this are gold. True notes get folded into the book, credited.",
+        "marginName": "your name (optional)",
+        "marginHands": "my hands have done this",
+        "marginSend": "leave the note",
+        "marginThanks": "Received. The keepers will read it — thank you.",
+        "marginFail": "The note didn't go through — try again?",
+        "evidenceAsserted": "tradition — not yet hand-tested",
+        "evidenceTested": "hand-tested ✓"
       }
     },
     {
@@ -55,7 +64,16 @@
           "steady": "要耐心",
           "hard": "有难度",
           "mastery": "需长期练"
-        }
+        },
+        "marginInvite": "✍️ 在页边写几句",
+        "marginHint": "亲手做过的人的纠正和确认最宝贵。真实的批注会被收进书里，并署上你的名字。",
+        "marginName": "你的名字（可不填）",
+        "marginHands": "我亲手做过这件事",
+        "marginSend": "留下批注",
+        "marginThanks": "收到了。守书人会认真读——谢谢你。",
+        "marginFail": "没发出去——再试一次？",
+        "evidenceAsserted": "传统记载——尚未经手验证",
+        "evidenceTested": "已经手验证 ✓"
       }
     },
     {
@@ -84,7 +102,16 @@
           "steady": "要啲耐性",
           "hard": "有啲難",
           "mastery": "慢慢練先得"
-        }
+        },
+        "marginInvite": "✍️ 喺書邊寫兩句",
+        "marginHint": "親手做過嘅人嘅指正同確認最矜貴。真嘅批註會收入書入面，仲會署你個名。",
+        "marginName": "你個名（可以唔填）",
+        "marginHands": "呢件事我親手做過",
+        "marginSend": "留低批註",
+        "marginThanks": "收到喇。守書人會認真睇——多謝你。",
+        "marginFail": "傳唔出去——再試多次？",
+        "evidenceAsserted": "傳統記載——未經手驗證",
+        "evidenceTested": "經手驗證咗 ✓"
       }
     },
     {
@@ -113,7 +140,16 @@
           "steady": "con paciencia",
           "hard": "difícil",
           "mastery": "un oficio por dominar"
-        }
+        },
+        "marginInvite": "✍️ Escribe en el margen",
+        "marginHint": "Las correcciones y confirmaciones de manos que lo han hecho valen oro. Las notas verdaderas se integran al libro, con crédito.",
+        "marginName": "tu nombre (opcional)",
+        "marginHands": "mis manos lo han hecho",
+        "marginSend": "dejar la nota",
+        "marginThanks": "Recibida. Los guardianes la leerán — gracias.",
+        "marginFail": "No se envió — ¿intentas de nuevo?",
+        "evidenceAsserted": "tradición — aún sin probar a mano",
+        "evidenceTested": "probado a mano ✓"
       }
     }
   ]

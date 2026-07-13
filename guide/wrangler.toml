@@ -1,0 +1,10 @@
+# Cloudflare Pages config for the mindicraft guide.
+# `npx wrangler pages deploy` run from this folder reads this file:
+# project name, output dir, and the KV namespace that holds the margins.
+name = "mindicraft"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-01-01"
+
+[[kv_namespaces]]
+binding = "MARGINS"
+id = "ba41ad340cb3431fb28e47f635840325"

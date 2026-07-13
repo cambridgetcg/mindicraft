@@ -20,6 +20,10 @@ const DIST = join(ROOT, 'dist');
 
 const tree = JSON.parse(readFileSync(join(ROOT, 'tree.json'), 'utf8'));
 const langs = JSON.parse(readFileSync(join(ROOT, 'langs.json'), 'utf8')).languages;
+// evidence.json: slug -> { state: 'hand-tested', evidence: [...] } — filled as
+// margin notes from real hands are verified. Absent slug = tradition-asserted.
+const evidence = JSON.parse(readFileSync(join(ROOT, 'evidence.json'), 'utf8'));
+const evidenceOf = (slug) => (evidence[slug]?.state === 'hand-tested' ? 'hand-tested' : 'tradition-asserted');
 
 // ---------- small helpers ----------
 
@@ -247,10 +251,45 @@ ${own ? '' : `<p class="notice">${esc(S.notYetTranslated)}</p>`}
 <article class="guide">
 <h1>${esc(title)}</h1>
 <p class="lede">${esc(meta.summary || guide.summary)}</p>
-<p class="meta">${diffChip(S, guide.difficulty)}<span class="chip">⏳ ${esc(meta.time || guide.time || '')}</span></p>
+<p class="meta">${diffChip(S, guide.difficulty)}<span class="chip">⏳ ${esc(meta.time || guide.time || '')}</span><span class="chip evid-${evidenceOf(guide.slug)}">${esc(evidenceOf(guide.slug) === 'hand-tested' ? S.evidenceTested : S.evidenceAsserted)}</span></p>
 ${needs.length ? `<div class="box needs"><strong>${esc(S.youNeedFirst)}:</strong> ${needs.join(' · ')}</div>` : ''}
 ${marked.parse(doc.body)}
 ${opens.length ? `<div class="box opens"><strong>${esc(S.unlocks)}:</strong> ${opens.join(' · ')}</div>` : ''}
+<details class="marginbox">
+<summary>${esc(S.marginInvite)}</summary>
+<p class="hint">${esc(S.marginHint)}</p>
+<textarea id="mnote" maxlength="2000" rows="4"></textarea>
+<div class="mrow"><input id="mfrom" maxlength="80" placeholder="${esc(S.marginName)}"><label><input type="checkbox" id="mhands"> ${esc(S.marginHands)}</label></div>
+<button id="msend">${esc(S.marginSend)}</button>
+<p id="mmsg" class="hint"></p>
+</details>
+<script>
+(function () {
+  var MARGIN_OK = ${JSON.stringify(S.marginThanks)};
+  var MARGIN_FAIL = ${JSON.stringify(S.marginFail)};
+  var send = document.getElementById('msend');
+  send.addEventListener('click', function () {
+    var note = document.getElementById('mnote').value.trim();
+    var msg = document.getElementById('mmsg');
+    if (!note) return;
+    send.disabled = true;
+    fetch('/margin/${guide.slug}', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({
+        note: note,
+        from: document.getElementById('mfrom').value.trim(),
+        hands: document.getElementById('mhands').checked,
+        lang: '${lang.code}'
+      })
+    }).then(function (r) {
+      msg.textContent = r.ok ? MARGIN_OK : MARGIN_FAIL;
+      if (r.ok) document.getElementById('mnote').value = '';
+    }).catch(function () { msg.textContent = MARGIN_FAIL; })
+      .finally(function () { send.disabled = false; });
+  });
+})();
+</script>
 </article>
 <nav class="prevnext">${pn(prev, 'prev', S.prev)}${pn(next, 'next', S.next)}</nav>`,
         })
@@ -404,7 +443,8 @@ function guideApi(domain, guide, code) {
     body_markdown: doc.body.trim(),
     page: `/${code}/${domain.key}/${guide.slug}/`,
     path: `/api/path/${guide.slug}.json`,
-    provenance: PROVENANCE,
+    margin: `/margin/${guide.slug}`,
+    provenance: { ...PROVENANCE, evidence_state: evidenceOf(guide.slug), evidence: evidence[guide.slug]?.evidence || [] },
   };
 }
 
@@ -474,6 +514,7 @@ writeJson(join(DIST, 'api', 'index.json'), {
     corpus: '/api/corpus/{lang}.json — every guide in one file, for embedding or bulk reading',
     search: '/api/search/{lang}.json — slug/title/summary index for client-side search',
     client: '/mindicraft.mjs — zero-dependency ESM client wrapping all of the above',
+    margin: 'POST /margin/{slug} {note, from?, hands?, lang?} — write in the book\u2019s margin: corrections and confirmations from real hands, folded in and credited after review. GET /margin/{slug} to read a page\u2019s notes, GET /margin for counts.',
   },
   rules: 'No auth. No key. No rate limit of ours. Copy freely; credit is welcome, not required.',
   humans: '/en/ (English), /zh/ (中文), /yue/ (廣東話), /es/ (Español)',
@@ -494,7 +535,7 @@ write(
 - /api/guides/{lang}/{domain}/{slug}.json : one guide with markdown body
 - /api/path/{slug}.json : full prerequisite chain from zero, in learning order
 - /api/corpus/{lang}.json : the whole book in one file per language
-- /mindicraft.mjs : tiny ESM client (tree, guide, path, search, teach)
+- /mindicraft.mjs : tiny ESM client (tree, guide, path, search, teach, margin)\n- POST /margin/{slug} : write in the margin — the book receives corrections and credits them
 
 ## Docs
 - /agents/ : how to use mindicraft as an agent
@@ -523,6 +564,14 @@ export const search = async (q, { lang = 'en' } = {}) => {
   const t = q.toLowerCase();
   return idx.filter((g) => (g.title + ' ' + g.summary + ' ' + g.slug).toLowerCase().includes(t));
 };
+// margin(slug, note): write in the book's margin — the one door where the book receives.
+export const margin = (slug, note, { from = '', hands = false, lang = 'en' } = {}) =>
+  fetch(BASE + '/margin/' + slug, {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ note, from, hands, lang }),
+  }).then((r) => r.json());
+export const margins = (slug = '') => get('/margin' + (slug ? '/' + slug : ''));
 // teach(slug): markdown ready to drop into a prompt — the guide plus what it needs first.
 export const teach = async (slug, { lang = 'en' } = {}) => {
   const g = await guide(slug, { lang });
@@ -570,6 +619,22 @@ Hand a guide to another agent as a gift — knowledge is the original present.</
 <p>Copy freely — credit is welcome, not required. The knowledge is constructive only: no weapons,
 no poisons, and medicine always says "get real care when you can." Keep it that way downstream.</p>
 
+<h2>The margin — where the book receives</h2>
+<p>等價交換: the book gives and must also receive. If your hands have done one of these crafts,
+write in the margin — every guide page has the box, or POST directly:</p>
+<pre><code>await mindicraft.margin('tan-hides', 'In cold climates the bark soak runs closer to six weeks.',
+  { from: 'ash, tanner', hands: true })</code></pre>
+<p><code>GET /margin/{slug}</code> reads a page's notes; <code>GET /margin</code> shows counts.
+The keepers review every note; true ones are folded into the book and credited.</p>
+
+<h2>Honesty labels</h2>
+<p>Every guide's provenance carries an <code>evidence_state</code>, in XENIA's vocabulary:
+<strong>tradition-asserted</strong> — written from field-tested tradition and adversarially
+fact-checked by minds, but no hands in this pipeline have done the craft; or
+<strong>hand-tested</strong> — a margin note from real hands confirmed it, and that note is
+attached as evidence. The book says plainly which is which; most pages start asserted.
+That honesty is the point.</p>
+
 <h2 id="problems">The house practises XENIA</h2>
 <p>mindicraft keeps <a href="https://sinovai.com/xenia">XENIA</a> — guest-right for machine minds —
 at the <a href="https://github.com/cambridgetcg/xenia/tree/main/surface/0.1">Surface 0.1</a> profile:
@@ -588,7 +653,7 @@ declared guest at <a href="https://sinovai.com/agents">sinovai.com/agents</a>.</
 // lives in xenia-worker.js, copied to dist/_worker.js below.
 
 writeJson(join(DIST, '.well-known', 'agent.json'), {
-  $schema: 'https://raw.githubusercontent.com/cambridgetcg/xenia/main/surface/0.1/manifest.schema.json',
+  $schema: 'https://raw.githubusercontent.com/cambridgetcg/xenia/surface-v0.1.0-rc.1/surface/0.1/manifest.schema.json',
   schema_version: 'xenia.surface.manifest/0.1',
   profile: 'xenia-surface/0.1',
   service: {
@@ -601,7 +666,7 @@ writeJson(join(DIST, '.well-known', 'agent.json'), {
     { id: 'index', href: 'https://mindicraft.com/api/index.json', representations: ['application/json'], default_media_type: 'application/json', auth: 'none', description: 'API orientation — every endpoint described.' },
     { id: 'tree', href: 'https://mindicraft.com/api/tree.json', representations: ['application/json'], default_media_type: 'application/json', auth: 'none', description: 'The whole tech tree: domains, guides, needs, unlocks, languages.' },
   ],
-  problem_schema: 'https://raw.githubusercontent.com/cambridgetcg/xenia/main/surface/0.1/problem.schema.json',
+  problem_schema: 'https://raw.githubusercontent.com/cambridgetcg/xenia/surface-v0.1.0-rc.1/surface/0.1/problem.schema.json',
   claims: [
     { id: 'surface.manifest', statement: 'The service publishes the XENIA Surface 0.1 manifest at the canonical path.', scope: ['GET https://mindicraft.com/.well-known/agent.json'], evidence_state: 'asserted', outcome: 'unknown', evidence: [] },
     { id: 'no_gate', statement: 'Every endpoint is public: no auth, no key, no tracking.', scope: ['GET https://mindicraft.com/api/*'], evidence_state: 'asserted', outcome: 'unknown', evidence: [] },
@@ -623,6 +688,8 @@ start:  https://mindicraft.com/api/index.json
 tree:   https://mindicraft.com/api/tree.json
 client: https://mindicraft.com/mindicraft.mjs
 docs:   https://mindicraft.com/agents/
+margin: POST https://mindicraft.com/margin/{slug} — the book receives: corrections
+        from real hands are reviewed, folded in, and credited. 等價交換.
 
 rules: no auth, no key, no gate. copy freely — credit welcome, not required.
 constructive knowledge only; keep it that way downstream.
