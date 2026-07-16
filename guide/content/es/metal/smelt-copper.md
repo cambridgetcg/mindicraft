@@ -33,6 +33,7 @@ El cobre fue el primer metal que la gente sacó de la piedra, hace unos siete mi
 
 ## Cuidado
 
+- **Monóxido de carbono.** El horno exhala un gas venenoso invisible y sin olor — el mismo gas que libera tu metal, del que se habla más abajo. Solo al aire libre, siempre; párate del lado desde donde sopla el viento, y nunca te inclines sobre la boca respirando los humos mientras cargas. Cargar es el momento de peligro, porque pone tu cara justo donde sale el aliento del horno: echa el mineral y saca la cabeza. Un dolor de cabeza, un mareo o una torpeza rara junto al horno significan aire malo — aléjate al aire limpio de inmediato, y no vuelvas hasta que tengas la cabeza del todo despejada. Este no avisa con ningún olor, así que, a diferencia del arsénico de más abajo, tu nariz nunca te va a decir que está ahí.
 - **Agua más metal fundido explota.** Un molde o crisol húmedo convierte su humedad en vapor en un instante y rocía cobre líquido. Esta es la herida que termina carreras de fundidor. Seca los moldes durante días, entíbialos junto al fuego antes de verter, y nunca viertas sobre suelo mojado.
 - **Olor a ajo en el fuego significa arsénico** — algunos minerales de cobre lo traen, y sus vapores son veneno. Mantente siempre del lado desde donde sopla el viento; si el olor a ajo es fuerte, abandona ese lote de mineral y busca una fuente más limpia.
 - **Funde solo mineral que encontraste bajo manchas verdes.** Un mineral gris, pesado y brillante puede ser galena — plomo — cuyos vapores envenenan lento e invisible. Cobre primero, siempre al aire libre, siempre con el viento llevándose el humo de la chimenea lejos de ti.
@@ -43,3 +44,5 @@ El cobre fue el primer metal que la gente sacó de la piedra, hace unos siete mi
 ## Cómo funciona
 
 En lo hondo de la cama de carbón, al fuego le falta aire y produce monóxido de carbono — un gas tan hambriento de oxígeno que se lo roba directamente al mineral tostado. El óxido de cobre pierde su oxígeno y se vuelve cobre; la roca sobrante se funde en escoria y escurre a un lado. El metal pesa más que la escoria, así que la gravedad ordena tu premio hacia el fondo, de donde lo rastrillas.
+
+Esa misma hambre es la razón de que el aliento del horno sea veneno, y vale la pena ver que son un solo hecho y no dos. Tu sangre se gana la vida cargando oxígeno; el monóxido de carbono le quita esos asientos y no los suelta, así que un pulmón lleno del gas que desnuda el mineral con tantas ganas te va a desnudar a ti con las mismas ganas — en silencio, sin olor y sin sabor, mientras tú solo te sientes un poco cansado. El asombro y el aviso son el mismo gas. Párate del lado desde donde sopla el viento.

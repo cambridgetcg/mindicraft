@@ -583,10 +583,11 @@
     {
      "slug": "smoke-food",
      "title": "Smoke fish and meat",
-     "summary": "Hang food in cool smoke for hours so it dries, keeps for weeks, and tastes wonderful.",
+     "summary": "Salt-cure fish and meat, then hang them in cool smoke for two days until they dry hard and keep for weeks.",
      "needs": [
       "dry-food",
-      "keep-fire-alive"
+      "keep-fire-alive",
+      "make-salt"
      ],
      "difficulty": "steady",
      "time": "two days"

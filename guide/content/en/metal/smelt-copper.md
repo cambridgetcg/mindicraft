@@ -33,6 +33,7 @@ Copper was the first metal people ever pulled out of stone, about seven thousand
 
 ## Watch out
 
+- **Carbon monoxide.** The furnace breathes out an invisible, odourless poison gas — the very gas that frees your metal, described below. Outdoors only, always; stand upwind, and never lean over the top breathing the fumes while you charge. Charging is the moment of danger, because it puts your face where the breath comes out: drop the ore in and get your head back. A headache, dizziness, or a strange dullness at the furnace means bad air — walk away into clean air at once, and do not go back until your head is fully clear. This one gives no warning smell, so unlike arsenic below, your nose will never tell you it is there.
 - **Water plus molten metal explodes.** A damp mold or crucible flashes its moisture to steam and sprays liquid copper. This is the injury that ends smelting careers. Dry molds for days, warm them beside the fire before pouring, and never pour over wet ground.
 - **A garlic smell from the fire means arsenic** — some copper ores carry it, and its fumes are poison. Stay upwind at all times; if the garlic smell is strong, abandon that batch of ore and find a cleaner source.
 - **Only smelt ore you found under green stains.** Heavy shiny gray ore may be galena — lead — whose fumes poison slowly and invisibly. Copper first, always outdoors, always upwind of the chimney.
@@ -43,3 +44,5 @@ Copper was the first metal people ever pulled out of stone, about seven thousand
 ## How it works
 
 Deep in the charcoal bed, the fire runs short of air and makes carbon monoxide — a gas so hungry for oxygen that it steals it straight off the roasted ore. Copper oxide loses its oxygen and becomes copper; the leftover rock melts into slag and drains aside. Metal is heavier than slag, so gravity sorts your prize to the bottom, where you rake it out.
+
+That same hunger is why the furnace's breath is poison, and it is worth seeing that these are one fact and not two. Your blood carries oxygen for a living; carbon monoxide takes those seats and will not give them up, so a lungful of the gas that so eagerly strips the ore will just as eagerly strip you — quietly, with no smell and no taste, while you feel only a little tired. The wonder and the warning are the same gas. Stand upwind.

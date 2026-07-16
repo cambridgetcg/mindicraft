@@ -27,7 +27,8 @@ The rule to remember under stress: **pressure stops bleeding, water cleans, cove
 2. Wash your own hands with soap or ash and safe water before going further.
 3. Clean the wound once bleeding has slowed.
    - Pour clean water over and through the wound, generously. Let it flow out, carrying dirt with it.
-   - Pick out any visible grit, splinters, or bits with clean fingers or a cloth corner. Every speck left in is a seed for infection.
+   - Pick out loose grit, small splinters, and surface bits with clean fingers or a cloth corner. Every speck left in is a seed for infection.
+   - **But anything large, deep, or stuck fast stays in.** A blade, a shard of glass, a nail, a spike of wood — leave it exactly where it is. It may be plugging the very vessel it cut, and pulling it out can start bleeding you cannot stop. Pad around it with rolled cloth so it cannot shift, bandage over the padding without pressing on the object itself, and go for real care. Only what lifts away easily comes away.
    - Wash the skin around the wound with soap and water, wiping away from the cut, not into it.
 4. Cover it.
    - Lay a clean, dry cloth pad over the wound and tie it in place — snug, but loose enough to slide a finger under.
@@ -41,6 +42,7 @@ The rule to remember under stress: **pressure stops bleeding, water cleans, cove
 - **Signs of infection — act, don't wait.** Growing redness, skin hot to the touch, swelling that increases, throbbing pain, thick yellow-white fluid (pus), or fever. Rinse and re-cover more often, rest the limb, and get to real medical care. **Red streaks running from the wound toward the body are an emergency** — the infection is spreading inside. Go now.
 - **Go for real care straight away, not in a week, if:** the cut gapes open or is deep enough to see fat or muscle; bleeding soaks through cloth after 15 minutes of firm pressure; it is a bite from any animal or person; it is a deep puncture (like a nail); or the wound is on the face, a joint, or a hand and won't close.
 - **Deep, dirty wounds risk tetanus** — a soil germ that causes deadly muscle lockjaw weeks later. Punctures and wounds with soil or dung in them need real medical care even if they look small.
+- **Never pull out something embedded.** The urge is almost impossible to resist, and it is the wrong one. A big splinter, a blade, glass, a nail: while it sits there it may be the only thing holding a cut vessel shut, and the bleeding it releases on the way out can be far worse than the wound you can see. Pad around it, bandage without pressing on it, keep the person still, and go. Someone with real medical care takes it out — not you, not here.
 - **Never put dirt, dung, mud, leaves, or spit on a wound.** Folk dressings like these cause the worst infections. Clean water, clean cloth, nothing else inside the wound.
 - **Don't seal a dirty wound shut.** Closing or tightly wrapping a wound you couldn't fully clean traps germs in a warm pocket. When unsure, keep it clean, covered loosely, and checked daily.
 - **A dressing stuck to the wound** — soak it off with clean water rather than ripping, which reopens the cut.
