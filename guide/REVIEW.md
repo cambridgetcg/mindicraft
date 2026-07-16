@@ -4,10 +4,10 @@ _Reviewed 2026-07-16 by 飛寶, against the book as it stands at commit 901b8de 
 mindicraft.com). 22 agents: five independent lenses, every serious finding put to two
 adversarial verifiers who were told to refute it. What survived is below._
 
-**Status: the critical and the five majors are FIXED in the working tree, in all four
-languages — committed nowhere, deployed nowhere.** Everything else here is still open:
-the contested knapping call, the two missing rungs, the smaller sweep, and the code
-layer. See "What was fixed" at the bottom for exactly what changed.
+**Status: the critical, the five majors, and the smaller sweep are all FIXED and committed
+locally, in all four languages — pushed nowhere, deployed nowhere** (`c402903`, `ab875e1`).
+Still open: the contested knapping call (yours), the two missing rungs, and the code layer.
+See "What was fixed" at the bottom.
 
 ---
 
@@ -202,7 +202,7 @@ its forest and the whole fire branch dies); **care for the dead**; **irrigation*
 
 ---
 
-## Smaller things, worth a sweep
+## Smaller things, worth a sweep — done (`ab875e1`)
 
 - `ash-lye` gives 15 minutes for an alkali eye flush; `make-soap` says 20–30 and
   `burn-lime` says 20. The guide making the strongest caustic gives the shortest minimum.
@@ -309,6 +309,37 @@ already been handed the diff, and all three languages faithfully carried the fal
 sentence until they were caught and fixed. A seam, made the same way every seam in this
 book was made: the source moved and the copy didn't. In a book whose only real asset is
 being true, a frightening sentence that is wrong is still a defect.
+
+### The second batch (`ab875e1`) — the minor seams
+
+The eye-flush rule turned out to be worse than this review first caught: not four guides
+but **five**, with four different answers, and `tan-hides` carrying no number at all. All
+five now say thirty minutes in all four languages, and two of them say out loud that it is
+the book's rule wherever a caustic can reach an eye. `treat-cuts` and `when-to-get-help`
+now both say ten minutes, and both say go *while* someone keeps pressing.
+
+Everything else on the list landed too: carbon monoxide for `melt-glass` and
+`bloomery-furnace` (plus "a roof, never walls"), bird flu's real signal in `keep-chickens`,
+tetanus at `leather-goods`' awl, the breastfeeding line in `fever-and-belly-care`, the
+tongue-test how-to cut from `make-soap`, and `make-iron-tools` finally has a How it works.
+
+Two departures from what this review recommended, both deliberate:
+
+- **`spark-fire` was corrected further than "flagged".** Dried chaga takes a spark raw —
+  that is *why* it is the true tinder fungus, and why old kits carried it. The old text
+  cost the reader their best option before they own a tin. Horse-hoof fungus is the one
+  that wants work, and now gets the real method (amadou).
+- **`make-bellows` was left alone.** The review wanted `bone-tools` added; the guide offers
+  "nails, wooden pegs, **or** awl and sinew", and the peg path needs no awl. A hard
+  prerequisite would make the tree lie in the other direction. `catch-fish` → `weave-basket`
+  was added: its step 5 is unambiguously a weaving project.
+
+And one more lesson from the inside, matching the botulism one above. Three of the
+translation defects the verifiers caught were not translation errors at all — they were
+**my English**: "mean" pieces (archaic sense of poor), "the gas talking", "a room to move
+into". The translators calqued them faithfully into nonsense. Idiom is a liability in a
+book that lives in four languages; the house rule *plain words before poetry* is not only
+about tone. Fixed at the source and in every copy.
 
 ---
 
