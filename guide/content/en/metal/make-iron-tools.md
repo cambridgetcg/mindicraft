@@ -47,3 +47,13 @@ Do the projects in this order. Each one teaches a move the next one needs, and t
 - **Cracks from cold bending.** Hooks and hinge barrels bent at dull red or colder split along the fold. Bend only at orange heat.
 - **Nail heads flying off** mean you nicked too deep before heading. Nick shallower; the header grips the rest.
 - **Count your punches and cuts back out of the fire.** Small tools left in the coals burn away in minutes.
+
+## How it works
+
+Every project on this page rests on one idea: **hot iron flows.** It does not chip, crumble, or wear away like wood under a chisel — at orange heat it moves the way stiff clay moves under your thumb, and it heals wherever it is pressed back together. Once you feel that, the steps stop being a list and start being obvious.
+
+That is why you **punch** a hole instead of drilling one. A drill removes metal and throws it away; a punch shoves it aside, and the metal has to go somewhere — sideways, into a bulge around the hole. Nothing is lost, so nothing is weakened: the grain of the iron parts and flows around the hole like water round a stone, which is stronger than a hole cut straight through fibres. It also explains the backing block. Drive a punch against a solid anvil and the metal has nowhere to escape, so it dents your anvil and grips your punch; drive it over the block's hole and the displaced metal has somewhere to go.
+
+The same idea runs the other way for a **hot cut**. You are not sawing — you are wedging the metal apart along a line, letting it flow away from the blade on both sides. And that is why a nail head flies off when you nick too deep: the nick is not a scratch, it is a fold, and a fold driven too far becomes a crease the metal tears along the moment the header squeezes it.
+
+So heat is not just softening. Heat is what turns cutting into moving — and moving metal, unlike cut metal, keeps all of itself.

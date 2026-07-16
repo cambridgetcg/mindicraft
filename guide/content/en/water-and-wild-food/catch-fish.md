@@ -3,7 +3,7 @@ title: Catch fish with lines and traps
 summary: Make a hook from bone or thorn for a hand line, and build a woven funnel trap that fishes while you sleep.
 difficulty: steady
 time: two days
-needs: [make-cordage, bone-tools]
+needs: [make-cordage, bone-tools, weave-basket]
 ---
 
 Fish are the steadiest wild meat there is: they gather in predictable places, they bite all year, and a trap catches them while you do other work — or sleep. With string you have twisted and a hook you have carved, you can fish forever without buying anything.

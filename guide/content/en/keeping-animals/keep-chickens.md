@@ -41,6 +41,7 @@ The whole craft comes down to one sentence: everything wants to eat a chicken. Y
 - **Eggs stop in winter.** Hens lay by day-length; short days mean few or no eggs. This is normal, not sickness — laying returns as days lengthen.
 - **A hen who sits on the nest all day**, puffed up and growling, has gone "broody" — she wants to hatch. Give her fertile eggs and 21 days if you want chicks; otherwise lift her off daily until she quits.
 - **Sick bird signs:** hunched, dull, apart from the flock, dirty vent (rear end). Separate her in a small box with food and water and watch the rest closely. Wash your hands after handling any bird.
+- **Several birds dead in a day or two is a different thing entirely.** One bird slowly going hunched is ordinary. A sudden die-off — several healthy birds dead within a day or two — is the mark of bird flu, and that one can cross into people. Do not handle sick or freshly dead birds, or their droppings, with bare hands: use a bag over your hand or gloves, keep your face well away, do not stir up dust, and wash hard afterwards. Keep children away from the flock entirely until it passes, bury the dead deep and far from water, and tell anyone nearby who keeps birds.
 - **Don't eat cracked eggs.** Store clean eggs unwashed and cool — the natural coating keeps them good for weeks. Wash an egg only just before cooking it.
 
 ## How it works

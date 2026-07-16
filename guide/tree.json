@@ -417,7 +417,8 @@
      "summary": "Make a hook from bone or thorn for a hand line, and build a woven funnel trap that fishes while you sleep.",
      "needs": [
       "make-cordage",
-      "bone-tools"
+      "bone-tools",
+      "weave-basket"
      ],
      "difficulty": "steady",
      "time": "two days"

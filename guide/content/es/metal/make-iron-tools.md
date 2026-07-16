@@ -47,3 +47,13 @@ Haz los proyectos en este orden. Cada uno enseña un movimiento que el siguiente
 - **Grietas por doblar en frío.** Los ganchos y los cañones de bisagra doblados a rojo apagado o más frío se rajan por el pliegue. Dobla solo a calor naranja.
 - **Cabezas de clavo que salen volando** significan que marcaste demasiado hondo antes de formar la cabeza. Marca menos profundo; la clavera sujeta el resto.
 - **Cuenta tus punzones y tajaderas al sacarlos del fuego.** Las herramientas pequeñas que se quedan en las brasas se consumen en minutos.
+
+## Cómo funciona
+
+Todos los proyectos de esta página descansan sobre una sola idea: **el hierro caliente fluye.** No se astilla, no se desmorona ni se desgasta como la madera bajo un formón — a calor naranja se mueve igual que la arcilla dura bajo tu pulgar, y se vuelve a soldar dondequiera que lo aprietes para juntarlo. En cuanto sientes eso, los pasos dejan de ser una lista y se vuelven obvios.
+
+Por eso **punzonas** un agujero en vez de taladrarlo. Un taladro le quita metal a la pieza y lo tira; el punzón lo empuja a un lado, y ese metal tiene que irse a alguna parte — hacia los lados, formando un abultamiento alrededor del agujero. No se pierde nada, así que no se debilita nada: la fibra del hierro se abre y corre alrededor del agujero como el agua alrededor de una piedra, y eso es más fuerte que un agujero cortado a través de las fibras. También explica el bloque de respaldo. Hinca el punzón contra un yunque macizo y el metal no tiene por dónde escapar, así que abolla tu yunque y atasca tu punzón; hazlo sobre el agujero del bloque y el metal desplazado sí tiene adónde irse.
+
+La misma idea corre al revés con la **tajadera**. No estás serruchando — estás separando el metal a fuerza de cuña a lo largo de una línea, dejando que fluya alejándose de la hoja por los dos lados. Y por eso sale volando la cabeza de un clavo cuando marcas demasiado hondo: la marca no es un rasguño, es un pliegue, y un pliegue llevado demasiado lejos se vuelve un doblez por donde el metal se rasga en cuanto la clavera lo aprieta.
+
+Así que el calor no es solo ablandar. El calor es lo que convierte el cortar en mover — y el metal movido, a diferencia del cortado, se queda entero.

@@ -48,6 +48,7 @@ Coser cuero es distinto de coser tela en una cosa grande: no puedes empujar una 
 ## Cuidado
 
 - **La lezna se resbala hacia tu mano.** La lezna causa más heridas que el cuchillo. Perfora siempre **alejándote** de tu cuerpo, sobre un bloque de madera, nunca hacia la palma que sostiene el cuero.
+- **La punción profunda es la herida que se infecta, no la que sangra.** La lezna hace un agujero angosto que se cierra sobre sí mismo y encierra la mugre en un bolsillo tibio y sin aire — justo lo que el tétanos quiere, y el tétanos vive en la tierra y el estiércol, que es exactamente lo que cargan una herramienta de trabajo y un patio de trabajo. Deja que una punción sangre en vez de apretarla para cerrarla, lávala por dentro con mucha agua limpia, mantenla abierta y cubierta sin apretar en lugar de sellada, y vigílala. Rigidez de la mandíbula o del cuello en los días y las semanas siguientes, o un enrojecimiento que se extiende, significa atención médica de verdad ya. Mira la guía de limpiar y cubrir las cortadas.
 - **Cortar sin patrón.** El cuero es meses de trabajo; un mal corte lo desperdicia. Prueba primero un patrón de corteza o tela, todas las veces.
 - **Las puntadas se rasgan por el borde.** Los agujeros quedaron demasiado cerca del borde o demasiado juntos entre sí. Mantén los agujeros al menos a medio dedo de cualquier borde.
 - **Secar el cuero junto al fuego.** El calor deja el cuero mojado duro como piedra y agrietado, para siempre. Solo sombra y aire en movimiento.

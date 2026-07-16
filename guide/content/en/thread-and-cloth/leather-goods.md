@@ -48,6 +48,7 @@ Leather sewing is different from cloth sewing in one big way: you cannot push a 
 ## Watch out
 
 - **Awl slips into your hand.** The awl causes more wounds than the knife. Always punch **away** from your body, onto a wood block, never toward the palm holding the leather.
+- **A deep puncture is the wound that infects, not the one that bleeds.** An awl makes a narrow hole that closes over itself, sealing dirt in a warm airless pocket — the very thing tetanus wants, and tetanus lives in soil and dung, which is exactly what a working tool and a working yard carry. Let a puncture bleed rather than pinching it shut, wash it through with plenty of clean water, keep it open and covered loosely rather than sealed, and watch it. Jaw or neck stiffness in the days and weeks after, or spreading redness, means real medical care now. See the treat-cuts guide.
 - **Cutting without a pattern.** Leather is months of work; one bad cut wastes it. Test a bark or cloth pattern first, every time.
 - **Stitches tear out along the edge.** Holes were too close to the edge or too close together. Keep holes at least half a finger-width from any edge.
 - **Drying leather by the fire.** Heat turns wet leather rock-hard and cracked, for good. Shade and moving air only.

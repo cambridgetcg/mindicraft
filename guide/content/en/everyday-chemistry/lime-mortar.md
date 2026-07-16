@@ -33,7 +33,7 @@ This is also why the craft forgives you: a lime wall heals its own hairline crac
 
 ## Watch out
 
-- **Lime burns.** Wet lime on skin feels like nothing at first, then burns hours later. The save is water, promptly and plenty: rinse well as soon as you notice. In an eye it is an emergency — flush gently with clean water for at least 20 minutes, keep rinsing on the way, and get real medical care when you can.
+- **Lime burns.** Wet lime on skin feels like nothing at first, then burns hours later. The save is water, promptly and plenty: rinse well as soon as you notice. In an eye it is an emergency — flush gently with clean water for at least **thirty minutes**, keep rinsing on the way, and get real medical care when you can.
 - **Never pour water onto a pile of quicklime.** The heat can flash the first splash to steam and throw boiling caustic paste. Always lime into water, eyes covered, long stick.
 - **Frost kills fresh lime.** Water freezing inside uncured mortar bursts it from within; one cold night turns a week's work to crumbs. Work in mild weather; if a surprise frost threatens, pile dry mats or straw over it.
 - **Drying too fast kills it more slowly.** Sun and wind pull the water out before the cure happens, leaving a chalky surface that powders under your thumb. Caught early, mist it damp and shade it. Truly dried-out mortar cannot be revived — rake the powdery joint out and refill it fresh.

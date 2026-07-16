@@ -33,7 +33,7 @@ Por eso este oficio también te perdona: una pared de cal sana sus propias griet
 
 ## Cuidado
 
-- **La cal quema.** La cal húmeda sobre la piel no se siente al principio, y horas después quema. El remedio es agua, pronta y abundante: enjuágate bien en cuanto lo notes. En un ojo es una emergencia — lávalo con suavidad con agua limpia durante al menos 20 minutos, sigue enjuagando en el camino y busca atención médica de verdad en cuanto puedas.
+- **La cal quema.** La cal húmeda sobre la piel no se siente al principio, y horas después quema. El remedio es agua, pronta y abundante: enjuágate bien en cuanto lo notes. En un ojo es una emergencia — lávalo con suavidad con agua limpia durante al menos **treinta minutos**, sigue enjuagando en el camino y busca atención médica de verdad en cuanto puedas.
 - **Nunca eches agua sobre un montón de cal viva.** El calor puede convertir el primer chorro en vapor de golpe y lanzar pasta cáustica hirviendo. Siempre la cal al agua, ojos cubiertos, palo largo.
 - **La helada mata la cal fresca.** El agua que se congela dentro del mortero sin curar lo revienta desde adentro; una sola noche fría convierte el trabajo de una semana en migajas. Trabaja con clima templado; si amenaza una helada de sorpresa, amontónale encima esteras secas o paja.
 - **Secarse demasiado rápido la mata más despacio.** El sol y el viento le sacan el agua antes de que ocurra la cura, y dejan una superficie gredosa que se hace polvo bajo el pulgar. Si lo atrapas a tiempo, rocíala hasta humedecerla y dale sombra. El mortero que de verdad se secó no se puede revivir — rasca la junta polvorienta y rellénala de nuevo con mezcla fresca.

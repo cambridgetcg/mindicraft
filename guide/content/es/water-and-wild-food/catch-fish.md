@@ -3,7 +3,7 @@ title: Pesca con líneas y trampas
 summary: Haz un anzuelo de hueso o espina para una línea de mano, y construye una trampa de embudo tejida que pesca mientras duermes.
 difficulty: steady
 time: dos días
-needs: [make-cordage, bone-tools]
+needs: [make-cordage, bone-tools, weave-basket]
 ---
 
 Los peces son la carne silvestre más constante que existe: se reúnen en lugares predecibles, pican todo el año, y una trampa los atrapa mientras haces otras cosas — o duermes. Con cuerda que tú mismo torciste y un anzuelo que tú mismo tallaste, puedes pescar para siempre sin comprar nada.

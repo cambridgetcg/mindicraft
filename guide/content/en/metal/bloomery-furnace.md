@@ -15,7 +15,7 @@ A campfire spends its heat on the sky. A smelting furnace is a clay chimney abou
 - Fired bricks or flat stones — a dry, level base. Ground moisture is the enemy.
 - Your bellows, plus a clay tuyere — a fireproof clay tube, thumb-thick hole, forearm long, that carries the air through the wall. Make and dry two spares; tuyeres crack.
 - Charcoal for the drying fires.
-- Water, and a dry week or a simple roof — rain on a half-built furnace undoes days.
+- Water, and a dry week or a simple rain roof on posts — rain on a half-built furnace undoes days. A roof, never walls: this furnace lives outdoors for good, for the reason in Watch out.
 
 ## Steps
 
@@ -35,6 +35,7 @@ A campfire spends its heat on the sky. A smelting furnace is a clay chimney abou
 
 ## Watch out
 
+- **Carbon monoxide, from the first fire onward.** Even the drying and proving fires make the chimney breathe an invisible, odourless poison gas out of its top. Build and fire this furnace in **open air only** — a roof against rain is fine, walls are not; a furnace inside a lean-to or shed is a trap. Stand upwind, and never lean over the mouth of a burning furnace to look in. Headache or dizziness while you work means bad air, not tiredness: walk away into clean air.
 - **Steam bursts.** Water trapped in clay turns to steam when heated fast, and steam can pop hot shards off the wall — or blow a chunk out. Dry slowly; always start any firing gentle. This is the one rule that hurts if you skip it.
 - **Cracks will appear.** Hairline cracks are normal — patch them with soft tempered clay. A wide crack that goes right through means too little temper or too much hurry: patch it, and mix more straw next time.
 - **Tuyere height matters.** Too low and it drowns in ash and slag; too high and the bottom stays cold and your metal freezes into the waste. Keep it 15–20 cm above the floor.

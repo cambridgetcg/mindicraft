@@ -27,6 +27,7 @@ You cannot cure these sicknesses at home. The body cures them. You keep the pers
 2. **Give it in small, constant sips.** A few swallows every five minutes, all day. Small sips stay down even in a vomiting person; big gulps come straight back up.
    - If they vomit, wait ten minutes, then start the sips again, smaller.
    - A rough goal: one cup of drink after every loose stool, on top of normal drinking.
+   - **A baby at the breast keeps nursing — more often, not less.** The instinct to stop feeding a sick baby is strong and it is wrong: breast milk is the best rescue drink a baby can get, and it carries the mother's own defences with it. Offer the breast more frequently than usual, and give small sips of the mix as well if the diarrhea is heavy. A baby is the person dehydration kills fastest; never starve one of fluid to "rest the stomach".
 3. **Let them rest, and keep food gentle.** Sleep is medicine. When they want food, give small amounts of plain soft food — rice, thin porridge, banana, plain broth. Do not force food; do force fluids, gently and always.
 4. **For fever, cool gently.** Dress them lightly, keep air moving, and wipe the face, neck, and arms with a cloth dipped in cool (not icy) water.
    - Do not pile on blankets to "sweat it out," and do not plunge them in cold water — violent shivering drives the body's heat up, not down.

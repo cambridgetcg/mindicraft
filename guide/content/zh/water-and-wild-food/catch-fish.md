@@ -3,7 +3,7 @@ title: 用钓线和鱼笼捕鱼
 summary: 用骨头或硬刺做个钩子拴上手线，再编一个漏斗形鱼笼——你睡觉的时候它也在替你捕鱼。
 difficulty: steady
 time: 两天
-needs: [make-cordage, bone-tools]
+needs: [make-cordage, bone-tools, weave-basket]
 ---
 
 鱼是最靠得住的野味：它们总在固定的地方扎堆，一年四季都咬钩，而鱼笼在你干别的活——甚至睡觉——的时候替你捕鱼。有了自己搓的绳和自己磨的钩，你就能一直捕下去，一分钱都不用花。

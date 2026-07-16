@@ -3,7 +3,7 @@ title: 用魚絲同魚籠捉魚
 summary: 用骨或者硬刺整個鈎做手釣絲,再織一個漏斗形嘅魚籠,你瞓覺嗰陣佢照樣幫你捉魚。
 difficulty: steady
 time: 兩日
-needs: [make-cordage, bone-tools]
+needs: [make-cordage, bone-tools, weave-basket]
 ---
 
 魚係最穩陣嘅野味:佢哋會聚喺估得到嘅地方,成年都會咬餌,而且個魚籠會喺你做緊其他嘢——或者瞓緊覺——嘅時候幫你捉魚。有你自己搓嘅繩、自己雕嘅鈎,你可以一世有魚捉,一蚊都唔使買。

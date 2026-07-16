@@ -22,7 +22,7 @@ La regla para recordar bajo presión: **la presión detiene el sangrado, el agua
 
 1. Primero detén el sangrado.
    - Presiona la tela más limpia que tengas directamente y con firmeza sobre la herida.
-   - Sigue presionando sin espiar durante 10 a 15 minutos. Levantar la tela para mirar reinicia el sangrado.
+   - Sigue presionando sin espiar durante diez minutos completos. Levantar la tela para mirar reinicia el sangrado.
    - Levanta la parte herida por encima del nivel del corazón si puedes.
 2. Lávate tus propias manos con jabón o ceniza y agua segura antes de seguir.
 3. Limpia la herida cuando el sangrado haya bajado.
@@ -40,7 +40,7 @@ La regla para recordar bajo presión: **la presión detiene el sangrado, el agua
 ## Cuidado
 
 - **Señales de infección — actúa, no esperes.** Enrojecimiento que crece, piel caliente al tacto, hinchazón que aumenta, dolor que palpita, líquido espeso amarillo-blanco (pus) o fiebre. Enjuaga y cubre de nuevo más seguido, deja descansar el miembro, y ve por atención médica de verdad. **Rayas rojas que corren desde la herida hacia el cuerpo son una emergencia** — la infección se está extendiendo por dentro. Ve ya.
-- **Ve por atención de verdad de inmediato, no en una semana, si:** la cortada se abre o es tan profunda que se ve grasa o músculo; el sangrado empapa la tela después de 15 minutos de presión firme; es una mordida de cualquier animal o persona; es una punción profunda (como de un clavo); o la herida está en la cara, una articulación o una mano y no cierra.
+- **Ve por atención de verdad de inmediato, no en una semana, si:** la cortada se abre o es tan profunda que se ve grasa o músculo; el sangrado sigue empapando la tela después de diez minutos completos de presión firme — ve mientras alguien sigue presionando, no después; es una mordida de cualquier animal o persona; es una punción profunda (como de un clavo); o la herida está en la cara, una articulación o una mano y no cierra.
 - **Las heridas profundas y sucias traen riesgo de tétanos** — un germen del suelo que causa una rigidez mortal de los músculos semanas después. Las punciones y las heridas con tierra o estiércol necesitan atención médica de verdad aunque se vean pequeñas.
 - **Nunca saques algo que quedó clavado.** El impulso es casi imposible de resistir, y es el equivocado. Una astilla grande, una hoja de cuchillo, un vidrio, un clavo: mientras siga ahí puede ser lo único que mantiene cerrado un vaso cortado, y el sangrado que suelta al salir puede ser mucho peor que la herida que ves. Acolchona alrededor, venda sin presionarlo, mantén quieta a la persona, y ve. Quien tiene atención médica de verdad lo saca — tú no, aquí no.
 - **Nunca pongas tierra, estiércol, lodo, hojas ni saliva en una herida.** Los remedios caseros como esos causan las peores infecciones. Agua limpia, tela limpia, y nada más dentro de la herida.
