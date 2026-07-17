@@ -15,7 +15,7 @@ No necesitas habilidad para conseguir un filo útil el primer día. Una sola las
 - **Una roca que se rompa como el vidrio.** Busca pedernal (sílex), chert, obsidiana (vidrio volcánico) o cuarcita fina. La prueba: dale un golpecito contra otra roca. La piedra buena suena aguda, casi como porcelana, no con un golpe sordo. Sus superficies rotas se ven lisas y un poco brillantes, con ondulaciones como las de una concha de almeja.
 - **Una piedra martillo.** Un canto rodado de río, duro y redondeado, que quepa en tu puño, más o menos del peso de una botella de agua llena. Redondeado, no filoso: los martillos con filo se hacen pedazos.
 - **Un acolchado para la pierna.** Una piel doblada, corteza gruesa o varias capas de tela. Vas a apoyar el trabajo sobre el muslo, y las lascas cortan la piel con facilidad.
-- **Protección para los ojos, si tienes.** Lentes, gafas de seguridad, lo que sea. Si no tienes nada, gira un poco la cara en cada golpe.
+- **Protección para los ojos.** Lentes, gafas de seguridad, cualquier cosa transparente entre una esquirla que vuela y tu ojo. **Si estás leyendo esto en una mesa, y no metido en problemas esta noche, consigue algo para los ojos antes de empezar** — es lo más barato de todo este libro y es lo único que se interpone frente a la única lesión de aquí que jamás vas a poder deshacer. Si de verdad no tienes nada, gira un poco la cara en cada golpe, y ten claro que estás apostando tu vista, no simplemente trabajando a lo bruto.
 - **Un pedazo de suelo despejado.** Las lascas vuelan un metro o más y siguen afiladas durante miles de años. Trabaja donde nunca vayan a pisar pies descalzos, y limpia al terminar.
 
 ## Pasos

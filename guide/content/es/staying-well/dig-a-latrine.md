@@ -37,7 +37,7 @@ Medio día de cavar protege a todos durante meses. Hazlo el primer o segundo dí
 
 ## Cuidado
 
-- **Demasiado cerca del agua es el error que mata.** Los gérmenes viajan de lado a través del suelo húmedo — hasta 30 metros. Ante la duda, aléjate más y ve más abajo que toda fuente de agua.
+- **Demasiado cerca del agua es el error que mata.** Los gérmenes viajan de lado a través del suelo húmedo, y 30 metros no es la distancia donde se detienen — es un mínimo áspero y ganado a golpes que supone suelo común y suerte común. En grava gruesa, o en terreno con roca agrietada debajo, la suciedad viaja mucho más lejos y mucho más rápido. Así que 30 metros es el piso, nunca la respuesta: ante la duda, aléjate más, y ve más abajo que toda fuente de agua. La guía de cavar un pozo dice la misma regla desde el otro extremo.
 - **Un pozo abierto alimenta a las moscas.** Las moscas se posan en los desechos y luego en la comida. La tapa y el cucharón de tierra después de cada uso no son opcionales.
 - **Los niños pueden caerse adentro.** Mantén la ranura angosta, la tapa lo bastante pesada para que un niño pequeño no pueda moverla, y a los niños chicos siempre acompañados.
 - **Una letrina inundada esparce todo lo que contiene.** Nunca caves donde se empoza el agua después de la lluvia. El montículo de tierra alrededor del borde es tu muro contra la lluvia — mantenlo apisonado.
