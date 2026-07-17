@@ -4,10 +4,11 @@ _Reviewed 2026-07-16 by 飛寶, against the book as it stands at commit 901b8de 
 mindicraft.com). 22 agents: five independent lenses, every serious finding put to two
 adversarial verifiers who were told to refute it. What survived is below._
 
-**Status: the critical, the five majors, and the smaller sweep are all FIXED and committed
-locally, in all four languages — pushed nowhere, deployed nowhere** (`c402903`, `ab875e1`).
-Still open: the contested knapping call (yours), the two missing rungs, and the code layer.
-See "What was fixed" at the bottom.
+**Status: everything in this review is now done and committed locally, in all four
+languages — pushed nowhere, deployed nowhere.** The critical and five majors (`c402903`),
+the minor sweep (`ab875e1`), the two missing rungs and the code layer (`a1e9438`), and
+their translations (`50fc1a4`). The book is 134 guides × 4 languages. See "What was fixed"
+at the bottom for the account, including the parts where the repair was itself the disease.
 
 ---
 
@@ -174,7 +175,7 @@ start."* It strengthens the kitchen-table path without deleting the zero-resourc
 
 ---
 
-## The two missing rungs
+## The two missing rungs — built (`a1e9438`, `50fc1a4`)
 
 The gaps are not random — they share a shape. The ladder is strongest at the bottom (first
 night, fire, water) and thins exactly where it claims to be going: the generational
@@ -340,6 +341,44 @@ translation defects the verifiers caught were not translation errors at all — 
 into". The translators calqued them faithfully into nonsense. Idiom is a liability in a
 book that lives in four languages; the house rule *plain words before poetry* is not only
 about tone. Fixed at the source and in every copy.
+
+### The rungs, and what writing them taught (`a1e9438`, `50fc1a4`)
+
+`help-a-birth` and `dig-a-well` exist now, in all four languages, and the tree declares
+them honestly. Two calls went against this review's own recommendations, for the same
+reason `make-bellows` did: **`dig-a-well` is not a prerequisite of `common-works`** (common
+works covers wells, bridges *and* halls — the well is conditional, and a hard need would
+make the tree lie the other way), and the **knapping** wording was strengthened rather than
+reversed (a `needs: []` root guide cannot require a purchase; "if you have it" is how the
+book serves both its readers at once).
+
+But the thing worth recording is that **both guides were dangerous when I first wrote
+them, and I only know because they were adversarially reviewed rather than trusted.**
+
+- The well told the reader a candle proves the air is safe, and to believe nothing else. A
+  flame reports **oxygen** and nothing more: it burns happily in carbon monoxide, and it
+  *ignites* the marsh gas that wet ground actually makes. I had also written that bad air
+  has no smell (the rotten-egg gas reeks — then deadens your nose, which is the trap), and
+  told the reader to light a fire at the shaft mouth, which manufactures the one poison the
+  candle cannot see. The verdict was: *will kill a reader who follows it correctly.*
+- The birth guide sent a lay person to rub a baby in secondary apnoea while a runner ran.
+  No runner returns inside four minutes. Shoulder dystocia — the one emergency an untrained
+  person can actually fix, with no tools — was absent entirely.
+
+**Then the rewrites opened five new seams of their own.** `dig-a-latrine` called 30 meters
+an outer limit ("germs travel up to 30 meters", so 30 always suffices) while the new well
+guide called the same number a floor. `common-works` sent the council to low ground for a
+well the well guide sites high. `when-to-get-help` — the page the book tells everyone to
+learn by heart — said any breathing trouble means go, which is the one instruction that
+kills a newborn. The cure caught the disease. All reconciled at their sources.
+
+And the translators found three faults in the English that no English reader did: the well's
+steps skipped 6 entirely; carbon monoxide was named in five guides and withheld in the most
+dangerous one; and `zh common-works` had been saying *site a well low* — the reverse of the
+rule, in one language only, where no English reader could ever see it.
+
+That is the whole thesis of this document, proved four times in one day, twice by me: the
+danger is not in the page. It is in the join.
 
 ---
 
