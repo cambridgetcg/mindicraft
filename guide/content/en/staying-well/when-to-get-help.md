@@ -20,7 +20,7 @@ So learn this short list by heart, and teach it to everyone in your household, i
 ## Steps
 
 1. **Learn the go-now signs.** If you see any one of these, stop home care and start moving toward help immediately — day or night:
-   - **Breathing trouble** — fighting for air, breathing very fast, grey or blue lips, or noisy strained breathing.
+   - **Breathing trouble** — fighting for air, breathing very fast, grey or blue lips, or noisy strained breathing. (One exception, and only one: a **newborn** that will not breathe in its first minutes cannot wait for a journey — it has about four minutes, and the person standing there has to breathe for it. The help-a-birth guide shows how.)
    - **Not truly awake** — unconscious, impossible to keep awake, confused about who or where they are, or having a fit (shaking they cannot control).
    - **Bleeding that will not stop** after ten full minutes of firm, direct pressure on the wound.
    - **Fever with a stiff neck**, or fever with a rash, or a fit with fever, or any fever in a baby under three months.
@@ -30,7 +30,7 @@ So learn this short list by heart, and teach it to everyone in your household, i
    - **Deep or gaping wounds**, a bone bent the wrong way or poking through skin, or burns bigger than the person's hand or on the face, hands, or groin.
    - **Any bite from a snake**, or an animal bite that breaks the skin, however small — some animal bites carry sickness that is unbeatable once it starts, and only prompt medical care prevents it.
    - **A head injury** followed by vomiting, worsening sleepiness, or confusion.
-   - **Trouble in pregnancy or birth** — bleeding, long labour that is not progressing, or fits.
+   - **Trouble in pregnancy or birth** — heavy bleeding at any point; a fit, or the warning that comes before one (a bad headache that will not lift, blurred or spotty vision, swelling of face and hands, **pain high in the belly**), at any time from pregnancy until **six weeks after** the birth; long labour that is not progressing; anything but the head coming first; the afterbirth still not out after an hour, or coming away torn and incomplete; fever in the days after, foul-smelling discharge, or a belly sore to touch; a tear that keeps bleeding through firm pressure; or a newborn who is floppy, feeds poorly, feels hot or cold to hold, or whose cord stump turns red and angry. The help-a-birth guide has what to do while someone goes — including the two things there that will not wait for a journey: a baby that will not breathe, and a shoulder that will not come.
    - **Sudden crushing chest pain**, or one side of the face or body going weak or droopy.
 2. **Learn the getting-worse rule.** Most ordinary illness turns the corner within two or three days. Anything that gets worse day after day, a fever past three days, a wound growing more red, swollen, and painful instead of less, or red streaks spreading from a wound — go for help. You do not need a name for the problem; "worse each day" is reason enough.
 3. **When a sign appears, move at once.** Send the fastest person ahead to alert help or find transport, while others prepare the sick person. Do not wait for morning, for the rain to stop, or "one more hour to see."

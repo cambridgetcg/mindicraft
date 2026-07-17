@@ -37,7 +37,7 @@ Half a day of digging protects everyone for months. Do it on the first or second
 
 ## Watch out
 
-- **Too close to water is the killer mistake.** Germs travel sideways through wet soil — up to 30 meters. If in doubt, go farther and lower than every water source.
+- **Too close to water is the killer mistake.** Germs travel sideways through wet soil, and 30 meters is not the distance where they stop — it is a rough, hard-won minimum that assumes ordinary soil and ordinary luck. In coarse gravel, or ground with cracked rock under it, filth travels far further and far faster. So 30 meters is the floor, never the answer: if in doubt, go farther, and go lower than every water source. The dig-a-well guide states the same rule from the other end.
 - **An open pit feeds flies.** Flies land on waste, then land on food. The lid and the scoop of soil after each use are not optional.
 - **Children can fall in.** Keep the squat slot narrow, the lid heavy enough that a toddler can't shift it, and small children accompanied.
 - **A flooded latrine spreads everything it holds.** Never dig where water pools after rain. The soil mound around the rim is your rain wall — keep it packed.

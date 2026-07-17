@@ -699,19 +699,12 @@ write(join(DIST, '.well-known', 'agent.txt'), AGENT_TXT);
 
 cpSync(join(ROOT, 'xenia-worker.js'), join(DIST, '_worker.js'));
 
-// CORS + sane caching for the API
-write(
-  join(DIST, '_headers'),
-  `/api/*
-  Access-Control-Allow-Origin: *
-  Cache-Control: public, max-age=3600
-/mindicraft.mjs
-  Access-Control-Allow-Origin: *
-  Cache-Control: public, max-age=3600
-/llms.txt
-  Access-Control-Allow-Origin: *
-`
-);
+// No _headers file here on purpose. Pages ignores _headers entirely once
+// _worker.js is present (advanced mode), so a file written here would set
+// nothing while looking like it set everything — and the next person to edit it
+// would watch their change do nothing and have no way to know why.
+// The live CORS and cache-control headers come from decorated() in
+// xenia-worker.js. That is the one place they exist.
 
 // ---------- report ----------
 

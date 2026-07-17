@@ -865,6 +865,18 @@
      "needs": [],
      "difficulty": "easy",
      "time": "an hour"
+    },
+    {
+     "slug": "help-a-birth",
+     "title": "Help a baby be born",
+     "summary": "Keep your hands clean, keep the baby warm and breathing, let the body do its work, and know the few things you must do yourself because no help arrives in time.",
+     "needs": [
+      "keep-clean",
+      "boil-water",
+      "when-to-get-help"
+     ],
+     "difficulty": "steady",
+     "time": "a day"
     }
    ],
    "i18n": {
@@ -1430,6 +1442,17 @@
      ],
      "difficulty": "steady",
      "time": "half a day"
+    },
+    {
+     "slug": "dig-a-well",
+     "title": "Dig and line a well",
+     "summary": "Reach the water under your feet — sited clean, shored close behind you, roped to a hand above, and never trusting air you cannot see.",
+     "needs": [
+      "move-heavy-things",
+      "lift-with-pulleys"
+     ],
+     "difficulty": "hard",
+     "time": "a week or two, and never rushed"
     },
     {
      "slug": "paths-and-bridges",

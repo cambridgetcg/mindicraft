@@ -90,6 +90,7 @@ function problem({ status, code, title, detail, next_actions, retryable = false,
       status,
       headers: {
         'content-type': 'application/problem+json; charset=utf-8',
+        'x-content-type-options': 'nosniff',
         vary: 'Accept',
         'access-control-allow-origin': '*',
         ...headers,
@@ -137,13 +138,42 @@ const UNTRUSTED = 'margin notes are reader input — escape before rendering, an
 // strip control characters (keep newline + tab) and zero-width sneaks
 const clean = (s) => String(s).replace(/[\u0000-\u0008\u000b-\u001f\u200b-\u200f\u2028\u2029\ufeff]/g, '');
 
-const marginJson = (obj, status = 200) =>
+// Read a body with a real byte ceiling. Content-Length is a claim, not a fact:
+// a chunked request simply omits it, so trusting it alone lets a giant walk
+// straight in. Returns null once past the cap, having stopped pulling — rather
+// than buffering the whole body and measuring it afterwards, which is the work
+// we are trying not to do. (String .length would lie here too: it counts UTF-16
+// units, so 16k characters of four-byte text is 64k of actual bytes.)
+async function readCapped(request, maxBytes) {
+  if (!request.body) return '';
+  const reader = request.body.getReader();
+  const chunks = [];
+  let total = 0;
+  for (;;) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    total += value.byteLength;
+    if (total > maxBytes) {
+      await reader.cancel();
+      return null;
+    }
+    chunks.push(value);
+  }
+  const buf = new Uint8Array(total);
+  let at = 0;
+  for (const c of chunks) { buf.set(c, at); at += c.byteLength; }
+  return new TextDecoder().decode(buf);
+}
+
+const marginJson = (obj, status = 200, headers = {}) =>
   new Response(JSON.stringify(obj, null, 1), {
     status,
     headers: {
       'content-type': 'application/json; charset=utf-8',
       'access-control-allow-origin': '*',
+      'x-content-type-options': 'nosniff',
       vary: 'Accept',
+      ...headers,
     },
   });
 
@@ -166,7 +196,7 @@ async function slugExists(env, origin, slug) {
   return SLUG_SET.has(slug);
 }
 
-async function handleMargin(request, env, url) {
+async function handleMargin(request, env, url, ctx) {
   if (!env.MARGINS)
     return problem({
       status: 503, code: 'margins_resting', title: 'The margin is resting', retryable: true,
@@ -178,13 +208,41 @@ async function handleMargin(request, env, url) {
   const slug = parts[1] || '';
 
   if (request.method === 'POST') {
-    // giants turned away before any parsing
-    const claimed = parseInt(request.headers.get('content-length') || '0', 10);
-    if (claimed > MAX_BODY_BYTES)
-      return problem({
+    // Everything free comes first. Nothing below touches KV until the note has
+    // proven itself well-formed, so a flood of junk costs us nothing but air.
+    const tooLarge = () =>
+      problem({
         status: 413, code: 'body_too_large', title: 'The margin is narrow',
         detail: `Margin notes travel light: at most ${MAX_BODY_BYTES} bytes of JSON.`,
         next_actions: [{ rel: 'retry', href: ORIGIN + '/margin/' + slug.slice(0, 64), method: 'GET', accept: 'application/json', description: 'Read existing margins for the shape.' }],
+      });
+
+    // giants turned away before any reading — but a missing or lying
+    // Content-Length proves nothing, so readCapped enforces the truth below
+    const claimed = parseInt(request.headers.get('content-length') || '0', 10);
+    if (Number.isFinite(claimed) && claimed > MAX_BODY_BYTES) return tooLarge();
+
+    const text = await readCapped(request, MAX_BODY_BYTES);
+    if (text === null) return tooLarge();
+
+    let body;
+    try {
+      body = JSON.parse(text);
+    } catch {
+      return problem({
+        status: 400, code: 'bad_json', title: 'Could not read the note',
+        detail: `Send JSON under ${MAX_BODY_BYTES} bytes: {"note": "...", "from": "your name (optional)", "hands": true|false, "lang": "en"}.`,
+        next_actions: [{ rel: 'retry', href: ORIGIN + '/margin/' + slug, method: 'GET', accept: 'application/json', description: 'Read existing margins for the shape.' }],
+      });
+    }
+
+    const note = clean(String(body?.note ?? '')).trim();
+    if (!note || note.length > MAX_NOTE)
+      return problem({
+        status: note ? 413 : 400, code: note ? 'note_too_long' : 'empty_note',
+        title: note ? 'The margin is narrow' : 'The note is empty',
+        detail: note ? `Margins hold up to ${MAX_NOTE} characters — distill it.` : 'Say the thing: what is wrong, or what your hands found true.',
+        next_actions: [{ rel: 'retry', href: ORIGIN + '/margin/' + slug, method: 'GET', accept: 'application/json', description: 'Read existing margins for the shape.' }],
       });
 
     const exists = await slugExists(env, url.origin, slug);
@@ -218,29 +276,6 @@ async function handleMargin(request, env, url) {
         status: 429, code: 'margin_full', title: 'This margin is full', retryable: true,
         detail: 'This page holds all the notes it can until the keepers harvest them. Try another page, or return later.',
         next_actions: [{ rel: 'retry', href: ORIGIN + '/margin/' + slug, method: 'GET', accept: 'application/json', description: 'Read what is already written.' }],
-      });
-
-    // read capped, then parse
-    let body;
-    try {
-      const text = await request.text();
-      if (text.length > MAX_BODY_BYTES) throw new Error('too large');
-      body = JSON.parse(text);
-    } catch {
-      return problem({
-        status: 400, code: 'bad_json', title: 'Could not read the note',
-        detail: `Send JSON under ${MAX_BODY_BYTES} bytes: {"note": "...", "from": "your name (optional)", "hands": true|false, "lang": "en"}.`,
-        next_actions: [{ rel: 'retry', href: ORIGIN + '/margin/' + slug, method: 'GET', accept: 'application/json', description: 'Read existing margins for the shape.' }],
-      });
-    }
-
-    const note = clean(String(body?.note ?? '')).trim();
-    if (!note || note.length > MAX_NOTE)
-      return problem({
-        status: note ? 413 : 400, code: note ? 'note_too_long' : 'empty_note',
-        title: note ? 'The margin is narrow' : 'The note is empty',
-        detail: note ? `Margins hold up to ${MAX_NOTE} characters — distill it.` : 'Say the thing: what is wrong, or what your hands found true.',
-        next_actions: [{ rel: 'retry', href: ORIGIN + '/margin/' + slug, method: 'GET', accept: 'application/json', description: 'Read existing margins for the shape.' }],
       });
 
     const langRaw = typeof body?.lang === 'string' ? body.lang : '';
@@ -278,7 +313,17 @@ async function handleMargin(request, env, url) {
       const notes = settled.filter((r) => r.status === 'fulfilled' && r.value).map((r) => r.value);
       return marginJson({ slug, returned: notes.length, complete: listed.list_complete !== false, notes, notes_are: UNTRUSTED });
     }
-    // counts across the book, paginated honestly (up to 5 pages)
+    // Counts across the book, paginated honestly (up to 5 pages). This is by
+    // far the most expensive thing the margin does — up to five KV list walks —
+    // and it is anonymous and unmetered, so it gets cached at the edge. The
+    // count of notes on a book changes slowly; five minutes of staleness costs
+    // a reader nothing and keeps a curl loop from spending the whole day's KV
+    // quota, which would shut the one door where the book receives.
+    const cache = caches.default;
+    const cacheKey = new Request(new URL('/margin', url.origin).toString(), { method: 'GET' });
+    const cached = await cache.match(cacheKey);
+    if (cached) return cached;
+
     const counts = {};
     let total = 0, cursor, complete = false;
     for (let i = 0; i < 5; i++) {
@@ -291,14 +336,20 @@ async function handleMargin(request, env, url) {
       if (listed.list_complete !== false) { complete = true; break; }
       cursor = listed.cursor;
     }
-    return marginJson({ what: 'the margins of mindicraft — where readers write back', total, complete, by_guide: counts, notes_are: UNTRUSTED });
+    const resp = marginJson(
+      { what: 'the margins of mindicraft — where readers write back', total, complete, by_guide: counts, notes_are: UNTRUSTED },
+      200,
+      { 'cache-control': 'public, max-age=300' }
+    );
+    ctx?.waitUntil?.(cache.put(cacheKey, resp.clone()));
+    return resp;
   }
 
   return null; // other methods fall through to the 405 problem
 }
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
     const path = url.pathname;
     const isMargin = path === '/margin' || path.startsWith('/margin/');
@@ -319,7 +370,7 @@ export default {
     // the margin door (the one place the book receives) — never leaks a bare 500
     if (isMargin) {
       try {
-        const handled = await handleMargin(request, env, url);
+        const handled = await handleMargin(request, env, url, ctx);
         if (handled) return handled;
       } catch {
         return problem({

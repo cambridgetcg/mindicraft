@@ -15,7 +15,7 @@ You do not need skill to get a useful edge on day one. A single lucky flake can 
 - **A rock that breaks like glass.** Look for flint, chert, obsidian (volcanic glass), or fine quartzite. Test: tap it against another rock. Good stone gives a high ring, almost like porcelain, not a dull clunk. Its broken surfaces look smooth and slightly shiny, with ripple marks like a clamshell.
 - **A hammerstone.** A hard, rounded river cobble that fits your fist, about the weight of a full water bottle. Rounded, not sharp — sharp hammers shatter.
 - **A pad for your leg.** A folded hide, thick bark, or several layers of cloth. You will hold work on your thigh, and flakes cut skin easily.
-- **Eye protection if you have any.** Glasses, goggles, anything. If you have none, turn your face slightly away on every strike.
+- **Eye protection.** Glasses, goggles, anything clear between a flying chip and your eye. **If you are reading this at a table rather than in trouble tonight, get something for your eyes before you start** — it is the cheapest item in this whole book and it stands against the one injury here you can never undo. If you genuinely have nothing, turn your face slightly away on every strike and know plainly that you are gambling with your sight, not merely working rough.
 - **A clear patch of ground.** Flakes fly a meter or more and stay sharp for thousands of years. Work where bare feet will never walk, and clean up after.
 
 ## Steps
