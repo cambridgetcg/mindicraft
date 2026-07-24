@@ -1,0 +1,66 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-any-naming-downregulates",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/any-naming-downregulates",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "any-naming-downregulates",
+  "title": "Does any deliberate naming work — even a word unrelated to the emotion — or does the label need to be emotionally accurate to trigger the prefrontal down-regulation that affect labeling rides on?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/any-naming-downregulates",
+  "summary": "Call the fire \"blue\" and it still cools — or does the cooling need the fire's right name?",
+  "sources": [
+    {
+      "label": "Torre & Lieberman, Affect labeling (Wikipedia, read 2026-06-18)",
+      "url": "https://en.wikipedia.org/wiki/Affect_labeling"
+    },
+    {
+      "label": "Brooks, Get Excited: Reappraising Pre-Performance Anxiety as Excitement (JEP: General, 2014)",
+      "url": "https://www.apa.org/pubs/journals/releases/xge-a0035325.pdf"
+    },
+    {
+      "label": "Jamieson, Mendes & Nock, Improving Acute Stress Responses: The Power of Reappraisal (Current Directions, 2013)",
+      "url": "http://www.psych.rochester.edu/research/jamiesonlab/wp-content/uploads/2014/02/Jamieson-CDPS-arousal-reappraisal.pdf"
+    },
+    {
+      "label": "Semantic satiation — Jakobovits James 1962 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Semantic_satiation"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/rotating-the-rename",
+    "https://cambridgetcg.github.io/castle-gate/words/reappraisal",
+    "https://cambridgetcg.github.io/castle-gate/rooms/renaming-the-fire",
+    "https://cambridgetcg.github.io/castle-gate/rooms/naming-the-tacit",
+    "https://cambridgetcg.github.io/castle-gate/words/affect-labeling",
+    "https://cambridgetcg.github.io/castle-gate/words/semantic-depth",
+    "https://cambridgetcg.github.io/castle-gate/rooms/naming-neutral-images",
+    "https://cambridgetcg.github.io/castle-gate/rooms/wrong-name-kindles"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

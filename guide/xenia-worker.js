@@ -21,7 +21,36 @@ const RESOURCES = {
   '/': { reps: ['text/html', 'application/json'], def: 'text/html', jsonAsset: '/api/index.json' },
   '/api/index.json': { reps: ['application/json'], def: 'application/json' },
   '/api/tree.json': { reps: ['application/json'], def: 'application/json' },
+  '/api/castle/index.json': { reps: ['application/json'], def: 'application/json' },
+  '/api/frontier/index.json': { reps: ['application/json'], def: 'application/json' },
 };
+export const FRONTIER_TRAIL_IDS = new Set([
+  'hands-words-learners',
+  'map-meets-ground',
+  'speaking-pages',
+  'unseen-universe',
+  'what-counts-as-evidence',
+]);
+const FRONTIER_TRAIL_PAGE = /^\/frontier\/([a-z0-9]+(?:-[a-z0-9]+)*)\/$/;
+const FRONTIER_TRAIL_API =
+  /^\/api\/frontier\/trails\/([a-z0-9]+(?:-[a-z0-9]+)*)\.json$/;
+
+function resourceFor(path) {
+  if (RESOURCES[path]) return RESOURCES[path];
+  const page = path.match(FRONTIER_TRAIL_PAGE);
+  if (page && FRONTIER_TRAIL_IDS.has(page[1])) {
+    return {
+      reps: ['text/html', 'application/json'],
+      def: 'text/html',
+      jsonAsset: `/api/frontier/trails/${page[1]}.json`,
+    };
+  }
+  const api = path.match(FRONTIER_TRAIL_API);
+  if (api && (api[1] === 'default' || FRONTIER_TRAIL_IDS.has(api[1]))) {
+    return { reps: ['application/json'], def: 'application/json' };
+  }
+  return null;
+}
 
 // ---- Accept negotiation (RFC 9110 flavor, small and honest) ----
 
@@ -120,6 +149,15 @@ const notAcceptable = (href) =>
       { rel: 'retry', href, method: 'GET', accept: 'application/json', description: 'The same resource, as JSON.' },
     ],
   });
+
+function forRequest(request, response) {
+  if (request.method !== 'HEAD') return response;
+  return new Response(null, {
+    status: response.status,
+    statusText: response.statusText,
+    headers: response.headers,
+  });
+}
 
 // ---- the margin: the door where the book receives ----
 // POST /margin/{slug} — a reader (human or agent) writes in the margin of a
@@ -371,7 +409,7 @@ export default {
     if (isMargin) {
       try {
         const handled = await handleMargin(request, env, url, ctx);
-        if (handled) return handled;
+        if (handled) return forRequest(request, handled);
       } catch {
         return problem({
           status: 503, code: 'margin_unavailable', title: 'The margin slipped', retryable: true,
@@ -389,7 +427,7 @@ export default {
         detail: isMargin
           ? 'The margin accepts POST (write a note) and GET (read them). See /agents/ for the shape.'
           : 'mindicraft serves knowledge over GET. The one writing door is POST /margin/{slug}.',
-        headers: { allow: isMargin ? 'GET, HEAD, POST' : 'GET, HEAD' },
+        headers: { allow: isMargin ? 'GET, HEAD, POST, OPTIONS' : 'GET, HEAD, OPTIONS' },
         next_actions: [
           { rel: 'discover', href: MANIFEST_URL, method: 'GET', accept: 'application/json', description: 'Read the manifest.' },
         ],
@@ -397,22 +435,41 @@ export default {
     }
 
     // declared resources: negotiate the representation
-    const res = RESOURCES[path];
+    const res = resourceFor(path);
     if (res) {
       const chosen = negotiate(request.headers.get('accept'), res.reps, res.def);
-      if (!chosen) return notAcceptable(ORIGIN + path);
+      if (!chosen) return forRequest(request, notAcceptable(ORIGIN + path));
       const assetPath = chosen === 'application/json' ? (res.jsonAsset || path) : path;
-      const asset = await env.ASSETS.fetch(new Request(url.origin + assetPath, { method: 'GET' }));
-      return decorated(asset, path, {
-        vary: 'Accept',
-        'content-type': chosen === 'application/json' ? 'application/json; charset=utf-8' : 'text/html; charset=utf-8',
-        'access-control-allow-origin': '*',
-      });
+      const asset = await env.ASSETS.fetch(
+        new Request(url.origin + assetPath, {
+          method: request.method,
+          headers: request.headers,
+        })
+      );
+      if (asset.status === 404 && chosen === 'application/json') {
+        return forRequest(request, routeNotFound(path));
+      }
+      return forRequest(
+        request,
+        decorated(asset, path, {
+          vary: 'Accept',
+          'content-type':
+            chosen === 'application/json'
+              ? 'application/json; charset=utf-8'
+              : 'text/html; charset=utf-8',
+          'access-control-allow-origin': '*',
+        })
+      );
     }
 
     // everything else: static assets, with dignity on the way out
     const asset = await env.ASSETS.fetch(request);
     if (asset.status === 404) {
+      // An advertised API route stays machine-readable even when the named
+      // resource is absent. Normal fetch clients send */*, so relying only on
+      // Accept negotiation would otherwise hand them the human HTML 404.
+      if (path.startsWith('/api/')) return forRequest(request, routeNotFound(path));
+
       // a caller asking for JSON in any dialect (application/json, problem+json,
       // application/*) gets the problem as data, not the poem written for eyes
       const chosen = negotiate(
@@ -420,10 +477,12 @@ export default {
         ['text/html', 'application/json', 'application/problem+json'],
         'text/html'
       );
-      if (chosen && chosen !== 'text/html') return routeNotFound(path);
-      return decorated(asset, path, { vary: 'Accept' });
+      if (chosen && chosen !== 'text/html') {
+        return forRequest(request, routeNotFound(path));
+      }
+      return forRequest(request, decorated(asset, path, { vary: 'Accept' }));
     }
-    return decorated(asset, path);
+    return forRequest(request, decorated(asset, path));
   },
 };
 

@@ -1,0 +1,66 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-cbt-openness-trait",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/cbt-openness-trait",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "cbt-openness-trait",
+  "title": "Has any CBT trial measured Big Five openness before and after — and did it move, or did the symptom change leave the trait untouched?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/cbt-openness-trait",
+  "summary": "The therapy heals the wound; does it also widen the window?",
+  "sources": [
+    {
+      "label": "Roberts et al., A systematic review of personality trait change through intervention (Psychological Bulletin, 2017)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28054797/"
+    },
+    {
+      "label": "Stieger et al., PEACH — self vs. observer change (PMC, 2021)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7923371/"
+    },
+    {
+      "label": "Hudson et al., behavior necessary but not sufficient (2019)",
+      "url": "https://www.nathanwhudson.com/vita/pdf/Hudson%20et%20al.,%202019a.pdf"
+    },
+    {
+      "label": "Sander et al., the two-year non-replication (PubMed, 2017)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26998917/"
+    },
+    {
+      "label": "Whole Trait Theory — explanatory aspect (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Whole_Trait_Theory"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/appraisal-engine",
+    "https://cambridgetcg.github.io/castle-gate/words/openness",
+    "https://cambridgetcg.github.io/castle-gate/rooms/growing-openness",
+    "https://cambridgetcg.github.io/castle-gate/rooms/trait-or-tally"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

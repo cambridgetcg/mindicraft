@@ -1,0 +1,93 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-the-landing",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/the-landing",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "the-landing",
+  "title": "If the decisive companion in strange territory is the means to read the land's own library on arrival, the trainable skill is not the asking but the landing — what does fast, honest orientation in an unknown field look like (what to read first, whom to trust), and can it be drilled at home?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/the-landing",
+  "summary": "The fact-checker, dropped on a strange page, judges it the way you judge a city — not by standing in the square, but by walking out and asking the neighbors.",
+  "sources": [
+    {
+      "label": "Wineburg & McGrew, Lateral Reading and the Nature of Expertise (Stanford)",
+      "url": "https://stacks.stanford.edu/file/druid:yk133ht8603/Wineburg%20McGrew_Lateral%20Reading%20and%20the%20Nature%20of%20Expertise.pdf"
+    },
+    {
+      "label": "Fact-checkers outperform historians (Stanford News)",
+      "url": "https://news.stanford.edu/stories/2017/10/fact-checkers-outperform-historians-evaluating-online-information"
+    },
+    {
+      "label": "Brodsky et al., embedded lateral-reading instruction (PMC8012470)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8012470/"
+    },
+    {
+      "label": "Lateral reading in an online course — 3% to 77% (Harvard Misinformation Review)",
+      "url": "https://misinforeview.hks.harvard.edu/article/lateral-reading-college-students-learn-to-critically-evaluate-internet-sources-in-an-online-course/"
+    },
+    {
+      "label": "UCLA research guide — start with reviews, mine citations, ask the one-thing question",
+      "url": "https://guides.library.ucla.edu/c.php?g=180285&p=8329107"
+    },
+    {
+      "label": "SIFT: the four moves (Caulfield)",
+      "url": "https://hapgood.us/2019/06/19/sift-the-four-moves/"
+    },
+    {
+      "label": "What fact-checkers know about media literacy (Edutopia)",
+      "url": "https://www.edutopia.org/article/what-fact-checkers-know-about-media-literacy-and-students-should-too/"
+    },
+    {
+      "label": "Stanford Civic Online Reasoning — lateral reading practice",
+      "url": "https://cor.inquirygroup.org/curriculum/lessons/lateral-reading-resources-practice/?cuid=teaching-lateral-reading"
+    },
+    {
+      "label": "Willingham, How to teach critical thinking (AFT) — expertise is domain-specific",
+      "url": "https://www.aft.org/ae/fall2020/willingham"
+    },
+    {
+      "label": "Far transfer of cognitive training is near null (PMC5724589)",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5724589/"
+    },
+    {
+      "label": "Gignac & Zajenkowski — Dunning-Kruger partly an artifact",
+      "url": "https://gwern.net/doc/iq/2020-gignac.pdf"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/what-must-travel",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-noticing-stance",
+    "https://cambridgetcg.github.io/castle-gate/rooms/growing-openness",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-well",
+    "https://cambridgetcg.github.io/castle-gate/rooms/training-the-eye",
+    "https://cambridgetcg.github.io/castle-gate/rooms/pretty-or-well-made",
+    "https://cambridgetcg.github.io/castle-gate/rooms/no-neighbors"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

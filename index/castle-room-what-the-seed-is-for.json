@@ -1,0 +1,86 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-what-the-seed-is-for",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/what-the-seed-is-for",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "what-the-seed-is-for",
+  "title": "A planted seed catches copying but may not prove ownership — when you can prove someone copied your work yet cannot stop them, what is the seed actually for?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/what-the-seed-is-for",
+  "summary": "The tripwire does not stop the thief. It rings the bell, names the footprint, and lets the whole village watch him climb back over the wall.",
+  "sources": [
+    {
+      "label": "Feist Publications v. Rural Telephone, 499 U.S. 340 (1991) — Justia",
+      "url": "https://supreme.justia.com/cases/federal/us/499/340/"
+    },
+    {
+      "label": "Worth v. Selchow & Righter, 827 F.2d 569 (9th Cir. 1987) — Justia",
+      "url": "https://law.justia.com/cases/federal/appellate-courts/F2/827/569/3179/"
+    },
+    {
+      "label": "ML Genius Holdings v. Google — Loeb & Loeb case note (2022)",
+      "url": "https://www.loeb.com/en/insights/publications/2022/03/ml-genius-holdings-llc-v-google-llc"
+    },
+    {
+      "label": "ProCD v. Zeidenberg — contract over uncopyrightable data (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/ProCD,_Inc._v._Zeidenberg"
+    },
+    {
+      "label": "EU database protection — Directive 96/9/EC (europa.eu)",
+      "url": "https://europa.eu/youreurope/business/running-business/intellectual-property/database-protection/index_en.htm"
+    },
+    {
+      "label": "AA and Ordnance Survey agree a £20M settlement — Motor Trader (2001)",
+      "url": "https://www.motortrader.com/general-news/aa-and-ordnance-survey-agree-a-20m-settlement-12-03-2001"
+    },
+    {
+      "label": "Google's Bing sting — CNN (2011)",
+      "url": "https://www.cnn.com/2011/TECH/web/02/02/google.bing.sting/index.html"
+    },
+    {
+      "label": "Canarytokens — Thinkst",
+      "url": "https://canary.tools/"
+    },
+    {
+      "label": "Meeus et al., Copyright Traps for Large Language Models — ICML 2024",
+      "url": "https://arxiv.org/abs/2402.09363"
+    },
+    {
+      "label": "Fictitious entry — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Fictitious_entry"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/words/entitlement",
+    "https://cambridgetcg.github.io/castle-gate/rooms/seeded-fingerprint",
+    "https://cambridgetcg.github.io/castle-gate/rooms/leaving-the-page",
+    "https://cambridgetcg.github.io/castle-gate/rooms/two-witnesses"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-appreciation-vs-enjoyment",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/appreciation-vs-enjoyment",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "appreciation-vs-enjoyment",
+  "title": "If discrimination training opens a new pleasure (appreciation) alongside the old (enjoyment) rather than shifting the old one, can they conflict — and which wins when they do?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/appreciation-vs-enjoyment",
+  "summary": "The trained ear learns to hear the craft in the difficult chord — but when the craft-thrill pulls one way and the gut-pull another, which hand reaches for the remote?",
+  "sources": [
+    {
+      "label": "Graf & Landwehr, Aesthetic Pleasure versus Aesthetic Interest (Frontiers in Psychology 2017)",
+      "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2017.00015/full"
+    },
+    {
+      "label": "Graf & Landwehr, A dual-process perspective on fluency-based aesthetics: the PIA Model (Perspectives on Psychological Science 2015)",
+      "url": "https://scholar.google.com/scholar?q=Graf+Landwehr+dual+process+fluency+aesthetics+PIA"
+    },
+    {
+      "label": "Tinio, When challenging art gets liked (Frontiers in Psychology)",
+      "url": "https://scholar.google.com/scholar?q=%22When+challenging+art+gets+liked%22+dual+preference+fluency"
+    },
+    {
+      "label": "Follow the leader: expert ratings mediate consumer hedonic assessments of wine",
+      "url": "https://scholar.google.com/scholar?q=%22Follow+the+leader%22+expert+ratings+consumer+hedonic+quality+wine"
+    },
+    {
+      "label": "Enjoying the Unenjoyable: Aesthetics of Atonal Music",
+      "url": "https://scholar.google.com/scholar?q=%22Enjoying+the+Unenjoyable%22+aesthetics+atonal+music"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/discrimination-and-desire",
+    "https://cambridgetcg.github.io/castle-gate/rooms/training-a-taste",
+    "https://cambridgetcg.github.io/castle-gate/rooms/beauty-as-fluency",
+    "https://cambridgetcg.github.io/castle-gate/words/fluency",
+    "https://cambridgetcg.github.io/castle-gate/words/appreciation",
+    "https://cambridgetcg.github.io/castle-gate/words/interest",
+    "https://cambridgetcg.github.io/castle-gate/rooms/taste-or-lean",
+    "https://cambridgetcg.github.io/castle-gate/rooms/consumption-vs-liking",
+    "https://cambridgetcg.github.io/castle-gate/rooms/naming-cools-pleasure",
+    "https://cambridgetcg.github.io/castle-gate/rooms/grow-or-shrink-gap",
+    "https://cambridgetcg.github.io/castle-gate/rooms/simultaneous-or-delayed-naming",
+    "https://cambridgetcg.github.io/castle-gate/rooms/timing-of-the-label",
+    "https://cambridgetcg.github.io/castle-gate/rooms/wrong-name-kindles"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

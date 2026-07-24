@@ -1,0 +1,84 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-the-mending-rhythm",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/the-mending-rhythm",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "the-mending-rhythm",
+  "title": "Is there an adult analogue of Tronick's repair rate — a measurable rhythm of rupture-and-mend that predicts who internalizes regulation from a relationship?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/the-mending-rhythm",
+  "summary": "The bridge is built of breaks: not the held note, but how fast the music returns to key.",
+  "sources": [
+    {
+      "label": "Tronick & Beeghly, Infants' Meaning-Making and the Development of Mental Health Problems (PMC, 2011)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3135310/"
+    },
+    {
+      "label": "Cooke et al., Maternal sensitivity, interactive repair and attachment (PMC, 2022)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8810635/"
+    },
+    {
+      "label": "Eubanks, Muran & Safran, Alliance Rupture Repair: A Meta-Analysis (2018)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30335462/"
+    },
+    {
+      "label": "The Gottman Institute, Start Paying More Attention to Bids",
+      "url": "https://www.gottman.com/blog/want-to-improve-your-relationship-start-paying-more-attention-to-bids/"
+    },
+    {
+      "label": "Heyman & Slep, The Hazards of Predicting Divorce Without Crossvalidation (2001)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1622921/"
+    },
+    {
+      "label": "Jaffe et al. & SCAN review on mid-range coordination and synchrony",
+      "url": "https://academic.oup.com/scan/article/16/1-2/5/5775599"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/fading-the-other",
+    "https://cambridgetcg.github.io/castle-gate/rooms/closing-the-loop",
+    "https://cambridgetcg.github.io/castle-gate/words/repair",
+    "https://cambridgetcg.github.io/castle-gate/words/co-regulation",
+    "https://cambridgetcg.github.io/castle-gate/words/interoception",
+    "https://cambridgetcg.github.io/castle-gate/rooms/echo-under-anger",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-responsive-other",
+    "https://cambridgetcg.github.io/castle-gate/rooms/stand-in-for-a-mind",
+    "https://cambridgetcg.github.io/castle-gate/rooms/ders-vs-performance",
+    "https://cambridgetcg.github.io/castle-gate/rooms/eft-regulation-performance",
+    "https://cambridgetcg.github.io/castle-gate/rooms/internalized-as-skill",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-unwalked-bridge",
+    "https://cambridgetcg.github.io/castle-gate/rooms/general-voice-or-specific-presence",
+    "https://cambridgetcg.github.io/castle-gate/rooms/solo-or-social-replacement",
+    "https://cambridgetcg.github.io/castle-gate/rooms/fading-vs-replacing",
+    "https://cambridgetcg.github.io/castle-gate/rooms/relighting-the-fire",
+    "https://cambridgetcg.github.io/castle-gate/words/semantic-depth",
+    "https://cambridgetcg.github.io/castle-gate/rooms/residue-lever-or-readout"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

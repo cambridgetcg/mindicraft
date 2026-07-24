@@ -1,0 +1,100 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-productive-confusion",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/productive-confusion",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "productive-confusion",
+  "title": "Experts feel interest where novices feel only confusion — from inside, how does a novice tell productive difficulty from mere muddle?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/productive-confusion",
+  "summary": "Fog on the trail is not the question; the question is whether it is thinning.",
+  "sources": [
+    {
+      "label": "Silvia, Interested experts, confused novices (Empirical Studies of the Arts, 2013)",
+      "url": "https://journals.sagepub.com/doi/10.2190/EM.31.1.f"
+    },
+    {
+      "label": "D'Mello, Lehman, Pekrun & Graesser, Confusion can be beneficial for learning (Learning and Instruction, 2014)",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0959475212000357"
+    },
+    {
+      "label": "D'Mello & Graesser, Confusion (handbook chapter)",
+      "url": "https://home.cs.colorado.edu/~mozer/Teaching/syllabi/TopicsInCognitiveScienceSpring2016/DMelloConfusion-Reprint.pdf"
+    },
+    {
+      "label": "Kornell & Bjork, Learning concepts and categories (Psychological Science, 2008)",
+      "url": "https://web.williams.edu/Psychology/Faculty/Kornell/Publications/Kornell.Bjork.2008a.pdf"
+    },
+    {
+      "label": "Kirk-Johnson, Galla & Fraundorf, Perceiving effort as poor learning (Cognitive Psychology, 2019)",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0010028519302270"
+    },
+    {
+      "label": "Bjork & Bjork, Making things hard on yourself, but in a good way (2011)",
+      "url": "https://bjorklab.psych.ucla.edu/wp-content/uploads/sites/13/2016/04/EBjork_RBjork_2011.pdf"
+    },
+    {
+      "label": "Kang et al., The wick in the candle of learning (Psychological Science, 2009)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19619181/"
+    },
+    {
+      "label": "Kalyuga, Expertise reversal effect (Educational Psychology Review, 2007)",
+      "url": "https://www.uky.edu/~gmswan3/EDC608/Kalyuga2007_Article_ExpertiseReversalEffectAndItsI.pdf"
+    },
+    {
+      "label": "Xie, Zhou & Liu, Disfluency meta-analysis (Educational Psychology Review, 2018)",
+      "url": "https://link.springer.com/article/10.1007/s10648-018-9442-x"
+    },
+    {
+      "label": "Sinha & Kapur, When problem solving followed by instruction works (Review of Educational Research, 2021)",
+      "url": "https://journals.sagepub.com/doi/10.3102/00346543211019105"
+    },
+    {
+      "label": "Wilson et al., The eighty five percent rule for optimal learning (Nature Communications, 2019)",
+      "url": "https://www.nature.com/articles/s41467-019-12552-4"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/friction-decides",
+    "https://cambridgetcg.github.io/castle-gate/rooms/simple-explanations",
+    "https://cambridgetcg.github.io/castle-gate/words/fluency",
+    "https://cambridgetcg.github.io/castle-gate/rooms/pretty-or-well-made",
+    "https://cambridgetcg.github.io/castle-gate/rooms/spaced-understanding",
+    "https://cambridgetcg.github.io/castle-gate/rooms/questions-with-edges",
+    "https://cambridgetcg.github.io/castle-gate/rooms/linking-thoughts",
+    "https://cambridgetcg.github.io/castle-gate/rooms/wrong-name-kindles",
+    "https://cambridgetcg.github.io/castle-gate/rooms/disclosed-mismatch",
+    "https://cambridgetcg.github.io/castle-gate/rooms/frustration-as-fascination",
+    "https://cambridgetcg.github.io/castle-gate/rooms/renaming-the-fire",
+    "https://cambridgetcg.github.io/castle-gate/rooms/step-back-mid-climb",
+    "https://cambridgetcg.github.io/castle-gate/rooms/reactivity-surfaces-tacit",
+    "https://cambridgetcg.github.io/castle-gate/rooms/fog-meter"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

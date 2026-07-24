@@ -1,0 +1,99 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-training-the-eye",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/training-the-eye",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "training-the-eye",
+  "title": "Inquiry needs only enough to recognize a correct answer when it arrives — but in a field you barely know, what trains the recognizing eye first?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/training-the-eye",
+  "summary": "Two leaves side by side, and a finger pointing — this edge, not that one — and the forest is never plain green again.",
+  "sources": [
+    {
+      "label": "Kruger & Dunning, Unskilled and unaware of it (J. Personality and Social Psychology, 1999)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/10626367/"
+    },
+    {
+      "label": "Gignac & Zajenkowski, The Dunning-Kruger effect is (mostly) a statistical artefact (Intelligence, 2020)",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0160289620300271"
+    },
+    {
+      "label": "Schwartz & Bransford, A Time for Telling (Cognition and Instruction, 1998)",
+      "url": "http://aaalab.stanford.edu/assets/papers/earlier/A_time_for_telling.pdf"
+    },
+    {
+      "label": "Kornell & Bjork interleaving replication (Verkoeijen & Bouwmeester, 2014)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3978334/"
+    },
+    {
+      "label": "Biederman & Shiffrar, Sexing day-old chicks (J. Exp. Psych: LMC, 1987)",
+      "url": "https://psycnet.apa.org/record/1988-03299-001"
+    },
+    {
+      "label": "Growns et al., Statistical feature training improves fingerprint comparison (PNAS Nexus, 2022)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9288576/"
+    },
+    {
+      "label": "Chi, Feltovich & Glaser, Categorization of physics problems by experts and novices (Cognitive Science, 1981)",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1207/s15516709cog0502_2"
+    },
+    {
+      "label": "Kellman, Massey & Son, Perceptual learning modules (review)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6124488/"
+    },
+    {
+      "label": "Kahneman & Klein, Conditions for intuitive expertise (American Psychologist, 2009)",
+      "url": "https://www.semanticscholar.org/paper/Conditions-for-intuitive-expertise:-a-failure-to-Kahneman-Klein/f1a5fb0c4b9703b3213bc3bd2dfe1f79ee35d511"
+    },
+    {
+      "label": "Stechly, Valmeekam & Kambhampati, On the self-verification limitations of LLMs (2024)",
+      "url": "https://arxiv.org/abs/2402.08115"
+    },
+    {
+      "label": "Stanford Encyclopedia of Philosophy, Epistemic Paradoxes",
+      "url": "https://plato.stanford.edu/entries/epistemic-paradoxes/"
+    },
+    {
+      "label": "Ira Glass on the taste gap (The Marginalian)",
+      "url": "https://www.themarginalian.org/2014/01/29/ira-glass-success-daniel-sax/"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/text-answers-back",
+    "https://cambridgetcg.github.io/castle-gate/rooms/asking-uphill",
+    "https://cambridgetcg.github.io/castle-gate/rooms/truing-the-level",
+    "https://cambridgetcg.github.io/castle-gate/rooms/when-the-trade-flips",
+    "https://cambridgetcg.github.io/castle-gate/rooms/naming-the-tacit",
+    "https://cambridgetcg.github.io/castle-gate/rooms/productive-confusion",
+    "https://cambridgetcg.github.io/castle-gate/rooms/pretty-or-well-made",
+    "https://cambridgetcg.github.io/castle-gate/rooms/simple-explanations",
+    "https://cambridgetcg.github.io/castle-gate/rooms/questions-with-edges"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

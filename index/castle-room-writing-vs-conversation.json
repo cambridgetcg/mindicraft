@@ -1,0 +1,87 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-writing-vs-conversation",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/writing-vs-conversation",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "writing-vs-conversation",
+  "title": "Does writing carry meaning worse than conversation — or does permanence buy the loss back?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/writing-vs-conversation",
+  "summary": "A conversation raises its bridge from both banks at once; a page must throw the whole arch from one side, then stand in the weather for every traveler to come.",
+  "sources": [
+    {
+      "label": "Clark & Brennan, Grounding in communication (1991)",
+      "url": "https://web.stanford.edu/~clark/1990s/Clark,%20H.H.%20_%20Brennan,%20S.E.%20_Grounding%20in%20communication_%201991.pdf"
+    },
+    {
+      "label": "Kruger, Epley, Parker & Ng, Egocentrism over e-mail (JPSP 2005)",
+      "url": "https://web-docs.stern.nyu.edu/pa/kruger_email_ego.pdf"
+    },
+    {
+      "label": "APA Monitor summary",
+      "url": "https://www.apa.org/monitor/feb06/egos.html"
+    },
+    {
+      "label": "Plato, Phaedrus — the critique of writing",
+      "url": "https://en.wikipedia.org/wiki/Phaedrus_(dialogue"
+    },
+    {
+      "label": "Clinton-Lisell, Listening ears or reading eyes — meta-analysis (2022)",
+      "url": "https://journals.sagepub.com/doi/abs/10.3102/00346543211060871"
+    },
+    {
+      "label": "Science Norway summary",
+      "url": "https://www.sciencenorway.no/books-learning-literature/do-you-learn-just-as-much-from-listening-as-from-reading/2564797"
+    },
+    {
+      "label": "Chafe, Integration and involvement in speaking and writing (1982)",
+      "url": "https://www.semanticscholar.org/paper/Integration-and-Involvement-in-Spoken-and-Written-Chafe/73344c80f884c32e3c5f239db35a415592fc973a"
+    },
+    {
+      "label": "Walter Ong, Orality and Literacy — overview",
+      "url": "https://www.philosopheasy.com/p/walter-ongs-prophecy-of-a-culture"
+    },
+    {
+      "label": "Fox Tree & Clark, Communicative effectiveness of written versus spoken feedback (2013)",
+      "url": "https://bpb-us-e1.wpmucdn.com/sites.ucsc.edu/dist/e/205/files/2014/08/Fox-Tree-and-Clark.2013.wordpress.pdf"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/meaning-between-minds",
+    "https://cambridgetcg.github.io/castle-gate/rooms/closing-the-loop",
+    "https://cambridgetcg.github.io/castle-gate/words/meaning",
+    "https://cambridgetcg.github.io/castle-gate/words/bridge",
+    "https://cambridgetcg.github.io/castle-gate/words/common-ground",
+    "https://cambridgetcg.github.io/castle-gate/words/essentially-contested-concept",
+    "https://cambridgetcg.github.io/castle-gate/rooms/text-answers-back",
+    "https://cambridgetcg.github.io/castle-gate/rooms/invited-back",
+    "https://cambridgetcg.github.io/castle-gate/rooms/linking-thoughts"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

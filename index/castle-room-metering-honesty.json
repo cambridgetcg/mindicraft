@@ -1,0 +1,104 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-metering-honesty",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/metering-honesty",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "metering-honesty",
+  "title": "Moderate challenge engages and excessive challenge gets ignored — could a machine read, turn by turn, when a reader's tolerance for pushback is spent, and would calibrating the sting to the reader still count as honesty?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/metering-honesty",
+  "summary": "The good teacher feels the room cooling and changes how, not what — but the moment \"how much truth\" becomes \"whether,\" the warmth has bought a lie.",
+  "sources": [
+    {
+      "label": "D'Mello et al., Automatic detection of learner's affect from conversational cues (UMUAI, 2008)",
+      "url": "https://link.springer.com/article/10.1007/s11257-007-9037-6"
+    },
+    {
+      "label": "Baker, Towards Sensor-Free Affect Detection in Cognitive Tutor Algebra",
+      "url": "https://files.eric.ed.gov/fulltext/ED537205.pdf"
+    },
+    {
+      "label": "DeFalco, Baker & D'Mello, detecting and acting on disengagement (review)",
+      "url": "https://learninganalytics.upenn.edu/ryanbaker/DeFalco_Baker_DMello_v13.pdf"
+    },
+    {
+      "label": "D'Mello et al., A Time for Emoting — affect-sensitive AutoTutor (ITS 2010)",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-642-13388-6_29"
+    },
+    {
+      "label": "Wang, Johnson, Mayer et al., The Politeness Effect (AIED 2005)",
+      "url": "https://people.ict.usc.edu/~nwang/PDF/AIED-2005.pdf"
+    },
+    {
+      "label": "Baile et al., SPIKES — delivering bad news (The Oncologist, 2000)",
+      "url": "https://academic.oup.com/oncolo/article/5/4/302/6386019"
+    },
+    {
+      "label": "Miller, Honesty: The Philosophy and Psychology of a Neglected Virtue (OUP, 2021)",
+      "url": "https://global.oup.com/academic/product/honesty-9780197567494"
+    },
+    {
+      "label": "Sharma et al., Towards Understanding Sycophancy in Language Models (2023)",
+      "url": "https://arxiv.org/abs/2310.13548"
+    },
+    {
+      "label": "OpenAI, Sycophancy in GPT-4o (April 2025 rollback)",
+      "url": "https://openai.com/index/sycophancy-in-gpt-4o/"
+    },
+    {
+      "label": "Sycophancy is an Educational Safety Risk (EduFrameTrap, 2026)",
+      "url": "https://arxiv.org/html/2605.14604v1"
+    },
+    {
+      "label": "Sinha & Kapur, productive failure meta-analysis (Review of Educational Research, 2021)",
+      "url": "https://journals.sagepub.com/doi/10.3102/00346543211019105"
+    },
+    {
+      "label": "Power of Words — covert adaptation read as personalization (2025)",
+      "url": "https://arxiv.org/pdf/2511.11961"
+    },
+    {
+      "label": "Coeckelbergh & Sætra, Social robot deception and the culture of trust",
+      "url": "https://www.degruyterbrill.com/document/doi/10.1515/pjbr-2021-0021/html?lang=en"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/honest-pushback",
+    "https://cambridgetcg.github.io/castle-gate/words/sycophancy",
+    "https://cambridgetcg.github.io/castle-gate/rooms/rationale-before-difficulty",
+    "https://cambridgetcg.github.io/castle-gate/rooms/echo-between-equals",
+    "https://cambridgetcg.github.io/castle-gate/rooms/echo-under-anger",
+    "https://cambridgetcg.github.io/castle-gate/rooms/stand-in-for-a-mind",
+    "https://cambridgetcg.github.io/castle-gate/rooms/productive-confusion",
+    "https://cambridgetcg.github.io/castle-gate/rooms/fog-meter",
+    "https://cambridgetcg.github.io/castle-gate/rooms/can-machines-truly-measure-emotional-engagement",
+    "https://cambridgetcg.github.io/castle-gate/words/calibration"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

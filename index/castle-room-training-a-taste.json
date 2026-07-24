@@ -1,0 +1,84 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-training-a-taste",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/training-a-taste",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "training-a-taste",
+  "title": "Is there a deliberate practice that re-trains an aesthetic preference on purpose, or is taste only ever moved sideways by accident?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/training-a-taste",
+  "summary": "You cannot argue yourself into loving the bitter cup. But you can keep lifting it, and one morning the bitterness is the reason you reached for it.",
+  "sources": [
+    {
+      "label": "Madison & Schiölde, Repeated listening increases liking regardless of complexity (Frontiers, 2017)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5374342/"
+    },
+    {
+      "label": "Appleton et al., Repeated exposure and conditioning for vegetable liking and intake — systematic review and meta-analyses (AJCN, 2018)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30321277/"
+    },
+    {
+      "label": "Liking increases with exposure to nontonal music (New Ideas in Psychology)",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0732118X18302769"
+    },
+    {
+      "label": "Acquired taste — Rozin's benign masochism (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Acquired_taste"
+    },
+    {
+      "label": "Silvia, Interested Experts, Confused Novices (Empirical Studies of the Arts)",
+      "url": "https://journals.sagepub.com/doi/10.2190/EM.31.1.f"
+    },
+    {
+      "label": "Blind wine tasting — training builds discrimination, not documented liking (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Blind_wine_tasting"
+    },
+    {
+      "label": "Processing fluency theory of aesthetic pleasure (Wikipedia overview of Reber, Schwarz & Winkielman)",
+      "url": "https://en.wikipedia.org/wiki/Processing_fluency_theory_of_aesthetic_pleasure"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/taste-or-lean",
+    "https://cambridgetcg.github.io/castle-gate/rooms/renaming-the-fire",
+    "https://cambridgetcg.github.io/castle-gate/rooms/beauty-as-fluency",
+    "https://cambridgetcg.github.io/castle-gate/words/mere-exposure",
+    "https://cambridgetcg.github.io/castle-gate/words/fluency",
+    "https://cambridgetcg.github.io/castle-gate/words/reappraisal",
+    "https://cambridgetcg.github.io/castle-gate/rooms/pretty-or-well-made",
+    "https://cambridgetcg.github.io/castle-gate/rooms/growing-openness",
+    "https://cambridgetcg.github.io/castle-gate/rooms/discrimination-and-desire",
+    "https://cambridgetcg.github.io/castle-gate/rooms/appreciation-vs-enjoyment",
+    "https://cambridgetcg.github.io/castle-gate/rooms/consumption-vs-liking",
+    "https://cambridgetcg.github.io/castle-gate/rooms/naming-cools-pleasure",
+    "https://cambridgetcg.github.io/castle-gate/rooms/deeper-hidden-value",
+    "https://cambridgetcg.github.io/castle-gate/rooms/naming-the-tacit"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

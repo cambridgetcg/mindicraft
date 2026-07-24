@@ -1,0 +1,96 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-two-witnesses",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/two-witnesses",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "two-witnesses",
+  "title": "The record was corrected by other labs replicating, never by a lone reader's audit — so is the real frontier defense not internal scrutiny at all but independent corroboration, harder to fake than reputation and not reducible to \"what others say\"?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/two-witnesses",
+  "summary": "One witness can be coached; two who never met cannot rehearse the same lie — yet the courtroom still needs a reader to catch the forged signature.",
+  "sources": [
+    {
+      "label": "Independent only counts without a common cause; copies of one source weaken support (PMC7670039)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7670039/"
+    },
+    {
+      "label": "Reproducibility Project — only ~36% of 100 studies replicated (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Reproducibility_Project"
+    },
+    {
+      "label": "Schön caught by identical noise across graphs, by a reader not a replication (Science)",
+      "url": "https://www.science.org/content/article/physicist-fired-falsified-data"
+    },
+    {
+      "label": "Stapel exposed by data audit; failed replications were blamed on skill (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Diederik_Stapel"
+    },
+    {
+      "label": "The honesty-study fabrication found because the data were posted (Data Colada)",
+      "url": "https://datacolada.org/98"
+    },
+    {
+      "label": "A replication failure has three readings — it is ambiguous evidence (NIH Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK547524/"
+    },
+    {
+      "label": "Replication is expensive and structurally disincentivized ($0.5–2M) (Castor)",
+      "url": "https://www.castoredc.com/blog/replication-crisis-in-clinical-research/"
+    },
+    {
+      "label": "Diagnostic only in low-uncertainty fields; else organic, uncorrected forgetting (Peterson & Panofsky)",
+      "url": "https://journals.sagepub.com/doi/full/10.1177/03063127211005551"
+    },
+    {
+      "label": "Science is not necessarily self-correcting; replications rare and undervalued (Ioannidis)",
+      "url": "https://journals.sagepub.com/doi/10.1177/1745691612464056"
+    },
+    {
+      "label": "Multiple attestation values independent access to reality, not a shared tradition (Themelios)",
+      "url": "https://www.thegospelcoalition.org/themelios/article/finessing-independent-attestation-interdisciplinary-biblical-criticism/"
+    },
+    {
+      "label": "Triangulate distinct, independent evidence types; cognitively demanding (DiverseDaily)",
+      "url": "https://diversedaily.com/triangulating-information-verifying-facts-from-multiple-independent-sources/"
+    },
+    {
+      "label": "Corroboration is the harder-to-fake backstop, but not automatic (PMC11444786)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11444786/"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/auditing-over-reputation",
+    "https://cambridgetcg.github.io/castle-gate/rooms/correlated-witnesses",
+    "https://cambridgetcg.github.io/castle-gate/rooms/no-neighbors",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-landing",
+    "https://cambridgetcg.github.io/castle-gate/rooms/link-or-noise",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-well"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

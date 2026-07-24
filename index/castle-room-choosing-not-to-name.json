@@ -1,0 +1,95 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-choosing-not-to-name",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/choosing-not-to-name",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "choosing-not-to-name",
+  "title": "Can a learner choose not to invoke the category — or does naming fire the moment a name exists?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/choosing-not-to-name",
+  "summary": "You cannot order the bell not to ring; you can fill the tower with other sounds.",
+  "sources": [
+    {
+      "label": "Holden et al., Contributions of category and fine-grained information to location memory (Memory & Cognition, 2010)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20173188/"
+    },
+    {
+      "label": "Holden et al., Overcoming default categorical bias in spatial memory (Memory & Cognition)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21156868/"
+    },
+    {
+      "label": "Categorical biases in spatial memory: the role of certainty (JEP:LMC, 2015)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25528087/"
+    },
+    {
+      "label": "Automaticity of lexical access in deaf and hearing bilinguals (PMC)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8154725/"
+    },
+    {
+      "label": "Lupyan, Linguistically Modulated Perception and Cognition: The Label-Feedback Hypothesis (Frontiers in Psychology, 2012)",
+      "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2012.00054/full"
+    },
+    {
+      "label": "Wang, Hagger & Chatzisarantis, Ironic Effects of Thought Suppression: A Meta-Analysis (Perspectives on Psychological Science, 2020)",
+      "url": "https://journals.sagepub.com/doi/10.1177/1745691619898795"
+    },
+    {
+      "label": "Winawer et al., Russian blues reveal effects of language on color discrimination (PNAS, 2007)",
+      "url": "https://www.pnas.org/doi/10.1073/pnas.0701644104"
+    },
+    {
+      "label": "Gilbert et al., Whorf hypothesis is supported in the right visual field but not the left (PNAS, 2006)",
+      "url": "https://www.pnas.org/doi/10.1073/pnas.0509868103"
+    },
+    {
+      "label": "Roberson & Davidoff, The categorical perception of colours and facial expressions: the effect of verbal interference (Memory & Cognition)",
+      "url": "https://link.springer.com/article/10.3758/BF03209345"
+    },
+    {
+      "label": "Alogna et al., Registered Replication Report: Schooler & Engstler-Schooler (1990) (Perspectives on Psychological Science, 2014)",
+      "url": "https://journals.sagepub.com/doi/10.1177/1745691614545653"
+    },
+    {
+      "label": "Dodson, Johnson & Schooler, The verbal overshadowing effect: why descriptions impair face recognition (Memory & Cognition, 1997)",
+      "url": "https://memlab.yale.edu/sites/default/files/files/1997_Dodson_Johnson_Schooler_MemCog.pdf"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/drift-across-dimensions",
+    "https://cambridgetcg.github.io/castle-gate/rooms/remembering",
+    "https://cambridgetcg.github.io/castle-gate/rooms/thinking-without-words",
+    "https://cambridgetcg.github.io/castle-gate/rooms/fog-meter",
+    "https://cambridgetcg.github.io/castle-gate/rooms/flooding-self-read",
+    "https://cambridgetcg.github.io/castle-gate/rooms/precise-across-time",
+    "https://cambridgetcg.github.io/castle-gate/rooms/watching-the-watcher",
+    "https://cambridgetcg.github.io/castle-gate/words/verbal-overshadowing",
+    "https://cambridgetcg.github.io/castle-gate/words/ironic-process"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

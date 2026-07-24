@@ -1,0 +1,73 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-willingness-persistence-gap",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/willingness-persistence-gap",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "willingness-persistence-gap",
+  "title": "Could the gap between immediate willingness and delayed persistence become a diagnostic — a way for a teacher to tell, after the fact, whether a task they asked someone to do had real value they failed to communicate, or no value at all?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/willingness-persistence-gap",
+  "summary": "The lamp that looked lit at dusk is out by midnight — and the one that was dim at dusk is the one still burning at dawn.",
+  "sources": [
+    {
+      "label": "Deci, Effects of externally mediated rewards on intrinsic motivation (Journal of Personality and Social Psychology 1971)",
+      "url": "https://psycnet.apa.org/record/1972-00161-001"
+    },
+    {
+      "label": "Ryan & Deci, Intrinsic and Extrinsic Motivations: Classic Definitions and New Directions (Contemporary Educational Psychology 2000, PMID 10656965)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/10656965/"
+    },
+    {
+      "label": "Wikipedia: Affective forecasting — projection bias (read 2026-06-19)",
+      "url": "https://en.wikipedia.org/wiki/Affective_forecasting"
+    },
+    {
+      "label": "Wikipedia: Overjustification effect — the free-choice paradigm (read 2026-06-19)",
+      "url": "https://en.wikipedia.org/wiki/Overjustification_effect"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/revealing-vs-creating",
+    "https://cambridgetcg.github.io/castle-gate/words/free-choice",
+    "https://cambridgetcg.github.io/castle-gate/words/internalization",
+    "https://cambridgetcg.github.io/castle-gate/words/projection-bias",
+    "https://cambridgetcg.github.io/castle-gate/rooms/warmth-without-value",
+    "https://cambridgetcg.github.io/castle-gate/rooms/acknowledgment-weak-reason",
+    "https://cambridgetcg.github.io/castle-gate/rooms/rationale-before-difficulty",
+    "https://cambridgetcg.github.io/castle-gate/rooms/chain-not-sum",
+    "https://cambridgetcg.github.io/castle-gate/rooms/inverted-diagnostic",
+    "https://cambridgetcg.github.io/castle-gate/rooms/class-gap-diagnostic",
+    "https://cambridgetcg.github.io/castle-gate/rooms/consumption-vs-liking",
+    "https://cambridgetcg.github.io/castle-gate/rooms/deeper-hidden-value",
+    "https://cambridgetcg.github.io/castle-gate/rooms/grow-or-shrink-gap",
+    "https://cambridgetcg.github.io/castle-gate/rooms/minimum-class-size",
+    "https://cambridgetcg.github.io/castle-gate/rooms/two-task-effect-size"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

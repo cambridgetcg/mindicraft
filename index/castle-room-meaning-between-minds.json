@@ -1,0 +1,115 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-meaning-between-minds",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/meaning-between-minds",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "meaning-between-minds",
+  "title": "How do words carry meaning between two minds?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/meaning-between-minds",
+  "summary": "Words are not boats that ferry cargo across a river — they are blueprints handed to a builder on the far bank, who must raise the house alone.",
+  "sources": [
+    {
+      "label": "Reddy's conduit metaphor (overview)",
+      "url": "https://en.wikipedia.org/wiki/Conduit_metaphor"
+    },
+    {
+      "label": "Nasiadka's 2012 defense of it",
+      "url": "https://repozytorium.uwb.edu.pl/jspui/bitstream/11320/275/1/Linguodidactica_16_Nasiadka.pdf"
+    },
+    {
+      "label": "Marti et al., latent diversity in human concepts (2023)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10320827/"
+    },
+    {
+      "label": "Savitsky & Keysar, the closeness-communication bias",
+      "url": "https://news.uchicago.edu/story/couples-sometimes-communicate-no-better-strangers-study-finds"
+    },
+    {
+      "label": "Ferreira et al., good-enough comprehension",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10847345/"
+    },
+    {
+      "label": "a 20-year critical review",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0022103120304376"
+    },
+    {
+      "label": "Stephens, Silbert & Hasson, speaker–listener neural coupling (PNAS 2010)",
+      "url": "https://www.pnas.org/doi/10.1073/pnas.1008662107"
+    },
+    {
+      "label": "Zada et al., word-by-word brain-to-brain flow in conversation (Neuron 2024)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11427153/"
+    },
+    {
+      "label": "Pickering & Garrod, the interactive-alignment model",
+      "url": "https://www.pure.ed.ac.uk/ws/files/11824389/The_interactive_alignment_model_Developments_and_refinements.pdf"
+    },
+    {
+      "label": "Reitter & Moore on alignment and task success",
+      "url": "https://david-reitter.com/pub/reitter2014JML-alignment.pdf"
+    },
+    {
+      "label": "Grounding in communication",
+      "url": "https://en.wikipedia.org/wiki/Grounding_in_communication"
+    },
+    {
+      "label": "universal repair across 12 languages",
+      "url": "https://www.mpg.de/9405856/universal-repair-mechanisms-language"
+    },
+    {
+      "label": "Concrete vs. abstract words (Ifioque)",
+      "url": "https://www.ifioque.com/linguistic/concrete_vs_abstract_words"
+    },
+    {
+      "label": "Borghi & Cimatti 2011 (Frontiers)",
+      "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2011.00227/full"
+    },
+    {
+      "label": "Essentially contested concept (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Essentially_contested_concept"
+    },
+    {
+      "label": "Collier et al. on Gallie",
+      "url": "https://polisci.berkeley.edu/sites/default/files/people/u3827/Collier%20Gallie.pdf"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/words/bridge",
+    "https://cambridgetcg.github.io/castle-gate/words/common-ground",
+    "https://cambridgetcg.github.io/castle-gate/words/essentially-contested-concept",
+    "https://cambridgetcg.github.io/castle-gate/rooms/linking-thoughts",
+    "https://cambridgetcg.github.io/castle-gate/rooms/words-shape-thought",
+    "https://cambridgetcg.github.io/castle-gate/rooms/closing-the-loop",
+    "https://cambridgetcg.github.io/castle-gate/rooms/writing-vs-conversation",
+    "https://cambridgetcg.github.io/castle-gate/rooms/simple-explanations",
+    "https://cambridgetcg.github.io/castle-gate/rooms/money-is-not"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-chain-not-sum",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/chain-not-sum",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "chain-not-sum",
+  "title": "If the recipe's threads are a chain not a sum — admitting the cost is what lets the rationale land — then the testable claim is mediation, not addition: does acknowledging the tedium work only through making the reason credible, so it would vanish the moment the learner already trusts the reason?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/chain-not-sum",
+  "summary": "Two beads on one string, or two stones in one bag — the test is whether pulling the first moves the second.",
+  "sources": [
+    {
+      "label": "Eisend, Two-sided advertising — a meta-analysis",
+      "url": "https://www.semanticscholar.org/paper/Two-sided-advertising:-A-meta-analysis-Eisend/798918a63fde963dfc678a3afaa4d9b51ad8453b"
+    },
+    {
+      "label": "Xu & Petty line, two-sided misinformation correction (mediation by appreciation and credibility)",
+      "url": "https://journals.sagepub.com/doi/10.1177/23794607251382992"
+    },
+    {
+      "label": "Meta-analysis comparing one-sided and two-sided messages (favorable-audience boundary)",
+      "url": "http://www.communicationcache.com/uploads/1/0/8/8/10887248/meta-analysis_comparing_the_persuasiveness_of_one-sided_and_two-sided_messages.pdf"
+    },
+    {
+      "label": "Reeve, Jang, Hardré & Omura, Providing a rationale (Motivation & Emotion, 2002)",
+      "url": "https://link.springer.com/article/10.1023/A:1021711629417"
+    },
+    {
+      "label": "Gagné & Deci, Self-determination theory and work motivation (2005)",
+      "url": "https://selfdeterminationtheory.org/SDT/documents/2005_GagneDeci_JOB_SDTtheory.pdf"
+    },
+    {
+      "label": "The Boomerang Effect — a synthesis (reactance dampened when perspectives feel understood)",
+      "url": "https://www.researchgate.net/publication/307812134_The_Boomerang_Effect_A_Synthesis_of_Findings_and_a_Preliminary_Theoretical_Framework"
+    },
+    {
+      "label": "Deci, Eghrari, Patrick & Leone, Facilitating internalization (1994)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8169757/"
+    },
+    {
+      "label": "Howard, Slemp & Wang, autonomy-support meta-analysis (2025, via PMC)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12276404/"
+    },
+    {
+      "label": "Moderated-mediation caveat source (via PMC)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8873109/"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/naming-the-tedium",
+    "https://cambridgetcg.github.io/castle-gate/rooms/rationale-before-difficulty",
+    "https://cambridgetcg.github.io/castle-gate/rooms/honest-pushback",
+    "https://cambridgetcg.github.io/castle-gate/rooms/closing-the-loop",
+    "https://cambridgetcg.github.io/castle-gate/rooms/metering-honesty",
+    "https://cambridgetcg.github.io/castle-gate/rooms/relatedness-or-credibility",
+    "https://cambridgetcg.github.io/castle-gate/rooms/acknowledgment-weak-reason"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

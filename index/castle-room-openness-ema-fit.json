@@ -1,0 +1,68 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-openness-ema-fit",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/openness-ema-fit",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "openness-ema-fit",
+  "title": "If the Pasquini 2021 study found EMA items served as daily markers of Extraversion but not Neuroticism (poor model fit), would openness-specific EMA items (asking about novelty, not social activity) show good fit — and does openness have the same within-day fluctuation structure that Extraversion does, or is it more trait-stable and less moment-variable?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/openness-ema-fit",
+  "summary": "The river that turns with every rain has a gauge for every hour; the mountain that moves in centuries has a gauge for nothing — and the phone in the pocket asks the river's question of the mountain.",
+  "sources": [
+    {
+      "label": "Wikipedia: Whole Trait Theory — density distributions of states (read 2026-06-20)",
+      "url": "https://en.wikipedia.org/wiki/Whole_Trait_Theory"
+    },
+    {
+      "label": "Pasquini et al., Can Ecological Momentary Assessments Be Used as Daily Markers of Personality Traits? (2021, PMC 8681943)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8681943"
+    },
+    {
+      "label": "Wikipedia: Experience sampling method (read 2026-06-19)",
+      "url": "https://en.wikipedia.org/wiki/Experience_sampling_method"
+    },
+    {
+      "label": "Wikipedia: Openness to experience (read 2026-06-20)",
+      "url": "https://en.wikipedia.org/wiki/Openness_to_experience"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/ema-trait-crystallization",
+    "https://cambridgetcg.github.io/castle-gate/rooms/trait-or-tally",
+    "https://cambridgetcg.github.io/castle-gate/words/openness",
+    "https://cambridgetcg.github.io/castle-gate/words/persistence",
+    "https://cambridgetcg.github.io/castle-gate/words/within-subject",
+    "https://cambridgetcg.github.io/castle-gate/words/effect-size",
+    "https://cambridgetcg.github.io/castle-gate/rooms/growing-openness",
+    "https://cambridgetcg.github.io/castle-gate/rooms/fog-meter",
+    "https://cambridgetcg.github.io/castle-gate/rooms/off-drug-persistence",
+    "https://cambridgetcg.github.io/castle-gate/rooms/fourteen-month-test"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

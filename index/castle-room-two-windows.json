@@ -1,0 +1,98 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-two-windows",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/two-windows",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "two-windows",
+  "title": "How well does an AI student's learnability predict a human's — and where do the two windows part ways?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/two-windows",
+  "summary": "The tailor fitted the coat to a mannequin his own size, then wondered how it would hang on the child.",
+  "sources": [
+    {
+      "label": "Schut et al., Bridging the human–AI knowledge gap through concept discovery and transfer in AlphaZero (PNAS 2025, full text)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12002201/"
+    },
+    {
+      "label": "PNAS page",
+      "url": "https://www.pnas.org/doi/10.1073/pnas.2406675122"
+    },
+    {
+      "label": "Patil, Zhu, Kopeć & Love, Optimal Teaching for Limited-Capacity Human Learners (NeurIPS 2014)",
+      "url": "https://pages.cs.wisc.edu/~jerryzhu/career/pub/nips14OptTeachGCM.pdf"
+    },
+    {
+      "label": "Dekker, Otto & Summerfield, Curriculum learning for human compositional generalization (PNAS 2022)",
+      "url": "https://www.pnas.org/doi/10.1073/pnas.2205582119"
+    },
+    {
+      "label": "An analytical theory of curriculum learning in teacher–student networks (PMC)",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10561397/"
+    },
+    {
+      "label": "Ilyas et al., Adversarial Examples Are Not Bugs, They Are Features (2019)",
+      "url": "https://arxiv.org/abs/1905.02175"
+    },
+    {
+      "label": "Geirhos et al., ImageNet-trained CNNs are biased towards texture (ICLR 2019)",
+      "url": "https://openreview.net/forum?id=Bygh9j09KX"
+    },
+    {
+      "label": "Zhou & Firestone, Humans can decipher adversarial images (Nature Communications 2019)",
+      "url": "https://www.nature.com/articles/s41467-019-08931-6"
+    },
+    {
+      "label": "Lake, Ullman, Tenenbaum & Gershman, Building Machines That Learn and Think Like People (2017)",
+      "url": "https://arxiv.org/abs/1604.00289"
+    },
+    {
+      "label": "Take Out Your Calculators (LLM student simulation vs real difficulty, arXiv 2026)",
+      "url": "https://arxiv.org/abs/2601.09953"
+    },
+    {
+      "label": "Can LLMs Reliably Simulate Real Students' Abilities in Mathematics and Reading Comprehension? (arXiv)",
+      "url": "https://arxiv.org/html/2507.08232v1"
+    },
+    {
+      "label": "Towards Valid Student Simulation with Large Language Models (arXiv 2026)",
+      "url": "https://arxiv.org/abs/2601.05473"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/machine-distillation",
+    "https://cambridgetcg.github.io/castle-gate/rooms/naming-the-tacit",
+    "https://cambridgetcg.github.io/castle-gate/words/machine-teaching",
+    "https://cambridgetcg.github.io/castle-gate/words/learner-model",
+    "https://cambridgetcg.github.io/castle-gate/rooms/training-the-eye",
+    "https://cambridgetcg.github.io/castle-gate/rooms/what-must-travel",
+    "https://cambridgetcg.github.io/castle-gate/rooms/domain-matched-teachability",
+    "https://cambridgetcg.github.io/castle-gate/rooms/smooth-or-thresholded-understanding"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

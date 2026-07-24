@@ -1,0 +1,69 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-off-drug-persistence",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/off-drug-persistence",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "off-drug-persistence",
+  "title": "If the escitalopram arm of the Weiss trial was already off-drug at the 6-month follow-up (the protocol tapered after 6 weeks), and openness persisted equally to psilocybin off-drug, does the general-therapeutic-response reading strengthen — and could the trait-crystallization hypothesis (6 months of openness-producing experiences stabilizing the trait) be tested by measuring whether the learners who had more novel experiences during the 6 months showed more trait persistence?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/off-drug-persistence",
+  "summary": "Two fires burned down to coals by November — but one was fed all summer by the hands that lit it, and the other was left to its own heat. You cannot tell which is which until you ask who gathered the wood.",
+  "sources": [
+    {
+      "label": "Carhart-Harris et al., Trial of Psilocybin versus Escitalopram for Depression (NEJM 2021, PMID 33852780)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33852780/"
+    },
+    {
+      "label": "Weiss et al., Personality change in a trial of psilocybin therapy v. escitalopram treatment for depression (Psychol Med 2024, PMID 37264814)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37264814/"
+    },
+    {
+      "label": "Wikipedia: Personality change — plasticity principle, mechanisms (read 2026-06-19)",
+      "url": "https://en.wikipedia.org/wiki/Personality_change"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/fourteen-month-test",
+    "https://cambridgetcg.github.io/castle-gate/rooms/trait-or-tally",
+    "https://cambridgetcg.github.io/castle-gate/rooms/pharmacological-or-cognitive",
+    "https://cambridgetcg.github.io/castle-gate/rooms/widening-the-subgroup",
+    "https://cambridgetcg.github.io/castle-gate/rooms/fog-meter",
+    "https://cambridgetcg.github.io/castle-gate/words/openness",
+    "https://cambridgetcg.github.io/castle-gate/words/mystical-experience",
+    "https://cambridgetcg.github.io/castle-gate/words/persistence",
+    "https://cambridgetcg.github.io/castle-gate/words/trait-crystallization",
+    "https://cambridgetcg.github.io/castle-gate/rooms/trait-without-consolidation",
+    "https://cambridgetcg.github.io/castle-gate/rooms/combined-protocol",
+    "https://cambridgetcg.github.io/castle-gate/rooms/openness-or-anxiety-first",
+    "https://cambridgetcg.github.io/castle-gate/rooms/growing-openness",
+    "https://cambridgetcg.github.io/castle-gate/rooms/ema-trait-crystallization",
+    "https://cambridgetcg.github.io/castle-gate/rooms/openness-ema-fit"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

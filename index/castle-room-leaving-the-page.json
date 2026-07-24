@@ -1,0 +1,84 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-leaving-the-page",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/leaving-the-page",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "leaving-the-page",
+  "title": "The most reliable test of echo-vs-contribution turned out to be leaving the page entirely — tracing footnotes to a primary source or a citation loop — so is \"read the paper itself\" the wrong frame, and is sorting echo from contribution irreducibly a between-papers act, never a single-paper one?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/leaving-the-page",
+  "summary": "A misprint cannot be read on the page that carries it; you only know it was copied when you find it twice.",
+  "sources": [
+    {
+      "label": "Simkin & Roychowdhury, \"Read before you cite!\" — shared misprints show ~20% read the original",
+      "url": "https://arxiv.org/abs/cond-mat/0212043"
+    },
+    {
+      "label": "Greenberg, citation distortions create unfounded authority — 675 citations mapped; 8 papers carried 97%",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19622839/"
+    },
+    {
+      "label": "ORI: citing sources not read — Broadus's 23%, Hoerman & Nowicke's ~86% copied",
+      "url": "https://ori.hhs.gov/citing-sources-were-not-read-or-thoroughly-understood"
+    },
+    {
+      "label": "Quotation-accuracy meta-analysis — ~11-25% incorrect, no improvement over time",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0184727"
+    },
+    {
+      "label": "Valenzuela et al., \"Incidental or influential?\" — within-paper context predicts influence; under 15% influential",
+      "url": "https://arxiv.org/abs/1707.04207"
+    },
+    {
+      "label": "Aksnes et al. — citations track impact, not solidity; causes cannot be read back from citations",
+      "url": "https://journals.sagepub.com/doi/10.1177/2158244019829575"
+    },
+    {
+      "label": "Leiden Manifesto — quantitative evaluation should support, not replace, expert reading",
+      "url": "https://en.wikipedia.org/wiki/Leiden_Manifesto_for_Research_Metrics"
+    },
+    {
+      "label": "Citation cartel — coordinated loops manufacture the very signal the test relies on",
+      "url": "https://en.wikipedia.org/wiki/Citation_cartel"
+    },
+    {
+      "label": "Obliteration by incorporation — the deepest contributions stop being cited at all",
+      "url": "https://en.wikipedia.org/wiki/Obliteration_by_incorporation"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/echo-or-contribution",
+    "https://cambridgetcg.github.io/castle-gate/rooms/reading-a-literature",
+    "https://cambridgetcg.github.io/castle-gate/rooms/correlated-witnesses",
+    "https://cambridgetcg.github.io/castle-gate/rooms/two-witnesses",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-landing",
+    "https://cambridgetcg.github.io/castle-gate/rooms/seeded-fingerprint"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

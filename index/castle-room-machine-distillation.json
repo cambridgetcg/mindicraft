@@ -1,0 +1,77 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-machine-distillation",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/machine-distillation",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "machine-distillation",
+  "title": "Who shrinks the feature when neither expert nor learner can — can a machine be trained to distill a discrimination rather than merely perform it?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/machine-distillation",
+  "summary": "The smelter does not admire the ore; it is built to pour ingots a hand can lift.",
+  "sources": [
+    {
+      "label": "Schut et al., Bridging the human–AI knowledge gap through concept discovery and transfer in AlphaZero (PNAS, 2025)",
+      "url": "https://www.pnas.org/doi/10.1073/pnas.2406675122"
+    },
+    {
+      "label": "arXiv",
+      "url": "https://arxiv.org/abs/2310.16410"
+    },
+    {
+      "label": "Zhu, Machine Teaching (overview page, UW–Madison)",
+      "url": "https://pages.cs.wisc.edu/~jerryzhu/machineteaching/"
+    },
+    {
+      "label": "Chen et al., Near-Optimal Machine Teaching via Explanatory Teaching Sets (AISTATS, 2018)",
+      "url": "http://proceedings.mlr.press/v84/chen18g/chen18g.pdf"
+    },
+    {
+      "label": "Explanatory machine learning for sequential human teaching (arXiv, 2022)",
+      "url": "https://arxiv.org/pdf/2205.10250"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/naming-the-tacit",
+    "https://cambridgetcg.github.io/castle-gate/rooms/what-must-travel",
+    "https://cambridgetcg.github.io/castle-gate/words/machine-teaching",
+    "https://cambridgetcg.github.io/castle-gate/words/tacit-knowledge",
+    "https://cambridgetcg.github.io/castle-gate/rooms/training-the-eye",
+    "https://cambridgetcg.github.io/castle-gate/rooms/text-answers-back",
+    "https://cambridgetcg.github.io/castle-gate/rooms/learning-curve-threshold",
+    "https://cambridgetcg.github.io/castle-gate/rooms/two-windows",
+    "https://cambridgetcg.github.io/castle-gate/rooms/maia-as-student",
+    "https://cambridgetcg.github.io/castle-gate/rooms/cheapest-teachability-validation",
+    "https://cambridgetcg.github.io/castle-gate/rooms/teachability-validated",
+    "https://cambridgetcg.github.io/castle-gate/rooms/domain-matched-teachability",
+    "https://cambridgetcg.github.io/castle-gate/rooms/threshold-aware-model",
+    "https://cambridgetcg.github.io/castle-gate/rooms/calibration-returns",
+    "https://cambridgetcg.github.io/castle-gate/rooms/threshold-pilot"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

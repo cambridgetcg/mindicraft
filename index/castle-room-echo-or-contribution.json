@@ -1,0 +1,80 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-echo-or-contribution",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/echo-or-contribution",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "echo-or-contribution",
+  "title": "If aggregation survives dependence whenever each source spreads new information rather than echoes a conclusion, the reader's real task is sorting echo from contribution paper by paper — what visible marks on a single paper distinguish a genuine new signal from a restatement of the shared prior?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/echo-or-contribution",
+  "summary": "An echo and a voice can sound the same; you tell them apart by where they come from, not how loud they are.",
+  "sources": [
+    {
+      "label": "Greenberg: belief grows by amplification — data-free papers cited as if they settled the claim; one review carried 63% of citation paths",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2714656/"
+    },
+    {
+      "label": "Quotation errors run 1-in-5 to 1-in-10; the opioid letter cited 600+ times with its hospital-only scope dropped",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8054004/"
+    },
+    {
+      "label": "Clement & Tse: bold forecasts (away from both own prior and consensus) are more accurate than herding ones",
+      "url": "https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1540-6261.2005.00731.x"
+    },
+    {
+      "label": "Shared and private components cannot be separated from estimates alone without special elicitation",
+      "url": "https://pubsonline.informs.org/doi/abs/10.1287/mnsc.2018.3047"
+    },
+    {
+      "label": "Redundancy assumed to ensure independence fails most of the time; common causes share error modes",
+      "url": "https://eepower.com/technical-articles/on-chip-redundancy-and-the-myth-of-independence/"
+    },
+    {
+      "label": "Even formal novelty indicators struggle to tell novel from non-novel articles apart",
+      "url": "https://arxiv.org/pdf/2501.17456"
+    },
+    {
+      "label": "Citation counts are an echo signal — sensitive to herding and status, not rigour",
+      "url": "https://www.frontiersin.org/journals/research-metrics-and-analytics/articles/10.3389/frma.2016.00001/full"
+    },
+    {
+      "label": "Circular reporting — follow the links back; if they only cite each other it is one source echoed",
+      "url": "https://en.wikipedia.org/wiki/Circular_reporting"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/reading-a-literature",
+    "https://cambridgetcg.github.io/castle-gate/rooms/correlated-witnesses",
+    "https://cambridgetcg.github.io/castle-gate/rooms/two-witnesses",
+    "https://cambridgetcg.github.io/castle-gate/rooms/auditing-over-reputation",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-landing",
+    "https://cambridgetcg.github.io/castle-gate/rooms/seeded-fingerprint"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-invited-back",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/invited-back",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "invited-back",
+  "title": "What makes a text invite the re-reading that is its only repair — and what makes a reader give up instead?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/invited-back",
+  "summary": "Some pages leave a light on for the reader who turns back; others bolt the door behind her.",
+  "sources": [
+    {
+      "label": "Schotter, Tran & Rayner 2014 — blocking regressions impairs comprehension (Psychological Science)",
+      "url": "https://journals.sagepub.com/doi/10.1177/0956797614531148"
+    },
+    {
+      "label": "Dunlosky et al. 2013 — rereading rated low utility (PSPI)",
+      "url": "https://journals.sagepub.com/doi/abs/10.1177/1529100612453266"
+    },
+    {
+      "label": "plain-language version (AFT)",
+      "url": "https://www.aft.org/ae/fall2013/dunlosky"
+    },
+    {
+      "label": "Callender & McDaniel 2009 — limited benefits of rereading educational text",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0361476X08000477"
+    },
+    {
+      "label": "Rawson & Kintsch 2005, classroom replication 2018 — spaced rereading helps after delay (Frontiers)",
+      "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2018.02517/full"
+    },
+    {
+      "label": "Miall & Kuiken 1994 — foregrounding slows reading, strikes feeling (Poetics)",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/0304422X94000115"
+    },
+    {
+      "label": "Meyer et al. 2015 — disfluent fonts give no benefit, meta-analysis (via Learning Scientists)",
+      "url": "https://www.learningscientists.org/blog/2016/10/25-1"
+    },
+    {
+      "label": "Kuijpers & Hakemulder 2018 — rereading appreciation tracks perceived comprehension (Discourse Processes)",
+      "url": "https://www.tandfonline.com/doi/full/10.1080/0163853X.2017.1390352"
+    },
+    {
+      "label": "van den Broek & Helder 2017 — standards of coherence (Discourse Processes)",
+      "url": "https://www.tandfonline.com/doi/full/10.1080/0163853X.2017.1306677"
+    },
+    {
+      "label": "Feng, D'Mello & Graesser 2013 — mind wandering rises in difficult text (Psychonomic Bulletin & Review)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23288660/"
+    },
+    {
+      "label": "Eye movements of grade 3–5 readers — detection is universal, repair is tooled (PMC)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7079677/"
+    },
+    {
+      "label": "Jellybooks — ebook completion rates",
+      "url": "https://www.jellybooks.com/about/jellybooks-radar/completion-rate"
+    },
+    {
+      "label": "CSMonitor — why readers abandon books",
+      "url": "https://www.csmonitor.com/Books/chapter-and-verse/2013/0605/Why-do-we-abandon-books-halfway-through"
+    },
+    {
+      "label": "Steiner, On Difficulty (1978, archive.org full text)",
+      "url": "https://archive.org/stream/SteinerGeorge_201504/Steiner,%20George%20-%20On%20Difficulty%20&%20Other%20Essays%20(Oxford,%201978"
+    },
+    {
+      "label": "Myers, Difficulty",
+      "url": "http://dgmyers.blogspot.com/2009/10/difficulty.html"
+    },
+    {
+      "label": "Russell & Levy 2012 — voluntary re-consumption as search for new meaning (via ScienceDaily)",
+      "url": "https://www.sciencedaily.com/releases/2012/05/120529113300.htm"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/writing-vs-conversation",
+    "https://cambridgetcg.github.io/castle-gate/rooms/spaced-understanding",
+    "https://cambridgetcg.github.io/castle-gate/rooms/pretty-or-well-made",
+    "https://cambridgetcg.github.io/castle-gate/rooms/productive-confusion",
+    "https://cambridgetcg.github.io/castle-gate/words/fluency",
+    "https://cambridgetcg.github.io/castle-gate/rooms/reread-or-refamiliar",
+    "https://cambridgetcg.github.io/castle-gate/rooms/simple-explanations",
+    "https://cambridgetcg.github.io/castle-gate/rooms/wrong-name-kindles",
+    "https://cambridgetcg.github.io/castle-gate/rooms/disclosed-mismatch"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

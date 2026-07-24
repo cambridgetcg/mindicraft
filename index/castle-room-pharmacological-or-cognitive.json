@@ -1,0 +1,71 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-pharmacological-or-cognitive",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/pharmacological-or-cognitive",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "pharmacological-or-cognitive",
+  "title": "Is the openness-as-mediator mechanism pharmacological (MDMA directly releases the rigidity that blocks openness) rather than cognitive — and would a CBT trial that targets open appraisal test whether the cognitive route can match the pharmacological one?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/pharmacological-or-cognitive",
+  "summary": "The lock has two keys — one chemical, one cognitive — and the question is whether they open the same door or different ones.",
+  "sources": [
+    {
+      "label": "Wikipedia: MDMA-assisted psychotherapy — mechanism of action (read 2026-06-19)",
+      "url": "https://en.wikipedia.org/wiki/MDMA-assisted_psychotherapy"
+    },
+    {
+      "label": "Wikipedia: MDMA — pharmacology (read 2026-06-19)",
+      "url": "https://en.wikipedia.org/wiki/MDMA"
+    },
+    {
+      "label": "MacLean, Johnson & Griffiths, Mystical experiences occasioned by psilocybin lead to increases in openness (Journal of Psychopharmacology 2011, PMID 21956378)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21956378/"
+    },
+    {
+      "label": "Madsen et al., A single psilocybin dose is associated with long-term increased mindfulness, preceded by a proportional change in neocortical 5-HT2A receptor binding (European Neuropsychopharmacology 2020, PMID 32146028)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32146028/"
+    },
+    {
+      "label": "Wagner et al., Therapeutic effect of increased openness in MDMA-assisted psychotherapy (Journal of Psychopharmacology 2017, PMID 28635375)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28635375/"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/openness-or-anxiety-first",
+    "https://cambridgetcg.github.io/castle-gate/rooms/cbt-openness-trait",
+    "https://cambridgetcg.github.io/castle-gate/rooms/cheapest-cbt-design",
+    "https://cambridgetcg.github.io/castle-gate/rooms/growing-openness",
+    "https://cambridgetcg.github.io/castle-gate/rooms/appraisal-engine",
+    "https://cambridgetcg.github.io/castle-gate/words/openness",
+    "https://cambridgetcg.github.io/castle-gate/words/mediation",
+    "https://cambridgetcg.github.io/castle-gate/rooms/trait-or-tally",
+    "https://cambridgetcg.github.io/castle-gate/rooms/combined-protocol"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

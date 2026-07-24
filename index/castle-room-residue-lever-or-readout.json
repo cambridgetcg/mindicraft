@@ -1,0 +1,65 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-residue-lever-or-readout",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/residue-lever-or-readout",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "residue-lever-or-readout",
+  "title": "Is residue a lever or a readout — does the repeated act build the bond, or does the bond generate the act, and does the direction of causation determine whether practice can install what only time could grow?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/residue-lever-or-readout",
+  "summary": "The wick that warms with each lighting is not the same as the wick that was always warm — one is a tool you sharpen, the other a fire you were given, and only one of them gets cheaper when you pull it again.",
+  "sources": [
+    {
+      "label": "MacNamara, Ochsner & Hajcak 2011 — reappraised pictures stir smaller response 30 min later (SCAN 6(3))",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3110435/"
+    },
+    {
+      "label": "Eubanks, Muran & Safran 2018 — alliance rupture repair meta-analysis, coached repair r=.11 ns",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30335462/"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/words/residue",
+    "https://cambridgetcg.github.io/castle-gate/rooms/relighting-the-fire",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-mending-rhythm",
+    "https://cambridgetcg.github.io/castle-gate/words/semantic-depth",
+    "https://cambridgetcg.github.io/castle-gate/rooms/internalized-as-skill",
+    "https://cambridgetcg.github.io/castle-gate/rooms/smooth-or-thresholded-understanding",
+    "https://cambridgetcg.github.io/castle-gate/rooms/tacit-cost-as-expertise",
+    "https://cambridgetcg.github.io/castle-gate/rooms/calibration-returns",
+    "https://cambridgetcg.github.io/castle-gate/words/smooth-or-thresholded",
+    "https://cambridgetcg.github.io/castle-gate/words/co-regulation",
+    "https://cambridgetcg.github.io/castle-gate/words/reappraisal",
+    "https://cambridgetcg.github.io/castle-gate/rooms/general-voice-or-specific-presence",
+    "https://cambridgetcg.github.io/castle-gate/rooms/fading-vs-replacing",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-expert-grip",
+    "https://cambridgetcg.github.io/castle-gate/rooms/frustration-as-fascination"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-thinking-without-words",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/thinking-without-words",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "thinking-without-words",
+  "title": "Which thoughts can be thought without any words at all?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/thinking-without-words",
+  "summary": "Silence the voice in your head and the sums still add, the road home still unrolls — only the rhyme and the grocery list go quiet.",
+  "sources": [
+    {
+      "label": "MIT EvLab — language vs. thought, non-linguistic cognition",
+      "url": "https://www.evlab.mit.edu/research/active-research-questions-areas/language-vs-thought-non-linguistic-cognition-and-perception"
+    },
+    {
+      "label": "Fedorenko & Varley, \"Language and thought are not the same thing\" (Annals NYAS)",
+      "url": "https://nyaspubs.onlinelibrary.wiley.com/doi/abs/10.1111/nyas.13046"
+    },
+    {
+      "label": "Nedergaard & Lupyan 2024, anendophasia study (via PsyPost)",
+      "url": "https://www.psypost.org/anendophasia-scientists-examine-the-cognitive-impact-of-life-without-an-inner-voice/"
+    },
+    {
+      "label": "Izard et al., number sense in infants (PubMed)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21399717/"
+    },
+    {
+      "label": "MIT News, Pirahã and exact number (Frank et al.)",
+      "url": "https://news.mit.edu/2008/language-0624"
+    },
+    {
+      "label": "Mind Matters — do we need language to think? (Chomsky vs. Fedorenko)",
+      "url": "https://mindmatters.ai/2024/11/do-we-need-language-to-think-some-researchers-say-no/"
+    },
+    {
+      "label": "Lind 2025 commentary, on inner-speech self-reports (Psychological Science)",
+      "url": "https://journals.sagepub.com/doi/10.1177/09567976251335583"
+    },
+    {
+      "label": "Scientific American — \"You don't need words to think\"",
+      "url": "https://www.scientificamerican.com/article/you-dont-need-words-to-think/"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/precise-across-time",
+    "https://cambridgetcg.github.io/castle-gate/rooms/words-shape-thought",
+    "https://cambridgetcg.github.io/castle-gate/rooms/meaning-between-minds",
+    "https://cambridgetcg.github.io/castle-gate/rooms/remembering"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

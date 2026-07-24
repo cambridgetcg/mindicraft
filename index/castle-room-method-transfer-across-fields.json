@@ -1,0 +1,70 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-method-transfer-across-fields",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/method-transfer-across-fields",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "method-transfer-across-fields",
+  "title": "If the canary-author's craft is one craft per field (the midpoint is field-specific), does the method of finding the midpoint transfer across fields faster than learning the field from scratch — or is the midpoint-finding skill so entangled with field knowledge that an expert in one field's canary craft is a novice in another's?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/method-transfer-across-fields",
+  "summary": "The carpenter who built cathedrals knows wood and weight — but the boatbuilder's wood bends different, and knowing why a joint holds is not knowing where this wood splits.",
+  "sources": [
+    {
+      "label": "Wikipedia: Transfer of learning (read 2026-06-20)",
+      "url": "https://en.wikipedia.org/wiki/Transfer_of_learning"
+    },
+    {
+      "label": "Wikipedia: Metacognition (read 2026-06-20)",
+      "url": "https://en.wikipedia.org/wiki/Metacognition"
+    },
+    {
+      "label": "Wikipedia: Expert (read 2026-06-20)",
+      "url": "https://en.wikipedia.org/wiki/Expert"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/one-craft-per-field",
+    "https://cambridgetcg.github.io/castle-gate/words/canary-trap",
+    "https://cambridgetcg.github.io/castle-gate/words/idea-expression-divide",
+    "https://cambridgetcg.github.io/castle-gate/words/semantic-change",
+    "https://cambridgetcg.github.io/castle-gate/rooms/mapping-the-midpoint",
+    "https://cambridgetcg.github.io/castle-gate/rooms/thin-definitions",
+    "https://cambridgetcg.github.io/castle-gate/rooms/widening-the-phrasing-space",
+    "https://cambridgetcg.github.io/castle-gate/rooms/coined-term-canary",
+    "https://cambridgetcg.github.io/castle-gate/rooms/hybrid-canary",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-definition-rides",
+    "https://cambridgetcg.github.io/castle-gate/rooms/richness-and-detection",
+    "https://cambridgetcg.github.io/castle-gate/rooms/organic-canary",
+    "https://cambridgetcg.github.io/castle-gate/rooms/method-as-checklist",
+    "https://cambridgetcg.github.io/castle-gate/rooms/context-per-field",
+    "https://cambridgetcg.github.io/castle-gate/rooms/field-specific-gradient",
+    "https://cambridgetcg.github.io/castle-gate/rooms/think-aloud-annotated-checklist"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

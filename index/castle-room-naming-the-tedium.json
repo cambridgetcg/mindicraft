@@ -1,0 +1,72 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-naming-the-tedium",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/naming-the-tedium",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "naming-the-tedium",
+  "title": "The conditional recipe adds \"admit the cost\" and \"leave a real choice\" to the rationale — but no teaching study has isolated those two ingredients; does naming the tedium and handing over the choice each carry their own weight, or is the rationale doing all the work and the rest decoration?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/naming-the-tedium",
+  "summary": "Three threads were braided into one rope; no one has pulled them apart to see which holds.",
+  "sources": [
+    {
+      "label": "Deci, Eghrari, Patrick & Leone, Facilitating internalization (1994)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8169757/"
+    },
+    {
+      "label": "Reeve, Jang, Hardré & Omura, Providing a rationale (Motivation & Emotion, 2002)",
+      "url": "https://link.springer.com/article/10.1023/A:1021711629417"
+    },
+    {
+      "label": "Patall, Cooper & Robinson, The effects of choice — meta-analysis (Psychological Bulletin, 2008)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18298272/"
+    },
+    {
+      "label": "Steingut, Patall & Trimble, The effect of rationale provision (Motivation Science, 2017)",
+      "url": "https://selfdeterminationtheory.org/wp-content/uploads/2019/11/2017_SteingutPatallTrimble_MotivSci.pdf"
+    },
+    {
+      "label": "Su & Reeve, Meta-analysis of autonomy-support training (Educational Psychology Review, 2011)",
+      "url": "https://link.springer.com/article/10.1007/s10648-010-9142-7"
+    },
+    {
+      "label": "Patall, Cooper & Robinson, full text (via SDT.org)",
+      "url": "https://selfdeterminationtheory.org/wp-content/uploads/2019/10/2008_PatallCooperRobinson_PsychBulletin.pdf"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/rationale-before-difficulty",
+    "https://cambridgetcg.github.io/castle-gate/words/reactance",
+    "https://cambridgetcg.github.io/castle-gate/rooms/metering-honesty",
+    "https://cambridgetcg.github.io/castle-gate/rooms/productive-confusion",
+    "https://cambridgetcg.github.io/castle-gate/rooms/friction-decides",
+    "https://cambridgetcg.github.io/castle-gate/rooms/chain-not-sum"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

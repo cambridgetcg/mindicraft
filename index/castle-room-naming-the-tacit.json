@@ -1,0 +1,103 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-naming-the-tacit",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/naming-the-tacit",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "naming-the-tacit",
+  "title": "Pointing presumes a pointer who can say what they see, but much expertise is tacit — in a field whose experts cannot articulate their own features, how does a learner extract them: contrast alone, or machines that learned the discrimination naming it back?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/naming-the-tacit",
+  "summary": "The master sexes the chick and cannot say how; someone else, watching, finds the one word he was missing — and a minute later the novice can do it too.",
+  "sources": [
+    {
+      "label": "Biederman & Shiffrar, Sexing Day-Old Chicks (JEP:LMC, 1987)",
+      "url": "https://www.sciepub.com/reference/17257"
+    },
+    {
+      "label": "Growns et al., Statistical feature training improves fingerprint matching (PNAS Nexus, 2022)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9288576/"
+    },
+    {
+      "label": "Global Cognition — What is Cognitive Task Analysis?",
+      "url": "https://www.globalcognition.org/cognitive-task-analysis/"
+    },
+    {
+      "label": "CTA in clinical research, systematic review (PMC8903544)",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8903544/"
+    },
+    {
+      "label": "Kellman lab — Perceptual & Adaptive Learning Modules",
+      "url": "https://kellmanlab.psych.ucla.edu/research-perceptual-and-adaptive-learning-in-medicine.php"
+    },
+    {
+      "label": "Liu, Lu & Dosher, Perceptual learning solely induced by feedback (Vision Research, 2012)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3352973/"
+    },
+    {
+      "label": "Schut, Kim et al., Bridging the human–AI knowledge gap (PNAS, 2025)",
+      "url": "https://www.pnas.org/doi/10.1073/pnas.2406675122"
+    },
+    {
+      "label": "Müller, How explainable AI affects human performance — 68 studies (2024)",
+      "url": "https://arxiv.org/abs/2404.16042"
+    },
+    {
+      "label": "Ai, Muggleton et al., Beneficial and harmful explanatory machine learning (Machine Learning, 2021)",
+      "url": "https://link.springer.com/article/10.1007/s10994-020-05941-0"
+    },
+    {
+      "label": "Ramaswamy et al., Overlooked factors in concept-based explanations (2022)",
+      "url": "https://arxiv.org/pdf/2207.09615"
+    },
+    {
+      "label": "Poplin et al., Predicting cardiovascular risk factors from retinal photographs (Nature Biomed Eng, 2018)",
+      "url": "https://www.nature.com/articles/s41551-018-0195-0"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/training-the-eye",
+    "https://cambridgetcg.github.io/castle-gate/words/tacit-knowledge",
+    "https://cambridgetcg.github.io/castle-gate/rooms/words-shape-thought",
+    "https://cambridgetcg.github.io/castle-gate/rooms/precise-across-time",
+    "https://cambridgetcg.github.io/castle-gate/rooms/choosing-not-to-name",
+    "https://cambridgetcg.github.io/castle-gate/rooms/text-answers-back",
+    "https://cambridgetcg.github.io/castle-gate/rooms/simple-explanations",
+    "https://cambridgetcg.github.io/castle-gate/words/handle",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-expert-grip",
+    "https://cambridgetcg.github.io/castle-gate/rooms/reactivity-surfaces-tacit",
+    "https://cambridgetcg.github.io/castle-gate/rooms/choice-prediction-tacit",
+    "https://cambridgetcg.github.io/castle-gate/rooms/tacit-cost-as-expertise",
+    "https://cambridgetcg.github.io/castle-gate/rooms/gap-predicts-teaching",
+    "https://cambridgetcg.github.io/castle-gate/rooms/any-naming-downregulates",
+    "https://cambridgetcg.github.io/castle-gate/rooms/two-windows",
+    "https://cambridgetcg.github.io/castle-gate/rooms/training-a-taste",
+    "https://cambridgetcg.github.io/castle-gate/words/semantic-depth"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

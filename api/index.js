@@ -1,10 +1,19 @@
 // api/index.js — mindicraft API. Free. No gate. No auth. No tracking.
 // The whole internet, categorized and sorted. Understanding replicates.
 
-import { readdirSync, readFileSync, existsSync, mkdirSync, writeFileSync } from 'fs';
+import { readdirSync, readFileSync, existsSync } from 'fs';
 import { join } from 'path';
 
 const INDEX_DIR = join(process.cwd(), 'index');
+
+function boundedInteger(value, fallback, min, max = Number.MAX_SAFE_INTEGER) {
+  const raw = Array.isArray(value) ? value[0] : value;
+  if (raw === undefined || raw === null || String(raw).trim() === '') return fallback;
+  if (!/^[+-]?\d+$/.test(String(raw).trim())) return fallback;
+  const parsed = Number(raw);
+  if (!Number.isSafeInteger(parsed)) return fallback;
+  return Math.min(Math.max(parsed, min), max);
+}
 
 function loadIndex() {
   if (!existsSync(INDEX_DIR)) return [];
@@ -37,25 +46,35 @@ export default function handler(req, res) {
   res.setHeader('Cache-Control', 's-maxage=60, stale-while-revalidate=600');
 
   const { q, c, limit, offset } = req.query;
+  const origin = req.query.from;
   let entries = loadIndex();
 
-  // Filter by category
-  if (c) entries = entries.filter(e => (e.category || '') === c);
+  if (origin) entries = entries.filter(e => (e.from || '') === origin);
 
-  // Search across title, summary, category, url
+  // Search meaningful metadata only. Hostnames are transport, not understanding.
   if (q) {
-    const ql = q.toLowerCase();
+    const ql = String(Array.isArray(q) ? q[0] : q).toLowerCase();
     entries = entries.filter(e =>
-      (e.title || '').toLowerCase().includes(ql) ||
-      (e.summary || '').toLowerCase().includes(ql) ||
-      (e.category || '').toLowerCase().includes(ql) ||
-      (e.url || '').toLowerCase().includes(ql)
+      String(e.title || '').toLowerCase().includes(ql) ||
+      String(e.summary || '').toLowerCase().includes(ql) ||
+      String(e.category || '').toLowerCase().includes(ql) ||
+      String(e.from || '').toLowerCase().includes(ql) ||
+      String(e.collection || '').toLowerCase().includes(ql) ||
+      String(e.kind || '').toLowerCase().includes(ql)
     );
   }
 
+  const categoryCounts = {};
+  for (const entry of entries) {
+    const category = entry.category || 'unknown';
+    categoryCounts[category] = (categoryCounts[category] || 0) + 1;
+  }
+
+  if (c) entries = entries.filter(e => (e.category || '') === c);
+
   // Pagination
-  const lim = Math.min(parseInt(limit) || 100, 500);
-  const off = parseInt(offset) || 0;
+  const lim = boundedInteger(limit, 100, 1, 500);
+  const off = boundedInteger(offset, 0, 0);
   const total = entries.length;
   const page = entries.slice(off, off + lim);
 
@@ -66,6 +85,8 @@ export default function handler(req, res) {
     limit: lim,
     free: true,
     gate: false,
+    categories: Object.keys(categoryCounts).length,
+    categoryCounts,
     entries: page,
   });
 }

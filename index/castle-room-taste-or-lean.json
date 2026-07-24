@@ -1,0 +1,91 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-taste-or-lean",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/taste-or-lean",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "taste-or-lean",
+  "title": "Dialectical bootstrapping flips an assumption; the polish bias is a taste — does \"consider the opposite\" debiasing ever move an aesthetic preference like neatness, or only a factual lean?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/taste-or-lean",
+  "summary": "The crowbar pries against a hinge; a liking has no hinge to pry — only a weight you can lean into or away from over time.",
+  "sources": [
+    {
+      "label": "Lord, Lepper & Preston, Considering the Opposite (JPSP, 1984)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/6527215/"
+    },
+    {
+      "label": "Ludolph & Schulz, debiasing review (Frontiers in Psychology, 2015)",
+      "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2015.01120/full"
+    },
+    {
+      "label": "Hirt & Markman, Multiple explanation: a consider-an-alternative strategy (1995)",
+      "url": "https://philpapers.org/rec/MARMEA-19"
+    },
+    {
+      "label": "Hirt, Kardes & Markman, multiple-explanation debiasing (PDF)",
+      "url": "http://www.communicationcache.com/uploads/1/0/8/8/10887248/multiple_explanation-_a_consider-an-alternative_strategy_for_debiasing_judgments.pdf"
+    },
+    {
+      "label": "Reber, Schwarz & Winkielman, Processing Fluency and Aesthetic Pleasure (PSPR, 2004)",
+      "url": "https://journals.sagepub.com/doi/10.1207/s15327957pspr0804_3"
+    },
+    {
+      "label": "Wilson & Schooler, Thinking Too Much (JPSP, 1991)",
+      "url": "http://bear.warrington.ufl.edu/brenner/mar7588/Papers/wilson-schooler-jpsp-1991.pdf"
+    },
+    {
+      "label": "Wilson et al., Introspecting About Reasons Can Reduce Post-Choice Satisfaction (PSPB, 1993)",
+      "url": "https://journals.sagepub.com/doi/abs/10.1177/0146167293193010"
+    },
+    {
+      "label": "White & Antonakis, dialectical bootstrapping as averaging artifact (Psychological Science, 2013)",
+      "url": "https://journals.sagepub.com/doi/10.1177/0956797612449174"
+    },
+    {
+      "label": "Sanna & Schwarz, When debiasing backfires",
+      "url": "https://www.semanticscholar.org/paper/When-debiasing-backfires:-accessible-content-and-in-Sanna-Schwarz/43ab986974854ebad0482bc85cf48708e2f508cf"
+    },
+    {
+      "label": "Aesthetic appraisal's automatic affective route (Ergo)",
+      "url": "https://journals.publishing.umich.edu/ergo/article/id/6159/print/"
+    },
+    {
+      "label": "Mere-exposure effect (Wikipedia overview of Zajonc)",
+      "url": "https://en.wikipedia.org/wiki/Mere-exposure_effect"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/twenty-sittings",
+    "https://cambridgetcg.github.io/castle-gate/rooms/beauty-as-fluency",
+    "https://cambridgetcg.github.io/castle-gate/rooms/pretty-or-well-made",
+    "https://cambridgetcg.github.io/castle-gate/rooms/better-than-i-was",
+    "https://cambridgetcg.github.io/castle-gate/rooms/simple-explanations"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

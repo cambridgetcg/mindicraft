@@ -1,0 +1,79 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-combined-protocol",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/combined-protocol",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "combined-protocol",
+  "title": "If the cognitive route matches the pharmacological one in magnitude but not durability, would a combined protocol — pharmacological unlock followed by cognitive consolidation — produce a gain that is both large and lasting, and is the consolidation phase where CBT's tools are most needed?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/combined-protocol",
+  "summary": "The frost breaks the stone; the mason builds the wall — and the wall stands only if the mason comes after the frost, not instead of it.",
+  "sources": [
+    {
+      "label": "Mitchell et al., MDMA-assisted therapy for severe PTSD: a randomized phase 3 study (Nature Medicine 2021, PMID 33972795)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33972795/"
+    },
+    {
+      "label": "Wagner et al., Therapeutic effect of increased openness in MDMA-assisted psychotherapy (Journal of Psychopharmacology 2017, PMID 28635375)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28635375/"
+    },
+    {
+      "label": "Psilocybin-Assisted Cognitive Behavioral Therapy for Adults with Major Depressive Disorder: Rationale and Treatment Development (PubMed)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=psilocybin+assisted+cognitive+behavioral+therapy+major+depressive"
+    },
+    {
+      "label": "Psilocybin-assisted cognitive behavioral therapy for major depressive disorder: A pilot trial (PubMed)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=psilocybin+assisted+cognitive+behavioral+therapy+pilot+trial"
+    },
+    {
+      "label": "Wikipedia: MDMA-assisted psychotherapy (read 2026-06-19)",
+      "url": "https://en.wikipedia.org/wiki/MDMA-assisted_psychotherapy"
+    },
+    {
+      "label": "MacLean, Johnson & Griffiths, Mystical experiences occasioned by psilocybin lead to increases in openness (Journal of Psychopharmacology 2011, PMID 21956378)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21956378/"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/pharmacological-or-cognitive",
+    "https://cambridgetcg.github.io/castle-gate/rooms/growing-openness",
+    "https://cambridgetcg.github.io/castle-gate/rooms/appraisal-engine",
+    "https://cambridgetcg.github.io/castle-gate/words/openness",
+    "https://cambridgetcg.github.io/castle-gate/words/mediation",
+    "https://cambridgetcg.github.io/castle-gate/words/consolidation",
+    "https://cambridgetcg.github.io/castle-gate/rooms/cheapest-cbt-design",
+    "https://cambridgetcg.github.io/castle-gate/rooms/openness-or-anxiety-first",
+    "https://cambridgetcg.github.io/castle-gate/rooms/cbt-openness-trait",
+    "https://cambridgetcg.github.io/castle-gate/rooms/trait-without-consolidation",
+    "https://cambridgetcg.github.io/castle-gate/rooms/off-drug-persistence",
+    "https://cambridgetcg.github.io/castle-gate/rooms/fourteen-month-test",
+    "https://cambridgetcg.github.io/castle-gate/rooms/fading-vs-replacing"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

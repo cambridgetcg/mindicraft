@@ -1,0 +1,97 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-text-answers-back",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/text-answers-back",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "text-answers-back",
+  "title": "Text can now answer back — does that recover the live repair Plato said writing lost?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/text-answers-back",
+  "summary": "The page has been given a spokesman: fluent, tireless, willing — and not its father.",
+  "sources": [
+    {
+      "label": "Plato, Phaedrus 275d–e (Fowler translation, Perseus)",
+      "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0174:text%3DPhaedrus:page%3D275"
+    },
+    {
+      "label": "Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools (Stanford RegLab/HAI)",
+      "url": "https://hai.stanford.edu/news/ai-trial-legal-models-hallucinate-1-out-6-or-more-benchmarking-queries"
+    },
+    {
+      "label": "paper",
+      "url": "https://arxiv.org/abs/2405.20362"
+    },
+    {
+      "label": "Nelson, A Phaedrus Moment",
+      "url": "https://www.ailog.blog/p/a-phaedrus-moment"
+    },
+    {
+      "label": "Bastani et al., Generative AI without guardrails can harm learning (PNAS 2025)",
+      "url": "https://www.pnas.org/doi/10.1073/pnas.2422633122"
+    },
+    {
+      "label": "Kestin et al., AI tutoring outperforms in-class active learning (Scientific Reports 2025)",
+      "url": "https://www.nature.com/articles/s41598-025-97652-6"
+    },
+    {
+      "label": "Mayor et al., LLM-simulated vs. real conversation (Cognitive Science 2025)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12401190/"
+    },
+    {
+      "label": "Pardon? — the EAR repair benchmark (preprint)",
+      "url": "https://arxiv.org/pdf/2601.12973"
+    },
+    {
+      "label": "Shech, Plato warned us about ChatGPT (Templeton)",
+      "url": "https://www.templeton.org/news/plato-warned-us-about-chatgpt-and-told-us-what-to-do-about-it"
+    },
+    {
+      "label": "Pigliucci, Socrates and AI",
+      "url": "https://figsinwintertime.substack.com/p/socrates-and-ai"
+    },
+    {
+      "label": "Kosmyna et al., Your Brain on ChatGPT (preprint)",
+      "url": "https://arxiv.org/abs/2506.08872"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/writing-vs-conversation",
+    "https://cambridgetcg.github.io/castle-gate/words/repair",
+    "https://cambridgetcg.github.io/castle-gate/rooms/closing-the-loop",
+    "https://cambridgetcg.github.io/castle-gate/rooms/simple-explanations",
+    "https://cambridgetcg.github.io/castle-gate/rooms/productive-confusion",
+    "https://cambridgetcg.github.io/castle-gate/rooms/when-the-trade-flips",
+    "https://cambridgetcg.github.io/castle-gate/rooms/asking-uphill",
+    "https://cambridgetcg.github.io/castle-gate/rooms/invited-back",
+    "https://cambridgetcg.github.io/castle-gate/rooms/stand-in-for-a-mind",
+    "https://cambridgetcg.github.io/castle-gate/words/fluency",
+    "https://cambridgetcg.github.io/castle-gate/rooms/honest-pushback"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

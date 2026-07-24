@@ -1,0 +1,108 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-what-must-travel",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/what-must-travel",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "what-must-travel",
+  "title": "The trained question fired far but paid only near — what must travel with it for asking in strange territory to be worth anything: a bank of exemplars, a domain foothold, or a tutor's leftover voice?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/what-must-travel",
+  "summary": "The question is the lightest thing in the pack; the border weighs everything else.",
+  "sources": [
+    {
+      "label": "Han et al., Choose Your QA Model Wisely — 90.2 F1 at home, 36–63 abroad",
+      "url": "https://arxiv.org/pdf/2203.07522"
+    },
+    {
+      "label": "MRQA 2019 shared task — best system 72.5 avg F1 on twelve held-out datasets",
+      "url": "https://arxiv.org/abs/1910.09753"
+    },
+    {
+      "label": "Kamath et al., To Adapt or to Annotate — eight target examples beat zero-shot by +10 to +24 F1",
+      "url": "https://arxiv.org/abs/2212.10381"
+    },
+    {
+      "label": "Mosbach et al. — controlled head-to-head: in-context learning's generalization edge often does not hold",
+      "url": "https://arxiv.org/abs/2305.16938"
+    },
+    {
+      "label": "Gururangan et al., Don't Stop Pretraining — DAPT/TAPT gains across four domains, eight tasks",
+      "url": "https://arxiv.org/abs/2004.10964"
+    },
+    {
+      "label": "Stability–plasticity in continued pretraining — domain gains trade against forgetting",
+      "url": "https://arxiv.org/abs/2504.09687"
+    },
+    {
+      "label": "Shakeri et al., Not to Overfit or Underfit — distillation lifts out-of-domain even faster than in-domain",
+      "url": "https://arxiv.org/pdf/2205.07257"
+    },
+    {
+      "label": "Stanton et al., Does Knowledge Distillation Really Work? — students fail to match teachers; closer match ≠ better generalization",
+      "url": "https://arxiv.org/abs/2106.05945"
+    },
+    {
+      "label": "RAG-end2end (TACL) — adapt the retriever to the new corpus; access beats packed knowledge",
+      "url": "https://direct.mit.edu/tacl/article/doi/10.1162/tacl_a_00530/114590/Improving-the-Domain-Adaptation-of-Retrieval"
+    },
+    {
+      "label": "Agarwal et al., Many-Shot In-Context Learning — hundreds of exemplars sometimes rival fine-tuning",
+      "url": "https://arxiv.org/pdf/2404.11018"
+    },
+    {
+      "label": "Far transfer of cognitive training measures near null (PMC9903001)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9903001/"
+    },
+    {
+      "label": "Transfer near and far — far transfer leans on broad prior knowledge",
+      "url": "https://www.learningscicomm.com/post/transfer-near-and-far-an-important-idea-for-all-teachers-to-understand"
+    },
+    {
+      "label": "Perkins & Salomon's high road: bridging by deliberate abstraction",
+      "url": "https://educationforproblemsolving.net/design-thinking/tr-ps.htm"
+    },
+    {
+      "label": "Varied examples, not repeated ones, buy generalization",
+      "url": "https://www.structural-learning.com/post/transfer-learning-complete-guide-teachers"
+    },
+    {
+      "label": "Hug and bridge — combine context-rehearsal with principle-reflection",
+      "url": "https://bns.institute/behavioural-sciences/transfer-of-learning-in-education/"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/training-the-trigger",
+    "https://cambridgetcg.github.io/castle-gate/rooms/linking-thoughts",
+    "https://cambridgetcg.github.io/castle-gate/rooms/asking-uphill",
+    "https://cambridgetcg.github.io/castle-gate/rooms/training-the-eye",
+    "https://cambridgetcg.github.io/castle-gate/rooms/when-the-trade-flips",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-landing"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

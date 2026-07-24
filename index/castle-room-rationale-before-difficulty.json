@@ -1,0 +1,89 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-rationale-before-difficulty",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/rationale-before-difficulty",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "rationale-before-difficulty",
+  "title": "The open-label placebo survives naming because the disclosure carries a true rationale — in teaching, does explaining why difficulty is desirable, before the hard practice, measurably raise learners' tolerance for it and their persistence?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/rationale-before-difficulty",
+  "summary": "The \"why\" lights the first step; only the climb proves the stair holds.",
+  "sources": [
+    {
+      "label": "Wei et al., Open-label placebo with rationale reduces pain (Frontiers in Pain Research, 2021)",
+      "url": "https://www.frontiersin.org/journals/pain-research/articles/10.3389/fpain.2021.734882/full"
+    },
+    {
+      "label": "Biwer et al., Dealing with desirable difficulties — review (2024, via PMC)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10858853/"
+    },
+    {
+      "label": "Ariel & Karpicke, Improving self-regulated learning with a retrieval practice intervention (2018)",
+      "url": "https://pdf.retrievalpractice.org/metacognition/11_Ariel_Karpicke_2018.pdf"
+    },
+    {
+      "label": "Biwer et al., Study Smart — training students to use effortful strategies (2020, via PMC)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9397154/"
+    },
+    {
+      "label": "Hulleman et al., utility-value intervention (2017, via PMC)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6168083/"
+    },
+    {
+      "label": "Gagné & Deci, Self-determination theory and work motivation (Journal of Organizational Behavior, 2005)",
+      "url": "https://selfdeterminationtheory.org/SDT/documents/2005_GagneDeci_JOB_SDTtheory.pdf"
+    },
+    {
+      "label": "Spille et al., updated open-label placebo meta-analysis (Scientific Reports, 2025)",
+      "url": "https://www.nature.com/articles/s41598-025-14895-z"
+    },
+    {
+      "label": "Buergler et al., pre-registered conceptual replication of open-label placebo (2023, via PMC)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9881123/"
+    },
+    {
+      "label": "Element interactivity / working-memory limit on desirable difficulty (via PMC)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6099118/"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/words/retrieval-practice",
+    "https://cambridgetcg.github.io/castle-gate/rooms/productive-confusion",
+    "https://cambridgetcg.github.io/castle-gate/words/element-interactivity",
+    "https://cambridgetcg.github.io/castle-gate/rooms/friction-decides",
+    "https://cambridgetcg.github.io/castle-gate/rooms/friction-at-the-door",
+    "https://cambridgetcg.github.io/castle-gate/rooms/spaced-understanding",
+    "https://cambridgetcg.github.io/castle-gate/words/reactance",
+    "https://cambridgetcg.github.io/castle-gate/rooms/threshold-pilot",
+    "https://cambridgetcg.github.io/castle-gate/rooms/naming-the-tedium",
+    "https://cambridgetcg.github.io/castle-gate/rooms/chain-not-sum",
+    "https://cambridgetcg.github.io/castle-gate/rooms/relatedness-or-credibility"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

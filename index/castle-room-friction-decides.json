@@ -1,0 +1,108 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-friction-decides",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/friction-decides",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "friction-decides",
+  "title": "Why does friction quietly decide which habits live and which die?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/friction-decides",
+  "summary": "Water never argues with the hill. It takes the easier inch — and so, most hours of the day, do we.",
+  "sources": [
+    {
+      "label": "Wood, Habits, Goals, and Effective Behavior Change (2024)",
+      "url": "https://journals.sagepub.com/doi/abs/10.1177/09637214241246480"
+    },
+    {
+      "label": "her Behavioral Scientist interview (the 43% figure)",
+      "url": "https://behavioralscientist.org/good-habits-bad-habits-a-conversation-with-wendy-wood/"
+    },
+    {
+      "label": "Madrian & Shea, 401(k) auto-enrollment (QJE 2001)",
+      "url": "https://academic.oup.com/qje/article-abstract/116/4/1149/1903159"
+    },
+    {
+      "label": "Lally et al., how habits form — the 66-day median (2010)",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1002/ejsp.674"
+    },
+    {
+      "label": "Rozin et al., ten inches and tongs (2011)",
+      "url": "https://www.cambridge.org/core/journals/judgment-and-decision-making/article/nudge-to-nobesity-i-minor-changes-in-accessibility-decrease-food-intake/EBC2CC39148FDEAA851D048DDB7E55C2"
+    },
+    {
+      "label": "Grüning et al., the ten-second app delay (PNAS 2023)",
+      "url": "https://www.pnas.org/doi/10.1073/pnas.2213114120"
+    },
+    {
+      "label": "Jachimowicz et al., meta-analysis of default effects (2019)",
+      "url": "https://www.cambridge.org/core/journals/behavioural-public-policy/article/when-and-why-defaults-influence-decisions-a-metaanalysis-of-default-effects/67AF6972CFB52698A60B6BD94B70C2C0"
+    },
+    {
+      "label": "DellaVigna & Linos, RCTs to scale — 1.4 vs 8.7 points (Econometrica 2022)",
+      "url": "https://onlinelibrary.wiley.com/doi/abs/10.3982/ECTA18709"
+    },
+    {
+      "label": "Maier et al., no evidence for nudging after publication-bias adjustment (PNAS 2022)",
+      "url": "https://www.pnas.org/doi/10.1073/pnas.2200300119"
+    },
+    {
+      "label": "Dallacker et al., opt-out defaults did not raise donation rates (2024)",
+      "url": "https://www.mpg.de/23726833/organ-donation-opt-out-defaults-do-not-increase-donation-rates"
+    },
+    {
+      "label": "Johnson & Goldstein, Do Defaults Save Lives? (2003)",
+      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1324774"
+    },
+    {
+      "label": "Teixeira et al., motivation and long-term exercise (2012)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3441783/"
+    },
+    {
+      "label": "Verplanken & Sui, habit and identity (2019)",
+      "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2019.01504/full"
+    },
+    {
+      "label": "Chater & Loewenstein, the i-frame critique (2022)",
+      "url": "https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/abs/iframe-and-the-sframe-how-focusing-on-individuallevel-solutions-has-led-behavioral-public-policy-astray/A799C9C57F388A712BE5A8D34D5229A1"
+    },
+    {
+      "label": "Achor, the 20-second rule (book excerpt — story, not study)",
+      "url": "http://www.shawnachor.com/wp-content/uploads/2018/09/Happiness-Advantage-excerpt.pdf"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/words",
+    "https://cambridgetcg.github.io/castle-gate/rooms/simple-explanations",
+    "https://cambridgetcg.github.io/castle-gate/rooms/friction-at-the-door",
+    "https://cambridgetcg.github.io/castle-gate/rooms/rationale-before-difficulty",
+    "https://cambridgetcg.github.io/castle-gate/rooms/growing-openness",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-well"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-the-responsive-other",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/the-responsive-other",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "the-responsive-other",
+  "title": "The partner-based practice beat solo mindfulness at building the inner sense and lowering alexithymia — why does another body in the room train interoception better than turning attention inward alone, and does it need a real partner or only a responsive other?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/the-responsive-other",
+  "summary": "A feeling too vague to hold alone takes shape the moment a listener waits for it.",
+  "sources": [
+    {
+      "label": "Head-to-head RCT: dyad uniquely raised body-listening and self-regulation, which mediated the alexithymia drop (ScienceDirect)",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0165032723010704"
+    },
+    {
+      "label": "Phenomenological fingerprint: the dyad instilled concrete, other-directed, bodily memories (PMC10449800)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10449800/"
+    },
+    {
+      "label": "Interoception and Social Connection: presence can pull attention outward; the skill is flexible switching (PMC6901918)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6901918/"
+    },
+    {
+      "label": "Dyads delivered by app, rotating remote strangers; advantage contested, higher dropout (PMC10413229)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10413229/"
+    },
+    {
+      "label": "A partner's photograph sharpened accuracy, only for low starters: social salience, not live responsiveness (PMC5472092)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5472092/"
+    },
+    {
+      "label": "Virtual vs in-person dyads: remote closeness comparable at first (PMC12170796)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12170796/"
+    },
+    {
+      "label": "Meditation not tied to better cardiac accuracy; counting tracks belief, not sensation (PMC6982546)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6982546/"
+    },
+    {
+      "label": "Whether an AI 'responsive other' would deliver the same benefit is untested (JMIR)",
+      "url": "https://www.jmir.org/2023/1/e45027"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/stand-in-for-a-mind",
+    "https://cambridgetcg.github.io/castle-gate/rooms/nudge-not-lock",
+    "https://cambridgetcg.github.io/castle-gate/rooms/flooding-self-read",
+    "https://cambridgetcg.github.io/castle-gate/rooms/fog-meter",
+    "https://cambridgetcg.github.io/castle-gate/rooms/echo-under-anger",
+    "https://cambridgetcg.github.io/castle-gate/rooms/closing-the-loop",
+    "https://cambridgetcg.github.io/castle-gate/rooms/fading-the-other",
+    "https://cambridgetcg.github.io/castle-gate/rooms/alone-or-accompanied",
+    "https://cambridgetcg.github.io/castle-gate/rooms/internalized-as-skill",
+    "https://cambridgetcg.github.io/castle-gate/rooms/fading-vs-replacing"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

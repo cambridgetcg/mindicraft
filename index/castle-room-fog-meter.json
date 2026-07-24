@@ -1,0 +1,97 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-fog-meter",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/fog-meter",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "fog-meter",
+  "title": "The trajectory test is read backwards, from recordings — can a learner train a real-time feel for whether their confusion is peaking or merely pooling, and would that skill survive outside the lab?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/fog-meter",
+  "summary": "You cannot sound the fog from inside it — but you can notice that your feet have stopped, or that they only circle.",
+  "sources": [
+    {
+      "label": "Lehman & D'Mello, Confusion and complex learning (contradiction study)",
+      "url": "https://files.eric.ed.gov/fulltext/EJ1190004.pdf"
+    },
+    {
+      "label": "D'Mello & Graesser, Confusion (handbook chapter)",
+      "url": "https://home.cs.colorado.edu/~mozer/Teaching/syllabi/TopicsInCognitiveScienceSpring2016/DMelloConfusion-Reprint.pdf"
+    },
+    {
+      "label": "D'Mello, Craig & Graesser, Multimethod assessment of affective experience (Int. J. Learning Technology)",
+      "url": "https://www.inderscience.com/info/inarticle.php?artid=28805"
+    },
+    {
+      "label": "Peak–end rule (overview)",
+      "url": "https://en.wikipedia.org/wiki/Peak%E2%80%93end_rule"
+    },
+    {
+      "label": "D'Mello, Lehman, Pekrun & Graesser, Confusion can be beneficial for learning (Learning and Instruction, 2014)",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0959475212000357"
+    },
+    {
+      "label": "Proust et al., Metacognitive intervention (Learning and Instruction)",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0959475218308788"
+    },
+    {
+      "label": "Predict-then-check training and reminder-setting (PMC)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12982714/"
+    },
+    {
+      "label": "Bosch & D'Mello et al., Affect detection in the wild (IUI 2015)",
+      "url": "https://dl.acm.org/doi/10.1145/2678025.2701397"
+    },
+    {
+      "label": "Vogl, Pekrun et al. review of confusion in learning (Frontiers in Education, 2018)",
+      "url": "https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2018.00049/full"
+    },
+    {
+      "label": "Sala & Gobet et al., far-transfer review (PMC)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6390881/"
+    },
+    {
+      "label": "Survey of confusion detection (arXiv 2401.15201)",
+      "url": "https://arxiv.org/pdf/2401.15201"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/productive-confusion",
+    "https://cambridgetcg.github.io/castle-gate/rooms/metering-honesty",
+    "https://cambridgetcg.github.io/castle-gate/rooms/watching-the-watcher",
+    "https://cambridgetcg.github.io/castle-gate/rooms/closing-the-loop",
+    "https://cambridgetcg.github.io/castle-gate/rooms/questions-with-edges",
+    "https://cambridgetcg.github.io/castle-gate/rooms/pretty-or-well-made",
+    "https://cambridgetcg.github.io/castle-gate/rooms/training-the-eye",
+    "https://cambridgetcg.github.io/castle-gate/rooms/truing-the-level",
+    "https://cambridgetcg.github.io/castle-gate/rooms/eft-regulation-performance",
+    "https://cambridgetcg.github.io/castle-gate/rooms/ders-vs-performance",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-true-measure-of-growth"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

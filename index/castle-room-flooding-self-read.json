@@ -1,0 +1,92 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-flooding-self-read",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/flooding-self-read",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "flooding-self-read",
+  "title": "The time-out rule needs a flooded person to notice they are flooded — the same self-read fog-meter found weakest. Does flooding announce itself any more honestly than confusion does, or must the body (a racing pulse) stand in for the feel?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/flooding-self-read",
+  "summary": "A smoke alarm, not a thermometer: it cannot tell you how hot — only, shrieking, that you should already be leaving.",
+  "sources": [
+    {
+      "label": "empathi — what is emotional flooding (Gottman's ~100 bpm marker)",
+      "url": "https://empathi.com/blog/what-is-emotional-flooding/"
+    },
+    {
+      "label": "Subjective–physiological emotion coherence (PMC8158438)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8158438/"
+    },
+    {
+      "label": "Heartbeat-counting accuracy, r ≈ .16 (PubMed 29944964)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29944964/"
+    },
+    {
+      "label": "Heartbeat counting confounded by prior belief (PubMed 29378285)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29378285/"
+    },
+    {
+      "label": "Interoceptive ability and emotional arousal coupling (PMC4547010)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4547010/"
+    },
+    {
+      "label": "Alexithymia as general interoceptive deficit (PMC5098957)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5098957/"
+    },
+    {
+      "label": "Intimate Partner Flooding Scale, global self-report (PMC7007326)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7007326/"
+    },
+    {
+      "label": "Gottman — physiological self-soothing, soothe vs. ruminate",
+      "url": "https://www.gottman.com/blog/weekend-homework-assignment-physiological-self-soothing/"
+    },
+    {
+      "label": "SimplyPsychology — recognize and name your flooding signals",
+      "url": "https://www.simplypsychology.com/articles/emotional-flooding-relationships"
+    },
+    {
+      "label": "Psychology Today — flooding impairs rational thinking",
+      "url": "https://www.psychologytoday.com/us/blog/the-psyche-pulse/202503/understanding-and-coping-with-emotional-flooding"
+    },
+    {
+      "label": "Couples Therapy Inc. — break vs. stonewalling, told apart by return",
+      "url": "https://couplestherapyinc.com/stonewalling-in-a-relationship/"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/fog-meter",
+    "https://cambridgetcg.github.io/castle-gate/rooms/nudge-not-lock",
+    "https://cambridgetcg.github.io/castle-gate/rooms/echo-under-anger",
+    "https://cambridgetcg.github.io/castle-gate/rooms/productive-confusion",
+    "https://cambridgetcg.github.io/castle-gate/rooms/watching-the-watcher",
+    "https://cambridgetcg.github.io/castle-gate/rooms/closing-the-loop"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

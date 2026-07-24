@@ -1,0 +1,87 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-frustration-as-fascination",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/frustration-as-fascination",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "frustration-as-fascination",
+  "title": "Anxiety renames to excitement because both run hot — frustration runs hot too: can one true sentence rename live frustration as fascination mid-impasse, and has anyone measured reappraising confusion or frustration during learning?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/frustration-as-fascination",
+  "summary": "The same heat warms two rooms; whether one sentence moves you between them mid-blaze, no one has yet stood inside to watch.",
+  "sources": [
+    {
+      "label": "Brooks, Get Excited: Reappraising Pre-Performance Anxiety as Excitement (JEP: General, 2014)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24364682/"
+    },
+    {
+      "label": "Strain & D'Mello, Affect Regulation During Learning (2015)",
+      "url": "https://files.eric.ed.gov/fulltext/EJ1236231.pdf"
+    },
+    {
+      "label": "D'Mello, Lehman, Pekrun & Graesser, Confusion can be beneficial for learning (Learning and Instruction, 2014)",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0959475212000357"
+    },
+    {
+      "label": "Emotion regulation, frustration and metacognition in a learning game (Cognition & Emotion, 2024)",
+      "url": "https://www.tandfonline.com/doi/full/10.1080/02699931.2024.2362386"
+    },
+    {
+      "label": "Shafir et al., The cognitive cost of reappraising high-arousal stimuli (2016)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5147884/"
+    },
+    {
+      "label": "Hangen et al., meta-analysis of stress-arousal reappraisal interventions (Scientific Reports, 2024)",
+      "url": "https://www.nature.com/articles/s41598-024-58408-w"
+    },
+    {
+      "label": "Replication of a reappraisal test-anxiety intervention (CBE—Life Sciences Education, 2025)",
+      "url": "https://www.lifescied.org/doi/10.1187/cbe.25-04-0055"
+    },
+    {
+      "label": "Cognitive reappraisal for challenging situations — when it backfires (Therapy Group of DC)",
+      "url": "https://therapygroupdc.com/therapist-dc-blog/cognitive-reappraisal-for-challenging-situations-when-to-use-this-emotion-regulation-strategy/"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/renaming-the-fire",
+    "https://cambridgetcg.github.io/castle-gate/rooms/productive-confusion",
+    "https://cambridgetcg.github.io/castle-gate/words/reappraisal",
+    "https://cambridgetcg.github.io/castle-gate/rooms/step-back-mid-climb",
+    "https://cambridgetcg.github.io/castle-gate/rooms/flooding-self-read",
+    "https://cambridgetcg.github.io/castle-gate/rooms/rationale-before-difficulty",
+    "https://cambridgetcg.github.io/castle-gate/rooms/relighting-the-fire",
+    "https://cambridgetcg.github.io/castle-gate/rooms/rotating-the-rename",
+    "https://cambridgetcg.github.io/castle-gate/rooms/wrong-name-kindles",
+    "https://cambridgetcg.github.io/castle-gate/rooms/disclosed-mismatch",
+    "https://cambridgetcg.github.io/castle-gate/words/semantic-depth",
+    "https://cambridgetcg.github.io/castle-gate/rooms/ders-vs-performance",
+    "https://cambridgetcg.github.io/castle-gate/rooms/residue-lever-or-readout"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

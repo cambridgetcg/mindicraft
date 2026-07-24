@@ -1,0 +1,96 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-auditing-over-reputation",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/auditing-over-reputation",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "auditing-over-reputation",
+  "title": "When the wider web has met the source but met it wrongly — a well-reputed finding that will not replicate — lateral reading hands you a confident false answer; does internal auditing of method and evidence outperform reputation even on the populated web, not just the frontier?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/auditing-over-reputation",
+  "summary": "A famous house can still be built on sand; tapping the walls tells you what the street's praise never will.",
+  "sources": [
+    {
+      "label": "Trust suppresses lateral reading: 6.7% vs 20% (PMC8981191)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8981191/"
+    },
+    {
+      "label": "Brembs — journal rank negatively tracks methodological reliability (PMC5826185)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5826185/"
+    },
+    {
+      "label": "Ioannidis — sample size, not citations, predicted contradiction (JAMA)",
+      "url": "https://jamanetwork.com/journals/jama/article-abstract/1731778"
+    },
+    {
+      "label": "Retracted papers keep drawing positive citations (PMC9728909)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9728909/"
+    },
+    {
+      "label": "Serra-Garcia & Gneezy — unreplicable papers cited 153x more (UC San Diego)",
+      "url": "https://today.ucsd.edu/story/a-new-replication-crisis-research-that-is-less-likely-be-true-is-cited-more"
+    },
+    {
+      "label": "Fact-checkers outperform historians on the populated web (Stanford News)",
+      "url": "https://news.stanford.edu/stories/2017/10/fact-checkers-outperform-historians-evaluating-online-information"
+    },
+    {
+      "label": "Lateral reading vs. internal evaluation, the headline finding (Harvard Misinformation Review)",
+      "url": "https://misinforeview.hks.harvard.edu/article/lateral-reading-college-students-learn-to-critically-evaluate-internet-sources-in-an-online-course/"
+    },
+    {
+      "label": "Astroturfing — the mass-consensus effect games reputation (Sage)",
+      "url": "https://journals.sagepub.com/doi/abs/10.1177/1461444820908530"
+    },
+    {
+      "label": "Almassi — the inescapability of epistemic dependence (PhilSci Archive)",
+      "url": "https://philsci-archive.pitt.edu/15460/1/Almassi_Ben-Experts_Evidence_Epistemic.pdf"
+    },
+    {
+      "label": "Most readers do not verify; auditing needs scaffolding (PMC8012470)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8012470/"
+    },
+    {
+      "label": "How to read a study — the layperson's internal checks (Examine)",
+      "url": "https://examine.com/guides/how-to-read-a-study/"
+    },
+    {
+      "label": "The funding effect — who ran the study is a checkable signal (ScienceDirect)",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S019074092032065X"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/no-neighbors",
+    "https://cambridgetcg.github.io/castle-gate/rooms/reading-a-literature",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-landing",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-well",
+    "https://cambridgetcg.github.io/castle-gate/rooms/pretty-or-well-made",
+    "https://cambridgetcg.github.io/castle-gate/rooms/productive-confusion"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

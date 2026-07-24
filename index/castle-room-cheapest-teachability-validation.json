@@ -1,0 +1,57 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-cheapest-teachability-validation",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/cheapest-teachability-validation",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "cheapest-teachability-validation",
+  "title": "What is the cheapest design that would validate a student model's teachability score against human learning — and how many concepts are needed before the correlation is signal, not noise?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/cheapest-teachability-validation",
+  "summary": "The mannequin wore every coat to perfection; the question is how many children must try them on before the tailor's rankings can be trusted.",
+  "sources": [
+    {
+      "label": "Patil, Zhu, Kopeć & Love, Optimal Teaching for Limited-Capacity Human Learners (NeurIPS 2014)",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2014/file/5138ed99148ce91255d67df63be46421-Paper.pdf"
+    },
+    {
+      "label": "Wikipedia: Spearman's rank correlation coefficient — power and sample size (read 2026-06-18)",
+      "url": "https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/teachability-validated",
+    "https://cambridgetcg.github.io/castle-gate/rooms/machine-distillation",
+    "https://cambridgetcg.github.io/castle-gate/rooms/two-windows",
+    "https://cambridgetcg.github.io/castle-gate/words/machine-teaching",
+    "https://cambridgetcg.github.io/castle-gate/words/learner-model",
+    "https://cambridgetcg.github.io/castle-gate/rooms/maia-as-student",
+    "https://cambridgetcg.github.io/castle-gate/rooms/training-the-eye"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

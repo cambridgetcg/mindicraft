@@ -3,3 +3,4 @@ node_modules/
 .next/
 guide/dist/
 guide/.wrangler/
+.castle-mindicraft.off

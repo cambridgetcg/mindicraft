@@ -1,0 +1,70 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-fading-vs-replacing",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/fading-vs-replacing",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "fading-vs-replacing",
+  "title": "If the three-condition design shows the alone condition does not improve after EFT, would fading the partner close the gap — or does the self-regulation need a separate intervention the therapy does not provide?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/fading-vs-replacing",
+  "summary": "The tightrope walker who never walked without the net is not failing to balance — she is succeeding at a different skill, and the net must be lowered before she can learn the one she was never taught.",
+  "sources": [
+    {
+      "label": "Wikipedia: Emotionally focused therapy — integration and consolidation (read 2026-06-19)",
+      "url": "https://en.wikipedia.org/wiki/Emotionally_focused_therapy"
+    },
+    {
+      "label": "Gonzalez & Coan, Yielding to social presence as a bioenergetic strategy (Current Research in Ecological Psychology 2022, PMID 35187511)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35187511/"
+    },
+    {
+      "label": "Wikipedia: MDMA-assisted psychotherapy — three-phase protocol (read 2026-06-19)",
+      "url": "https://en.wikipedia.org/wiki/MDMA-assisted_psychotherapy"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/alone-or-accompanied",
+    "https://cambridgetcg.github.io/castle-gate/rooms/fading-the-other",
+    "https://cambridgetcg.github.io/castle-gate/rooms/fading-alone",
+    "https://cambridgetcg.github.io/castle-gate/rooms/pharmacological-or-cognitive",
+    "https://cambridgetcg.github.io/castle-gate/words/co-regulation",
+    "https://cambridgetcg.github.io/castle-gate/words/emotion-regulation",
+    "https://cambridgetcg.github.io/castle-gate/words/social-baseline",
+    "https://cambridgetcg.github.io/castle-gate/rooms/ders-vs-performance",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-unwalked-bridge",
+    "https://cambridgetcg.github.io/castle-gate/rooms/combined-protocol",
+    "https://cambridgetcg.github.io/castle-gate/rooms/solo-or-social-replacement",
+    "https://cambridgetcg.github.io/castle-gate/rooms/internalized-as-skill",
+    "https://cambridgetcg.github.io/castle-gate/rooms/general-voice-or-specific-presence",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-mending-rhythm",
+    "https://cambridgetcg.github.io/castle-gate/rooms/eft-regulation-performance",
+    "https://cambridgetcg.github.io/castle-gate/rooms/residue-lever-or-readout"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

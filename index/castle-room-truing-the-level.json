@@ -1,0 +1,94 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-truing-the-level",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/truing-the-level",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "truing-the-level",
+  "title": "Every measured gain in judging one's own comprehension is relative — a sharper ranking of better- and worse-understood passages — while the level of confidence can stay inflated. What repairs absolute calibration, not just the ordering?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/truing-the-level",
+  "summary": "An instrument is trued against a standard, never against its own readings.",
+  "sources": [
+    {
+      "label": "Yang, Zhao, Yuan, Luo & Shanks 2023 — meta-analysis of metacomprehension measured relative accuracy only; absolute left unexplored (UCL open copy)",
+      "url": "https://discovery.ucl.ac.uk/id/eprint/10150804/2/Shanks_Mind%20the%20Gap%20Between%20Comprehension%20and%20Metacomprehension_AAM.pdf"
+    },
+    {
+      "label": "Dunlosky, Hartwig, Rawson & Lipko 2011 — idea-unit standards reduce overconfidence in self-scoring; whole-answer standards do not (QJEP)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20700858/"
+    },
+    {
+      "label": "Nederhand, Tabbers & Rikers 2019 — standards improve absolute calibration, transfer to new tasks, help low performers most (Applied Cognitive Psychology)",
+      "url": "https://onlinelibrary.wiley.com/doi/full/10.1002/acp.3548"
+    },
+    {
+      "label": "Glenberg, Sanocki, Epstein & Morris 1987 — poor calibration is the rule; a pretest's self-generated feedback repairs it (JEP: General)",
+      "url": "https://digitalcommons.usf.edu/psy_facpub/490/"
+    },
+    {
+      "label": "Nietfeld, Cao & Osborne 2006 — weekly predict-then-verify exercises improve calibration over a term (Metacognition and Learning)",
+      "url": "https://link.springer.com/article/10.1007/s11409-006-9595-6"
+    },
+    {
+      "label": "Osterhage 2021 — practice tests help, yet the lowest performers stay overconfident (J. Microbiology & Biology Education)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8442020/"
+    },
+    {
+      "label": "Koriat, Sheffer & Ma'ayan 2002 — underconfidence with practice: test cycles can overshoot zero (JEP: LMC)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12049237/"
+    },
+    {
+      "label": "Nederhand et al. 2020 — grade-estimating practice improves accuracy in-domain, no transfer, bias unmoved (Metacognition and Learning)",
+      "url": "https://link.springer.com/article/10.1007/s11409-020-09233-9"
+    },
+    {
+      "label": "Fifth-grader training 2024 — absolute calibration improved while relative accuracy did not: the premise's mirror image (PMC)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11570305/"
+    },
+    {
+      "label": "Metacognition & Learning 2021 — relative-accuracy metrics confounded with performance when guessing is possible",
+      "url": "https://link.springer.com/article/10.1007/s11409-020-09257-1"
+    },
+    {
+      "label": "Bol & Hacker 2012 — calibration research review: reducing overconfidence remains an open question (Frontiers in Psychology)",
+      "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2012.00229/full"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/fog-meter",
+    "https://cambridgetcg.github.io/castle-gate/rooms/fading-alone",
+    "https://cambridgetcg.github.io/castle-gate/rooms/standard-without-a-key",
+    "https://cambridgetcg.github.io/castle-gate/rooms/better-than-i-was",
+    "https://cambridgetcg.github.io/castle-gate/rooms/reread-or-refamiliar",
+    "https://cambridgetcg.github.io/castle-gate/rooms/closing-the-loop",
+    "https://cambridgetcg.github.io/castle-gate/rooms/twenty-sittings",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-true-measure-of-growth"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

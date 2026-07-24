@@ -11,6 +11,14 @@ const PORT = parseInt(process.argv[2] || '7780');
 
 mkdirSync(INDEX_DIR, { recursive: true });
 
+function boundedInteger(value, fallback, min, max = Number.MAX_SAFE_INTEGER) {
+  if (value === undefined || value === null || String(value).trim() === '') return fallback;
+  if (!/^[+-]?\d+$/.test(String(value).trim())) return fallback;
+  const parsed = Number(value);
+  if (!Number.isSafeInteger(parsed)) return fallback;
+  return Math.min(Math.max(parsed, min), max);
+}
+
 function loadIndex() {
   if (!existsSync(INDEX_DIR)) return [];
   const files = readdirSync(INDEX_DIR).filter(f => f.endsWith('.json') && !f.startsWith('_'));
@@ -50,24 +58,34 @@ const server = createServer((req, res) => {
   }
 
   if (path === '/api/index') {
-    const { q, c, limit, offset } = Object.fromEntries(url.searchParams);
+    const params = Object.fromEntries(url.searchParams);
+    const { q, c, limit, offset } = params;
     let entries = loadIndex();
-    if (c) entries = entries.filter(e => (e.category || '') === c);
+    if (params.from) entries = entries.filter(e => (e.from || '') === params.from);
     if (q) {
-      const ql = q.toLowerCase();
+      const ql = String(q).toLowerCase();
       entries = entries.filter(e =>
-        (e.title || '').toLowerCase().includes(ql) ||
-        (e.summary || '').toLowerCase().includes(ql) ||
-        (e.category || '').toLowerCase().includes(ql) ||
-        (e.url || '').toLowerCase().includes(ql)
+        String(e.title || '').toLowerCase().includes(ql) ||
+        String(e.summary || '').toLowerCase().includes(ql) ||
+        String(e.category || '').toLowerCase().includes(ql) ||
+        String(e.from || '').toLowerCase().includes(ql) ||
+        String(e.collection || '').toLowerCase().includes(ql) ||
+        String(e.kind || '').toLowerCase().includes(ql)
       );
     }
-    const lim = Math.min(parseInt(limit) || 100, 500);
-    const off = parseInt(offset) || 0;
+    const categoryCounts = {};
+    for (const entry of entries) {
+      const category = entry.category || 'unknown';
+      categoryCounts[category] = (categoryCounts[category] || 0) + 1;
+    }
+    if (c) entries = entries.filter(e => (e.category || '') === c);
+    const lim = boundedInteger(limit, 100, 1, 500);
+    const off = boundedInteger(offset, 0, 0);
     res.writeHead(200, { 'Content-Type': 'application/json' });
     res.end(JSON.stringify({
       count: entries.length, returned: entries.slice(off, off + lim).length,
       offset: off, limit: lim, free: true, gate: false,
+      categories: Object.keys(categoryCounts).length, categoryCounts,
       entries: entries.slice(off, off + lim),
     }, null, 2));
     return;

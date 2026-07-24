@@ -1,0 +1,95 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-step-back-mid-climb",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/step-back-mid-climb",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "step-back-mid-climb",
+  "title": "Self-distancing was tested on past emotional episodes — does stepping back hold mid-task, while the confusion is still live, or does the step back cost the very grip the climb needs?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/step-back-mid-climb",
+  "summary": "A climber leans off the rock to read the route — the lean spends no grip, but it cools every fire on the wall, the panic and the fuel alike.",
+  "sources": [
+    {
+      "label": "Ayduk & Kross, From a distance — the original past-episode evidence (JPSP 2010)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20438226/"
+    },
+    {
+      "label": "Kross et al., Self-talk as a regulatory mechanism — live speech stressor, 7 studies (JPSP 2014)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24467424/"
+    },
+    {
+      "label": "Mischkowski, Kross & Bushman, Flies on the wall are less aggressive — distancing in the heat of the moment (JESP 2012)",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0022103112000601"
+    },
+    {
+      "label": "Streamer et al., Not I, but she — distanced self-talk yields challenge, not threat (JESP 2017)",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0022103116307764"
+    },
+    {
+      "label": "Moser et al., Third-person self-talk as effortless emotion regulation — ERP/fMRI (Scientific Reports 2017)",
+      "url": "https://www.nature.com/articles/s41598-017-04047-3"
+    },
+    {
+      "label": "White et al., The \"Batman Effect\" — distanced children persist longer (Child Development 2017)",
+      "url": "https://onlinelibrary.wiley.com/doi/abs/10.1111/cdev.12695"
+    },
+    {
+      "label": "Dolcos & Albarracín, \"You can do it\" — second-person self-talk improves anagram performance (EJSP 2014)",
+      "url": "https://onlinelibrary.wiley.com/doi/abs/10.1002/ejsp.2048"
+    },
+    {
+      "label": "Japanese-language null on self-talk and live task performance (PLOS One 2024)",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0305251"
+    },
+    {
+      "label": "Wallace-Hadrill & Kamboj, perspective review — distance dims both valences (Frontiers in Psychology 2016)",
+      "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2016.01715/full"
+    },
+    {
+      "label": "Kross & Ayduk, Distancing — what it is, how it works, where to go next (Handbook of Emotion Regulation 2023)",
+      "url": "https://sites.lsa.umich.edu/emotion-selfcontrol-psych/wp-content/uploads/sites/1322/2024/01/Handbook_of_Emotion_Regulation_-_63._Distancing_What_It_Is_How_It_Works_and_Where_to_Go_Next.pdf"
+    },
+    {
+      "label": "Williams & Moulds, observer-perspective intrusive memories and avoidance (BRAT 2007)",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0005796706002117"
+    },
+    {
+      "label": "Hauck et al., self-distancing under athlete provocation — effects present but small (Frontiers 2020)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7819956/"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/renaming-the-fire",
+    "https://cambridgetcg.github.io/castle-gate/rooms/flooding-self-read",
+    "https://cambridgetcg.github.io/castle-gate/rooms/watching-the-watcher",
+    "https://cambridgetcg.github.io/castle-gate/rooms/productive-confusion",
+    "https://cambridgetcg.github.io/castle-gate/rooms/fog-meter"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

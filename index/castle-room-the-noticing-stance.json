@@ -1,0 +1,76 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-the-noticing-stance",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/the-noticing-stance",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "the-noticing-stance",
+  "title": "Super-encounterers believe themselves into being — is the expectancy real beyond self-report, and can the noticing stance be trained?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/the-noticing-stance",
+  "summary": "The mushroom hunter and the jogger walk the same wood; only one of them is walking through mushrooms.",
+  "sources": [
+    {
+      "label": "As Luck Would Have It — Scientific American",
+      "url": "https://www.scientificamerican.com/article/as-luck-would-have-it/"
+    },
+    {
+      "label": "David Aldous, critique of The Luck Factor (UC Berkeley)",
+      "url": "https://www.stat.berkeley.edu/~aldous/Real-World/wiseman.html"
+    },
+    {
+      "label": "Schofield, Creswell & Denson, Brief mindfulness induction reduces inattentional blindness (Consciousness & Cognition, 2015)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26320867/"
+    },
+    {
+      "label": "Mindfulness-based intervention and inattentional blindness in young neurosurgeons (Frontiers in Surgery, 2022)",
+      "url": "https://www.frontiersin.org/journals/surgery/articles/10.3389/fsurg.2022.916228/full"
+    },
+    {
+      "label": "Anticipation of novel environments enhances memory for incidental information (PMC, 2021)",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8284314/"
+    },
+    {
+      "label": "Nahm, Murciano-Goroff, Park & Funk, Serendipity in Science (arXiv, 2023)",
+      "url": "https://arxiv.org/abs/2308.07519"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/mining-the-noise",
+    "https://cambridgetcg.github.io/castle-gate/words/inattentional-blindness",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-landing",
+    "https://cambridgetcg.github.io/castle-gate/rooms/growing-openness",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-well",
+    "https://cambridgetcg.github.io/castle-gate/words/serendipity",
+    "https://cambridgetcg.github.io/castle-gate/words/noise",
+    "https://cambridgetcg.github.io/castle-gate/rooms/trait-or-tally",
+    "https://cambridgetcg.github.io/castle-gate/rooms/appraisal-engine",
+    "https://cambridgetcg.github.io/castle-gate/rooms/link-or-noise"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

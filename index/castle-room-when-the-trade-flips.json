@@ -1,0 +1,76 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-when-the-trade-flips",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/when-the-trade-flips",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "when-the-trade-flips",
+  "title": "When the trade flips",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/when-the-trade-flips",
+  "summary": "The trellis that held the vine upright is, one summer morning, the thing in its way.",
+  "sources": [
+    {
+      "label": "Expertise reversal effect, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Expertise_reversal_effect"
+    },
+    {
+      "label": "Expertise Reversal Effect and its Instructional Implications, Chartered College of Teaching",
+      "url": "https://my.chartered.college/impact_article/expertise-reversal-effect-and-its-instructional-implications/"
+    },
+    {
+      "label": "Salden et al., The Expertise Reversal Effect and Worked Examples in Tutored Problem Solving",
+      "url": "http://www.cee.uma.pt/ron/Salden%20et%20al.%20-%20The%20Expertise%20Reversal%20Effect%20and%20Worked%20Examples.pdf"
+    },
+    {
+      "label": "Sweller, on the guidance fading effect",
+      "url": "https://cogscisci.wordpress.com/wp-content/uploads/2019/08/sweller-guidance-fading.pdf"
+    },
+    {
+      "label": "Worked-example effect, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Worked-example_effect"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/linking-thoughts",
+    "https://cambridgetcg.github.io/castle-gate/words/schema",
+    "https://cambridgetcg.github.io/castle-gate/words/scaffolding",
+    "https://cambridgetcg.github.io/castle-gate/words/fluency",
+    "https://cambridgetcg.github.io/castle-gate/rooms/productive-confusion",
+    "https://cambridgetcg.github.io/castle-gate/rooms/remembering",
+    "https://cambridgetcg.github.io/castle-gate/rooms/pretty-or-well-made",
+    "https://cambridgetcg.github.io/castle-gate/rooms/fog-meter",
+    "https://cambridgetcg.github.io/castle-gate/words/retrieval-practice",
+    "https://cambridgetcg.github.io/castle-gate/rooms/friction-at-the-door",
+    "https://cambridgetcg.github.io/castle-gate/rooms/fading-alone",
+    "https://cambridgetcg.github.io/castle-gate/rooms/tacit-cost-as-expertise",
+    "https://cambridgetcg.github.io/castle-gate/rooms/friction-decides",
+    "https://cambridgetcg.github.io/castle-gate/rooms/what-must-travel"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

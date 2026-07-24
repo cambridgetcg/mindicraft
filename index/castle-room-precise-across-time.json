@@ -1,0 +1,102 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-precise-across-time",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/precise-across-time",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "precise-across-time",
+  "title": "If exact number survives in the moment but collapses once memory enters, where exactly does the wordless mind's grip fail — is it number alone, or anything that must be held precisely across time?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/precise-across-time",
+  "summary": "A row of stones laid beside a row of nuts holds the count perfectly — until you cover the nuts, and the exactness leaks away like water from a cupped hand.",
+  "sources": [
+    {
+      "label": "Frank, Everett, Fedorenko & Gibson, Number as a cognitive technology (Cognition, 2008)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18547557/"
+    },
+    {
+      "label": "MIT News summary",
+      "url": "https://news.mit.edu/2008/language-0624"
+    },
+    {
+      "label": "Gordon, Numerical Cognition Without Words (Science, 2004)",
+      "url": "https://www.tc.columbia.edu/faculty/pg328/faculty-profile/files/GordonSciencePub.pdf"
+    },
+    {
+      "label": "Pica, Lemer, Izard & Dehaene, Exact and approximate arithmetic in an Amazonian group (Science, 2004)",
+      "url": "https://www.unicog.org/publications/PicaLemerIzardDehaene_AmazonArithmetic_Science2004.pdf"
+    },
+    {
+      "label": "Spaepen et al., Number without a language model (PNAS, 2011)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3044352/"
+    },
+    {
+      "label": "Varley et al., Agrammatic but numerate (PNAS, 2005)",
+      "url": "https://www.pnas.org/doi/10.1073/pnas.0500328102"
+    },
+    {
+      "label": "Rossor, Warrington & Cipolotti, The isolation of calculation skills (1995)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/7707094/"
+    },
+    {
+      "label": "Bae, Olkkonen, Allred & Flombaum, color working memory and category prototypes (JEP:General, 2015)",
+      "url": "https://www.sciencedaily.com/releases/2015/06/150602125718.htm"
+    },
+    {
+      "label": "Olkkonen et al. 2014",
+      "url": "https://jov.arvojournals.org/article.aspx?articleid=2121591"
+    },
+    {
+      "label": "Melcher & Schooler, The Misremembrance of Wines Past (J. Memory & Language, 1996)",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0749596X96900133"
+    },
+    {
+      "label": "Hermer-Vazquez, Spelke & Katsnelson, Sources of Flexibility in Human Cognition (1999)",
+      "url": "https://www.semanticscholar.org/paper/Sources-of-Flexibility-in-Human-Cognition%3A-Studies-Hermer-Vazquez-Spelke"
+    },
+    {
+      "label": "Everett, on Pirahã culture and number (reply to the dispute)",
+      "url": "https://daneverettbooks.com/wp-content/uploads/2023/11/everett_09_Pirah-Culture-.pdf"
+    },
+    {
+      "label": "Scientific American, Don't Count on It",
+      "url": "https://www.scientificamerican.com/article/dont-count-on-it/"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/thinking-without-words",
+    "https://cambridgetcg.github.io/castle-gate/rooms/meaning-between-minds",
+    "https://cambridgetcg.github.io/castle-gate/rooms/watching-the-watcher",
+    "https://cambridgetcg.github.io/castle-gate/rooms/drift-across-dimensions",
+    "https://cambridgetcg.github.io/castle-gate/words/verbal-overshadowing",
+    "https://cambridgetcg.github.io/castle-gate/words/handle",
+    "https://cambridgetcg.github.io/castle-gate/rooms/words-shape-thought",
+    "https://cambridgetcg.github.io/castle-gate/rooms/remembering"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

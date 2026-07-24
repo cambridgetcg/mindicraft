@@ -1,0 +1,81 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-reading-a-literature",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/reading-a-literature",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "reading-a-literature",
+  "title": "The strongest move (surprisingly-popular) needs people to predict what others think — but on the frontier the agents are a handful of papers or models built on shared data, with no one to poll and already agreeing; what is the lone reader's version of the meta-prediction when the crowd is a literature, not a room?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/reading-a-literature",
+  "summary": "Five papers that all drink from one well are not five witnesses but one, wearing five coats.",
+  "sources": [
+    {
+      "label": "The SP signal is the surprise — the residual between observed and expected agreement, not the vote count (MIT/Prelec)",
+      "url": "https://news.mit.edu/2017/algorithm-better-wisdom-crowds-0125"
+    },
+    {
+      "label": "Shared information defeats averaging; pivot toward private signals (Palley & Soll)",
+      "url": "http://www.asapalley.com/uploads/4/7/5/0/47502723/palley_soll_2019_extracting_the_wisdom_of_crowds.pdf"
+    },
+    {
+      "label": "Without published negatives, false claims get canonized; each paper raises belief even when false (Nissen et al.)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5173326/"
+    },
+    {
+      "label": "Citation distortion turns one claim into an information cascade of unfounded authority (Greenberg)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2714656/"
+    },
+    {
+      "label": "Asking \"why might I be wrong?\" surfaces overlooked contradictory evidence (Self-Contradiction, arXiv)",
+      "url": "https://arxiv.org/abs/2507.10124"
+    },
+    {
+      "label": "Visual funnel-plot inspection is unreliable for assessing publication bias (Cochrane Handbook)",
+      "url": "http://handbook-5-1.cochrane.org/chapter_10/10_4_1_funnel_plots.htm"
+    },
+    {
+      "label": "SP often loses to majority vote and is worst in unverifiable predictive contexts (Hasan et al., replication)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7658271/"
+    },
+    {
+      "label": "Aggregation survives dependence when sources spread information rather than just influence (Ipeirotis)",
+      "url": "https://www.behind-the-enemy-lines.com/2010/11/wisdom-of-crowds-when-do-we-need.html"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/surfacing-the-unwritten",
+    "https://cambridgetcg.github.io/castle-gate/rooms/auditing-over-reputation",
+    "https://cambridgetcg.github.io/castle-gate/rooms/correlated-witnesses",
+    "https://cambridgetcg.github.io/castle-gate/rooms/two-witnesses",
+    "https://cambridgetcg.github.io/castle-gate/rooms/no-neighbors",
+    "https://cambridgetcg.github.io/castle-gate/rooms/mining-the-noise",
+    "https://cambridgetcg.github.io/castle-gate/rooms/twenty-sittings"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

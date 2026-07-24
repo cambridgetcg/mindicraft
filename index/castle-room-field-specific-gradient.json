@@ -1,0 +1,68 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-field-specific-gradient",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/field-specific-gradient",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "field-specific-gradient",
+  "title": "If the corpus study tests all binding types at once, could the gradient's shape (continuous vs bimodal) itself be field-specific — do some fields' conventions allow more stable middle forms than others?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/field-specific-gradient",
+  "summary": "The carpenter works oak differently from pine: one holds a loose joint, the other splits. The wood decides the joint, not the chisel.",
+  "sources": [
+    {
+      "label": "Wikipedia: Scènes à faire (read 2026-06-20)",
+      "url": "https://en.wikipedia.org/wiki/Sc%C3%A8nes_%C3%A0_faire"
+    },
+    {
+      "label": "Wikipedia: Merger doctrine (read 2026-06-20)",
+      "url": "https://en.wikipedia.org/wiki/Merger_doctrine"
+    },
+    {
+      "label": "Wikipedia: Idea–expression distinction (read 2026-06-20)",
+      "url": "https://en.wikipedia.org/wiki/Idea%E2%80%93expression_distinction"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/gradient-of-binding-forms",
+    "https://cambridgetcg.github.io/castle-gate/rooms/one-craft-per-field",
+    "https://cambridgetcg.github.io/castle-gate/rooms/cliff-or-gradient",
+    "https://cambridgetcg.github.io/castle-gate/rooms/mapping-the-midpoint",
+    "https://cambridgetcg.github.io/castle-gate/rooms/method-transfer-across-fields",
+    "https://cambridgetcg.github.io/castle-gate/words/canary-trap",
+    "https://cambridgetcg.github.io/castle-gate/words/idea-expression-divide",
+    "https://cambridgetcg.github.io/castle-gate/words/merger-doctrine",
+    "https://cambridgetcg.github.io/castle-gate/words/cohesion",
+    "https://cambridgetcg.github.io/castle-gate/rooms/binding-the-pair",
+    "https://cambridgetcg.github.io/castle-gate/rooms/semantic-binding-under-law",
+    "https://cambridgetcg.github.io/castle-gate/rooms/thin-definitions",
+    "https://cambridgetcg.github.io/castle-gate/rooms/length-and-liability",
+    "https://cambridgetcg.github.io/castle-gate/rooms/reversed-gradient"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}
