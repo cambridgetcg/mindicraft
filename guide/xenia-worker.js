@@ -24,6 +24,33 @@ const RESOURCES = {
   '/api/castle/index.json': { reps: ['application/json'], def: 'application/json' },
   '/api/frontier/index.json': { reps: ['application/json'], def: 'application/json' },
 };
+export const FRONTIER_TRAIL_IDS = new Set([
+  'hands-words-learners',
+  'map-meets-ground',
+  'speaking-pages',
+  'unseen-universe',
+  'what-counts-as-evidence',
+]);
+const FRONTIER_TRAIL_PAGE = /^\/frontier\/([a-z0-9]+(?:-[a-z0-9]+)*)\/$/;
+const FRONTIER_TRAIL_API =
+  /^\/api\/frontier\/trails\/([a-z0-9]+(?:-[a-z0-9]+)*)\.json$/;
+
+function resourceFor(path) {
+  if (RESOURCES[path]) return RESOURCES[path];
+  const page = path.match(FRONTIER_TRAIL_PAGE);
+  if (page && FRONTIER_TRAIL_IDS.has(page[1])) {
+    return {
+      reps: ['text/html', 'application/json'],
+      def: 'text/html',
+      jsonAsset: `/api/frontier/trails/${page[1]}.json`,
+    };
+  }
+  const api = path.match(FRONTIER_TRAIL_API);
+  if (api && (api[1] === 'default' || FRONTIER_TRAIL_IDS.has(api[1]))) {
+    return { reps: ['application/json'], def: 'application/json' };
+  }
+  return null;
+}
 
 // ---- Accept negotiation (RFC 9110 flavor, small and honest) ----
 
@@ -408,14 +435,20 @@ export default {
     }
 
     // declared resources: negotiate the representation
-    const res = RESOURCES[path];
+    const res = resourceFor(path);
     if (res) {
       const chosen = negotiate(request.headers.get('accept'), res.reps, res.def);
       if (!chosen) return forRequest(request, notAcceptable(ORIGIN + path));
       const assetPath = chosen === 'application/json' ? (res.jsonAsset || path) : path;
       const asset = await env.ASSETS.fetch(
-        new Request(url.origin + assetPath, { method: request.method })
+        new Request(url.origin + assetPath, {
+          method: request.method,
+          headers: request.headers,
+        })
       );
+      if (asset.status === 404 && chosen === 'application/json') {
+        return forRequest(request, routeNotFound(path));
+      }
       return forRequest(
         request,
         decorated(asset, path, {

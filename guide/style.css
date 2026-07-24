@@ -7,7 +7,7 @@
   --ink: #2b2620;
   --muted: #6f675c;
   --line: #e5dccc;
-  --ember: #b4552d;
+  --ember: #b0522b;
   --leaf: #4a7c59;
   --amber: #a3761f;
   --plum: #7d5ba6;
@@ -197,8 +197,31 @@ main { max-width: 46rem; margin: 0 auto; padding: 0 1.1rem 3rem; }
   border-radius: 0.8rem; box-shadow: var(--shadow);
 }
 .frontier-walk h2 { margin-top: 0.2rem; }
+.frontier-bridge {
+  padding-left: 0.75rem; border-left: 2px solid var(--frontier);
+  color: var(--muted);
+}
 .frontier-stop { margin-bottom: 0; color: var(--muted); font-style: italic; }
 .frontier-grid { display: grid; gap: 0.85rem; }
+.frontier-sequence { margin: 1rem 0; padding: 0; list-style: none; }
+.frontier-sequence > li { min-width: 0; }
+.frontier-trails {
+  display: grid; gap: 0.65rem; margin: 0 0 2rem; padding: 0; list-style: none;
+}
+.frontier-trails li {
+  padding: 0.75rem 0.85rem; background: var(--panel);
+  border: 1px solid var(--line); border-radius: 0.7rem;
+}
+.frontier-trails a { font-family: "Iowan Old Style", Georgia, serif; font-weight: 700; }
+.frontier-trails a[aria-current="page"] { text-decoration: underline; text-underline-offset: 0.2em; }
+.frontier-trails p { margin: 0.2rem 0; color: var(--muted); }
+.frontier-trails small { color: var(--muted); }
+.frontier-edition {
+  margin-left: 0.45rem; padding: 0.08rem 0.45rem;
+  color: var(--frontier); border: 1px solid var(--frontier);
+  border-radius: 999px; font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.05em; text-transform: uppercase;
+}
 .frontier-shelf { margin: 2rem 0; }
 .frontier-shelf > summary {
   color: var(--frontier); cursor: pointer; font-size: 1.2rem; font-weight: 700;
@@ -208,6 +231,11 @@ main { max-width: 46rem; margin: 0 auto; padding: 0 1.1rem 3rem; }
   scroll-margin-top: 1rem; padding: 0.9rem 1rem;
   background: var(--panel); border: 1px solid var(--line); border-radius: 0.8rem;
   box-shadow: var(--shadow);
+}
+.frontier-position {
+  float: right; margin: 0 0 0.25rem 0.75rem; color: var(--frontier);
+  font-size: 0.76rem; font-weight: 700; letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 .frontier-card:target { border-color: var(--frontier); }
 .frontier-card h3 { margin: 0.1rem 0 0.15rem; font-size: 1.18rem; }
@@ -222,6 +250,13 @@ main { max-width: 46rem; margin: 0 auto; padding: 0 1.1rem 3rem; }
 .frontier-card h4 { margin: 1rem 0 0.2rem; }
 .frontier-card ul { margin-top: 0.2rem; }
 .frontier-links { color: var(--muted); font-size: 0.88rem; }
+.frontier-links ul { margin: 0.25rem 0; }
+.frontier-links li span { display: block; font-size: 0.8rem; }
+.frontier-carry {
+  margin: 1.5rem 0; padding: 0.85rem 1rem; background: var(--panel);
+  border: 1px solid var(--line); border-left: 3px solid var(--frontier);
+  border-radius: 0.75rem;
+}
 .frontier-api {
   margin-top: 1.6rem; padding-top: 1rem; color: var(--muted);
   border-top: 1px solid var(--line);

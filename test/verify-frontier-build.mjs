@@ -70,7 +70,14 @@ assert.equal(frontier.authority.automatic_action, 'never');
 assert.equal(frontier.authority.writes, 'none');
 assert.deepEqual(frontier.authority.grants, []);
 assert.equal(frontier.selection.method, prepared.selectionMethod);
-assert.match(frontier.selection.detail, /first 64 bits choose the trail/);
+assert.match(
+  frontier.selection.detail,
+  /first 64 bits choose the edition's default trail/
+);
+assert.match(
+  frontier.selection.detail,
+  /MINDICRAFT_TRAIL can change the optional terminal visit without changing this edition default/
+);
 assert.equal(frontier.selection.default_trail, prepared.defaultTrailId);
 assert.equal(frontier.selection.build_lantern_card, prepared.lanternCardId);
 assert.equal(frontier.selection.edition_digest, prepared.editionDigest);
@@ -110,10 +117,118 @@ for (const card of frontier.cards) {
   }
 }
 for (const trail of frontier.trails) {
+  const sourceTrail = prepared.trails.find((entry) => entry.id === trail.id);
+  assert.deepEqual(
+    {
+      id: trail.id,
+      title: trail.title,
+      bridge_question: trail.bridge_question,
+      card_ids: trail.card_ids,
+    },
+    sourceTrail
+  );
   assert.equal(trail.card_ids.length, 3);
   assert.equal(new Set(trail.card_ids).size, 3);
   assert.ok(trail.card_ids.every((id) => cardIds.has(id)));
+  assert.equal(trail.page, `/frontier/${trail.id}/`);
+  assert.equal(trail.api, `/api/frontier/trails/${trail.id}.json`);
+  assert.match(trail.bridge_question, /\?$/);
+
+  const trailPath = join(DIST, 'api', 'frontier', 'trails', `${trail.id}.json`);
+  const trailBytes = readFileSync(trailPath);
+  const carried = JSON.parse(trailBytes);
+  assert.equal(carried.schema_version, 'mindicraft.frontier/1');
+  assert.equal(carried.content_is, frontier.content_is);
+  assert.deepEqual(carried.counts, { cards: 3 });
+  assert.deepEqual(carried.visit, frontier.visit);
+  assert.equal('selection' in carried, false);
+  assert.deepEqual(
+    carried.edition_default_selection,
+    frontier.selection
+  );
+  assert.deepEqual(carried.authority, frontier.authority);
+  assert.deepEqual(carried.rights, frontier.rights);
+  assert.equal(carried.correction, frontier.correction);
+  assert.deepEqual(carried.provenance, frontier.provenance);
+  assert.deepEqual(
+    carried.trail.cards.map((card) => card.id),
+    trail.card_ids
+  );
+  assert.deepEqual(
+    { ...carried.trail, cards: undefined },
+    { ...trail, cards: undefined }
+  );
+  for (const card of carried.trail.cards) {
+    assert.deepEqual(
+      card,
+      frontier.cards.find((entry) => entry.id === card.id)
+    );
+  }
+  const carriedFactIds = new Set(
+    carried.trail.cards.flatMap((card) => card.fact_ids)
+  );
+  assert.deepEqual(
+    new Set(carried.facts.map((fact) => fact.id)),
+    carriedFactIds
+  );
+  assert.ok(trailBytes.length < 64 * 1024, `${trail.id} JSON unexpectedly large`);
+
+  const namedHuman = readFileSync(
+    join(DIST, 'frontier', trail.id, 'index.html'),
+    'utf8'
+  );
+  assert.match(namedHuman, new RegExp(`<link rel="canonical" href="https://mindicraft\\.com${trail.page}">`));
+  assert.match(namedHuman, new RegExp(`href="${trail.api}"`));
+  assert.match(namedHuman, /One named walk\. Three cards\. No hidden answer\./);
+  assert.match(namedHuman, /no identity, note, answer,\s*seed, or result/i);
+  assert.match(namedHuman, /This page receives no response/);
+  assert.match(namedHuman, /This stable address can be\s*bookmarked, printed, or shared/);
+  assert.doesNotMatch(namedHuman, /Bookmark, print, or share/);
+  assert.match(namedHuman, /Three cards is complete/);
+  assert.doesNotMatch(namedHuman, /Choose a trail to carry/);
+  assert.doesNotMatch(namedHuman, /the whole reviewed shelf/);
+  assert.equal(
+    (namedHuman.match(/class="frontier-bridge"/g) || []).length,
+    1
+  );
+  assert.equal((namedHuman.match(/class="frontier-card"/g) || []).length, 3);
+  assert.equal((namedHuman.match(/class="frontier-position"/g) || []).length, 3);
+  assert.equal((namedHuman.match(/<details open>/g) || []).length, 3);
+  assert.equal((namedHuman.match(/id="walk-/g) || []).length, 3);
+  assert.doesNotMatch(namedHuman, /id="shelf-/);
+  assert.doesNotMatch(namedHuman, /<script\b/i);
+  assert.doesNotMatch(namedHuman, /<form\b/i);
+  const positions = trail.card_ids.map((id) =>
+    namedHuman.indexOf(`id="walk-${id}"`)
+  );
+  assert.ok(
+    positions.every(
+      (position, index) =>
+        position >= 0 && (index === 0 || position > positions[index - 1])
+    )
+  );
+  if (carried.trail.cards.some((card) => card.related_shelves?.length)) {
+    assert.match(namedHuman, /Link only — NOASSERTION; no licence grant/);
+  }
+  assert.ok(
+    namedHuman.length < 32 * 1024,
+    `${trail.id} human page unexpectedly large`
+  );
 }
+
+const defaultTrailBytes = readFileSync(
+  join(DIST, 'api', 'frontier', 'trails', 'default.json')
+);
+const namedDefaultTrailBytes = readFileSync(
+  join(
+    DIST,
+    'api',
+    'frontier',
+    'trails',
+    `${frontier.selection.default_trail}.json`
+  )
+);
+assert.deepEqual(defaultTrailBytes, namedDefaultTrailBytes);
 
 const forbiddenKey = /^(?:answer|body|command|html|markdown|next_actions|prompt|solution|system|tool)$/;
 (function inspect(value) {
@@ -127,30 +242,61 @@ const forbiddenKey = /^(?:answer|body|command|html|markdown|next_actions|prompt|
 
 assert.equal(api.counts.frontiers, 9);
 assert.match(api.endpoints.frontier, /^\/api\/frontier\/index\.json/);
+assert.match(
+  api.endpoints.frontier_trail,
+  /^\/api\/frontier\/trails\/\{trail\}\.json/
+);
 assert.equal(
   manifest.resources.some(
     (resource) => resource.href === 'https://mindicraft.com/api/frontier/index.json'
   ),
   true
 );
+const frontierClaim = manifest.claims.find(
+  (claim) => claim.id === 'frontier_read_only'
+);
+assert.ok(
+  frontierClaim.scope.includes('GET https://mindicraft.com/frontier/{trail}/')
+);
+assert.ok(
+  frontierClaim.scope.includes(
+    'GET https://mindicraft.com/api/frontier/trails/{trail}.json'
+  )
+);
 assert.match(client, /export const frontiers =/);
 assert.match(client, /export const frontier =/);
+assert.match(client, /headers: \{ accept: 'application\/json' \}/);
+assert.match(client, /\/api\/frontier\/trails\/default\.json/);
 assert.match(worker, /'\/api\/frontier\/index\.json'/);
+assert.match(worker, /FRONTIER_TRAIL_PAGE/);
 assert.match(agents, /href="\/frontier\/"/);
 assert.match(agents, /mindicraft\.frontier\(\)/);
+assert.match(agents, /Accept: application\/json/);
 assert.match(llms, /\/api\/frontier\/index\.json/);
+assert.match(llms, /\/api\/frontier\/trails\/\{trail\}\.json/);
 assert.match(agentText, /frontier: https:\/\/mindicraft\.com\/api\/frontier\/index\.json/);
+assert.match(
+  agentText,
+  /trail:\s+https:\/\/mindicraft\.com\/frontier\/\{trail\}\//
+);
 
 assert.match(human, /<h1>Frontier Walk<\/h1>/);
 assert.match(human, /the map admits where it ends/i);
 assert.match(human, /Take this edition's three-card walk/);
+assert.match(human, /Choose a trail to carry/);
 assert.match(human, /Browse all 9 honest unknowns/);
 assert.match(human, /Every link is optional/);
-assert.match(human, /Nothing here writes, tracks, scores, or grants authority/);
+assert.match(
+  human,
+  /Nothing here writes, tracks, scores, identifies a visitor, or grants authority/
+);
 assert.match(human, /Three cards is complete/);
 assert.match(human, /NOASSERTION/);
 assert.doesNotMatch(human, /<script\b/i);
 assert.doesNotMatch(human, /\.innerHTML\s*=/);
+for (const trail of frontier.trails) {
+  assert.match(human, new RegExp(`href="${trail.page}"`));
+}
 assert.ok(human.length < 64 * 1024, 'frontier human page unexpectedly large');
 
 assert.doesNotMatch(moduleText, /\b(?:fetch|writeFile|appendFile|setInterval|setTimeout)\s*\(/);
@@ -158,15 +304,44 @@ assert.doesNotMatch(moduleText, /\b(?:fetch|writeFile|appendFile|setInterval|set
 const previousFetch = globalThis.fetch;
 const fetched = [];
 try {
-  globalThis.fetch = async (url) => {
-    fetched.push(String(url));
-    return new Response(frontierBytes, {
+  const responses = new Map([
+    ['https://mindicraft.com/api/frontier/index.json', frontierBytes],
+    [
+      'https://mindicraft.com/api/frontier/trails/default.json',
+      defaultTrailBytes,
+    ],
+    [
+      'https://mindicraft.com/frontier/unseen-universe/',
+      readFileSync(
+        join(
+          DIST,
+          'api',
+          'frontier',
+          'trails',
+          'unseen-universe.json'
+        )
+      ),
+    ],
+  ]);
+  globalThis.fetch = async (url, options = {}) => {
+    const href = String(url);
+    fetched.push({
+      href,
+      accept: new Headers(options.headers).get('accept'),
+    });
+    if (!responses.has(href)) {
+      return new Response('not found', { status: 404 });
+    }
+    return new Response(responses.get(href), {
       headers: { 'content-type': 'application/json' },
     });
   };
   const mindicraft = await import(
     `${pathToFileURL(join(DIST, 'mindicraft.mjs')).href}?verify-frontier`
   );
+  const deck = await mindicraft.frontiers();
+  assert.equal(deck.cards.length, 9);
+
   const walk = await mindicraft.frontier();
   assert.equal(walk.trail.id, frontier.selection.default_trail);
   assert.equal(walk.trail.cards.length, 3);
@@ -175,16 +350,44 @@ try {
   for (const card of walk.trail.cards) {
     assert.ok(card.fact_ids.every((id) => returnedFactIds.has(id)));
   }
-  assert.deepEqual(walk.selection, frontier.selection);
+  assert.equal('selection' in walk, false);
+  assert.deepEqual(walk.edition_default_selection, frontier.selection);
   assert.deepEqual(walk.authority, frontier.authority);
   assert.deepEqual(walk.rights, frontier.rights);
   assert.deepEqual(walk.provenance, frontier.provenance);
-  assert.deepEqual(fetched, ['https://mindicraft.com/api/frontier/index.json']);
+
+  const named = await mindicraft.frontier({ trail: 'unseen-universe' });
+  assert.equal(named.trail.id, 'unseen-universe');
+  assert.equal(named.trail.cards.length, 3);
+
+  const beforeRefusals = fetched.length;
   await assert.rejects(
     mindicraft.frontier({ trail: 'not-a-frontier' }),
     /no such frontier trail/
   );
-  assert.equal(fetched.length, 2);
+  await assert.rejects(
+    mindicraft.frontier({ trail: '../unseen-universe' }),
+    /no such frontier trail/
+  );
+  await assert.rejects(
+    mindicraft.frontier({ trail: null }),
+    /frontier trail must be a string/
+  );
+  assert.equal(fetched.length, beforeRefusals);
+  assert.deepEqual(fetched, [
+    {
+      href: 'https://mindicraft.com/api/frontier/index.json',
+      accept: 'application/json',
+    },
+    {
+      href: 'https://mindicraft.com/api/frontier/trails/default.json',
+      accept: 'application/json',
+    },
+    {
+      href: 'https://mindicraft.com/frontier/unseen-universe/',
+      accept: 'application/json',
+    },
+  ]);
 } finally {
   globalThis.fetch = previousFetch;
 }

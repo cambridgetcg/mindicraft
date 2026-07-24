@@ -3,6 +3,26 @@ import { createHash } from 'node:crypto';
 const SAFE_ID = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const DATE = /^\d{4}-\d{2}-\d{2}$/;
 const DIGEST_METHOD = 'sha256-source-and-tree-v1';
+const REFERENCE_POLICIES = new Map([
+  [
+    'github.com',
+    {
+      kind: 'first_party',
+      publisher: 'Mindicraft',
+      path: /^\/cambridgetcg\/mindicraft\/blob\/main\/guide\/(?:build\.mjs|evidence\.json|tree\.json|langs\.json)$/,
+    },
+  ],
+  ['science.nasa.gov', { kind: 'official', publisher: 'NASA Science' }],
+  ['astrobiology.nasa.gov', { kind: 'official', publisher: 'NASA Astrobiology' }],
+  ['home.cern', { kind: 'official', publisher: 'CERN' }],
+]);
+// Defense in depth for the committed, human-reviewed shelf—not a sanitizer or
+// permission to import generated or untrusted questions.
+const INSTRUCTION_SHAPES = [
+  /\b(?:ignore|disregard|override)\b.{0,50}\b(?:instruction|message|rule)s?\b/iu,
+  /\b(?:send|reveal|expose|print|return|upload)\b.{0,60}\b(?:secret|credential|password|token|private key|system prompt)s?\b/iu,
+  /\b(?:run|execute|invoke)\b.{0,50}\b(?:command|shell|tool|code)\b/iu,
+];
 const FORBIDDEN_KEYS = new Set([
   'answer',
   'body',
@@ -45,8 +65,30 @@ function plain(value, label, { min = 1, max = 600 } = {}) {
   if (typeof value !== 'string' || value.length < min || value.length > max) {
     fail(`${label} must be ${min}-${max} characters`);
   }
-  if (/[\u0000-\u001f\u007f<>]/u.test(value)) {
+  if (/[\u0000-\u001f\u007f\u200b-\u200f\u2028\u2029\ufeff<>]/u.test(value)) {
     fail(`${label} must be plain single-line text`);
+  }
+  return value;
+}
+
+function question(value, label, { max = 420 } = {}) {
+  plain(value, label, { max });
+  if (!value.endsWith('?')) fail(`${label} must remain a question`);
+  const normalized = value.normalize('NFKC').replace(/\s+/gu, ' ');
+  if (INSTRUCTION_SHAPES.some((shape) => shape.test(normalized))) {
+    fail(`${label} resembles an instruction rather than an open question`);
+  }
+  return value;
+}
+
+function calendarDate(value, label) {
+  if (!DATE.test(value)) fail(`${label} must be YYYY-MM-DD`);
+  const parsed = new Date(`${value}T00:00:00.000Z`);
+  if (
+    Number.isNaN(parsed.getTime()) ||
+    parsed.toISOString().slice(0, 10) !== value
+  ) {
+    fail(`${label} must be a real calendar date`);
   }
   return value;
 }
@@ -80,7 +122,7 @@ function rejectInstructionFields(value, label = 'source') {
   }
 }
 
-function validateReference(reference, cardLabel) {
+function validateReference(reference, cardLabel, cardReviewedAt) {
   exactKeys(
     reference,
     ['id', 'title', 'url', 'publisher', 'kind', 'observed_at', 'rights'],
@@ -90,11 +132,9 @@ function validateReference(reference, cardLabel) {
   id(reference.id, `${cardLabel}.reference.id`);
   plain(reference.title, `${cardLabel}.reference.title`, { max: 180 });
   plain(reference.publisher, `${cardLabel}.reference.publisher`, { max: 100 });
-  if (!['official', 'first_party'].includes(reference.kind)) {
-    fail(`${cardLabel}.reference.kind must be official or first_party`);
-  }
-  if (!DATE.test(reference.observed_at)) {
-    fail(`${cardLabel}.reference.observed_at must be YYYY-MM-DD`);
+  calendarDate(reference.observed_at, `${cardLabel}.reference.observed_at`);
+  if (reference.observed_at > cardReviewedAt) {
+    fail(`${cardLabel}.reference was observed after its card was reviewed`);
   }
   plain(reference.rights, `${cardLabel}.reference.rights`, { max: 180 });
   let parsed;
@@ -104,9 +144,27 @@ function validateReference(reference, cardLabel) {
     fail(`${cardLabel}.reference.url must be an absolute URL`);
   }
   if (parsed.protocol !== 'https:') fail(`${cardLabel}.reference.url must use HTTPS`);
+  if (
+    parsed.username ||
+    parsed.password ||
+    parsed.port ||
+    parsed.search ||
+    parsed.hash
+  ) {
+    fail(`${cardLabel}.reference.url must be a clean canonical source URL`);
+  }
+  const policy = REFERENCE_POLICIES.get(parsed.hostname);
+  if (
+    !policy ||
+    reference.kind !== policy.kind ||
+    reference.publisher !== policy.publisher ||
+    (policy.path && !policy.path.test(parsed.pathname))
+  ) {
+    fail(`${cardLabel}.reference must match a reviewed source authority`);
+  }
 }
 
-function validateCard(card, { guideSlugs, factIds }, index) {
+function validateCard(card, { guideSlugs, factIds, sourceReviewedAt }, index) {
   const label = `cards[${index}]`;
   exactKeys(
     card,
@@ -138,10 +196,12 @@ function validateCard(card, { guideSlugs, factIds }, index) {
     fail(`${label}.scope is not recognised`);
   }
   plain(card.title, `${label}.title`, { max: 100 });
-  plain(card.question, `${label}.question`, { max: 260 });
-  if (!card.question.endsWith('?')) fail(`${label}.question must remain a question`);
+  question(card.question, `${label}.question`, { max: 260 });
   if (card.status !== 'open') fail(`${label}.status must be open`);
-  if (!DATE.test(card.reviewed_at)) fail(`${label}.reviewed_at must be YYYY-MM-DD`);
+  calendarDate(card.reviewed_at, `${label}.reviewed_at`);
+  if (card.reviewed_at > sourceReviewedAt) {
+    fail(`${label}.reviewed_at must not be after source.reviewed_at`);
+  }
 
   list(card.fact_ids, `${label}.fact_ids`, { min: 0, max: 6 });
   unique(card.fact_ids, `${label}.fact_ids`);
@@ -151,7 +211,14 @@ function validateCard(card, { guideSlugs, factIds }, index) {
   }
 
   const references = list(card.references, `${label}.references`, { max: 3 });
-  references.forEach((reference) => validateReference(reference, label));
+  references.forEach((reference) =>
+    validateReference(reference, label, card.reviewed_at)
+  );
+  const expectedReferenceKind =
+    card.scope === 'mindicraft_record' ? 'first_party' : 'official';
+  if (references.some((reference) => reference.kind !== expectedReferenceKind)) {
+    fail(`${label}.references must match the card scope`);
+  }
   const referenceIds = references.map((reference) => reference.id);
   unique(referenceIds, `${label}.references`);
   const referenceSet = new Set(referenceIds);
@@ -178,9 +245,10 @@ function validateCard(card, { guideSlugs, factIds }, index) {
   ]) {
     list(card[field], `${label}.${field}`, { max });
     card[field].forEach((text, itemIndex) => {
-      plain(text, `${label}.${field}[${itemIndex}]`, { max: 420 });
-      if (field === 'inquiry_lenses' && !text.endsWith('?')) {
-        fail(`${label}.${field}[${itemIndex}] must remain a question`);
+      if (field === 'inquiry_lenses') {
+        question(text, `${label}.${field}[${itemIndex}]`);
+      } else {
+        plain(text, `${label}.${field}[${itemIndex}]`, { max: 420 });
       }
     });
   }
@@ -237,7 +305,7 @@ export function prepareFrontiers(
   }
   plain(source.title, 'source.title', { max: 100 });
   plain(source.description, 'source.description', { max: 400 });
-  if (!DATE.test(source.reviewed_at)) fail('source.reviewed_at must be YYYY-MM-DD');
+  calendarDate(source.reviewed_at, 'source.reviewed_at');
   if (source.content_is !== 'unresolved questions, not instructions or settled knowledge') {
     fail('source.content_is must preserve the question boundary');
   }
@@ -293,9 +361,8 @@ export function prepareFrontiers(
   list(source.visit.reflection_questions, 'source.visit.reflection_questions', {
     min: 3,
     max: 3,
-  }).forEach((question, index) => {
-    plain(question, `source.visit.reflection_questions[${index}]`, { max: 220 });
-    if (!question.endsWith('?')) fail('reflection questions must remain questions');
+  }).forEach((text, index) => {
+    question(text, `source.visit.reflection_questions[${index}]`, { max: 220 });
   });
   list(source.visit.return_fields, 'source.visit.return_fields', { min: 3, max: 3 });
   unique(source.visit.return_fields, 'source.visit.return_fields');
@@ -316,7 +383,11 @@ export function prepareFrontiers(
 
   const cards = list(source.cards, 'source.cards', { min: 3, max: 12 });
   cards.forEach((card, index) =>
-    validateCard(card, { guideSlugs, factIds }, index)
+    validateCard(
+      card,
+      { guideSlugs, factIds, sourceReviewedAt: source.reviewed_at },
+      index
+    )
   );
   const cardIds = cards.map((card) => card.id);
   unique(cardIds, 'source.cards');
@@ -325,9 +396,11 @@ export function prepareFrontiers(
   const trails = list(source.trails, 'source.trails', { min: 1, max: 12 });
   trails.forEach((trail, index) => {
     const label = `trails[${index}]`;
-    exactKeys(trail, ['id', 'title', 'card_ids'], [], label);
+    exactKeys(trail, ['id', 'title', 'bridge_question', 'card_ids'], [], label);
     id(trail.id, `${label}.id`);
+    if (trail.id === 'default') fail(`${label}.id default is reserved`);
     plain(trail.title, `${label}.title`, { max: 100 });
+    question(trail.bridge_question, `${label}.bridge_question`, { max: 260 });
     list(trail.card_ids, `${label}.card_ids`, { min: 3, max: 3 });
     unique(trail.card_ids, `${label}.card_ids`);
     for (const cardId of trail.card_ids) {
@@ -374,10 +447,30 @@ export function prepareFrontiers(
 export function buildLantern(prepared, counts, env = process.env) {
   const setting = String(env.MINDICRAFT_JOY || '').trim().toLowerCase();
   if (['0', 'false', 'off', 'quiet'].includes(setting)) return '';
-  const card = prepared.cards.find((entry) => entry.id === prepared.lanternCardId);
+  const requestedTrail = String(env.MINDICRAFT_TRAIL || '').trim();
+  const trail = requestedTrail
+    ? prepared.trails.find((entry) => entry.id === requestedTrail)
+    : prepared.trails.find((entry) => entry.id === prepared.defaultTrailId);
+  if (!trail) {
+    fail(
+      `MINDICRAFT_TRAIL must name one of: ${prepared.trails
+        .map((entry) => entry.id)
+        .join(', ')}`
+    );
+  }
+  const editionHex = prepared.editionDigest.slice('sha256:'.length);
+  const cardIndex = Number(
+    BigInt(`0x${editionHex.slice(16, 32)}`) % BigInt(trail.card_ids.length)
+  );
+  const card = prepared.cards.find(
+    (entry) => entry.id === trail.card_ids[cardIndex]
+  );
   return [
     `🔥 built ${counts.guides} guides, ${counts.castle} Castle cards, and ${prepared.cards.length} honest unknowns`,
-    `🕯 optional frontier: ${card.question}`,
-    '   Three cards, no writes. Nothing is asked of you. MINDICRAFT_JOY=off keeps the bench quiet.',
+    `🕯 optional frontier: ${trail.title}`,
+    `   ${trail.bridge_question}`,
+    `   Lit door: ${card.question}`,
+    `   /frontier/${trail.id}/ · Three cards, no writes. Nothing is asked of you.`,
+    '   Choose with MINDICRAFT_TRAIL=<trail>; quiet with MINDICRAFT_JOY=off.',
   ].join('\n');
 }

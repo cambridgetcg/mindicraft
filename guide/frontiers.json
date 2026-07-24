@@ -537,6 +537,7 @@
     {
       "id": "hands-words-learners",
       "title": "Hands, words, learners",
+      "bridge_question": "What must remain true when a skill moves from a page, through an agent, into different hands and languages?",
       "card_ids": [
         "hands-answer-back",
         "four-tongues-one-skill",
@@ -546,6 +547,7 @@
     {
       "id": "map-meets-ground",
       "title": "The map meets the ground",
+      "bridge_question": "Where does a map stop describing the world and start depending on it?",
       "card_ids": [
         "arrows-carry-weight",
         "hands-answer-back",
@@ -555,6 +557,7 @@
     {
       "id": "speaking-pages",
       "title": "When the page gets a voice",
+      "bridge_question": "When can an answering explanation bridge a gap, and when must evidence come from beyond the page?",
       "card_ids": [
         "when-text-answers-back",
         "two-windows-on-learning",
@@ -564,6 +567,7 @@
     {
       "id": "unseen-universe",
       "title": "The unseen universe",
+      "bridge_question": "What turns an unseen possibility into something the universe has actually shown?",
       "card_ids": [
         "what-is-dark-matter",
         "gravity-meets-the-quantum",
@@ -573,6 +577,7 @@
     {
       "id": "what-counts-as-evidence",
       "title": "What counts as evidence",
+      "bridge_question": "When testimony, hands, and instruments disagree, what would make one boundary move?",
       "card_ids": [
         "life-beyond-earth",
         "hands-answer-back",

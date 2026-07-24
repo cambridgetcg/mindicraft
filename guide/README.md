@@ -71,6 +71,18 @@ there is no clock, random value, network call, identity, or write. Set
 Every visit is bounded to three cards and the API explicitly grants no
 automatic action.
 
+To invite a particular reviewed trail to the bench:
+
+```sh
+MINDICRAFT_TRAIL=unseen-universe npm run build
+```
+
+This changes only the optional terminal lines. Each trail also has one stable
+human and agent address: `/frontier/{trail}/` serves HTML normally and the same
+three cards as JSON when asked with `Accept: application/json`. Direct JSON
+lives at `/api/frontier/trails/{trail}.json`; `default.json` follows the
+digest-selected trail for this edition.
+
 A missing translation is never an error — the site shows English with a small
 "not translated yet" note until the file exists.
 

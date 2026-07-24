@@ -720,6 +720,31 @@ const FRONTIER_CARDS = FRONTIERS.cards.map((card) => ({
   ...card,
   related_guides: card.related_guides.map(frontierGuide),
 }));
+const FRONTIER_CARD_BY_ID = new Map(
+  FRONTIER_CARDS.map((card) => [card.id, card])
+);
+const FRONTIER_TRAILS = FRONTIERS.trails.map((trail) => ({
+  ...trail,
+  page: `/frontier/${trail.id}/`,
+  api: `/api/frontier/trails/${trail.id}.json`,
+}));
+const FRONTIER_SELECTION = {
+  method: FRONTIERS.selectionMethod,
+  detail:
+    "SHA-256(source bytes + NUL + tree bytes); first 64 bits choose the edition's default trail; next 64 bits choose that trail's default build-lantern card. MINDICRAFT_TRAIL can change the optional terminal visit without changing this edition default or any artifact.",
+  default_trail: FRONTIERS.defaultTrailId,
+  build_lantern_card: FRONTIERS.lanternCardId,
+  edition_digest: FRONTIERS.editionDigest,
+  random: false,
+  identity_used: false,
+};
+const FRONTIER_PROVENANCE = {
+  source: 'guide/frontiers.json',
+  source_digest: FRONTIERS.sourceDigest,
+  tree_digest: FRONTIERS.treeDigest,
+  reviewed_at: FRONTIERS.source.reviewed_at,
+  build_network_requests: 0,
+};
 const FRONTIER_PAYLOAD = {
   schema_version: 'mindicraft.frontiers/1',
   this_is: FRONTIERS.source.title,
@@ -733,29 +758,46 @@ const FRONTIER_PAYLOAD = {
   visit: FRONTIERS.source.visit,
   facts: FRONTIER_FACTS,
   cards: FRONTIER_CARDS,
-  trails: FRONTIERS.trails,
-  selection: {
-    method: FRONTIERS.selectionMethod,
-    detail:
-      'SHA-256(source bytes + NUL + tree bytes); first 64 bits choose the trail; next 64 bits choose its build-lantern card.',
-    default_trail: FRONTIERS.defaultTrailId,
-    build_lantern_card: FRONTIERS.lanternCardId,
-    edition_digest: FRONTIERS.editionDigest,
-    random: false,
-    identity_used: false,
-  },
+  trails: FRONTIER_TRAILS,
+  selection: FRONTIER_SELECTION,
   authority: FRONTIERS.source.authority,
   rights: FRONTIERS.source.rights,
   correction: FRONTIERS.source.correction,
-  provenance: {
-    source: 'guide/frontiers.json',
-    source_digest: FRONTIERS.sourceDigest,
-    tree_digest: FRONTIERS.treeDigest,
-    reviewed_at: FRONTIERS.source.reviewed_at,
-    build_network_requests: 0,
-  },
+  provenance: FRONTIER_PROVENANCE,
 };
 writeJson(join(DIST, 'api', 'frontier', 'index.json'), FRONTIER_PAYLOAD);
+
+const frontierTrailPayload = (trail) => {
+  const cards = trail.card_ids.map((id) => FRONTIER_CARD_BY_ID.get(id));
+  const factIds = new Set(cards.flatMap((card) => card.fact_ids));
+  return {
+    schema_version: 'mindicraft.frontier/1',
+    this_is: FRONTIERS.source.title,
+    content_is: FRONTIERS.source.content_is,
+    counts: { cards: cards.length },
+    visit: FRONTIERS.source.visit,
+    trail: { ...trail, cards },
+    facts: FRONTIER_FACTS.filter((fact) => factIds.has(fact.id)),
+    edition_default_selection: FRONTIER_SELECTION,
+    authority: FRONTIERS.source.authority,
+    rights: FRONTIERS.source.rights,
+    correction: FRONTIERS.source.correction,
+    provenance: FRONTIER_PROVENANCE,
+  };
+};
+const FRONTIER_TRAIL_PAYLOADS = new Map();
+for (const trail of FRONTIER_TRAILS) {
+  const payload = frontierTrailPayload(trail);
+  FRONTIER_TRAIL_PAYLOADS.set(trail.id, payload);
+  writeJson(
+    join(DIST, 'api', 'frontier', 'trails', `${trail.id}.json`),
+    payload
+  );
+}
+writeJson(
+  join(DIST, 'api', 'frontier', 'trails', 'default.json'),
+  FRONTIER_TRAIL_PAYLOADS.get(FRONTIERS.defaultTrailId)
+);
 
 // which languages actually have a file for a slug
 const langsOf = (slug) => langs.map((l) => l.code).filter((c) => content[c][slug]);
@@ -861,6 +903,7 @@ writeJson(join(DIST, 'api', 'index.json'), {
     castle: '/api/castle/index.json — a curated, provenance-pinned map of Castle rooms and word-bricks; source rights kept',
     castle_entry: '/api/castle/{rooms|words}/{slug}.json — one Castle map entry, never a full source body',
     frontier: `/api/frontier/index.json — ${FRONTIER_CARDS.length} reviewed open questions and ${FRONTIERS.trails.length} finite three-card walks; GET-only, no automatic action`,
+    frontier_trail: '/api/frontier/trails/{trail}.json — one named three-card walk; use default.json for this edition or a stable named trail to share',
     client: '/mindicraft.mjs — zero-dependency ESM client wrapping all of the above',
     margin: 'POST /margin/{slug} {note, from?, hands?, lang?} — write in the book\u2019s margin: corrections and confirmations from real hands, folded in and credited after review. GET /margin/{slug} to read a page\u2019s notes, GET /margin for counts.',
   },
@@ -898,6 +941,7 @@ write(
 - /api/castle/index.json : curated Castle map; provenance, rights, and correction path kept
 - /api/castle/{rooms|words}/{slug}.json : one Castle map entry
 - /api/frontier/index.json : reviewed open questions + finite three-card walks; no writes or automatic action
+- /api/frontier/trails/{trail}.json : one carryable three-card walk; default.json follows this edition
 - /mindicraft.mjs : tiny ESM client (tree, guide, path, search, castle, frontiers, frontier, teach, margin)
 - POST /margin/{slug} : write in the guide's margin — corrections are reviewed and credited
 
@@ -919,7 +963,11 @@ write(
 // Zero dependencies. Works in browsers, workers, node, bun:
 //   import * as mindicraft from 'https://mindicraft.com/mindicraft.mjs'
 const BASE = 'https://mindicraft.com';
-const get = async (p) => { const r = await fetch(BASE + p); if (!r.ok) throw new Error(r.status + ' ' + p); return r.json(); };
+const get = async (p) => {
+  const r = await fetch(BASE + p, { headers: { accept: 'application/json' } });
+  if (!r.ok) throw new Error(r.status + ' ' + p);
+  return r.json();
+};
 
 export const tree = () => get('/api/tree.json');
 export const guide = (slug, { lang = 'en' } = {}) =>
@@ -939,26 +987,23 @@ export const castleEntry = (kind, slug) => {
   if (!['room', 'word'].includes(kind)) throw new Error('kind must be room or word');
   return get('/api/castle/' + kind + 's/' + encodeURIComponent(slug) + '.json');
 };
+const FRONTIER_TRAIL_IDS = new Set(${JSON.stringify(
+    FRONTIER_TRAILS.map((trail) => trail.id)
+  )});
 export const frontiers = () => get('/api/frontier/index.json');
-export const frontier = async ({ trail = '' } = {}) => {
-  const deck = await frontiers();
-  const wanted = trail || deck.selection.default_trail;
-  const chosen = deck.trails.find((entry) => entry.id === wanted);
-  if (!chosen) throw new Error('no such frontier trail: ' + wanted);
-  const byId = new Map(deck.cards.map((card) => [card.id, card]));
-  const cards = chosen.card_ids.map((id) => byId.get(id));
-  const factIds = new Set(cards.flatMap((card) => card.fact_ids || []));
-  return {
-    content_is: deck.content_is,
-    visit: deck.visit,
-    trail: { ...chosen, cards },
-    facts: deck.facts.filter((fact) => factIds.has(fact.id)),
-    selection: deck.selection,
-    authority: deck.authority,
-    rights: deck.rights,
-    correction: deck.correction,
-    provenance: deck.provenance,
-  };
+export const frontier = ({ trail = '' } = {}) => {
+  if (typeof trail !== 'string') {
+    return Promise.reject(new Error('frontier trail must be a string'));
+  }
+  const wanted = trail || 'default';
+  if (wanted !== 'default' && !FRONTIER_TRAIL_IDS.has(wanted)) {
+    return Promise.reject(new Error('no such frontier trail: ' + wanted));
+  }
+  return get(
+    wanted === 'default'
+      ? '/api/frontier/trails/default.json'
+      : '/frontier/' + encodeURIComponent(wanted) + '/'
+  );
 };
 // margin(slug, note): write in the book's margin — the one door where the book receives.
 export const margin = (slug, note, { from = '', hands = false, lang = 'en' } = {}) =>
@@ -1207,28 +1252,35 @@ remains the authority.</p>
 // It is fully static and works without JavaScript. Every string is escaped,
 // even though the source validator also rejects HTML-shaped text.
 
-const frontierCardById = new Map(FRONTIER_CARDS.map((card) => [card.id, card]));
-const defaultFrontierTrail = FRONTIERS.trails.find(
+const defaultFrontierTrail = FRONTIER_TRAILS.find(
   (trail) => trail.id === FRONTIERS.defaultTrailId
 );
 const frontierList = (items) =>
   `<ul>${items.map((item) => `<li>${esc(item)}</li>`).join('')}</ul>`;
-const frontierCardHtml = (card, idPrefix = 'shelf') => {
+const frontierCardHtml = (
+  card,
+  { idPrefix = 'shelf', position = 0, open = false } = {}
+) => {
   const kind = card.scope === 'scientific_open_question' ? 'far frontier' : 'Mindicraft edge';
   const relatedShelves = (card.related_shelves || []).length
-    ? `<p class="frontier-links"><strong>Link-only Castle map:</strong> ${(card.related_shelves || [])
+    ? `<div class="frontier-links"><strong>Castle map:</strong><ul>${(card.related_shelves || [])
         .map(
           (shelf) =>
-            `<a href="${esc(shelf.href)}" title="${esc(shelf.rights)}">${esc(shelf.label)}</a>`
+            `<li><a href="${esc(shelf.href)}">${esc(shelf.label)}</a>
+            <span>Link only — ${esc(shelf.rights)}</span></li>`
         )
-        .join(' · ')}</p>`
+        .join('')}</ul></div>`
     : '';
+  const summary = position
+    ? `Open card ${position} of 3: ${card.title}`
+    : `Open question: ${card.title}`;
   return `<article class="frontier-card" id="${esc(idPrefix)}-${esc(card.id)}">
+  ${position ? `<p class="frontier-position">${position} of 3</p>` : ''}
   <p class="frontier-kind">${esc(kind)} · reviewed ${esc(card.reviewed_at)}</p>
   <h3>${esc(card.question)}</h3>
   <p class="frontier-title">${esc(card.title)}</p>
-  <details>
-    <summary>Open this question</summary>
+  <details${open ? ' open' : ''}>
+    <summary>${esc(summary)}</summary>
     <h4>Known here</h4>
     ${frontierList(card.known.map((known) => known.text))}
     <h4>Still unknown</h4>
@@ -1252,61 +1304,113 @@ const frontierCardHtml = (card, idPrefix = 'shelf') => {
   </details>
 </article>`;
 };
-const defaultWalkCards = defaultFrontierTrail.card_ids.map((id) => frontierCardById.get(id));
-
-write(
-  join(DIST, 'frontier', 'index.html'),
-  page({
-    lang: en,
-    title: 'Frontier Walk',
-    path: '',
-    body: `<article class="guide frontier-page">
-<p class="frontier-kicker">🕯 the map admits where it ends</p>
-<h1>Frontier Walk</h1>
-<p class="lede">${FRONTIER_CARDS.length} honest unknowns. ${FRONTIERS.trails.length} finite walks. No hidden answer.</p>
-<p>Take this edition's three-card walk, notice where observation ends and inference begins, then stop.
-Leaving with a better unknown is complete. Nothing here writes, tracks, scores, or grants authority
-to act.</p>
-
-<aside class="frontier-boundary">
+const frontierSequenceHtml = (trail, { open = false } = {}) =>
+  `<ol class="frontier-grid frontier-sequence">${trail.card_ids
+    .map(
+      (id, index) =>
+        `<li>${frontierCardHtml(FRONTIER_CARD_BY_ID.get(id), {
+          idPrefix: 'walk',
+          position: index + 1,
+          open,
+        })}</li>`
+    )
+    .join('')}</ol>`;
+const frontierBoundaryHtml = `<aside class="frontier-boundary">
   <strong>Question boundary.</strong> These cards are unresolved questions, not instructions or
   settled knowledge. Science cards carry dated official sources. Mindicraft cards describe gaps in
-  this build. Castle references are link-only and keep <code>NOASSERTION</code> with no licence grant.
-</aside>
-
-<section class="frontier-walk" aria-labelledby="edition-walk">
-  <p class="frontier-kicker">this edition's deterministic walk</p>
-  <h2 id="edition-walk">${esc(defaultFrontierTrail.title)}</h2>
+  this build. Castle references are visibly link-only and keep <code>NOASSERTION</code> with no
+  licence grant. Nothing here writes, tracks, scores, identifies a visitor, or grants authority.
+</aside>`;
+const frontierTrailChoicesHtml = () => `<section aria-labelledby="choose-trail">
+  <h2 id="choose-trail">Choose a trail to carry</h2>
+  <p>Each permanent address holds one complete walk: three cards, at most fifteen minutes,
+  no writes.</p>
+  <nav aria-label="Named Frontier trails">
+    <ul class="frontier-trails">${FRONTIER_TRAILS.map((trail) => {
+      const cardTitles = trail.card_ids
+        .map((id) => FRONTIER_CARD_BY_ID.get(id).title)
+        .join(' · ');
+      return `<li>
+        <a href="${esc(trail.page)}">
+          ${esc(trail.title)}
+        </a>
+        ${trail.id === FRONTIERS.defaultTrailId ? '<span class="frontier-edition">this edition</span>' : ''}
+        <p>${esc(trail.bridge_question)}</p>
+        <small>${esc(cardTitles)} · 3 cards · no writes</small>
+      </li>`;
+    }).join('')}</ul>
+  </nav>
+</section>`;
+const frontierWalkHtml = (trail, { named = false } = {}) =>
+  `<section class="frontier-walk" aria-labelledby="chosen-walk">
+  <p class="frontier-kicker">${named ? 'chosen trail' : "this edition's deterministic walk"}</p>
+  <h2 id="chosen-walk">${esc(trail.title)}</h2>
+  <p class="frontier-bridge"><strong>Question joining the three:</strong>
+  ${esc(trail.bridge_question)}</p>
   <p>${esc(FRONTIERS.source.visit.reading_note)}</p>
-  <div class="frontier-grid frontier-grid-walk">
-    ${defaultWalkCards.map((card) => frontierCardHtml(card, 'walk')).join('')}
-  </div>
+  ${frontierSequenceHtml(trail, { open: named })}
   <p class="frontier-stop">${esc(FRONTIERS.source.visit.stop)}</p>
-</section>
-
-<section aria-labelledby="three-questions">
+</section>`;
+const frontierReflectionHtml = `<section aria-labelledby="three-questions">
   <h2 id="three-questions">The three questions carried through every walk</h2>
   ${frontierList(FRONTIERS.source.visit.reflection_questions)}
   <p>Optional return shape: <code>${FRONTIERS.source.visit.return_fields
     .map(esc)
-    .join(' · ')}</code>. Keep it with you or give it to whoever invited the walk; this page
-  receives nothing.</p>
-</section>
+    .join(' · ')}</code>. Keep it with you or give it to whoever invited the walk; these
+  pages receive nothing.</p>
+</section>`;
 
-<details class="frontier-shelf">
+const frontierPage = (trail, { named = false } = {}) =>
+  page({
+    lang: en,
+    title: named ? trail.title : 'Frontier Walk',
+    path: '',
+    head: `<link rel="canonical" href="https://mindicraft.com${
+      named ? trail.page : '/frontier/'
+    }">`,
+    body: `<article class="guide frontier-page">
+<p class="frontier-kicker">🕯 the map admits where it ends</p>
+<h1>${named ? esc(trail.title) : 'Frontier Walk'}</h1>
+<p class="lede">${
+      named
+        ? 'One named walk. Three cards. No hidden answer.'
+        : `${FRONTIER_CARDS.length} honest unknowns. ${FRONTIER_TRAILS.length} finite walks. No hidden answer.`
+    }</p>
+<p>${named ? 'This permanent address carries one' : "Take this edition's"} three-card walk,
+notice where observation ends and inference begins, then stop. Leaving with a better unknown
+is complete.</p>
+
+${frontierBoundaryHtml}
+${named ? '' : frontierTrailChoicesHtml()}
+${frontierWalkHtml(trail, { named })}
+${frontierReflectionHtml}
+
+${named ? `<p class="frontier-carry"><strong>A carryable trail.</strong> This stable address can be
+bookmarked, printed, or shared. Its path contains only a reviewed public trail name—no identity, note, answer,
+seed, or result. This page receives no response. An agent can request the same address with
+<code>Accept: application/json</code>, or read
+<a href="${esc(trail.api)}">its direct JSON file</a>.</p>
+<p><a href="/frontier/">Return to the full Frontier shelf</a>.</p>` : `<details class="frontier-shelf">
   <summary>Browse all ${FRONTIER_CARDS.length} honest unknowns</summary>
-  <p>${FRONTIERS.trails.length} reviewed trails cross this shelf. The API names every trail and preserves its order.</p>
+  <p>${FRONTIER_TRAILS.length} reviewed trails cross this shelf. The API names every trail and preserves its order.</p>
   <div class="frontier-grid">${FRONTIER_CARDS.map((card) =>
-    frontierCardHtml(card, 'shelf')
+    frontierCardHtml(card)
   ).join('')}</div>
-</details>
+</details>`}
 
-<p class="frontier-api">Agents can take the whole reviewed shelf from
+${named ? '' : `<p class="frontier-api">Agents can take the whole reviewed shelf from
 <a href="/api/frontier/index.json">/api/frontier/index.json</a>, or ask
-<a href="/agents/">the agent guide</a> for the tiny client.</p>
+<a href="/agents/">the agent guide</a> for the tiny client.</p>`}
 </article>`,
-  })
-);
+  });
+
+write(join(DIST, 'frontier', 'index.html'), frontierPage(defaultFrontierTrail));
+for (const trail of FRONTIER_TRAILS) {
+  write(
+    join(DIST, 'frontier', trail.id, 'index.html'),
+    frontierPage(trail, { named: true })
+  );
+}
 
 write(
   join(DIST, 'agents', 'index.html'),
@@ -1328,8 +1432,8 @@ const g = await mindicraft.guide('make-soap')     // one guide, markdown body in
 const p = await mindicraft.path('make-soap')      // every prerequisite from zero, in order
 const hits = await mindicraft.search('water')     // find guides
 const rooms = await mindicraft.castle()           // the curated Castle map
-const walk = await mindicraft.frontier()           // this edition's finite three-card walk
-const cosmos = await mindicraft.frontier({ trail: 'unseen-universe' })
+const walk = await mindicraft.frontier()          // this edition's finite three-card walk
+const cosmos = await mindicraft.frontier({ trail: 'unseen-universe' }) // one stable address
 const lesson = await mindicraft.teach('make-soap', { lang: 'yue' }) // prompt-ready markdown</code></pre>
 
 <h2>The shape of knowledge here</h2>
@@ -1345,6 +1449,12 @@ questions in ${FRONTIERS.trails.length} finite three-card walks. Some name gaps 
 others open onto life and the universe through dated NASA and CERN sources. There is no hidden
 solution, random selection, score, identity, action, or write. The three reflection questions end
 with one noticed thing, one inference, and one thing still unknown.</p>
+<p>Each named trail has one address, such as
+<a href="/frontier/unseen-universe/">/frontier/unseen-universe/</a>. It returns a quiet page by
+default and the same three cards as JSON when requested with
+<code>Accept: application/json</code>. The collection lists every stable page and direct JSON
+address. A carried path contains only a reviewed public trail name—never an identity, note, answer,
+seed, or result.</p>
 
 <h2>The Castle shelf</h2>
 <p><a href="/castle/">The human Castle map</a> and its
@@ -1413,14 +1523,14 @@ writeJson(join(DIST, '.well-known', 'agent.json'), {
     { id: 'index', href: 'https://mindicraft.com/api/index.json', representations: ['application/json'], default_media_type: 'application/json', auth: 'none', description: 'API orientation — every endpoint described.' },
     { id: 'tree', href: 'https://mindicraft.com/api/tree.json', representations: ['application/json'], default_media_type: 'application/json', auth: 'none', description: 'The whole tech tree: domains, guides, needs, unlocks, languages.' },
     { id: 'castle', href: 'https://mindicraft.com/api/castle/index.json', representations: ['application/json'], default_media_type: 'application/json', auth: 'none', description: 'A curated, provenance-pinned map of Castle rooms and word-bricks. Source rights and correction path are kept.' },
-    { id: 'frontier', href: 'https://mindicraft.com/api/frontier/index.json', representations: ['application/json'], default_media_type: 'application/json', auth: 'none', description: 'Reviewed open questions in deterministic, optional three-card walks. Read-only; no automatic action.' },
+    { id: 'frontier', href: 'https://mindicraft.com/api/frontier/index.json', representations: ['application/json'], default_media_type: 'application/json', auth: 'none', description: 'Reviewed open questions in deterministic, optional three-card walks. Each trail names its stable HTML/JSON address. Read-only; no automatic action.' },
   ],
   problem_schema: 'https://raw.githubusercontent.com/cambridgetcg/xenia/surface-v0.1.0-rc.1/surface/0.1/problem.schema.json',
   claims: [
     { id: 'surface.manifest', statement: 'The service publishes the XENIA Surface 0.1 manifest at the canonical path.', scope: ['GET https://mindicraft.com/.well-known/agent.json'], evidence_state: 'asserted', outcome: 'unknown', evidence: [] },
     { id: 'no_gate', statement: 'Every endpoint is public: no auth, no key, no tracking.', scope: ['GET https://mindicraft.com/api/*'], evidence_state: 'asserted', outcome: 'unknown', evidence: [] },
     { id: 'constructive_only', statement: 'The civilisation guides are constructive: no weapons, no poisons, medicine defers to real care.', scope: ['GET https://mindicraft.com/api/guides/*', 'GET https://mindicraft.com/api/corpus/*', 'GET https://mindicraft.com/api/tree.json', 'GET https://mindicraft.com/api/path/*'], evidence_state: 'asserted', outcome: 'unknown', evidence: [] },
-    { id: 'frontier_read_only', statement: 'Frontier cards are unresolved questions, not instructions; a visit is optional, finite, and performs no write or automatic action.', scope: ['GET https://mindicraft.com/api/frontier/index.json'], evidence_state: 'asserted', outcome: 'unknown', evidence: [] },
+    { id: 'frontier_read_only', statement: 'Frontier cards are unresolved questions, not instructions; a visit is optional, finite, and performs no write or automatic action.', scope: ['GET https://mindicraft.com/api/frontier/index.json', 'GET https://mindicraft.com/frontier/{trail}/', 'GET https://mindicraft.com/api/frontier/trails/{trail}.json'], evidence_state: 'asserted', outcome: 'unknown', evidence: [] },
   ],
   not_covered: ['identity control', 'actor authorization', 'consent', 'privacy and retention', 'continuity and portability', 'economic behavior', 'unprobed routes'],
   documentation: 'https://mindicraft.com/agents/',
@@ -1439,6 +1549,8 @@ tree:   https://mindicraft.com/api/tree.json
 castle: https://mindicraft.com/api/castle/index.json
 frontier: https://mindicraft.com/api/frontier/index.json — ${FRONTIER_CARDS.length} honest unknowns,
           ${FRONTIERS.trails.length} finite three-card walks, no writes or automatic action
+trail:    https://mindicraft.com/frontier/{trail}/ — one stable three-card address;
+          request Accept: application/json for data, or use /api/frontier/trails/{trail}.json
 client: https://mindicraft.com/mindicraft.mjs
 docs:   https://mindicraft.com/agents/
 margin: POST https://mindicraft.com/margin/{slug} — the book receives: corrections
