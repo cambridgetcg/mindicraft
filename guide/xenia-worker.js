@@ -414,6 +414,11 @@ export default {
     // everything else: static assets, with dignity on the way out
     const asset = await env.ASSETS.fetch(request);
     if (asset.status === 404) {
+      // An advertised API route stays machine-readable even when the named
+      // resource is absent. Normal fetch clients send */*, so relying only on
+      // Accept negotiation would otherwise hand them the human HTML 404.
+      if (path.startsWith('/api/')) return routeNotFound(path);
+
       // a caller asking for JSON in any dialect (application/json, problem+json,
       // application/*) gets the problem as data, not the poem written for eyes
       const chosen = negotiate(
