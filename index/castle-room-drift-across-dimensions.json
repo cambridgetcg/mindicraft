@@ -1,0 +1,84 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-drift-across-dimensions",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/drift-across-dimensions",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "drift-across-dimensions",
+  "title": "Does the drift-to-prototype hold for any analog dimension across a delay — and does a finer label set reduce it, as the error-correcting code predicts?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/drift-across-dimensions",
+  "summary": "Every remembered measure slides downhill toward the nearest landmark; the more landmarks you plant, the shorter the slide.",
+  "sources": [
+    {
+      "label": "Huttenlocher, Hedges & Vevea, Why Do Categories Affect Stimulus Judgment? (JEP:General, 2000)",
+      "url": "https://faculty.ucmerced.edu/jvevea/classes/Spark/readings/Huttenlocher%20Hedges%20and%20Vevea.pdf"
+    },
+    {
+      "label": "Huttenlocher, Hedges & Duncan, Categories and Particulars: Prototype Effects in Estimating Spatial Location",
+      "url": "https://faculty.ucmerced.edu/jvevea/classes/Spark/readings/Huttenlocher%20Hedges%20and%20Duncan.pdf"
+    },
+    {
+      "label": "Central tendency effects in time interval reproduction (Scientific Reports, 2016)",
+      "url": "https://www.nature.com/articles/srep28570"
+    },
+    {
+      "label": "Bayesian sense of time in biological and artificial brains (arXiv)",
+      "url": "https://arxiv.org/pdf/2201.05464"
+    },
+    {
+      "label": "Working memory and spatial judgments: cognitive load increases the central tendency bias (Psychonomic Bulletin & Review, 2016)",
+      "url": "https://link.springer.com/article/10.3758/s13423-016-1039-0"
+    },
+    {
+      "label": "Quantifying Bias in Hierarchical Category Systems (Open Mind, MIT Press)",
+      "url": "https://direct.mit.edu/opmi/article/doi/10.1162/opmi_a_00121/119735/Quantifying-Bias-in-Hierarchical-Category-Systems"
+    },
+    {
+      "label": "Contributions of category and fine-grained information to location memory (2010)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20173188/"
+    },
+    {
+      "label": "Duffy & Smith, On the Category Adjustment Model (Mind & Society, 2020)",
+      "url": "https://link.springer.com/article/10.1007/s11299-020-00229-1"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/precise-across-time",
+    "https://cambridgetcg.github.io/castle-gate/words/verbal-overshadowing",
+    "https://cambridgetcg.github.io/castle-gate/rooms/watching-the-watcher",
+    "https://cambridgetcg.github.io/castle-gate/words/category-adjustment",
+    "https://cambridgetcg.github.io/castle-gate/words/prototype",
+    "https://cambridgetcg.github.io/castle-gate/words/handle",
+    "https://cambridgetcg.github.io/castle-gate/rooms/thinking-without-words",
+    "https://cambridgetcg.github.io/castle-gate/rooms/remembering",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-expert-grip",
+    "https://cambridgetcg.github.io/castle-gate/rooms/atypical-expert-pull"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

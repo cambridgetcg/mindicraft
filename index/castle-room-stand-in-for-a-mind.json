@@ -1,0 +1,91 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-stand-in-for-a-mind",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/stand-in-for-a-mind",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "stand-in-for-a-mind",
+  "title": "Every working dyad used a responsive human — does the interoception benefit need a mind that can actually attune, or only the felt sense of being heard, such that an AI chatbot, an imagined witness, or even a journal could stand in?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/stand-in-for-a-mind",
+  "summary": "You can feel heard by an echo — until someone tells you it was an echo.",
+  "sources": [
+    {
+      "label": "AI replies felt more heard than untrained humans; labeling AI lowers it; mind perception drives the drop (PMC10998586)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10998586/"
+    },
+    {
+      "label": "Same PNAS study: the \"AI\" label cut feeling-heard ~0.68 and understanding ~0.71 (PubMed 38551835)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38551835/"
+    },
+    {
+      "label": "Empathy choice paradox: people pick human empathy 57–62% even rating AI higher (PMC12872445)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12872445/"
+    },
+    {
+      "label": "A partner's photograph sharpened interoceptive accuracy in low starters, n=32 (PMC5472092)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5472092/"
+    },
+    {
+      "label": "Cyberball exclusion lowered heartbeat-perception accuracy; inclusion did not (PubMed 25701592)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25701592/"
+    },
+    {
+      "label": "Scoping review (62 studies): the co-regulation benefit is physiological attunement of two bodies (PMC12354601)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12354601/"
+    },
+    {
+      "label": "Expressive writing yields modest health gains; one mechanism is seeking real support afterward (PMC10415981)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10415981/"
+    },
+    {
+      "label": "Imagined supportive conversation rated distressing memories less negative, n=95 (PMC10570303)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10570303/"
+    },
+    {
+      "label": "AI companions reduced loneliness on par with a person; feeling heard explained the effect (HBS, De Freitas et al.)",
+      "url": "https://www.hbs.edu/ris/Publication%20Files/24-078_a3d2e2c7-eca1-4767-8543-122e818bf2e5.pdf"
+    },
+    {
+      "label": "Interpersonal synchrony feels good but impedes later self-regulation of affect (PMC6789117)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6789117/"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/text-answers-back",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-responsive-other",
+    "https://cambridgetcg.github.io/castle-gate/rooms/nudge-not-lock",
+    "https://cambridgetcg.github.io/castle-gate/rooms/closing-the-loop",
+    "https://cambridgetcg.github.io/castle-gate/rooms/honest-pushback",
+    "https://cambridgetcg.github.io/castle-gate/rooms/echo-under-anger",
+    "https://cambridgetcg.github.io/castle-gate/rooms/internalized-as-skill",
+    "https://cambridgetcg.github.io/castle-gate/rooms/general-voice-or-specific-presence",
+    "https://cambridgetcg.github.io/castle-gate/rooms/can-machines-truly-measure-emotional-engagement"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

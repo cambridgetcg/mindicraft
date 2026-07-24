@@ -1,0 +1,68 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-domain-matched-teachability",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/domain-matched-teachability",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "domain-matched-teachability",
+  "title": "Would a domain-matched student model produce a stronger teachability correlation — extending the capacity-matching rule to concept transfer?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/domain-matched-teachability",
+  "summary": "The tailor who measured the child before cutting the coat did better than the one who measured a mannequin — but no child has worn both coats yet, so the rule stays a hunch.",
+  "sources": [
+    {
+      "label": "Patil, Zhu, Kopeć & Love, Optimal Teaching for Limited-Capacity Human Learners (NeurIPS 2014)",
+      "url": "https://pages.cs.wisc.edu/~jerryzhu/career/pub/nips14OptTeachGCM.pdf"
+    },
+    {
+      "label": "Schut et al., Bridging the Human-AI Knowledge Gap through Concept Discovery and Transfer in AlphaZero (PNAS 2025)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12002201/"
+    },
+    {
+      "label": "Tang et al., Maia-2: A Unified Model for Human-AI Alignment in Chess (NeurIPS 2024)",
+      "url": "https://arxiv.org/abs/2409.20553"
+    },
+    {
+      "label": "Can LLMs Reliably Simulate Real Students' Abilities? (arXiv 2025)",
+      "url": "https://arxiv.org/html/2507.08232v1"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/cheapest-teachability-validation",
+    "https://cambridgetcg.github.io/castle-gate/rooms/two-windows",
+    "https://cambridgetcg.github.io/castle-gate/rooms/maia-as-student",
+    "https://cambridgetcg.github.io/castle-gate/words/machine-teaching",
+    "https://cambridgetcg.github.io/castle-gate/words/learner-model",
+    "https://cambridgetcg.github.io/castle-gate/words/transfer",
+    "https://cambridgetcg.github.io/castle-gate/rooms/machine-distillation",
+    "https://cambridgetcg.github.io/castle-gate/rooms/teachability-validated",
+    "https://cambridgetcg.github.io/castle-gate/rooms/smooth-or-thresholded-understanding",
+    "https://cambridgetcg.github.io/castle-gate/rooms/calibration-returns"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

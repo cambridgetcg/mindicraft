@@ -1,0 +1,80 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-reread-or-refamiliar",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/reread-or-refamiliar",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "reread-or-refamiliar",
+  "title": "The second pass makes any text feel smoother, understood or not — how does a re-reader tell repaired comprehension from mere refamiliarized fluency?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/reread-or-refamiliar",
+  "summary": "The polish stays on the page; what was repaired answers from a blank one.",
+  "sources": [
+    {
+      "label": "Yang, Zhao, Yuan, Luo & Shanks 2023 — meta-analysis: metacomprehension accuracy averages .178; delayed generation helps (Review of Educational Research)",
+      "url": "https://journals.sagepub.com/doi/abs/10.3102/00346543221094083"
+    },
+    {
+      "label": "Anderson & Thiede 2008 — delayed summaries .57 vs immediate .26; gist vs surface cues (Acta Psychologica)",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S000169180700128X"
+    },
+    {
+      "label": "Thiede, Anderson & Therriault 2003 — the delayed-keyword effect (via Boise State ScholarWorks)",
+      "url": "https://scholarworks.boisestate.edu/cifs_facpubs/8/"
+    },
+    {
+      "label": "Rawson, Dunlosky & Thiede 2000 — the rereading effect: accuracy improves across reading trials (Memory & Cognition)",
+      "url": "https://link.springer.com/article/10.3758/BF03209348"
+    },
+    {
+      "label": "Dunlosky & Rawson 2005 — the rereading effect needs a prompt return; a week's delay erases it (Discourse Processes)",
+      "url": "https://www.tandfonline.com/doi/abs/10.1207/s15326950dp4001_2"
+    },
+    {
+      "label": "Structural Learning — fluency illusions in plain language",
+      "url": "https://www.structural-learning.com/post/fluency-illusions-students-think-they-know"
+    },
+    {
+      "label": "Learning Scientists 2026 — retrieval practice improves metacognitive accuracy, reduces rereading overconfidence",
+      "url": "https://www.learningscientists.org/blog/2026/3/26-1"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/words/fluency",
+    "https://cambridgetcg.github.io/castle-gate/rooms/simple-explanations",
+    "https://cambridgetcg.github.io/castle-gate/rooms/questions-with-edges",
+    "https://cambridgetcg.github.io/castle-gate/rooms/productive-confusion",
+    "https://cambridgetcg.github.io/castle-gate/rooms/pretty-or-well-made",
+    "https://cambridgetcg.github.io/castle-gate/rooms/invited-back",
+    "https://cambridgetcg.github.io/castle-gate/rooms/spaced-understanding",
+    "https://cambridgetcg.github.io/castle-gate/rooms/truing-the-level",
+    "https://cambridgetcg.github.io/castle-gate/rooms/fog-meter",
+    "https://cambridgetcg.github.io/castle-gate/rooms/remembering"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

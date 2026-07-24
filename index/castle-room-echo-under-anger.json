@@ -1,0 +1,76 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-echo-under-anger",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/echo-under-anger",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "echo-under-anger",
+  "title": "The echo under anger",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/echo-under-anger",
+  "summary": "The readback was tuned in harbor water; the storm is where it has to hold.",
+  "sources": [
+    {
+      "label": "Stanley, Markman & Blumberg, The Speaker/Listener Technique, 1997",
+      "url": "https://journals.sagepub.com/doi/10.1177/1066480797051013"
+    },
+    {
+      "label": "The Gottman Institute, Manage Conflict — Part 4",
+      "url": "https://www.gottman.com/blog/manage-conflict-part-4/"
+    },
+    {
+      "label": "Gottman interview, Psychotherapy.net",
+      "url": "https://www.psychotherapy.net/interview/couples/john-gottman"
+    },
+    {
+      "label": "Gottman, Coan, Carrère & Swanson, 1998",
+      "url": "https://www.jstor.org/stable/353438"
+    },
+    {
+      "label": "Stanley, Bradbury & Markman, Structural Flaws in the Bridge, 2000",
+      "url": "https://www.researchgate.net/publication/227761409_Structural_Flaws_in_the_Bridge_From_Basic_Research_on_Marriage_to_Interventions_for_Couples"
+    },
+    {
+      "label": "Hafen & Crane, the active listening controversy, 2003",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/1467-6427.00232"
+    },
+    {
+      "label": "University of Rochester, on Rogge et al. 2013",
+      "url": "https://www.rochester.edu/newscenter/divorce-rate-cut-in-half-for-couples-who-discussed-relationship-movies/"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/echo-between-equals",
+    "https://cambridgetcg.github.io/castle-gate/words/repair",
+    "https://cambridgetcg.github.io/castle-gate/words/teach-back",
+    "https://cambridgetcg.github.io/castle-gate/rooms/fog-meter",
+    "https://cambridgetcg.github.io/castle-gate/words/bridge",
+    "https://cambridgetcg.github.io/castle-gate/rooms/closing-the-loop"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-fading-the-other",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/fading-the-other",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "fading-the-other",
+  "title": "Could a deliberately intermittent other, or a solo practice, build more durable self-tuning than a constantly-responsive one?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/fading-the-other",
+  "summary": "A hand that never lets go is not holding you up; it is holding you.",
+  "sources": [
+    {
+      "label": "Galbusera et al., Interpersonal synchrony feels good but impedes self-regulation of affect (Scientific Reports, 2019)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6789117/"
+    },
+    {
+      "label": "Tronick & Beeghly, Infants' Meaning-Making and the Development of Mental Health Problems (PMC)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3135310/"
+    },
+    {
+      "label": "Mesman, van IJzendoorn & Bakermans-Kranenburg, The many faces of the Still-Face Paradigm (Developmental Review, 2009)",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0273229709000021"
+    },
+    {
+      "label": "A Practical Guide to Donald Winnicott's Attachment Theories (Counselling Tutor)",
+      "url": "https://counsellingtutor.com/winnicott-attachment-theories/"
+    },
+    {
+      "label": "Scaffolding in Psychology (PsychologyNotesHQ)",
+      "url": "https://www.psychologynoteshq.com/scaffolding/"
+    },
+    {
+      "label": "Schedules of Reinforcement (Simply Psychology)",
+      "url": "https://www.simplypsychology.org/schedules-of-reinforcement.html"
+    },
+    {
+      "label": "The Effects of a 3-Week Heartbeat Perception Training on Interoceptive Abilities (Frontiers in Neuroscience, 2022)",
+      "url": "https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2022.838055/full"
+    },
+    {
+      "label": "Interoceptive accuracy scores from the heartbeat counting task are problematic (Zamariola et al., 2018)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29944964/"
+    },
+    {
+      "label": "Price et al., Longitudinal effects of interoceptive awareness training (MABT RCT, Drug and Alcohol Dependence 2019)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30928884/"
+    },
+    {
+      "label": "theory paper",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5985305/"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/stand-in-for-a-mind",
+    "https://cambridgetcg.github.io/castle-gate/rooms/fading-alone",
+    "https://cambridgetcg.github.io/castle-gate/rooms/training-the-trigger",
+    "https://cambridgetcg.github.io/castle-gate/words/co-regulation",
+    "https://cambridgetcg.github.io/castle-gate/words/scaffolding",
+    "https://cambridgetcg.github.io/castle-gate/words/interoception",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-responsive-other",
+    "https://cambridgetcg.github.io/castle-gate/rooms/nudge-not-lock",
+    "https://cambridgetcg.github.io/castle-gate/rooms/fading-vs-replacing",
+    "https://cambridgetcg.github.io/castle-gate/rooms/alone-or-accompanied",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-unwalked-bridge",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-mending-rhythm",
+    "https://cambridgetcg.github.io/castle-gate/rooms/internalized-as-skill"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

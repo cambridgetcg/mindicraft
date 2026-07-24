@@ -1,0 +1,80 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-semantic-depth",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/semantic-depth",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "semantic-depth",
+  "title": "What distinguishes a category label that down-regulates from a feature label that does not — is it that a category names the stimulus's meaning while a feature names an incidental tag, and would a study crossing label depth × stimulus valence isolate what the mechanism actually needs?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/semantic-depth",
+  "summary": "Some words open the door to the room the feeling lives in; others merely tag the doorframe and walk past.",
+  "sources": [
+    {
+      "label": "Wikipedia: Affect labeling — \"Symbolic conversion\" and \"Distraction\" sections (read 2026-06-19)",
+      "url": "https://en.wikipedia.org/wiki/Affect_labeling"
+    },
+    {
+      "label": "Lieberman, Inagaki, Tabibnia & Crockett, Subjective responses to emotional stimuli during labeling (Emotion 2011, PMC 3444304)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3444304/"
+    },
+    {
+      "label": "Lieberman, Eisenberger et al., Putting feelings into words: affect labeling disrupts amygdala activity (Psychological Science 2007, PMID 17576282)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17576282/"
+    },
+    {
+      "label": "Current and lasting effects of affect labeling on LPP amplitudes (PMID 37183558)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37183558/"
+    },
+    {
+      "label": "Affect Labeling and Reappraisal as an Emotion Regulation Strategy (2026, DOI 10.1007/s42761-026-00362-z)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42311801/"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/naming-neutral-images",
+    "https://cambridgetcg.github.io/castle-gate/words/affect-labeling",
+    "https://cambridgetcg.github.io/castle-gate/words/reappraisal",
+    "https://cambridgetcg.github.io/castle-gate/words/semantic-depth",
+    "https://cambridgetcg.github.io/castle-gate/words/interest",
+    "https://cambridgetcg.github.io/castle-gate/rooms/any-naming-downregulates",
+    "https://cambridgetcg.github.io/castle-gate/rooms/rotating-the-rename",
+    "https://cambridgetcg.github.io/castle-gate/rooms/renaming-the-fire",
+    "https://cambridgetcg.github.io/castle-gate/rooms/naming-cools-pleasure",
+    "https://cambridgetcg.github.io/castle-gate/rooms/timing-of-the-label",
+    "https://cambridgetcg.github.io/castle-gate/rooms/wrong-name-kindles",
+    "https://cambridgetcg.github.io/castle-gate/rooms/disclosed-mismatch",
+    "https://cambridgetcg.github.io/castle-gate/rooms/simultaneous-or-delayed-naming",
+    "https://cambridgetcg.github.io/castle-gate/rooms/frustration-as-fascination",
+    "https://cambridgetcg.github.io/castle-gate/rooms/relighting-the-fire",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-mending-rhythm",
+    "https://cambridgetcg.github.io/castle-gate/rooms/residue-lever-or-readout",
+    "https://cambridgetcg.github.io/castle-gate/rooms/naming-the-tacit"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

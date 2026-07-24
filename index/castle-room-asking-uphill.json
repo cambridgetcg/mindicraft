@@ -1,0 +1,105 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-asking-uphill",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/asking-uphill",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "asking-uphill",
+  "title": "A question can only exercise an understanding its writer has already glimpsed — how do you write good prompts for an idea you are still climbing toward?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/asking-uphill",
+  "summary": "You do not carve the key from a drawing of the lock; you whittle it against the keyhole, shaving by shaving.",
+  "sources": [
+    {
+      "label": "Stanford Encyclopedia of Philosophy, Epistemic Paradoxes",
+      "url": "https://plato.stanford.edu/entries/epistemic-paradoxes/"
+    },
+    {
+      "label": "Internet Encyclopedia of Philosophy, Meno",
+      "url": "https://iep.utm.edu/meno-2/"
+    },
+    {
+      "label": "Plato, Meno (overview)",
+      "url": "https://en.wikipedia.org/wiki/Meno"
+    },
+    {
+      "label": "Rosenshine, Meister & Chapman, Teaching students to generate questions (Review of Educational Research, 1996)",
+      "url": "https://journals.sagepub.com/doi/10.3102/00346543066002181"
+    },
+    {
+      "label": "Ebersbach, Feick & Rummer, Generating questions versus testing (Applied Cognitive Psychology, 2020)",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1002/acp.3639"
+    },
+    {
+      "label": "Zamfirescu-Pereira et al., Why Johnny Can't Prompt (CHI 2023)",
+      "url": "https://people.eecs.berkeley.edu/~bjoern/papers/zamfirescu-johnny-chi2023.pdf"
+    },
+    {
+      "label": "Getzels & Csikszentmihalyi, The Creative Vision (1976)",
+      "url": "https://archive.org/details/creativevisionlo0000getz"
+    },
+    {
+      "label": "Subramonyam et al., The gulf of envisioning (CHI 2024)",
+      "url": "https://arxiv.org/html/2309.14459v2"
+    },
+    {
+      "label": "Graham, Putting Ideas into Words",
+      "url": "https://paulgraham.com/words.html"
+    },
+    {
+      "label": "Elbow, Freewriting (Writing Without Teachers, 1973)",
+      "url": "https://www.research.ucsb.edu/sites/default/files/RD/docs/FREEWRITING-by-Peter-Elbow.pdf"
+    },
+    {
+      "label": "Right Question Institute, What is the QFT?",
+      "url": "https://rightquestion.org/what-is-the-qft/"
+    },
+    {
+      "label": "Karlsson, A blog post is a very long and complex search query",
+      "url": "https://www.henrikkarlsson.xyz/p/search-query"
+    },
+    {
+      "label": "Zhou et al., Large Language Models Are Human-Level Prompt Engineers (ICLR 2023)",
+      "url": "https://arxiv.org/abs/2211.01910"
+    },
+    {
+      "label": "IEEE Spectrum, AI Prompt Engineering Is Dead",
+      "url": "https://spectrum.ieee.org/prompt-engineering-is-dead"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/honest-pushback",
+    "https://cambridgetcg.github.io/castle-gate/words/retrieval-practice",
+    "https://cambridgetcg.github.io/castle-gate/rooms/questions-with-edges",
+    "https://cambridgetcg.github.io/castle-gate/rooms/productive-confusion",
+    "https://cambridgetcg.github.io/castle-gate/rooms/linking-thoughts",
+    "https://cambridgetcg.github.io/castle-gate/rooms/writing-vs-conversation",
+    "https://cambridgetcg.github.io/castle-gate/rooms/disclosed-mismatch"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

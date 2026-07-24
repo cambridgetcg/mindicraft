@@ -1,0 +1,83 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-surfacing-the-unwritten",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/surfacing-the-unwritten",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "surfacing-the-unwritten",
+  "title": "If a reader can only count declared shared inputs (authors, code, citations) and the load-bearing overlap is a hidden shared assumption nobody wrote down, what move surfaces an unstated common cause — can you provoke disagreement to expose it?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/surfacing-the-unwritten",
+  "summary": "Tap the beam nobody named; if every voice rings the same note, they are leaning on one wall.",
+  "sources": [
+    {
+      "label": "The shared-information problem: overlapping inputs correlate estimates, so agreement overstates confidence (Palley & Soll)",
+      "url": "http://www.asapalley.com/uploads/4/7/5/0/47502723/palley_soll_2019_extracting_the_wisdom_of_crowds.pdf"
+    },
+    {
+      "label": "The \"surprisingly popular\" meta-prediction surfaces a hidden private signal; cut errors 21.3% (Prelec et al., Phys.org)",
+      "url": "https://phys.org/news/2017-01-scholars-method-harvesting-crowd-wisdom.html"
+    },
+    {
+      "label": "Authentic dissent surfaces assumptions; role-played devil's advocacy only bolsters (Nemeth, Brown & Rogers)",
+      "url": "https://onlinelibrary.wiley.com/doi/abs/10.1002/ejsp.58"
+    },
+    {
+      "label": "Dialectical inquiry surfaces higher-quality assumptions by building the opposite case (Schweiger, Sandberg & Ragan)",
+      "url": "https://journals.aom.org/doi/10.5465/255859"
+    },
+    {
+      "label": "Seeing others' estimates correlates errors and can reduce crowd accuracy (PMC5938592)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5938592/"
+    },
+    {
+      "label": "Deep disagreement over framework propositions is rationally irresolvable — argument hits bedrock (Fogelin)",
+      "url": "https://philarchive.org/archive/MELFDD"
+    },
+    {
+      "label": "A hidden common cause makes independent agents agree (r=0.77); the overlap hides in consensus (arXiv)",
+      "url": "https://arxiv.org/abs/2605.00844"
+    },
+    {
+      "label": "The premortem: assume the plan failed and say why — failure-framing gives permission to voice private doubts (HBR)",
+      "url": "https://hbr.org/2007/09/performing-a-project-premortem"
+    },
+    {
+      "label": "The Abilene paradox: phantom consensus held up by each assuming their doubt is the minority view (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Abilene_paradox"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/correlated-witnesses",
+    "https://cambridgetcg.github.io/castle-gate/rooms/two-witnesses",
+    "https://cambridgetcg.github.io/castle-gate/rooms/honest-pushback",
+    "https://cambridgetcg.github.io/castle-gate/rooms/mining-the-noise",
+    "https://cambridgetcg.github.io/castle-gate/rooms/closing-the-loop"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

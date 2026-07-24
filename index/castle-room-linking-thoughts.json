@@ -1,0 +1,85 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-linking-thoughts",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/linking-thoughts",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "linking-thoughts",
+  "title": "Why does linking thoughts together (instead of piling them up) make understanding grow faster?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/linking-thoughts",
+  "summary": "A pile of bricks is not a wall; the mortar between them is.",
+  "sources": [
+    {
+      "label": "Schroeder et al., meta-analysis of concept and knowledge mapping (2018)",
+      "url": "https://link.springer.com/article/10.1007/s10648-017-9403-9"
+    },
+    {
+      "label": "National Academies, How People Learn — how experts differ from novices",
+      "url": "https://www.nationalacademies.org/read/9853/chapter/5"
+    },
+    {
+      "label": "van Kesteren et al., building on prior knowledge (npj Science of Learning, 2018)",
+      "url": "https://www.nature.com/articles/s41539-018-0027-8"
+    },
+    {
+      "label": "Dunlosky et al., effective learning techniques review (2013)",
+      "url": "https://journals.sagepub.com/doi/abs/10.1177/1529100612453266"
+    },
+    {
+      "label": "Karpicke & Blunt, retrieval practice vs. concept mapping (Science, 2011)",
+      "url": "https://www.science.org/doi/10.1126/science.1199327"
+    },
+    {
+      "label": "the Mintzes et al. rebuttal",
+      "url": "https://www.science.org/doi/10.1126/science.1203698"
+    },
+    {
+      "label": "DeStefano & LeFevre, cognitive load in hypertext reading (2007)",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0747563205000658"
+    },
+    {
+      "label": "Zettelkasten.de, the Collector's Fallacy",
+      "url": "https://zettelkasten.de/posts/collectors-fallacy/"
+    },
+    {
+      "label": "why automatic backlinks disappoint",
+      "url": "https://zettelkasten.de/posts/backlinks-are-bad-links/"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/words/schema",
+    "https://cambridgetcg.github.io/castle-gate/rooms/when-the-trade-flips",
+    "https://cambridgetcg.github.io/castle-gate/words/link",
+    "https://cambridgetcg.github.io/castle-gate/rooms/link-or-noise",
+    "https://cambridgetcg.github.io/castle-gate/rooms/remembering",
+    "https://cambridgetcg.github.io/castle-gate/rooms/simple-explanations",
+    "https://cambridgetcg.github.io/castle-gate/rooms/meaning-between-minds"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

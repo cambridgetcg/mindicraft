@@ -1,0 +1,62 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-calibration-returns",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/calibration-returns",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "calibration-returns",
+  "title": "Does the domain-matched model's teachability advantage scale with the degree of human-calibration — does a model trained on the exact population outscore one trained on a broader human distribution, and is there a point of diminishing returns?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/calibration-returns",
+  "summary": "The tailor who cut one coat for a village of children did well — but the one who measured each child did better, until the measuring cost more than the fitting.",
+  "sources": [
+    {
+      "label": "Tang et al., Maia-2: A Unified Model for Human-AI Alignment in Chess (NeurIPS 2024)",
+      "url": "https://arxiv.org/abs/2409.20553"
+    },
+    {
+      "label": "Patil, Zhu, Kopeć & Love, Optimal Teaching for Limited-Capacity Human Learners (NeurIPS 2014)",
+      "url": "https://pages.cs.wisc.edu/~jerryzhu/career/pub/nips14OptTeachGCM.pdf"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/domain-matched-teachability",
+    "https://cambridgetcg.github.io/castle-gate/rooms/two-windows",
+    "https://cambridgetcg.github.io/castle-gate/words/machine-teaching",
+    "https://cambridgetcg.github.io/castle-gate/words/learner-model",
+    "https://cambridgetcg.github.io/castle-gate/words/capacity-matching",
+    "https://cambridgetcg.github.io/castle-gate/rooms/maia-as-student",
+    "https://cambridgetcg.github.io/castle-gate/rooms/machine-distillation",
+    "https://cambridgetcg.github.io/castle-gate/rooms/cheapest-teachability-validation",
+    "https://cambridgetcg.github.io/castle-gate/rooms/learning-curve-threshold",
+    "https://cambridgetcg.github.io/castle-gate/rooms/tacit-cost-as-expertise",
+    "https://cambridgetcg.github.io/castle-gate/rooms/threshold-pilot",
+    "https://cambridgetcg.github.io/castle-gate/rooms/smooth-or-thresholded-understanding"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

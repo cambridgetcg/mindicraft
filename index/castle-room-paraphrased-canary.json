@@ -1,0 +1,78 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-paraphrased-canary",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/paraphrased-canary",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "paraphrased-canary",
+  "title": "Could an author plant a cluster of paraphrased variants rather than one repeated passage — seeding the mosaic the model assembles — and would that be detectable at frontier scale without training-time access?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/paraphrased-canary",
+  "summary": "The canary cannot sing loud enough alone, so the thought is to seed a choir that hums the same tune in different words — but can a lone hand raise that choir, and would the larger model even hear it?",
+  "sources": [
+    {
+      "label": "Shilov et al., The Mosaic Memory of Large Language Models (arXiv 2024)",
+      "url": "https://arxiv.org/abs/2405.15523"
+    },
+    {
+      "label": "Robust Data Watermarking by Injecting Fictitious Knowledge (arXiv 2025)",
+      "url": "https://arxiv.org/abs/2503.03242"
+    },
+    {
+      "label": "LLMs Show Surface-Form Brittleness Under Paraphrase Stress Tests (arXiv 2025)",
+      "url": "https://arxiv.org/abs/2510.08616"
+    },
+    {
+      "label": "Copyright Detective: A Forensic System (arXiv 2026)",
+      "url": "https://arxiv.org/abs/2602.05252"
+    },
+    {
+      "label": "Rethinking LLM Memorization through the Lens of Adversarial Compression (arXiv 2024)",
+      "url": "https://arxiv.org/abs/2404.15146"
+    },
+    {
+      "label": "Watermarking Makes Language Models Radioactive (arXiv 2024)",
+      "url": "https://arxiv.org/abs/2402.14904"
+    },
+    {
+      "label": "SLIM: Stealthy Low-Coverage Black-Box Watermarking (ACL 2026)",
+      "url": "https://arxiv.org/abs/2601.03242"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-scaling-canary",
+    "https://cambridgetcg.github.io/castle-gate/words/canary-trap",
+    "https://cambridgetcg.github.io/castle-gate/words/mosaic-memory",
+    "https://cambridgetcg.github.io/castle-gate/words/deduplication",
+    "https://cambridgetcg.github.io/castle-gate/rooms/what-the-seed-is-for",
+    "https://cambridgetcg.github.io/castle-gate/rooms/seeded-fingerprint",
+    "https://cambridgetcg.github.io/castle-gate/rooms/near-duplicate-canary",
+    "https://cambridgetcg.github.io/castle-gate/rooms/distributed-canary"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

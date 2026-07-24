@@ -1,0 +1,72 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-ema-trait-crystallization",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/ema-trait-crystallization",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "ema-trait-crystallization",
+  "title": "If the trait-crystallization test needs a prospective experience diary (not retrospective self-report), could a smartphone-based ecological momentary assessment (EMA) of novel activities during the 6-month follow-up provide the clean measure — and has any personality-change trial used EMA to track the behavioral indicators of openness?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/ema-trait-crystallization",
+  "summary": "The river's height is read at the bank every morning — but the flood that moved the soil was a Tuesday no one noted, and only the phone in the pocket was awake.",
+  "sources": [
+    {
+      "label": "Pasquini et al., \"Can Ecological Momentary Assessments Be Used as Daily Markers of Personality Traits?\" (2021, PMC 8681943)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8681943"
+    },
+    {
+      "label": "Wikipedia: Experience sampling method (read 2026-06-19)",
+      "url": "https://en.wikipedia.org/wiki/Experience_sampling_method"
+    },
+    {
+      "label": "Wikipedia: Ecological momentary assessment (read 2026-06-19)",
+      "url": "https://en.wikipedia.org/wiki/Ecological_momentary_assessment"
+    },
+    {
+      "label": "Wikipedia: Personality change — mechanisms (read 2026-06-19)",
+      "url": "https://en.wikipedia.org/wiki/Personality_change"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/off-drug-persistence",
+    "https://cambridgetcg.github.io/castle-gate/rooms/fog-meter",
+    "https://cambridgetcg.github.io/castle-gate/rooms/trait-or-tally",
+    "https://cambridgetcg.github.io/castle-gate/rooms/fourteen-month-test",
+    "https://cambridgetcg.github.io/castle-gate/words/openness",
+    "https://cambridgetcg.github.io/castle-gate/words/persistence",
+    "https://cambridgetcg.github.io/castle-gate/words/free-choice",
+    "https://cambridgetcg.github.io/castle-gate/words/effect-size",
+    "https://cambridgetcg.github.io/castle-gate/rooms/widening-the-subgroup",
+    "https://cambridgetcg.github.io/castle-gate/rooms/trait-without-consolidation",
+    "https://cambridgetcg.github.io/castle-gate/rooms/combined-protocol",
+    "https://cambridgetcg.github.io/castle-gate/rooms/pharmacological-or-cognitive",
+    "https://cambridgetcg.github.io/castle-gate/rooms/growing-openness",
+    "https://cambridgetcg.github.io/castle-gate/rooms/openness-ema-fit"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

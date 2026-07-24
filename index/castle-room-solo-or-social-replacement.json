@@ -1,0 +1,68 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-solo-or-social-replacement",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/solo-or-social-replacement",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "solo-or-social-replacement",
+  "title": "If the partner is a bioenergetic resource rather than a scaffold, is a solo mindfulness practice a sufficient replacement, or does the replacement need to be social in a different form — a group, a community, an internalized other — for the self-regulation to build where EFT left the co-regulation?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/solo-or-social-replacement",
+  "summary": "You cannot replace a well by giving a man a cup — but you can dig him a cistern, or you can teach him to hear the rain the well once channeled, and let the sky do the rest.",
+  "sources": [
+    {
+      "label": "Wikipedia: Mindfulness-based cognitive therapy (read 2026-06-20)",
+      "url": "https://en.wikipedia.org/wiki/Mindfulness-based_cognitive_therapy"
+    },
+    {
+      "label": "Wikipedia: Mindfulness-based stress reduction (read 2026-06-20)",
+      "url": "https://en.wikipedia.org/wiki/Mindfulness-based_stress_reduction"
+    },
+    {
+      "label": "Wikipedia: Internalization (psychology) (read 2026-06-20)",
+      "url": "https://en.wikipedia.org/wiki/Internalization_(psychology"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/fading-vs-replacing",
+    "https://cambridgetcg.github.io/castle-gate/rooms/fog-meter",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-responsive-other",
+    "https://cambridgetcg.github.io/castle-gate/rooms/stand-in-for-a-mind",
+    "https://cambridgetcg.github.io/castle-gate/rooms/alone-or-accompanied",
+    "https://cambridgetcg.github.io/castle-gate/words/co-regulation",
+    "https://cambridgetcg.github.io/castle-gate/words/emotion-regulation",
+    "https://cambridgetcg.github.io/castle-gate/words/social-baseline",
+    "https://cambridgetcg.github.io/castle-gate/words/internalization",
+    "https://cambridgetcg.github.io/castle-gate/rooms/ders-vs-performance",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-mending-rhythm",
+    "https://cambridgetcg.github.io/castle-gate/rooms/combined-protocol",
+    "https://cambridgetcg.github.io/castle-gate/rooms/internalized-as-skill",
+    "https://cambridgetcg.github.io/castle-gate/rooms/general-voice-or-specific-presence"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-relatedness-or-credibility",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/relatedness-or-credibility",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "relatedness-or-credibility",
+  "title": "If acknowledgment works in instruction by satisfying relatedness directly, then the two channels predict opposite things for a trusting learner — could a single study pit them against each other?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/relatedness-or-credibility",
+  "summary": "Two wires carry the same current; cut one and the light still burns — or does it?",
+  "sources": [
+    {
+      "label": "Eisend, Two-sided advertising — a meta-analysis (credibility chain)",
+      "url": "https://www.semanticscholar.org/paper/Two-sided-advertising:-A-meta-analysis-Eisend/798918a63fde963dfc678a3afaa4d9b51ad8453b"
+    },
+    {
+      "label": "Meta-analysis comparing one-sided and two-sided messages (favorable-audience boundary)",
+      "url": "http://www.communicationcache.com/uploads/1/0/8/8/10887248/meta-analysis_comparing_the_persuasiveness_of_one-sided_and_two-sided_messages.pdf"
+    },
+    {
+      "label": "Reeve, Jang, Hardré & Omura, Providing a rationale (Motivation & Emotion, 2002)",
+      "url": "https://link.springer.com/article/10.1023/A:1021711629417"
+    },
+    {
+      "label": "Self-determination theory — education, Jang study (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Self-determination_theory"
+    },
+    {
+      "label": "Gagné & Deci, SDT and work motivation (2005)",
+      "url": "https://selfdeterminationtheory.org/SDT/documents/2005_GagneDeci_JOB_SDTtheory.pdf"
+    },
+    {
+      "label": "Deci, Eghrari, Patrick & Leone, Facilitating internalization (1994)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8169757/"
+    },
+    {
+      "label": "Howard, Slemp & Wang, autonomy-support meta-analysis (2025, via PMC)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12276404/"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/chain-not-sum",
+    "https://cambridgetcg.github.io/castle-gate/words/reactance",
+    "https://cambridgetcg.github.io/castle-gate/rooms/naming-the-tedium",
+    "https://cambridgetcg.github.io/castle-gate/rooms/rationale-before-difficulty",
+    "https://cambridgetcg.github.io/castle-gate/rooms/honest-pushback"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

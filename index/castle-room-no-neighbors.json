@@ -1,0 +1,91 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-no-neighbors",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/no-neighbors",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "no-neighbors",
+  "title": "Lateral reading judges a source by its reputation in the wider web — but on the true frontier (a new preprint, an unranked field) there is no wider web to consult; what orients you when there are no neighbors to ask?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/no-neighbors",
+  "summary": "At the edge of the map the road runs out, and you must read the land by the lay of its own stones.",
+  "sources": [
+    {
+      "label": "Wineburg & McGrew, Lateral Reading — method's scope and dependency on a populated web (Teachers College Record)",
+      "url": "https://journals.sagepub.com/doi/10.1177/016146811912101102"
+    },
+    {
+      "label": "Wineburg & McGrew, Lateral Reading and the Nature of Expertise — knowledge lets you query (Stanford)",
+      "url": "https://stacks.stanford.edu/file/druid:yk133ht8603/Wineburg%20McGrew_Lateral%20Reading%20and%20the%20Nature%20of%20Expertise.pdf"
+    },
+    {
+      "label": "Researchers judge preprints by verifiability over reputation (Royal Society Open Science)",
+      "url": "https://royalsocietypublishing.org/doi/10.1098/rsos.201520"
+    },
+    {
+      "label": "Reputation proxies are weak credibility signals; transparency underwrites trust (PMC11563668)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11563668/"
+    },
+    {
+      "label": "National Academies — internal filtering plus replication over time (Reproducibility report)",
+      "url": "https://nap.nationalacademies.org/read/25303/chapter/3"
+    },
+    {
+      "label": "PRECHECK — a checklist for non-specialists reading a preprint",
+      "url": "https://www.precheck.site/the_checklist/"
+    },
+    {
+      "label": "The Sagan standard, applied to everyday life (Effectiviology)",
+      "url": "https://effectiviology.com/sagan-standard-extraordinary-claims-require-extraordinary-evidence/"
+    },
+    {
+      "label": "Extraordinary claims — and Sagan's warning against reflexive rejection (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Extraordinary_claims_require_extraordinary_evidence"
+    },
+    {
+      "label": "Lateral reading's frontier case is under-studied (Harvard Misinformation Review)",
+      "url": "https://misinforeview.hks.harvard.edu/article/lateral-reading-college-students-learn-to-critically-evaluate-internet-sources-in-an-online-course/"
+    },
+    {
+      "label": "The replication crisis — reputation can be collectively wrong (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Replication_crisis"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-landing",
+    "https://cambridgetcg.github.io/castle-gate/rooms/training-the-eye",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-well",
+    "https://cambridgetcg.github.io/castle-gate/rooms/pretty-or-well-made",
+    "https://cambridgetcg.github.io/castle-gate/rooms/productive-confusion",
+    "https://cambridgetcg.github.io/castle-gate/rooms/correlated-witnesses",
+    "https://cambridgetcg.github.io/castle-gate/rooms/two-witnesses",
+    "https://cambridgetcg.github.io/castle-gate/rooms/reading-a-literature",
+    "https://cambridgetcg.github.io/castle-gate/rooms/auditing-over-reputation"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

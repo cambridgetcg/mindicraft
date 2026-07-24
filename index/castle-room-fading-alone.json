@@ -1,0 +1,80 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-fading-alone",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/fading-alone",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "fading-alone",
+  "title": "Adaptive fading drops one scaffold step at a time as a tutor verifies each — can a learner alone run their own fading honestly, when fog-meter found the self-read so weak?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/fading-alone",
+  "summary": "Alone on the scaffold, you do not ask yourself whether the wall can stand — you take one plank away, lay the next course bare-handed, and hold it to the plumb line.",
+  "sources": [
+    {
+      "label": "Salden, Aleven, Renkl & Schwonke, The expertise reversal effect and worked examples in tutored problem solving",
+      "url": "http://www.cee.uma.pt/ron/Salden%20et%20al.%20-%20The%20Expertise%20Reversal%20Effect%20and%20Worked%20Examples.pdf"
+    },
+    {
+      "label": "Karich, Burns & Maki, Updated meta-analysis of learner control within educational technology (Review of Educational Research, 2014)",
+      "url": "https://eric.ed.gov/?id=EJ1034262"
+    },
+    {
+      "label": "Aleven, McLaren, Roll & Koedinger, Toward Tutoring Help Seeking (ITS 2004)",
+      "url": "https://www.cs.cmu.edu/~bmclaren/pubs/AlevenEtAl-HelpSeeking-ITS2004.pdf"
+    },
+    {
+      "label": "Dunlosky & Rawson, Overconfidence produces underachievement (Learning and Instruction, 2012)",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0959475211000685"
+    },
+    {
+      "label": "Dunlosky, Hartwig, Rawson & Lipko, Improving college students' evaluation of text learning using idea-unit standards (QJEP, 2011)",
+      "url": "https://journals.sagepub.com/doi/10.1080/17470218.2010.502239"
+    },
+    {
+      "label": "Rhodes & Tauber, The influence of delaying judgments of learning on metacognitive accuracy: a meta-analytic review (Psychological Bulletin, 2011)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21219059/"
+    },
+    {
+      "label": "Kostons, van Gog & Paas, Training self-assessment and task-selection skills (Learning and Instruction, 2012)",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0959475211000697"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/when-the-trade-flips",
+    "https://cambridgetcg.github.io/castle-gate/words/scaffolding",
+    "https://cambridgetcg.github.io/castle-gate/rooms/fog-meter",
+    "https://cambridgetcg.github.io/castle-gate/rooms/training-the-eye",
+    "https://cambridgetcg.github.io/castle-gate/rooms/standard-without-a-key",
+    "https://cambridgetcg.github.io/castle-gate/rooms/reread-or-refamiliar",
+    "https://cambridgetcg.github.io/castle-gate/words/retrieval-practice",
+    "https://cambridgetcg.github.io/castle-gate/rooms/remembering",
+    "https://cambridgetcg.github.io/castle-gate/rooms/productive-confusion",
+    "https://cambridgetcg.github.io/castle-gate/rooms/internalized-as-skill"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

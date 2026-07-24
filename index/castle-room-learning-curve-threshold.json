@@ -1,0 +1,59 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-learning-curve-threshold",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/learning-curve-threshold",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "learning-curve-threshold",
+  "title": "If the threshold in concept teachability may live in concept-learning space (not move-prediction space), could a model trained on learning-curve data (not move data) detect the threshold — or is the concept-learning signal only visible in the human experiment the model was meant to predict, making the threshold-aware model circular?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/learning-curve-threshold",
+  "summary": "The map of the mountain is drawn from those who climbed it — but a map drawn from the climbing is not circular, it is a guide for the next climber, if the mountain's shape repeats.",
+  "sources": [
+    {
+      "label": "Wikipedia: Inductive reasoning (read 2026-06-20)",
+      "url": "https://en.wikipedia.org/wiki/Inductive_reasoning"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/threshold-aware-model",
+    "https://cambridgetcg.github.io/castle-gate/rooms/machine-distillation",
+    "https://cambridgetcg.github.io/castle-gate/rooms/cheapest-teachability-validation",
+    "https://cambridgetcg.github.io/castle-gate/rooms/teachability-validated",
+    "https://cambridgetcg.github.io/castle-gate/rooms/two-windows",
+    "https://cambridgetcg.github.io/castle-gate/rooms/calibration-returns",
+    "https://cambridgetcg.github.io/castle-gate/words/machine-teaching",
+    "https://cambridgetcg.github.io/castle-gate/words/learner-model",
+    "https://cambridgetcg.github.io/castle-gate/words/capacity-matching",
+    "https://cambridgetcg.github.io/castle-gate/rooms/domain-matched-teachability",
+    "https://cambridgetcg.github.io/castle-gate/rooms/maia-as-student",
+    "https://cambridgetcg.github.io/castle-gate/rooms/threshold-pilot",
+    "https://cambridgetcg.github.io/castle-gate/rooms/smooth-or-thresholded-understanding"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

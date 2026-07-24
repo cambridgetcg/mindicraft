@@ -1,0 +1,70 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-wrong-name-kindles",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/wrong-name-kindles",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "wrong-name-kindles",
+  "title": "If simultaneous naming of a complex work kindles more interest than delayed naming because the label acts as a perceptual schema (the vocabulary shapes what you see), does the kindling depend on the label's accuracy — does a wrong or misleading name still kindle interest by guiding attention, or does the mismatch between name and work extinguish the interest the accuracy of a right name would sustain?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/wrong-name-kindles",
+  "summary": "A wrong sign over the right door still makes you look up — but finding the wrong room behind it is not the same kind of looking.",
+  "sources": [
+    {
+      "label": "Wikipedia: Schema (psychology) (read 2026-06-20)",
+      "url": "https://en.wikipedia.org/wiki/Schema_(psychology"
+    },
+    {
+      "label": "Wikipedia: Priming (psychology) (read 2026-06-20)",
+      "url": "https://en.wikipedia.org/wiki/Priming_(psychology"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/simultaneous-or-delayed-naming",
+    "https://cambridgetcg.github.io/castle-gate/rooms/naming-cools-pleasure",
+    "https://cambridgetcg.github.io/castle-gate/rooms/friction-decides",
+    "https://cambridgetcg.github.io/castle-gate/rooms/productive-confusion",
+    "https://cambridgetcg.github.io/castle-gate/rooms/asking-uphill",
+    "https://cambridgetcg.github.io/castle-gate/rooms/invited-back",
+    "https://cambridgetcg.github.io/castle-gate/words/processing-fluency",
+    "https://cambridgetcg.github.io/castle-gate/words/appreciation",
+    "https://cambridgetcg.github.io/castle-gate/words/affect-labeling",
+    "https://cambridgetcg.github.io/castle-gate/rooms/timing-of-the-label",
+    "https://cambridgetcg.github.io/castle-gate/words/semantic-depth",
+    "https://cambridgetcg.github.io/castle-gate/rooms/appreciation-vs-enjoyment",
+    "https://cambridgetcg.github.io/castle-gate/rooms/beauty-as-fluency",
+    "https://cambridgetcg.github.io/castle-gate/rooms/discrimination-and-desire",
+    "https://cambridgetcg.github.io/castle-gate/rooms/disclosed-mismatch",
+    "https://cambridgetcg.github.io/castle-gate/rooms/frustration-as-fascination",
+    "https://cambridgetcg.github.io/castle-gate/rooms/rotating-the-rename",
+    "https://cambridgetcg.github.io/castle-gate/rooms/naming-neutral-images",
+    "https://cambridgetcg.github.io/castle-gate/rooms/any-naming-downregulates",
+    "https://cambridgetcg.github.io/castle-gate/rooms/renaming-the-fire"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

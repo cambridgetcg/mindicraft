@@ -1,0 +1,77 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-twenty-sittings",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/twenty-sittings",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "twenty-sittings",
+  "title": "Twenty judges cancel each other's biases — could twenty sittings of one judge do the same: do a lone learner's repeated comparisons across days decorrelate like separate eyes, or does one head's bias simply repeat?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/twenty-sittings",
+  "summary": "Twenty mornings, one pair of eyes: the light changes every day, the astigmatism never does.",
+  "sources": [
+    {
+      "label": "Vul & Pashler, Measuring the Crowd Within (Psychological Science, 2008)",
+      "url": "http://www.evullab.org/pdf/VulPashler-PS-2008.pdf"
+    },
+    {
+      "label": "Steegen, Dewitte, Tuerlinckx & Vanpaemel, Measuring the crowd within again: a pre-registered replication (Frontiers in Psychology, 2014)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4112915/"
+    },
+    {
+      "label": "Herzog & Hertwig, The Wisdom of Many in One Mind: Improving Individual Judgments With Dialectical Bootstrapping (Psychological Science, 2009)",
+      "url": "https://journals.sagepub.com/doi/10.1111/j.1467-9280.2009.02271.x"
+    },
+    {
+      "label": "BPS Research Digest, Unleash the crowd within",
+      "url": "https://www.bps.org.uk/research-digest/unleash-crowd-within"
+    },
+    {
+      "label": "Herzog & Hertwig, The Crowd Within and the Benefits of Dialectical Bootstrapping: A Reply to White and Antonakis (Psychological Science, 2013)",
+      "url": "https://www.researchgate.net/publication/233805408_The_Crowd_Within_and_the_Benefits_of_Dialectical_Bootstrapping_A_Reply_to_White_and_Antonakis_2013"
+    },
+    {
+      "label": "Efendić & Van de Calseyde, Tap into the Wisdom of Your 'Inner Crowd' (Behavioral Scientist)",
+      "url": "https://behavioralscientist.org/tap-into-the-wisdom-of-your-inner-crowd/"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/better-than-i-was",
+    "https://cambridgetcg.github.io/castle-gate/rooms/reread-or-refamiliar",
+    "https://cambridgetcg.github.io/castle-gate/rooms/truing-the-level",
+    "https://cambridgetcg.github.io/castle-gate/rooms/standard-without-a-key",
+    "https://cambridgetcg.github.io/castle-gate/words/inner-crowd",
+    "https://cambridgetcg.github.io/castle-gate/words/clerk",
+    "https://cambridgetcg.github.io/castle-gate/words/calibration",
+    "https://cambridgetcg.github.io/castle-gate/rooms/fading-alone",
+    "https://cambridgetcg.github.io/castle-gate/rooms/reading-a-literature",
+    "https://cambridgetcg.github.io/castle-gate/rooms/taste-or-lean",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-true-measure-of-growth"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

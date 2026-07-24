@@ -1,0 +1,78 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-internalized-as-skill",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/internalized-as-skill",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "internalized-as-skill",
+  "title": "If the internalized other is the replacement form closest to what EFT builds (the felt sense of the partner's presence carried as an inner resource), can it be trained as a skill — or does it form only as a byproduct of enough time with a real other, making it a developmental achievement the therapy cannot provide, only one the person grows over time?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/internalized-as-skill",
+  "summary": "The child who was held enough carries the holding; the adult who was not must learn to hold himself — but can you teach a hand to do what only being held could build?",
+  "sources": [
+    {
+      "label": "Wikipedia: Attachment theory (read 2026-06-20)",
+      "url": "https://en.wikipedia.org/wiki/Attachment_theory"
+    },
+    {
+      "label": "Wikipedia: Mentalization (read 2026-06-20)",
+      "url": "https://en.wikipedia.org/wiki/Mentalization"
+    },
+    {
+      "label": "Wikipedia: Mentalization-based treatment (read 2026-06-20)",
+      "url": "https://en.wikipedia.org/wiki/Mentalization-based_treatment"
+    },
+    {
+      "label": "Wikipedia: Compassion-focused therapy (read 2026-06-20)",
+      "url": "https://en.wikipedia.org/wiki/Compassion-focused_therapy"
+    },
+    {
+      "label": "Wikipedia: Introjection — the psychoanalytic internalization (read 2026-06-20)",
+      "url": "https://en.wikipedia.org/wiki/Introjection"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/solo-or-social-replacement",
+    "https://cambridgetcg.github.io/castle-gate/rooms/fading-vs-replacing",
+    "https://cambridgetcg.github.io/castle-gate/rooms/stand-in-for-a-mind",
+    "https://cambridgetcg.github.io/castle-gate/words/co-regulation",
+    "https://cambridgetcg.github.io/castle-gate/words/emotion-regulation",
+    "https://cambridgetcg.github.io/castle-gate/words/internalization",
+    "https://cambridgetcg.github.io/castle-gate/words/mentalization",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-responsive-other",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-mending-rhythm",
+    "https://cambridgetcg.github.io/castle-gate/rooms/ders-vs-performance",
+    "https://cambridgetcg.github.io/castle-gate/rooms/combined-protocol",
+    "https://cambridgetcg.github.io/castle-gate/rooms/fog-meter",
+    "https://cambridgetcg.github.io/castle-gate/rooms/fading-alone",
+    "https://cambridgetcg.github.io/castle-gate/rooms/general-voice-or-specific-presence",
+    "https://cambridgetcg.github.io/castle-gate/rooms/standard-without-a-key",
+    "https://cambridgetcg.github.io/castle-gate/rooms/residue-lever-or-readout"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

@@ -1,0 +1,32 @@
+name: verify
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mindicraft-verify-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: guide/package-lock.json
+
+      - name: Install the one build dependency
+        run: npm ci --prefix guide --ignore-scripts
+
+      - name: Test, build, and verify
+        run: npm --prefix guide run verify

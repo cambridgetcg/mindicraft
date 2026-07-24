@@ -21,6 +21,7 @@ const RESOURCES = {
   '/': { reps: ['text/html', 'application/json'], def: 'text/html', jsonAsset: '/api/index.json' },
   '/api/index.json': { reps: ['application/json'], def: 'application/json' },
   '/api/tree.json': { reps: ['application/json'], def: 'application/json' },
+  '/api/castle/index.json': { reps: ['application/json'], def: 'application/json' },
 };
 
 // ---- Accept negotiation (RFC 9110 flavor, small and honest) ----

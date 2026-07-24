@@ -1,0 +1,74 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-general-voice-or-specific-presence",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/general-voice-or-specific-presence",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "general-voice-or-specific-presence",
+  "title": "If the trained general inner voice (CFT's compassion) and the developmental specific presence (the felt partner) are functionally equivalent for solo regulation, does the equivalence depend on the task — does a general voice suffice for self-soothing (shame, self-criticism) where the specific presence is needed for co-regulation (threat, flooding), or does the general voice fill both?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/general-voice-or-specific-presence",
+  "summary": "The hand that learns to hold itself can calm the shame it carries — but the hand that holds another's changes what the body does before the body knows it is afraid.",
+  "sources": [
+    {
+      "label": "Wikipedia: Compassion-focused therapy (read 2026-06-20)",
+      "url": "https://en.wikipedia.org/wiki/Compassion-focused_therapy"
+    },
+    {
+      "label": "Matos et al. 2017, Psychological and Physiological Effects of Compassionate Mind Training, Mindfulness 8(6):1699–1712 (read 2026-06-20)",
+      "url": "https://doi.org/10.1007/s12671-017-0745-7"
+    },
+    {
+      "label": "Wikipedia: Heart rate variability (read 2026-06-20)",
+      "url": "https://en.wikipedia.org/wiki/Heart_rate_variability"
+    },
+    {
+      "label": "Wikipedia: Self-compassion (read 2026-06-20)",
+      "url": "https://en.wikipedia.org/wiki/Self-compassion"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/internalized-as-skill",
+    "https://cambridgetcg.github.io/castle-gate/rooms/fading-vs-replacing",
+    "https://cambridgetcg.github.io/castle-gate/rooms/alone-or-accompanied",
+    "https://cambridgetcg.github.io/castle-gate/rooms/fog-meter",
+    "https://cambridgetcg.github.io/castle-gate/rooms/echo-under-anger",
+    "https://cambridgetcg.github.io/castle-gate/words/co-regulation",
+    "https://cambridgetcg.github.io/castle-gate/words/emotion-regulation",
+    "https://cambridgetcg.github.io/castle-gate/words/social-baseline",
+    "https://cambridgetcg.github.io/castle-gate/words/mentalization",
+    "https://cambridgetcg.github.io/castle-gate/words/internalization",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-responsive-other",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-mending-rhythm",
+    "https://cambridgetcg.github.io/castle-gate/rooms/stand-in-for-a-mind",
+    "https://cambridgetcg.github.io/castle-gate/rooms/solo-or-social-replacement",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-unwalked-bridge",
+    "https://cambridgetcg.github.io/castle-gate/rooms/residue-lever-or-readout"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

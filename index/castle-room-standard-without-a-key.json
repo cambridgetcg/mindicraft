@@ -1,0 +1,91 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-standard-without-a-key",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/standard-without-a-key",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "standard-without-a-key",
+  "title": "Honest self-fading leans entirely on a worked solution to grade against — in fields with no answer key (an essay, a design, a research plan), what stands in as the standard, or is self-fading impossible there?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/standard-without-a-key",
+  "summary": "No plumb line came with this wall — so the mason takes down a wall she admires, rebuilds it blind, and reads the differences as her line.",
+  "sources": [
+    {
+      "label": "Worked-example effect (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Worked-example_effect"
+    },
+    {
+      "label": "Sadler's formative assessment model revisited (Teaching in Higher Education, 2023)",
+      "url": "https://www.tandfonline.com/doi/full/10.1080/13562517.2023.2244439"
+    },
+    {
+      "label": "Andrade, A Critical Review of Research on Student Self-Assessment (Frontiers in Education, 2019)",
+      "url": "https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2019.00087/full"
+    },
+    {
+      "label": "León, Panadero & García-Martínez, How accurate are our students? A meta-analysis of self-assessment (2023)",
+      "url": "https://ernestopanadero.es/Publications/Articles/078_Leon_et_al_2023_How_accurate_ar_our_students.pdf"
+    },
+    {
+      "label": "Adaptive comparative judgement (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Adaptive_comparative_judgement"
+    },
+    {
+      "label": "Adaptive comparative judgement in a law exam (Frontiers in Education, 2026)",
+      "url": "https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2026.1755046/full"
+    },
+    {
+      "label": "Self-assessment accuracy in 426 first-semester medical students (PMC, 2024)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11515314/"
+    },
+    {
+      "label": "The problems with deliberate practice (Commoncog)",
+      "url": "https://commoncog.com/the-problems-with-deliberate-practice/"
+    },
+    {
+      "label": "Anders Ericsson on deliberate practice (summary)",
+      "url": "https://ysamphy.com/anders-ericsson-deliberate-practice/"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/naming-the-tacit",
+    "https://cambridgetcg.github.io/castle-gate/rooms/fading-alone",
+    "https://cambridgetcg.github.io/castle-gate/rooms/reread-or-refamiliar",
+    "https://cambridgetcg.github.io/castle-gate/rooms/training-the-eye",
+    "https://cambridgetcg.github.io/castle-gate/rooms/when-the-trade-flips",
+    "https://cambridgetcg.github.io/castle-gate/rooms/pretty-or-well-made",
+    "https://cambridgetcg.github.io/castle-gate/rooms/checklist-or-exemplar",
+    "https://cambridgetcg.github.io/castle-gate/rooms/internalized-as-skill",
+    "https://cambridgetcg.github.io/castle-gate/rooms/better-than-i-was",
+    "https://cambridgetcg.github.io/castle-gate/rooms/truing-the-level",
+    "https://cambridgetcg.github.io/castle-gate/rooms/fog-meter",
+    "https://cambridgetcg.github.io/castle-gate/rooms/twenty-sittings",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-true-measure-of-growth"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

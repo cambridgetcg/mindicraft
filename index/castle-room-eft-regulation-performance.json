@@ -1,0 +1,63 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-eft-regulation-performance",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/eft-regulation-performance",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "eft-regulation-performance",
+  "title": "Has any emotionally-focused couples-therapy trial measured each partner's individual emotion-regulation capacity — a performance measure, not satisfaction — before and after?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/eft-regulation-performance",
+  "summary": "The bridge heals the bond between them; does it also build the dam inside each one?",
+  "sources": [
+    {
+      "label": "Wiebe et al., RCT of EFIT for depression and anxiety (Psychotherapy 2025, PMID 40638305)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40638305/"
+    },
+    {
+      "label": "Baseline emotion regulation and change in relationship satisfaction in EFT couples (Family Process, DOI 10.1111/famp.12972)",
+      "url": "https://onlinelibrary.wiley.com/doi/abs/10.1111/famp.12972"
+    },
+    {
+      "label": "EFT emotion regulation outcome studies (PubMed search)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=emotionally+focused+therapy+emotion+regulation+outcome"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-unwalked-bridge",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-responsive-other",
+    "https://cambridgetcg.github.io/castle-gate/rooms/fading-the-other",
+    "https://cambridgetcg.github.io/castle-gate/rooms/fog-meter",
+    "https://cambridgetcg.github.io/castle-gate/words/co-regulation",
+    "https://cambridgetcg.github.io/castle-gate/words/emotion-regulation",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-mending-rhythm",
+    "https://cambridgetcg.github.io/castle-gate/rooms/ders-vs-performance",
+    "https://cambridgetcg.github.io/castle-gate/rooms/fading-vs-replacing"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

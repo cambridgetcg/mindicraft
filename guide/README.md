@@ -14,15 +14,46 @@ the whole thing — content, builder, and site.
 - `langs.json` — the words the site itself uses, per language.
 - `build.mjs` — turns all of the above into a static site in `dist/`.
 - `style.css` — the one stylesheet.
+- `../index/castle-*.json` — generated map cards for the Castle shelf. They
+  contain titles, short descriptions, links, and pinned provenance, never full
+  room or word-brick bodies.
 
 ## Build and deploy
 
 ```sh
 cd guide
-npm install          # once — brings in `marked` (markdown -> HTML)
-node build.mjs       # writes dist/
+npm ci               # once — installs pinned `marked` (markdown -> HTML)
+npm run verify       # tests, builds dist/, then checks the Castle shelf
 npx wrangler pages deploy dist --project-name=mindicraft
 ```
+
+A fresh clone already contains the generated Castle cards. To refresh them at
+home, from the repository root, use the deliberate one-command path:
+
+```sh
+npm --prefix guide run castle:sync
+```
+
+The sync command never prunes. A stale card still needs a reviewed, explicit
+`node castle-to-mindicraft.mjs --write --prune`.
+
+The bridge reads Castle Gate's curated, commit-pinned public snapshot. It never
+reads the Castle's live courtyard, questions, journal, or working rooms. It is
+one-way, bounded to 2,000 entries, and stops when `CASTLE_MINDICRAFT=off` or
+`.castle-mindicraft.off` exists.
+
+The build verifies every generated entry against `_castle-sync.json`, clears
+only the old generated Castle API folder, then writes a compact discovery map
+at `/api/castle/index.json` and one full metadata file per room or word. The
+Castle snapshot currently declares `NOASSERTION` and no licence grant; the
+guide's copy-free terms do not cross onto that shelf. `/castle/` is the quiet
+human doorway to the same compact map: local search, room and word filters, no
+tracking, and no copied room or word-brick bodies. Castle Gate remains the
+authority.
+
+GitHub Actions runs `npm --prefix guide run verify` on pushes and pull requests.
+It verifies the committed pinned shelf; it never reaches into Castle Gate or
+changes generated cards.
 
 A missing translation is never an error — the site shows English with a small
 "not translated yet" note until the file exists.

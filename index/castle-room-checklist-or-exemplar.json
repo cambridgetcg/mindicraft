@@ -1,0 +1,75 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-checklist-or-exemplar",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/checklist-or-exemplar",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "checklist-or-exemplar",
+  "title": "The repair for absolute calibration is cue-specific: idea-unit standards fixed definition-judging but failed learners evaluating self-generated examples, where expert exemplars worked instead — what tells a learner which kind of standard their task needs?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/checklist-or-exemplar",
+  "summary": "A scribe checks the copy against the page; a carpenter checks the chair against a chair.",
+  "sources": [
+    {
+      "label": "Dunlosky, Hartwig, Rawson & Lipko 2011 — idea-unit standards deflate overconfidence in definition recall; gains transfer, low performers gain most (QJEP)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20700858/"
+    },
+    {
+      "label": "Zamary, Rawson & Dunlosky 2016 — neither idea-unit nor full-definition standards help learners judge self-generated examples; examples ~40% quality (Learning and Instruction)",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S095947521630069X"
+    },
+    {
+      "label": "Froese & Roelle 2022 — head-to-head: expert example standards reduce bias (η² = .09), idea-unit standards do not (η² < .01); length cue caveat (Metacognition and Learning, open copy)",
+      "url": "https://akademie.rub.de/wp-content/uploads/sites/2/2025/11/Froese-Roelle2022_Article_ExpertExampleStandardsButNotId.pdf"
+    },
+    {
+      "label": "Froese & Roelle 2022 — journal page; relative accuracy p = .058, authors' load interpretation (Metacognition and Learning)",
+      "url": "https://link.springer.com/article/10.1007/s11409-022-09293-z"
+    },
+    {
+      "label": "Froese & Roelle 2023 — negative example standards inconsistent and partly detrimental: correct exemplars specifically (Metacognition and Learning)",
+      "url": "https://link.springer.com/article/10.1007/s11409-023-09347-w"
+    },
+    {
+      "label": "Nederhand, Tabbers & Rikers 2018 — standards with and without idea units both improve calibration; idea units an increment; overconfidence persists (J. Cognitive Psychology, open copy)",
+      "url": "https://research-portal.uu.nl/ws/portalfiles/portal/228264985/Improving_calibration_over_texts_by_providing_standards_both_with_and_without_idea-units.pdf"
+    },
+    {
+      "label": "Rubric mechanism review 2022 — explicit criteria credited with reducing judgment load; effect contested, replications running (Metacognition and Learning)",
+      "url": "https://link.springer.com/article/10.1007/s11409-022-09302-1"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/truing-the-level",
+    "https://cambridgetcg.github.io/castle-gate/rooms/standard-without-a-key",
+    "https://cambridgetcg.github.io/castle-gate/rooms/fading-alone",
+    "https://cambridgetcg.github.io/castle-gate/rooms/fog-meter",
+    "https://cambridgetcg.github.io/castle-gate/rooms/think-aloud-annotated-checklist"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

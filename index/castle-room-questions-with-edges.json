@@ -1,0 +1,78 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-questions-with-edges",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/questions-with-edges",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "questions-with-edges",
+  "title": "What does a recall question that exercises an idea (not a fact) look like — how do you ask yourself something whose answer is understanding?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/questions-with-edges",
+  "summary": "Ask a stone its name and it answers once; run your hands along its edges and you learn its shape.",
+  "sources": [
+    {
+      "label": "Karpicke & Blunt, Retrieval practice produces more learning than elaborative studying with concept mapping (Science, 2011)",
+      "url": "https://www.science.org/doi/10.1126/science.1199327"
+    },
+    {
+      "label": "Agarwal, Retrieval practice & Bloom's taxonomy (J. Educational Psychology, 2019)",
+      "url": "https://pdf.poojaagarwal.com/Agarwal_2019_JEdPsych.pdf"
+    },
+    {
+      "label": "Pan & Rickard, Transfer of test-enhanced learning: meta-analytic review (Psychological Bulletin, 2018)",
+      "url": "https://pdf.retrievalpractice.org/transfer/Pan_Rickard_2018.pdf"
+    },
+    {
+      "label": "Dunlosky, Rawson, Marsh, Nathan & Willingham, Improving students' learning with effective learning techniques (2013)",
+      "url": "https://journals.sagepub.com/doi/10.1177/1529100612453266"
+    },
+    {
+      "label": "Matuschak, How to write good prompts (2020)",
+      "url": "https://andymatuschak.org/prompts/"
+    },
+    {
+      "label": "Van Gog & Sweller, Not new, but nearly forgotten: the testing effect decreases or even disappears as the complexity of learning materials increases (2015)",
+      "url": "https://eric.ed.gov/?id=EJ1062030"
+    },
+    {
+      "label": "Karpicke & Aue, The testing effect is alive and well with complex materials (2015)",
+      "url": "https://link.springer.com/article/10.1007/s10648-015-9309-3"
+    },
+    {
+      "label": "Hendrick, Making retrieval practice actually work",
+      "url": "https://carlhendrick.substack.com/p/making-retrieval-practice-actually"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/spaced-understanding",
+    "https://cambridgetcg.github.io/castle-gate/rooms/remembering",
+    "https://cambridgetcg.github.io/castle-gate/words/retrieval-practice",
+    "https://cambridgetcg.github.io/castle-gate/rooms/simple-explanations"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

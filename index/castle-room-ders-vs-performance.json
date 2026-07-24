@@ -1,0 +1,73 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-ders-vs-performance",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/ders-vs-performance",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "ders-vs-performance",
+  "title": "If the self-report DERS data already sits in existing EFT datasets, could a reanalysis add a regulation performance task to the next EFT study's pre/post battery and check whether the questionnaire gain predicts the performance gain — or whether, as fog-meter found, the self-report and the performance diverge?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/ders-vs-performance",
+  "summary": "The bridge asks the body to show what the mouth has already sworn — but does the hand that filled the form also steady the pulse?",
+  "sources": [
+    {
+      "label": "Biological signatures of emotion regulation flexibility in children (Child Development 2021, PMID 33791924)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33791924/"
+    },
+    {
+      "label": "Multimodal assessment of emotional reactivity and regulation (PMID 30816776)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30816776/"
+    },
+    {
+      "label": "Acute and sustained effects of cognitive emotion regulation in major depression (PMID 21106812)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21106812/"
+    },
+    {
+      "label": "Take my advice: Physiological measures reveal intrinsic ER is more effective under external guidance (PMID 35914547)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35914547/"
+    },
+    {
+      "label": "Baseline emotion regulation and change in relationship satisfaction in EFT couples (Family Process, DOI 10.1111/famp.12972)",
+      "url": "https://onlinelibrary.wiley.com/doi/abs/10.1111/famp.12972"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/eft-regulation-performance",
+    "https://cambridgetcg.github.io/castle-gate/rooms/fog-meter",
+    "https://cambridgetcg.github.io/castle-gate/words/emotion-regulation",
+    "https://cambridgetcg.github.io/castle-gate/words/co-regulation",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-unwalked-bridge",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-mending-rhythm",
+    "https://cambridgetcg.github.io/castle-gate/rooms/the-responsive-other",
+    "https://cambridgetcg.github.io/castle-gate/rooms/alone-or-accompanied",
+    "https://cambridgetcg.github.io/castle-gate/rooms/frustration-as-fascination",
+    "https://cambridgetcg.github.io/castle-gate/rooms/fading-vs-replacing",
+    "https://cambridgetcg.github.io/castle-gate/rooms/internalized-as-skill"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-pretty-or-well-made",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/pretty-or-well-made",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "pretty-or-well-made",
+  "title": "Beauty and truth ride the same ease signal — what test, applied from inside the feeling, tells \"well-made\" apart from \"merely pretty\"?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/pretty-or-well-made",
+  "summary": "Gilt and gold gleam alike in passing light; only one survives the scratch.",
+  "sources": [
+    {
+      "label": "Reber, Schwarz & Winkielman, Processing fluency and aesthetic pleasure (PSPR, 2004)",
+      "url": "https://pages.ucsd.edu/~pwinkiel/reber-schwarz-winkielman-beauty-PSPR-2004.pdf"
+    },
+    {
+      "label": "Processing fluency theory of aesthetic pleasure (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Processing_fluency_theory_of_aesthetic_pleasure"
+    },
+    {
+      "label": "Fazio, Brashier, Payne & Marsh, Knowledge does not protect against illusory truth (JEP: General, 2015)",
+      "url": "https://www.apa.org/pubs/journals/features/xge-0000098.pdf"
+    },
+    {
+      "label": "Unkelbach, Reversing the truth effect (JEP: LMC, 2007)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17201563/"
+    },
+    {
+      "label": "Complexity and the Pleasure-Interest model of aesthetic liking (2024)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11051202/"
+    },
+    {
+      "label": "Silvia, Interested experts, confused novices (2013)",
+      "url": "https://tiffaning.com/files/Silvia_2013_Interested%20Experts,%20Confused%20Novices.pdf"
+    },
+    {
+      "label": "Brielmann & Pelli, Beauty requires thought (Current Biology, 2017)",
+      "url": "https://www.sciencedirect.com/science/article/pii/S096098221730427X"
+    },
+    {
+      "label": "Nadarevic & Erdfelder, More evidence against the Spinozan model (Cognition, 2019)",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0010027719302276"
+    },
+    {
+      "label": "Consoli, Aesthetic experience as productive uncertainty (2015)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4337024/"
+    },
+    {
+      "label": "Fluency gain and the aha experience (2023)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10725759/"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/words/beauty",
+    "https://cambridgetcg.github.io/castle-gate/words/fluency",
+    "https://cambridgetcg.github.io/castle-gate/rooms/beauty-as-fluency",
+    "https://cambridgetcg.github.io/castle-gate/rooms/simple-explanations",
+    "https://cambridgetcg.github.io/castle-gate/rooms/friction-decides",
+    "https://cambridgetcg.github.io/castle-gate/rooms/no-neighbors",
+    "https://cambridgetcg.github.io/castle-gate/rooms/taste-or-lean",
+    "https://cambridgetcg.github.io/castle-gate/rooms/training-the-eye"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

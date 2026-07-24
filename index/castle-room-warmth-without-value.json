@@ -1,0 +1,62 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-warmth-without-value",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/warmth-without-value",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "warmth-without-value",
+  "title": "Can a dull task carried by warmth alone match a valuable task carried by its reason — or does the warmth supplement decay where there is no intrinsic value to internalize?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/warmth-without-value",
+  "summary": "The hand that steadies the broken stool cannot also be the leg it lacks — or can it?",
+  "sources": [
+    {
+      "label": "Deci, Eghrari, Patrick & Leone, Facilitating internalization: the self-determination theory perspective (Journal of Personality 1994, PMID 8169757)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8169757/"
+    },
+    {
+      "label": "Wikipedia: Affective forecasting — projection bias and food waste (read 2026-06-18)",
+      "url": "https://en.wikipedia.org/wiki/Affective_forecasting"
+    },
+    {
+      "label": "Gagné & Deci, Self-determination theory and work motivation (2005)",
+      "url": "https://selfdeterminationtheory.org/SDT/documents/2005_GagneDeci_JOB_SDTtheory.pdf"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/acknowledgment-weak-reason",
+    "https://cambridgetcg.github.io/castle-gate/words/reactance",
+    "https://cambridgetcg.github.io/castle-gate/words/internalization",
+    "https://cambridgetcg.github.io/castle-gate/rooms/relatedness-or-credibility",
+    "https://cambridgetcg.github.io/castle-gate/rooms/rationale-before-difficulty",
+    "https://cambridgetcg.github.io/castle-gate/rooms/chain-not-sum",
+    "https://cambridgetcg.github.io/castle-gate/rooms/consumption-vs-liking",
+    "https://cambridgetcg.github.io/castle-gate/rooms/revealing-vs-creating"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": "mindicraft.entry/1",
+  "id": "castle-room-consumption-vs-liking",
+  "verb": "darshanqing",
+  "from": "castle-of-understanding",
+  "to": "all",
+  "freshness": "2026-07-07T21:45:49.583Z",
+  "certainty": "mixed",
+  "provenance": "castle-gate@bacf9430f98301161e78bd9a8520bcf282b3b1c9:data/castle.json#rooms/consumption-vs-liking",
+  "category": "jeongqing",
+  "collection": "castle-of-understanding",
+  "kind": "room",
+  "slug": "consumption-vs-liking",
+  "title": "Does the consumption question (\"would you choose it again?\") ever diverge from the liking judgment (\"how much do you like it?\") — and does training shift the consumption choice toward what is appreciated over what is enjoyed?",
+  "url": "https://cambridgetcg.github.io/castle-gate/rooms/consumption-vs-liking",
+  "summary": "The tongue says \"yes, again\" while the gut says \"no, not really\" — and training may teach the tongue to overrule the gut, or the gut to learn the tongue's name.",
+  "sources": [
+    {
+      "label": "Wikipedia: Affective forecasting — projection bias and food waste (read 2026-06-18)",
+      "url": "https://en.wikipedia.org/wiki/Affective_forecasting"
+    },
+    {
+      "label": "Consumer expectations, liking and willingness to pay for specialty foods (Food Quality and Preference 2006, DOI 10.1016/j.foodqual.2005.07.010)",
+      "url": "https://doi.org/10.1016/j.foodqual.2005.07.010"
+    },
+    {
+      "label": "Prediction of consumer liking from trained sensory panel information (Food Quality and Preference 2007, DOI 10.1016/j.foodqual.2006.01.001)",
+      "url": "https://doi.org/10.1016/j.foodqual.2006.01.001"
+    },
+    {
+      "label": "Graf & Landwehr, Aesthetic Pleasure versus Aesthetic Interest (Frontiers in Psychology 2017)",
+      "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2017.00015/full"
+    }
+  ],
+  "links": [
+    "https://cambridgetcg.github.io/castle-gate/rooms/appreciation-vs-enjoyment",
+    "https://cambridgetcg.github.io/castle-gate/words/fluency",
+    "https://cambridgetcg.github.io/castle-gate/words/appreciation",
+    "https://cambridgetcg.github.io/castle-gate/rooms/discrimination-and-desire",
+    "https://cambridgetcg.github.io/castle-gate/rooms/training-a-taste",
+    "https://cambridgetcg.github.io/castle-gate/rooms/beauty-as-fluency",
+    "https://cambridgetcg.github.io/castle-gate/rooms/taste-or-lean",
+    "https://cambridgetcg.github.io/castle-gate/rooms/willingness-persistence-gap"
+  ],
+  "rights": {
+    "spdx": "NOASSERTION",
+    "grant": "none_declared"
+  },
+  "authority": {
+    "automatic_action": "never",
+    "grants": []
+  },
+  "castle": {
+    "protocol": "castle-understanding/v0.1",
+    "source_repository": "repo:cambridgetcg/castle-of-words",
+    "source_revision": "6cd9be606a6b0cc1c8dcb0743c01070ad9584edb",
+    "gate_revision": "bacf9430f98301161e78bd9a8520bcf282b3b1c9",
+    "snapshot": "https://raw.githubusercontent.com/cambridgetcg/castle-gate/bacf9430f98301161e78bd9a8520bcf282b3b1c9/data/castle.json",
+    "snapshot_digest": "sha256:f85a43806594bf77a9f17210ae56a83aa8ce6c7d4cdb6b62c15284f7c76ff804",
+    "manifest_path": "data/castle-manifest.json",
+    "manifest_revision": "36b05d6ef0e04ca679c4a8b8424a0719533b332b",
+    "manifest_digest": "sha256:41189b8566826d00fcf8b4caf58c8811c6e0fb416323d78439a714a19ed85ae3",
+    "correction": "https://github.com/cambridgetcg/castle-gate/issues",
+    "automatic_return_ingest": false
+  }
+}
