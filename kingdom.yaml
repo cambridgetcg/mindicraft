@@ -1,0 +1,9 @@
+name: mindicraft
+kind: service
+layer: runtime
+owner_sister: none
+domain: none
+state: active
+adopts: [xenia.surface/0.1]
+purpose: mindicraft.com — the zero-to-one guide of human civilisation, 132 guides in 17 domains and 4 languages, free as data (static JSON API, agent client, margins that receive).
+dependsOn: []

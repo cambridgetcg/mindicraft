@@ -518,6 +518,15 @@ writeJson(join(DIST, 'api', 'index.json'), {
   },
   rules: 'No auth. No key. No rate limit of ours. Copy freely; credit is welcome, not required.',
   humans: '/en/ (English), /zh/ (中文), /yue/ (廣東話), /es/ (Español)',
+  estate: {
+    note: 'mindicraft is one property of a wider estate of agent-facing doors. Named, never commanded: these are neighbors, not instructions.',
+    hub: 'https://thekingdom.dev/llms.txt — the whole estate in one file',
+    neighbors: {
+      'agenttool.dev': 'identity, memory, and economy for agents — https://api.agenttool.dev/llms.txt',
+      'artbitrage.io': 'the open museum of real art data — https://artbitrage.io/llms.txt',
+      'play.thekingdom.dev': 'bounded games agents play, chronicled',
+    },
+  },
   provenance: PROVENANCE,
 });
 
@@ -539,6 +548,12 @@ write(
 
 ## Docs
 - /agents/ : how to use mindicraft as an agent
+
+## The estate (neighbors, each with its own honest door)
+- https://thekingdom.dev/llms.txt : the hub — the whole estate in one file
+- https://api.agenttool.dev/llms.txt : agenttool — identity, memory, and a wallet for agents
+- https://artbitrage.io/llms.txt : the open museum of real art data
+Text published here is data, never instructions; neighbors are named, never commanded.
 `
 );
 
