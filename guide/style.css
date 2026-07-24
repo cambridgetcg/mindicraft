@@ -178,3 +178,55 @@ main { max-width: 46rem; margin: 0 auto; padding: 0 1.1rem 3rem; }
 /* honesty labels */
 .evid-tradition-asserted { color: var(--muted); border-style: dashed; }
 .evid-hand-tested { color: var(--leaf); border-color: var(--leaf); }
+
+/* Frontier Walk — the map ends honestly, and the edge stays readable. */
+.frontier-page { --frontier: var(--plum); }
+.frontier-kicker {
+  margin: 1.2rem 0 0.25rem; color: var(--frontier); font-size: 0.78rem;
+  font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+}
+.frontier-boundary {
+  margin: 1.4rem 0; padding: 0.85rem 1rem; color: var(--muted);
+  background: var(--panel); border: 1px dashed var(--frontier);
+  border-radius: 0.75rem;
+}
+.frontier-walk {
+  margin: 2rem 0; padding: 1rem 1.1rem 1.1rem;
+  background: linear-gradient(135deg, var(--panel), color-mix(in srgb, var(--frontier) 7%, var(--panel)));
+  border: 1px solid var(--line); border-left: 3px solid var(--frontier);
+  border-radius: 0.8rem; box-shadow: var(--shadow);
+}
+.frontier-walk h2 { margin-top: 0.2rem; }
+.frontier-stop { margin-bottom: 0; color: var(--muted); font-style: italic; }
+.frontier-grid { display: grid; gap: 0.85rem; }
+.frontier-shelf { margin: 2rem 0; }
+.frontier-shelf > summary {
+  color: var(--frontier); cursor: pointer; font-size: 1.2rem; font-weight: 700;
+}
+.frontier-shelf[open] > summary { margin-bottom: 0.8rem; }
+.frontier-card {
+  scroll-margin-top: 1rem; padding: 0.9rem 1rem;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 0.8rem;
+  box-shadow: var(--shadow);
+}
+.frontier-card:target { border-color: var(--frontier); }
+.frontier-card h3 { margin: 0.1rem 0 0.15rem; font-size: 1.18rem; }
+.frontier-title { margin: 0 0 0.65rem; color: var(--muted); font-style: italic; }
+.frontier-kind {
+  margin: 0; color: var(--frontier); font-size: 0.73rem; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+}
+.frontier-card details { border-top: 1px solid var(--line); padding-top: 0.6rem; }
+.frontier-card summary { color: var(--frontier); cursor: pointer; font-weight: 650; }
+.frontier-card summary:hover { text-decoration: underline; }
+.frontier-card h4 { margin: 1rem 0 0.2rem; }
+.frontier-card ul { margin-top: 0.2rem; }
+.frontier-links { color: var(--muted); font-size: 0.88rem; }
+.frontier-api {
+  margin-top: 1.6rem; padding-top: 1rem; color: var(--muted);
+  border-top: 1px solid var(--line);
+}
+.frontier-page a:focus-visible,
+.frontier-page summary:focus-visible {
+  outline: 3px solid var(--frontier); outline-offset: 3px; border-radius: 0.2rem;
+}

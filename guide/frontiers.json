@@ -1,0 +1,583 @@
+{
+  "schema_version": "mindicraft.frontiers-source/1",
+  "title": "Frontier Walk",
+  "description": "A small reviewed shelf of honest unknowns at the edge of craft, learning, life, and the universe.",
+  "reviewed_at": "2026-07-24",
+  "content_is": "unresolved questions, not instructions or settled knowledge",
+  "authority": {
+    "automatic_action": "never",
+    "grants": [],
+    "writes": "none"
+  },
+  "visit": {
+    "cards": 3,
+    "optional": true,
+    "max_minutes": 15,
+    "optional_link_reads_per_card_max": 3,
+    "reading_note": "Every link is optional. Open at most three links per card; stopping earlier is complete.",
+    "writes": false,
+    "physical_action": false,
+    "reflection_questions": [
+      "What does the source actually show?",
+      "Which part is inference or remains unknown?",
+      "What one result would move the boundary?"
+    ],
+    "return_fields": [
+      "noticed",
+      "inferred",
+      "still-unknown"
+    ],
+    "stop": "Three cards is complete. Leaving with an unknown is complete."
+  },
+  "rights": {
+    "card_text": "Mindicraft-authored metadata under the repository MIT licence.",
+    "linked_sources": "Links and short paraphrases do not change the linked source's rights.",
+    "castle_refs": "Castle map references are link-only: NOASSERTION and no licence grant."
+  },
+  "correction": "https://github.com/cambridgetcg/mindicraft/issues",
+  "cards": [
+    {
+      "id": "hands-answer-back",
+      "kind": "craft",
+      "scope": "mindicraft_record",
+      "title": "When hands answer back",
+      "question": "Which guide would change first if its steps met real hands, materials, and weather?",
+      "status": "open",
+      "fact_ids": [
+        "guide-count",
+        "evidence-record-count",
+        "hand-tested-count"
+      ],
+      "known": [
+        {
+          "text": "The build labels a guide hand-tested only when its evidence record says hand-tested; every other guide is labelled tradition-asserted.",
+          "source_ids": [
+            "guide-builder"
+          ]
+        },
+        {
+          "text": "At review time, the committed evidence registry contains no entries.",
+          "source_ids": [
+            "evidence-registry"
+          ]
+        }
+      ],
+      "unknown": [
+        "Which instructions fail first across different materials, climates, bodies, and skill levels.",
+        "How much independent observation is enough to call a practical guide hand-tested."
+      ],
+      "evidence_that_would_move_it": [
+        "Independent field notes that name the setting, materials, exact step, observed outcome, and correction.",
+        "A repeat test showing whether the correction travels to another setting."
+      ],
+      "inquiry_lenses": [
+        "Which step makes the most assumptions about material, climate, or prior skill?",
+        "What observation would show that the wording, rather than the craft, caused a failure?"
+      ],
+      "related_guides": [
+        "read-this-guide",
+        "keep-records",
+        "teach-children"
+      ],
+      "references": [
+        {
+          "id": "guide-builder",
+          "title": "Mindicraft Guide builder",
+          "url": "https://github.com/cambridgetcg/mindicraft/blob/main/guide/build.mjs",
+          "publisher": "Mindicraft",
+          "kind": "first_party",
+          "observed_at": "2026-07-24",
+          "rights": "Repository MIT licence."
+        },
+        {
+          "id": "evidence-registry",
+          "title": "Mindicraft evidence registry",
+          "url": "https://github.com/cambridgetcg/mindicraft/blob/main/guide/evidence.json",
+          "publisher": "Mindicraft",
+          "kind": "first_party",
+          "observed_at": "2026-07-24",
+          "rights": "Repository MIT licence."
+        }
+      ],
+      "reviewed_at": "2026-07-24"
+    },
+    {
+      "id": "arrows-carry-weight",
+      "kind": "craft",
+      "scope": "mindicraft_record",
+      "title": "Do the arrows carry weight?",
+      "question": "Which needs arrows are truly required, and which are useful preparation?",
+      "status": "open",
+      "fact_ids": [
+        "needs-edge-count"
+      ],
+      "known": [
+        {
+          "text": "Mindicraft uses needs arrows to build a learning path, but its data has no field that distinguishes strict requirement from helpful preparation.",
+          "source_ids": [
+            "tree-source",
+            "guide-builder"
+          ]
+        }
+      ],
+      "unknown": [
+        "Which edges are physically necessary, which are safety scaffolds, and which are merely a sensible teaching order.",
+        "Whether those relations remain true across environments and learners."
+      ],
+      "evidence_that_would_move_it": [
+        "Paired attempts with and without the named prerequisite, recording safety, success, and hidden substitutions.",
+        "A relation vocabulary that separates required, safer-after, easier-after, and conventional-order."
+      ],
+      "inquiry_lenses": [
+        "What becomes impossible if this prerequisite is removed?",
+        "What becomes riskier or harder but still possible?"
+      ],
+      "related_guides": [
+        "bow-drill",
+        "make-cordage",
+        "gather-tinder"
+      ],
+      "references": [
+        {
+          "id": "tree-source",
+          "title": "Mindicraft technology tree",
+          "url": "https://github.com/cambridgetcg/mindicraft/blob/main/guide/tree.json",
+          "publisher": "Mindicraft",
+          "kind": "first_party",
+          "observed_at": "2026-07-24",
+          "rights": "Repository MIT licence."
+        },
+        {
+          "id": "guide-builder",
+          "title": "Mindicraft Guide builder",
+          "url": "https://github.com/cambridgetcg/mindicraft/blob/main/guide/build.mjs",
+          "publisher": "Mindicraft",
+          "kind": "first_party",
+          "observed_at": "2026-07-24",
+          "rights": "Repository MIT licence."
+        }
+      ],
+      "reviewed_at": "2026-07-24"
+    },
+    {
+      "id": "four-tongues-one-skill",
+      "kind": "learning",
+      "scope": "mindicraft_record",
+      "title": "Four tongues, one physical skill",
+      "question": "When one physical skill crosses four languages, what must remain invariant?",
+      "status": "open",
+      "fact_ids": [
+        "language-count",
+        "missing-translation-count"
+      ],
+      "known": [
+        {
+          "text": "The same guide slugs and tree relations are shared across Mindicraft's four language editions.",
+          "source_ids": [
+            "language-source",
+            "tree-source"
+          ]
+        }
+      ],
+      "unknown": [
+        "Whether every translated warning points to the same physical sign, boundary, and action.",
+        "Which local materials or customs make a literal translation technically misleading."
+      ],
+      "evidence_that_would_move_it": [
+        "Bilingual review tied to a shared object, image, measurement, or observed outcome.",
+        "Hand tests in more than one language and place, with disagreements kept rather than averaged away."
+      ],
+      "inquiry_lenses": [
+        "Which physical referent must stay the same when the words change?",
+        "Where might a locally correct explanation need different examples rather than parallel wording?"
+      ],
+      "related_guides": [
+        "useful-knots",
+        "make-soap",
+        "plant-a-village"
+      ],
+      "references": [
+        {
+          "id": "language-source",
+          "title": "Mindicraft language registry",
+          "url": "https://github.com/cambridgetcg/mindicraft/blob/main/guide/langs.json",
+          "publisher": "Mindicraft",
+          "kind": "first_party",
+          "observed_at": "2026-07-24",
+          "rights": "Repository MIT licence."
+        },
+        {
+          "id": "tree-source",
+          "title": "Mindicraft technology tree",
+          "url": "https://github.com/cambridgetcg/mindicraft/blob/main/guide/tree.json",
+          "publisher": "Mindicraft",
+          "kind": "first_party",
+          "observed_at": "2026-07-24",
+          "rights": "Repository MIT licence."
+        }
+      ],
+      "reviewed_at": "2026-07-24"
+    },
+    {
+      "id": "two-windows-on-learning",
+      "kind": "learning",
+      "scope": "mindicraft_record",
+      "title": "Two windows on learning",
+      "question": "Does a lesson an agent reconstructs easily predict what a human can learn?",
+      "status": "open",
+      "fact_ids": [
+        "guide-count",
+        "hand-tested-count"
+      ],
+      "known": [
+        {
+          "text": "Mindicraft can return a guide with its prerequisites as prompt-ready text, but its evidence registry records no paired agent and human learning outcomes.",
+          "source_ids": [
+            "guide-builder",
+            "evidence-registry"
+          ]
+        }
+      ],
+      "unknown": [
+        "Whether fluent reconstruction by an agent predicts correct later performance by a person.",
+        "Which parts of teachability are shared across model, learner, body, and environment."
+      ],
+      "evidence_that_would_move_it": [
+        "Paired tests on the same skill that separate restatement, procedural accuracy, delayed recall, and independent performance.",
+        "Results across multiple guides rather than one unusually easy or difficult lesson."
+      ],
+      "inquiry_lenses": [
+        "Which success measure belongs to the words, and which belongs to later action?",
+        "What result would make agent fluency a poor proxy for human learning?"
+      ],
+      "related_guides": [
+        "read-this-guide",
+        "teach-children",
+        "keep-records"
+      ],
+      "references": [
+        {
+          "id": "guide-builder",
+          "title": "Mindicraft Guide builder",
+          "url": "https://github.com/cambridgetcg/mindicraft/blob/main/guide/build.mjs",
+          "publisher": "Mindicraft",
+          "kind": "first_party",
+          "observed_at": "2026-07-24",
+          "rights": "Repository MIT licence."
+        },
+        {
+          "id": "evidence-registry",
+          "title": "Mindicraft evidence registry",
+          "url": "https://github.com/cambridgetcg/mindicraft/blob/main/guide/evidence.json",
+          "publisher": "Mindicraft",
+          "kind": "first_party",
+          "observed_at": "2026-07-24",
+          "rights": "Repository MIT licence."
+        }
+      ],
+      "related_shelves": [
+        {
+          "label": "Castle map: two windows",
+          "href": "/api/castle/rooms/two-windows.json",
+          "use": "link_only",
+          "rights": "NOASSERTION; no licence grant"
+        },
+        {
+          "label": "Castle map: teachability validated",
+          "href": "/api/castle/rooms/teachability-validated.json",
+          "use": "link_only",
+          "rights": "NOASSERTION; no licence grant"
+        }
+      ],
+      "reviewed_at": "2026-07-24"
+    },
+    {
+      "id": "when-text-answers-back",
+      "kind": "learning",
+      "scope": "mindicraft_record",
+      "title": "When text answers back",
+      "question": "When an agent gives a guide a voice, which misunderstandings can text repair, and which need the world to answer?",
+      "status": "open",
+      "fact_ids": [
+        "guide-count",
+        "evidence-record-count"
+      ],
+      "known": [
+        {
+          "text": "Mindicraft's client can assemble one guide and its prerequisites as text; the static build does not observe a learner acting in the world.",
+          "source_ids": [
+            "guide-builder"
+          ]
+        }
+      ],
+      "unknown": [
+        "Which errors can be repaired through better explanation alone.",
+        "Which errors require feedback from a person, place, material, or measured outcome."
+      ],
+      "evidence_that_would_move_it": [
+        "A repair log separating questions answered from the page from questions settled only by external observation.",
+        "Transfer tests showing whether a repaired explanation survives a new setting."
+      ],
+      "inquiry_lenses": [
+        "Which question can the page answer from its own evidence?",
+        "Which question would be dishonest to answer without a person, place, object, or measurement?"
+      ],
+      "related_guides": [
+        "read-this-guide",
+        "teach-children",
+        "keep-records"
+      ],
+      "references": [
+        {
+          "id": "guide-builder",
+          "title": "Mindicraft Guide builder",
+          "url": "https://github.com/cambridgetcg/mindicraft/blob/main/guide/build.mjs",
+          "publisher": "Mindicraft",
+          "kind": "first_party",
+          "observed_at": "2026-07-24",
+          "rights": "Repository MIT licence."
+        }
+      ],
+      "related_shelves": [
+        {
+          "label": "Castle map: text answers back",
+          "href": "/api/castle/rooms/text-answers-back.json",
+          "use": "link_only",
+          "rights": "NOASSERTION; no licence grant"
+        }
+      ],
+      "reviewed_at": "2026-07-24"
+    },
+    {
+      "id": "what-is-dark-matter",
+      "kind": "cosmos",
+      "scope": "scientific_open_question",
+      "title": "The invisible scaffolding",
+      "question": "What is dark matter?",
+      "status": "open",
+      "fact_ids": [],
+      "known": [
+        {
+          "text": "Galaxy motion, cluster behavior, and gravitational lensing reveal gravitational effects that visible matter alone does not account for.",
+          "source_ids": [
+            "nasa-dark-matter"
+          ]
+        }
+      ],
+      "unknown": [
+        "The composition of the unseen component.",
+        "Whether one candidate explanation accounts for the observations at every scale."
+      ],
+      "evidence_that_would_move_it": [
+        "A reproducible detection that identifies a candidate and matches the astronomical effects.",
+        "An alternative model that makes distinct predictions and survives observations that separate it from particle candidates."
+      ],
+      "inquiry_lenses": [
+        "Which observations measure an effect directly, and which properties enter through a model?",
+        "What result would distinguish a new particle from a change to gravity?"
+      ],
+      "related_guides": [
+        "measure-things",
+        "draw-a-map",
+        "melt-glass"
+      ],
+      "references": [
+        {
+          "id": "nasa-dark-matter",
+          "title": "Dark Matter",
+          "url": "https://science.nasa.gov/dark-matter/",
+          "publisher": "NASA Science",
+          "kind": "official",
+          "observed_at": "2026-07-24",
+          "rights": "NASA source keeps its own rights."
+        }
+      ],
+      "reviewed_at": "2026-07-24"
+    },
+    {
+      "id": "gravity-meets-the-quantum",
+      "kind": "cosmos",
+      "scope": "scientific_open_question",
+      "title": "Where gravity meets the quantum",
+      "question": "Can gravity and quantum theory fit one tested framework?",
+      "status": "open",
+      "fact_ids": [],
+      "known": [
+        {
+          "text": "The Standard Model describes three fundamental interactions but does not include gravity, and CERN describes fitting gravity into that quantum framework as unresolved.",
+          "source_ids": [
+            "cern-standard-model"
+          ]
+        }
+      ],
+      "unknown": [
+        "Which mathematical framework, if any, describes both quantum phenomena and gravity without contradiction.",
+        "Which reachable observation could separate leading approaches."
+      ],
+      "evidence_that_would_move_it": [
+        "A coherent theory that recovers established results and makes a distinct, testable prediction.",
+        "An observation whose outcome rules out meaningful parts of the candidate space."
+      ],
+      "inquiry_lenses": [
+        "Where do the two existing frameworks make contact rather than merely live at different scales?",
+        "What prediction would make a proposed unification vulnerable to being wrong?"
+      ],
+      "related_guides": [
+        "measure-things",
+        "keep-records",
+        "melt-glass"
+      ],
+      "references": [
+        {
+          "id": "cern-standard-model",
+          "title": "The Standard Model",
+          "url": "https://home.cern/science/physics/standard-model/",
+          "publisher": "CERN",
+          "kind": "official",
+          "observed_at": "2026-07-24",
+          "rights": "CERN source keeps its own rights."
+        }
+      ],
+      "reviewed_at": "2026-07-24"
+    },
+    {
+      "id": "life-from-chemistry",
+      "kind": "life",
+      "scope": "scientific_open_question",
+      "title": "The first living threshold",
+      "question": "How did nonliving chemistry become an evolvable living system?",
+      "status": "open",
+      "fact_ids": [],
+      "known": [
+        {
+          "text": "NASA Astrobiology treats life's origin and even a universal definition of life as open questions.",
+          "source_ids": [
+            "nasa-astrobiology"
+          ]
+        }
+      ],
+      "unknown": [
+        "The sequence, setting, and selection pressures that connected prebiotic chemistry to the first evolvable systems.",
+        "Which features of Earth life's path are necessary and which are historical accidents."
+      ],
+      "evidence_that_would_move_it": [
+        "A reproducible pathway under plausible early conditions that crosses from chemistry into sustained inheritance and evolution.",
+        "Independent natural evidence that distinguishes among competing settings or sequences."
+      ],
+      "inquiry_lenses": [
+        "Which step is demonstrated in isolation, and which connection between steps remains missing?",
+        "What would count as evolution before a modern cell exists?"
+      ],
+      "related_guides": [
+        "ferment-vegetables",
+        "make-soap",
+        "keep-records"
+      ],
+      "references": [
+        {
+          "id": "nasa-astrobiology",
+          "title": "About Astrobiology",
+          "url": "https://astrobiology.nasa.gov/about/",
+          "publisher": "NASA Astrobiology",
+          "kind": "official",
+          "observed_at": "2026-07-24",
+          "rights": "NASA source keeps its own rights."
+        }
+      ],
+      "reviewed_at": "2026-07-24"
+    },
+    {
+      "id": "life-beyond-earth",
+      "kind": "life",
+      "scope": "scientific_open_question",
+      "title": "Another living world",
+      "question": "Is there life beyond Earth?",
+      "status": "open",
+      "fact_ids": [],
+      "known": [
+        {
+          "text": "Many thousands of planets beyond the Solar System are known, while NASA reports no evidence of life beyond Earth so far.",
+          "source_ids": [
+            "nasa-search-for-life"
+          ]
+        }
+      ],
+      "unknown": [
+        "Whether life began elsewhere and how common it is.",
+        "Which remote signs would survive every plausible nonliving explanation."
+      ],
+      "evidence_that_would_move_it": [
+        "Independent, converging observations of a candidate biosignature with nonliving alternatives actively tested.",
+        "Directly sampled evidence with contamination and chain of custody accounted for."
+      ],
+      "inquiry_lenses": [
+        "What has been observed, and what has only been inferred about habitability?",
+        "Which nonliving process could imitate the proposed sign of life?"
+      ],
+      "related_guides": [
+        "find-your-way",
+        "keep-a-calendar",
+        "melt-glass"
+      ],
+      "references": [
+        {
+          "id": "nasa-search-for-life",
+          "title": "Are We Alone?",
+          "url": "https://science.nasa.gov/exoplanets/search-for-life/",
+          "publisher": "NASA Science",
+          "kind": "official",
+          "observed_at": "2026-07-24",
+          "rights": "NASA source keeps its own rights."
+        }
+      ],
+      "reviewed_at": "2026-07-24"
+    }
+  ],
+  "trails": [
+    {
+      "id": "hands-words-learners",
+      "title": "Hands, words, learners",
+      "card_ids": [
+        "hands-answer-back",
+        "four-tongues-one-skill",
+        "two-windows-on-learning"
+      ]
+    },
+    {
+      "id": "map-meets-ground",
+      "title": "The map meets the ground",
+      "card_ids": [
+        "arrows-carry-weight",
+        "hands-answer-back",
+        "what-is-dark-matter"
+      ]
+    },
+    {
+      "id": "speaking-pages",
+      "title": "When the page gets a voice",
+      "card_ids": [
+        "when-text-answers-back",
+        "two-windows-on-learning",
+        "life-from-chemistry"
+      ]
+    },
+    {
+      "id": "unseen-universe",
+      "title": "The unseen universe",
+      "card_ids": [
+        "what-is-dark-matter",
+        "gravity-meets-the-quantum",
+        "life-beyond-earth"
+      ]
+    },
+    {
+      "id": "what-counts-as-evidence",
+      "title": "What counts as evidence",
+      "card_ids": [
+        "life-beyond-earth",
+        "hands-answer-back",
+        "when-text-answers-back"
+      ]
+    }
+  ]
+}

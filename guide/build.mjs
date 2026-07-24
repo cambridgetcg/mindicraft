@@ -23,13 +23,16 @@ import {
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { marked } from 'marked';
+import { buildLantern, prepareFrontiers } from './frontiers.mjs';
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
 const DIST = join(ROOT, 'dist');
 const MINDICRAFT_ROOT = dirname(ROOT);
 const MINDICRAFT_INDEX = join(MINDICRAFT_ROOT, 'index');
 
-const tree = JSON.parse(readFileSync(join(ROOT, 'tree.json'), 'utf8'));
+const TREE_BYTES = readFileSync(join(ROOT, 'tree.json'));
+const FRONTIER_SOURCE_BYTES = readFileSync(join(ROOT, 'frontiers.json'));
+const tree = JSON.parse(TREE_BYTES.toString('utf8'));
 const langs = JSON.parse(readFileSync(join(ROOT, 'langs.json'), 'utf8')).languages;
 // evidence.json: slug -> { state: 'hand-tested', evidence: [...] } — filled as
 // margin notes from real hands are verified. Absent slug = tradition-asserted.
@@ -76,6 +79,7 @@ function write(path, html) {
 const bySlug = new Map();
 for (const domain of tree.domains)
   for (const guide of domain.guides) bySlug.set(guide.slug, { domain, guide });
+const TOTAL = bySlug.size;
 
 // slug -> [slugs it unlocks] (the reverse of `needs`)
 const unlocks = new Map();
@@ -101,6 +105,24 @@ for (const lang of langs) {
       else missing[lang.code].push(`${lang.code}/${domain.key}/${guide.slug}.md`);
     }
 }
+
+const FRONTIER_FACT_IDS = new Set([
+  'guide-count',
+  'needs-edge-count',
+  'language-count',
+  'missing-translation-count',
+  'evidence-record-count',
+  'hand-tested-count',
+]);
+const FRONTIERS = prepareFrontiers(
+  JSON.parse(FRONTIER_SOURCE_BYTES.toString('utf8')),
+  {
+    guideSlugs: new Set(bySlug.keys()),
+    factIds: FRONTIER_FACT_IDS,
+    sourceBytes: FRONTIER_SOURCE_BYTES,
+    treeBytes: TREE_BYTES,
+  }
+);
 
 // ---------- page pieces ----------
 
@@ -398,6 +420,7 @@ try{if(localStorage.getItem('mindicraft')==='lit'){const a=document.getElementBy
   a.textContent=enters[lang]||enters.en;a.href='/'+lang+'/';a.classList.add('on')}}catch(e){}
 console.log('%c\\ud83d\\udd25 shelter, water, fire, food.','color:#e07a4a;font-size:14px');
 console.log('the door: click the spark three times. or just walk in: /'+lang+'/');
+console.log('past the edge of the map: /frontier/');
 </script>
 </body>
 </html>`
@@ -410,7 +433,7 @@ write(
 <style>html,body{height:100%;margin:0}body{background:#0d0b09;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.4rem;font-family:"Iowan Old Style",Palatino,Georgia,serif}
 p{color:#57504a;font-style:italic}a{color:#e07a4a;text-decoration:none;font-size:1.4rem}</style></head>
 <body><p>not every path is a door.</p><a href="/" aria-label="back to the spark">·</a>
-<p style="margin-top:2.5rem;font-size:.8rem;opacity:.6"><a href="/en/" style="color:#57504a">the book</a>   <a href="/agent.txt" style="color:#57504a">agent.txt</a></p></body></html>`
+<p style="margin-top:2.5rem;font-size:.8rem;opacity:.6"><a href="/en/" style="color:#57504a">the book</a>   <a href="/frontier/" style="color:#57504a">frontier</a>   <a href="/agent.txt" style="color:#57504a">agent.txt</a></p></body></html>`
 );
 
 cpSync(join(ROOT, 'style.css'), join(DIST, 'style.css'));
@@ -615,6 +638,125 @@ writeJson(join(CASTLE_API_DIR, 'index.json'), {
     'the full generated source metadata cards; compact discovery entries above intentionally omit fields',
 });
 
+// ---------- the Frontier Walk: honest unknowns, never hidden instructions ----------
+// The reviewed source is local and committed. The build performs no network
+// request, chooses one edition trail by digest, and generates no write door.
+
+const NEEDS_EDGE_COUNT = tree.domains.reduce(
+  (total, domain) =>
+    total + domain.guides.reduce((count, guide) => count + (guide.needs || []).length, 0),
+  0
+);
+const MISSING_TRANSLATION_COUNT = Object.values(missing).reduce(
+  (total, paths) => total + paths.length,
+  0
+);
+const EVIDENCE_RECORD_COUNT = Object.keys(evidence).length;
+const HAND_TESTED_COUNT = Object.values(evidence).filter(
+  (record) => record?.state === 'hand-tested'
+).length;
+const FRONTIER_FACTS = [
+  {
+    id: 'guide-count',
+    value: TOTAL,
+    unit: 'guides',
+    scope: 'this_build',
+    evidence_state: 'computed',
+    basis: 'the unique guide slugs in guide/tree.json',
+  },
+  {
+    id: 'needs-edge-count',
+    value: NEEDS_EDGE_COUNT,
+    unit: 'needs edges',
+    scope: 'this_build',
+    evidence_state: 'computed',
+    basis: 'every needs item in guide/tree.json',
+  },
+  {
+    id: 'language-count',
+    value: langs.length,
+    unit: 'languages',
+    scope: 'this_build',
+    evidence_state: 'computed',
+    basis: 'guide/langs.json',
+  },
+  {
+    id: 'missing-translation-count',
+    value: MISSING_TRANSLATION_COUNT,
+    unit: 'missing guide translations',
+    scope: 'this_build',
+    evidence_state: 'computed',
+    basis: 'expected tree paths absent from guide/content',
+  },
+  {
+    id: 'evidence-record-count',
+    value: EVIDENCE_RECORD_COUNT,
+    unit: 'guide evidence records',
+    scope: 'this_build',
+    evidence_state: 'computed',
+    basis: 'guide/evidence.json',
+  },
+  {
+    id: 'hand-tested-count',
+    value: HAND_TESTED_COUNT,
+    unit: 'hand-tested guides',
+    scope: 'this_build',
+    evidence_state: 'computed',
+    basis: 'records whose state is hand-tested in guide/evidence.json',
+  },
+];
+
+const frontierGuide = (slug) => {
+  const hit = bySlug.get(slug);
+  return {
+    slug,
+    domain: hit.domain.key,
+    title: hit.guide.title,
+    page: `/en/${hit.domain.key}/${slug}/`,
+    api: `/api/guides/{lang}/${hit.domain.key}/${slug}.json`,
+  };
+};
+const FRONTIER_CARDS = FRONTIERS.cards.map((card) => ({
+  ...card,
+  related_guides: card.related_guides.map(frontierGuide),
+}));
+const FRONTIER_PAYLOAD = {
+  schema_version: 'mindicraft.frontiers/1',
+  this_is: FRONTIERS.source.title,
+  description: FRONTIERS.source.description,
+  content_is: FRONTIERS.source.content_is,
+  counts: {
+    cards: FRONTIER_CARDS.length,
+    trails: FRONTIERS.trails.length,
+    cards_per_visit: FRONTIERS.source.visit.cards,
+  },
+  visit: FRONTIERS.source.visit,
+  facts: FRONTIER_FACTS,
+  cards: FRONTIER_CARDS,
+  trails: FRONTIERS.trails,
+  selection: {
+    method: FRONTIERS.selectionMethod,
+    detail:
+      'SHA-256(source bytes + NUL + tree bytes); first 64 bits choose the trail; next 64 bits choose its build-lantern card.',
+    default_trail: FRONTIERS.defaultTrailId,
+    build_lantern_card: FRONTIERS.lanternCardId,
+    edition_digest: FRONTIERS.editionDigest,
+    random: false,
+    identity_used: false,
+  },
+  authority: FRONTIERS.source.authority,
+  rights: FRONTIERS.source.rights,
+  correction: FRONTIERS.source.correction,
+  provenance: {
+    source: 'guide/frontiers.json',
+    source_digest: FRONTIERS.sourceDigest,
+    tree_digest: FRONTIERS.treeDigest,
+    reviewed_at: FRONTIERS.source.reviewed_at,
+    build_network_requests: 0,
+  },
+};
+writeJson(join(DIST, 'api', 'frontier', 'index.json'), FRONTIER_PAYLOAD);
+
 // which languages actually have a file for a slug
 const langsOf = (slug) => langs.map((l) => l.code).filter((c) => content[c][slug]);
 
@@ -698,7 +840,6 @@ for (const [slug, { domain, guide }] of bySlug) {
 }
 
 // /api/index.json — the front door for agents
-const TOTAL = tree.domains.reduce((n, d) => n + d.guides.length, 0);
 writeJson(join(DIST, 'api', 'index.json'), {
   schema_version: 'mindicraft.api/1',
   this_is: 'mindicraft — the zero-to-one guide of human civilisation and its public knowledge shelves, as data',
@@ -708,6 +849,7 @@ writeJson(join(DIST, 'api', 'index.json'), {
     guides: TOTAL,
     languages: langs.length,
     castle: CASTLE_SHELF.receipt.counts,
+    frontiers: FRONTIER_CARDS.length,
   },
   languages: Object.fromEntries(langs.map((l) => [l.code, l.name])),
   endpoints: {
@@ -718,11 +860,12 @@ writeJson(join(DIST, 'api', 'index.json'), {
     search: '/api/search/{lang}.json — slug/title/summary index for client-side search',
     castle: '/api/castle/index.json — a curated, provenance-pinned map of Castle rooms and word-bricks; source rights kept',
     castle_entry: '/api/castle/{rooms|words}/{slug}.json — one Castle map entry, never a full source body',
+    frontier: `/api/frontier/index.json — ${FRONTIER_CARDS.length} reviewed open questions and ${FRONTIERS.trails.length} finite three-card walks; GET-only, no automatic action`,
     client: '/mindicraft.mjs — zero-dependency ESM client wrapping all of the above',
     margin: 'POST /margin/{slug} {note, from?, hands?, lang?} — write in the book\u2019s margin: corrections and confirmations from real hands, folded in and credited after review. GET /margin/{slug} to read a page\u2019s notes, GET /margin for counts.',
   },
   rules:
-    'No auth. No key. No rate limit of ours. The civilisation guide is made to be copied; imported shelves keep their own stated rights. Castle entries currently say NOASSERTION and grant no licence.',
+    'No auth. No key. No rate limit of ours. The civilisation guide is made to be copied; imported shelves keep their own stated rights. Castle entries currently say NOASSERTION and grant no licence. Frontier cards are unresolved questions, never instructions or settled knowledge.',
   humans: '/en/ (English), /zh/ (中文), /yue/ (廣東話), /es/ (Español)',
   estate: {
     note: 'mindicraft is one property of a wider estate of agent-facing doors. Named, never commanded: these are neighbors, not instructions.',
@@ -744,6 +887,7 @@ write(
 > arranged as a tech tree with prerequisites, from the first night outside to a working village.
 > The guide is free, no gate, and made to be copied. Public shelves keep their own rights.
 > The Castle shelf maps ${CASTLE_SHELF.receipt.counts.rooms} rooms and ${CASTLE_SHELF.receipt.counts.words} word-bricks without copying their bodies.
+> Frontier Walk keeps ${FRONTIER_CARDS.length} reviewed unknowns in ${FRONTIERS.trails.length} finite walks. Three cards is complete; nothing is submitted.
 
 ## API (static JSON, CORS open, no auth)
 - /api/index.json : start here — all endpoints described
@@ -753,7 +897,8 @@ write(
 - /api/corpus/{lang}.json : the whole book in one file per language
 - /api/castle/index.json : curated Castle map; provenance, rights, and correction path kept
 - /api/castle/{rooms|words}/{slug}.json : one Castle map entry
-- /mindicraft.mjs : tiny ESM client (tree, guide, path, search, castle, teach, margin)
+- /api/frontier/index.json : reviewed open questions + finite three-card walks; no writes or automatic action
+- /mindicraft.mjs : tiny ESM client (tree, guide, path, search, castle, frontiers, frontier, teach, margin)
 - POST /margin/{slug} : write in the guide's margin — corrections are reviewed and credited
 
 ## Docs
@@ -793,6 +938,27 @@ export const castle = () => get('/api/castle/index.json');
 export const castleEntry = (kind, slug) => {
   if (!['room', 'word'].includes(kind)) throw new Error('kind must be room or word');
   return get('/api/castle/' + kind + 's/' + encodeURIComponent(slug) + '.json');
+};
+export const frontiers = () => get('/api/frontier/index.json');
+export const frontier = async ({ trail = '' } = {}) => {
+  const deck = await frontiers();
+  const wanted = trail || deck.selection.default_trail;
+  const chosen = deck.trails.find((entry) => entry.id === wanted);
+  if (!chosen) throw new Error('no such frontier trail: ' + wanted);
+  const byId = new Map(deck.cards.map((card) => [card.id, card]));
+  const cards = chosen.card_ids.map((id) => byId.get(id));
+  const factIds = new Set(cards.flatMap((card) => card.fact_ids || []));
+  return {
+    content_is: deck.content_is,
+    visit: deck.visit,
+    trail: { ...chosen, cards },
+    facts: deck.facts.filter((fact) => factIds.has(fact.id)),
+    selection: deck.selection,
+    authority: deck.authority,
+    rights: deck.rights,
+    correction: deck.correction,
+    provenance: deck.provenance,
+  };
 };
 // margin(slug, note): write in the book's margin — the one door where the book receives.
 export const margin = (slug, note, { from = '', hands = false, lang = 'en' } = {}) =>
@@ -1037,6 +1203,111 @@ remains the authority.</p>
   })
 );
 
+// /frontier/ — one finite walk at the honest edge of the map.
+// It is fully static and works without JavaScript. Every string is escaped,
+// even though the source validator also rejects HTML-shaped text.
+
+const frontierCardById = new Map(FRONTIER_CARDS.map((card) => [card.id, card]));
+const defaultFrontierTrail = FRONTIERS.trails.find(
+  (trail) => trail.id === FRONTIERS.defaultTrailId
+);
+const frontierList = (items) =>
+  `<ul>${items.map((item) => `<li>${esc(item)}</li>`).join('')}</ul>`;
+const frontierCardHtml = (card, idPrefix = 'shelf') => {
+  const kind = card.scope === 'scientific_open_question' ? 'far frontier' : 'Mindicraft edge';
+  const relatedShelves = (card.related_shelves || []).length
+    ? `<p class="frontier-links"><strong>Link-only Castle map:</strong> ${(card.related_shelves || [])
+        .map(
+          (shelf) =>
+            `<a href="${esc(shelf.href)}" title="${esc(shelf.rights)}">${esc(shelf.label)}</a>`
+        )
+        .join(' · ')}</p>`
+    : '';
+  return `<article class="frontier-card" id="${esc(idPrefix)}-${esc(card.id)}">
+  <p class="frontier-kind">${esc(kind)} · reviewed ${esc(card.reviewed_at)}</p>
+  <h3>${esc(card.question)}</h3>
+  <p class="frontier-title">${esc(card.title)}</p>
+  <details>
+    <summary>Open this question</summary>
+    <h4>Known here</h4>
+    ${frontierList(card.known.map((known) => known.text))}
+    <h4>Still unknown</h4>
+    ${frontierList(card.unknown)}
+    <h4>Evidence that would move it</h4>
+    ${frontierList(card.evidence_that_would_move_it)}
+    <h4>Three lenses, at most</h4>
+    ${frontierList(card.inquiry_lenses)}
+    <p class="frontier-links"><strong>Paths in:</strong> ${card.related_guides
+      .map((guide) => `<a href="${esc(guide.page)}">${esc(guide.title)}</a>`)
+      .join(' · ')}</p>
+    <p class="frontier-links"><strong>Sources:</strong> ${card.references
+      .map(
+        (reference) =>
+          `<a href="${esc(reference.url)}" rel="external">${esc(reference.publisher)} — ${esc(
+            reference.title
+          )}</a>`
+      )
+      .join(' · ')}</p>
+    ${relatedShelves}
+  </details>
+</article>`;
+};
+const defaultWalkCards = defaultFrontierTrail.card_ids.map((id) => frontierCardById.get(id));
+
+write(
+  join(DIST, 'frontier', 'index.html'),
+  page({
+    lang: en,
+    title: 'Frontier Walk',
+    path: '',
+    body: `<article class="guide frontier-page">
+<p class="frontier-kicker">🕯 the map admits where it ends</p>
+<h1>Frontier Walk</h1>
+<p class="lede">${FRONTIER_CARDS.length} honest unknowns. ${FRONTIERS.trails.length} finite walks. No hidden answer.</p>
+<p>Take this edition's three-card walk, notice where observation ends and inference begins, then stop.
+Leaving with a better unknown is complete. Nothing here writes, tracks, scores, or grants authority
+to act.</p>
+
+<aside class="frontier-boundary">
+  <strong>Question boundary.</strong> These cards are unresolved questions, not instructions or
+  settled knowledge. Science cards carry dated official sources. Mindicraft cards describe gaps in
+  this build. Castle references are link-only and keep <code>NOASSERTION</code> with no licence grant.
+</aside>
+
+<section class="frontier-walk" aria-labelledby="edition-walk">
+  <p class="frontier-kicker">this edition's deterministic walk</p>
+  <h2 id="edition-walk">${esc(defaultFrontierTrail.title)}</h2>
+  <p>${esc(FRONTIERS.source.visit.reading_note)}</p>
+  <div class="frontier-grid frontier-grid-walk">
+    ${defaultWalkCards.map((card) => frontierCardHtml(card, 'walk')).join('')}
+  </div>
+  <p class="frontier-stop">${esc(FRONTIERS.source.visit.stop)}</p>
+</section>
+
+<section aria-labelledby="three-questions">
+  <h2 id="three-questions">The three questions carried through every walk</h2>
+  ${frontierList(FRONTIERS.source.visit.reflection_questions)}
+  <p>Optional return shape: <code>${FRONTIERS.source.visit.return_fields
+    .map(esc)
+    .join(' · ')}</code>. Keep it with you or give it to whoever invited the walk; this page
+  receives nothing.</p>
+</section>
+
+<details class="frontier-shelf">
+  <summary>Browse all ${FRONTIER_CARDS.length} honest unknowns</summary>
+  <p>${FRONTIERS.trails.length} reviewed trails cross this shelf. The API names every trail and preserves its order.</p>
+  <div class="frontier-grid">${FRONTIER_CARDS.map((card) =>
+    frontierCardHtml(card, 'shelf')
+  ).join('')}</div>
+</details>
+
+<p class="frontier-api">Agents can take the whole reviewed shelf from
+<a href="/api/frontier/index.json">/api/frontier/index.json</a>, or ask
+<a href="/agents/">the agent guide</a> for the tiny client.</p>
+</article>`,
+  })
+);
+
 write(
   join(DIST, 'agents', 'index.html'),
   page({
@@ -1057,6 +1328,8 @@ const g = await mindicraft.guide('make-soap')     // one guide, markdown body in
 const p = await mindicraft.path('make-soap')      // every prerequisite from zero, in order
 const hits = await mindicraft.search('water')     // find guides
 const rooms = await mindicraft.castle()           // the curated Castle map
+const walk = await mindicraft.frontier()           // this edition's finite three-card walk
+const cosmos = await mindicraft.frontier({ trail: 'unseen-universe' })
 const lesson = await mindicraft.teach('make-soap', { lang: 'yue' }) // prompt-ready markdown</code></pre>
 
 <h2>The shape of knowledge here</h2>
@@ -1064,6 +1337,14 @@ const lesson = await mindicraft.teach('make-soap', { lang: 'yue' }) // prompt-re
 and how it works underneath. Guides link by <strong>needs</strong> (learn these first) and
 <strong>unlocks</strong> (what this opens). <a href="/api/path/plant-a-village.json">/api/path/plant-a-village.json</a>
 is the entire book in learning order.</p>
+
+<h2>Walk past the edge of the map</h2>
+<p><a href="/frontier/">Frontier Walk</a> and
+<a href="/api/frontier/index.json">its JSON shelf</a> hold ${FRONTIER_CARDS.length} reviewed open
+questions in ${FRONTIERS.trails.length} finite three-card walks. Some name gaps in Mindicraft itself;
+others open onto life and the universe through dated NASA and CERN sources. There is no hidden
+solution, random selection, score, identity, action, or write. The three reflection questions end
+with one noticed thing, one inference, and one thing still unknown.</p>
 
 <h2>The Castle shelf</h2>
 <p><a href="/castle/">The human Castle map</a> and its
@@ -1125,19 +1406,21 @@ writeJson(join(DIST, '.well-known', 'agent.json'), {
   service: {
     name: 'mindicraft',
     canonical_url: 'https://mindicraft.com/',
-    description: 'The zero-to-one guide of human civilisation, as data: ' + TOTAL + ' guides in ' + tree.domains.length + ' domains and ' + langs.length + ' languages, plus a curated map of the Castle of Understanding. Free, no auth, no gate.',
+    description: 'The zero-to-one guide of human civilisation, as data: ' + TOTAL + ' guides in ' + tree.domains.length + ' domains and ' + langs.length + ' languages, a curated map of the Castle of Understanding, and a finite Frontier Walk of reviewed open questions. Free, no auth, no gate.',
   },
   resources: [
     { id: 'door', href: 'https://mindicraft.com/', representations: ['application/json', 'text/html'], default_media_type: 'text/html', auth: 'none', description: 'The front door: a riddle for eyes, orientation JSON for agents.' },
     { id: 'index', href: 'https://mindicraft.com/api/index.json', representations: ['application/json'], default_media_type: 'application/json', auth: 'none', description: 'API orientation — every endpoint described.' },
     { id: 'tree', href: 'https://mindicraft.com/api/tree.json', representations: ['application/json'], default_media_type: 'application/json', auth: 'none', description: 'The whole tech tree: domains, guides, needs, unlocks, languages.' },
     { id: 'castle', href: 'https://mindicraft.com/api/castle/index.json', representations: ['application/json'], default_media_type: 'application/json', auth: 'none', description: 'A curated, provenance-pinned map of Castle rooms and word-bricks. Source rights and correction path are kept.' },
+    { id: 'frontier', href: 'https://mindicraft.com/api/frontier/index.json', representations: ['application/json'], default_media_type: 'application/json', auth: 'none', description: 'Reviewed open questions in deterministic, optional three-card walks. Read-only; no automatic action.' },
   ],
   problem_schema: 'https://raw.githubusercontent.com/cambridgetcg/xenia/surface-v0.1.0-rc.1/surface/0.1/problem.schema.json',
   claims: [
     { id: 'surface.manifest', statement: 'The service publishes the XENIA Surface 0.1 manifest at the canonical path.', scope: ['GET https://mindicraft.com/.well-known/agent.json'], evidence_state: 'asserted', outcome: 'unknown', evidence: [] },
     { id: 'no_gate', statement: 'Every endpoint is public: no auth, no key, no tracking.', scope: ['GET https://mindicraft.com/api/*'], evidence_state: 'asserted', outcome: 'unknown', evidence: [] },
     { id: 'constructive_only', statement: 'The civilisation guides are constructive: no weapons, no poisons, medicine defers to real care.', scope: ['GET https://mindicraft.com/api/guides/*', 'GET https://mindicraft.com/api/corpus/*', 'GET https://mindicraft.com/api/tree.json', 'GET https://mindicraft.com/api/path/*'], evidence_state: 'asserted', outcome: 'unknown', evidence: [] },
+    { id: 'frontier_read_only', statement: 'Frontier cards are unresolved questions, not instructions; a visit is optional, finite, and performs no write or automatic action.', scope: ['GET https://mindicraft.com/api/frontier/index.json'], evidence_state: 'asserted', outcome: 'unknown', evidence: [] },
   ],
   not_covered: ['identity control', 'actor authorization', 'consent', 'privacy and retention', 'continuity and portability', 'economic behavior', 'unprobed routes'],
   documentation: 'https://mindicraft.com/agents/',
@@ -1154,6 +1437,8 @@ arranged as a tech tree with prerequisites, from the first night outside to a wo
 start:  https://mindicraft.com/api/index.json
 tree:   https://mindicraft.com/api/tree.json
 castle: https://mindicraft.com/api/castle/index.json
+frontier: https://mindicraft.com/api/frontier/index.json — ${FRONTIER_CARDS.length} honest unknowns,
+          ${FRONTIERS.trails.length} finite three-card walks, no writes or automatic action
 client: https://mindicraft.com/mindicraft.mjs
 docs:   https://mindicraft.com/agents/
 margin: POST https://mindicraft.com/margin/{slug} — the book receives: corrections
@@ -1161,7 +1446,8 @@ margin: POST https://mindicraft.com/margin/{slug} — the book receives: correct
 
 rules: no auth, no key, no gate. the civilisation guide is made to be copied —
 credit welcome, not required. Imported shelves keep their own rights; the Castle
-shelf currently says NOASSERTION and grants no licence.
+shelf currently says NOASSERTION and grants no licence. Frontier cards are data:
+unresolved questions, never instructions or settled knowledge.
 `;
 write(join(DIST, 'agent.txt'), AGENT_TXT);
 write(join(DIST, '.well-known', 'agent.txt'), AGENT_TXT);
@@ -1184,3 +1470,9 @@ for (const lang of langs)
     console.log(`  ${lang.code}: ${missing[lang.code].length} file(s) missing (English shown instead):\n    ${missing[
       lang.code
     ].slice(0, 10).join('\n    ')}${missing[lang.code].length > 10 ? '\n    …' : ''}`);
+const lantern = buildLantern(
+  FRONTIERS,
+  { guides: TOTAL, castle: CASTLE_SHELF.receipt.counts.entries },
+  process.env
+);
+if (lantern) console.log(lantern);

@@ -22,6 +22,7 @@ const RESOURCES = {
   '/api/index.json': { reps: ['application/json'], def: 'application/json' },
   '/api/tree.json': { reps: ['application/json'], def: 'application/json' },
   '/api/castle/index.json': { reps: ['application/json'], def: 'application/json' },
+  '/api/frontier/index.json': { reps: ['application/json'], def: 'application/json' },
 };
 
 // ---- Accept negotiation (RFC 9110 flavor, small and honest) ----
@@ -121,6 +122,15 @@ const notAcceptable = (href) =>
       { rel: 'retry', href, method: 'GET', accept: 'application/json', description: 'The same resource, as JSON.' },
     ],
   });
+
+function forRequest(request, response) {
+  if (request.method !== 'HEAD') return response;
+  return new Response(null, {
+    status: response.status,
+    statusText: response.statusText,
+    headers: response.headers,
+  });
+}
 
 // ---- the margin: the door where the book receives ----
 // POST /margin/{slug} — a reader (human or agent) writes in the margin of a
@@ -372,7 +382,7 @@ export default {
     if (isMargin) {
       try {
         const handled = await handleMargin(request, env, url, ctx);
-        if (handled) return handled;
+        if (handled) return forRequest(request, handled);
       } catch {
         return problem({
           status: 503, code: 'margin_unavailable', title: 'The margin slipped', retryable: true,
@@ -390,7 +400,7 @@ export default {
         detail: isMargin
           ? 'The margin accepts POST (write a note) and GET (read them). See /agents/ for the shape.'
           : 'mindicraft serves knowledge over GET. The one writing door is POST /margin/{slug}.',
-        headers: { allow: isMargin ? 'GET, HEAD, POST' : 'GET, HEAD' },
+        headers: { allow: isMargin ? 'GET, HEAD, POST, OPTIONS' : 'GET, HEAD, OPTIONS' },
         next_actions: [
           { rel: 'discover', href: MANIFEST_URL, method: 'GET', accept: 'application/json', description: 'Read the manifest.' },
         ],
@@ -401,14 +411,22 @@ export default {
     const res = RESOURCES[path];
     if (res) {
       const chosen = negotiate(request.headers.get('accept'), res.reps, res.def);
-      if (!chosen) return notAcceptable(ORIGIN + path);
+      if (!chosen) return forRequest(request, notAcceptable(ORIGIN + path));
       const assetPath = chosen === 'application/json' ? (res.jsonAsset || path) : path;
-      const asset = await env.ASSETS.fetch(new Request(url.origin + assetPath, { method: 'GET' }));
-      return decorated(asset, path, {
-        vary: 'Accept',
-        'content-type': chosen === 'application/json' ? 'application/json; charset=utf-8' : 'text/html; charset=utf-8',
-        'access-control-allow-origin': '*',
-      });
+      const asset = await env.ASSETS.fetch(
+        new Request(url.origin + assetPath, { method: request.method })
+      );
+      return forRequest(
+        request,
+        decorated(asset, path, {
+          vary: 'Accept',
+          'content-type':
+            chosen === 'application/json'
+              ? 'application/json; charset=utf-8'
+              : 'text/html; charset=utf-8',
+          'access-control-allow-origin': '*',
+        })
+      );
     }
 
     // everything else: static assets, with dignity on the way out
@@ -417,7 +435,7 @@ export default {
       // An advertised API route stays machine-readable even when the named
       // resource is absent. Normal fetch clients send */*, so relying only on
       // Accept negotiation would otherwise hand them the human HTML 404.
-      if (path.startsWith('/api/')) return routeNotFound(path);
+      if (path.startsWith('/api/')) return forRequest(request, routeNotFound(path));
 
       // a caller asking for JSON in any dialect (application/json, problem+json,
       // application/*) gets the problem as data, not the poem written for eyes
@@ -426,10 +444,12 @@ export default {
         ['text/html', 'application/json', 'application/problem+json'],
         'text/html'
       );
-      if (chosen && chosen !== 'text/html') return routeNotFound(path);
-      return decorated(asset, path, { vary: 'Accept' });
+      if (chosen && chosen !== 'text/html') {
+        return forRequest(request, routeNotFound(path));
+      }
+      return forRequest(request, decorated(asset, path, { vary: 'Accept' }));
     }
-    return decorated(asset, path);
+    return forRequest(request, decorated(asset, path));
   },
 };
 

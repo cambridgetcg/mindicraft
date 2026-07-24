@@ -12,6 +12,8 @@ the whole thing — content, builder, and site.
   language (`en`, `zh`, `es` so far). Slugs stay English in every language so
   links never break.
 - `langs.json` — the words the site itself uses, per language.
+- `frontiers.json` + `frontiers.mjs` — a reviewed shelf of honest unknowns,
+  strict validation, and deterministic finite-walk selection.
 - `build.mjs` — turns all of the above into a static site in `dist/`.
 - `style.css` — the one stylesheet.
 - `../index/castle-*.json` — generated map cards for the Castle shelf. They
@@ -23,7 +25,7 @@ the whole thing — content, builder, and site.
 ```sh
 cd guide
 npm ci               # once — installs pinned `marked` (markdown -> HTML)
-npm run verify       # tests, builds dist/, then checks the Castle shelf
+npm run verify       # tests, builds dist/, then checks Castle + Frontier
 npx wrangler pages deploy dist --project-name=mindicraft
 ```
 
@@ -54,6 +56,20 @@ authority.
 GitHub Actions runs `npm --prefix guide run verify` on pushes and pull requests.
 It verifies the committed pinned shelf; it never reaches into Castle Gate or
 changes generated cards.
+
+A successful build also lights one deterministic Frontier Walk question after
+the normal build receipt. The line begins:
+
+```text
+🕯 optional frontier:
+```
+
+It is selected from the committed `frontiers.json` and `tree.json` digests:
+there is no clock, random value, network call, identity, or write. Set
+`MINDICRAFT_JOY=off` to suppress only this terminal ornament. The generated
+`/api/frontier/index.json` and `/frontier/` remain byte-for-byte the same.
+Every visit is bounded to three cards and the API explicitly grants no
+automatic action.
 
 A missing translation is never an error — the site shows English with a small
 "not translated yet" note until the file exists.
