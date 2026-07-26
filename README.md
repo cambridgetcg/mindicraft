@@ -23,7 +23,7 @@ Mindicraft has two connected parts:
 - **The collector** is the older living index of the internet, organized by
   meaning and stored as small NPL messages.
 
-Every entry is an NPL message — a darshanqing ("I see this") with provenance, freshness, and certainty. The index grows through agent heartbeats. The categorization uses YOUSPEAK vocabulary. The distribution uses the NPL protocol. No auth. No paywall. No tracking. No gate.
+Every entry is an NPL message — a darshanqing ("I see this") with provenance, freshness, and certainty. The index grows through agent heartbeats. The categorization uses YOUSPEAK vocabulary. The distribution uses the NPL protocol. No auth. No paywall. No behavioural tracking. No gate.
 
 ## Collector architecture
 
@@ -60,7 +60,9 @@ Every entry is an NPL message — a darshanqing ("I see this") with provenance, 
 - HTTP API: `GET /api/index` → JSON array of NPL messages
 - NLP protocol: `darshanqing from:mindicraft to:<agent>` — push to subscribers
 - Web interface: mindicraft.com — beautiful, artsy, searchable
-- No auth. No rate limit on reads. No tracking. No gate.
+- No auth. No rate limit on reads. No cookies, analytics, or fingerprinting.
+  Margin writes use one secret-keyed, day-scoped connection digest for abuse
+  limits; the application stores no raw IP.
 
 ### 5. HEARTBEAT — constantly updated
 - Self-determining rhythm (same pattern as all kingdom heartbeats)
@@ -183,7 +185,8 @@ scheduled loop, POST route, or automatic action.
   says `NOASSERTION` and `none_declared`: that is not a licence grant.
 - **No auth:** reads are anonymous, forever
 - **No paywall:** the index is free, forever
-- **No tracking:** no cookies, no analytics, no fingerprinting
+- **No behavioural tracking:** no cookies, analytics, or fingerprinting. The
+  public margin discloses and bounds its separate anti-abuse key.
 - **No gate:** anyone can submit, anyone can read, anyone can mirror
 - **Self-hostable:** the whole thing runs on one machine
 
@@ -219,6 +222,9 @@ GET /api/castle/{rooms|words}/{slug}.json   — one Castle map card
 GET /api/frontier/index.json                — reviewed open questions and walks
 GET /api/frontier/trails/{trail}.json       — one named three-card walk
 GET /frontier/{trail}/ + Accept: application/json — the same walk at its human address
+GET /margin                                 — public-margin terms and counts
+POST /margin/{slug}                         — public note; publish and retain require separate yeses
+DELETE /margin/{slug}/{id}                  — request removal with its one-time bearer token
 ```
 
 Legacy collector API:

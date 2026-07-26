@@ -169,6 +169,12 @@ main { max-width: 46rem; margin: 0 auto; padding: 0 1.1rem 3rem; }
 .marginbox .mrow { display: flex; gap: 0.8rem; align-items: center; flex-wrap: wrap; margin-bottom: 0.6rem; }
 .marginbox .mrow input:not([type="checkbox"]) { flex: 1; min-width: 12rem; }
 .marginbox label { font-size: 0.85rem; color: var(--muted); white-space: nowrap; }
+.marginbox .marginchoices {
+  display: grid; gap: 0.35rem; margin: 0.35rem 0 0.8rem;
+}
+.marginbox .marginchoices label { white-space: normal; }
+.marginbox #mmsg { overflow-wrap: anywhere; }
+.marginbox .marginreceipt { margin-top: 0.45rem; }
 .marginbox button {
   font: inherit; font-size: 0.9rem; cursor: pointer; color: var(--bg);
   background: var(--ember); border: 0; border-radius: 999px; padding: 0.35rem 1.1rem;

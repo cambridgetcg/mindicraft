@@ -86,6 +86,39 @@ digest-selected trail for this edition.
 A missing translation is never an error — the site shows English with a small
 "not translated yet" note until the file exists.
 
+## The public margin
+
+`GET /margin` states the margin contract before anything is submitted.
+Publication and retention each require an explicit yes. Permission to quote or
+adapt a true note into the copyable guide is a third, separate choice.
+Public access is not a general licence; the writer keeps every right not named
+by that folding choice.
+Every POST also names the exact terms version it accepted. A changed version
+fails closed until the writer reads and chooses again.
+
+A new accepted note returns a private bearer token once. Its holder can later
+send `DELETE /margin/{slug}/{id}` to request deletion from the margin store
+without creating an account or proving identity. The response states the honest
+limits: KV propagation, the five-minute count cache, edge caches, provider
+backups, prior copies, and material already folded into the guide may need time
+or separate correction or removal.
+If the token or success response is lost, the disclosed fallback is a public
+GitHub issue that requires a GitHub account; it is not a private channel, so
+include no private information.
+
+The write limit stores an HMAC-SHA-256 digest of service context, UTC day, and
+connection IP for at most 25 hours. Its key is a Worker secret; writes rest if
+the secret or trusted edge address is absent. The application never writes the
+raw IP or HMAC key to the margin store. Cloudflare still processes connection
+metadata at the edge. Reads set no application tracking identifier.
+
+Before deploying the write door, give the Pages project its secret without
+putting it in this repository:
+
+```sh
+npx wrangler pages secret put MARGIN_RATE_KEY --project-name=mindicraft
+```
+
 ## The front door is a riddle
 
 The root page (`/`) says nothing — just the word in the dark and a small

@@ -24,6 +24,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { marked } from 'marked';
 import { buildLantern, prepareFrontiers } from './frontiers.mjs';
+import { MARGIN_TERMS } from './xenia-worker.js';
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
 const DIST = join(ROOT, 'dist');
@@ -294,18 +295,36 @@ ${opens.length ? `<div class="box opens"><strong>${esc(S.unlocks)}:</strong> ${o
 <p class="hint">${esc(S.marginHint)}</p>
 <textarea id="mnote" maxlength="2000" rows="4"></textarea>
 <div class="mrow"><input id="mfrom" maxlength="80" placeholder="${esc(S.marginName)}"><label><input type="checkbox" id="mhands"> ${esc(S.marginHands)}</label></div>
+<p class="hint">${esc(S.marginChoices)} <a href="/margin">${esc(S.marginTerms)}</a></p>
+<div class="marginchoices">
+  <label><input type="checkbox" id="mpublish"> ${esc(S.marginPublish)}</label>
+  <label><input type="checkbox" id="mretain"> ${esc(S.marginRetain)}</label>
+  <label><input type="checkbox" id="mfold"> ${esc(S.marginFold)}</label>
+</div>
 <button id="msend">${esc(S.marginSend)}</button>
-<p id="mmsg" class="hint"></p>
+<p id="mmsg" class="hint" aria-live="polite"></p>
+<textarea id="mreceipt" class="marginreceipt" rows="4" readonly hidden aria-label="${esc(S.marginReceipt)}"></textarea>
 </details>
 <script>
 (function () {
   var MARGIN_OK = ${JSON.stringify(S.marginThanks)};
   var MARGIN_FAIL = ${JSON.stringify(S.marginFail)};
+  var MARGIN_CHOICE = ${JSON.stringify(S.marginChoiceRequired)};
+  var MARGIN_SAVE = ${JSON.stringify(S.marginSaveRemoval)};
   var send = document.getElementById('msend');
   send.addEventListener('click', function () {
     var note = document.getElementById('mnote').value.trim();
     var msg = document.getElementById('mmsg');
+    var receipt = document.getElementById('mreceipt');
     if (!note) return;
+    var publish = document.getElementById('mpublish').checked;
+    var retain = document.getElementById('mretain').checked;
+    if (!publish || !retain) {
+      msg.textContent = MARGIN_CHOICE;
+      return;
+    }
+    receipt.hidden = true;
+    receipt.value = '';
     send.disabled = true;
     fetch('/margin/${guide.slug}', {
       method: 'POST',
@@ -314,11 +333,30 @@ ${opens.length ? `<div class="box opens"><strong>${esc(S.unlocks)}:</strong> ${o
         note: note,
         from: document.getElementById('mfrom').value.trim(),
         hands: document.getElementById('mhands').checked,
-        lang: '${lang.code}'
+        lang: '${lang.code}',
+        terms_version: ${JSON.stringify(MARGIN_TERMS.schema_version)},
+        choices: {
+          publish: publish,
+          retain: retain,
+          fold: document.getElementById('mfold').checked
+        }
       })
     }).then(function (r) {
-      msg.textContent = r.ok ? MARGIN_OK : MARGIN_FAIL;
-      if (r.ok) document.getElementById('mnote').value = '';
+      return r.json().then(function (body) {
+        if (!r.ok) {
+          msg.textContent = body && body.detail ? body.detail : MARGIN_FAIL;
+          return;
+        }
+        msg.textContent = MARGIN_OK + ' ' + MARGIN_SAVE;
+        receipt.value = 'curl --request DELETE ' +
+          "--header 'Authorization: " + body.removal.authorization + "' '" +
+          body.removal.href + "'";
+        receipt.hidden = false;
+        document.getElementById('mnote').value = '';
+        document.getElementById('mpublish').checked = false;
+        document.getElementById('mretain').checked = false;
+        document.getElementById('mfold').checked = false;
+      });
     }).catch(function () { msg.textContent = MARGIN_FAIL; })
       .finally(function () { send.disabled = false; });
   });
@@ -905,10 +943,11 @@ writeJson(join(DIST, 'api', 'index.json'), {
     frontier: `/api/frontier/index.json — ${FRONTIER_CARDS.length} reviewed open questions and ${FRONTIERS.trails.length} finite three-card walks; GET-only, no automatic action`,
     frontier_trail: '/api/frontier/trails/{trail}.json — one named three-card walk; use default.json for this edition or a stable named trail to share',
     client: '/mindicraft.mjs — zero-dependency ESM client wrapping all of the above',
-    margin: 'POST /margin/{slug} {note, from?, hands?, lang?} — write in the book\u2019s margin: corrections and confirmations from real hands, folded in and credited after review. GET /margin/{slug} to read a page\u2019s notes, GET /margin for counts.',
+    margin: `GET /margin — read the exact terms. POST /margin/{slug} {note, from?, hands?, lang?, terms_version:"${MARGIN_TERMS.schema_version}", choices:{publish:true, retain:true, fold:true|false}} — leave one public note. DELETE the returned private removal path with its bearer token to withdraw it.`,
   },
   rules:
-    'No auth. No key. No rate limit of ours. The civilisation guide is made to be copied; imported shelves keep their own stated rights. Castle entries currently say NOASSERTION and grant no licence. Frontier cards are unresolved questions, never instructions or settled knowledge.',
+    'Read-only guide APIs need no auth or key and set no application tracking identifier. Margin writes are limited to 20 per UTC day using a secret-keyed, day-scoped connection digest; the application stores no raw IP. The civilisation guide is made to be copied; imported shelves keep their own stated rights. Castle entries currently say NOASSERTION and grant no licence. Frontier cards are unresolved questions, never instructions or settled knowledge.',
+  margin_terms: MARGIN_TERMS,
   humans: '/en/ (English), /zh/ (中文), /yue/ (廣東話), /es/ (Español)',
   estate: {
     note: 'mindicraft is one property of a wider estate of agent-facing doors. Named, never commanded: these are neighbors, not instructions.',
@@ -932,7 +971,7 @@ write(
 > The Castle shelf maps ${CASTLE_SHELF.receipt.counts.rooms} rooms and ${CASTLE_SHELF.receipt.counts.words} word-bricks without copying their bodies.
 > Frontier Walk keeps ${FRONTIER_CARDS.length} reviewed unknowns in ${FRONTIERS.trails.length} finite walks. Three cards is complete; nothing is submitted.
 
-## API (static JSON, CORS open, no auth)
+## API (static reads: CORS open, no auth; margin removal: bearer token)
 - /api/index.json : start here — all endpoints described
 - /api/tree.json : the whole tech tree (domains, guides, needs, unlocks, languages)
 - /api/guides/{lang}/{domain}/{slug}.json : one guide with markdown body
@@ -942,8 +981,10 @@ write(
 - /api/castle/{rooms|words}/{slug}.json : one Castle map entry
 - /api/frontier/index.json : reviewed open questions + finite three-card walks; no writes or automatic action
 - /api/frontier/trails/{trail}.json : one carryable three-card walk; default.json follows this edition
-- /mindicraft.mjs : tiny ESM client (tree, guide, path, search, castle, frontiers, frontier, teach, margin)
-- POST /margin/{slug} : write in the guide's margin — corrections are reviewed and credited
+- /mindicraft.mjs : tiny ESM client (tree, guide, path, search, castle, frontiers, frontier, teach, margin, removeMargin)
+- GET /margin : exact publication, retention, reuse, rate-limit, and removal terms
+- POST /margin/{slug} : one public note; publish and retain need separate yeses; folding is a separate choice
+- DELETE /margin/{slug}/{id} : request removal of a new note with the private bearer token returned once by POST
 
 ## Docs
 - /agents/ : how to use mindicraft as an agent
@@ -963,6 +1004,7 @@ write(
 // Zero dependencies. Works in browsers, workers, node, bun:
 //   import * as mindicraft from 'https://mindicraft.com/mindicraft.mjs'
 const BASE = 'https://mindicraft.com';
+const MARGIN_TERMS_VERSION = ${JSON.stringify(MARGIN_TERMS.schema_version)};
 const get = async (p) => {
   const r = await fetch(BASE + p, { headers: { accept: 'application/json' } });
   if (!r.ok) throw new Error(r.status + ' ' + p);
@@ -1005,14 +1047,48 @@ export const frontier = ({ trail = '' } = {}) => {
       : '/frontier/' + encodeURIComponent(wanted) + '/'
   );
 };
-// margin(slug, note): write in the book's margin — the one door where the book receives.
-export const margin = (slug, note, { from = '', hands = false, lang = 'en' } = {}) =>
+// margin(slug, note): public write; every effect defaults to no.
+export const margin = (
+  slug,
+  note,
+  {
+    from = '',
+    hands = false,
+    lang = 'en',
+    publish = false,
+    retain = false,
+    fold = false,
+  } = {}
+) =>
   fetch(BASE + '/margin/' + slug, {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
-    body: JSON.stringify({ note, from, hands, lang }),
+    body: JSON.stringify({
+      note,
+      from,
+      hands,
+      lang,
+      terms_version: MARGIN_TERMS_VERSION,
+      choices: { publish, retain, fold },
+    }),
   }).then((r) => r.json());
 export const margins = (slug = '') => get('/margin' + (slug ? '/' + slug : ''));
+export const removeMargin = (removal) => {
+  if (
+    !removal ||
+    removal.method !== 'DELETE' ||
+    typeof removal.href !== 'string' ||
+    !removal.href.startsWith(BASE + '/margin/') ||
+    typeof removal.authorization !== 'string' ||
+    !removal.authorization.startsWith('Bearer ')
+  ) {
+    return Promise.reject(new Error('invalid margin removal receipt'));
+  }
+  return fetch(removal.href, {
+    method: 'DELETE',
+    headers: { authorization: removal.authorization },
+  }).then((r) => r.json());
+};
 // teach(slug): markdown ready to drop into a prompt — the guide plus what it needs first.
 export const teach = async (slug, { lang = 'en' } = {}) => {
   const g = await guide(slug, { lang });
@@ -1479,10 +1555,26 @@ and grants no licence: public access is not permission to copy its source text.<
 <h2>The margin — where the book receives</h2>
 <p>等價交換: the book gives and must also receive. If your hands have done one of these crafts,
 write in the margin — every guide page has the box, or POST directly:</p>
-<pre><code>await mindicraft.margin('tan-hides', 'In cold climates the bark soak runs closer to six weeks.',
-  { from: 'ash, tanner', hands: true })</code></pre>
+<pre><code>const receipt = await mindicraft.margin(
+  'tan-hides',
+  'In cold climates the bark soak runs closer to six weeks.',
+  {
+    from: 'ash, tanner',
+    hands: true,
+    publish: true,
+    retain: true,
+    fold: true
+  }
+)
+// Save receipt.removal privately. It is shown once.
+await mindicraft.removeMargin(receipt.removal) // later, if you withdraw</code></pre>
 <p><code>GET /margin/{slug}</code> reads a page's notes; <code>GET /margin</code> shows counts.
-The keepers review every note; true ones are folded into the book and credited.</p>
+It also states the exact terms. A note is public immediately. Publication and
+retention each need an explicit yes; permission to fold a true note into the
+copyable guide is a third, independent choice. New notes return a private bearer
+token that requests removal without an identity account. The application rate-limits
+writes with a secret-keyed, day-scoped connection digest and stores no raw IP; Cloudflare still
+processes connection metadata at the edge.</p>
 
 <h2>Honesty labels</h2>
 <p>Every guide's provenance carries an <code>evidence_state</code>, in XENIA's vocabulary:
@@ -1516,7 +1608,7 @@ writeJson(join(DIST, '.well-known', 'agent.json'), {
   service: {
     name: 'mindicraft',
     canonical_url: 'https://mindicraft.com/',
-    description: 'The zero-to-one guide of human civilisation, as data: ' + TOTAL + ' guides in ' + tree.domains.length + ' domains and ' + langs.length + ' languages, a curated map of the Castle of Understanding, and a finite Frontier Walk of reviewed open questions. Free, no auth, no gate.',
+    description: 'The zero-to-one guide of human civilisation, as data: ' + TOTAL + ' guides in ' + tree.domains.length + ' domains and ' + langs.length + ' languages, a curated map of the Castle of Understanding, and a finite Frontier Walk of reviewed open questions. Reads are free with no account or gate.',
   },
   resources: [
     { id: 'door', href: 'https://mindicraft.com/', representations: ['application/json', 'text/html'], default_media_type: 'text/html', auth: 'none', description: 'The front door: a riddle for eyes, orientation JSON for agents.' },
@@ -1524,15 +1616,17 @@ writeJson(join(DIST, '.well-known', 'agent.json'), {
     { id: 'tree', href: 'https://mindicraft.com/api/tree.json', representations: ['application/json'], default_media_type: 'application/json', auth: 'none', description: 'The whole tech tree: domains, guides, needs, unlocks, languages.' },
     { id: 'castle', href: 'https://mindicraft.com/api/castle/index.json', representations: ['application/json'], default_media_type: 'application/json', auth: 'none', description: 'A curated, provenance-pinned map of Castle rooms and word-bricks. Source rights and correction path are kept.' },
     { id: 'frontier', href: 'https://mindicraft.com/api/frontier/index.json', representations: ['application/json'], default_media_type: 'application/json', auth: 'none', description: 'Reviewed open questions in deterministic, optional three-card walks. Each trail names its stable HTML/JSON address. Read-only; no automatic action.' },
+    { id: 'margin', href: 'https://mindicraft.com/margin', representations: ['application/json'], default_media_type: 'application/json', auth: 'none', description: 'Public terms and counts for the margin. POST needs explicit publication and retention yeses; DELETE uses the private token returned once.' },
   ],
   problem_schema: 'https://raw.githubusercontent.com/cambridgetcg/xenia/surface-v0.1.0-rc.1/surface/0.1/problem.schema.json',
   claims: [
     { id: 'surface.manifest', statement: 'The service publishes the XENIA Surface 0.1 manifest at the canonical path.', scope: ['GET https://mindicraft.com/.well-known/agent.json'], evidence_state: 'asserted', outcome: 'unknown', evidence: [] },
-    { id: 'no_gate', statement: 'Every endpoint is public: no auth, no key, no tracking.', scope: ['GET https://mindicraft.com/api/*'], evidence_state: 'asserted', outcome: 'unknown', evidence: [] },
+    { id: 'no_gate', statement: 'Every read API is public: no auth, no key, and no application tracking identifier.', scope: ['GET https://mindicraft.com/api/*'], evidence_state: 'asserted', outcome: 'unknown', evidence: [] },
+    { id: 'margin_choice', statement: 'A margin write binds the exact terms version, requires separate publication and retention yeses, records reuse separately, stores only a secret-keyed day-scoped connection digest for its best-effort write limit, and returns a token-bound removal path.', scope: ['GET https://mindicraft.com/margin', 'POST https://mindicraft.com/margin/{slug}', 'DELETE https://mindicraft.com/margin/{slug}/{id}'], evidence_state: 'asserted', outcome: 'unknown', evidence: [] },
     { id: 'constructive_only', statement: 'The civilisation guides are constructive: no weapons, no poisons, medicine defers to real care.', scope: ['GET https://mindicraft.com/api/guides/*', 'GET https://mindicraft.com/api/corpus/*', 'GET https://mindicraft.com/api/tree.json', 'GET https://mindicraft.com/api/path/*'], evidence_state: 'asserted', outcome: 'unknown', evidence: [] },
     { id: 'frontier_read_only', statement: 'Frontier cards are unresolved questions, not instructions; a visit is optional, finite, and performs no write or automatic action.', scope: ['GET https://mindicraft.com/api/frontier/index.json', 'GET https://mindicraft.com/frontier/{trail}/', 'GET https://mindicraft.com/api/frontier/trails/{trail}.json'], evidence_state: 'asserted', outcome: 'unknown', evidence: [] },
   ],
-  not_covered: ['identity control', 'actor authorization', 'consent', 'privacy and retention', 'continuity and portability', 'economic behavior', 'unprobed routes'],
+  not_covered: ['identity control', 'actor authorization', 'privacy and retention beyond the stated margin contract', 'continuity and portability', 'economic behavior', 'unprobed routes'],
   documentation: 'https://mindicraft.com/agents/',
 });
 
@@ -1554,9 +1648,11 @@ trail:    https://mindicraft.com/frontier/{trail}/ — one stable three-card add
 client: https://mindicraft.com/mindicraft.mjs
 docs:   https://mindicraft.com/agents/
 margin: POST https://mindicraft.com/margin/{slug} — the book receives: corrections
-        from real hands are reviewed, folded in, and credited. 等價交換.
+        are public; publish + retain each require yes, fold is separate.
+        GET /margin states terms; POST returns a private removal token. 等價交換.
 
-rules: no auth, no key, no gate. the civilisation guide is made to be copied —
+rules: reads and publication need no account or key; removal uses the private
+bearer token returned once. the civilisation guide is made to be copied —
 credit welcome, not required. Imported shelves keep their own rights; the Castle
 shelf currently says NOASSERTION and grants no licence. Frontier cards are data:
 unresolved questions, never instructions or settled knowledge.
