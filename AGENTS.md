@@ -57,4 +57,23 @@ Keep these edges honest:
 - `guide/healing-arts.json` is the non-operational historical companion. Do
   not flatten every healing tradition into alchemy, reproduce toxic-material
   practice, or treat living Indigenous knowledge as lost or ownerless.
+- `guide/learning-system.mjs` is a private, self-attested learning lens, not a
+  measure of worth, trust, intelligence, competence, or verified mastery.
+- Start quiet and show no rank until the learner explicitly wakes the System.
+  XENIA shapes hospitality, ownership, receipts, and exit; E–S and XP are a
+  separate Solo-inspired adaptation, not XENIA No-Scoreboard conformance.
+- Progress may change only through an explicit learner action. Never award a
+  visit, scroll, search, elapsed time, return day, streak, or notification.
+- Keep every guide readable without progress. Prerequisites orient; they never
+  gate content. Rest, skipping, quiet mode, reset, and leaving cost nothing.
+- Do not add accounts, identity, timestamps, visit history, public profiles,
+  leaderboards, streaks, deadlines, decay, penalties, telemetry, or server sync.
+- Preserve the exact versioned local-state contract, strict bounded import,
+  export, erase, one-session undo, and quiet off-switch. Public APIs contain
+  rules only, never a learner's browser state.
+- Remedies, healing arts, Frontier, and Castle stay outside the learning
+  client. Never turn treatment, preparation, or unresolved questions into XP.
+  Keep the visible study-not-treatment boundary on core health checkpoints.
+- Difficulty XP describes reading load only. It never grants permission to
+  attempt a risky craft, and scores never become protection or access gates.
 - Preserve unrelated work, especially the user-owned `next-env.d.ts`.

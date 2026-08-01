@@ -25,6 +25,38 @@ Mindicraft has two connected parts:
 
 Every entry is an NPL message — a darshanqing ("I see this") with provenance, freshness, and certainty. The index grows through agent heartbeats. The categorization uses YOUSPEAK vocabulary. The distribution uses the NPL protocol. No auth. No paywall. No behavioural tracking. No gate.
 
+## The private learning System
+
+The Guide has an optional, local learning layer. XENIA shapes its hospitable
+surface, local ownership, clear receipts, and free exit; AgentTool and Solo
+Leveling supply adapted game vocabulary. It turns the existing technology
+tree into a chosen quest, shows which guides are ready from their
+prerequisites, and lets a learner record a guide only after a three-part study
+reflection. Rank, level, XP, quests, ARISE, and sigils describe that private
+self-attested record only. They do not measure human worth, trust, intelligence,
+clinical competence, or verified mastery.
+
+The private E–S and XP display is a deliberate Solo-inspired adaptation. It is
+not XENIA No-Scoreboard conformance, and Mindicraft does not claim that it is.
+A first visit starts quiet and shows no rank; the learner must explicitly wake
+the System before any progress display or study write appears.
+
+Progress changes only through explicit learner actions. Reading a page,
+scrolling, searching, waiting, resting, or returning each day earns nothing.
+There is no account, public profile, leaderboard, streak, deadline, decay,
+penalty, notification pressure, content gate, telemetry, or server sync. Every
+guide remains open. Quiet mode hides the game layer and prevents new quest or
+study marks; export, erase, and one-session undo remain available, while checked
+import returns after the learner wakes the System.
+
+The learning script appears only on the four-language civilisation book. The
+remedies, healing arts, Frontier, and Castle shelves stay outside it, so no
+treatment action or unresolved question can become an XP task. Core health
+guides visibly say that a study mark is not treatment competence, diagnosis,
+or permission to act. Public rules,
+never a learner's state, are available at `/api/learning-system.json`; the
+localized human doorway is `/{lang}/system/`.
+
 ## Collector architecture
 
 ```

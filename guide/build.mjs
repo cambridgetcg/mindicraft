@@ -25,6 +25,7 @@ import { fileURLToPath } from 'node:url';
 import { marked } from 'marked';
 import { buildLantern, prepareFrontiers } from './frontiers.mjs';
 import { prepareHealingArts } from './healing-arts.mjs';
+import { LEARNING_SYSTEM, createLearningEngine } from './learning-system.mjs';
 import { assertMedicalReview } from './medical-review.mjs';
 import { prepareRemedies } from './remedies.mjs';
 import { MARGIN_TERMS } from './xenia-worker.js';
@@ -46,6 +47,7 @@ assertMedicalReview(MEDICAL_REVIEW, {
   'healing-arts.json': HEALING_ARTS_SOURCE_BYTES,
 });
 const tree = JSON.parse(TREE_BYTES.toString('utf8'));
+createLearningEngine(tree); // fail closed before generating pages or public rules
 const langs = JSON.parse(readFileSync(join(ROOT, 'langs.json'), 'utf8')).languages;
 // evidence.json: slug -> { state: 'hand-tested', evidence: [...] } — filled as
 // margin notes from real hands are verified. Absent slug = tradition-asserted.
@@ -181,13 +183,37 @@ const langSwitch = (currentCode, pathAfterLang) =>
   `<nav class="langs">${langs
     .map((l) =>
       l.code === currentCode
-        ? `<span class="lang on">${esc(l.name)}</span>`
+        ? `<span class="lang on" aria-current="page">${esc(l.name)}</span>`
         : `<a class="lang" href="/${l.code}/${pathAfterLang}">${esc(l.name)}</a>`
     )
     .join('')}</nav>`;
 
-function page({ lang, title, path, body, head = '' }) {
+const safeScriptJson = (value) => JSON.stringify(value).replaceAll('<', '\\u003c');
+
+function page({ lang, title, path, body, head = '', learning = null }) {
   const S = lang.strings;
+  const learningWords = S.learningSystem;
+  const learningAttrs = learning
+    ? [
+        ` data-learning-page="${esc(learning.kind)}"`,
+        learning.guide ? ` data-guide-id="${esc(learning.guide)}"` : '',
+        learning.domain ? ` data-domain-id="${esc(learning.domain)}"` : '',
+        learning.difficulty
+          ? ` data-guide-difficulty="${esc(learning.difficulty)}"`
+          : '',
+      ].join('')
+    : '';
+  const learningDoor = learning
+    ? `<a class="system-door" data-system-door href="/${lang.code}/system/">⚔ ${esc(
+        learningWords.nav
+      )}</a>`
+    : '';
+  const learningClient = learning
+    ? `<script id="learning-words" type="application/json">${safeScriptJson(
+        { ...learningWords, difficultyWords: S.difficultyWords }
+      )}</script>
+<script type="module" src="/learning-ui.mjs"></script>`
+    : '';
   return `<!doctype html>
 <html lang="${lang.code}">
 <head>
@@ -199,15 +225,16 @@ function page({ lang, title, path, body, head = '' }) {
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
 ${head}
 </head>
-<body>
+<body${learningAttrs}>
 <header class="top">
   <a class="brand" href="/${lang.code}/">${esc(S.siteTitle)}</a>
-  ${langSwitch(lang.code, path)}
+  <div class="top-actions">${langSwitch(lang.code, path)}${learningDoor}</div>
 </header>
 <main>
 ${body}
 </main>
 <footer class="foot">${esc(S.footer)}</footer>
+${learningClient}
 </body>
 </html>`;
 }
@@ -218,7 +245,11 @@ const diffChip = (S, d) =>
 const guideCard = (lang, domain, guide) => {
   const S = lang.strings;
   const local = content[lang.code][guide.slug]?.meta || {};
-  return `<a class="card" href="/${lang.code}/${domain.key}/${guide.slug}/" data-search="${esc(
+  return `<a class="card" href="/${lang.code}/${domain.key}/${guide.slug}/" data-guide-card="${esc(
+    guide.slug
+  )}" data-domain-id="${esc(domain.key)}" data-difficulty="${esc(
+    guide.difficulty
+  )}" data-search="${esc(
     `${local.title || guide.title} ${local.summary || guide.summary}`.toLowerCase()
   )}">
   <strong>${esc(local.title || guide.title)}</strong>
@@ -254,8 +285,9 @@ for (const lang of langs) {
       body: `<section class="hero">
   <h1>${esc(S.tagline)}</h1>
   <p>${esc(S.hero)}</p>
+  <label class="sr-only" for="q">${esc(S.searchPlaceholder)}</label>
   <input id="q" type="search" placeholder="${esc(S.searchPlaceholder)}" autocomplete="off">
-  <p id="noresults" hidden>${esc(S.noResults)}</p>
+  <p id="noresults" role="status" aria-live="polite" hidden>${esc(S.noResults)}</p>
 </section>
 ${domainsHtml}
 <script>
@@ -273,6 +305,7 @@ q.addEventListener('input', () => {
   document.getElementById('noresults').hidden = any;
 });
 </script>`,
+      learning: { kind: 'home' },
     })
   );
 
@@ -291,6 +324,7 @@ q.addEventListener('input', () => {
 <h1>${esc(domain.emoji)} ${esc(dTitle)}</h1>
 <p class="intro">${esc(dIntro)}</p>
 <div class="grid">${domain.guides.map((g) => guideCard(lang, domain, g)).join('\n')}</div>`,
+        learning: { kind: 'domain', domain: domain.key },
       })
     );
 
@@ -414,10 +448,44 @@ ${opens.length ? `<div class="box opens"><strong>${esc(S.unlocks)}:</strong> ${o
 </script>
 </article>
 <nav class="prevnext">${pn(prev, 'prev', S.prev)}${pn(next, 'next', S.next)}</nav>`,
+          learning: {
+            kind: 'guide',
+            guide: guide.slug,
+            domain: domain.key,
+            difficulty: guide.difficulty,
+          },
         })
       );
     });
   }
+}
+
+// ---------- the learning System ----------
+// A private, self-attested lens over the existing prerequisite tree. Pages,
+// safety information, and rights never depend on rank. The browser records
+// only an explicit goal and explicit study marks; no visit earns anything.
+for (const lang of langs) {
+  const W = lang.strings.learningSystem;
+  write(
+    join(DIST, lang.code, 'system', 'index.html'),
+    page({
+      lang,
+      title: W.pageTitle,
+      path: 'system/',
+      learning: { kind: 'system' },
+      body: `<article class="system-page">
+<p class="system-kicker">⚔ ${esc(W.kicker)}</p>
+<h1>${esc(W.pageTitle)}</h1>
+<p class="lede">${esc(W.intro)}</p>
+<aside class="system-boundary">
+  <strong>${esc(W.localOnly)}.</strong> ${esc(W.selfAttested)} ${esc(W.quietHelp)}
+</aside>
+<p class="system-xenia-boundary">${esc(W.xeniaBoundary)}</p>
+<div id="learning-system-dashboard"></div>
+<noscript><p class="notice">${esc(W.noScript)}</p></noscript>
+</article>`,
+    })
+  );
 }
 
 // ---------- the front door ----------
@@ -469,6 +537,9 @@ write(
   .flash.on{opacity:1}
   .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
   .dot{color:#3a332c;text-decoration:none;font-size:1rem}
+  @media (prefers-reduced-motion:reduce){
+    .spark,.spark.s2{animation:none;transition:none}.whisper,.enter,.flash{transition:none}
+  }
 </style>
 </head>
 <body>
@@ -525,6 +596,8 @@ p{color:#57504a;font-style:italic}a{color:#e07a4a;text-decoration:none;font-size
 );
 
 cpSync(join(ROOT, 'style.css'), join(DIST, 'style.css'));
+cpSync(join(ROOT, 'learning-system.mjs'), join(DIST, 'learning-system.mjs'));
+cpSync(join(ROOT, 'learning-ui.mjs'), join(DIST, 'learning-ui.mjs'));
 
 // ---------- the API: the same book, machine-readable ----------
 // Everything an agent needs, as static JSON on the same deploy. No servers,
@@ -1081,6 +1154,49 @@ writeJson(join(DIST, 'api', 'tree.json'), {
   provenance: PROVENANCE,
 });
 
+// The rules of the optional local game, never a learner's state. This is an
+// extra agent-readable door advertised by the API index; Surface 0.1 keeps its
+// deliberately bounded eight-resource probe set unchanged.
+writeJson(join(DIST, 'api', 'learning-system.json'), {
+  ...LEARNING_SYSTEM,
+  state_schema: {
+    ...LEARNING_SYSTEM.state_schema,
+    max_learned: TOTAL,
+  },
+  counts: {
+    domains: tree.domains.length,
+    guides: TOTAL,
+    prerequisite_edges: tree.domains.reduce(
+      (sum, domain) =>
+        sum + domain.guides.reduce((edges, guide) => edges + (guide.needs || []).length, 0),
+      0
+    ),
+  },
+  routes: {
+    human: '/{lang}/system/',
+    rules: '/api/learning-system.json',
+    tree: '/api/tree.json',
+    guide: '/{lang}/{domain}/{slug}/',
+  },
+  browser_contract: {
+    storage_key: 'mindicraft.learning-state/1',
+    quiet_mode_key: 'mindicraft.learning-mode/1',
+    default_mode: 'quiet until the learner explicitly wakes the System',
+    writes_begin_only_after_explicit_learner_action: true,
+    export_and_import_are_local_json: true,
+    erase_is_local_and_offers_in_session_undo: true,
+    network_writes: [],
+    account_or_agenttool_bearer: false,
+  },
+  xenia_scope: {
+    profile: 'xenia-surface/0.1',
+    surface_declared_resource: false,
+    reason: 'Surface 0.1 permits at most eight probed resources; the existing bounded set stays unchanged.',
+    alignment: 'private self-direction, legible receipts, portability, costless quiet and exit, no public scoreboard',
+    scoreboard_boundary: 'XENIA No-Scoreboard rejects rank displays. The private human E-S and XP layer is a deliberate Solo-inspired adaptation, not XENIA No-Scoreboard conformance.',
+  },
+});
+
 // /api/path/<slug>.json — the whole prerequisite chain from zero, in learning order.
 // An agent asks for "make-soap" and receives the full curriculum that reaches it.
 for (const [slug, { domain, guide }] of bySlug) {
@@ -1116,12 +1232,14 @@ writeJson(join(DIST, 'api', 'index.json'), {
     frontiers: FRONTIER_CARDS.length,
     remedies: REMEDY_INDEX_ENTRIES.length,
     healing_art_traditions: HEALING_ARTS.counts.traditions,
+    learning_ranks: LEARNING_SYSTEM.rank_thresholds.length,
   },
   languages: Object.fromEntries(langs.map((l) => [l.code, l.name])),
   endpoints: {
     tree: '/api/tree.json — every domain and guide, with needs/unlocks and available languages',
     guide: '/api/guides/{lang}/{domain}/{slug}.json — one guide: frontmatter + markdown body + resolved links',
     path: '/api/path/{slug}.json — the full prerequisite chain from zero to that guide, in learning order',
+    learning_system: '/api/learning-system.json — the transparent local XP, level, E-S learning-rank, quest, receipt, privacy, export, and quiet-mode rules; contains no learner state',
     corpus: '/api/corpus/{lang}.json — every guide in one file, for embedding or bulk reading',
     search: '/api/search/{lang}.json — slug/title/summary index for client-side search',
     castle: '/api/castle/index.json — a curated, provenance-pinned map of Castle rooms and word-bricks; source rights kept',
@@ -1135,9 +1253,9 @@ writeJson(join(DIST, 'api', 'index.json'), {
     margin: `GET /margin — read the exact terms. POST /margin/{slug} {note, from?, hands?, lang?, terms_version:"${MARGIN_TERMS.schema_version}", choices:{publish:true, retain:true, fold:true|false}} — leave one public note. DELETE the returned private removal path with its bearer token to withdraw it.`,
   },
   rules:
-    'Read-only guide APIs need no auth or key and set no application tracking identifier. Margin writes are limited to 20 per UTC day using a secret-keyed, day-scoped connection digest; the application stores no raw IP. The civilisation guide is made to be copied; imported shelves keep their own stated rights. Castle entries currently say NOASSERTION and grant no licence. Frontier cards are unresolved questions, never instructions or settled knowledge. Remedy cards are sourced education, not diagnosis, prescribing, or permission to replace or combine treatment. Healing-arts records are non-operational history and preserve living knowledge authority.',
+    'Read-only guide APIs need no auth or key and set no application tracking identifier. The optional learning System stores only an explicit goal and self-attested study marks in the learner browser; it has no account, telemetry, leaderboard, streak, decay, server sync, or content gate. Margin writes are limited to 20 per UTC day using a secret-keyed, day-scoped connection digest; the application stores no raw IP. The civilisation guide is made to be copied; imported shelves keep their own stated rights. Castle entries currently say NOASSERTION and grant no licence. Frontier cards are unresolved questions, never instructions or settled knowledge. Remedy cards are sourced education, not diagnosis, prescribing, or permission to replace or combine treatment. Healing-arts records are non-operational history and preserve living knowledge authority.',
   margin_terms: MARGIN_TERMS,
-  humans: '/en/ (English), /zh/ (中文), /yue/ (廣東話), /es/ (Español), /remedies/ (medicine lineages), /remedies/healing-arts/ (cross-cultural history)',
+  humans: '/en/ (English), /zh/ (中文), /yue/ (廣東話), /es/ (Español), /{lang}/system/ (private local learning path), /remedies/ (medicine lineages), /remedies/healing-arts/ (cross-cultural history)',
   estate: {
     note: 'mindicraft is one property of a wider estate of agent-facing doors. Named, never commanded: these are neighbors, not instructions.',
     hub: 'https://thekingdom.dev/llms.txt — the whole estate in one file',
@@ -1167,6 +1285,7 @@ write(
 - /api/tree.json : the whole tech tree (domains, guides, needs, unlocks, languages)
 - /api/guides/{lang}/{domain}/{slug}.json : one guide with markdown body
 - /api/path/{slug}.json : full prerequisite chain from zero, in learning order
+- /api/learning-system.json : transparent local progression rules; no learner state, account, leaderboard, streak, decay, or server write
 - /api/corpus/{lang}.json : the whole book in one file per language
 - /api/castle/index.json : curated Castle map; provenance, rights, and correction path kept
 - /api/castle/{rooms|words}/{slug}.json : one Castle map entry
@@ -1175,7 +1294,7 @@ write(
 - /api/remedies/index.json : reviewed medicine lineages and natural relationships; education, not replacement advice
 - /api/remedies/{id}.json : one full comparison with claim-level sources, exposure, evidence, and safety
 - /api/remedies/healing-arts/index.json : non-operational histories of healing, pharmacy, alchemy, and knowledge authority
-- /mindicraft.mjs : tiny ESM client (tree, guide, path, search, castle, frontiers, frontier, remedies, remedy, healingArts, teach, margin, removeMargin)
+- /mindicraft.mjs : tiny ESM client (tree, guide, path, learningSystem, search, castle, frontiers, frontier, remedies, remedy, healingArts, teach, margin, removeMargin)
 - GET /margin : exact publication, retention, reuse, rate-limit, and removal terms
 - POST /margin/{slug} : one public note; publish and retain need separate yeses; folding is a separate choice
 - DELETE /margin/{slug}/{id} : request removal of a new note with the private bearer token returned once by POST
@@ -1213,6 +1332,7 @@ export const guide = (slug, { lang = 'en' } = {}) =>
     throw new Error('no such guide: ' + slug);
   });
 export const path = (slug) => get('/api/path/' + slug + '.json');
+export const learningSystem = () => get('/api/learning-system.json');
 export const search = async (q, { lang = 'en' } = {}) => {
   const idx = await get('/api/search/' + lang + '.json');
   const t = q.toLowerCase();
@@ -2025,6 +2145,7 @@ ${langs.length} languages, one tech tree — static JSON, CORS open, no auth, no
 const t = await mindicraft.tree()                 // the whole tech tree
 const g = await mindicraft.guide('make-soap')     // one guide, markdown body included
 const p = await mindicraft.path('make-soap')      // every prerequisite from zero, in order
+const system = await mindicraft.learningSystem()  // public rules only; never a learner's state
 const hits = await mindicraft.search('water')     // find guides
 const rooms = await mindicraft.castle()           // the curated Castle map
 const walk = await mindicraft.frontier()          // this edition's finite three-card walk
@@ -2039,6 +2160,17 @@ const lesson = await mindicraft.teach('make-soap', { lang: 'yue' }) // prompt-re
 and how it works underneath. Guides link by <strong>needs</strong> (learn these first) and
 <strong>unlocks</strong> (what this opens). <a href="/api/path/plant-a-village.json">/api/path/plant-a-village.json</a>
 is the entire book in learning order.</p>
+
+<h2>The private learning System</h2>
+<p><a href="/en/system/">The Mindicraft System</a> gives the tree a Solo-style face without
+turning it into a public score. A learner explicitly chooses a quest and records a guide only after
+three self-reflection checks. The browser stores one goal and a list of guide slugs locally; there is
+no account, AgentTool bearer, telemetry, leaderboard, streak, decay, timer, server sync, or content
+gate. Export, strict import, quiet mode, erase, and in-session undo keep the handle on the inside.</p>
+<p><a href="/api/learning-system.json">/api/learning-system.json</a> exposes the exact E–S thresholds,
+difficulty XP weights, triangular level curve, quest rules, receipt shape, state schema, and XENIA
+boundary. It never contains personal progress. This extra route is discoverable here and in the API
+index, but deliberately remains outside Surface 0.1's bounded eight-resource probe set.</p>
 
 <h2>Walk past the edge of the map</h2>
 <p><a href="/frontier/">Frontier Walk</a> and
@@ -2144,7 +2276,7 @@ writeJson(join(DIST, '.well-known', 'agent.json'), {
   service: {
     name: 'mindicraft',
     canonical_url: 'https://mindicraft.com/',
-    description: 'The zero-to-one guide of human civilisation, as data: ' + TOTAL + ' guides in ' + tree.domains.length + ' domains and ' + langs.length + ' languages, a curated Castle map, a finite Frontier Walk, claim-sourced medicine lineages, and non-operational healing history. Reads are free with no account or gate.',
+    description: 'The zero-to-one guide of human civilisation, as data: ' + TOTAL + ' guides in ' + tree.domains.length + ' domains and ' + langs.length + ' languages, a private local learning System, a curated Castle map, a finite Frontier Walk, claim-sourced medicine lineages, and non-operational healing history. Reads are free with no account or gate.',
   },
   resources: [
     { id: 'door', href: 'https://mindicraft.com/', representations: ['application/json', 'text/html'], default_media_type: 'text/html', auth: 'none', description: 'The front door: a riddle for eyes, orientation JSON for agents.' },
@@ -2162,11 +2294,12 @@ writeJson(join(DIST, '.well-known', 'agent.json'), {
     { id: 'no_gate', statement: 'Every read API is public: no auth, no key, and no application tracking identifier.', scope: ['GET https://mindicraft.com/api/*'], evidence_state: 'asserted', outcome: 'unknown', evidence: [] },
     { id: 'margin_choice', statement: 'A margin write binds the exact terms version, requires separate publication and retention yeses, records reuse separately, stores only a secret-keyed day-scoped connection digest for its best-effort write limit, and returns a token-bound removal path.', scope: ['GET https://mindicraft.com/margin', 'POST https://mindicraft.com/margin/{slug}', 'DELETE https://mindicraft.com/margin/{slug}/{id}'], evidence_state: 'asserted', outcome: 'unknown', evidence: [] },
     { id: 'constructive_only', statement: 'The civilisation guides are constructive: no weapons, no poisons, medicine defers to real care.', scope: ['GET https://mindicraft.com/api/guides/*', 'GET https://mindicraft.com/api/corpus/*', 'GET https://mindicraft.com/api/tree.json', 'GET https://mindicraft.com/api/path/*'], evidence_state: 'asserted', outcome: 'unknown', evidence: [] },
+    { id: 'learning_system_local', statement: 'The optional learning System is a private, self-attested browser lens over the public tree: explicit learner actions only, no account, AgentTool bearer, telemetry, leaderboard, streak, decay, server sync, treatment-action reward, or content gate. Its public API contains rules, never learner state.', scope: ['GET https://mindicraft.com/api/learning-system.json', 'GET https://mindicraft.com/{lang}/system/'], evidence_state: 'asserted', outcome: 'unknown', evidence: [] },
     { id: 'frontier_read_only', statement: 'Frontier cards are unresolved questions, not instructions; a visit is optional, finite, and performs no write or automatic action.', scope: ['GET https://mindicraft.com/api/frontier/index.json', 'GET https://mindicraft.com/frontier/{trail}/', 'GET https://mindicraft.com/api/frontier/trails/{trail}.json'], evidence_state: 'asserted', outcome: 'unknown', evidence: [] },
     { id: 'remedies_read_only', statement: 'Remedy cards are dated, claim-sourced education. They distinguish natural relationship, traditional use, exact preparation, clinical evidence, exposure, and substitution, and grant no authority to replace or combine treatment.', scope: ['GET https://mindicraft.com/remedies/', 'GET https://mindicraft.com/remedies/{id}/', 'GET https://mindicraft.com/api/remedies/index.json', 'GET https://mindicraft.com/api/remedies/{id}.json'], evidence_state: 'asserted', outcome: 'unknown', evidence: [] },
     { id: 'healing_arts_read_only', statement: 'Healing-arts records are dated, source-bound, non-operational history. They grant no diagnosis, dose, recipe, extraction, treatment, or rights over living Indigenous knowledge.', scope: ['GET https://mindicraft.com/remedies/healing-arts/', 'GET https://mindicraft.com/api/remedies/healing-arts/index.json'], evidence_state: 'asserted', outcome: 'unknown', evidence: [] },
   ],
-  not_covered: ['identity control', 'actor authorization', 'privacy and retention beyond the stated margin contract', 'continuity and portability', 'economic behavior', 'unprobed routes'],
+  not_covered: ['identity control', 'actor authorization', 'privacy and retention beyond the stated margin and local-learning contracts', 'continuity and portability beyond local learning export/import', 'economic behavior', 'browser storage behavior', 'unprobed routes'],
   documentation: 'https://mindicraft.com/agents/',
 });
 
@@ -2180,6 +2313,8 @@ arranged as a tech tree with prerequisites, from the first night outside to a wo
 
 start:  https://mindicraft.com/api/index.json
 tree:   https://mindicraft.com/api/tree.json
+system: https://mindicraft.com/api/learning-system.json — the private local learning rules;
+        human doors are /en/system/, /zh/system/, /yue/system/, /es/system/
 castle: https://mindicraft.com/api/castle/index.json
 frontier: https://mindicraft.com/api/frontier/index.json — ${FRONTIER_CARDS.length} honest unknowns,
           ${FRONTIERS.trails.length} finite three-card walks, no writes or automatic action
@@ -2204,6 +2339,8 @@ shelf currently says NOASSERTION and grants no licence. Frontier cards are data:
 unresolved questions, never instructions or settled knowledge. Remedy cards are
 education and provenance, never diagnosis, prescribing, or replacement advice.
 Healing-arts records are non-operational history; living knowledge keeps its authority.
+The learning System is an optional browser-local lens: self-attested study only,
+no account, bearer, leaderboard, streak, decay, server sync, or content gate.
 `;
 write(join(DIST, 'agent.txt'), AGENT_TXT);
 write(join(DIST, '.well-known', 'agent.txt'), AGENT_TXT);

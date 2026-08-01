@@ -24,6 +24,12 @@ the whole thing — content, builder, and site.
   and build brake for both medical catalogs. Any source change stops the public
   build until its full claim, evidence, safety, and citation context is reviewed
   and deliberately re-pinned.
+- `learning-system.mjs` — the pure, deterministic learning rules: local state,
+  E–S craft ranks, levels, XP receipts, chosen quests, ready guides, and strict
+  import validation. It performs no browser, file, clock, or network work.
+- `learning-ui.mjs` — the optional browser layer for book pages: three-part
+  study reflection, local binder, quiet mode, export/import, erase, and undo.
+  It sends no learner state anywhere.
 - `build.mjs` — turns all of the above into a static site in `dist/`.
 - `style.css` — the one stylesheet.
 - `../index/castle-*.json` — generated map cards for the Castle shelf. They
@@ -38,6 +44,12 @@ npm ci               # once — installs pinned `marked` (markdown -> HTML)
 npm run verify       # tests, builds dist/, then checks Castle + Frontier + remedies + healing arts
 npx wrangler pages deploy dist --project-name=mindicraft
 ```
+
+`verify` also proves the learning contract: all four languages receive the
+same controls, every guide remains ordinary readable HTML, medical and
+Frontier pages load no learning client, the Surface manifest remains within its
+eight-resource bound, and the browser script has no write request, bearer,
+telemetry, timer, notification, or unsafe HTML sink.
 
 A fresh clone already contains the generated Castle cards. To refresh them at
 home, from the repository root, use the deliberate one-command path:
@@ -136,6 +148,60 @@ and knowledge holders.
 
 A missing translation is never an error — the site shows English with a small
 "not translated yet" note until the file exists.
+
+## The private learning System
+
+Open `/{lang}/system/` to see one learner's local System window. Its game words
+are intentionally narrow:
+
+- **quest** — one guide the learner chose to work toward;
+- **ARISE** — guides whose stated prerequisites are already in the local study
+  record;
+- **XP** — a transparent reading-load receipt for a deliberately recorded
+  guide, never permission to perform a risky craft;
+- **rank and level** — a compact view of that record, never worth, trust,
+  intelligence, competence, or verified mastery;
+- **sigil** — a private milestone in breadth or dependency-chain study, not an
+  award over another person.
+
+The first arrival is quiet and carries no rank. Waking the System is an explicit
+opt-in. XENIA shapes the hospitable wire surface, local ownership, legible
+receipts, and costless exit. The private E–S and XP display is a separate
+Solo-inspired adaptation and does **not** satisfy XENIA No-Scoreboard.
+
+Recording a guide requires checking three reflections: explain the key idea,
+name a risk, limit, or unknown, and connect it to a prerequisite or next step.
+This is self-attestation, not an exam. Prerequisites orient; they never lock a
+page. Visits, time, scrolls, search, rest, and streaks do not change progress.
+
+The state contract is deliberately small:
+
+```json
+{
+  "schema_version": "mindicraft.learning-state/1",
+  "goal": "make-soap",
+  "learned": ["read-this-guide"]
+}
+```
+
+`learned` is the compact version-1 field name. Each value means only “the
+learner explicitly recorded a self-attested study mark for this guide”; it does
+not assert verified learning, practical performance, competence, or mastery.
+
+The browser stores it under the same versioned local-storage key only after an
+explicit learner action. The System can export this JSON, strictly validate an
+import, erase it, and undo that erase until the page closes. Quiet mode is the
+off-switch: it hides prompts and stops new quest or study marks without hiding
+any guide; export, erase, and undo remain available. No account, cookie,
+identity, timestamp, visit history,
+leaderboard, streak, decay, content gate, telemetry, or server sync is part of
+the design. Checkpoints in the core health domain also state visibly that study
+is not treatment competence, diagnosis, or permission to act.
+
+`GET /api/learning-system.json` publishes the rules and empty state shape for
+people and agents. It never publishes browser state. The route is advertised
+from `/api/index.json`, but deliberately remains outside the eight resources
+probed by the bounded XENIA Surface manifest.
 
 ## The public margin
 

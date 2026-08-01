@@ -159,6 +159,58 @@ test('the declared frontier resource negotiates JSON', async () => {
   assert.equal((await response.json()).schema_version, 'mindicraft.frontiers/1');
 });
 
+test('the local learning System keeps one human door and one rules representation', async () => {
+  const seen = [];
+  const assets = {
+    fetch: async (request) => {
+      seen.push(new URL(request.url).pathname);
+      if (request.url.endsWith('/api/learning-system.json')) {
+        return Response.json({
+          schema_version: 'mindicraft.learning-system/1',
+          boundaries: { no_leaderboard: true },
+        });
+      }
+      return new Response('<h1>The Mindicraft System</h1>', {
+        headers: { 'content-type': 'text/html' },
+      });
+    },
+  };
+  const url = 'https://mindicraft.com/yue/system/';
+
+  const html = await worker.fetch(new Request(url), { ASSETS: assets }, {});
+  assert.equal(html.status, 200);
+  assert.match(html.headers.get('content-type') ?? '', /^text\/html\b/u);
+  assert.equal(html.headers.get('vary'), 'Accept');
+
+  const json = await worker.fetch(
+    new Request(url, { headers: { accept: 'application/json' } }),
+    { ASSETS: assets },
+    {}
+  );
+  assert.equal(json.status, 200);
+  assert.match(json.headers.get('content-type') ?? '', /^application\/json\b/u);
+  assert.equal(json.headers.get('access-control-allow-origin'), '*');
+  assert.equal((await json.json()).schema_version, 'mindicraft.learning-system/1');
+
+  const unsupported = await worker.fetch(
+    new Request(url, { headers: { accept: 'image/png' } }),
+    { ASSETS: assets },
+    {}
+  );
+  assert.equal(unsupported.status, 406);
+  assert.equal((await unsupported.json()).code, 'not_acceptable');
+
+  const write = await worker.fetch(
+    new Request(url, { method: 'POST', body: '{}' }),
+    { ASSETS: assets },
+    {}
+  );
+  assert.equal(write.status, 405);
+  assert.equal(write.headers.get('allow'), 'GET, HEAD, OPTIONS');
+  assert.equal((await write.json()).code, 'method_not_allowed');
+  assert.deepEqual(seen, ['/yue/system/', '/api/learning-system.json']);
+});
+
 test('the remedies doorway serves HTML by default and its compact JSON when asked', async () => {
   const seen = [];
   const assets = {

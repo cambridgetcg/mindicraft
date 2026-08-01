@@ -16,18 +16,22 @@ const ORIGIN = 'https://mindicraft.com';
 const MANIFEST_URL = ORIGIN + '/.well-known/agent.json';
 const DOCS = [ORIGIN + '/agents/'];
 
-// The declared public resources (mirror of .well-known/agent.json `resources`)
+// Negotiated public resources. The Surface manifest deliberately probes a
+// bounded subset (eight is the profile maximum); extra doors keep the same
+// hospitable wire behavior without pretending they expand that tested scope.
 const RESOURCES = {
   '/': { reps: ['text/html', 'application/json'], def: 'text/html', jsonAsset: '/api/index.json' },
   '/api/index.json': { reps: ['application/json'], def: 'application/json' },
   '/api/tree.json': { reps: ['application/json'], def: 'application/json' },
   '/api/castle/index.json': { reps: ['application/json'], def: 'application/json' },
   '/api/frontier/index.json': { reps: ['application/json'], def: 'application/json' },
+  '/api/learning-system.json': { reps: ['application/json'], def: 'application/json' },
   '/remedies/': { reps: ['text/html', 'application/json'], def: 'text/html', jsonAsset: '/api/remedies/index.json' },
   '/api/remedies/index.json': { reps: ['application/json'], def: 'application/json' },
   '/remedies/healing-arts/': { reps: ['text/html', 'application/json'], def: 'text/html', jsonAsset: '/api/remedies/healing-arts/index.json' },
   '/api/remedies/healing-arts/index.json': { reps: ['application/json'], def: 'application/json' },
 };
+const LEARNING_SYSTEM_PAGE = /^\/(en|zh|yue|es)\/system\/$/;
 export const FRONTIER_TRAIL_IDS = new Set([
   'hands-words-learners',
   'map-meets-ground',
@@ -43,6 +47,13 @@ const REMEDY_API = /^\/api\/remedies\/([a-z0-9]+(?:-[a-z0-9]+)*)\.json$/;
 
 function resourceFor(path) {
   if (RESOURCES[path]) return RESOURCES[path];
+  if (LEARNING_SYSTEM_PAGE.test(path)) {
+    return {
+      reps: ['text/html', 'application/json'],
+      def: 'text/html',
+      jsonAsset: '/api/learning-system.json',
+    };
+  }
   const page = path.match(FRONTIER_TRAIL_PAGE);
   if (page && FRONTIER_TRAIL_IDS.has(page[1])) {
     return {
