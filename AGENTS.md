@@ -43,4 +43,18 @@ Keep these edges honest:
   identity, note, answer, seed, or result.
 - Castle references are link-only. Never import Castle questions or source
   prose into the frontier.
+- `guide/remedies.json` is a reviewed medical-education shelf, not an ordinary
+  guide or collector feed. Keep every factual claim source-bound and dated.
+- `guide/medical-review.json` pins the exact bytes allowed into the public
+  medical edition. After any source change, review the whole affected claim,
+  evidence, safety, and citation boundary before deliberately updating its pin.
+- Keep molecule identity, natural relationship, traditional context, exact
+  preparation, human evidence, bioavailability, safety, and substitution as
+  separate facts. Natural origin proves no superiority; synthetic origin proves
+  no harm.
+- Never add a diagnosis, dose, recipe, extraction method, personal treatment
+  plan, or permission to replace, stop, combine, or delay care.
+- `guide/healing-arts.json` is the non-operational historical companion. Do
+  not flatten every healing tradition into alchemy, reproduce toxic-material
+  practice, or treat living Indigenous knowledge as lost or ownerless.
 - Preserve unrelated work, especially the user-owned `next-env.d.ts`.

@@ -1,0 +1,1255 @@
+{
+  "schema_version": "mindicraft.healing-arts-source/1",
+  "title": "Healing arts: records, alchemy, and pharmacy across cultures",
+  "description": "A reviewed, non-operational historical companion to Roots to remedies, following fourteen source-bound records and living contexts without turning them into treatment directions.",
+  "language": "en",
+  "reviewed_at": "2026-08-01",
+  "content_is": "Historical orientation about healing, pharmacy, alchemy, material craft, transmission, limits, and harms. It is not a treatment guide or a source of operational practice.",
+  "selection_basis": "Fourteen source-bound records and living contexts were selected to show distinct written, workshop, institutional, and living knowledge lineages across cultures. They are examples, not a universal history, a ranking, or a claim that every healing tradition was alchemy.",
+  "boundary": {
+    "summary": "This shelf is non-operational history. It preserves context and evidence boundaries while granting no clinical or material-practice authority.",
+    "not_included": [
+      "No diagnosis, dosing, prescribing, preparation, extraction, substitution, or personal treatment plan is included.",
+      "No mineral, metal, plant, animal, fungal, venom, or other remedy recipe or laboratory procedure is included."
+    ],
+    "living_knowledge": "Mindicraft treats living Indigenous knowledge as remaining under the authority and rights of its named Nations, communities, and knowledge holders. Public availability is not permission here to reproduce, generalize, extract, or commercialize it; legal rights and permissions vary by jurisdiction and customary protocol.",
+    "source_ids": [
+      "who-traditional-medicine",
+      "wipo-traditional-knowledge"
+    ]
+  },
+  "authority": {
+    "use": "read-only, non-operational historical education",
+    "actions": "none",
+    "diagnosis": "none",
+    "prescriptions": "none",
+    "substitutions": "none",
+    "writes": "none",
+    "grants": []
+  },
+  "rights": {
+    "summaries": "The repository's MIT licence covers only Mindicraft's original wording and code. It grants no rights in underlying living knowledge, names, linked text, images, records, or community materials.",
+    "sources": "Linked texts, records, objects, community knowledge, and labels keep their own rights; this shelf grants no rights on their behalf.",
+    "living_knowledge": "Mindicraft recognizes the authority of named Indigenous Nations, communities, and knowledge holders over what their public knowledge means and what they choose to share or permit; applicable legal rights vary by jurisdiction and customary protocol."
+  },
+  "correction": "https://github.com/cambridgetcg/mindicraft/issues/new?title=Healing%20Arts%20correction",
+  "sources": [
+    {
+      "id": "fda-botanical",
+      "title": "Botanical Drug Development: Guidance for Industry",
+      "publisher": "US Food and Drug Administration",
+      "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/botanical-drug-development-guidance-industry",
+      "kind": "official-guidance",
+      "observed_at": "2026-08-01"
+    },
+    {
+      "id": "oracc-nineveh",
+      "title": "What is the Nineveh Medical Encyclopaedia?",
+      "publisher": "Open Richly Annotated Cuneiform Corpus",
+      "url": "https://oracc.museum.upenn.edu/asbp/ninmed/WhatistheNME/index.html",
+      "kind": "cultural-institution",
+      "observed_at": "2026-08-01"
+    },
+    {
+      "id": "oracc-medicaments",
+      "title": "Application of medicaments in the Nineveh Medical Encyclopaedia",
+      "publisher": "Open Richly Annotated Cuneiform Corpus",
+      "url": "https://oracc.museum.upenn.edu/asbp/ninmed/Medicaltechniques/Applicationofmedicaments/index.html",
+      "kind": "cultural-institution",
+      "observed_at": "2026-08-01"
+    },
+    {
+      "id": "ucl-egypt-papyri",
+      "title": "Healing papyri from ancient Egypt",
+      "publisher": "University College London",
+      "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/med/healingpapyri.html",
+      "kind": "cultural-institution",
+      "observed_at": "2026-08-01"
+    },
+    {
+      "id": "british-museum-medical-papyrus",
+      "title": "London Medical Papyrus object record",
+      "publisher": "British Museum",
+      "url": "https://www.britishmuseum.org/collection/object/Y_EA10059-3",
+      "kind": "cultural-institution",
+      "observed_at": "2026-08-01"
+    },
+    {
+      "id": "dioscorides-materia-medica",
+      "title": "Greek Medicine: Dioscorides, Early Pharmacology",
+      "publisher": "US National Library of Medicine",
+      "url": "https://www.nlm.nih.gov/hmd/topics/greek-medicine/index.html",
+      "kind": "cultural-institution",
+      "observed_at": "2026-08-01"
+    },
+    {
+      "id": "oxford-zosimos",
+      "title": "The Visions of Zosimos of Panopolis: text, translation, and commentary",
+      "publisher": "University of Oxford",
+      "url": "https://ora.ox.ac.uk/objects/uuid%3A45fed8a7-0777-4822-b4a2-0fcc788d0b64",
+      "kind": "scholarly-history",
+      "observed_at": "2026-08-01"
+    },
+    {
+      "id": "cambridge-alchemy-handbooks",
+      "title": "Ancient handbooks and Graeco-Egyptian collections of alchemical recipes",
+      "publisher": "Cambridge University Press",
+      "url": "https://www.cambridge.org/core/journals/bjhs-themes/article/ancient-handbooks-and-graecoegyptian-collections-of-alchemical-recipes/3F2A7926F9D784A43E5170E0BA50AFB5",
+      "kind": "scholarly-history",
+      "observed_at": "2026-08-01"
+    },
+    {
+      "id": "niimh-caraka",
+      "title": "Electronic Caraka Samhita",
+      "publisher": "National Institute of Indian Medical Heritage",
+      "url": "https://niimh.nic.in/ebooks/ecaraka/index.php",
+      "kind": "cultural-institution",
+      "observed_at": "2026-08-01"
+    },
+    {
+      "id": "wellcome-ayurveda",
+      "title": "Ayurveda: knowledge for long life",
+      "publisher": "Wellcome Collection",
+      "url": "https://wellcomecollection.org/stories/ayurveda--knowledge-for-long-life",
+      "kind": "cultural-institution",
+      "observed_at": "2026-08-01"
+    },
+    {
+      "id": "oxford-rasashastra",
+      "title": "Rasashastra bibliography",
+      "publisher": "Oxford University Press",
+      "url": "https://academic.oup.com/reference/62357/reference-article-abstract/554515794",
+      "kind": "scholarly-history",
+      "observed_at": "2026-08-01"
+    },
+    {
+      "id": "who-ayurveda-safety",
+      "title": "WHO benchmarks for the practice of Ayurveda",
+      "publisher": "World Health Organization",
+      "url": "https://www.who.int/publications/i/item/9789240042674",
+      "kind": "official-guidance",
+      "observed_at": "2026-08-01"
+    },
+    {
+      "id": "fda-ayurvedic-heavy-metals",
+      "title": "FDA warning about heavy metal poisoning associated with certain unapproved Ayurvedic products",
+      "publisher": "US Food and Drug Administration",
+      "url": "https://www.fda.gov/drugs/fraudulent-products/fda-warns-about-heavy-metal-poisoning-associated-certain-unapproved-ayurvedic-drug-products",
+      "kind": "official-guidance",
+      "observed_at": "2026-08-01"
+    },
+    {
+      "id": "who-mercury-health",
+      "title": "Mercury and health",
+      "publisher": "World Health Organization",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/mercury-and-health",
+      "kind": "official-guidance",
+      "observed_at": "2026-08-01"
+    },
+    {
+      "id": "who-lead-health",
+      "title": "Lead poisoning and health",
+      "publisher": "World Health Organization",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/lead-poisoning-and-health",
+      "kind": "official-guidance",
+      "observed_at": "2026-08-01"
+    },
+    {
+      "id": "who-arsenic-health",
+      "title": "Arsenic",
+      "publisher": "World Health Organization",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/arsenic",
+      "kind": "official-guidance",
+      "observed_at": "2026-08-01"
+    },
+    {
+      "id": "unesco-bencao",
+      "title": "Ben Cao Gang Mu nomination dossier",
+      "publisher": "UNESCO Memory of the World",
+      "url": "https://media.unesco.org/sites/default/files/webform/mow001/china_materia_medica.pdf",
+      "kind": "cultural-institution",
+      "observed_at": "2026-08-01"
+    },
+    {
+      "id": "loc-bencao",
+      "title": "Ben cao gang mu: Wu shi er juan, fu tu er juan",
+      "publisher": "Library of Congress",
+      "url": "https://www.loc.gov/item/2021666452/",
+      "kind": "reference-record",
+      "observed_at": "2026-08-01"
+    },
+    {
+      "id": "stanford-daoism",
+      "title": "Religious Daoism: external and internal alchemy",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/archives/sum2024/entries/daoism-religion/#ExtIntElix",
+      "kind": "scholarly-history",
+      "observed_at": "2026-08-01"
+    },
+    {
+      "id": "nlm-islamicate-alchemy",
+      "title": "Alchemy in the Islamic world",
+      "publisher": "US National Library of Medicine",
+      "url": "https://www.nlm.nih.gov/hmd/arabic/alchemy1.html",
+      "kind": "cultural-institution",
+      "observed_at": "2026-08-01"
+    },
+    {
+      "id": "nlm-islamicate-pharmacy",
+      "title": "Pharmaceutics in the Islamic world",
+      "publisher": "US National Library of Medicine",
+      "url": "https://www.nlm.nih.gov/hmd/arabic/pharmaceutics1.html",
+      "kind": "cultural-institution",
+      "observed_at": "2026-08-01"
+    },
+    {
+      "id": "unesco-silk-roads-medicine",
+      "title": "Silk Roads exchange and development of medical sciences, Chinese UNESCO mirror",
+      "publisher": "UNESCO",
+      "url": "https://zh.unesco.org/silkroad/content/nizhidaoma-yixuezaisichouzhilushangdejiaoliuyufazhan",
+      "kind": "cultural-institution",
+      "observed_at": "2026-08-01"
+    },
+    {
+      "id": "ncbi-paracelsus",
+      "title": "Selling the Chemical Universe",
+      "publisher": "McGill-Queen's University Press via NCBI Bookshelf",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK583763/",
+      "kind": "scholarly-history",
+      "observed_at": "2026-08-01"
+    },
+    {
+      "id": "paracelsus-toxicology-history",
+      "title": "Theophrastus Bombastus Von Hohenheim (Paracelsus) (1493–1541): The eminent physician and pioneer of toxicology",
+      "publisher": "Toxicology Reports via PubMed Central",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7920879/",
+      "kind": "scholarly-history",
+      "observed_at": "2026-08-01"
+    },
+    {
+      "id": "sciencehistory-apothecaries",
+      "title": "Women’s Business: 17th-Century Female Pharmacists",
+      "publisher": "Science History Institute",
+      "url": "https://www.sciencehistory.org/stories/magazine/womens-business-17th-century-female-pharmacists/",
+      "kind": "scholarly-history",
+      "observed_at": "2026-08-01"
+    },
+    {
+      "id": "fnha-traditional-wellness",
+      "title": "Traditional wellness and healing",
+      "publisher": "First Nations Health Authority",
+      "url": "https://fnha.ca/services-and-support/culturally-grounded-care/traditional-wellness-and-healing/",
+      "kind": "cultural-institution",
+      "observed_at": "2026-08-01"
+    },
+    {
+      "id": "tepapa-rongoa",
+      "title": "Rongoā Māori | Māori Medicine Part 2",
+      "publisher": "Museum of New Zealand Te Papa Tongarewa",
+      "url": "https://blog.tepapa.govt.nz/2014/10/17/rongoa-maori-maori-medicine-part-2/",
+      "kind": "cultural-institution",
+      "observed_at": "2026-08-01"
+    },
+    {
+      "id": "wipo-traditional-knowledge",
+      "title": "Traditional knowledge glossary",
+      "publisher": "World Intellectual Property Organization",
+      "url": "https://www.wipo.int/en/web/traditional-knowledge/resources/glossary",
+      "kind": "official-guidance",
+      "observed_at": "2026-08-01"
+    },
+    {
+      "id": "who-traditional-medicine",
+      "title": "Traditional medicine — questions and answers",
+      "publisher": "World Health Organization",
+      "url": "https://www.who.int/news-room/questions-and-answers/item/traditional-medicine",
+      "kind": "official-guidance",
+      "observed_at": "2026-08-01"
+    },
+    {
+      "id": "hmml-ethiopia-healing-manuscript",
+      "title": "Medicine, Ritual, and Magic in Ethiopia",
+      "publisher": "Hill Museum & Manuscript Library",
+      "url": "https://hmml.org/stories/series-medicine-magic-in-ethiopia/",
+      "kind": "cultural-institution",
+      "observed_at": "2026-08-01"
+    },
+    {
+      "id": "hmml-ethiopia-operations",
+      "title": "Global Operations: Ethiopia",
+      "publisher": "Hill Museum & Manuscript Library",
+      "url": "https://hmml.org/about/global-operations/ethiopia/",
+      "kind": "cultural-institution",
+      "observed_at": "2026-08-01"
+    },
+    {
+      "id": "inah-cruz-badiano",
+      "title": "Códice De la Cruz Badiano",
+      "publisher": "Biblioteca Nacional de Antropología e Historia, INAH",
+      "url": "https://bnah.inah.gob.mx/publico/de_la_cruz_badiano/",
+      "kind": "cultural-institution",
+      "observed_at": "2026-08-01"
+    },
+    {
+      "id": "getty-florentine-codex",
+      "title": "Digital Florentine Codex",
+      "publisher": "Getty Research Institute",
+      "url": "https://florentinecodex.getty.edu/en/",
+      "kind": "cultural-institution",
+      "observed_at": "2026-08-01"
+    },
+    {
+      "id": "getty-florentine-codex-about",
+      "title": "Digital Florentine Codex: About the Project",
+      "publisher": "Getty Research Institute",
+      "url": "https://florentinecodex.getty.edu/about/1_About_the_Project",
+      "kind": "cultural-institution",
+      "observed_at": "2026-08-01"
+    },
+    {
+      "id": "unesco-donguibogam",
+      "title": "Donguibogam: Principles and Practice of Eastern Medicine",
+      "publisher": "UNESCO Memory of the World",
+      "url": "https://www.unesco.org/en/memory-world/donguibogam-principles-and-practice-eastern-medicine",
+      "kind": "cultural-institution",
+      "observed_at": "2026-08-01"
+    }
+  ],
+  "traditions": [
+    {
+      "id": "mesopotamian-healing-records",
+      "name": "Mesopotamian healing records",
+      "place_period": {
+        "text": "Mesopotamia; surviving Nineveh tablets mainly copied in the seventh century BCE from older traditions",
+        "source_ids": ["oracc-nineveh"]
+      },
+      "scope_note": {
+        "text": "Healing involved overlapping expert roles, material treatments, diagnosis, prognosis, incantation, and ritual; a simple doctor-versus-magician split misrepresents the record.",
+        "source_ids": ["oracc-nineveh", "oracc-medicaments"]
+      },
+      "healing_aims": [
+        {
+          "text": "The Nineveh Medical Encyclopaedia organized signs, possible causes, prognoses, and responses for bodily illness within Mesopotamian scholarly and religious worlds.",
+          "evidence_state": "historical-report",
+          "source_ids": [
+            "oracc-nineveh"
+          ]
+        },
+        {
+          "text": "Practitioners used multiple material forms and routes alongside spoken and ritual acts rather than separating care into modern scientific and spiritual compartments.",
+          "evidence_state": "historical-report",
+          "source_ids": [
+            "oracc-medicaments"
+          ]
+        }
+      ],
+      "durable_contributions": [
+        {
+          "text": "The tablets preserve structured differential descriptions, alternative substances, application forms, prognosis, commentary, and cumulative textual transmission.",
+          "evidence_state": "historical-report",
+          "source_ids": [
+            "oracc-nineveh",
+            "oracc-medicaments"
+          ]
+        },
+        {
+          "text": "They show that careful observation and record keeping can coexist historically with causal explanations that modern biomedicine does not accept.",
+          "evidence_state": "supported",
+          "source_ids": [
+            "oracc-nineveh"
+          ]
+        }
+      ],
+      "limits_and_harms": [
+        {
+          "text": "Many ancient ingredient names cannot be mapped securely to a single modern species or substance, so reconstructing a recipe would create false certainty and possible harm.",
+          "evidence_state": "supported",
+          "source_ids": [
+            "oracc-medicaments"
+          ]
+        },
+        {
+          "text": "Divine, ghost, or omen explanations belong to the history of meaning; they are not established biomedical mechanisms.",
+          "evidence_state": "established",
+          "source_ids": [
+            "oracc-nineveh",
+            "who-traditional-medicine"
+          ]
+        }
+      ],
+      "modern_boundary": {
+        "text": "The safe inheritance is the record of observation, alternatives, dosage forms, and transmission—not an operational reconstruction of uncertain ingredients or a claim that ritual causation treats infection or injury.",
+        "evidence_state": "editorial-boundary",
+        "source_ids": [
+          "oracc-nineveh",
+          "oracc-medicaments",
+          "who-traditional-medicine"
+        ]
+      },
+      "reviewed_at": "2026-08-01"
+    },
+    {
+      "id": "ancient-egyptian-healing-papyri",
+      "name": "Ancient Egyptian healing papyri",
+      "place_period": {
+        "text": "Ancient Egypt; surviving medical papyri span the second millennium BCE and later copies",
+        "source_ids": ["ucl-egypt-papyri", "british-museum-medical-papyrus"]
+      },
+      "scope_note": {
+        "text": "Modern categories such as medicine, magic, religion, and science do not map neatly onto Egyptian healing practice.",
+        "source_ids": ["ucl-egypt-papyri"]
+      },
+      "healing_aims": [
+        {
+          "text": "The Edwin Smith papyrus presents injury cases through examination, diagnosis, prognosis, and treatment, while the Ebers and London papyri preserve many prescriptions and spoken elements.",
+          "evidence_state": "historical-report",
+          "source_ids": [
+            "ucl-egypt-papyri",
+            "british-museum-medical-papyrus"
+          ]
+        },
+        {
+          "text": "Material care and charms could appear in the same healing world, carrying practical, social, and sacred meanings together.",
+          "evidence_state": "historical-report",
+          "source_ids": [
+            "ucl-egypt-papyri",
+            "british-museum-medical-papyrus"
+          ]
+        }
+      ],
+      "durable_contributions": [
+        {
+          "text": "The papyri preserve organized case observation, explicit prognosis, named body findings, and extensive written prescription traditions.",
+          "evidence_state": "historical-report",
+          "source_ids": [
+            "ucl-egypt-papyri"
+          ]
+        },
+        {
+          "text": "They reveal a long institutional memory of care without needing to rename all ancient Egyptian healing as alchemy.",
+          "evidence_state": "supported",
+          "source_ids": [
+            "ucl-egypt-papyri"
+          ]
+        }
+      ],
+      "limits_and_harms": [
+        {
+          "text": "The age or survival of a prescription is evidence of transmission, not proof of efficacy or safety.",
+          "evidence_state": "established",
+          "source_ids": [
+            "ucl-egypt-papyri",
+            "who-traditional-medicine"
+          ]
+        },
+        {
+          "text": "Projecting later Graeco-Egyptian alchemy backward onto pharaonic medical texts obscures rather than recovers the historical categories.",
+          "evidence_state": "supported",
+          "source_ids": [
+            "ucl-egypt-papyri",
+            "oxford-zosimos"
+          ]
+        }
+      ],
+      "modern_boundary": {
+        "text": "Keep the papyri as evidence for observation, prognosis, written care, and cultural meaning. Do not turn copied prescriptions or charms into present-day treatment directions.",
+        "evidence_state": "editorial-boundary",
+        "source_ids": [
+          "ucl-egypt-papyri",
+          "who-traditional-medicine"
+        ]
+      },
+      "reviewed_at": "2026-08-01"
+    },
+    {
+      "id": "greek-pharmacy-and-graeco-egyptian-alchemy",
+      "name": "Greek and Roman pharmacy, then Graeco-Egyptian alchemy",
+      "place_period": {
+        "text": "Mediterranean and Roman Egypt; roughly first century CE materia medica to late antique alchemical texts",
+        "source_ids": ["dioscorides-materia-medica", "oxford-zosimos"]
+      },
+      "scope_note": {
+        "text": "Dioscoridean pharmacy and Zosimos's alchemy influenced material knowledge but are distinct genres with different aims.",
+        "source_ids": ["dioscorides-materia-medica", "oxford-zosimos", "cambridge-alchemy-handbooks"]
+      },
+      "healing_aims": [
+        {
+          "text": "Dioscorides travelled through the Roman and Greek worlds seeking medicinal substances and wrote De materia medica around 50–70 CE, a five-book study of the preparation, properties, and testing of drugs.",
+          "evidence_state": "historical-report",
+          "source_ids": [
+            "dioscorides-materia-medica"
+          ]
+        },
+        {
+          "text": "Zosimos joined practical work on substances and apparatus with visions and philosophical or religious transformation of the practitioner.",
+          "evidence_state": "historical-report",
+          "source_ids": [
+            "oxford-zosimos",
+            "cambridge-alchemy-handbooks"
+          ]
+        }
+      ],
+      "durable_contributions": [
+        {
+          "text": "The work preserved an influential model for comparing the preparation, properties, and testing of drugs.",
+          "evidence_state": "historical-report",
+          "source_ids": [
+            "dioscorides-materia-medica"
+          ]
+        },
+        {
+          "text": "Graeco-Egyptian recipe collections document workshop-linked material operations, heating, color change, and changing hardness or purity; Zosimos’s writings also document apparatus.",
+          "evidence_state": "historical-report",
+          "source_ids": [
+            "cambridge-alchemy-handbooks",
+            "oxford-zosimos"
+          ]
+        }
+      ],
+      "limits_and_harms": [
+        {
+          "text": "A long-lived materia medica entry does not establish modern species identity, therapeutic effect, or a safe preparation.",
+          "evidence_state": "established",
+          "source_ids": [
+            "dioscorides-materia-medica",
+            "who-traditional-medicine"
+          ]
+        },
+        {
+          "text": "Metallic transmutation and spiritual visions are historically meaningful claims, not clinical evidence for healing.",
+          "evidence_state": "established",
+          "source_ids": [
+            "oxford-zosimos",
+            "who-traditional-medicine"
+          ]
+        }
+      ],
+      "modern_boundary": {
+        "text": "Preserve descriptive pharmacy and laboratory history while separating material observation, spiritual meaning, and modern efficacy. No ancient alchemical operation here is a medical instruction.",
+        "evidence_state": "editorial-boundary",
+        "source_ids": [
+          "cambridge-alchemy-handbooks",
+          "who-traditional-medicine"
+        ]
+      },
+      "reviewed_at": "2026-08-01"
+    },
+    {
+      "id": "classical-ayurveda",
+      "name": "Classical Ayurveda",
+      "place_period": {
+        "text": "South Asia; layered classical medical texts and living traditions over more than two millennia",
+        "source_ids": ["niimh-caraka", "wellcome-ayurveda"]
+      },
+      "scope_note": {
+        "text": "Ayurveda is internally diverse and should not be collapsed into rasaśāstra, modern wellness marketing, or one timeless doctrine.",
+        "source_ids": ["wellcome-ayurveda", "who-traditional-medicine"]
+      },
+      "healing_aims": [
+        {
+          "text": "The Caraka tradition addresses health, illness, diet, regimen, materia medica, clinical judgment, and the ethical conduct of practitioners within its own theoretical system.",
+          "evidence_state": "historical-report",
+          "source_ids": [
+            "niimh-caraka",
+            "wellcome-ayurveda"
+          ]
+        },
+        {
+          "text": "Rasāyana includes rejuvenating and regenerative interventions, behaviours, and conduct used within Ayurveda to maintain and promote health.",
+          "evidence_state": "historical-report",
+          "source_ids": [
+            "who-ayurveda-safety"
+          ]
+        }
+      ],
+      "durable_contributions": [
+        {
+          "text": "Ayurvedic textual cultures preserved extensive materia medica, attention to collection and storage, diet and regimen, professional ethics, and long traditions of commentary.",
+          "evidence_state": "historical-report",
+          "source_ids": [
+            "niimh-caraka",
+            "wellcome-ayurveda"
+          ]
+        },
+        {
+          "text": "Its continued life makes it a present field of practice and research, not merely a lost predecessor of European medicine.",
+          "evidence_state": "supported",
+          "source_ids": [
+            "wellcome-ayurveda",
+            "who-ayurveda-safety"
+          ]
+        }
+      ],
+      "limits_and_harms": [
+        {
+          "text": "Dosha theory can organize meaning and practice within Ayurveda but is not established as a literal molecular or anatomical mechanism in modern biomedicine.",
+          "evidence_state": "established",
+          "source_ids": [
+            "niimh-caraka",
+            "who-traditional-medicine"
+          ]
+        },
+        {
+          "text": "A product's traditional lineage does not remove the need to verify identity, contamination, interactions, clinical effect, and toxicity.",
+          "evidence_state": "established",
+          "source_ids": [
+            "who-ayurveda-safety",
+            "who-traditional-medicine"
+          ]
+        }
+      ],
+      "modern_boundary": {
+        "text": "Respect Ayurveda as a living, plural knowledge system and evaluate each product and clinical claim on its own evidence. This card grants no authority to prescribe or reproduce a formulation.",
+        "evidence_state": "editorial-boundary",
+        "source_ids": [
+          "who-ayurveda-safety",
+          "who-traditional-medicine"
+        ]
+      },
+      "reviewed_at": "2026-08-01"
+    },
+    {
+      "id": "south-asian-rasashastra",
+      "name": "South Asian rasaśāstra",
+      "place_period": {
+        "text": "South Asia; systematic alchemical texts emerge around the medieval period and later enter medical literature",
+        "source_ids": ["oxford-rasashastra"]
+      },
+      "scope_note": {
+        "text": "Rasaśāstra is related to but not synonymous with all Ayurveda; its chronology, aims, and use of metals and minerals require separate treatment.",
+        "source_ids": ["oxford-rasashastra", "who-ayurveda-safety"]
+      },
+      "healing_aims": [
+        {
+          "text": "Early systematic rasaśāstra pursued material transmutation and bodily perfection or immortality, while medical use became more prominent in later centuries.",
+          "evidence_state": "historical-report",
+          "source_ids": [
+            "oxford-rasashastra"
+          ]
+        },
+        {
+          "text": "Texts joined pharmaceutical and metallurgical work to religious, yogic, and courtly aims rather than forming a modern clinical specialty.",
+          "evidence_state": "historical-report",
+          "source_ids": [
+            "oxford-rasashastra"
+          ]
+        }
+      ],
+      "durable_contributions": [
+        {
+          "text": "The literature records elaborate apparatus, repeated processing, named transformations, material classification, and attempts at reproducible workshop practice.",
+          "evidence_state": "historical-report",
+          "source_ids": [
+            "oxford-rasashastra"
+          ]
+        },
+        {
+          "text": "Its texts show that South Asian alchemy had its own changing intellectual history rather than being a derivative chapter in a European story.",
+          "evidence_state": "supported",
+          "source_ids": [
+            "oxford-rasashastra",
+            "unesco-silk-roads-medicine"
+          ]
+        }
+      ],
+      "limits_and_harms": [
+        {
+          "text": "Some Ayurvedic products have contained mercury, lead, or arsenic at harmful levels. Hazard depends on chemical form and exposure, and a traditional purification claim is not modern analytical proof of identity or safety.",
+          "evidence_state": "established",
+          "source_ids": [
+            "fda-ayurvedic-heavy-metals",
+            "who-mercury-health",
+            "who-lead-health",
+            "who-arsenic-health"
+          ]
+        },
+        {
+          "text": "Claims of immortality, perfected bodies, or base-metal transmutation belong to history and are not established clinical outcomes.",
+          "evidence_state": "established",
+          "source_ids": [
+            "oxford-rasashastra"
+          ]
+        }
+      ],
+      "modern_boundary": {
+        "text": "The shelf preserves chronology, apparatus history, and intellectual context only. It provides no metal-processing operation, mineral medicine, or self-treatment path.",
+        "evidence_state": "editorial-boundary",
+        "source_ids": [
+          "oxford-rasashastra",
+          "who-ayurveda-safety"
+        ]
+      },
+      "reviewed_at": "2026-08-01"
+    },
+    {
+      "id": "chinese-bencao",
+      "name": "Chinese bencao materia medica",
+      "place_period": {
+        "text": "China; cumulative materia medica traditions, with Li Shizhen's first draft of the Ben Cao Gang Mu completed in 1578 and its first Jinling edition printed in 1593",
+        "source_ids": ["unesco-bencao", "loc-bencao"]
+      },
+      "scope_note": {
+        "text": "Bencao textual scholarship is not the same thing as Daoist external or internal alchemy.",
+        "source_ids": ["unesco-bencao", "stanford-daoism"]
+      },
+      "healing_aims": [
+        {
+          "text": "Bencao works organized natural substances by names, sources, properties, preparation, combinations, observed uses, and warnings within changing medical theories.",
+          "evidence_state": "historical-report",
+          "source_ids": [
+            "unesco-bencao",
+            "loc-bencao"
+          ]
+        },
+        {
+          "text": "Li Shizhen critically compiled and corrected an inherited corpus rather than simply preserving a fixed ancient list.",
+          "evidence_state": "historical-report",
+          "source_ids": [
+            "unesco-bencao"
+          ]
+        }
+      ],
+      "durable_contributions": [
+        {
+          "text": "Successive revision preserved pharmacognosy, nomenclature, authentication concerns, preparation categories, combinations, and records of toxicity.",
+          "evidence_state": "historical-report",
+          "source_ids": [
+            "unesco-bencao"
+          ]
+        },
+        {
+          "text": "The tradition demonstrates knowledge as a corrected lineage rather than a single revelation, and its works moved through East Asian and wider exchange networks.",
+          "evidence_state": "supported",
+          "source_ids": [
+            "unesco-bencao",
+            "unesco-silk-roads-medicine"
+          ]
+        }
+      ],
+      "limits_and_harms": [
+        {
+          "text": "One historical name can map imperfectly to modern species, regional substitutes, or processed forms, so name matching alone cannot establish chemical identity.",
+          "evidence_state": "established",
+          "source_ids": [
+            "unesco-bencao",
+            "fda-botanical"
+          ]
+        },
+        {
+          "text": "Cataloguing a use records history; it does not by itself validate present efficacy, safety, dose, or interaction risk.",
+          "evidence_state": "established",
+          "source_ids": [
+            "unesco-bencao",
+            "who-traditional-medicine"
+          ]
+        }
+      ],
+      "modern_boundary": {
+        "text": "Honor the textual lineage and authenticate every modern material independently. Bencao records are not instructions to forage, substitute, or self-treat.",
+        "evidence_state": "editorial-boundary",
+        "source_ids": [
+          "unesco-bencao",
+          "fda-botanical",
+          "who-traditional-medicine"
+        ]
+      },
+      "reviewed_at": "2026-08-01"
+    },
+    {
+      "id": "daoist-waidan-and-neidan",
+      "name": "Daoist external and internal alchemy",
+      "place_period": {
+        "text": "China; diverse waidan and neidan traditions from late antiquity through later imperial periods and living lineages",
+        "source_ids": ["stanford-daoism"]
+      },
+      "scope_note": {
+        "text": "Waidan external alchemy and neidan internal alchemy overlap historically but have multiple roots and must not be collapsed into one drug tradition.",
+        "source_ids": ["stanford-daoism"]
+      },
+      "healing_aims": [
+        {
+          "text": "Waidan compounded mineral and metal elixirs under fire in quests for longevity, transcendence, and transformation within Daoist cosmologies.",
+          "evidence_state": "historical-report",
+          "source_ids": [
+            "stanford-daoism"
+          ]
+        },
+        {
+          "text": "Neidan developed embodied self-cultivation practices linking breath, attention, body imagery, ethics, and cosmology; it is not merely waidan moved inside the body.",
+          "evidence_state": "historical-report",
+          "source_ids": [
+            "stanford-daoism"
+          ]
+        }
+      ],
+      "durable_contributions": [
+        {
+          "text": "Waidan preserves significant history of furnaces, vessels, observation of material change, and disciplined ritual workshop practice.",
+          "evidence_state": "historical-report",
+          "source_ids": [
+            "stanford-daoism"
+          ]
+        },
+        {
+          "text": "Neidan remains historically and religiously important as a diverse self-cultivation tradition whose value cannot be reduced to a pharmaceutical claim.",
+          "evidence_state": "supported",
+          "source_ids": [
+            "stanford-daoism"
+          ]
+        }
+      ],
+      "limits_and_harms": [
+        {
+          "text": "Historical external elixirs used cinnabar and native lead. Their hazards depend on chemical form and exposure, but harmful exposures can poison; a longevity intention does not alter toxicology.",
+          "evidence_state": "established",
+          "source_ids": [
+            "stanford-daoism",
+            "who-mercury-health",
+            "who-lead-health"
+          ]
+        },
+        {
+          "text": "Cosmological transformation, immortality, and inner-body correspondences are not established biochemical mechanisms or substitutes for medical care.",
+          "evidence_state": "established",
+          "source_ids": [
+            "stanford-daoism",
+            "who-traditional-medicine"
+          ]
+        }
+      ],
+      "modern_boundary": {
+        "text": "Keep waidan as non-operational material and religious history and neidan as contextual self-cultivation history. The shelf gives no mineral-elixir or therapeutic practice directions.",
+        "evidence_state": "editorial-boundary",
+        "source_ids": [
+          "stanford-daoism"
+        ]
+      },
+      "reviewed_at": "2026-08-01"
+    },
+    {
+      "id": "islamicate-alchemy-and-pharmacy",
+      "name": "Islamicate al-kimiya and pharmacy",
+      "place_period": {
+        "text": "Arabic, Persian, and Syriac scholarly worlds; especially the eighth through seventeenth centuries",
+        "source_ids": ["nlm-islamicate-alchemy", "nlm-islamicate-pharmacy"]
+      },
+      "scope_note": {
+        "text": "Islamicate names a plural intellectual world involving Muslim, Christian, Jewish, and other actors; it is not a claim that one religion owned every text.",
+        "source_ids": ["nlm-islamicate-alchemy", "nlm-islamicate-pharmacy"]
+      },
+      "healing_aims": [
+        {
+          "text": "Al-kimiya covered material investigation now divided among alchemy and chemistry, while pharmacy developed distinct books of simples, compounds, synonyms, formularies, poisons, and antidotes.",
+          "evidence_state": "historical-report",
+          "source_ids": [
+            "nlm-islamicate-alchemy",
+            "nlm-islamicate-pharmacy"
+          ]
+        },
+        {
+          "text": "Hospitals, markets, courts, and workshops supported specialized preparation and exchange of medicines across languages and regions.",
+          "evidence_state": "historical-report",
+          "source_ids": [
+            "nlm-islamicate-pharmacy",
+            "unesco-silk-roads-medicine"
+          ]
+        }
+      ],
+      "durable_contributions": [
+        {
+          "text": "Shared operations included distillation, calcination, evaporation, crystallization, sublimation, filtration, and compound formulation, with increasingly specialized apparatus and records.",
+          "evidence_state": "historical-report",
+          "source_ids": [
+            "nlm-islamicate-alchemy",
+            "nlm-islamicate-pharmacy"
+          ]
+        },
+        {
+          "text": "Multilingual synonym lists and formularies addressed a durable safety problem: knowing whether differently named traded materials were actually the same drug.",
+          "evidence_state": "historical-report",
+          "source_ids": [
+            "nlm-islamicate-pharmacy"
+          ]
+        },
+        {
+          "text": "Medical knowledge moved through braided routes linking South Asia, China, Central Asia, the Middle East, Africa, and Europe rather than along a one-way ladder.",
+          "evidence_state": "supported",
+          "source_ids": [
+            "unesco-silk-roads-medicine",
+            "nlm-islamicate-pharmacy"
+          ]
+        }
+      ],
+      "limits_and_harms": [
+        {
+          "text": "Historical formularies and alchemical records include poisons and materially hazardous operations; documentation does not establish that a substance or process is safe for present clinical use.",
+          "evidence_state": "established",
+          "source_ids": [
+            "nlm-islamicate-alchemy",
+            "nlm-islamicate-pharmacy",
+            "who-traditional-medicine"
+          ]
+        },
+        {
+          "text": "Transmutation, astrological correspondences, and universal-elixir claims are historical ideas, not established clinical evidence.",
+          "evidence_state": "established",
+          "source_ids": [
+            "nlm-islamicate-alchemy",
+            "who-traditional-medicine"
+          ]
+        },
+        {
+          "text": "Calling Islamicate scholars a passive bridge from Greece to Europe erases their criticism, invention, translation choices, institutions, and exchanges with other regions.",
+          "evidence_state": "supported",
+          "source_ids": [
+            "nlm-islamicate-alchemy",
+            "nlm-islamicate-pharmacy",
+            "unesco-silk-roads-medicine"
+          ]
+        }
+      ],
+      "modern_boundary": {
+        "text": "Inherit careful apparatus, process language, formularies, cross-language identity work, and institutional pharmacy as history. Do not inherit poison recipes or universal cure claims.",
+        "evidence_state": "editorial-boundary",
+        "source_ids": [
+          "nlm-islamicate-pharmacy",
+          "who-traditional-medicine"
+        ]
+      },
+      "reviewed_at": "2026-08-01"
+    },
+    {
+      "id": "european-apothecary-and-paracelsian-medicine",
+      "name": "Early modern European apothecary craft and Paracelsian chemical medicine",
+      "place_period": {
+        "text": "Early modern Europe; sixteenth-century Paracelsian chemical medicine and seventeenth-century English apothecary work in the cited records.",
+        "source_ids": ["sciencehistory-apothecaries", "ncbi-paracelsus"]
+      },
+      "scope_note": {
+        "text": "Workshop pharmacy, household medicine, university medicine, mining knowledge, and Paracelsian reform overlapped without forming one unified European alchemy.",
+        "source_ids": ["sciencehistory-apothecaries", "ncbi-paracelsus"]
+      },
+      "healing_aims": [
+        {
+          "text": "Apothecaries identified, weighed, compounded, fermented, distilled, and sold medicines, while much household and shop labor by women remained under-recorded.",
+          "evidence_state": "historical-report",
+          "source_ids": [
+            "sciencehistory-apothecaries"
+          ]
+        },
+        {
+          "text": "Paracelsian medicine challenged inherited humoral orthodoxy with chemical and mineral remedies and emphasized that amount can separate remedy from poison.",
+          "evidence_state": "historical-report",
+          "source_ids": [
+            "ncbi-paracelsus",
+            "paracelsus-toxicology-history"
+          ]
+        }
+      ],
+      "durable_contributions": [
+        {
+          "text": "Apothecary craft strengthened practical substance recognition, weighing, compounding, workshop accountability, and the later path toward pharmacopoeial standards.",
+          "evidence_state": "historical-report",
+          "source_ids": [
+            "sciencehistory-apothecaries"
+          ]
+        },
+        {
+          "text": "Paracelsian chemical medicine made particular substances, preparation, and amount prominent points of dispute in early modern medicine.",
+          "evidence_state": "supported",
+          "source_ids": [
+            "ncbi-paracelsus",
+            "paracelsus-toxicology-history"
+          ]
+        }
+      ],
+      "limits_and_harms": [
+        {
+          "text": "Paracelsian medicine combined observation and chemical practice with speculative principles and remedies involving hazardous mercury and arsenic compounds.",
+          "evidence_state": "historical-report",
+          "source_ids": [
+            "ncbi-paracelsus",
+            "paracelsus-toxicology-history",
+            "who-mercury-health",
+            "who-arsenic-health"
+          ]
+        },
+        {
+          "text": "Mercury and arsenic exposure can cause serious harm. The insight that amount affects toxicity does not by itself validate a historical metal remedy; chemical form, route, timing, susceptibility, and clinical evidence also matter.",
+          "evidence_state": "established",
+          "source_ids": [
+            "paracelsus-toxicology-history",
+            "who-mercury-health",
+            "who-arsenic-health"
+          ]
+        }
+      ],
+      "modern_boundary": {
+        "text": "Preserve the history of amount and toxicity awareness, particular substances, apparatus, standards, and overlooked labor. Leave metallic self-treatment and universal cure claims in history.",
+        "evidence_state": "editorial-boundary",
+        "source_ids": [
+          "sciencehistory-apothecaries",
+          "paracelsus-toxicology-history",
+          "who-mercury-health",
+          "who-arsenic-health"
+        ]
+      },
+      "reviewed_at": "2026-08-01"
+    },
+    {
+      "id": "first-nations-health-authority-bc-overview",
+      "name": "A First Nations Health Authority overview of traditional wellness",
+      "place_period": {
+        "text": "Many distinct First Nations and territories in what is now British Columbia; this record follows one current FNHA public overview, not one universal tradition",
+        "source_ids": ["fnha-traditional-wellness"]
+      },
+      "scope_note": {
+        "text": "FNHA presents traditional wellness as community-led and plural. This bounded record does not stand in for the priorities, practices, or authority of any particular Nation.",
+        "source_ids": ["fnha-traditional-wellness"]
+      },
+      "healing_aims": [
+        {
+          "text": "FNHA describes traditional wellness as supporting mental, emotional, spiritual, and physical wellbeing while strengthening First Nations health systems.",
+          "evidence_state": "historical-report",
+          "source_ids": ["fnha-traditional-wellness"]
+        },
+        {
+          "text": "It places Traditional Healers, communities, and First Nations governance at the centre of protecting, incorporating, and promoting traditional medicines and practices.",
+          "evidence_state": "historical-report",
+          "source_ids": ["fnha-traditional-wellness"]
+        }
+      ],
+      "durable_contributions": [
+        {
+          "text": "The public overview keeps physical, mental, emotional, and spiritual wellbeing in relationship rather than reducing wellness to isolated molecules.",
+          "evidence_state": "supported",
+          "source_ids": ["fnha-traditional-wellness"]
+        },
+        {
+          "text": "FNHA describes First Nations leadership in the management, design, and delivery of community-based health and wellness services.",
+          "evidence_state": "historical-report",
+          "source_ids": ["fnha-traditional-wellness"]
+        }
+      ],
+      "limits_and_harms": [
+        {
+          "text": "A provincial public overview cannot stand in for the knowledge, language, law, permission, or practice of any particular Nation or knowledge holder.",
+          "evidence_state": "supported",
+          "source_ids": ["fnha-traditional-wellness", "wipo-traditional-knowledge"]
+        },
+        {
+          "text": "A community wellness framework does not by itself establish the safety, identity, or clinical efficacy of a specific product for a biomedical condition.",
+          "evidence_state": "established",
+          "source_ids": ["who-traditional-medicine", "fnha-traditional-wellness"]
+        }
+      ],
+      "modern_boundary": {
+        "text": "Mindicraft links to the FNHA overview and does not extract or generalize its practical content. The named Nations and knowledge holders remain the authorities on their knowledge; this record grants no clinical authority or permission to use it.",
+        "evidence_state": "editorial-boundary",
+        "source_ids": ["fnha-traditional-wellness", "wipo-traditional-knowledge"]
+      },
+      "reviewed_at": "2026-08-01"
+    },
+    {
+      "id": "rongoa-maori-aotearoa",
+      "name": "Rongoā Māori in one Te Papa account",
+      "place_period": {
+        "text": "Aotearoa New Zealand; this bounded record follows Rihia Kenny's 2014 public account hosted by Te Papa Tongarewa",
+        "source_ids": ["tepapa-rongoa"]
+      },
+      "scope_note": {
+        "text": "Kenny describes her own learning, practice, later clinics, and guardianship responsibilities. Her account is not treated as a universal description of Rongoā Māori or as an instruction set.",
+        "source_ids": ["tepapa-rongoa"]
+      },
+      "healing_aims": [
+        {
+          "text": "Kenny remembers learning to identify and collect rongoā for her elders and describes medicine, mirimiri, karakia, and spiritual healing as connected parts of care in her experience.",
+          "evidence_state": "historical-report",
+          "source_ids": ["tepapa-rongoa"]
+        },
+        {
+          "text": "She describes Te Kāhui Rongoā Trust as created to protect, nurture, and promote Rongoā Māori and to uphold knowledge and practice with respect and integrity.",
+          "evidence_state": "historical-report",
+          "source_ids": ["tepapa-rongoa"]
+        }
+      ],
+      "durable_contributions": [
+        {
+          "text": "The account presents Rongoā Māori as living cultural practice carried through people, clinics, teaching, identity, and obligations to future generations.",
+          "evidence_state": "supported",
+          "source_ids": ["tepapa-rongoa"]
+        },
+        {
+          "text": "Kenny explicitly names safeguarding knowledge and cultural and intellectual property as part of her responsibility.",
+          "evidence_state": "historical-report",
+          "source_ids": ["tepapa-rongoa"]
+        }
+      ],
+      "limits_and_harms": [
+        {
+          "text": "One named public account cannot speak for every iwi, hapū, whānau, practitioner, or form of Rongoā Māori.",
+          "evidence_state": "supported",
+          "source_ids": ["tepapa-rongoa", "wipo-traditional-knowledge"]
+        },
+        {
+          "text": "Public access to the account is not treated by Mindicraft as permission to reproduce practical knowledge, images, community materials, or treatment claims.",
+          "evidence_state": "supported",
+          "source_ids": ["tepapa-rongoa", "wipo-traditional-knowledge"]
+        }
+      ],
+      "modern_boundary": {
+        "text": "Keep this record attributed to Rihia Kenny and Te Papa, preserve its context, and leave practical or sacred knowledge under its knowledge holders' authority. Mindicraft grants no clinical authority or permission to use it.",
+        "evidence_state": "editorial-boundary",
+        "source_ids": ["tepapa-rongoa", "wipo-traditional-knowledge"]
+      },
+      "reviewed_at": "2026-08-01"
+    },
+    {
+      "id": "ethiopic-healing-manuscripts-hmml",
+      "name": "Ethiopic healing manuscripts in one HMML account",
+      "place_period": {
+        "text": "Ethiopia; this bounded record follows EMDA 00028, a late-eighteenth- or early-nineteenth-century manuscript held at Marṭula Māryām, within a much larger Geʿez, Amharic, and Arabic manuscript heritage.",
+        "source_ids": ["hmml-ethiopia-healing-manuscript", "hmml-ethiopia-operations"]
+      },
+      "scope_note": {
+        "text": "This is one curator's account of one Ethiopian Orthodox manuscript beside HMML's description of collections preserved with Ethiopian institutions and churches; it is not a survey of Ethiopian healing.",
+        "source_ids": ["hmml-ethiopia-healing-manuscript", "hmml-ethiopia-operations"]
+      },
+      "healing_aims": [
+        {
+          "text": "In the cited manuscript, Christian anointing rites appear beside invocations concerned with bodily and spiritual well-being; care is recorded through prayer, oil, protective text, and a connected account of body and soul.",
+          "evidence_state": "historical-report",
+          "source_ids": ["hmml-ethiopia-healing-manuscript"]
+        }
+      ],
+      "durable_contributions": [
+        {
+          "text": "The manuscript preserves how healing materials, liturgy, named ownership, and book organization could coexist rather than fitting modern boundaries between medicine and religion.",
+          "evidence_state": "supported",
+          "source_ids": ["hmml-ethiopia-healing-manuscript"]
+        },
+        {
+          "text": "HMML describes the Ethiopian Manuscript Microfilm Library as a collection of about 9,000 manuscripts created with Ethiopian institutional and church partners.",
+          "evidence_state": "historical-report",
+          "source_ids": ["hmml-ethiopia-operations"]
+        }
+      ],
+      "limits_and_harms": [
+        {
+          "text": "One manuscript and one curator's account cannot stand for Ethiopia's religiously, regionally, and linguistically diverse or living healing traditions.",
+          "evidence_state": "supported",
+          "source_ids": ["hmml-ethiopia-healing-manuscript", "hmml-ethiopia-operations"]
+        },
+        {
+          "text": "A manuscript description records intended healing meanings; it does not establish clinical efficacy or identify a safe preparation.",
+          "evidence_state": "established",
+          "source_ids": ["hmml-ethiopia-healing-manuscript", "who-traditional-medicine"]
+        }
+      ],
+      "modern_boundary": {
+        "text": "Digitization enables study; it does not by itself make Ethiopian knowledge ownerless or erase the manuscript's repository, named owner, or preservation partners.",
+        "evidence_state": "editorial-boundary",
+        "source_ids": ["hmml-ethiopia-healing-manuscript", "hmml-ethiopia-operations", "wipo-traditional-knowledge"]
+      },
+      "reviewed_at": "2026-08-01"
+    },
+    {
+      "id": "nahua-medical-knowledge-colonial-manuscripts",
+      "name": "Nahua medical knowledge in two early-colonial manuscripts",
+      "place_period": {
+        "text": "Central Mexico, early colonial period; the De la Cruz–Badiano herbal was made at Tlatelolco in 1552, and the Florentine Codex was completed in 1577 by Sahagún and Nahua elders, authors, and artists.",
+        "source_ids": ["inah-cruz-badiano", "getty-florentine-codex"]
+      },
+      "scope_note": {
+        "text": "These manuscripts preserve Nahua knowledge through colonial institutions, sponsorship, translation, and bookmaking; they are mediated records, not transparent copies of one timeless tradition.",
+        "source_ids": ["inah-cruz-badiano", "getty-florentine-codex", "getty-florentine-codex-about"]
+      },
+      "healing_aims": [
+        {
+          "text": "The De la Cruz–Badiano manuscript records native plants and attributed healing uses through illustrations and a Latin translation made by the Nahua scholar Juan Badiano from Martín de la Cruz's knowledge.",
+          "evidence_state": "historical-report",
+          "source_ids": ["inah-cruz-badiano"]
+        },
+        {
+          "text": "The Florentine Codex places Nahuatl and Spanish texts alongside images in an encyclopedia that includes medicine, flora, and fauna.",
+          "evidence_state": "historical-report",
+          "source_ids": ["getty-florentine-codex-about"]
+        }
+      ],
+      "durable_contributions": [
+        {
+          "text": "The manuscripts preserve Nahua participation, language, visual authorship, and plant knowledge while also showing how colonial sponsorship and translation shaped what entered the archive.",
+          "evidence_state": "supported",
+          "source_ids": ["inah-cruz-badiano", "getty-florentine-codex", "getty-florentine-codex-about"]
+        },
+        {
+          "text": "Parallel languages and images are distinct witnesses; they should not be collapsed into one anonymous list of remedies.",
+          "evidence_state": "supported",
+          "source_ids": ["getty-florentine-codex"]
+        }
+      ],
+      "limits_and_harms": [
+        {
+          "text": "A recorded historical use does not establish present species identity, efficacy, safety, amount, or interaction risk.",
+          "evidence_state": "established",
+          "source_ids": ["inah-cruz-badiano", "who-traditional-medicine"]
+        },
+        {
+          "text": "These colonial-era manuscripts are mediated records, not a complete inventory of pre-conquest or living Nahua medicine.",
+          "evidence_state": "supported",
+          "source_ids": ["inah-cruz-badiano", "getty-florentine-codex"]
+        }
+      ],
+      "modern_boundary": {
+        "text": "Survival and public digitization do not make Nahua knowledge ownerless and grant no authority to reproduce preparations or make clinical claims.",
+        "evidence_state": "editorial-boundary",
+        "source_ids": ["inah-cruz-badiano", "getty-florentine-codex", "getty-florentine-codex-about", "wipo-traditional-knowledge"]
+      },
+      "reviewed_at": "2026-08-01"
+    },
+    {
+      "id": "korean-donguibogam",
+      "name": "Donguibogam and Korean medical compilation",
+      "place_period": {
+        "text": "Korea; compiled in 1613 under royal instruction and edited by Heo Jun with the collective support of medical experts and literati.",
+        "source_ids": ["unesco-donguibogam"]
+      },
+      "scope_note": {
+        "text": "This record follows UNESCO's bounded documentary-heritage description; it does not make Korean, Chinese, and Japanese medical histories interchangeable.",
+        "source_ids": ["unesco-donguibogam"]
+      },
+      "healing_aims": [
+        {
+          "text": "UNESCO describes Donguibogam as an encyclopedia of medical knowledge and treatment techniques compiled in Korea under royal instruction.",
+          "evidence_state": "historical-report",
+          "source_ids": ["unesco-donguibogam"]
+        }
+      ],
+      "durable_contributions": [
+        {
+          "text": "Its compilation linked medical editing, preservation, and public responsibility rather than presenting knowledge as one author's isolated revelation.",
+          "evidence_state": "supported",
+          "source_ids": ["unesco-donguibogam"]
+        },
+        {
+          "text": "UNESCO's record credits the work with developing ideals of preventive medicine and public health care by the state within its historical setting.",
+          "evidence_state": "historical-report",
+          "source_ids": ["unesco-donguibogam"]
+        }
+      ],
+      "limits_and_harms": [
+        {
+          "text": "Memory of the World registration recognizes documentary heritage; it is not a finding that every historical theory or treatment is effective or safe today.",
+          "evidence_state": "established",
+          "source_ids": ["unesco-donguibogam", "who-traditional-medicine"]
+        }
+      ],
+      "modern_boundary": {
+        "text": "Preserve Donguibogam as a Korean medical encyclopedia and state compilation; retain the phrase Eastern Medicine only when attributing UNESCO's registered English title.",
+        "evidence_state": "editorial-boundary",
+        "source_ids": ["unesco-donguibogam"]
+      },
+      "reviewed_at": "2026-08-01"
+    }
+  ]
+}

@@ -14,6 +14,16 @@ the whole thing — content, builder, and site.
 - `langs.json` — the words the site itself uses, per language.
 - `frontiers.json` + `frontiers.mjs` — a reviewed shelf of honest unknowns,
   strict validation, and deterministic finite-walk selection.
+- `remedies.json` + `remedies.mjs` — a reviewed medicine-lineage shelf with
+  claim-level sources, exact relationship types, evidence limits, exposure,
+  safety, and explicit non-substitution boundaries.
+- `healing-arts.json` + `healing-arts.mjs` — fourteen source-bound records and
+  living contexts of healing, pharmacy, alchemy, material craft, and knowledge
+  authority, kept strictly non-operational.
+- `medical-review.json` + `medical-review.mjs` — the exact-byte review receipt
+  and build brake for both medical catalogs. Any source change stops the public
+  build until its full claim, evidence, safety, and citation context is reviewed
+  and deliberately re-pinned.
 - `build.mjs` — turns all of the above into a static site in `dist/`.
 - `style.css` — the one stylesheet.
 - `../index/castle-*.json` — generated map cards for the Castle shelf. They
@@ -25,7 +35,7 @@ the whole thing — content, builder, and site.
 ```sh
 cd guide
 npm ci               # once — installs pinned `marked` (markdown -> HTML)
-npm run verify       # tests, builds dist/, then checks Castle + Frontier
+npm run verify       # tests, builds dist/, then checks Castle + Frontier + remedies + healing arts
 npx wrangler pages deploy dist --project-name=mindicraft
 ```
 
@@ -82,6 +92,47 @@ human and agent address: `/frontier/{trail}/` serves HTML normally and the same
 three cards as JSON when asked with `Accept: application/json`. Direct JSON
 lives at `/api/frontier/trails/{trail}.json`; `default.json` follows the
 digest-selected trail for this edition.
+
+## Roots to remedies
+
+The medicine shelf is deliberately separate from craft evidence labels and the
+open collector. Each card distinguishes a medicine's purpose and manufacture
+from its natural relationship: the same molecule, a direct precursor, a
+discovery lead, a related mechanism, a product studied for the same condition,
+or no established link. Chinese and Western herbal history appears only where
+a reviewed source supports the exact species, plant part, preparation, or
+traditional context.
+
+Human evidence belongs to the exact product studied. A tea, powder, crude
+organism, standardized extract, purified molecule, semisynthetic derivative,
+and regulated formulation are not silently treated as interchangeable.
+Bioavailability describes exposure, not goodness. Every replacement state is
+non-prescriptive, and high-risk materials receive a bright safety boundary.
+
+The source validator rejects unknown fields and enums, missing or unused
+citations, unreviewed source hosts, impossible dates, source or card dates that
+cross the shelf's review boundary, blanket natural or synthetic superiority
+claims, treatment instructions, recipes, and hidden action-shaped fields. The
+build makes static pages and JSON only:
+
+```text
+/remedies/
+/remedies/{id}/
+/remedies/healing-arts/
+/api/remedies/index.json
+/api/remedies/{id}.json
+/api/remedies/healing-arts/index.json
+```
+
+No network request occurs during the build. The shelf has no POST route,
+storage, tracking, diagnosis, dosing, or permission to replace or combine care.
+
+The healing-arts page is history beside the medicine shelf, not a universal
+story of “lost alchemy.” It keeps medical texts, pharmacy, workshop alchemy,
+ritual care, spiritual practice, and living knowledge distinct. It provides no
+recipe, material procedure, dose, extraction, or treatment direction. Living
+Indigenous knowledge remains under the authority of its Nations, communities,
+and knowledge holders.
 
 A missing translation is never an error — the site shows English with a small
 "not translated yet" note until the file exists.

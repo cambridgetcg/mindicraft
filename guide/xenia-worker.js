@@ -23,6 +23,10 @@ const RESOURCES = {
   '/api/tree.json': { reps: ['application/json'], def: 'application/json' },
   '/api/castle/index.json': { reps: ['application/json'], def: 'application/json' },
   '/api/frontier/index.json': { reps: ['application/json'], def: 'application/json' },
+  '/remedies/': { reps: ['text/html', 'application/json'], def: 'text/html', jsonAsset: '/api/remedies/index.json' },
+  '/api/remedies/index.json': { reps: ['application/json'], def: 'application/json' },
+  '/remedies/healing-arts/': { reps: ['text/html', 'application/json'], def: 'text/html', jsonAsset: '/api/remedies/healing-arts/index.json' },
+  '/api/remedies/healing-arts/index.json': { reps: ['application/json'], def: 'application/json' },
 };
 export const FRONTIER_TRAIL_IDS = new Set([
   'hands-words-learners',
@@ -34,6 +38,8 @@ export const FRONTIER_TRAIL_IDS = new Set([
 const FRONTIER_TRAIL_PAGE = /^\/frontier\/([a-z0-9]+(?:-[a-z0-9]+)*)\/$/;
 const FRONTIER_TRAIL_API =
   /^\/api\/frontier\/trails\/([a-z0-9]+(?:-[a-z0-9]+)*)\.json$/;
+const REMEDY_PAGE = /^\/remedies\/([a-z0-9]+(?:-[a-z0-9]+)*)\/$/;
+const REMEDY_API = /^\/api\/remedies\/([a-z0-9]+(?:-[a-z0-9]+)*)\.json$/;
 
 function resourceFor(path) {
   if (RESOURCES[path]) return RESOURCES[path];
@@ -47,6 +53,17 @@ function resourceFor(path) {
   }
   const api = path.match(FRONTIER_TRAIL_API);
   if (api && (api[1] === 'default' || FRONTIER_TRAIL_IDS.has(api[1]))) {
+    return { reps: ['application/json'], def: 'application/json' };
+  }
+  const remedyPage = path.match(REMEDY_PAGE);
+  if (remedyPage) {
+    return {
+      reps: ['text/html', 'application/json'],
+      def: 'text/html',
+      jsonAsset: `/api/remedies/${remedyPage[1]}.json`,
+    };
+  }
+  if (REMEDY_API.test(path)) {
     return { reps: ['application/json'], def: 'application/json' };
   }
   return null;

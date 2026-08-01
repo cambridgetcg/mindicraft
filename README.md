@@ -176,6 +176,46 @@ chooses which reviewed trail visits the builder's bench; it changes terminal
 text only. Frontier v1 adds no build-time network fetch, storage, tracking,
 scheduled loop, POST route, or automatic action.
 
+## Roots to remedies
+
+`guide/remedies.json` is a finite, reviewed shelf about medicines and their
+natural lineages. It asks three different questions without blending them:
+
+1. Where did the medicine come from, and what was its defined clinical goal?
+2. Is the natural link the same molecule, a precursor, a discovery clue, a
+   different preparation studied for the same condition, or no direct link?
+3. What do exact-product human evidence, bioavailability, safety, and
+   interaction data permit us to say?
+
+The shelf includes Chinese and Western herbal contexts where sources support
+them. It does not turn a traditional pattern into a biomedical diagnosis or a
+whole herb into an isolated compound. Natural origin is never treated as proof
+of safety, efficacy, purity, or superiority; synthetic origin is never treated
+as proof of harm. Every factual card claim names one or more reviewed official,
+regulatory, primary-research, or systematic-review sources.
+`guide/medical-review.json` pins the exact reviewed source bytes, so any catalog
+wording change stops the public build until it is deliberately reviewed and
+re-pinned.
+
+```text
+GET /remedies/                                  — the human shelf
+GET /remedies/{id}/                             — one full medicine lineage
+GET /remedies/healing-arts/                     — cross-cultural healing history
+GET /api/remedies/index.json                    — compact discovery data
+GET /api/remedies/{id}.json                     — one claim-sourced card
+GET /api/remedies/healing-arts/index.json        — the sourced history as data
+GET /remedies/{id}/ + Accept: application/json — the same card as data
+```
+
+These routes are static and read-only. They add no diagnosis, dosing,
+preparation recipe, personalized advice, write door, tracking, scheduled loop,
+or build-time network request.
+
+The healing-arts companion follows fourteen source-bound records and living
+contexts without calling all old medicine “alchemy.” It keeps hazardous
+material practices non-operational and treats living Indigenous knowledge as
+living, governed knowledge—not lost material available for extraction.
+
 ## Open source. Free to read. No gate.
 
 - **Code:** MIT.
@@ -200,7 +240,7 @@ cd mindicraft
 # Run the collector
 node collect.mjs
 
-# Verify the Guide, Castle shelf, and Frontier Walk
+# Verify the Guide, Castle shelf, Frontier Walk, remedies, and healing history
 npm --prefix guide run verify
 
 # Serve the index
@@ -222,6 +262,10 @@ GET /api/castle/{rooms|words}/{slug}.json   — one Castle map card
 GET /api/frontier/index.json                — reviewed open questions and walks
 GET /api/frontier/trails/{trail}.json       — one named three-card walk
 GET /frontier/{trail}/ + Accept: application/json — the same walk at its human address
+GET /api/remedies/index.json                — reviewed medicine lineages
+GET /api/remedies/{id}.json                 — one sourced comparison
+GET /api/remedies/healing-arts/index.json    — sourced, non-operational history
+GET /remedies/{id}/ + Accept: application/json — the same comparison as data
 GET /margin                                 — public-margin terms and counts
 POST /margin/{slug}                         — public note; publish and retain require separate yeses
 DELETE /margin/{slug}/{id}                  — request removal with its one-time bearer token

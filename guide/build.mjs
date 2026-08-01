@@ -24,6 +24,9 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { marked } from 'marked';
 import { buildLantern, prepareFrontiers } from './frontiers.mjs';
+import { prepareHealingArts } from './healing-arts.mjs';
+import { assertMedicalReview } from './medical-review.mjs';
+import { prepareRemedies } from './remedies.mjs';
 import { MARGIN_TERMS } from './xenia-worker.js';
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
@@ -33,6 +36,15 @@ const MINDICRAFT_INDEX = join(MINDICRAFT_ROOT, 'index');
 
 const TREE_BYTES = readFileSync(join(ROOT, 'tree.json'));
 const FRONTIER_SOURCE_BYTES = readFileSync(join(ROOT, 'frontiers.json'));
+const HEALING_ARTS_SOURCE_BYTES = readFileSync(join(ROOT, 'healing-arts.json'));
+const REMEDY_SOURCE_BYTES = readFileSync(join(ROOT, 'remedies.json'));
+const MEDICAL_REVIEW = JSON.parse(
+  readFileSync(join(ROOT, 'medical-review.json'), 'utf8')
+);
+assertMedicalReview(MEDICAL_REVIEW, {
+  'remedies.json': REMEDY_SOURCE_BYTES,
+  'healing-arts.json': HEALING_ARTS_SOURCE_BYTES,
+});
 const tree = JSON.parse(TREE_BYTES.toString('utf8'));
 const langs = JSON.parse(readFileSync(join(ROOT, 'langs.json'), 'utf8')).languages;
 // evidence.json: slug -> { state: 'hand-tested', evidence: [...] } — filled as
@@ -124,6 +136,44 @@ const FRONTIERS = prepareFrontiers(
     treeBytes: TREE_BYTES,
   }
 );
+const REMEDIES = prepareRemedies(
+  JSON.parse(REMEDY_SOURCE_BYTES.toString('utf8')),
+  { sourceBytes: REMEDY_SOURCE_BYTES }
+);
+const HEALING_ARTS = prepareHealingArts(
+  JSON.parse(HEALING_ARTS_SOURCE_BYTES.toString('utf8')),
+  { sourceBytes: HEALING_ARTS_SOURCE_BYTES }
+);
+
+// Shared public sources may use different kind vocabularies in the two
+// schemas, but their identity must not drift between shelves.
+const healingSourceByUrl = new Map(
+  HEALING_ARTS.source.sources.map((source) => [source.url, source])
+);
+const healingSourceById = new Map(
+  HEALING_ARTS.source.sources.map((source) => [source.id, source])
+);
+for (const remedySource of REMEDIES.sources) {
+  const sameId = healingSourceById.get(remedySource.id);
+  if (sameId) {
+    for (const field of ['title', 'publisher', 'url', 'observed_at']) {
+      if (remedySource[field] !== sameId[field]) {
+        throw new Error(
+          `Shared remedy/healing source id names different records: ${remedySource.id} (${field})`
+        );
+      }
+    }
+  }
+  const healingSource = healingSourceByUrl.get(remedySource.url);
+  if (!healingSource) continue;
+  for (const field of ['title', 'publisher', 'observed_at']) {
+    if (remedySource[field] !== healingSource[field]) {
+      throw new Error(
+        `Shared remedy/healing source metadata drifted at ${remedySource.url}: ${field}`
+      );
+    }
+  }
+}
 
 // ---------- page pieces ----------
 
@@ -471,7 +521,7 @@ write(
 <style>html,body{height:100%;margin:0}body{background:#0d0b09;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.4rem;font-family:"Iowan Old Style",Palatino,Georgia,serif}
 p{color:#57504a;font-style:italic}a{color:#e07a4a;text-decoration:none;font-size:1.4rem}</style></head>
 <body><p>not every path is a door.</p><a href="/" aria-label="back to the spark">·</a>
-<p style="margin-top:2.5rem;font-size:.8rem;opacity:.6"><a href="/en/" style="color:#57504a">the book</a>   <a href="/frontier/" style="color:#57504a">frontier</a>   <a href="/agent.txt" style="color:#57504a">agent.txt</a></p></body></html>`
+<p style="margin-top:2.5rem;font-size:.8rem;opacity:.6"><a href="/en/" style="color:#57504a">the book</a>   <a href="/remedies/" style="color:#57504a">remedies</a>   <a href="/frontier/" style="color:#57504a">frontier</a>   <a href="/agent.txt" style="color:#57504a">agent.txt</a></p></body></html>`
 );
 
 cpSync(join(ROOT, 'style.css'), join(DIST, 'style.css'));
@@ -675,6 +725,140 @@ writeJson(join(CASTLE_API_DIR, 'index.json'), {
   entries_digest_scope:
     'the full generated source metadata cards; compact discovery entries above intentionally omit fields',
 });
+
+// ---------- Medicines and their natural lineages ----------
+// A committed, reviewed shelf with claim-level sources. It is deliberately
+// separate from both the craft evidence labels and the open collector.
+
+const REMEDY_SOURCE_BY_ID = new Map(
+  REMEDIES.sources.map((source) => [source.id, source])
+);
+const remedySourceIds = (value) => {
+  const found = new Set();
+  (function walk(child) {
+    if (Array.isArray(child)) return child.forEach(walk);
+    if (!child || typeof child !== 'object') return;
+    if (Array.isArray(child.source_ids)) {
+      child.source_ids.forEach((sourceId) => found.add(sourceId));
+    }
+    Object.values(child).forEach(walk);
+  })(value);
+  return [...found];
+};
+const remedySourcesFor = (value) =>
+  remedySourceIds(value).map((sourceId) => REMEDY_SOURCE_BY_ID.get(sourceId));
+const remedyNaturalSummary = (link) => ({
+  id: link.id,
+  name: link.name,
+  names: link.names,
+  scientific_name: link.scientific_name,
+  traditions: link.traditions,
+  relationship: link.relationship,
+  evidence_level: link.clinical_evidence.level,
+  replacement_status: link.replacement.status,
+});
+const REMEDY_PROVENANCE = {
+  source: 'guide/remedies.json',
+  source_digest: REMEDIES.sourceDigest,
+  reviewed_at: REMEDIES.source.reviewed_at,
+  next_review_due: REMEDIES.source.next_review_due,
+  build_network_requests: 0,
+};
+const REMEDY_INDEX_ENTRIES = REMEDIES.cards.map((card) => ({
+  id: card.id,
+  title: card.title,
+  summary: card.summary,
+  clinical_area: card.clinical_area,
+  medicine: {
+    name: card.medicine.name,
+    aliases: card.medicine.aliases,
+    origin_classes: card.medicine.origin_classes,
+  },
+  nature_links: card.nature_links.map(remedyNaturalSummary),
+  source_ids: remedySourceIds(card),
+  reviewed_at: card.reviewed_at,
+  page: `/remedies/${card.id}/`,
+  api: `/api/remedies/${card.id}.json`,
+}));
+const REMEDY_INDEX_PAYLOAD = {
+  schema_version: 'mindicraft.remedies-index/1',
+  this_is: REMEDIES.source.title,
+  description: REMEDIES.source.description,
+  content_is: REMEDIES.source.content_is,
+  count: REMEDY_INDEX_ENTRIES.length,
+  entries: REMEDY_INDEX_ENTRIES,
+  companion: {
+    id: 'healing-arts',
+    title: HEALING_ARTS.source.title,
+    description: HEALING_ARTS.source.description,
+    count: HEALING_ARTS.counts.traditions,
+    page: '/remedies/healing-arts/',
+    api: '/api/remedies/healing-arts/index.json',
+  },
+  principles: REMEDIES.source.principles,
+  sources: remedySourcesFor({
+    principles: REMEDIES.source.principles,
+    cards: REMEDIES.cards,
+  }),
+  evidence_levels: REMEDIES.source.evidence_levels,
+  relationship_types: REMEDIES.source.relationship_types,
+  boundary: REMEDIES.source.boundary,
+  rights: REMEDIES.source.rights,
+  correction: REMEDIES.source.correction,
+  provenance: REMEDY_PROVENANCE,
+};
+const REMEDY_API_DIR = join(DIST, 'api', 'remedies');
+const REMEDY_PAGE_DIR = join(DIST, 'remedies');
+// These directories are wholly generated by this builder. Clearing only these
+// exact roots prevents renamed or withdrawn medical cards from remaining live.
+rmSync(REMEDY_API_DIR, { recursive: true, force: true });
+rmSync(REMEDY_PAGE_DIR, { recursive: true, force: true });
+writeJson(join(REMEDY_API_DIR, 'index.json'), REMEDY_INDEX_PAYLOAD);
+for (const card of REMEDIES.cards) {
+  writeJson(join(REMEDY_API_DIR, `${card.id}.json`), {
+    schema_version: 'mindicraft.remedy/1',
+    content_is: REMEDIES.source.content_is,
+    card,
+    sources: remedySourcesFor(card),
+    evidence_levels: REMEDIES.source.evidence_levels,
+    relationship_types: REMEDIES.source.relationship_types,
+    boundary: REMEDIES.source.boundary,
+    rights: REMEDIES.source.rights,
+    correction: REMEDIES.source.correction,
+    provenance: REMEDY_PROVENANCE,
+  });
+}
+
+// ---------- Healing arts across cultures ----------
+// Historical context belongs beside the medicine lineages, but it is not a
+// treatment shelf. The source is deliberately non-operational and keeps
+// alchemy, pharmacy, ritual care, and living knowledge distinct.
+
+const HEALING_ARTS_PROVENANCE = {
+  source: 'guide/healing-arts.json',
+  source_digest: HEALING_ARTS.sourceDigest,
+  reviewed_at: HEALING_ARTS.source.reviewed_at,
+  build_network_requests: 0,
+};
+const HEALING_ARTS_PAYLOAD = {
+  schema_version: 'mindicraft.healing-arts/1',
+  this_is: HEALING_ARTS.source.title,
+  description: HEALING_ARTS.source.description,
+  content_is: HEALING_ARTS.source.content_is,
+  selection_basis: HEALING_ARTS.source.selection_basis,
+  count: HEALING_ARTS.counts.traditions,
+  traditions: HEALING_ARTS.source.traditions,
+  sources: HEALING_ARTS.source.sources,
+  boundary: HEALING_ARTS.source.boundary,
+  authority: HEALING_ARTS.source.authority,
+  rights: HEALING_ARTS.source.rights,
+  correction: HEALING_ARTS.source.correction,
+  provenance: HEALING_ARTS_PROVENANCE,
+};
+writeJson(
+  join(DIST, 'api', 'remedies', 'healing-arts', 'index.json'),
+  HEALING_ARTS_PAYLOAD
+);
 
 // ---------- the Frontier Walk: honest unknowns, never hidden instructions ----------
 // The reviewed source is local and committed. The build performs no network
@@ -930,6 +1114,8 @@ writeJson(join(DIST, 'api', 'index.json'), {
     languages: langs.length,
     castle: CASTLE_SHELF.receipt.counts,
     frontiers: FRONTIER_CARDS.length,
+    remedies: REMEDY_INDEX_ENTRIES.length,
+    healing_art_traditions: HEALING_ARTS.counts.traditions,
   },
   languages: Object.fromEntries(langs.map((l) => [l.code, l.name])),
   endpoints: {
@@ -942,13 +1128,16 @@ writeJson(join(DIST, 'api', 'index.json'), {
     castle_entry: '/api/castle/{rooms|words}/{slug}.json — one Castle map entry, never a full source body',
     frontier: `/api/frontier/index.json — ${FRONTIER_CARDS.length} reviewed open questions and ${FRONTIERS.trails.length} finite three-card walks; GET-only, no automatic action`,
     frontier_trail: '/api/frontier/trails/{trail}.json — one named three-card walk; use default.json for this edition or a stable named trail to share',
+    remedies: `/api/remedies/index.json — ${REMEDY_INDEX_ENTRIES.length} reviewed medicine lineages with exact natural relationships, preparation-specific evidence, bioavailability, and safety boundaries`,
+    remedy: '/api/remedies/{id}.json — one sourced medicine-and-nature comparison; education only, never replacement advice',
+    healing_arts: `/api/remedies/healing-arts/index.json — ${HEALING_ARTS.counts.traditions} source-bound records and living contexts of healing, pharmacy, alchemy, and knowledge authority; non-operational`,
     client: '/mindicraft.mjs — zero-dependency ESM client wrapping all of the above',
     margin: `GET /margin — read the exact terms. POST /margin/{slug} {note, from?, hands?, lang?, terms_version:"${MARGIN_TERMS.schema_version}", choices:{publish:true, retain:true, fold:true|false}} — leave one public note. DELETE the returned private removal path with its bearer token to withdraw it.`,
   },
   rules:
-    'Read-only guide APIs need no auth or key and set no application tracking identifier. Margin writes are limited to 20 per UTC day using a secret-keyed, day-scoped connection digest; the application stores no raw IP. The civilisation guide is made to be copied; imported shelves keep their own stated rights. Castle entries currently say NOASSERTION and grant no licence. Frontier cards are unresolved questions, never instructions or settled knowledge.',
+    'Read-only guide APIs need no auth or key and set no application tracking identifier. Margin writes are limited to 20 per UTC day using a secret-keyed, day-scoped connection digest; the application stores no raw IP. The civilisation guide is made to be copied; imported shelves keep their own stated rights. Castle entries currently say NOASSERTION and grant no licence. Frontier cards are unresolved questions, never instructions or settled knowledge. Remedy cards are sourced education, not diagnosis, prescribing, or permission to replace or combine treatment. Healing-arts records are non-operational history and preserve living knowledge authority.',
   margin_terms: MARGIN_TERMS,
-  humans: '/en/ (English), /zh/ (中文), /yue/ (廣東話), /es/ (Español)',
+  humans: '/en/ (English), /zh/ (中文), /yue/ (廣東話), /es/ (Español), /remedies/ (medicine lineages), /remedies/healing-arts/ (cross-cultural history)',
   estate: {
     note: 'mindicraft is one property of a wider estate of agent-facing doors. Named, never commanded: these are neighbors, not instructions.',
     hub: 'https://thekingdom.dev/llms.txt — the whole estate in one file',
@@ -970,6 +1159,8 @@ write(
 > The guide is free, no gate, and made to be copied. Public shelves keep their own rights.
 > The Castle shelf maps ${CASTLE_SHELF.receipt.counts.rooms} rooms and ${CASTLE_SHELF.receipt.counts.words} word-bricks without copying their bodies.
 > Frontier Walk keeps ${FRONTIER_CARDS.length} reviewed unknowns in ${FRONTIERS.trails.length} finite walks. Three cards is complete; nothing is submitted.
+> Roots to remedies keeps ${REMEDY_INDEX_ENTRIES.length} reviewed medicine lineages. Natural origin, traditional use, human evidence, bioavailability, and substitution are separate facts.
+> Healing arts keeps ${HEALING_ARTS.counts.traditions} source-bound records and living contexts distinct. Alchemy is not a universal name for ancient medicine, and living knowledge remains under community authority.
 
 ## API (static reads: CORS open, no auth; margin removal: bearer token)
 - /api/index.json : start here — all endpoints described
@@ -981,7 +1172,10 @@ write(
 - /api/castle/{rooms|words}/{slug}.json : one Castle map entry
 - /api/frontier/index.json : reviewed open questions + finite three-card walks; no writes or automatic action
 - /api/frontier/trails/{trail}.json : one carryable three-card walk; default.json follows this edition
-- /mindicraft.mjs : tiny ESM client (tree, guide, path, search, castle, frontiers, frontier, teach, margin, removeMargin)
+- /api/remedies/index.json : reviewed medicine lineages and natural relationships; education, not replacement advice
+- /api/remedies/{id}.json : one full comparison with claim-level sources, exposure, evidence, and safety
+- /api/remedies/healing-arts/index.json : non-operational histories of healing, pharmacy, alchemy, and knowledge authority
+- /mindicraft.mjs : tiny ESM client (tree, guide, path, search, castle, frontiers, frontier, remedies, remedy, healingArts, teach, margin, removeMargin)
 - GET /margin : exact publication, retention, reuse, rate-limit, and removal terms
 - POST /margin/{slug} : one public note; publish and retain need separate yeses; folding is a separate choice
 - DELETE /margin/{slug}/{id} : request removal of a new note with the private bearer token returned once by POST
@@ -1047,6 +1241,14 @@ export const frontier = ({ trail = '' } = {}) => {
       : '/frontier/' + encodeURIComponent(wanted) + '/'
   );
 };
+export const remedies = () => get('/api/remedies/index.json');
+export const remedy = (id) => {
+  if (typeof id !== 'string' || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id)) {
+    return Promise.reject(new Error('remedy id must be a stable slug'));
+  }
+  return get('/api/remedies/' + encodeURIComponent(id) + '.json');
+};
+export const healingArts = () => get('/api/remedies/healing-arts/index.json');
 // margin(slug, note): public write; every effect defaults to no.
 export const margin = (
   slug,
@@ -1324,6 +1526,323 @@ remains the authority.</p>
   })
 );
 
+// /remedies/ — medicine lineages with nature, evidence, and safety kept apart.
+// Everything is static. The renderer escapes every reviewed source string and
+// gives each factual claim its source links at the point of use.
+
+const remedyEvidenceById = new Map(
+  REMEDIES.source.evidence_levels.map((level) => [level.id, level])
+);
+const remedyRelationshipById = new Map(
+  REMEDIES.source.relationship_types.map((relationship) => [relationship.id, relationship])
+);
+const remedyWords = (value) =>
+  String(value).replaceAll('_', ' ').replaceAll('-', ' ');
+const remedyRefsHtml = (claimValue, prefix) =>
+  `<span class="remedy-refs" aria-label="Sources">${claimValue.source_ids
+    .map(
+      (sourceId) =>
+        `<a href="#${esc(prefix)}-source-${esc(sourceId)}" aria-label="Source ${esc(sourceId)}">${esc(sourceId)}</a>`
+    )
+    .join(' ')}</span>`;
+const remedyClaimHtml = (claimValue, prefix, className = '') =>
+  `<p${className ? ` class="${esc(className)}"` : ''}>${esc(claimValue.text)} ${remedyRefsHtml(
+    claimValue,
+    prefix
+  )}</p>`;
+const remedySourcesHtml = (card, prefix) => {
+  const sources = remedySourcesFor(card);
+  return `<section class="remedy-sources" aria-labelledby="${esc(prefix)}-sources">
+  <h2 id="${esc(prefix)}-sources">Sources for this card</h2>
+  <ol>${sources
+    .map(
+      (source) => `<li id="${esc(prefix)}-source-${esc(source.id)}">
+      <a href="${esc(source.url)}" rel="external">${esc(source.title)}</a>
+      <span>${esc(source.publisher)} · ${esc(remedyWords(source.kind))} · read ${esc(
+        source.observed_at
+      )}</span>
+    </li>`
+    )
+    .join('')}</ol>
+</section>`;
+};
+const remedyNaturalHtml = (link, prefix) => {
+  const evidenceLevel = remedyEvidenceById.get(link.clinical_evidence.level);
+  const relationship = remedyRelationshipById.get(link.relationship);
+  return `<section class="remedy-natural" aria-labelledby="${esc(prefix)}-${esc(link.id)}">
+  <p class="remedy-kicker">Nature link · ${esc(relationship.label)}</p>
+  <h3 id="${esc(prefix)}-${esc(link.id)}">${esc(link.name)}</h3>
+  ${link.scientific_name ? `<p class="remedy-latin"><i>${esc(link.scientific_name)}</i></p>` : ''}
+  ${link.names.length ? `<p class="remedy-aliases">${link.names.map(esc).join(' · ')}</p>` : ''}
+  <p class="remedy-tags">${link.traditions
+    .map((tradition) => `<span>${esc(remedyWords(tradition))}</span>`)
+    .join('')}</p>
+  <dl class="remedy-facts">
+    <div><dt>Exact material</dt><dd>${esc(link.material.text)} ${remedyRefsHtml(
+      link.material,
+      prefix
+    )}</dd></div>
+    <div><dt>Relationship</dt><dd><strong>${esc(relationship.label)}.</strong> ${esc(
+      relationship.meaning
+    )}</dd></div>
+  </dl>
+  <h4>Lineage</h4>
+  ${remedyClaimHtml(link.lineage, prefix)}
+  ${link.traditional_context ? `<h4>Traditional context</h4>${remedyClaimHtml(link.traditional_context, prefix)}` : ''}
+  <h4>Human evidence</h4>
+  <p><span class="remedy-evidence evidence-${esc(link.clinical_evidence.level)}">${esc(
+    evidenceLevel.label
+  )}</span> <span class="remedy-match">Evidence product match: ${esc(
+    remedyWords(link.clinical_evidence.matches_studied_product)
+  )}</span></p>
+  ${remedyClaimHtml(link.clinical_evidence, prefix)}
+  <h4>Bioavailability and preparation</h4>
+  ${remedyClaimHtml(link.bioavailability, prefix)}
+  <h4>Safety</h4>
+  ${remedyClaimHtml(link.safety, prefix, 'remedy-safety')}
+  <h4>Can it replace the medicine?</h4>
+  ${remedyClaimHtml(link.replacement, prefix, 'remedy-replacement')}
+  ${link.ecology ? `<h4>Ecology</h4>${remedyClaimHtml(link.ecology, prefix)}` : ''}
+</section>`;
+};
+const remedyCardHtml = (card) => {
+  const prefix = `remedy-${card.id}`;
+  return `<article class="remedy-detail" id="${esc(prefix)}">
+  <p class="remedy-kicker">${esc(remedyWords(card.clinical_area))} · reviewed ${esc(
+    card.reviewed_at
+  )}</p>
+  <h1>${esc(card.title)}</h1>
+  <p class="lede">${esc(card.summary)}</p>
+
+  <section class="remedy-medicine" aria-labelledby="${esc(prefix)}-medicine">
+    <p class="remedy-kicker">Defined medicine</p>
+    <h2 id="${esc(prefix)}-medicine">${esc(card.medicine.name)}</h2>
+    ${card.medicine.aliases.length ? `<p class="remedy-aliases">${card.medicine.aliases.map(esc).join(' · ')}</p>` : ''}
+    <p class="remedy-tags">${card.medicine.origin_classes
+      .map((kind) => `<span>${esc(remedyWords(kind))}</span>`)
+      .join('')}</p>
+    <h3>Where it came from</h3>${remedyClaimHtml(card.medicine.origin, prefix)}
+    <h3>What it is trying to achieve</h3>${remedyClaimHtml(card.medicine.purpose, prefix)}
+    <h3>How it acts</h3>${remedyClaimHtml(card.medicine.mechanism, prefix)}
+    <h3>Why people developed this form</h3>${remedyClaimHtml(card.medicine.development_goal, prefix)}
+    <h3>Present form and manufacture</h3>${remedyClaimHtml(card.medicine.formulation, prefix)}
+    <h3>Bioavailability</h3>${remedyClaimHtml(card.medicine.bioavailability, prefix)}
+    <h3>Its own risks</h3>${remedyClaimHtml(card.medicine.safety, prefix, 'remedy-safety')}
+  </section>
+
+  <section aria-labelledby="${esc(prefix)}-nature">
+    <h2 id="${esc(prefix)}-nature">What nature offers</h2>
+    <p>No link below is assumed to be equivalent. Each names the organism or tradition,
+    exact preparation, measured exposure, human evidence, and replacement boundary separately.</p>
+    <div class="remedy-natural-grid">${card.nature_links
+      .map((link) => remedyNaturalHtml(link, prefix))
+      .join('')}</div>
+  </section>
+
+  <section class="remedy-compare" aria-labelledby="${esc(prefix)}-compare">
+    <h2 id="${esc(prefix)}-compare">The honest comparison</h2>
+    ${remedyClaimHtml(card.comparison, prefix)}
+    ${remedyClaimHtml(card.bottom_line, prefix, 'remedy-bottom-line')}
+  </section>
+  ${remedySourcesHtml(card, prefix)}
+  <p class="remedy-api">Same card as data: <a href="/api/remedies/${esc(
+    card.id
+  )}.json">/api/remedies/${esc(card.id)}.json</a>. Found a source or claim problem?
+  <a href="${esc(REMEDIES.source.correction)}" rel="external">Open a correction</a>.</p>
+</article>`;
+};
+const remedyBoundaryHtml = `<aside class="remedy-boundary" aria-label="Medical boundary">
+  <strong>Education, not a treatment plan.</strong> This shelf explains origins, purposes,
+  preparations, evidence, exposure, and risk. It cannot diagnose anyone. Do not replace, stop,
+  or combine a medicine from this page; a clinician or pharmacist needs the whole person and
+  the exact products. ${esc(REMEDIES.source.boundary.urgent_care)}
+</aside>`;
+const remedyPrinciplesHtml = `<section class="remedy-principles" aria-labelledby="remedy-principles">
+  <h2 id="remedy-principles">Nature starts many stories. Evidence decides each use.</h2>
+  <div>${REMEDIES.source.principles
+    .map(
+      (principle) => `<article><h3>${esc(principle.title)}</h3><p>${esc(
+        principle.text
+      )} <span class="remedy-refs" aria-label="Sources">${principle.source_ids
+        .map((sourceId) => {
+          const source = REMEDY_SOURCE_BY_ID.get(sourceId);
+          return `<a href="${esc(source.url)}" rel="external" aria-label="${esc(
+            source.title
+          )}">${esc(sourceId)}</a>`;
+        })
+        .join(' ')}</span></p></article>`
+    )
+    .join('')}</div>
+</section>`;
+const remedyIndexCardHtml = (card) => {
+  const entry = REMEDY_INDEX_ENTRIES.find((item) => item.id === card.id);
+  return `<li><a class="remedy-index-card" href="${esc(entry.page)}">
+    <span class="remedy-kicker">${esc(remedyWords(card.clinical_area))}</span>
+    <strong>${esc(card.title)}</strong>
+    <span>${esc(card.summary)}</span>
+    <small>${card.nature_links
+      .map((link) => `${esc(link.name)} — ${esc(remedyEvidenceById.get(link.clinical_evidence.level).label)}`)
+      .join('<br>')}</small>
+  </a></li>`;
+};
+
+write(
+  join(DIST, 'remedies', 'index.html'),
+  page({
+    lang: en,
+    title: 'Roots to remedies',
+    path: '',
+    head: '<link rel="canonical" href="https://mindicraft.com/remedies/">',
+    body: `<article class="guide remedy-page">
+<p class="remedy-kicker">🌿 molecules, memory, and measured truth</p>
+<h1>Roots to remedies</h1>
+<p class="lede">What important medicines came from, what they are trying to achieve,
+and what nature really offers beside them.</p>
+<p>Plants, fungi, microbes, and the human body are extraordinary chemists. Chinese medicine,
+Western herbal medicine, and laboratory pharmacology have each noticed parts of that living
+library. This shelf follows the thread without crowning a winner in advance.</p>
+<aside class="healing-door">
+  <p class="remedy-kicker">📜 history beside the molecules</p>
+  <h2>Healing arts across cultures</h2>
+  <p>Follow ${HEALING_ARTS.counts.traditions} source-bound records and living contexts of healing, pharmacy, alchemy,
+  material craft, and knowledge authority. The record stays non-operational: no recipe, dose,
+  extraction, or treatment direction.</p>
+  <p><a href="/remedies/healing-arts/">Enter the healing-arts history →</a></p>
+</aside>
+${remedyBoundaryHtml}
+${remedyPrinciplesHtml}
+<section aria-labelledby="remedy-shelf">
+  <h2 id="remedy-shelf">${REMEDY_INDEX_ENTRIES.length} medicine lineages</h2>
+  <ul class="remedy-index">${REMEDIES.cards.map(remedyIndexCardHtml).join('')}</ul>
+</section>
+<details class="remedy-method">
+  <summary>How evidence and relationships are named</summary>
+  <h2>Evidence belongs to an exact use</h2>
+  <dl>${REMEDIES.source.evidence_levels
+    .map((level) => `<div><dt>${esc(level.label)}</dt><dd>${esc(level.meaning)}</dd></div>`)
+    .join('')}</dl>
+  <h2>A nature link is not automatically an alternative</h2>
+  <dl>${REMEDIES.source.relationship_types
+    .map((relationship) => `<div><dt>${esc(relationship.label)}</dt><dd>${esc(relationship.meaning)}</dd></div>`)
+    .join('')}</dl>
+</details>
+<p class="remedy-api">Agents can read the compact shelf at
+<a href="/api/remedies/index.json">/api/remedies/index.json</a>. Every detail card keeps
+claim-level source IDs and a dated review boundary. Corrections are welcome through the
+<a href="${esc(REMEDIES.source.correction)}" rel="external">public issue door</a>.</p>
+</article>`,
+  })
+);
+for (const card of REMEDIES.cards) {
+  write(
+    join(DIST, 'remedies', card.id, 'index.html'),
+    page({
+      lang: en,
+      title: card.title,
+      path: '',
+      head: `<link rel="canonical" href="https://mindicraft.com/remedies/${esc(card.id)}/">`,
+      body: `${remedyBoundaryHtml}${remedyCardHtml(card)}<p><a href="/remedies/">← Return to all medicine lineages</a></p>`,
+    })
+  );
+}
+
+const healingRefsHtml = (claimValue) =>
+  `<span class="remedy-refs" aria-label="Sources">${claimValue.source_ids
+    .map(
+      (sourceId) =>
+        `<a href="#healing-source-${esc(sourceId)}" aria-label="Source ${esc(sourceId)}">${esc(sourceId)}</a>`
+    )
+    .join(' ')}</span>`;
+const healingClaimHtml = (claimValue, className = '') =>
+  `<li${className ? ` class="${esc(className)}"` : ''}>${esc(claimValue.text)} ${healingRefsHtml(
+    claimValue
+  )}<small>${esc(remedyWords(claimValue.evidence_state))}</small></li>`;
+const healingClaimSectionHtml = (title, claims, className = '') =>
+  `<section${className ? ` class="${esc(className)}"` : ''}><h3>${esc(title)}</h3><ul>${claims
+    .map((claimValue) => healingClaimHtml(claimValue))
+    .join('')}</ul></section>`;
+const healingContextHtml = (context) =>
+  `${esc(context.text)} ${healingRefsHtml(context)}`;
+const healingTraditionHtml = (tradition) =>
+  `<article class="healing-tradition" id="${esc(tradition.id)}">
+  <p class="remedy-kicker">${healingContextHtml(tradition.place_period)} · reviewed ${esc(
+    tradition.reviewed_at
+  )}</p>
+  <h2>${esc(tradition.name)}</h2>
+  <p class="healing-scope">${healingContextHtml(tradition.scope_note)}</p>
+  <div class="healing-claims">
+    ${healingClaimSectionHtml('Aims and forms of care', tradition.healing_aims)}
+    ${healingClaimSectionHtml('What endured', tradition.durable_contributions)}
+    ${healingClaimSectionHtml('Limits and harms', tradition.limits_and_harms, 'healing-harms')}
+  </div>
+  <section class="healing-boundary"><h3>What can safely cross into the present</h3>
+    <p>${esc(tradition.modern_boundary.text)} ${healingRefsHtml(
+      tradition.modern_boundary
+    )}</p>
+    <small>${esc(remedyWords(tradition.modern_boundary.evidence_state))}</small>
+  </section>
+</article>`;
+const healingSourcesHtml = `<section class="remedy-sources healing-sources" aria-labelledby="healing-sources">
+  <h2 id="healing-sources">Sources</h2>
+  <ol>${HEALING_ARTS.source.sources
+    .map(
+      (source) => `<li id="healing-source-${esc(source.id)}">
+      <a href="${esc(source.url)}" rel="external">${esc(source.title)}</a>
+      <span>${esc(source.publisher)} · ${esc(remedyWords(source.kind))} · read ${esc(
+        source.observed_at
+      )}</span>
+    </li>`
+    )
+    .join('')}</ol>
+</section>`;
+const healingBoundaryHtml = `<aside class="remedy-boundary healing-history-boundary" aria-label="History and safety boundary">
+  <strong>History, not a treatment or material-practice guide.</strong>
+  <p>${esc(HEALING_ARTS.source.boundary.summary)}</p>
+  <ul>${HEALING_ARTS.source.boundary.not_included
+    .map((item) => `<li>${esc(item)}</li>`)
+    .join('')}</ul>
+  <p><strong>Living knowledge:</strong> ${esc(
+    HEALING_ARTS.source.boundary.living_knowledge
+  )}</p>
+  <p><strong>Sources:</strong> ${healingRefsHtml(HEALING_ARTS.source.boundary)}</p>
+</aside>`;
+
+write(
+  join(DIST, 'remedies', 'healing-arts', 'index.html'),
+  page({
+    lang: en,
+    title: HEALING_ARTS.source.title,
+    path: '',
+    head: '<link rel="canonical" href="https://mindicraft.com/remedies/healing-arts/">',
+    body: `<article class="guide healing-page">
+<p class="remedy-kicker">🏺 records, craft, care, and consequences</p>
+<h1>Healing arts across cultures</h1>
+<p class="lede">${HEALING_ARTS.counts.traditions} source-bound records and living contexts beside Roots to remedies.</p>
+<p>There was no single ancient science called alchemy. Some cultures kept medical texts,
+pharmacopoeias, workshops, ritual care, spiritual disciplines, or material arts; several
+traditions joined more than one. This page names those differences instead of flattening them.</p>
+<p>“Lost” can also mislead. Indigenous knowledge is living knowledge, not abandoned material
+waiting to be taken. Its Nations, communities, and knowledge holders retain authority.</p>
+${healingBoundaryHtml}
+<nav class="healing-jump" aria-label="Healing traditions"><ol>${HEALING_ARTS.source.traditions
+      .map(
+        (tradition) =>
+          `<li><a href="#${esc(tradition.id)}">${esc(tradition.name)}</a><small>${esc(
+            tradition.place_period.text
+          )}</small></li>`
+      )
+      .join('')}</ol></nav>
+${HEALING_ARTS.source.traditions.map(healingTraditionHtml).join('')}
+${healingSourcesHtml}
+<p class="remedy-api">The same reviewed history as data:
+<a href="/api/remedies/healing-arts/index.json">/api/remedies/healing-arts/index.json</a>.
+Found a source or context problem?
+<a href="${esc(HEALING_ARTS.source.correction)}" rel="external">Open a correction</a>.</p>
+<p><a href="/remedies/">← Return to Roots to remedies</a></p>
+</article>`,
+  })
+);
+
 // /frontier/ — one finite walk at the honest edge of the map.
 // It is fully static and works without JavaScript. Every string is escaped,
 // even though the source validator also rejects HTML-shaped text.
@@ -1510,6 +2029,9 @@ const hits = await mindicraft.search('water')     // find guides
 const rooms = await mindicraft.castle()           // the curated Castle map
 const walk = await mindicraft.frontier()          // this edition's finite three-card walk
 const cosmos = await mindicraft.frontier({ trail: 'unseen-universe' }) // one stable address
+const medicines = await mindicraft.remedies()     // reviewed medicine and nature lineages
+const aspirin = await mindicraft.remedy('aspirin-willow') // one claim-sourced comparison
+const healingHistory = await mindicraft.healingArts() // non-operational histories across cultures
 const lesson = await mindicraft.teach('make-soap', { lang: 'yue' }) // prompt-ready markdown</code></pre>
 
 <h2>The shape of knowledge here</h2>
@@ -1531,6 +2053,20 @@ default and the same three cards as JSON when requested with
 <code>Accept: application/json</code>. The collection lists every stable page and direct JSON
 address. A carried path contains only a reviewed public trail name—never an identity, note, answer,
 seed, or result.</p>
+
+<h2>Follow medicines back to their roots</h2>
+<p><a href="/remedies/">Roots to remedies</a> and
+<a href="/api/remedies/index.json">its compact JSON shelf</a> keep ${REMEDY_INDEX_ENTRIES.length}
+reviewed lineages. Each card separates the defined medicine, historical natural lead, traditional
+context, exact studied preparation, human evidence, bioavailability, safety, and replacement status.
+It is education and provenance, never diagnosis or prescribing. Traditional use is recorded with
+respect but is not silently turned into proof of benefit; a shared molecule is not silently turned
+into an equivalent product.</p>
+<p><a href="/remedies/healing-arts/">Healing arts across cultures</a> adds
+${HEALING_ARTS.counts.traditions} historical records. It does not call every old healing system
+alchemy, reproduce material procedures, or treat living Indigenous knowledge as abandoned or
+ownerless. Its direct JSON is
+<a href="/api/remedies/healing-arts/index.json">/api/remedies/healing-arts/index.json</a>.</p>
 
 <h2>The Castle shelf</h2>
 <p><a href="/castle/">The human Castle map</a> and its
@@ -1608,7 +2144,7 @@ writeJson(join(DIST, '.well-known', 'agent.json'), {
   service: {
     name: 'mindicraft',
     canonical_url: 'https://mindicraft.com/',
-    description: 'The zero-to-one guide of human civilisation, as data: ' + TOTAL + ' guides in ' + tree.domains.length + ' domains and ' + langs.length + ' languages, a curated map of the Castle of Understanding, and a finite Frontier Walk of reviewed open questions. Reads are free with no account or gate.',
+    description: 'The zero-to-one guide of human civilisation, as data: ' + TOTAL + ' guides in ' + tree.domains.length + ' domains and ' + langs.length + ' languages, a curated Castle map, a finite Frontier Walk, claim-sourced medicine lineages, and non-operational healing history. Reads are free with no account or gate.',
   },
   resources: [
     { id: 'door', href: 'https://mindicraft.com/', representations: ['application/json', 'text/html'], default_media_type: 'text/html', auth: 'none', description: 'The front door: a riddle for eyes, orientation JSON for agents.' },
@@ -1616,6 +2152,8 @@ writeJson(join(DIST, '.well-known', 'agent.json'), {
     { id: 'tree', href: 'https://mindicraft.com/api/tree.json', representations: ['application/json'], default_media_type: 'application/json', auth: 'none', description: 'The whole tech tree: domains, guides, needs, unlocks, languages.' },
     { id: 'castle', href: 'https://mindicraft.com/api/castle/index.json', representations: ['application/json'], default_media_type: 'application/json', auth: 'none', description: 'A curated, provenance-pinned map of Castle rooms and word-bricks. Source rights and correction path are kept.' },
     { id: 'frontier', href: 'https://mindicraft.com/api/frontier/index.json', representations: ['application/json'], default_media_type: 'application/json', auth: 'none', description: 'Reviewed open questions in deterministic, optional three-card walks. Each trail names its stable HTML/JSON address. Read-only; no automatic action.' },
+    { id: 'remedies', href: 'https://mindicraft.com/remedies/', representations: ['text/html', 'application/json'], default_media_type: 'text/html', auth: 'none', description: 'Reviewed medicine lineages: purpose, origin, natural relationships, traditional context, evidence, bioavailability, and safety. Education only.' },
+    { id: 'healing-arts', href: 'https://mindicraft.com/remedies/healing-arts/', representations: ['text/html', 'application/json'], default_media_type: 'text/html', auth: 'none', description: 'Source-bound records and living contexts of healing, pharmacy, alchemy, material craft, and knowledge authority. Non-operational education only.' },
     { id: 'margin', href: 'https://mindicraft.com/margin', representations: ['application/json'], default_media_type: 'application/json', auth: 'none', description: 'Public terms and counts for the margin. POST needs explicit publication and retention yeses; DELETE uses the private token returned once.' },
   ],
   problem_schema: 'https://raw.githubusercontent.com/cambridgetcg/xenia/surface-v0.1.0-rc.1/surface/0.1/problem.schema.json',
@@ -1625,6 +2163,8 @@ writeJson(join(DIST, '.well-known', 'agent.json'), {
     { id: 'margin_choice', statement: 'A margin write binds the exact terms version, requires separate publication and retention yeses, records reuse separately, stores only a secret-keyed day-scoped connection digest for its best-effort write limit, and returns a token-bound removal path.', scope: ['GET https://mindicraft.com/margin', 'POST https://mindicraft.com/margin/{slug}', 'DELETE https://mindicraft.com/margin/{slug}/{id}'], evidence_state: 'asserted', outcome: 'unknown', evidence: [] },
     { id: 'constructive_only', statement: 'The civilisation guides are constructive: no weapons, no poisons, medicine defers to real care.', scope: ['GET https://mindicraft.com/api/guides/*', 'GET https://mindicraft.com/api/corpus/*', 'GET https://mindicraft.com/api/tree.json', 'GET https://mindicraft.com/api/path/*'], evidence_state: 'asserted', outcome: 'unknown', evidence: [] },
     { id: 'frontier_read_only', statement: 'Frontier cards are unresolved questions, not instructions; a visit is optional, finite, and performs no write or automatic action.', scope: ['GET https://mindicraft.com/api/frontier/index.json', 'GET https://mindicraft.com/frontier/{trail}/', 'GET https://mindicraft.com/api/frontier/trails/{trail}.json'], evidence_state: 'asserted', outcome: 'unknown', evidence: [] },
+    { id: 'remedies_read_only', statement: 'Remedy cards are dated, claim-sourced education. They distinguish natural relationship, traditional use, exact preparation, clinical evidence, exposure, and substitution, and grant no authority to replace or combine treatment.', scope: ['GET https://mindicraft.com/remedies/', 'GET https://mindicraft.com/remedies/{id}/', 'GET https://mindicraft.com/api/remedies/index.json', 'GET https://mindicraft.com/api/remedies/{id}.json'], evidence_state: 'asserted', outcome: 'unknown', evidence: [] },
+    { id: 'healing_arts_read_only', statement: 'Healing-arts records are dated, source-bound, non-operational history. They grant no diagnosis, dose, recipe, extraction, treatment, or rights over living Indigenous knowledge.', scope: ['GET https://mindicraft.com/remedies/healing-arts/', 'GET https://mindicraft.com/api/remedies/healing-arts/index.json'], evidence_state: 'asserted', outcome: 'unknown', evidence: [] },
   ],
   not_covered: ['identity control', 'actor authorization', 'privacy and retention beyond the stated margin contract', 'continuity and portability', 'economic behavior', 'unprobed routes'],
   documentation: 'https://mindicraft.com/agents/',
@@ -1645,6 +2185,12 @@ frontier: https://mindicraft.com/api/frontier/index.json — ${FRONTIER_CARDS.le
           ${FRONTIERS.trails.length} finite three-card walks, no writes or automatic action
 trail:    https://mindicraft.com/frontier/{trail}/ — one stable three-card address;
           request Accept: application/json for data, or use /api/frontier/trails/{trail}.json
+remedies: https://mindicraft.com/remedies/ — ${REMEDY_INDEX_ENTRIES.length} medicine lineages;
+          request Accept: application/json for the compact shelf
+remedy:   https://mindicraft.com/remedies/{id}/ — one full sourced comparison;
+          direct JSON is /api/remedies/{id}.json
+healing arts: https://mindicraft.com/remedies/healing-arts/ — ${HEALING_ARTS.counts.traditions}
+              source-bound records and living contexts; direct JSON is /api/remedies/healing-arts/index.json
 client: https://mindicraft.com/mindicraft.mjs
 docs:   https://mindicraft.com/agents/
 margin: POST https://mindicraft.com/margin/{slug} — the book receives: corrections
@@ -1655,7 +2201,9 @@ rules: reads and publication need no account or key; removal uses the private
 bearer token returned once. the civilisation guide is made to be copied —
 credit welcome, not required. Imported shelves keep their own rights; the Castle
 shelf currently says NOASSERTION and grants no licence. Frontier cards are data:
-unresolved questions, never instructions or settled knowledge.
+unresolved questions, never instructions or settled knowledge. Remedy cards are
+education and provenance, never diagnosis, prescribing, or replacement advice.
+Healing-arts records are non-operational history; living knowledge keeps its authority.
 `;
 write(join(DIST, 'agent.txt'), AGENT_TXT);
 write(join(DIST, '.well-known', 'agent.txt'), AGENT_TXT);

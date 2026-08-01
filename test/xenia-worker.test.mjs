@@ -159,6 +159,159 @@ test('the declared frontier resource negotiates JSON', async () => {
   assert.equal((await response.json()).schema_version, 'mindicraft.frontiers/1');
 });
 
+test('the remedies doorway serves HTML by default and its compact JSON when asked', async () => {
+  const seen = [];
+  const assets = {
+    fetch: async (request) => {
+      seen.push(request.url);
+      if (request.url.endsWith('/api/remedies/index.json')) {
+        return Response.json({
+          schema_version: 'mindicraft.remedies-index/1',
+          count: 12,
+        });
+      }
+      return new Response('<h1>Roots to remedies</h1>', {
+        headers: { 'content-type': 'text/html' },
+      });
+    },
+  };
+
+  const html = await worker.fetch(
+    new Request('https://mindicraft.com/remedies/'),
+    { ASSETS: assets },
+    {}
+  );
+  assert.equal(html.status, 200);
+  assert.match(html.headers.get('content-type') ?? '', /^text\/html\b/u);
+  assert.equal(html.headers.get('vary'), 'Accept');
+  assert.match(await html.text(), /Roots to remedies/u);
+
+  const json = await worker.fetch(
+    new Request('https://mindicraft.com/remedies/', {
+      headers: { accept: 'application/json' },
+    }),
+    { ASSETS: assets },
+    {}
+  );
+  assert.equal(json.status, 200);
+  assert.match(json.headers.get('content-type') ?? '', /^application\/json\b/u);
+  assert.equal(json.headers.get('access-control-allow-origin'), '*');
+  assert.deepEqual(await json.json(), {
+    schema_version: 'mindicraft.remedies-index/1',
+    count: 12,
+  });
+  assert.deepEqual(seen, [
+    'https://mindicraft.com/remedies/',
+    'https://mindicraft.com/api/remedies/index.json',
+  ]);
+});
+
+test('the healing-arts doorway negotiates its history JSON, not a remedy card', async () => {
+  const seen = [];
+  const assets = {
+    fetch: async (request) => {
+      seen.push(new URL(request.url).pathname);
+      if (request.url.endsWith('/api/remedies/healing-arts/index.json')) {
+        return Response.json({
+          schema_version: 'mindicraft.healing-arts/1',
+          count: 10,
+        });
+      }
+      return new Response('<h1>Healing arts across cultures</h1>', {
+        headers: { 'content-type': 'text/html' },
+      });
+    },
+  };
+
+  const html = await worker.fetch(
+    new Request('https://mindicraft.com/remedies/healing-arts/'),
+    { ASSETS: assets },
+    {}
+  );
+  assert.equal(html.status, 200);
+  assert.match(await html.text(), /Healing arts across cultures/u);
+
+  const json = await worker.fetch(
+    new Request('https://mindicraft.com/remedies/healing-arts/', {
+      headers: { accept: 'application/json' },
+    }),
+    { ASSETS: assets },
+    {}
+  );
+  assert.equal(json.status, 200);
+  assert.equal((await json.json()).schema_version, 'mindicraft.healing-arts/1');
+  assert.deepEqual(seen, [
+    '/remedies/healing-arts/',
+    '/api/remedies/healing-arts/index.json',
+  ]);
+});
+
+test('one remedy address negotiates only its same-slug detail JSON', async () => {
+  let seenRequest;
+  const response = await worker.fetch(
+    new Request('https://mindicraft.com/remedies/aspirin-willow/', {
+      headers: { accept: 'application/json' },
+    }),
+    {
+      ASSETS: {
+        fetch: async (request) => {
+          seenRequest = request;
+          return Response.json({
+            schema_version: 'mindicraft.remedy/1',
+            card: { id: 'aspirin-willow' },
+          });
+        },
+      },
+    },
+    {}
+  );
+
+  assert.equal(
+    seenRequest.url,
+    'https://mindicraft.com/api/remedies/aspirin-willow.json'
+  );
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get('vary'), 'Accept');
+  assert.deepEqual(await response.json(), {
+    schema_version: 'mindicraft.remedy/1',
+    card: { id: 'aspirin-willow' },
+  });
+});
+
+test('missing and write-shaped remedy requests fail without becoming advice routes', async () => {
+  let assetCalls = 0;
+  const env = {
+    ASSETS: {
+      fetch: async () => {
+        assetCalls++;
+        return new Response('missing', { status: 404 });
+      },
+    },
+  };
+
+  const missing = await worker.fetch(
+    new Request('https://mindicraft.com/remedies/not-a-card/', {
+      headers: { accept: 'application/json' },
+    }),
+    env,
+    {}
+  );
+  assert.equal(missing.status, 404);
+  assert.equal((await missing.json()).code, 'route_not_found');
+
+  const write = await worker.fetch(
+    new Request('https://mindicraft.com/remedies/aspirin-willow/', {
+      method: 'POST',
+    }),
+    env,
+    {}
+  );
+  assert.equal(write.status, 405);
+  assert.equal(write.headers.get('allow'), 'GET, HEAD, OPTIONS');
+  assert.equal((await write.json()).code, 'method_not_allowed');
+  assert.equal(assetCalls, 1);
+});
+
 test('worker trail routes exactly match the reviewed source ids', () => {
   assert.deepEqual(
     [...FRONTIER_TRAIL_IDS].sort(),

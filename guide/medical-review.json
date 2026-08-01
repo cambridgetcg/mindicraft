@@ -1,0 +1,9 @@
+{
+  "schema_version": "mindicraft.medical-review/1",
+  "reviewed_at": "2026-08-01",
+  "scope": "These exact source bytes form the reviewed medical edition. Any source change must be reviewed and deliberately re-pinned before the public build can proceed.",
+  "sources": {
+    "remedies.json": "sha256:7c386d33cb17c448035be4d793802662de4afe8c004be22b95db6e874bbf3114",
+    "healing-arts.json": "sha256:4730fc458e4824cd63853d252f53046b0f31fd7819a91cd7f0e59d4b237e5f92"
+  }
+}
