@@ -286,17 +286,18 @@ living, governed knowledge—not lost material available for extraction.
 git clone https://github.com/cambridgetcg/mindicraft.git
 cd mindicraft
 
-# Run the collector
-node collect.mjs
-
 # Verify the Guide, wildfire help, Castle shelf, Frontier Walk, remedies, and healing history
 npm --prefix guide run verify
 
-# Serve the index
-node serve.mjs
+# Serve the canonical Guide locally
+python3 -m http.server 8788 --bind 127.0.0.1 --directory guide/dist
 
 # Open the interface
-open http://localhost:7780
+open http://127.0.0.1:8788/
+
+# The older collector remains separate, when deliberately needed:
+# node collect.mjs
+# node serve.mjs
 ```
 
 ## APIs

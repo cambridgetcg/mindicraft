@@ -118,6 +118,9 @@ assert.match(apiIndex.endpoints.learning_system, /no learner state/u);
 assert.match(apiIndex.rules, /no account, telemetry, leaderboard, streak, decay/u);
 assert.match(apiIndex.humans, /\{lang\}\/system\//u);
 assert.equal(manifest.resources.length, 8, 'Surface 0.1 keeps its bounded eight resources');
+const publicDoor = manifest.resources.find(({ id }) => id === 'door');
+assert.match(publicDoor.description, /visible book entrance/u);
+assert.doesNotMatch(publicDoor.description, /riddle/u);
 assert.equal(
   manifest.resources.some(({ id }) => id === 'learning-system'),
   false,
@@ -133,6 +136,7 @@ assert.equal(read(join(DIST, 'learning-system.mjs')), engineSource);
 assert.match(read(join(DIST, 'mindicraft.mjs')), /export const learningSystem/u);
 
 const expectedWordKeys = Object.keys(languages[0].strings.learningSystem).sort();
+const expectedCraftLawKeys = Object.keys(languages[0].strings.craftLaw).sort();
 assert.ok(expectedWordKeys.length >= 45);
 for (const language of languages) {
   assert.deepEqual(
@@ -140,11 +144,20 @@ for (const language of languages) {
     expectedWordKeys,
     `${language.code} must carry the same System UI vocabulary`
   );
+  assert.deepEqual(
+    Object.keys(language.strings.craftLaw).sort(),
+    expectedCraftLawKeys,
+    `${language.code} must carry the same causal craft vocabulary`
+  );
 
   const home = read(join(DIST, language.code, 'index.html'));
   const system = read(join(DIST, language.code, 'system', 'index.html'));
   assert.match(home, /data-learning-page="home"/u);
-  assert.match(home, /<label class="sr-only" for="q">/u);
+  assert.match(home, /class="book-kicker"/u);
+  assert.match(home, /class="book-truth"/u);
+  assert.match(home, /<aside class="craft-law" aria-labelledby="craft-law-title">/u);
+  assert.ok(home.includes(`<label class="search-label" for="q">${language.strings.searchLabel}</label>`));
+  assert.match(home, new RegExp(`href="/${language.code}/begin/"`, 'u'));
   assert.match(home, /id="noresults" role="status" aria-live="polite"/u);
   assert.match(home, /<script type="module" src="\/learning-ui\.mjs"><\/script>/u);
   assert.match(system, /data-learning-page="system"/u);

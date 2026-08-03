@@ -283,6 +283,24 @@ const guideCard = (lang, domain, guide) => {
 </a>`;
 };
 
+const craftLawHtml = (S) => `<aside class="craft-law" aria-labelledby="craft-law-title">
+  <h2 id="craft-law-title">${esc(S.craftLaw.title)}</h2>
+  <ol>
+    <li><strong>${esc(S.craftLaw.materials)}</strong><span>${esc(
+  S.craftLaw.materialsText
+)}</span></li>
+    <li><strong>${esc(S.craftLaw.conditions)}</strong><span>${esc(
+  S.craftLaw.conditionsText
+)}</span></li>
+    <li><strong>${esc(S.craftLaw.process)}</strong><span>${esc(
+  S.craftLaw.processText
+)}</span></li>
+    <li><strong>${esc(S.craftLaw.result)}</strong><span>${esc(
+  S.craftLaw.resultText
+)}</span></li>
+  </ol>
+</aside>`;
+
 // ---------- build every language ----------
 
 for (const lang of langs) {
@@ -314,14 +332,20 @@ for (const lang of langs) {
   </div>
   <a href="/wildfire/">Open now <span aria-hidden="true">→</span></a>
 </aside>
-<section class="hero">
+<section class="hero book-hero">
+  <p class="book-kicker">✦ ${esc(S.bookKicker)}</p>
   <h1>${esc(S.tagline)}</h1>
-  <p>${esc(S.hero)}</p>
-  <label class="sr-only" for="q">${esc(S.searchPlaceholder)}</label>
+  <p class="hero-intro">${esc(S.hero)}</p>
+  <p class="book-truth">${esc(S.bookTruth)}</p>
+  <p class="hero-actions"><a class="book-button" href="/${lang.code}/begin/">${esc(
+  S.startHere
+)}</a></p>
+  ${craftLawHtml(S)}
+  <label class="search-label" for="q">${esc(S.searchLabel)}</label>
   <input id="q" type="search" placeholder="${esc(S.searchPlaceholder)}" autocomplete="off">
   <p id="noresults" role="status" aria-live="polite" hidden>${esc(S.noResults)}</p>
 </section>
-${domainsHtml}
+<div class="book-contents" id="contents">${domainsHtml}</div>
 <script>
 const q = document.getElementById('q');
 q.addEventListener('input', () => {
@@ -521,19 +545,7 @@ for (const lang of langs) {
 }
 
 // ---------- the front door ----------
-// The root page tells you nothing. A word in the dark, and a spark floating
-// where the dot of the middle "i" should be — the spark between mind and craft.
-// The doors, for those who look:
-//   · click the spark three times (it grows into a flame, then lets you in)
-//   · type  fire / zero / begin / 火  anywhere on the page
-//   · the old up-up-down-down code drops you at the very last page of the book
-//   · after 40 quiet seconds, a whisper offers one hint
-//   · the browser console tells you plainly (devtools people are real ones)
-//   · screen readers get a proper labeled link; no-JS visitors get a small ·
-// Once through, localStorage remembers and a quiet "enter" shows from then on.
-// Direct links like /en/ always work — it's a riddle, not a gate.
-
-const codes = langs.map((l) => l.code);
+// A visible book cover. Wonder belongs in the craft; entry needs no riddle.
 write(
   join(DIST, 'index.html'),
   `<!doctype html>
@@ -541,89 +553,60 @@ write(
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>mindicraft</title>
-<meta name="description" content="🔥">
+<title>mindicraft · a book of causes and craft</title>
+<meta name="description" content="A plain, open book of practical causes and craft. Materials, conditions, and process lead to an expected result.">
+<link rel="canonical" href="https://mindicraft.com/">
+<link rel="stylesheet" href="/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
-<style>
-  html,body{height:100%;margin:0}
-  body{min-height:100%;height:auto;padding:1rem;box-sizing:border-box;background:#0d0b09;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;
-    font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Songti SC",serif;overflow:auto}
-  .word{font-size:clamp(2.4rem,9vw,4.2rem);line-height:1;letter-spacing:.05em;color:#57504a;user-select:none}
-  .pivot{position:relative;display:inline-block}
-  .spark{position:absolute;left:50%;bottom:.74em;width:.1em;height:.1em;border-radius:50%;border:0;padding:0;
-    font-size:inherit;line-height:0;background:#e07a4a;box-shadow:0 0 .3em .04em rgba(224,122,74,.5);cursor:pointer;
-    animation:breathe 4.5s ease-in-out infinite;transform:translateX(-50%);transition:all .6s ease}
-  .spark::after{content:"";position:absolute;inset:-.3em;border-radius:50%}
-  .spark:focus-visible{outline:1px dotted #8a6a50;outline-offset:.3em}
-  .spark.s1{width:.16em;height:.16em;background:#eb8f55;box-shadow:0 0 .5em .1em rgba(235,143,85,.65)}
-  .spark.s2{width:.22em;height:.22em;background:#ffb45e;box-shadow:0 0 .9em .22em rgba(255,180,94,.75);animation-duration:1.6s}
-  @keyframes breathe{0%,100%{opacity:.5}50%{opacity:1}}
-  .whisper{font-style:italic;font-size:.95rem;color:#4a4139;opacity:0;transition:opacity 3s;min-height:1.3em;text-align:center;padding:0 1rem}
-  .whisper.on{opacity:.85}
-  .enter{font-size:.85rem;letter-spacing:.2em;color:#6d5843;text-decoration:none;border-bottom:1px solid #3a2f24;
-    opacity:0;transition:opacity 2s;pointer-events:none}
-  .enter.on{opacity:.7;pointer-events:auto}
-  .enter:hover{color:#e07a4a;border-color:#e07a4a}
-  .wildfire-entry{display:flex;align-items:center;justify-content:space-between;gap:1.25rem;width:min(34rem,calc(100vw - 2rem));
-    padding:.85rem 1rem;border:1px solid #655142;border-left:4px solid #d39a54;border-radius:.65rem;
-    background:#17120e;color:#eadfd0;text-decoration:none;box-shadow:0 .5rem 2rem rgba(0,0,0,.18)}
-  .wildfire-entry strong{display:block;font-size:.96rem;letter-spacing:.02em}
-  .wildfire-entry span{display:block;margin-top:.12rem;color:#b9a99a;font:500 .75rem/1.4 -apple-system,"Segoe UI",sans-serif}
-  .wildfire-entry::after{content:"→";color:#e6b36f;font:700 1.4rem/1 sans-serif}
-  .wildfire-entry:hover,.wildfire-entry:focus-visible{border-color:#e6b36f;color:#fff}
-  .flash{position:fixed;inset:0;background:radial-gradient(circle at 50% 45%,#ffb45e 0%,#e07a4a 38%,#0d0b09 78%);
-    opacity:0;pointer-events:none;transition:opacity .85s ease}
-  .flash.on{opacity:1}
-  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-  .dot{color:#3a332c;text-decoration:none;font-size:1rem}
-  @media (prefers-reduced-motion:reduce){
-    .spark,.spark.s2{animation:none;transition:none}.whisper,.enter,.flash{transition:none}
-  }
-</style>
 </head>
-<body>
-<a class="sr" href="/en/">mindicraft — the zero-to-one guide of human civilisation</a>
+<body class="root-page">
+<header class="top root-top">
+  <a class="brand" href="/">mindicraft</a>
+  <a class="root-agent-door" href="/agents/">For agents</a>
+</header>
+<main class="root-main">
 <a class="wildfire-entry" href="/wildfire/">
   <span><strong>Wildfire help</strong><span>Leave safely · find official help · return and rebuild</span></span>
 </a>
-<div class="word">mind<span class="pivot">&#305;<button class="spark" id="spark" aria-label="a spark"></button></span>craft</div>
-<p class="whisper" id="whisper"></p>
-<a class="enter" id="enter" href="/en/"></a>
-<noscript><a class="dot" href="/en/">·</a></noscript>
-<div class="flash" id="flash"></div>
-<script>
-const have=${JSON.stringify(codes)};
-const tags=(navigator.languages||[navigator.language||'en']).map(t=>String(t).toLowerCase());
-let lang='en';
-for(const t of tags){
-  if(t.startsWith('yue')||t.startsWith('zh-hk')||t.startsWith('zh-mo')){lang='yue';break}
-  const two=t.slice(0,2);
-  if(have.includes(two)){lang=two;break}
-}
-if(!have.includes(lang))lang='en';
-const whispers={en:'everything begins with a spark',zh:'一切从一粒火星开始',yue:'所有嘢，都由一粒火花開始',es:'todo empieza con una chispa'};
-const enters={en:'enter',zh:'进',yue:'入嚟',es:'entra'};
-const spark=document.getElementById('spark'),flash=document.getElementById('flash');
-let stage=0;
-function open(to){try{localStorage.setItem('mindicraft','lit')}catch(e){}
-  flash.classList.add('on');setTimeout(()=>location.href=to||('/'+lang+'/'),800)}
-spark.addEventListener('click',()=>{stage++;
-  if(stage===1)spark.classList.add('s1');else if(stage===2)spark.classList.add('s2');else open()});
-let buf='';
-addEventListener('keydown',e=>{if(e.key&&e.key.length===1){buf=(buf+e.key.toLowerCase()).slice(-12);
-  if(buf.endsWith('wildfire'))open('/wildfire/');
-  else if(/(fire|zero|begin)$/.test(buf)||buf.endsWith('火'))open()}});
-const K=['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];let ki=0;
-addEventListener('keydown',e=>{ki=(e.key===K[ki])?ki+1:(e.key===K[0]?1:0);
-  if(ki===K.length)open('/'+lang+'/living-together/plant-a-village/')});
-document.getElementById('whisper').textContent=whispers[lang]||whispers.en;
-setTimeout(()=>document.getElementById('whisper').classList.add('on'),40000);
-try{if(localStorage.getItem('mindicraft')==='lit'){const a=document.getElementById('enter');
-  a.textContent=enters[lang]||enters.en;a.href='/'+lang+'/';a.classList.add('on')}}catch(e){}
-console.log('%c\\ud83d\\udd25 shelter, water, fire, food.','color:#e07a4a;font-size:14px');
-console.log('the door: click the spark three times. or just walk in: /'+lang+'/');
-console.log('past the edge of the map: /frontier/');
-</script>
+<article class="root-cover" aria-labelledby="root-title">
+  <p class="root-kicker">✦ a working book of causes and craft</p>
+  <h1 id="root-title">mindicraft</h1>
+  <p class="root-lede"><em>It may look like a spellbook. It works like a workshop.</em></p>
+  <p>The practical chapters do not ask you to trust magic. Materials, conditions,
+  and process lead to an expected result. Each chapter shows what you need, what
+  to do, what can fail, and why the process should work.</p>
+  <section class="root-open" aria-labelledby="open-book">
+    <h2 id="open-book">Open the book</h2>
+    <nav class="root-languages" aria-label="Choose a language">
+      ${langs
+        .map(
+          (language) => `<a href="/${language.code}/"><strong>${esc(
+            language.name
+          )}</strong><span>${esc(language.strings.tagline)}</span></a>`
+        )
+        .join('\n      ')}
+    </nav>
+    <p class="root-actions">
+      <a class="book-button" href="/en/begin/">Start with the basics</a>
+      <a href="/en/#q">Find a craft</a>
+    </p>
+  </section>
+  <p class="root-equation" aria-label="Materials plus conditions plus process lead to an expected result">
+    <span>materials</span><b aria-hidden="true">+</b><span>conditions</span><b aria-hidden="true">+</b>
+    <span>process</span><b aria-hidden="true">→</b><span>expected result</span>
+  </p>
+</article>
+<nav class="root-shelves" aria-labelledby="other-shelves">
+  <h2 id="other-shelves">Other shelves</h2>
+  <div>
+    <a href="/remedies/"><strong>Roots to remedies</strong><span>Medicines, their links to nature, evidence, exposure, and risk</span></a>
+    <a href="/remedies/healing-arts/"><strong>Healing histories</strong><span>Source-bound records across cultures, kept non-operational</span></a>
+    <a href="/frontier/"><strong>Open questions</strong><span>Three-card walks at the honest edge of the map</span></a>
+    <a href="/castle/"><strong>Castle map</strong><span>A provenance-pinned map of rooms and words</span></a>
+  </div>
+</nav>
+</main>
+<footer class="foot">Plain words. Free to read. No account, no hidden entrance, no gate.</footer>
 </body>
 </html>`
 );
@@ -631,11 +614,16 @@ console.log('past the edge of the map: /frontier/');
 write(
   join(DIST, '404.html'),
   `<!doctype html><html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><title>·</title>
-<style>html,body{height:100%;margin:0}body{background:#0d0b09;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.4rem;font-family:"Iowan Old Style",Palatino,Georgia,serif}
-p{color:#57504a;font-style:italic}a{color:#e07a4a;text-decoration:none;font-size:1.4rem}</style></head>
-<body><p>not every path is a door.</p><a href="/" aria-label="back to the spark">·</a>
-<p style="margin-top:2.5rem;font-size:.8rem;opacity:.6"><a href="/wildfire/" style="color:#b18455">wildfire help</a>   <a href="/en/" style="color:#57504a">the book</a>   <a href="/remedies/" style="color:#57504a">remedies</a>   <a href="/frontier/" style="color:#57504a">frontier</a>   <a href="/agent.txt" style="color:#57504a">agent.txt</a></p></body></html>`
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found · mindicraft</title><link rel="stylesheet" href="/style.css"></head>
+<body class="root-page"><header class="top root-top"><a class="brand" href="/">mindicraft</a></header>
+<main class="root-main not-found"><p class="root-kicker">page not found</p>
+<h1>That page is not in the book.</h1>
+<p>The address may have changed, or this chapter may not exist yet.</p>
+<nav aria-label="Useful doors"><a class="book-button" href="/">Return to the cover</a>
+<a href="/wildfire/">Wildfire help</a><a href="/en/">The book</a>
+<a href="/remedies/">Remedies</a><a href="/frontier/">Open questions</a>
+<a href="/agent.txt">Agent text</a></nav></main></body></html>`
 );
 
 cpSync(join(ROOT, 'style.css'), join(DIST, 'style.css'));
@@ -2666,7 +2654,7 @@ writeJson(join(DIST, '.well-known', 'agent.json'), {
     description: 'The zero-to-one guide of human civilisation, as data: ' + TOTAL + ' guides in ' + tree.domains.length + ' domains and ' + langs.length + ' languages, a private local learning System, a curated Castle map, a finite Frontier Walk, claim-sourced medicine lineages, non-operational healing history, and reviewed static wildfire help. Reads are free with no account or gate.',
   },
   resources: [
-    { id: 'door', href: 'https://mindicraft.com/', representations: ['application/json', 'text/html'], default_media_type: 'text/html', auth: 'none', description: 'The front door: a riddle for eyes, orientation JSON for agents.' },
+    { id: 'door', href: 'https://mindicraft.com/', representations: ['application/json', 'text/html'], default_media_type: 'text/html', auth: 'none', description: 'The visible book entrance for people and orientation JSON for agents.' },
     { id: 'index', href: 'https://mindicraft.com/api/index.json', representations: ['application/json'], default_media_type: 'application/json', auth: 'none', description: 'API orientation — every endpoint described.' },
     { id: 'tree', href: 'https://mindicraft.com/api/tree.json', representations: ['application/json'], default_media_type: 'application/json', auth: 'none', description: 'The whole tech tree: domains, guides, needs, unlocks, languages.' },
     { id: 'castle', href: 'https://mindicraft.com/api/castle/index.json', representations: ['application/json'], default_media_type: 'application/json', auth: 'none', description: 'A curated, provenance-pinned map of Castle rooms and word-bricks. Source rights and correction path are kept.' },

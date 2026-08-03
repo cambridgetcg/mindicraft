@@ -107,11 +107,15 @@ for (const region of source.regions.filter(({ id }) => id !== 'global')) {
   assert.match(leaveNow, new RegExp(region.title, 'u'), region.id);
 }
 
-const firstScript = root.indexOf('<script>');
 const rootDoor = root.indexOf('class="wildfire-entry"');
-assert.ok(rootDoor >= 0 && rootDoor < firstScript, 'wildfire door must be visible before root script');
+const rootCover = root.indexOf('class="root-cover"');
+assert.ok(rootDoor >= 0 && rootDoor < rootCover, 'wildfire door must remain visible before the book cover');
 assert.match(root, /class="wildfire-entry" href="\/wildfire\/"/u);
-assert.match(root, /buf\.endsWith\('wildfire'\)\)open\('\/wildfire\/'\)/u);
+assert.match(root, /<h1 id="root-title">mindicraft<\/h1>/u);
+assert.match(root, /class="root-languages" aria-label="Choose a language"/u);
+for (const lang of langs) assert.match(root, new RegExp(`href="/${lang.code}/"`, 'u'));
+assert.match(root, /Materials, conditions, and process lead to an/u);
+assert.doesNotMatch(root, /<script\b|localStorage|setTimeout|class="spark"|class="sr"/u);
 for (const lang of langs) {
   const home = readFileSync(join(DIST, lang.code, 'index.html'), 'utf8');
   assert.match(home, /class="wildfire-home-door"/u, lang.code);

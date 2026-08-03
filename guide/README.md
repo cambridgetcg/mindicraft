@@ -268,15 +268,17 @@ putting it in this repository:
 npx wrangler pages secret put MARGIN_RATE_KEY --project-name=mindicraft
 ```
 
-## The front door is a riddle
+## The front door is the book cover
 
-The root page (`/`) says nothing — just the word in the dark and a small
-spark where the dot of the middle "i" should be. The ways in: click the spark
-three times; type `fire`, `zero`, `begin`, or `火`; the old up-up-down-down
-code (drops you at the last page of the book); wait 40 seconds for a whisper;
-or read the browser console. Screen readers get a labeled link, no-JS
-visitors a small `·`. Direct links like `/en/` always work — it's a riddle,
-not a gate. All of it lives in the front-door section of `build.mjs`.
+The root page (`/`) immediately names what Mindicraft is, explains its causal
+method, offers all four language doors, and links the other reviewed shelves.
+Wildfire help remains the first separate door. Entry needs no click pattern,
+typed code, waiting period, stored state, or JavaScript.
+
+The spellbook appearance is visual language only. The cover says the working
+rule plainly: materials, conditions, and process lead to an expected result.
+Practical chapters then show what is needed, what to do, what can fail, and why
+the process should work.
 
 ## Add a language
 
