@@ -57,6 +57,23 @@ or permission to act. Public rules,
 never a learner's state, are available at `/api/learning-system.json`; the
 localized human doorway is `/{lang}/system/`.
 
+## Wildfire help
+
+[`/wildfire/`](https://mindicraft.com/wildfire/) is a reviewed, English emergency
+shelf for leaving safely, finding official help, handling smoke, returning only
+after explicit clearance, and beginning recovery or rebuilding. The same exact
+edition is available as static JSON at `/api/wildfire/index.json` and printable
+plain text at `/wildfire/quick.txt`; `/wildfire/leave-now.txt` is the smaller
+first-action card for weak connections. The JSON uses an explicit
+`mindicraft.wildfire-api/1` envelope around the closed reviewed edition.
+
+It is outside the technology tree, learning System, and public margin. It has no
+account, form, location request, tracking, game mechanics, dispatch, donation,
+or public survivor post. It also has no live fire, road, evacuation-zone,
+shelter-space, return-clearance, aid-deadline, or eligibility data. Current
+instructions from local authorities always override it. `wildfire-review.json`
+pins the reviewed source bytes and the build stops after the review due date.
+
 ## Collector architecture
 
 ```
@@ -272,7 +289,7 @@ cd mindicraft
 # Run the collector
 node collect.mjs
 
-# Verify the Guide, Castle shelf, Frontier Walk, remedies, and healing history
+# Verify the Guide, wildfire help, Castle shelf, Frontier Walk, remedies, and healing history
 npm --prefix guide run verify
 
 # Serve the index
@@ -298,6 +315,10 @@ GET /api/remedies/index.json                — reviewed medicine lineages
 GET /api/remedies/{id}.json                 — one sourced comparison
 GET /api/remedies/healing-arts/index.json    — sourced, non-operational history
 GET /remedies/{id}/ + Accept: application/json — the same comparison as data
+GET /api/wildfire/index.json                — reviewed static evacuation and recovery help
+GET /wildfire/ + Accept: application/json   — the same wildfire edition as data
+GET /wildfire/leave-now.txt                 — small first-action card
+GET /wildfire/quick.txt                     — printable/offline plain text
 GET /margin                                 — public-margin terms and counts
 POST /margin/{slug}                         — public note; publish and retain require separate yeses
 DELETE /margin/{slug}/{id}                  — request removal with its one-time bearer token

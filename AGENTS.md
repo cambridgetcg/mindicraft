@@ -74,6 +74,20 @@ Keep these edges honest:
 - Remedies, healing arts, Frontier, and Castle stay outside the learning
   client. Never turn treatment, preparation, or unresolved questions into XP.
   Keep the visible study-not-treatment boundary on core health checkpoints.
+- `guide/wildfire.json` is reviewed emergency guidance, not a game, ordinary
+  guide, live incident feed, or collector input. Keep it outside `tree.json`,
+  the learning client, and the public margin.
+- `guide/wildfire-review.json` pins the exact emergency edition and its review
+  due date. Any source or wording change needs full safety review and deliberate
+  re-pinning before a public build.
+- Preserve the immediate leave instruction, explicit return-clearance gate,
+  local-authority override, no-live-data warning, source links, printable text,
+  and direct root bypass. Wildfire danger replaces the general lost-person
+  stay-put and signal-fire advice.
+- Never add fire or route prediction, shelter-capacity claims, dispatch,
+  diagnosis, aid or insurance promises, accounts, location inference,
+  telemetry, forms, donations, survivor posts, game mechanics, or timers to
+  the wildfire shelf.
 - Difficulty XP describes reading load only. It never grants permission to
   attempt a risky craft, and scores never become protection or access gates.
 - Preserve unrelated work, especially the user-owned `next-env.d.ts`.

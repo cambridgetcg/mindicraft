@@ -24,6 +24,12 @@ the whole thing — content, builder, and site.
   and build brake for both medical catalogs. Any source change stops the public
   build until its full claim, evidence, safety, and citation context is reviewed
   and deliberately re-pinned.
+- `wildfire.json` + `wildfire.mjs` — reviewed evacuation, smoke, return,
+  recovery, rebuilding, practical-help, and official regional routes. The pure
+  validator closes every source reference and rejects unsafe or stale editions.
+- `wildfire-review.json` + `wildfire-review.mjs` — an exact-byte emergency
+  review receipt with a due date. Any wording or source change stops the public
+  build until the whole affected safety context is reviewed and re-pinned.
 - `learning-system.mjs` — the pure, deterministic learning rules: local state,
   E–S craft ranks, levels, XP receipts, chosen quests, ready guides, and strict
   import validation. It performs no browser, file, clock, or network work.
@@ -41,7 +47,7 @@ the whole thing — content, builder, and site.
 ```sh
 cd guide
 npm ci               # once — installs pinned `marked` (markdown -> HTML)
-npm run verify       # tests, builds dist/, then checks Castle + Frontier + remedies + healing arts
+npm run verify       # tests, builds dist/, then checks wildfire + Castle + Frontier + medical shelves
 npx wrangler pages deploy dist --project-name=mindicraft
 ```
 
@@ -50,6 +56,32 @@ same controls, every guide remains ordinary readable HTML, medical and
 Frontier pages load no learning client, the Surface manifest remains within its
 eight-resource bound, and the browser script has no write request, bearer,
 telemetry, timer, notification, or unsafe HTML sink.
+
+## Wildfire help
+
+`/wildfire/` is a separate, text-first emergency shelf. The first visible action
+is to leave on an evacuation order—or sooner when danger makes staying unsafe.
+It then offers one-step paths for immediate needs, smoke, explicit return
+clearance, recovery, rebuilding, and helping another person. Official country
+and region doors are chosen manually; the site never requests or infers a
+location.
+
+The browser page works without JavaScript. `/wildfire/leave-now.txt` is a small
+first-action card; `/wildfire/quick.txt` carries the full reviewed edition for
+saving and printing. `/api/wildfire/index.json` carries an explicit
+`mindicraft.wildfire-api/1` envelope for tools, keeping generated links and
+provenance outside the closed source schema. None of these files contains
+live incident, road, shelter-capacity, return-clearance, deadline, eligibility,
+dispatch, or survivor data. The page names that limit prominently and says
+current local authorities override it. It also explicitly replaces the general
+lost-person stay-put and signal-fire advice whenever wildfire or an evacuation
+order threatens someone.
+
+The shelf stays outside `tree.json`, the learning client, and the public
+margin. Do not add XP, timers, animation, accounts, forms, location collection,
+tracking, diagnosis, aid promises, donations, contractor recommendations, or
+crowdsourced emergency status. Source edits require full human review, an
+updated due date, and a deliberate exact-byte receipt update.
 
 A fresh clone already contains the generated Castle cards. To refresh them at
 home, from the repository root, use the deliberate one-command path:

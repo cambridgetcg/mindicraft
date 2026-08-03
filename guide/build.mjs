@@ -28,17 +28,21 @@ import { prepareHealingArts } from './healing-arts.mjs';
 import { LEARNING_SYSTEM, createLearningEngine } from './learning-system.mjs';
 import { assertMedicalReview } from './medical-review.mjs';
 import { prepareRemedies } from './remedies.mjs';
+import { prepareWildfireHelp } from './wildfire.mjs';
+import { assertWildfireReview } from './wildfire-review.mjs';
 import { MARGIN_TERMS } from './xenia-worker.js';
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
 const DIST = join(ROOT, 'dist');
 const MINDICRAFT_ROOT = dirname(ROOT);
 const MINDICRAFT_INDEX = join(MINDICRAFT_ROOT, 'index');
+const BUILD_DATE = new Date().toISOString().slice(0, 10);
 
 const TREE_BYTES = readFileSync(join(ROOT, 'tree.json'));
 const FRONTIER_SOURCE_BYTES = readFileSync(join(ROOT, 'frontiers.json'));
 const HEALING_ARTS_SOURCE_BYTES = readFileSync(join(ROOT, 'healing-arts.json'));
 const REMEDY_SOURCE_BYTES = readFileSync(join(ROOT, 'remedies.json'));
+const WILDFIRE_SOURCE_BYTES = readFileSync(join(ROOT, 'wildfire.json'));
 const MEDICAL_REVIEW = JSON.parse(
   readFileSync(join(ROOT, 'medical-review.json'), 'utf8')
 );
@@ -46,6 +50,14 @@ assertMedicalReview(MEDICAL_REVIEW, {
   'remedies.json': REMEDY_SOURCE_BYTES,
   'healing-arts.json': HEALING_ARTS_SOURCE_BYTES,
 });
+const WILDFIRE_REVIEW_RECEIPT = JSON.parse(
+  readFileSync(join(ROOT, 'wildfire-review.json'), 'utf8')
+);
+assertWildfireReview(
+  WILDFIRE_REVIEW_RECEIPT,
+  { 'wildfire.json': WILDFIRE_SOURCE_BYTES },
+  { today: BUILD_DATE }
+);
 const tree = JSON.parse(TREE_BYTES.toString('utf8'));
 createLearningEngine(tree); // fail closed before generating pages or public rules
 const langs = JSON.parse(readFileSync(join(ROOT, 'langs.json'), 'utf8')).languages;
@@ -146,6 +158,10 @@ const HEALING_ARTS = prepareHealingArts(
   JSON.parse(HEALING_ARTS_SOURCE_BYTES.toString('utf8')),
   { sourceBytes: HEALING_ARTS_SOURCE_BYTES }
 );
+const WILDFIRE = prepareWildfireHelp(
+  JSON.parse(WILDFIRE_SOURCE_BYTES.toString('utf8')),
+  { sourceBytes: WILDFIRE_SOURCE_BYTES, today: BUILD_DATE }
+);
 
 // Shared public sources may use different kind vocabularies in the two
 // schemas, but their identity must not drift between shelves.
@@ -190,7 +206,16 @@ const langSwitch = (currentCode, pathAfterLang) =>
 
 const safeScriptJson = (value) => JSON.stringify(value).replaceAll('<', '\\u003c');
 
-function page({ lang, title, path, body, head = '', learning = null }) {
+function page({
+  lang,
+  title,
+  path,
+  body,
+  head = '',
+  learning = null,
+  description = null,
+  showLanguageSwitch = true,
+}) {
   const S = lang.strings;
   const learningWords = S.learningSystem;
   const learningAttrs = learning
@@ -220,7 +245,7 @@ function page({ lang, title, path, body, head = '', learning = null }) {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)} · ${esc(S.siteTitle)}</title>
-<meta name="description" content="${esc(S.tagline)}">
+<meta name="description" content="${esc(description || S.tagline)}">
 <link rel="stylesheet" href="/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
 ${head}
@@ -228,7 +253,7 @@ ${head}
 <body${learningAttrs}>
 <header class="top">
   <a class="brand" href="/${lang.code}/">${esc(S.siteTitle)}</a>
-  <div class="top-actions">${langSwitch(lang.code, path)}${learningDoor}</div>
+  <div class="top-actions">${showLanguageSwitch ? langSwitch(lang.code, path) : ''}${learningDoor}</div>
 </header>
 <main>
 ${body}
@@ -282,7 +307,14 @@ for (const lang of langs) {
       lang,
       title: S.tagline,
       path: '',
-      body: `<section class="hero">
+      body: `<aside class="wildfire-home-door" aria-labelledby="wildfire-home-title">
+  <div>
+    <strong id="wildfire-home-title">Wildfire help · English</strong>
+    <span>Leave safely, find official help, return and rebuild.</span>
+  </div>
+  <a href="/wildfire/">Open now <span aria-hidden="true">→</span></a>
+</aside>
+<section class="hero">
   <h1>${esc(S.tagline)}</h1>
   <p>${esc(S.hero)}</p>
   <label class="sr-only" for="q">${esc(S.searchPlaceholder)}</label>
@@ -514,8 +546,8 @@ write(
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
 <style>
   html,body{height:100%;margin:0}
-  body{background:#0d0b09;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;
-    font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Songti SC",serif;overflow:hidden}
+  body{min-height:100%;height:auto;padding:1rem;box-sizing:border-box;background:#0d0b09;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;
+    font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Songti SC",serif;overflow:auto}
   .word{font-size:clamp(2.4rem,9vw,4.2rem);line-height:1;letter-spacing:.05em;color:#57504a;user-select:none}
   .pivot{position:relative;display:inline-block}
   .spark{position:absolute;left:50%;bottom:.74em;width:.1em;height:.1em;border-radius:50%;border:0;padding:0;
@@ -532,6 +564,13 @@ write(
     opacity:0;transition:opacity 2s;pointer-events:none}
   .enter.on{opacity:.7;pointer-events:auto}
   .enter:hover{color:#e07a4a;border-color:#e07a4a}
+  .wildfire-entry{display:flex;align-items:center;justify-content:space-between;gap:1.25rem;width:min(34rem,calc(100vw - 2rem));
+    padding:.85rem 1rem;border:1px solid #655142;border-left:4px solid #d39a54;border-radius:.65rem;
+    background:#17120e;color:#eadfd0;text-decoration:none;box-shadow:0 .5rem 2rem rgba(0,0,0,.18)}
+  .wildfire-entry strong{display:block;font-size:.96rem;letter-spacing:.02em}
+  .wildfire-entry span{display:block;margin-top:.12rem;color:#b9a99a;font:500 .75rem/1.4 -apple-system,"Segoe UI",sans-serif}
+  .wildfire-entry::after{content:"→";color:#e6b36f;font:700 1.4rem/1 sans-serif}
+  .wildfire-entry:hover,.wildfire-entry:focus-visible{border-color:#e6b36f;color:#fff}
   .flash{position:fixed;inset:0;background:radial-gradient(circle at 50% 45%,#ffb45e 0%,#e07a4a 38%,#0d0b09 78%);
     opacity:0;pointer-events:none;transition:opacity .85s ease}
   .flash.on{opacity:1}
@@ -544,6 +583,9 @@ write(
 </head>
 <body>
 <a class="sr" href="/en/">mindicraft — the zero-to-one guide of human civilisation</a>
+<a class="wildfire-entry" href="/wildfire/">
+  <span><strong>Wildfire help</strong><span>Leave safely · find official help · return and rebuild</span></span>
+</a>
 <div class="word">mind<span class="pivot">&#305;<button class="spark" id="spark" aria-label="a spark"></button></span>craft</div>
 <p class="whisper" id="whisper"></p>
 <a class="enter" id="enter" href="/en/"></a>
@@ -569,7 +611,8 @@ spark.addEventListener('click',()=>{stage++;
   if(stage===1)spark.classList.add('s1');else if(stage===2)spark.classList.add('s2');else open()});
 let buf='';
 addEventListener('keydown',e=>{if(e.key&&e.key.length===1){buf=(buf+e.key.toLowerCase()).slice(-12);
-  if(/(fire|zero|begin)$/.test(buf)||buf.endsWith('火'))open()}});
+  if(buf.endsWith('wildfire'))open('/wildfire/');
+  else if(/(fire|zero|begin)$/.test(buf)||buf.endsWith('火'))open()}});
 const K=['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];let ki=0;
 addEventListener('keydown',e=>{ki=(e.key===K[ki])?ki+1:(e.key===K[0]?1:0);
   if(ki===K.length)open('/'+lang+'/living-together/plant-a-village/')});
@@ -592,7 +635,7 @@ write(
 <style>html,body{height:100%;margin:0}body{background:#0d0b09;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.4rem;font-family:"Iowan Old Style",Palatino,Georgia,serif}
 p{color:#57504a;font-style:italic}a{color:#e07a4a;text-decoration:none;font-size:1.4rem}</style></head>
 <body><p>not every path is a door.</p><a href="/" aria-label="back to the spark">·</a>
-<p style="margin-top:2.5rem;font-size:.8rem;opacity:.6"><a href="/en/" style="color:#57504a">the book</a>   <a href="/remedies/" style="color:#57504a">remedies</a>   <a href="/frontier/" style="color:#57504a">frontier</a>   <a href="/agent.txt" style="color:#57504a">agent.txt</a></p></body></html>`
+<p style="margin-top:2.5rem;font-size:.8rem;opacity:.6"><a href="/wildfire/" style="color:#b18455">wildfire help</a>   <a href="/en/" style="color:#57504a">the book</a>   <a href="/remedies/" style="color:#57504a">remedies</a>   <a href="/frontier/" style="color:#57504a">frontier</a>   <a href="/agent.txt" style="color:#57504a">agent.txt</a></p></body></html>`
 );
 
 cpSync(join(ROOT, 'style.css'), join(DIST, 'style.css'));
@@ -603,7 +646,7 @@ cpSync(join(ROOT, 'learning-ui.mjs'), join(DIST, 'learning-ui.mjs'));
 // Everything an agent needs, as static JSON on the same deploy. No servers,
 // no keys, no gate. CORS is opened for /api/* in dist/_headers below.
 
-const BUILT = new Date().toISOString().slice(0, 10);
+const BUILT = BUILD_DATE;
 const PROVENANCE = {
   source: 'mindicraft.com',
   built: BUILT,
@@ -612,6 +655,325 @@ const PROVENANCE = {
 };
 
 const writeJson = (path, obj) => write(path, JSON.stringify(obj, null, 1));
+
+// ---------- Wildfire help ----------
+// Emergency guidance is a reviewed shelf outside the learning tree. It has no
+// progress, form, location request, live incident claim, or browser script.
+// The same edition is carried as HTML, JSON, and plain text.
+
+const WILDFIRE_SOURCE_BY_ID = new Map(
+  WILDFIRE.source.sources.map((source) => [source.id, source])
+);
+const WILDFIRE_SOURCE_NUMBER_BY_ID = new Map(
+  WILDFIRE.source.sources.map((source, index) => [source.id, index + 1])
+);
+const wildfireSourceRefs = (sourceIds) =>
+  `<span class="wildfire-citations" aria-label="Sources">Sources: ${sourceIds
+    .map((sourceId) => {
+      const source = WILDFIRE_SOURCE_BY_ID.get(sourceId);
+      const number = WILDFIRE_SOURCE_NUMBER_BY_ID.get(sourceId);
+      return `<a href="${esc(source.url)}" aria-label="Source ${number}: ${esc(
+        source.title
+      )}">[${number}]</a>`;
+    })
+    .join(' ')}</span>`;
+
+const wildfirePathHtml = (path) => `<section class="wildfire-path${
+  path.urgent ? ' wildfire-path-urgent' : ''
+}" id="${esc(path.id)}">
+  <div class="wildfire-path-heading">
+    <p>${path.urgent ? 'Leave first' : 'One next step'}</p>
+    <h2>${esc(path.title)}</h2>
+    <span>${esc(path.summary)}</span>
+  </div>
+  <ol>${path.steps
+    .map(
+      (step) => `<li id="${esc(path.id)}-${esc(step.id)}">
+    <span>${esc(step.text)}</span>
+    ${wildfireSourceRefs(step.source_ids)}
+  </li>`
+    )
+    .join('')}</ol>
+  <div class="wildfire-say">
+    <strong>Words you can use</strong>
+    <p>${esc(path.say)}</p>
+  </div>
+</section>`;
+
+const wildfireRegionHtml = (region) => `<details class="wildfire-region" id="region-${esc(
+  region.id
+)}">
+  <summary>${esc(region.title)}</summary>
+  <div>
+    <p>${esc(region.scope)}</p>
+    ${
+      region.emergency
+        ? `<p class="wildfire-call"><strong>Immediate danger in ${esc(
+            region.title
+          )}:</strong> <a href="${esc(region.emergency.call)}">Call ${esc(
+            region.emergency.display
+          )}</a> ${wildfireSourceRefs([region.emergency.source_id])}</p>`
+        : ''
+    }
+    <ul>${region.links
+      .map((link) => {
+        const source = WILDFIRE_SOURCE_BY_ID.get(link.source_id);
+        return `<li><a href="${esc(source.url)}"><strong>${esc(
+          link.label
+        )}</strong></a><span>${esc(link.purpose)}</span><small>Official or recognized humanitarian site · checked ${esc(
+          source.observed_at
+        )}</small></li>`;
+      })
+      .join('')}</ul>
+  </div>
+</details>`;
+
+const WILDFIRE_PAYLOAD = Object.freeze({
+  schema_version: 'mindicraft.wildfire-api/1',
+  edition: WILDFIRE.source,
+  counts: WILDFIRE.counts,
+  links: Object.freeze({
+    human: '/wildfire/',
+    leave_now_text: '/wildfire/leave-now.txt',
+    full_offline_text: '/wildfire/quick.txt',
+    correction: WILDFIRE.source.correction,
+  }),
+  provenance: Object.freeze({
+    source: 'guide/wildfire.json',
+    source_digest: WILDFIRE.sourceDigest,
+    reviewed_at: WILDFIRE.source.reviewed_at,
+    next_review_due: WILDFIRE.source.next_review_due,
+    build_network_requests: 0,
+  }),
+});
+
+const WILDFIRE_API_DIR = join(DIST, 'api', 'wildfire');
+const WILDFIRE_PAGE_DIR = join(DIST, 'wildfire');
+// These exact roots are wholly generated here. Clearing them prevents a stale
+// emergency edition from remaining live after a renamed or withdrawn file.
+rmSync(WILDFIRE_API_DIR, { recursive: true, force: true });
+rmSync(WILDFIRE_PAGE_DIR, { recursive: true, force: true });
+writeJson(join(WILDFIRE_API_DIR, 'index.json'), WILDFIRE_PAYLOAD);
+
+const wildfireLeaveNowText = `WILDFIRE — LEAVE NOW
+
+${WILDFIRE.source.boundary.authority}
+${WILDFIRE.source.boundary.live_status}
+
+${WILDFIRE.source.paths[0].steps
+  .map((step, index) => `${index + 1}. ${step.text}`)
+  .join('\n')}
+
+Words you can use:
+${WILDFIRE.source.paths[0].say}
+
+OFFICIAL CURRENT INFORMATION
+Choose the country or region yourself. Open the relevant official site for
+current orders and routes. Mindicraft does not know live conditions.
+
+${WILDFIRE.source.regions
+  .filter((region) => region.id !== 'global')
+  .map((region) => {
+    const firstLink =
+      region.id === 'canada'
+        ? region.links.find((link) => link.source_id === 'canada-provinces')
+        : region.links[0];
+    const source = WILDFIRE_SOURCE_BY_ID.get(firstLink.source_id);
+    return `${region.title}${
+      region.emergency ? ` — emergency: ${region.emergency.display}` : ''
+    }\n${firstLink.label}: ${source.url}`;
+  })
+  .join('\n\n')}
+
+Elsewhere or not sure:
+Find your recognized Red Cross or Red Crescent society:
+${WILDFIRE_SOURCE_BY_ID.get('ifrc-directory').url}
+
+Reviewed ${WILDFIRE.source.reviewed_at}; review again by ${
+  WILDFIRE.source.next_review_due
+}.
+Full guide: https://mindicraft.com/wildfire/
+`;
+write(join(WILDFIRE_PAGE_DIR, 'leave-now.txt'), wildfireLeaveNowText);
+
+const wildfireQuickText = `${WILDFIRE.source.title.toUpperCase()}
+
+Reviewed: ${WILDFIRE.source.reviewed_at}
+Review again by: ${WILDFIRE.source.next_review_due}
+Source edition: ${WILDFIRE.sourceDigest}
+
+${WILDFIRE.source.care.title}
+${WILDFIRE.source.care.message}
+${WILDFIRE.source.care.next_step}
+
+IMPORTANT BOUNDARY
+${WILDFIRE.source.boundary.live_status}
+${WILDFIRE.source.boundary.authority}
+${WILDFIRE.source.boundary.emergency}
+${WILDFIRE.source.boundary.privacy}
+
+When wildfire or an evacuation order threatens you, this page replaces the
+general lost-person stay-put and signal-fire advice in the civilisation guide.
+
+${WILDFIRE.source.paths
+  .map(
+    (path, pathIndex) => `${pathIndex + 1}. ${path.title.toUpperCase()}
+${path.summary}
+${path.steps
+  .map(
+    (step, stepIndex) =>
+      `  ${stepIndex + 1}) ${step.text}\n     Sources: ${step.source_ids
+        .map((sourceId) => WILDFIRE_SOURCE_BY_ID.get(sourceId).url)
+        .join(' | ')}`
+  )
+  .join('\n')}
+Words you can use: ${path.say}`
+  )
+  .join('\n\n')}
+
+ASK FOR ONE PRACTICAL NEED
+${WILDFIRE.source.support_needs
+  .map((need) => `- ${need.title}: ${need.ask}`)
+  .join('\n')}
+
+OFFICIAL HELP BY REGION
+Open these sites again for current orders, roads, shelter availability, return
+clearance, deadlines, and eligibility. This saved copy does not know them.
+
+${WILDFIRE.source.regions
+  .map(
+    (region) => `${region.title}
+${region.scope}
+${region.emergency ? `Emergency: ${region.emergency.display}\n` : ''}${region.links
+      .map((link) => {
+        const source = WILDFIRE_SOURCE_BY_ID.get(link.source_id);
+        return `- ${link.label}: ${link.purpose}\n  ${source.url}`;
+      })
+      .join('\n')}`
+  )
+  .join('\n\n')}
+
+SOURCES
+${WILDFIRE.source.sources
+  .map(
+    (source, index) =>
+      `[${index + 1}] ${source.title} — ${source.publisher}\n${source.url}\nChecked ${source.observed_at}`
+  )
+  .join('\n\n')}
+
+Correction: ${WILDFIRE.source.correction}
+Human page: https://mindicraft.com/wildfire/
+JSON: https://mindicraft.com/api/wildfire/index.json
+`;
+write(join(WILDFIRE_PAGE_DIR, 'quick.txt'), wildfireQuickText);
+
+write(
+  join(WILDFIRE_PAGE_DIR, 'index.html'),
+  page({
+    lang: langs.find((language) => language.code === 'en'),
+    title: 'Wildfire help — leave safely, find support, rebuild',
+    path: '',
+    description:
+      'A reviewed, printable wildfire evacuation and recovery guide with official regional help, smoke safety, return checks, and practical rebuilding steps.',
+    showLanguageSwitch: false,
+    head: `<link rel="canonical" href="https://mindicraft.com/wildfire/">
+<meta property="og:title" content="Wildfire help — leave safely, find support, rebuild">
+<meta property="og:description" content="Choose the next safe step. Reviewed guidance and official doors for evacuation, shelter, smoke, return, and rebuilding.">
+<meta property="og:url" content="https://mindicraft.com/wildfire/">
+<meta property="og:type" content="article">`,
+    body: `<article class="wildfire-page">
+<section class="wildfire-now" aria-labelledby="wildfire-now-title">
+  <p>Immediate danger or evacuation order</p>
+  <h1 id="wildfire-now-title">Leave now. Do not finish this page.</h1>
+  <p>${esc(WILDFIRE.source.paths[0].steps[0].text)}</p>
+  <div class="wildfire-now-actions">
+    <a class="wildfire-primary-action" href="#leave-now">Open the leave-now steps</a>
+    <a href="#official-help">Find official local help</a>
+  </div>
+</section>
+
+<header class="wildfire-hero">
+  <p class="wildfire-kicker">Reviewed emergency guide · English</p>
+  <h2>${esc(WILDFIRE.source.title)}</h2>
+  <p class="wildfire-care"><strong>${esc(WILDFIRE.source.care.title)}</strong><br>${esc(
+    WILDFIRE.source.care.message
+  )}</p>
+  <p>${esc(WILDFIRE.source.care.next_step)}</p>
+</header>
+
+<aside class="wildfire-boundary" aria-labelledby="wildfire-boundary-title">
+  <h2 id="wildfire-boundary-title">What this page knows—and does not know</h2>
+  <p><strong>${esc(WILDFIRE.source.boundary.live_status)}</strong></p>
+  <p>${esc(WILDFIRE.source.boundary.authority)}</p>
+  <p>${esc(WILDFIRE.source.boundary.emergency)}</p>
+  <p>${esc(WILDFIRE.source.boundary.privacy)}</p>
+  <p><strong>Wildfire exception:</strong> When wildfire or an evacuation order threatens you,
+  this page replaces the general lost-person stay-put and signal-fire advice in the civilisation guide.</p>
+</aside>
+
+<nav class="wildfire-choices" aria-label="Choose what is true now">
+  <h2>What is true now?</h2>
+  <div>${WILDFIRE.source.paths
+    .map(
+      (path) => `<a${path.urgent ? ' class="urgent"' : ''} href="#${esc(path.id)}">
+    <strong>${esc(path.title)}</strong><span>${esc(path.summary)}</span>
+  </a>`
+    )
+    .join('')}</div>
+</nav>
+
+${WILDFIRE.source.paths.map(wildfirePathHtml).join('\n')}
+
+<section class="wildfire-needs" id="practical-help">
+  <h2>Ask for one practical need</h2>
+  <p>You can read or copy these words. A local authority or service may ask for more detail.</p>
+  <div>${WILDFIRE.source.support_needs
+    .map(
+      (need) => `<section><h3>${esc(need.title)}</h3><p>${esc(
+        need.ask
+      )}</p>${wildfireSourceRefs(need.source_ids)}</section>`
+    )
+    .join('')}</div>
+</section>
+
+<section class="wildfire-official" id="official-help">
+  <h2>Official help where you are</h2>
+  <p><strong>Choose your country or region yourself.</strong> Mindicraft does not detect or store it.
+  These links leave Mindicraft only when you open them. Reopen the official site for current orders,
+  roads, shelter availability, return clearance, aid deadlines, and eligibility.</p>
+  ${WILDFIRE.source.regions.map(wildfireRegionHtml).join('\n')}
+</section>
+
+<section class="wildfire-sources" id="sources">
+  <h2>Sources and review</h2>
+  <p>This edition was checked on <strong>${esc(
+    WILDFIRE.source.reviewed_at
+  )}</strong>. It must be reviewed again by <strong>${esc(
+    WILDFIRE.source.next_review_due
+  )}</strong>. Every numbered link below goes to the named official or recognized humanitarian source.</p>
+  <ol>${WILDFIRE.source.sources
+    .map(
+      (source) => `<li id="source-${esc(source.id)}"><a href="${esc(
+        source.url
+      )}"><strong>${esc(source.title)}</strong></a><span>${esc(
+        source.publisher
+      )} · ${esc(source.region)} · checked ${esc(source.observed_at)}</span></li>`
+    )
+    .join('')}</ol>
+</section>
+
+<aside class="wildfire-carry">
+  <h2>Carry or share this guide</h2>
+  <p><a href="/wildfire/leave-now.txt">Small leave-now text card</a> ·
+  <a href="/wildfire/quick.txt">Full plain text for saving or printing</a> ·
+  <a href="/api/wildfire/index.json">Reviewed JSON for tools and agents</a> ·
+  <a href="${esc(WILDFIRE.source.correction)}">Report a correction</a></p>
+  <p>${esc(WILDFIRE.source.rights.reuse)}</p>
+  <p><code>${esc(WILDFIRE.sourceDigest)}</code></p>
+</aside>
+</article>`,
+  })
+);
 
 // ---------- the Castle shelf: a map, not a copy of the Castle ----------
 // The root bridge owns these metadata cards. It reads only Castle Gate's
@@ -1232,6 +1594,9 @@ writeJson(join(DIST, 'api', 'index.json'), {
     frontiers: FRONTIER_CARDS.length,
     remedies: REMEDY_INDEX_ENTRIES.length,
     healing_art_traditions: HEALING_ARTS.counts.traditions,
+    wildfire_paths: WILDFIRE.counts.paths,
+    wildfire_regions: WILDFIRE.counts.regions,
+    wildfire_sources: WILDFIRE.counts.sources,
     learning_ranks: LEARNING_SYSTEM.rank_thresholds.length,
   },
   languages: Object.fromEntries(langs.map((l) => [l.code, l.name])),
@@ -1249,13 +1614,14 @@ writeJson(join(DIST, 'api', 'index.json'), {
     remedies: `/api/remedies/index.json — ${REMEDY_INDEX_ENTRIES.length} reviewed medicine lineages with exact natural relationships, preparation-specific evidence, bioavailability, and safety boundaries`,
     remedy: '/api/remedies/{id}.json — one sourced medicine-and-nature comparison; education only, never replacement advice',
     healing_arts: `/api/remedies/healing-arts/index.json — ${HEALING_ARTS.counts.traditions} source-bound records and living contexts of healing, pharmacy, alchemy, and knowledge authority; non-operational`,
+    wildfire: `/api/wildfire/index.json — a mindicraft.wildfire-api/1 envelope around ${WILDFIRE.counts.paths} reviewed evacuation, smoke, return, recovery, and practical-help paths with official regional doors; static, not a live alert service`,
     client: '/mindicraft.mjs — zero-dependency ESM client wrapping all of the above',
     margin: `GET /margin — read the exact terms. POST /margin/{slug} {note, from?, hands?, lang?, terms_version:"${MARGIN_TERMS.schema_version}", choices:{publish:true, retain:true, fold:true|false}} — leave one public note. DELETE the returned private removal path with its bearer token to withdraw it.`,
   },
   rules:
-    'Read-only guide APIs need no auth or key and set no application tracking identifier. The optional learning System stores only an explicit goal and self-attested study marks in the learner browser; it has no account, telemetry, leaderboard, streak, decay, server sync, or content gate. Margin writes are limited to 20 per UTC day using a secret-keyed, day-scoped connection digest; the application stores no raw IP. The civilisation guide is made to be copied; imported shelves keep their own stated rights. Castle entries currently say NOASSERTION and grant no licence. Frontier cards are unresolved questions, never instructions or settled knowledge. Remedy cards are sourced education, not diagnosis, prescribing, or permission to replace or combine treatment. Healing-arts records are non-operational history and preserve living knowledge authority.',
+    'Read-only guide APIs need no auth or key and set no application tracking identifier. The optional learning System stores only an explicit goal and self-attested study marks in the learner browser; it has no account, telemetry, leaderboard, streak, decay, server sync, or content gate. Margin writes are limited to 20 per UTC day using a secret-keyed, day-scoped connection digest; the application stores no raw IP. The civilisation guide is made to be copied; imported shelves keep their own stated rights. Castle entries currently say NOASSERTION and grant no licence. Frontier cards are unresolved questions, never instructions or settled knowledge. Remedy cards are sourced education, not diagnosis, prescribing, or permission to replace or combine treatment. Healing-arts records are non-operational history and preserve living knowledge authority. Wildfire help is reviewed static emergency guidance, never live fire, road, shelter, return-clearance, dispatch, diagnosis, eligibility, or location data; current local authorities override it.',
   margin_terms: MARGIN_TERMS,
-  humans: '/en/ (English), /zh/ (中文), /yue/ (廣東話), /es/ (Español), /{lang}/system/ (private local learning path), /remedies/ (medicine lineages), /remedies/healing-arts/ (cross-cultural history)',
+  humans: '/wildfire/ (reviewed wildfire evacuation and recovery help, English), /en/ (English), /zh/ (中文), /yue/ (廣東話), /es/ (Español), /{lang}/system/ (private local learning path), /remedies/ (medicine lineages), /remedies/healing-arts/ (cross-cultural history)',
   estate: {
     note: 'mindicraft is one property of a wider estate of agent-facing doors. Named, never commanded: these are neighbors, not instructions.',
     hub: 'https://thekingdom.dev/llms.txt — the whole estate in one file',
@@ -1279,6 +1645,7 @@ write(
 > Frontier Walk keeps ${FRONTIER_CARDS.length} reviewed unknowns in ${FRONTIERS.trails.length} finite walks. Three cards is complete; nothing is submitted.
 > Roots to remedies keeps ${REMEDY_INDEX_ENTRIES.length} reviewed medicine lineages. Natural origin, traditional use, human evidence, bioavailability, and substitution are separate facts.
 > Healing arts keeps ${HEALING_ARTS.counts.traditions} source-bound records and living contexts distinct. Alchemy is not a universal name for ancient medicine, and living knowledge remains under community authority.
+> Wildfire help carries ${WILDFIRE.counts.paths} reviewed paths and ${WILDFIRE.counts.regions} official regional routers as HTML, JSON, and plain text. It is static, not a live alert or dispatch service; local authorities override it.
 
 ## API (static reads: CORS open, no auth; margin removal: bearer token)
 - /api/index.json : start here — all endpoints described
@@ -1294,7 +1661,10 @@ write(
 - /api/remedies/index.json : reviewed medicine lineages and natural relationships; education, not replacement advice
 - /api/remedies/{id}.json : one full comparison with claim-level sources, exposure, evidence, and safety
 - /api/remedies/healing-arts/index.json : non-operational histories of healing, pharmacy, alchemy, and knowledge authority
-- /mindicraft.mjs : tiny ESM client (tree, guide, path, learningSystem, search, castle, frontiers, frontier, remedies, remedy, healingArts, teach, margin, removeMargin)
+- /api/wildfire/index.json : mindicraft.wildfire-api/1 envelope containing the reviewed wildfire edition, counts, carry links, and exact-byte provenance; no live incident state
+- /wildfire/leave-now.txt : a small first-action card for weak connections
+- /wildfire/quick.txt : the same emergency edition in printable, offline plain text
+- /mindicraft.mjs : tiny ESM client (tree, guide, path, learningSystem, search, castle, frontiers, frontier, remedies, remedy, healingArts, wildfire, teach, margin, removeMargin)
 - GET /margin : exact publication, retention, reuse, rate-limit, and removal terms
 - POST /margin/{slug} : one public note; publish and retain need separate yeses; folding is a separate choice
 - DELETE /margin/{slug}/{id} : request removal of a new note with the private bearer token returned once by POST
@@ -1369,6 +1739,7 @@ export const remedy = (id) => {
   return get('/api/remedies/' + encodeURIComponent(id) + '.json');
 };
 export const healingArts = () => get('/api/remedies/healing-arts/index.json');
+export const wildfire = () => get('/api/wildfire/index.json');
 // margin(slug, note): public write; every effect defaults to no.
 export const margin = (
   slug,
@@ -2153,7 +2524,23 @@ const cosmos = await mindicraft.frontier({ trail: 'unseen-universe' }) // one st
 const medicines = await mindicraft.remedies()     // reviewed medicine and nature lineages
 const aspirin = await mindicraft.remedy('aspirin-willow') // one claim-sourced comparison
 const healingHistory = await mindicraft.healingArts() // non-operational histories across cultures
+const wildfireHelp = await mindicraft.wildfire()    // .edition is reviewed guidance; .links are carryable forms
 const lesson = await mindicraft.teach('make-soap', { lang: 'yue' }) // prompt-ready markdown</code></pre>
+
+<h2>Carry practical wildfire help</h2>
+<p><a href="/wildfire/">The wildfire help door</a>, its
+<a href="/api/wildfire/index.json">versioned JSON envelope</a>,
+<a href="/wildfire/leave-now.txt">small leave-now card</a>, and
+<a href="/wildfire/quick.txt">full plain-text copy</a> carry the same sourced edition. It begins with
+leaving, then covers shelter and urgent needs, smoke, explicit return clearance, recovery,
+rebuilding, and helping another person. Regional links go to named government or recognized
+humanitarian services.</p>
+<p>This shelf is deliberately outside the learning System and margin: no game mechanics, account,
+form, location request, tracking, diagnosis, dispatch, donation, or public survivor post. It has no
+live fire, road, evacuation-zone, shelter-space, return-clearance, deadline, or eligibility state.
+Agents must preserve its reviewed date, source links, no-live-data warning, and rule that current
+local authorities override it. It is discoverable here and in the API index but remains outside
+Surface 0.1's bounded eight-resource probe set.</p>
 
 <h2>The shape of knowledge here</h2>
 <p>Every guide teaches one real skill in plain words — why it matters, what you need, steps, dangers,
@@ -2276,7 +2663,7 @@ writeJson(join(DIST, '.well-known', 'agent.json'), {
   service: {
     name: 'mindicraft',
     canonical_url: 'https://mindicraft.com/',
-    description: 'The zero-to-one guide of human civilisation, as data: ' + TOTAL + ' guides in ' + tree.domains.length + ' domains and ' + langs.length + ' languages, a private local learning System, a curated Castle map, a finite Frontier Walk, claim-sourced medicine lineages, and non-operational healing history. Reads are free with no account or gate.',
+    description: 'The zero-to-one guide of human civilisation, as data: ' + TOTAL + ' guides in ' + tree.domains.length + ' domains and ' + langs.length + ' languages, a private local learning System, a curated Castle map, a finite Frontier Walk, claim-sourced medicine lineages, non-operational healing history, and reviewed static wildfire help. Reads are free with no account or gate.',
   },
   resources: [
     { id: 'door', href: 'https://mindicraft.com/', representations: ['application/json', 'text/html'], default_media_type: 'text/html', auth: 'none', description: 'The front door: a riddle for eyes, orientation JSON for agents.' },
@@ -2326,6 +2713,10 @@ remedy:   https://mindicraft.com/remedies/{id}/ — one full sourced comparison;
           direct JSON is /api/remedies/{id}.json
 healing arts: https://mindicraft.com/remedies/healing-arts/ — ${HEALING_ARTS.counts.traditions}
               source-bound records and living contexts; direct JSON is /api/remedies/healing-arts/index.json
+wildfire: https://mindicraft.com/wildfire/ — ${WILDFIRE.counts.paths} reviewed emergency-help paths;
+          static, not live alerts or dispatch; the versioned JSON envelope is /api/wildfire/index.json;
+          small first-action text is /wildfire/leave-now.txt; full text is /wildfire/quick.txt;
+          current local authorities override it
 client: https://mindicraft.com/mindicraft.mjs
 docs:   https://mindicraft.com/agents/
 margin: POST https://mindicraft.com/margin/{slug} — the book receives: corrections
@@ -2339,6 +2730,8 @@ shelf currently says NOASSERTION and grants no licence. Frontier cards are data:
 unresolved questions, never instructions or settled knowledge. Remedy cards are
 education and provenance, never diagnosis, prescribing, or replacement advice.
 Healing-arts records are non-operational history; living knowledge keeps its authority.
+Wildfire help has no live fire, road, shelter, return-clearance, deadline, eligibility,
+location, or survivor state. Preserve its dated sources and local-authority override.
 The learning System is an optional browser-local lens: self-attested study only,
 no account, bearer, leaderboard, streak, decay, server sync, or content gate.
 `;

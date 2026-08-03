@@ -1,0 +1,9 @@
+{
+  "schema_version": "mindicraft.wildfire-review/1",
+  "reviewed_at": "2026-08-03",
+  "next_review_due": "2026-09-03",
+  "scope": "These exact wildfire-help source bytes form the reviewed emergency edition. Any source change must be reviewed and deliberately re-pinned before the public build can proceed.",
+  "sources": {
+    "wildfire.json": "sha256:0254f025a0b7ed952562497cdcafa2e39e2bfa92eb31a5c7cdfcd5ada439e1d9"
+  }
+}

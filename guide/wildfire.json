@@ -1,0 +1,873 @@
+{
+  "schema_version": "mindicraft.wildfire-help/1",
+  "title": "Wildfire help — leave safely, find support, rebuild",
+  "description": "A calm, source-bound path for evacuation, smoke, safe return, immediate help, and rebuilding after wildfire.",
+  "reviewed_at": "2026-08-03",
+  "next_review_due": "2026-09-03",
+  "care": {
+    "title": "You are seen. Your life matters more than belongings.",
+    "message": "People beyond the fire line see what is happening and care. This page turns that care into a few practical steps and verified official doors. It is not monitored and cannot send help.",
+    "next_step": "You do not need to finish this guide. Choose the next safe step, then go."
+  },
+  "boundary": {
+    "live_status": "This is a static guide. It does not know where the fire is, which roads are open, whether a shelter has space, or whether return is permitted.",
+    "authority": "Current instructions from local fire, police, emergency management, public health, and evacuation authorities override this guide.",
+    "emergency": "If you are in immediate danger or cannot leave, call the emergency number for your country now and give your exact location and access needs.",
+    "privacy": "Mindicraft does not request a precise location, infer or transmit your location, or store a survivor profile. You choose a country or region yourself to see the right official numbers.",
+    "not_included": [
+      "live fire, road, evacuation-zone, shelter-capacity, or return-clearance data",
+      "fire prediction, route calculation, emergency dispatch, or missing-person matching",
+      "medical diagnosis, insurance or aid eligibility decisions, contractor recommendations, or guaranteed outcomes",
+      "accounts, precise-location collection, telemetry, donations, advertising, or public survivor posts"
+    ]
+  },
+  "paths": [
+    {
+      "id": "leave-now",
+      "title": "I need to leave now",
+      "summary": "Leave first. Do not finish the page or try to protect property.",
+      "urgent": true,
+      "steps": [
+        {
+          "id": "obey-or-go",
+          "text": "If officials tell you to evacuate—or fire or smoke makes you feel unsafe—leave now. Do not stop to collect belongings or fight the fire.",
+          "source_ids": ["ready-wildfires", "cdc-during-wildfire", "nz-wildfire"]
+        },
+        {
+          "id": "official-route",
+          "text": "Use the route officials name. Do not take shortcuts, cross a roadblock, or drive toward fire or downed power lines.",
+          "source_ids": ["ready-wildfires", "canada-wildfires", "nz-wildfire"]
+        },
+        {
+          "id": "take-close-items",
+          "text": "Only if they are close at hand, take people, medicines, medical or mobility equipment, phone and charger, identification, keys, and pets or service animals. Do not delay leaving.",
+          "source_ids": ["fema-go-bag", "canada-disability-plan", "nz-wildfire"]
+        },
+        {
+          "id": "cannot-leave",
+          "text": "If you cannot leave, call your local emergency number. Give your exact location and say if you need accessible transport, medical power, communication help, or animal support.",
+          "source_ids": ["ready-wildfires", "canada-disability-plan", "nz-wildfire"]
+        },
+        {
+          "id": "tell-one-person",
+          "text": "If it is safe and does not slow you down, tell one trusted person where you are going and who is with you.",
+          "source_ids": ["ready-wildfires", "nz-wildfire"]
+        }
+      ],
+      "say": "I am evacuating because of wildfire. I am at [location]. I need [transport, medical power, accessibility, language, or animal help]. Where should I go now?"
+    },
+    {
+      "id": "safe-away",
+      "title": "I am safely away and need help",
+      "summary": "Find a safe place for tonight, then handle one urgent need at a time.",
+      "urgent": false,
+      "steps": [
+        {
+          "id": "shelter-first",
+          "text": "Use your local authority or recognized Red Cross or Red Crescent door to find an official shelter or evacuation centre. Confirm accessibility, service-animal, pet, and medical-power needs directly.",
+          "source_ids": ["ifrc-directory", "us-redcross-shelter", "canada-redcross-help"]
+        },
+        {
+          "id": "urgent-needs",
+          "text": "Ask first for injury care, medicines, safe water and food, accessible accommodation, charging or medical power, and help keeping your household together.",
+          "source_ids": ["who-pfa", "ready-wildfires", "canada-disability-plan"]
+        },
+        {
+          "id": "do-not-return",
+          "text": "Do not return for belongings until local authorities reopen the area. Do not enter a fire-damaged building until the responsible authority or a qualified inspector says it can be entered.",
+          "source_ids": ["ready-wildfires", "cdc-after-wildfire", "nz-recovery"]
+        },
+        {
+          "id": "start-one-folder",
+          "text": "When you have breathing room, keep identification, policy details, claim or aid numbers, receipts, photos, deadlines, and dated contact notes together in one recovery folder.",
+          "source_ids": ["usfa-after-fire", "naic-after-wildfire"]
+        },
+        {
+          "id": "official-aid-only",
+          "text": "Open disaster aid through an official government or recognized humanitarian website. Eligibility, deadlines, shelter openings, and payment amounts change by event; this page does not promise them.",
+          "source_ids": ["us-disaster-help", "australia-disaster-help", "ifrc-directory"]
+        }
+      ],
+      "say": "I have evacuated because of wildfire. I need [shelter, medicine, accessible accommodation, food, charging, transport, or animal help] today. What official service can help me?"
+    },
+    {
+      "id": "smoke-health",
+      "title": "Smoke is affecting me",
+      "summary": "Evacuation orders come first. Otherwise reduce smoke exposure and use health help when needed.",
+      "urgent": false,
+      "steps": [
+        {
+          "id": "orders-first",
+          "text": "Smoke advice is not permission to stay near a fire. If officials tell you to evacuate, leave immediately.",
+          "source_ids": ["cdc-during-wildfire", "epa-smoke", "ready-wildfires"]
+        },
+        {
+          "id": "cleaner-air",
+          "text": "If there is no evacuation order and it is safe to remain indoors, move to cleaner, cooler indoor air; close windows and doors when safe, use recirculation and suitable filtration, and avoid making more indoor smoke or particles.",
+          "source_ids": ["epa-smoke", "niosh-smoke"]
+        },
+        {
+          "id": "respirator-limit",
+          "text": "A well-fitting particulate respirator certified by the authority in your country—for example, a NIOSH-approved N95 or P100 in the United States—can reduce particle exposure. It does not supply oxygen, protect against gases, or replace evacuation.",
+          "source_ids": ["niosh-smoke"]
+        },
+        {
+          "id": "urgent-health",
+          "text": "Severe breathing difficulty, chest pain, a serious asthma attack, marked dizziness, or a rapidly worsening condition needs urgent medical help through your local health or emergency system.",
+          "source_ids": ["canada-smoke-health", "cdc-during-wildfire"]
+        },
+        {
+          "id": "higher-risk",
+          "text": "Children, older adults, pregnant people, and people with heart or lung conditions can face greater smoke risk. Use current local public-health advice for the person in front of you.",
+          "source_ids": ["niosh-smoke", "canada-smoke-health"]
+        }
+      ],
+      "say": "Wildfire smoke is affecting my breathing or health. My symptoms are [plain description]. Where can I get urgent advice or cleaner air now?"
+    },
+    {
+      "id": "return-home",
+      "title": "I may be returning home",
+      "summary": "Return only after authorities reopen the area, and enter a damaged building only after responsible clearance. Fire damage can hide heat, electricity, structural, water, and ash hazards.",
+      "urgent": false,
+      "steps": [
+        {
+          "id": "clearance-gate",
+          "text": "Return only after local authorities reopen the area. Enter a fire-damaged building only after the responsible authority or a qualified inspector says it is safe. A quiet street, map, or social post is not clearance.",
+          "source_ids": ["ready-wildfires", "cdc-after-wildfire", "nz-recovery"]
+        },
+        {
+          "id": "hidden-hazards",
+          "text": "Avoid hot ash, embers, unstable trees or buildings, downed lines, damaged tanks, batteries, and chemical containers. Do not restore utilities yourself.",
+          "source_ids": ["cdc-after-wildfire", "epa-debris", "canada-wildfires"]
+        },
+        {
+          "id": "water-and-food",
+          "text": "Follow local public-health advice before using tap or private-well water, or food exposed to fire, ash, heat, damaged packaging, or lost refrigeration. Sealed, undamaged supplies from a safe source can still be used.",
+          "source_ids": ["ready-wildfires", "canada-wildfires", "nz-recovery"]
+        },
+        {
+          "id": "document-first",
+          "text": "When it is safe, photograph or video damage before moving or discarding items. Contact the insurer or landlord and ask what urgent work or disposal they authorize.",
+          "source_ids": ["usfa-after-fire", "naic-after-wildfire"]
+        },
+        {
+          "id": "ash-safety",
+          "text": "Keep children, pets, older adults, and people with heart or lung conditions away from ash cleanup. Burned-structure ash may contain hazardous material; follow the local debris program before cleanup and use the protection it requires.",
+          "source_ids": ["epa-ash", "cdc-after-wildfire", "epa-debris"]
+        }
+      ],
+      "say": "Have local authorities reopened my area? Has the responsible authority or a qualified inspector cleared this damaged building for entry? What water, utility, ash, and structural restrictions still apply?"
+    },
+    {
+      "id": "rebuild",
+      "title": "I am starting recovery or rebuilding",
+      "summary": "Make one record, use official doors, and do not let urgency force an unsafe contract or payment.",
+      "urgent": false,
+      "steps": [
+        {
+          "id": "insurer-landlord",
+          "text": "Contact the insurer or landlord through contact details you verify yourself. Ask about temporary housing, emergency work, evidence, disposal, deadlines, and the next named step.",
+          "source_ids": ["naic-after-wildfire", "usfa-after-fire"]
+        },
+        {
+          "id": "one-record",
+          "text": "Keep copies of forms, photos, receipts, claim and application numbers, names, dates, promises, deadlines, and decisions outside the damaged home or device.",
+          "source_ids": ["naic-after-wildfire", "usfa-after-fire"]
+        },
+        {
+          "id": "verify-contractors",
+          "text": "Before hiring, verify the contractor through the local regulator, obtain written estimates and scope, and do not sign a blank document or pay the entire amount in advance.",
+          "source_ids": ["naic-contractor-scams"]
+        },
+        {
+          "id": "permits-and-codes",
+          "text": "Ask the local building authority which permits, debris rules, and current fire-resilient building requirements apply before reconstruction.",
+          "source_ids": ["naic-contractor-scams", "epa-debris"]
+        },
+        {
+          "id": "human-support",
+          "text": "Safety, shelter, food, medication, trusted contact, and practical help come before retelling the event. Distress after an emergency is common; local health and crisis services can help when it is too much to carry alone.",
+          "source_ids": ["who-pfa", "who-emergency-mental-health"]
+        }
+      ],
+      "say": "I am recovering from wildfire. My next need is [housing, documents, insurance, aid, cleanup, work, school, animals, or emotional support]. Which official service owns that step?"
+    },
+    {
+      "id": "help-someone",
+      "title": "I am helping someone",
+      "summary": "Offer calm practical help, preserve choice, and connect the person to current local services.",
+      "urgent": false,
+      "steps": [
+        {
+          "id": "safety-first",
+          "text": "Check immediate safety first. If the person is in danger, help them contact local emergency services or follow an evacuation order; do not send them back for belongings.",
+          "source_ids": ["ready-wildfires", "who-pfa"]
+        },
+        {
+          "id": "ask-one-thing",
+          "text": "Ask what practical help they want now: transport, shelter, medication, charging, food, animal care, translation, paperwork, or simply someone trusted beside them.",
+          "source_ids": ["who-pfa"]
+        },
+        {
+          "id": "do-not-force-story",
+          "text": "Listen without pressing for details or asking them to retell the event. Respect dignity, culture, ability, privacy, and refusal.",
+          "source_ids": ["who-pfa"]
+        },
+        {
+          "id": "share-exact-door",
+          "text": "Share the exact official page or number, say when you checked it, and be honest if shelter space, eligibility, hours, or response are unknown.",
+          "source_ids": ["who-pfa", "ifrc-directory"]
+        },
+        {
+          "id": "care-message",
+          "text": "A useful message is: I see what is happening. You do not have to solve everything today. I can help with one practical thing you choose.",
+          "source_ids": ["who-pfa"]
+        }
+      ],
+      "say": "I see what is happening. You do not have to explain it all. What is one practical thing you want help with right now?"
+    }
+  ],
+  "support_needs": [
+    {
+      "id": "accessible-transport",
+      "title": "Accessible transport",
+      "ask": "I am evacuating because of wildfire. I need accessible transport and have [mobility, communication, medical, or service-animal need]. Where should I go now?",
+      "source_ids": ["canada-disability-plan", "ready-wildfires"]
+    },
+    {
+      "id": "shelter",
+      "title": "Shelter tonight",
+      "ask": "I have evacuated because of wildfire. I need an official shelter for [people, children, service animal, pets] and need [accessibility or medical power]. What is open now?",
+      "source_ids": ["us-redcross-shelter", "ifrc-directory"]
+    },
+    {
+      "id": "medicine-power",
+      "title": "Medicine or medical power",
+      "ask": "I have been displaced by wildfire and need [medicine, refrigeration, charging, oxygen, or powered equipment]. Which health or shelter service can help today?",
+      "source_ids": ["canada-disability-plan", "who-pfa"]
+    },
+    {
+      "id": "animals",
+      "title": "Pets, service animals, or livestock",
+      "ask": "I am evacuating with [pet, service animal, or livestock]. Which official animal-safe shelter or local animal authority should I contact?",
+      "source_ids": ["us-redcross-shelter", "usda-animals", "ready-wildfires"]
+    },
+    {
+      "id": "aid",
+      "title": "Housing, money, or disaster aid",
+      "ask": "I was displaced or lost property in a wildfire. Which official program applies to this event in my area? Has it been formally declared, and does that affect eligibility or deadlines? What documents should I verify?",
+      "source_ids": ["us-disaster-help", "australia-disaster-help", "canada-wildfire-support"]
+    },
+    {
+      "id": "emotional-support",
+      "title": "Emotional support",
+      "ask": "I have been affected by wildfire and need confidential emotional support. Which local disaster or crisis service can I contact now?",
+      "source_ids": ["who-emergency-mental-health", "us-samhsa"]
+    }
+  ],
+  "regions": [
+    {
+      "id": "global",
+      "title": "Elsewhere or not sure",
+      "scope": "Use your local government, fire service, civil-protection authority, or emergency broadcaster for orders. The IFRC directory can find the recognized Red Cross or Red Crescent society in 191 countries.",
+      "emergency": null,
+      "links": [
+        {
+          "label": "Find your national Red Cross or Red Crescent society",
+          "purpose": "Local humanitarian contact directory; services differ by country",
+          "source_id": "ifrc-directory",
+          "live": true
+        }
+      ]
+    },
+    {
+      "id": "united-states",
+      "title": "United States",
+      "scope": "Local and tribal emergency authorities issue evacuation orders. Federal and Red Cross doors below route alerts, shelters, air quality, and declared-disaster help.",
+      "emergency": {
+        "display": "911",
+        "call": "tel:911",
+        "source_id": "ready-wildfires"
+      },
+      "links": [
+        {
+          "label": "FEMA app and alerts",
+          "purpose": "Official alerts, safety information, shelter and recovery tools",
+          "source_id": "us-fema-app",
+          "live": true
+        },
+        {
+          "label": "InciWeb incidents",
+          "purpose": "Official incident information; not an evacuation order",
+          "source_id": "us-inciweb",
+          "live": true
+        },
+        {
+          "label": "AirNow fire and smoke map",
+          "purpose": "Current smoke and air-quality information; not an evacuation order",
+          "source_id": "us-airnow",
+          "live": true
+        },
+        {
+          "label": "American Red Cross open shelters",
+          "purpose": "Current recognized shelter listings and local Red Cross help",
+          "source_id": "us-redcross-shelter",
+          "live": true
+        },
+        {
+          "label": "USA.gov disaster help",
+          "purpose": "Official router for food, housing, bills, insurance and other help",
+          "source_id": "us-disaster-help",
+          "live": true
+        },
+        {
+          "label": "DisasterAssistance.gov",
+          "purpose": "Check and apply for federal assistance for a declared disaster",
+          "source_id": "us-disaster-assistance",
+          "live": true
+        },
+        {
+          "label": "SAMHSA Disaster Distress Helpline",
+          "purpose": "United States and territories: multilingual disaster crisis support",
+          "source_id": "us-samhsa",
+          "live": true
+        }
+      ]
+    },
+    {
+      "id": "canada",
+      "title": "Canada",
+      "scope": "Local, First Nations, provincial, and territorial authorities lead evacuation and recovery. Use the province or territory page for current orders.",
+      "emergency": {
+        "display": "911 or your local emergency number",
+        "call": "tel:911",
+        "source_id": "canada-wildfires"
+      },
+      "links": [
+        {
+          "label": "Federal wildfire response and support",
+          "purpose": "Federal measures and links to provincial, territorial, health, and support information",
+          "source_id": "canada-wildfire-support",
+          "live": true
+        },
+        {
+          "label": "Province and territory wildfire information",
+          "purpose": "Official provincial and territorial information; open the relevant authority for local alerts and status",
+          "source_id": "canada-provinces",
+          "live": true
+        },
+        {
+          "label": "Wildfire smoke and Air Quality Health Index",
+          "purpose": "Current air-quality forecasts, alerts and health advice",
+          "source_id": "canada-smoke-health",
+          "live": true
+        },
+        {
+          "label": "Canadian Red Cross disaster help",
+          "purpose": "Current evacuation and recovery support",
+          "source_id": "canada-redcross-help",
+          "live": true
+        }
+      ]
+    },
+    {
+      "id": "european-union",
+      "title": "European Union",
+      "scope": "National and local civil-protection authorities issue warnings and evacuation orders. European maps and air indexes add context but do not grant clearance or replace local orders.",
+      "emergency": {
+        "display": "112",
+        "call": "tel:112",
+        "source_id": "eu-112"
+      },
+      "links": [
+        {
+          "label": "National disaster-management systems",
+          "purpose": "Official national civil-protection authority directory",
+          "source_id": "eu-national-systems",
+          "live": true
+        },
+        {
+          "label": "European Air Quality Index",
+          "purpose": "Current regional air-quality information; not an evacuation order",
+          "source_id": "eu-air-quality",
+          "live": true
+        },
+        {
+          "label": "EU wildfire response information",
+          "purpose": "Regional civil-protection context; local authorities remain the order source",
+          "source_id": "eu-wildfires",
+          "live": true
+        }
+      ]
+    },
+    {
+      "id": "united-kingdom",
+      "title": "United Kingdom",
+      "scope": "Police, fire and rescue services, local authorities, and GOV.UK Emergency Alerts provide current instructions.",
+      "emergency": {
+        "display": "999",
+        "call": "tel:999",
+        "source_id": "uk-wildfires"
+      },
+      "links": [
+        {
+          "label": "GOV.UK Emergency Alerts",
+          "purpose": "Official emergency-alert information",
+          "source_id": "uk-alerts",
+          "live": true
+        },
+        {
+          "label": "Prepare for wildfires",
+          "purpose": "Official UK wildfire safety and evacuation guidance",
+          "source_id": "uk-wildfires",
+          "live": true
+        }
+      ]
+    },
+    {
+      "id": "australia",
+      "title": "Australia",
+      "scope": "State and territory fire and emergency services issue bushfire warnings. Use their current warning service before any national recovery page.",
+      "emergency": {
+        "display": "Triple Zero (000)",
+        "call": "tel:000",
+        "source_id": "australia-triple-zero"
+      },
+      "links": [
+        {
+          "label": "State and territory warning services",
+          "purpose": "Directory to official state and territory warning and emergency services",
+          "source_id": "australia-state-links",
+          "live": true
+        },
+        {
+          "label": "Disaster Assist — getting help",
+          "purpose": "Official declared-disaster payments and support information",
+          "source_id": "australia-disaster-help",
+          "live": true
+        },
+        {
+          "label": "Bushfire smoke and health",
+          "purpose": "Australian Government health information and state guidance links",
+          "source_id": "australia-smoke-health",
+          "live": true
+        }
+      ]
+    },
+    {
+      "id": "new-zealand",
+      "title": "New Zealand",
+      "scope": "Fire and Emergency New Zealand and local Civil Defence groups provide current warnings, orders, evacuation-centre and recovery information.",
+      "emergency": {
+        "display": "111",
+        "call": "tel:111",
+        "source_id": "nz-wildfire"
+      },
+      "links": [
+        {
+          "label": "Get Ready wildfire guidance",
+          "purpose": "General official evacuation and return guidance; use local Civil Defence and fire instructions for current orders",
+          "source_id": "nz-wildfire",
+          "live": true
+        },
+        {
+          "label": "Civil Defence contacts",
+          "purpose": "National and local Civil Defence contact route",
+          "source_id": "nz-civil-defence",
+          "live": true
+        },
+        {
+          "label": "Where to get recovery support",
+          "purpose": "Current official support after an emergency",
+          "source_id": "nz-support",
+          "live": true
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "ready-wildfires",
+      "title": "Wildfires",
+      "publisher": "Ready.gov, United States Department of Homeland Security",
+      "url": "https://www.ready.gov/wildfires",
+      "observed_at": "2026-08-03",
+      "kind": "government-emergency-guidance",
+      "region": "united-states"
+    },
+    {
+      "id": "fema-go-bag",
+      "title": "Emergency Supply Kit Checklist",
+      "publisher": "Federal Emergency Management Agency",
+      "url": "https://www.fema.gov/sites/default/files/documents/fema_hm-emergency-supply-kit-checklist_english.pdf",
+      "observed_at": "2026-08-03",
+      "kind": "government-emergency-guidance",
+      "region": "united-states"
+    },
+    {
+      "id": "cdc-during-wildfire",
+      "title": "Safety Guidelines: Wildfires and Wildfire Smoke",
+      "publisher": "United States Centers for Disease Control and Prevention",
+      "url": "https://www.cdc.gov/wildfires/safety/how-to-safely-stay-safe-during-a-wildfire.html",
+      "observed_at": "2026-08-03",
+      "kind": "public-health-guidance",
+      "region": "united-states"
+    },
+    {
+      "id": "cdc-after-wildfire",
+      "title": "Safety Guidelines: After a Wildfire",
+      "publisher": "United States Centers for Disease Control and Prevention",
+      "url": "https://www.cdc.gov/wildfires/safety/how-to-safely-stay-safe-after-a-wildfire.html",
+      "observed_at": "2026-08-03",
+      "kind": "public-health-guidance",
+      "region": "united-states"
+    },
+    {
+      "id": "epa-smoke",
+      "title": "Wildfires and Indoor Air Quality",
+      "publisher": "United States Environmental Protection Agency",
+      "url": "https://www.epa.gov/emergencies-iaq/wildfires-and-indoor-air-quality-iaq",
+      "observed_at": "2026-08-03",
+      "kind": "public-health-guidance",
+      "region": "united-states"
+    },
+    {
+      "id": "epa-ash",
+      "title": "Frequent Questions About Wildland Fire Smoke for Individuals",
+      "publisher": "United States Environmental Protection Agency",
+      "url": "https://www.epa.gov/wildfires/frequent-questions-about-wildland-fire-smoke-individuals",
+      "observed_at": "2026-08-03",
+      "kind": "public-health-guidance",
+      "region": "united-states"
+    },
+    {
+      "id": "epa-debris",
+      "title": "Dealing with Debris and Damaged Buildings",
+      "publisher": "United States Environmental Protection Agency",
+      "url": "https://www.epa.gov/natural-disasters/dealing-debris-and-damaged-buildings",
+      "observed_at": "2026-08-03",
+      "kind": "government-recovery-guidance",
+      "region": "united-states"
+    },
+    {
+      "id": "niosh-smoke",
+      "title": "How to Protect Workers and the Public from Wildfire Smoke",
+      "publisher": "United States National Institute for Occupational Safety and Health",
+      "url": "https://www.cdc.gov/niosh/bulletin/2025/wildfire-smoke.html",
+      "observed_at": "2026-08-03",
+      "kind": "public-health-guidance",
+      "region": "united-states"
+    },
+    {
+      "id": "usfa-after-fire",
+      "title": "After a Wildland Fire",
+      "publisher": "United States Fire Administration",
+      "url": "https://www.usfa.fema.gov/wui/outreach/after-wui-fire.html",
+      "observed_at": "2026-08-03",
+      "kind": "government-recovery-guidance",
+      "region": "united-states"
+    },
+    {
+      "id": "naic-after-wildfire",
+      "title": "What should I do after a wildfire?",
+      "publisher": "National Association of Insurance Commissioners",
+      "url": "https://content.naic.org/article/what-should-i-do-after-wildfire",
+      "observed_at": "2026-08-03",
+      "kind": "insurance-regulator-guidance",
+      "region": "united-states"
+    },
+    {
+      "id": "naic-contractor-scams",
+      "title": "How can I avoid getting scammed by a contractor?",
+      "publisher": "National Association of Insurance Commissioners",
+      "url": "https://content.naic.org/article/how-can-i-avoid-getting-scammed-contractor",
+      "observed_at": "2026-08-03",
+      "kind": "insurance-regulator-guidance",
+      "region": "united-states"
+    },
+    {
+      "id": "usda-animals",
+      "title": "Protecting Livestock During a Disaster",
+      "publisher": "United States Department of Agriculture",
+      "url": "https://www.aphis.usda.gov/animal-emergencies/protecting-livestock-during-disaster",
+      "observed_at": "2026-08-03",
+      "kind": "government-animal-guidance",
+      "region": "united-states"
+    },
+    {
+      "id": "who-pfa",
+      "title": "Psychological first aid: Guide for field workers",
+      "publisher": "World Health Organization",
+      "url": "https://www.who.int/publications-detail-redirect/9789241548205",
+      "observed_at": "2026-08-03",
+      "kind": "international-public-health-guidance",
+      "region": "global"
+    },
+    {
+      "id": "who-emergency-mental-health",
+      "title": "Mental health in emergencies",
+      "publisher": "World Health Organization",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/mental-health-in-emergencies",
+      "observed_at": "2026-08-03",
+      "kind": "international-public-health-guidance",
+      "region": "global"
+    },
+    {
+      "id": "ifrc-directory",
+      "title": "National Society directory",
+      "publisher": "International Federation of Red Cross and Red Crescent Societies",
+      "url": "https://www.ifrc.org/national-societies-directory/0",
+      "observed_at": "2026-08-03",
+      "kind": "recognized-humanitarian-directory",
+      "region": "global"
+    },
+    {
+      "id": "us-fema-app",
+      "title": "FEMA App and Mobile Products",
+      "publisher": "Federal Emergency Management Agency",
+      "url": "https://www.fema.gov/about/news-multimedia/mobile-products",
+      "observed_at": "2026-08-03",
+      "kind": "government-live-router",
+      "region": "united-states"
+    },
+    {
+      "id": "us-inciweb",
+      "title": "InciWeb",
+      "publisher": "United States interagency wildland fire community",
+      "url": "https://inciweb.wildfire.gov/",
+      "observed_at": "2026-08-03",
+      "kind": "government-live-router",
+      "region": "united-states"
+    },
+    {
+      "id": "us-airnow",
+      "title": "Fire and Smoke Map",
+      "publisher": "AirNow, United States Environmental Protection Agency partners",
+      "url": "https://fire.airnow.gov/",
+      "observed_at": "2026-08-03",
+      "kind": "government-live-router",
+      "region": "united-states"
+    },
+    {
+      "id": "us-redcross-shelter",
+      "title": "Find an Open Shelter",
+      "publisher": "American Red Cross",
+      "url": "https://www.redcross.org/get-help/disaster-relief-and-recovery-services/find-an-open-shelter.html",
+      "observed_at": "2026-08-03",
+      "kind": "recognized-humanitarian-router",
+      "region": "united-states"
+    },
+    {
+      "id": "us-disaster-help",
+      "title": "Recovering from a disaster",
+      "publisher": "USAGov",
+      "url": "https://www.usa.gov/disaster",
+      "observed_at": "2026-08-03",
+      "kind": "government-assistance-router",
+      "region": "united-states"
+    },
+    {
+      "id": "us-disaster-assistance",
+      "title": "DisasterAssistance.gov",
+      "publisher": "United States Department of Homeland Security",
+      "url": "https://www.disasterassistance.gov/",
+      "observed_at": "2026-08-03",
+      "kind": "government-assistance-router",
+      "region": "united-states"
+    },
+    {
+      "id": "us-samhsa",
+      "title": "Disaster Distress Helpline",
+      "publisher": "United States Substance Abuse and Mental Health Services Administration",
+      "url": "https://www.samhsa.gov/find-help/helplines/disaster-distress-helpline",
+      "observed_at": "2026-08-03",
+      "kind": "government-crisis-support",
+      "region": "united-states"
+    },
+    {
+      "id": "canada-wildfires",
+      "title": "Wildfires — Get prepared",
+      "publisher": "Government of Canada",
+      "url": "https://www.canada.ca/en/services/policing/emergencies/preparedness/get-prepared/hazards-emergencies/wildfires/how-prepare.html",
+      "observed_at": "2026-08-03",
+      "kind": "government-emergency-guidance",
+      "region": "canada"
+    },
+    {
+      "id": "canada-disability-plan",
+      "title": "Emergency planning resources for persons with disabilities",
+      "publisher": "Government of Canada",
+      "url": "https://www.canada.ca/en/services/policing/emergencies/preparedness/get-prepared/emergency-planning-resources/persons-disabilities.html",
+      "observed_at": "2026-08-03",
+      "kind": "government-accessibility-guidance",
+      "region": "canada"
+    },
+    {
+      "id": "canada-wildfire-support",
+      "title": "Wildfires: Federal Response",
+      "publisher": "Government of Canada",
+      "url": "https://www.canada.ca/en/public-safety-canada/campaigns/wildfires.html",
+      "observed_at": "2026-08-03",
+      "kind": "government-assistance-router",
+      "region": "canada"
+    },
+    {
+      "id": "canada-provinces",
+      "title": "Provincial and territorial wildfire information",
+      "publisher": "Government of Canada",
+      "url": "https://www.canada.ca/en/public-safety-canada/campaigns/wildfires/prov.html",
+      "observed_at": "2026-08-03",
+      "kind": "government-live-router",
+      "region": "canada"
+    },
+    {
+      "id": "canada-smoke-health",
+      "title": "Wildfire smoke, air quality and your health",
+      "publisher": "Government of Canada",
+      "url": "https://www.canada.ca/en/services/health/healthy-living/environment/air-quality/wildfire-smoke.html",
+      "observed_at": "2026-08-03",
+      "kind": "public-health-live-router",
+      "region": "canada"
+    },
+    {
+      "id": "canada-redcross-help",
+      "title": "Get help: disaster relief and recovery",
+      "publisher": "Canadian Red Cross",
+      "url": "https://www.redcross.ca/how-we-help/emergencies-and-disasters-in-canada/get-help-disaster-relief-and-recovery",
+      "observed_at": "2026-08-03",
+      "kind": "recognized-humanitarian-router",
+      "region": "canada"
+    },
+    {
+      "id": "eu-112",
+      "title": "112 — the EU emergency phone number",
+      "publisher": "European Commission",
+      "url": "https://digital-strategy.ec.europa.eu/en/policies/112",
+      "observed_at": "2026-08-03",
+      "kind": "government-emergency-number",
+      "region": "european-union"
+    },
+    {
+      "id": "eu-national-systems",
+      "title": "National disaster management systems",
+      "publisher": "European Commission Civil Protection and Humanitarian Aid Operations",
+      "url": "https://civil-protection-humanitarian-aid.ec.europa.eu/what/civil-protection/national-disaster-management-system_en",
+      "observed_at": "2026-08-03",
+      "kind": "government-live-router",
+      "region": "european-union"
+    },
+    {
+      "id": "eu-air-quality",
+      "title": "European Air Quality Index",
+      "publisher": "European Environment Agency",
+      "url": "https://airindex.eea.europa.eu/AQI/index.html",
+      "observed_at": "2026-08-03",
+      "kind": "government-live-router",
+      "region": "european-union"
+    },
+    {
+      "id": "eu-wildfires",
+      "title": "Wildfires",
+      "publisher": "European Commission Civil Protection and Humanitarian Aid Operations",
+      "url": "https://civil-protection-humanitarian-aid.ec.europa.eu/what/civil-protection/wildfires_en",
+      "observed_at": "2026-08-03",
+      "kind": "government-live-router",
+      "region": "european-union"
+    },
+    {
+      "id": "uk-alerts",
+      "title": "Emergency Alerts",
+      "publisher": "Government of the United Kingdom",
+      "url": "https://www.gov.uk/alerts",
+      "observed_at": "2026-08-03",
+      "kind": "government-live-router",
+      "region": "united-kingdom"
+    },
+    {
+      "id": "uk-wildfires",
+      "title": "Be informed about wildfires",
+      "publisher": "Government of the United Kingdom",
+      "url": "https://prepare.campaign.gov.uk/be-informed-about-hazards/wildfires/",
+      "observed_at": "2026-08-03",
+      "kind": "government-emergency-guidance",
+      "region": "united-kingdom"
+    },
+    {
+      "id": "australia-triple-zero",
+      "title": "Triple Zero",
+      "publisher": "Australian Government",
+      "url": "https://www.infrastructure.gov.au/media-communications/phone/triple-zero",
+      "observed_at": "2026-08-03",
+      "kind": "government-emergency-number",
+      "region": "australia"
+    },
+    {
+      "id": "australia-state-links",
+      "title": "Being prepared for a natural disaster",
+      "publisher": "Australian Government myGov",
+      "url": "https://my.gov.au/en/services/living-arrangements/experiencing-a-natural-disaster/being-prepared-for-a-natural-disaster",
+      "observed_at": "2026-08-03",
+      "kind": "government-live-router",
+      "region": "australia"
+    },
+    {
+      "id": "australia-disaster-help",
+      "title": "Getting help",
+      "publisher": "Australian Government Disaster Assist",
+      "url": "https://www.disasterassist.gov.au/getting-help",
+      "observed_at": "2026-08-03",
+      "kind": "government-assistance-router",
+      "region": "australia"
+    },
+    {
+      "id": "australia-smoke-health",
+      "title": "Bushfire smoke fact sheets",
+      "publisher": "Australian Government Department of Health, Disability and Ageing",
+      "url": "https://www.health.gov.au/news/bushfire-smoke-fact-sheets-are-now-available?language=en",
+      "observed_at": "2026-08-03",
+      "kind": "public-health-guidance",
+      "region": "australia"
+    },
+    {
+      "id": "nz-wildfire",
+      "title": "Wildfires",
+      "publisher": "New Zealand Civil Defence",
+      "url": "https://getready.govt.nz/emergency/wildfires/",
+      "observed_at": "2026-08-03",
+      "kind": "government-emergency-guidance",
+      "region": "new-zealand"
+    },
+    {
+      "id": "nz-recovery",
+      "title": "Recovery: What to do after a wildfire",
+      "publisher": "New Zealand National Emergency Management Agency",
+      "url": "https://www.civildefence.govt.nz/guidance-training/consistent-messages/wildfire/recovery-what-to-do-after-a-wildfire",
+      "observed_at": "2026-08-03",
+      "kind": "government-recovery-guidance",
+      "region": "new-zealand"
+    },
+    {
+      "id": "nz-civil-defence",
+      "title": "Contact Civil Defence",
+      "publisher": "New Zealand National Emergency Management Agency",
+      "url": "https://www.civildefence.govt.nz/about/contact-us",
+      "observed_at": "2026-08-03",
+      "kind": "government-live-router",
+      "region": "new-zealand"
+    },
+    {
+      "id": "nz-support",
+      "title": "Where you can get support",
+      "publisher": "New Zealand National Emergency Management Agency",
+      "url": "https://www.civildefence.govt.nz/emergency-events/advice-and-support/where-you-can-get-support",
+      "observed_at": "2026-08-03",
+      "kind": "government-assistance-router",
+      "region": "new-zealand"
+    }
+  ],
+  "rights": {
+    "summary": "Mindicraft's original guide wording may be copied under this repository's terms. Linked official and humanitarian sources keep their own rights and authority.",
+    "reuse": "Keep the reviewed date, source links, no-live-data warning, local-authority boundary, and correction door with any copy."
+  },
+  "correction": "https://github.com/cambridgetcg/mindicraft/issues"
+}

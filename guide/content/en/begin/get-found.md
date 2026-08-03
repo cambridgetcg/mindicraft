@@ -6,6 +6,8 @@ time: an hour
 needs: [rule-of-threes]
 ---
 
+> **Wildfire or evacuation danger:** Do not use this stay-put or signal-fire guide. Leave as local authorities direct and open [Wildfire help](/wildfire/) (English).
+
 Most lost people are found within one to three days — if they stay put. A walking person is a small moving dot; a person beside a big signal is a fixed target. Your job is not to walk out. It is to make yourself easy to see and easy to hear, then wait.
 
 Searchers come by air and by ground. Air searchers see shapes and contrast — things that don't look natural. Ground searchers hear sounds and see movement. Build signals for both.

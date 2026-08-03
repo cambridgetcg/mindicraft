@@ -258,6 +258,160 @@ test('the remedies doorway serves HTML by default and its compact JSON when aske
   ]);
 });
 
+test('the wildfire doorway serves HTML by default and its reviewed JSON when asked', async () => {
+  const seen = [];
+  const assets = {
+    fetch: async (request) => {
+      seen.push(request.url);
+      if (request.url.endsWith('/api/wildfire/index.json')) {
+        return Response.json({
+          schema_version: 'mindicraft.wildfire-api/1',
+          edition: {
+            schema_version: 'mindicraft.wildfire-help/1',
+            paths: [{ id: 'leave-now' }, { id: 'return-home' }],
+          },
+        });
+      }
+      return new Response('<h1>Wildfire help</h1>', {
+        headers: { 'content-type': 'text/html' },
+      });
+    },
+  };
+
+  const html = await worker.fetch(
+    new Request('https://mindicraft.com/wildfire/'),
+    { ASSETS: assets },
+    {}
+  );
+  assert.equal(html.status, 200);
+  assert.match(html.headers.get('content-type') ?? '', /^text\/html\b/u);
+  assert.equal(html.headers.get('vary'), 'Accept');
+  assert.match(await html.text(), /Wildfire help/u);
+
+  const json = await worker.fetch(
+    new Request('https://mindicraft.com/wildfire/', {
+      headers: { accept: 'application/json' },
+    }),
+    { ASSETS: assets },
+    {}
+  );
+  assert.equal(json.status, 200);
+  assert.match(json.headers.get('content-type') ?? '', /^application\/json\b/u);
+  assert.equal(json.headers.get('vary'), 'Accept');
+  assert.equal(json.headers.get('access-control-allow-origin'), '*');
+  assert.deepEqual(await json.json(), {
+    schema_version: 'mindicraft.wildfire-api/1',
+    edition: {
+      schema_version: 'mindicraft.wildfire-help/1',
+      paths: [{ id: 'leave-now' }, { id: 'return-home' }],
+    },
+  });
+  assert.deepEqual(seen, [
+    'https://mindicraft.com/wildfire/',
+    'https://mindicraft.com/api/wildfire/index.json',
+  ]);
+});
+
+test('wildfire HEAD negotiates the JSON asset and returns no body', async () => {
+  let assetRequest;
+  const response = await worker.fetch(
+    new Request('https://mindicraft.com/wildfire/', {
+      method: 'HEAD',
+      headers: { accept: 'application/json' },
+    }),
+    {
+      ASSETS: {
+        fetch: async (request) => {
+          assetRequest = request;
+          return new Response('this body must not escape', {
+            headers: {
+              'content-type': 'application/json',
+              etag: '"wildfire"',
+            },
+          });
+        },
+      },
+    },
+    {}
+  );
+
+  assert.equal(assetRequest.method, 'HEAD');
+  assert.equal(
+    assetRequest.url,
+    'https://mindicraft.com/api/wildfire/index.json'
+  );
+  assert.equal(response.status, 200);
+  assert.match(response.headers.get('content-type') ?? '', /^application\/json\b/u);
+  assert.equal(response.headers.get('etag'), '"wildfire"');
+  assert.equal(response.headers.get('vary'), 'Accept');
+  assert.equal(await response.text(), '');
+});
+
+test('the wildfire JSON endpoint returns a typed 406 without touching assets', async () => {
+  let assetCalled = false;
+  const response = await worker.fetch(
+    new Request('https://mindicraft.com/api/wildfire/index.json', {
+      headers: { accept: 'text/html' },
+    }),
+    {
+      ASSETS: {
+        fetch: async () => {
+          assetCalled = true;
+          return new Response();
+        },
+      },
+    },
+    {}
+  );
+
+  assert.equal(assetCalled, false);
+  assert.equal(response.status, 406);
+  assert.match(
+    response.headers.get('content-type') ?? '',
+    /^application\/problem\+json\b/u
+  );
+  assert.equal((await response.json()).code, 'not_acceptable');
+});
+
+test('the wildfire doorway refuses writes before touching static assets', async () => {
+  let assetCalled = false;
+  const response = await worker.fetch(
+    new Request('https://mindicraft.com/wildfire/', {
+      method: 'POST',
+    }),
+    {
+      ASSETS: {
+        fetch: async () => {
+          assetCalled = true;
+          return new Response();
+        },
+      },
+    },
+    {}
+  );
+
+  assert.equal(assetCalled, false);
+  assert.equal(response.status, 405);
+  assert.equal(response.headers.get('allow'), 'GET, HEAD, OPTIONS');
+  assert.equal(response.headers.get('access-control-allow-origin'), '*');
+  assert.equal((await response.json()).code, 'method_not_allowed');
+});
+
+test('the wildfire doorway advertises only read-only CORS methods', async () => {
+  const response = await worker.fetch(
+    new Request('https://mindicraft.com/wildfire/', {
+      method: 'OPTIONS',
+    }),
+    { ASSETS: missingAssets() },
+    {}
+  );
+
+  assert.equal(response.status, 204);
+  assert.equal(response.headers.get('access-control-allow-origin'), '*');
+  assert.equal(response.headers.get('access-control-allow-methods'), 'GET, OPTIONS');
+  assert.equal(await response.text(), '');
+});
+
 test('the healing-arts doorway negotiates its history JSON, not a remedy card', async () => {
   const seen = [];
   const assets = {

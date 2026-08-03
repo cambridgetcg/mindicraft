@@ -26,6 +26,8 @@ const RESOURCES = {
   '/api/castle/index.json': { reps: ['application/json'], def: 'application/json' },
   '/api/frontier/index.json': { reps: ['application/json'], def: 'application/json' },
   '/api/learning-system.json': { reps: ['application/json'], def: 'application/json' },
+  '/wildfire/': { reps: ['text/html', 'application/json'], def: 'text/html', jsonAsset: '/api/wildfire/index.json' },
+  '/api/wildfire/index.json': { reps: ['application/json'], def: 'application/json' },
   '/remedies/': { reps: ['text/html', 'application/json'], def: 'text/html', jsonAsset: '/api/remedies/index.json' },
   '/api/remedies/index.json': { reps: ['application/json'], def: 'application/json' },
   '/remedies/healing-arts/': { reps: ['text/html', 'application/json'], def: 'text/html', jsonAsset: '/api/remedies/healing-arts/index.json' },

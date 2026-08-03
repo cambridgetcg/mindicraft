@@ -6,6 +6,8 @@ time: una hora
 needs: [rule-of-threes]
 ---
 
+> **Peligro de incendio forestal u orden de evacuación:** No uses esta guía de quedarte quieto ni hagas señales de fuego. Sal según indiquen las autoridades locales y abre [Ayuda para incendios forestales (en inglés)](/wildfire/).
+
 A la mayoría de las personas perdidas las encuentran en uno a tres días — si se quedan quietas. Una persona caminando es un puntito que se mueve; una persona junto a una señal grande es un blanco fijo. Tu trabajo no es salir caminando. Es hacerte fácil de ver y fácil de oír, y luego esperar.
 
 Los rescatistas llegan por aire y por tierra. Los que buscan desde el aire ven formas y contraste — cosas que no parecen naturales. Los que buscan por tierra oyen sonidos y ven movimiento. Prepara señales para ambos.
