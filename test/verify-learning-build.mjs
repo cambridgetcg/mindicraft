@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 
 const ROOT = new URL('..', import.meta.url).pathname;
@@ -16,6 +16,18 @@ const manifest = json(join(DIST, '.well-known', 'agent.json'));
 const uiSource = read(join(GUIDE, 'learning-ui.mjs'));
 const engineSource = read(join(GUIDE, 'learning-system.mjs'));
 const css = read(join(DIST, 'style.css'));
+const robots = read(join(DIST, 'robots.txt'));
+const sitemap = read(join(DIST, 'sitemap.xml'));
+
+const humanHtmlRoutes = (directory = DIST, prefix = '') =>
+  readdirSync(directory, { withFileTypes: true })
+    .sort((left, right) => left.name.localeCompare(right.name, 'en'))
+    .flatMap((entry) => {
+      if (entry.isDirectory()) {
+        return humanHtmlRoutes(join(directory, entry.name), `${prefix}/${entry.name}`);
+      }
+      return entry.isFile() && entry.name === 'index.html' ? [`${prefix}/`] : [];
+    });
 
 const rgb = (hex) =>
   hex
@@ -134,6 +146,34 @@ assert.equal(
 assert.equal(read(join(DIST, 'learning-ui.mjs')), uiSource);
 assert.equal(read(join(DIST, 'learning-system.mjs')), engineSource);
 assert.match(read(join(DIST, 'mindicraft.mjs')), /export const learningSystem/u);
+
+assert.equal(
+  robots,
+  'User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /margin\n\nSitemap: https://mindicraft.com/sitemap.xml\n'
+);
+assert.match(sitemap, /^<\?xml version="1\.0" encoding="UTF-8"\?>/u);
+assert.match(sitemap, /<urlset xmlns="http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9">/u);
+const sitemapLocations = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/gu)].map(
+  ([, location]) => location
+);
+const expectedLocations = humanHtmlRoutes().sort().map(
+  (route) => new URL(route, 'https://mindicraft.com').href
+);
+assert.deepEqual(sitemapLocations, expectedLocations);
+assert.equal(new Set(sitemapLocations).size, sitemapLocations.length);
+for (const required of [
+  'https://mindicraft.com/',
+  'https://mindicraft.com/en/',
+  'https://mindicraft.com/agents/',
+  'https://mindicraft.com/castle/',
+  'https://mindicraft.com/frontier/',
+  'https://mindicraft.com/remedies/',
+  'https://mindicraft.com/remedies/healing-arts/',
+  'https://mindicraft.com/wildfire/',
+]) {
+  assert.ok(sitemapLocations.includes(required), `${required} must be discoverable`);
+}
+assert.doesNotMatch(sitemap, /\/api\/|404\.html|\/margin/u);
 
 const expectedWordKeys = Object.keys(languages[0].strings.learningSystem).sort();
 const expectedCraftLawKeys = Object.keys(languages[0].strings.craftLaw).sort();

@@ -57,6 +57,11 @@ Frontier pages load no learning client, the Surface manifest remains within its
 eight-resource bound, and the browser script has no write request, bearer,
 telemetry, timer, notification, or unsafe HTML sink.
 
+The build also derives `robots.txt` and `sitemap.xml` from the finished human
+HTML pages. New chapters and shelves therefore join public discovery without a
+second route list. Search crawlers are pointed away from duplicate API data and
+dynamic public-margin routes; those interfaces remain directly available.
+
 ## Wildfire help
 
 `/wildfire/` is a separate, text-first emergency shelf. The first visible action

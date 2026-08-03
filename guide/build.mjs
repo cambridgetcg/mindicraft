@@ -2639,6 +2639,36 @@ declared guest at <a href="https://sinovai.com/agents">sinovai.com/agents</a>.</
   })
 );
 
+// ---------- public search discovery ----------
+// Derive the sitemap from finished human pages so new chapters and shelves
+// become discoverable without maintaining a second route list. Data routes,
+// the 404 page, and dynamic margin endpoints have no index.html and stay out.
+const humanHtmlRoutes = (directory = DIST, prefix = '') =>
+  readdirSync(directory, { withFileTypes: true })
+    .sort((left, right) => left.name.localeCompare(right.name, 'en'))
+    .flatMap((entry) => {
+      if (entry.isDirectory()) {
+        return humanHtmlRoutes(join(directory, entry.name), `${prefix}/${entry.name}`);
+      }
+      return entry.isFile() && entry.name === 'index.html' ? [`${prefix}/`] : [];
+    });
+
+const sitemapRoutes = humanHtmlRoutes().sort();
+write(
+  join(DIST, 'robots.txt'),
+  `User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /margin\n\nSitemap: https://mindicraft.com/sitemap.xml\n`
+);
+write(
+  join(DIST, 'sitemap.xml'),
+  `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${sitemapRoutes
+  .map((route) => `  <url><loc>${esc(new URL(route, 'https://mindicraft.com').href)}</loc></url>`)
+  .join('\n')}
+</urlset>
+`
+);
+
 // ---------- XENIA: the agent front door (sinovai.com/xenia, Surface 0.1) ----------
 // The manifest declares which public doors an unfamiliar agent may test from
 // outside. The matching behavior (content negotiation, problem+json refusals)
