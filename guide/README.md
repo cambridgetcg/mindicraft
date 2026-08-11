@@ -8,8 +8,12 @@ the whole thing — content, builder, and site.
 
 - `tree.json` — the map: every domain and guide, with prerequisites (`needs`).
   This is the tech tree of civilisation.
+- `patterns.mjs` — a pure projection of that same tree at domain scale, with a
+  reachability-preserving backbone, the reading path ending at the Plant a
+  village guide, and five project-authored care questions. It never becomes a
+  second guide graph, a learner score, an endorsement, or an authority grant.
 - `content/<lang>/<domain>/<slug>.md` — one markdown file per guide per
-  language (`en`, `zh`, `es` so far). Slugs stay English in every language so
+  language (`en`, `zh`, `yue`, `es`). Slugs stay English in every language so
   links never break.
 - `langs.json` — the words the site itself uses, per language.
 - `frontiers.json` + `frontiers.mjs` — a reviewed shelf of honest unknowns,
@@ -51,11 +55,35 @@ npm run verify       # tests, builds dist/, then checks wildfire + Castle + Fron
 npx wrangler pages deploy dist --project-name=mindicraft
 ```
 
-`verify` also proves the learning contract: all four languages receive the
-same controls, every guide remains ordinary readable HTML, medical and
+`verify` also proves the learning contract and the patterns view: all four
+languages receive the same controls, every guide remains ordinary readable
+HTML, the graph portion of the pattern JSON exactly matches `tree.json`, and
+each care question is pinned to the exact English guide bytes reviewed for it.
+The large drawing has a complete plain-language equivalent, medical and
 Frontier pages load no learning client, the Surface manifest remains within its
 eight-resource bound, and the browser script has no write request, bearer,
 telemetry, timer, notification, or unsafe HTML sink.
+
+## How the pieces connect
+
+`/patterns/` draws the existing prerequisite graph at domain scale and places
+five open care questions beside existing Living Together guides. The questions
+keep standing apart from contribution, hearing apart from understanding,
+settlement apart from repair, shared access apart from compulsory obligation,
+and inherited knowledge apart from inherited rules. They do not claim that a
+guide passes. `/api/patterns.json` carries the exact derived counts, source
+digest, full cross-domain joins, readable backbone, village reading path, care
+questions, and claim limits. `/api/tree.json` remains the canonical record of
+declared links.
+
+The domain-scale reduction expects cross-domain links to remain acyclic. If a
+future guide change makes that projection fold back on itself, the build stops
+so the drawing and its reduction can be reviewed instead of silently lying.
+
+The page is static and works without JavaScript. It adds no account, learner
+state, score, write route, tracking identifier, or automatic action. Its
+reference shapes link to Castle Gate; no Castle source text is copied into
+Mindicraft.
 
 The build also derives `robots.txt` and `sitemap.xml` from the finished human
 HTML pages. New chapters and shelves therefore join public discovery without a

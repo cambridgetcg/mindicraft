@@ -286,7 +286,7 @@ living, governed knowledge—not lost material available for extraction.
 git clone https://github.com/cambridgetcg/mindicraft.git
 cd mindicraft
 
-# Verify the Guide, wildfire help, Castle shelf, Frontier Walk, remedies, and healing history
+# Verify the Guide, its pattern map, wildfire help, Castle shelf, Frontier Walk, remedies, and healing history
 npm --prefix guide run verify
 
 # Serve the canonical Guide locally
@@ -307,6 +307,8 @@ Canonical static API:
 ```text
 GET /api/index.json                         — every canonical endpoint
 GET /api/tree.json                          — the civilisation guide tree
+GET /api/patterns.json                      — the same tree at domain scale, with claim limits
+GET /patterns/                              — human graph, village reading path, and care questions
 GET /api/castle/index.json                  — the curated Castle map
 GET /api/castle/{rooms|words}/{slug}.json   — one Castle map card
 GET /api/frontier/index.json                — reviewed open questions and walks

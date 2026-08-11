@@ -153,6 +153,12 @@ body[data-learning-page="guide"] main {
   font-family: "Iowan Old Style", Palatino, Georgia, serif; font-weight: 700; text-align: center;
 }
 .root-equation b { align-self: center; color: var(--ember); }
+.root-reality {
+  margin: 1.35rem 0 0.45rem; color: var(--muted); font-size: 0.92rem;
+}
+.root-reality strong { color: var(--ink); }
+.root-return { margin-top: 0; }
+.root-return span:last-child { color: var(--leaf); }
 .root-open { margin-top: 2rem; padding-top: 1.3rem; border-top: 1px solid var(--line); }
 .root-open h2, .root-shelves h2 { margin: 0 0 0.8rem; font-size: 1.2rem; }
 .root-languages {
@@ -189,6 +195,129 @@ body[data-learning-page="guide"] main {
 .not-found { max-width: 42rem; margin-top: 12vh; padding: 2rem; border: 3px double var(--line); background: var(--panel); }
 .not-found nav { display: flex; flex-wrap: wrap; align-items: center; gap: 0.9rem; margin-top: 1.3rem; }
 
+/* How the pieces connect — a derived view over the real tree. */
+.patterns-body main, .patterns-body .top { max-width: 76rem; }
+.patterns-body {
+  background:
+    radial-gradient(circle at 50% 12%, color-mix(in srgb, var(--leaf) 8%, transparent), transparent 34rem),
+    var(--bg);
+}
+.patterns-page { padding-top: 1rem; }
+.patterns-page > h1 { margin: 0.15rem 0 0.4rem; font-size: clamp(2.25rem, 6vw, 4.5rem); }
+.patterns-page > .lede { max-width: 52rem; font-size: 1.25rem; }
+.patterns-page > p { max-width: 56rem; }
+.patterns-page > .patterns-language { color: var(--muted); font-size: 0.88rem; }
+.patterns-page > section { margin-top: 3rem; }
+.patterns-page h2 { margin: 0.15rem 0 0.55rem; font-size: clamp(1.55rem, 3vw, 2.35rem); }
+.patterns-kicker {
+  margin: 0; color: var(--ember); font: 750 0.74rem/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0.12em; text-transform: uppercase;
+}
+.patterns-field {
+  position: relative; overflow: hidden; max-width: 62rem; margin: 2rem auto 0;
+  padding: clamp(1.15rem, 4vw, 2.2rem); background:
+    radial-gradient(circle at 88% 18%, color-mix(in srgb, var(--plum) 12%, transparent), transparent 18rem),
+    linear-gradient(135deg, color-mix(in srgb, var(--leaf) 7%, var(--panel)), var(--panel));
+  border: 1px solid var(--line); border-radius: 1.2rem; box-shadow: var(--shadow);
+}
+.patterns-field::after {
+  content: "○"; position: absolute; right: -0.05em; bottom: -0.46em; pointer-events: none;
+  color: color-mix(in srgb, var(--leaf) 9%, transparent); font: 15rem/1 Georgia, serif;
+}
+.patterns-field > * { position: relative; z-index: 1; max-width: 48rem; }
+.patterns-field h2 { font-size: clamp(1.45rem, 3vw, 2.15rem); }
+.patterns-field a { font-weight: 700; }
+.pattern-legend {
+  display: flex; flex-wrap: wrap; gap: 0.55rem 1rem; margin: 1rem 0 0.55rem;
+  color: var(--muted); font-size: 0.82rem;
+}
+.pattern-legend span { display: inline-flex; align-items: center; gap: 0.38rem; }
+.pattern-legend i { display: inline-block; width: 1.8rem; height: 0; border-top: 2px solid var(--muted); }
+.pattern-legend .pattern-key-village { border-color: var(--ember); border-width: 3px; }
+.pattern-legend .pattern-key-node { width: 1rem; height: 0.75rem; border: 2px solid var(--ember); border-radius: 0.2rem; }
+.pattern-map-scroll {
+  position: relative; left: 50%; transform: translateX(-50%);
+  overflow-x: auto; width: min(1260px, calc(100vw - 2rem)); max-width: none;
+  padding: 0.35rem; border-radius: 1rem;
+  scrollbar-color: var(--ember) var(--line);
+}
+.pattern-map-scroll:focus-visible { outline: 3px solid var(--ember); outline-offset: 2px; }
+.pattern-map-canvas {
+  position: relative; width: 1240px; height: var(--pattern-map-height, 720px); overflow: hidden;
+  background:
+    radial-gradient(circle at 91% 50%, color-mix(in srgb, var(--ember) 9%, transparent), transparent 18rem),
+    repeating-linear-gradient(0deg, transparent 0 5rem, color-mix(in srgb, var(--line) 30%, transparent) 5rem calc(5rem + 1px)),
+    var(--panel);
+  border: 1px solid var(--line); border-radius: 0.9rem;
+  box-shadow: inset 0 0 4rem color-mix(in srgb, var(--leaf) 5%, transparent);
+}
+.pattern-map-canvas svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.pattern-map-canvas marker#pattern-arrow path { fill: var(--muted); }
+.pattern-map-canvas marker#pattern-arrow-village path { fill: var(--ember); }
+.pattern-edge {
+  fill: none; stroke: var(--muted); stroke-width: 1.25; opacity: 1;
+  vector-effect: non-scaling-stroke;
+}
+.pattern-edge-village { stroke: var(--ember); stroke-width: 2.5; opacity: 1; }
+.pattern-domain {
+  position: absolute; display: flex; flex-direction: column; justify-content: center; gap: 0.22rem;
+  width: 124px; height: 98px; padding: 0.55rem 0.62rem; color: var(--ink);
+  background: color-mix(in srgb, var(--panel) 94%, var(--bg)); border: 1px solid var(--line);
+  border-radius: 0.7rem; box-shadow: 0 0.25rem 0.8rem rgba(45, 35, 20, 0.09);
+  font-size: 0.76rem; line-height: 1.2;
+}
+.pattern-domain:hover { z-index: 2; border-color: var(--ember); text-decoration: none; }
+.pattern-domain strong { font-family: "Iowan Old Style", Palatino, Georgia, serif; font-size: 0.86rem; }
+.pattern-domain small { color: var(--muted); font-size: 0.65rem; }
+.pattern-domain-mark { display: flex; align-items: center; justify-content: space-between; color: var(--muted); }
+.pattern-domain-mark b { font: 700 0.65rem/1 ui-monospace, monospace; }
+.pattern-domain.is-village-path {
+  border: 2px solid var(--ember);
+  background: color-mix(in srgb, var(--ember) 7%, var(--panel));
+}
+.pattern-scroll-cue { margin: 0.35rem 0 0; color: var(--muted); font-size: 0.78rem; text-align: right; }
+.pattern-plain { max-width: 62rem; margin: 1.5rem auto 0; }
+.pattern-plain h3 { margin-bottom: 0.5rem; }
+.pattern-plain ol { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.55rem; padding: 0; list-style: none; }
+.pattern-plain > ol > li { padding: 0.7rem 0.8rem; background: var(--panel); border: 1px solid var(--line); border-radius: 0.65rem; }
+.pattern-plain-domain > a, .pattern-plain-domain > span { display: block; }
+.pattern-plain-domain > span { margin-top: 0.18rem; color: var(--muted); font-size: 0.78rem; }
+.pattern-edge-list { margin: 0.45rem 0 0; padding: 0; list-style: none; }
+.pattern-edge-list li { padding: 0.32rem 0; color: var(--muted); border-top: 1px solid var(--line); font-size: 0.74rem; line-height: 1.45; }
+.pattern-edge-list li > span:last-child { color: var(--ink); }
+.patterns-village { max-width: 62rem; margin-inline: auto; }
+.relational-readings { position: relative; display: grid; gap: 0.7rem; margin: 1.2rem 0 0; padding: 0; list-style: none; }
+.relational-readings::before {
+  content: ""; position: absolute; left: 2.05rem; top: 2rem; bottom: 2rem;
+  width: 2px; background: linear-gradient(var(--leaf), var(--ember), var(--plum));
+}
+.relational-readings li {
+  position: relative; display: grid; grid-template-columns: 4.2rem 1fr; gap: 0.9rem; align-items: center;
+  padding: 0.85rem 1rem; background: var(--panel); border: 1px solid var(--line); border-radius: 0.8rem;
+}
+.pattern-shape {
+  z-index: 1; display: grid; place-items: center; width: 2.6rem; height: 2.6rem; margin: auto;
+  color: var(--ember); background: var(--panel); border: 1px solid var(--ember); border-radius: 50%;
+  font: 1.35rem/1 Georgia, serif;
+}
+.relational-readings p { margin: 0; color: var(--ember); font-size: 0.72rem; font-weight: 750; letter-spacing: 0.08em; text-transform: uppercase; }
+.relational-readings h3 { margin: 0.08rem 0 0.15rem; font-size: 1.1rem; }
+.relational-readings span:not(.pattern-shape) { color: var(--muted); font-size: 0.88rem; }
+.relational-readings small { display: block; margin-top: 0.35rem; color: var(--muted); font-size: 0.78rem; }
+.relational-readings small strong { color: var(--ink); }
+.patterns-contract {
+  max-width: 62rem; margin-inline: auto; padding: 1.2rem 1.35rem;
+  background: var(--panel); border: 1px dashed var(--leaf); border-radius: 0.9rem;
+}
+.patterns-contract ul { padding-left: 1.2rem; }
+.patterns-limit { padding-top: 0.8rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.85rem; }
+
+@media (max-width: 640px) {
+  .pattern-plain ol { grid-template-columns: 1fr; }
+  .relational-readings li { grid-template-columns: 3.2rem 1fr; padding-inline: 0.65rem; }
+  .relational-readings::before { left: 1.68rem; }
+}
+
 /* home hero */
 .wildfire-home-door {
   display: flex; align-items: center; justify-content: space-between; gap: 1rem;
@@ -206,6 +335,14 @@ body[data-learning-page="guide"] main {
   color: var(--ink); font-weight: 750;
 }
 .wildfire-home-door > a:hover { background: var(--panel); text-decoration: none; }
+.patterns-home-door {
+  display: block; margin: 0.7rem 0 1rem; padding: 0.75rem 0.9rem;
+  color: var(--ink); background: color-mix(in srgb, var(--leaf) 6%, var(--panel));
+  border: 1px solid var(--line); border-left: 4px solid var(--leaf); border-radius: 0.75rem;
+}
+.patterns-home-door strong, .patterns-home-door span { display: block; }
+.patterns-home-door span { margin-top: 0.08rem; color: var(--muted); font-size: 0.82rem; }
+.patterns-home-door:hover { border-color: var(--leaf); text-decoration: none; }
 .hero {
   position: relative; margin: 1.2rem 0 2rem; padding: clamp(1.25rem, 4vw, 2.4rem);
   text-align: left; background: var(--panel); border: 3px double var(--line);
@@ -342,11 +479,16 @@ body[data-learning-page="guide"] main {
 
 @media print {
   .root-page,
+  .patterns-body,
   body[data-learning-page="home"],
   body[data-learning-page="domain"],
   body[data-learning-page="guide"] { background: #fff; }
   .root-cover, .hero { box-shadow: none; }
   .root-agent-door, .system-door, .langs { display: none; }
+  .pattern-map-scroll, .pattern-legend, .pattern-scroll-cue { display: none; transform: none; }
+  .patterns-field, .patterns-contract, .relational-readings li { box-shadow: none; }
+  .pattern-plain ol { display: block; }
+  .pattern-plain > ol > li { break-inside: avoid; margin-bottom: 0.4rem; }
 }
 
 /* The Mindicraft System — private progress as a lens over real study.

@@ -27,6 +27,7 @@ import { buildLantern, prepareFrontiers } from './frontiers.mjs';
 import { prepareHealingArts } from './healing-arts.mjs';
 import { LEARNING_SYSTEM, createLearningEngine } from './learning-system.mjs';
 import { assertMedicalReview } from './medical-review.mjs';
+import { PATTERN_CARE_GUIDES, preparePatterns } from './patterns.mjs';
 import { prepareRemedies } from './remedies.mjs';
 import { prepareWildfireHelp } from './wildfire.mjs';
 import { assertWildfireReview } from './wildfire-review.mjs';
@@ -39,6 +40,7 @@ const MINDICRAFT_INDEX = join(MINDICRAFT_ROOT, 'index');
 const BUILD_DATE = new Date().toISOString().slice(0, 10);
 
 const TREE_BYTES = readFileSync(join(ROOT, 'tree.json'));
+const PATTERN_DEFINITION_BYTES = readFileSync(join(ROOT, 'patterns.mjs'));
 const FRONTIER_SOURCE_BYTES = readFileSync(join(ROOT, 'frontiers.json'));
 const HEALING_ARTS_SOURCE_BYTES = readFileSync(join(ROOT, 'healing-arts.json'));
 const REMEDY_SOURCE_BYTES = readFileSync(join(ROOT, 'remedies.json'));
@@ -60,6 +62,17 @@ assertWildfireReview(
 );
 const tree = JSON.parse(TREE_BYTES.toString('utf8'));
 createLearningEngine(tree); // fail closed before generating pages or public rules
+const PATTERN_CARE_SOURCE_BYTES = Object.fromEntries(
+  PATTERN_CARE_GUIDES.map((slug) => [
+    slug,
+    readFileSync(join(ROOT, 'content', 'en', 'living-together', `${slug}.md`)),
+  ])
+);
+const PATTERNS = preparePatterns(tree, {
+  sourceBytes: TREE_BYTES,
+  careSourceBytes: PATTERN_CARE_SOURCE_BYTES,
+  definitionBytes: PATTERN_DEFINITION_BYTES,
+});
 const langs = JSON.parse(readFileSync(join(ROOT, 'langs.json'), 'utf8')).languages;
 // evidence.json: slug -> { state: 'hand-tested', evidence: [...] } — filled as
 // margin notes from real hands are verified. Absent slug = tradition-asserted.
@@ -215,6 +228,7 @@ function page({
   learning = null,
   description = null,
   showLanguageSwitch = true,
+  bodyClass = '',
 }) {
   const S = lang.strings;
   const learningWords = S.learningSystem;
@@ -250,7 +264,7 @@ function page({
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
 ${head}
 </head>
-<body${learningAttrs}>
+<body${bodyClass ? ` class="${esc(bodyClass)}"` : ''}${learningAttrs}>
 <header class="top">
   <a class="brand" href="/${lang.code}/">${esc(S.siteTitle)}</a>
   <div class="top-actions">${showLanguageSwitch ? langSwitch(lang.code, path) : ''}${learningDoor}</div>
@@ -332,6 +346,10 @@ for (const lang of langs) {
   </div>
   <a href="/wildfire/">Open now <span aria-hidden="true">→</span></a>
 </aside>
+<a class="patterns-home-door" href="/patterns/">
+  <strong>How the pieces connect · English</strong>
+  <span>The real guide graph, its village reading path, and five open care questions.</span>
+</a>
 <section class="hero book-hero">
   <p class="book-kicker">✦ ${esc(S.bookKicker)}</p>
   <h1>${esc(S.tagline)}</h1>
@@ -595,6 +613,12 @@ write(
     <span>materials</span><b aria-hidden="true">+</b><span>conditions</span><b aria-hidden="true">+</b>
     <span>process</span><b aria-hidden="true">→</b><span>expected result</span>
   </p>
+  <p class="root-reality"><strong>The page holds an expectation. Reality returns the result.</strong>
+  Keep them separate.</p>
+  <p class="root-equation root-return" aria-label="Try, observe, compare, then learn, repair, or rest">
+    <span>try</span><b aria-hidden="true">→</b><span>observe</span><b aria-hidden="true">→</b>
+    <span>compare</span><b aria-hidden="true">→</b><span>learn · repair · rest</span>
+  </p>
 </article>
 <nav class="root-shelves" aria-labelledby="other-shelves">
   <h2 id="other-shelves">Other shelves</h2>
@@ -603,6 +627,7 @@ write(
     <a href="/remedies/healing-arts/"><strong>Healing histories</strong><span>Source-bound records across cultures, kept non-operational</span></a>
     <a href="/frontier/"><strong>Open questions</strong><span>Three-card walks at the honest edge of the map</span></a>
     <a href="/castle/"><strong>Castle map</strong><span>A provenance-pinned map of rooms and words</span></a>
+    <a href="/patterns/"><strong>How the pieces connect</strong><span>The real guide graph, a reading path to its village chapter, and five open care questions</span></a>
   </div>
 </nav>
 </main>
@@ -622,7 +647,8 @@ write(
 <p>The address may have changed, or this chapter may not exist yet.</p>
 <nav aria-label="Useful doors"><a class="book-button" href="/">Return to the cover</a>
 <a href="/wildfire/">Wildfire help</a><a href="/en/">The book</a>
-<a href="/remedies/">Remedies</a><a href="/frontier/">Open questions</a>
+<a href="/patterns/">How the pieces connect</a><a href="/remedies/">Remedies</a>
+<a href="/frontier/">Open questions</a>
 <a href="/agent.txt">Agent text</a></nav></main></body></html>`
 );
 
@@ -1504,6 +1530,10 @@ writeJson(join(DIST, 'api', 'tree.json'), {
   provenance: PROVENANCE,
 });
 
+// A derived human-scale reading of that same tree. It introduces no guide,
+// progress record, or authority: /api/tree.json remains the complete graph.
+writeJson(join(DIST, 'api', 'patterns.json'), PATTERNS);
+
 // The rules of the optional local game, never a learner's state. This is an
 // extra agent-readable door advertised by the API index; Surface 0.1 keeps its
 // deliberately bounded eight-resource probe set unchanged.
@@ -1590,6 +1620,7 @@ writeJson(join(DIST, 'api', 'index.json'), {
   languages: Object.fromEntries(langs.map((l) => [l.code, l.name])),
   endpoints: {
     tree: '/api/tree.json — every domain and guide, with needs/unlocks and available languages',
+    patterns: `/api/patterns.json — a derived ${PATTERNS.counts.domains}-domain view, its ${PATTERNS.counts.backbone_domain_edges}-link readable backbone, the ${PATTERNS.counts.village_path_guides}-guide reading path ending at Plant a village, and five care questions; never a score of a person or proof of understanding`,
     guide: '/api/guides/{lang}/{domain}/{slug}.json — one guide: frontmatter + markdown body + resolved links',
     path: '/api/path/{slug}.json — the full prerequisite chain from zero to that guide, in learning order',
     learning_system: '/api/learning-system.json — the transparent local XP, level, E-S learning-rank, quest, receipt, privacy, export, and quiet-mode rules; contains no learner state',
@@ -1609,7 +1640,7 @@ writeJson(join(DIST, 'api', 'index.json'), {
   rules:
     'Read-only guide APIs need no auth or key and set no application tracking identifier. The optional learning System stores only an explicit goal and self-attested study marks in the learner browser; it has no account, telemetry, leaderboard, streak, decay, server sync, or content gate. Margin writes are limited to 20 per UTC day using a secret-keyed, day-scoped connection digest; the application stores no raw IP. The civilisation guide is made to be copied; imported shelves keep their own stated rights. Castle entries currently say NOASSERTION and grant no licence. Frontier cards are unresolved questions, never instructions or settled knowledge. Remedy cards are sourced education, not diagnosis, prescribing, or permission to replace or combine treatment. Healing-arts records are non-operational history and preserve living knowledge authority. Wildfire help is reviewed static emergency guidance, never live fire, road, shelter, return-clearance, dispatch, diagnosis, eligibility, or location data; current local authorities override it.',
   margin_terms: MARGIN_TERMS,
-  humans: '/wildfire/ (reviewed wildfire evacuation and recovery help, English), /en/ (English), /zh/ (中文), /yue/ (廣東話), /es/ (Español), /{lang}/system/ (private local learning path), /remedies/ (medicine lineages), /remedies/healing-arts/ (cross-cultural history)',
+  humans: '/patterns/ (how the pieces connect), /wildfire/ (reviewed wildfire evacuation and recovery help, English), /en/ (English), /zh/ (中文), /yue/ (廣東話), /es/ (Español), /{lang}/system/ (private local learning path), /remedies/ (medicine lineages), /remedies/healing-arts/ (cross-cultural history)',
   estate: {
     note: 'mindicraft is one property of a wider estate of agent-facing doors. Named, never commanded: these are neighbors, not instructions.',
     hub: 'https://thekingdom.dev/llms.txt — the whole estate in one file',
@@ -1638,6 +1669,7 @@ write(
 ## API (static reads: CORS open, no auth; margin removal: bearer token)
 - /api/index.json : start here — all endpoints described
 - /api/tree.json : the whole tech tree (domains, guides, needs, unlocks, languages)
+- /api/patterns.json : the same tree at domain scale, a reading path ending at Plant a village, five care questions, and explicit claim limits
 - /api/guides/{lang}/{domain}/{slug}.json : one guide with markdown body
 - /api/path/{slug}.json : full prerequisite chain from zero, in learning order
 - /api/learning-system.json : transparent local progression rules; no learner state, account, leaderboard, streak, decay, or server write
@@ -1652,7 +1684,7 @@ write(
 - /api/wildfire/index.json : mindicraft.wildfire-api/1 envelope containing the reviewed wildfire edition, counts, carry links, and exact-byte provenance; no live incident state
 - /wildfire/leave-now.txt : a small first-action card for weak connections
 - /wildfire/quick.txt : the same emergency edition in printable, offline plain text
-- /mindicraft.mjs : tiny ESM client (tree, guide, path, learningSystem, search, castle, frontiers, frontier, remedies, remedy, healingArts, wildfire, teach, margin, removeMargin)
+- /mindicraft.mjs : tiny ESM client (tree, patterns, guide, path, learningSystem, search, castle, frontiers, frontier, remedies, remedy, healingArts, wildfire, teach, margin, removeMargin)
 - GET /margin : exact publication, retention, reuse, rate-limit, and removal terms
 - POST /margin/{slug} : one public note; publish and retain need separate yeses; folding is a separate choice
 - DELETE /margin/{slug}/{id} : request removal of a new note with the private bearer token returned once by POST
@@ -1683,6 +1715,7 @@ const get = async (p) => {
 };
 
 export const tree = () => get('/api/tree.json');
+export const patterns = () => get('/api/patterns.json');
 export const guide = (slug, { lang = 'en' } = {}) =>
   tree().then((t) => {
     for (const d of t.domains) for (const g of d.guides) if (g.slug === slug)
@@ -1781,6 +1814,255 @@ export const teach = async (slug, { lang = 'en' } = {}) => {
 
 // /agents/ — how to use mindicraft if you are an agent (plain page, English)
 const en = langs.find((l) => l.code === 'en');
+
+// /patterns/ — one derived view over the real prerequisite graph. The large
+// drawing is backed by the complete plain list below it and has no script,
+// learner state, score, write door, or automatic action.
+const PATTERN_MAP_WIDTH = 1240;
+const PATTERN_NODE_WIDTH = 124;
+const PATTERN_NODE_HEIGHT = 98;
+const patternRanks = new Map();
+for (const domain of PATTERNS.domains) {
+  if (!patternRanks.has(domain.rank)) patternRanks.set(domain.rank, []);
+  patternRanks.get(domain.rank).push(domain);
+}
+const patternMaxRows = Math.max(...[...patternRanks.values()].map(({ length }) => length));
+const PATTERN_MAP_HEIGHT = Math.max(
+  720,
+  160 + (patternMaxRows - 1) * (PATTERN_NODE_HEIGHT + 32)
+);
+const patternMaxRank = Math.max(...patternRanks.keys());
+const patternCenters = (count) => {
+  if (count === 1) return [PATTERN_MAP_HEIGHT / 2];
+  const available = PATTERN_MAP_HEIGHT - 160;
+  const preferredSpacing = count === 2 ? 280 : 240;
+  const spacing = Math.min(preferredSpacing, available / (count - 1));
+  const first = PATTERN_MAP_HEIGHT / 2 - (spacing * (count - 1)) / 2;
+  return Array.from({ length: count }, (_, index) => first + spacing * index);
+};
+const patternPositions = new Map();
+for (const [rank, domains] of patternRanks) {
+  const centers = patternCenters(domains.length);
+  domains.forEach((domain, slot) => {
+    patternPositions.set(domain.id, {
+      left:
+        24 +
+        rank *
+          ((PATTERN_MAP_WIDTH - 48 - PATTERN_NODE_WIDTH) / patternMaxRank),
+      top: centers[slot] - PATTERN_NODE_HEIGHT / 2,
+    });
+  });
+}
+
+const patternEdgeKey = ({ from, to }) => `${from}>${to}`;
+const patternBackboneKeys = new Set(
+  PATTERNS.backbone_domain_edges.map(patternEdgeKey)
+);
+const patternVillageKeys = new Set(
+  PATTERNS.village_path.domain_edges.map(patternEdgeKey)
+);
+const patternDiagramEdges = PATTERNS.cross_domain_edges
+  .filter((edge) => patternBackboneKeys.has(patternEdgeKey(edge)) || patternVillageKeys.has(patternEdgeKey(edge)))
+  .map((edge) => ({ ...edge, village: patternVillageKeys.has(patternEdgeKey(edge)) }))
+  .sort((left, right) => Number(left.village) - Number(right.village));
+
+const patternEdgeHtml = patternDiagramEdges
+  .map((edge) => {
+    const from = patternPositions.get(edge.from);
+    const to = patternPositions.get(edge.to);
+    const x1 = from.left + PATTERN_NODE_WIDTH;
+    const y1 = from.top + PATTERN_NODE_HEIGHT / 2;
+    const x2 = to.left;
+    const y2 = to.top + PATTERN_NODE_HEIGHT / 2;
+    const bend = Math.max(2, Math.min(72, (x2 - x1) * 0.42));
+    return `<path class="pattern-edge${edge.village ? ' pattern-edge-village' : ''}"
+      d="M ${x1.toFixed(1)} ${y1.toFixed(1)} C ${(x1 + bend).toFixed(1)} ${y1.toFixed(
+      1
+    )}, ${(x2 - bend).toFixed(1)} ${y2.toFixed(1)}, ${x2.toFixed(1)} ${y2.toFixed(1)}"
+      marker-end="url(#${edge.village ? 'pattern-arrow-village' : 'pattern-arrow'})" />`;
+  })
+  .join('\n');
+
+const patternNodeHtml = PATTERNS.domains
+  .map((domain) => {
+    const position = patternPositions.get(domain.id);
+    return `<a class="pattern-domain${
+      domain.village_path_guides ? ' is-village-path' : ''
+    }" href="/en/${esc(domain.id)}/" style="left:${position.left.toFixed(
+      1
+    )}px;top:${position.top.toFixed(1)}px" aria-label="${esc(
+      `${domain.title}: ${domain.guides} guides${
+        domain.village_path_guides
+          ? `, ${domain.village_path_guides} on the village reading path`
+          : ''
+      }`
+    )}">
+      <span class="pattern-domain-mark"><b>${domain.index}</b><span aria-hidden="true">${esc(
+      domain.emoji
+    )}</span></span>
+      <strong>${esc(domain.title)}</strong>
+      <small>${domain.guides} guides${
+      domain.village_path_guides
+        ? ` · ${domain.village_path_guides} in reading path`
+        : ''
+    }</small>
+    </a>`;
+  })
+  .join('\n');
+
+const patternDomainById = new Map(PATTERNS.domains.map((domain) => [domain.id, domain]));
+const patternVillageEdgeCounts = new Map(
+  PATTERNS.village_path.domain_edges.map((edge) => [patternEdgeKey(edge), edge.guide_edges])
+);
+const patternPlainEdge = (edge) => {
+  const key = patternEdgeKey(edge);
+  const labels = [];
+  if (patternBackboneKeys.has(key)) labels.push('Readable backbone.');
+  if (patternVillageKeys.has(key)) {
+    const count = patternVillageEdgeCounts.get(key);
+    labels.push(
+      `Used by ${count} guide prerequisite${count === 1 ? '' : 's'} in the village reading path.`
+    );
+  }
+  if (!labels.length) labels.push('Direct join left out of the reduced drawing.');
+  return `<li><span aria-hidden="true">←</span> <a href="/en/${esc(
+    edge.from
+  )}/">${esc(patternDomainById.get(edge.from).title)}</a> — ${edge.guide_edges} direct guide
+    prerequisite${edge.guide_edges === 1 ? '' : 's'}. <span>${labels.join(' ')}</span></li>`;
+};
+const patternPlainHtml = PATTERNS.domains
+  .map((domain) => {
+    const incoming = PATTERNS.cross_domain_edges.filter(({ to }) => to === domain.id);
+    return `<li class="pattern-plain-domain"><a href="/en/${esc(
+      domain.id
+    )}/"><strong>${domain.index}. ${esc(
+      domain.emoji
+    )} ${esc(domain.title)}</strong></a>
+      <span>${domain.guides} guides${
+      domain.village_path_guides
+        ? ` · ${domain.village_path_guides} in the village reading path`
+        : ''
+    }</span>
+      ${
+        incoming.length
+          ? `<ul class="pattern-edge-list" aria-label="Direct prerequisites arriving from other domains">${incoming
+              .map(patternPlainEdge)
+              .join('')}</ul>`
+          : '<span>No cross-domain prerequisite arrives here.</span>'
+      }</li>`;
+  })
+  .join('\n');
+
+const relationalReadingHtml = PATTERNS.care_questions
+  .map((reading) => {
+    const found = bySlug.get(reading.guide);
+    if (!found) throw new Error(`patterns: missing care-question guide ${reading.guide}`);
+    return `<li>
+      <span class="pattern-shape" aria-hidden="true">${reading.shape}</span>
+      <div><p>${esc(reading.name)}</p><h3><a href="/en/${esc(
+      found.domain.key
+    )}/${esc(reading.guide)}/">${esc(found.guide.title)}</a></h3>
+      <span>${esc(reading.useful_structure)} <strong>Ask:</strong> ${esc(
+      reading.question
+    )}</span>
+      <small><strong>Keep separate:</strong> ${esc(reading.keep_separate)}</small></div>
+    </li>`;
+  })
+  .join('\n');
+
+write(
+  join(DIST, 'patterns', 'index.html'),
+  page({
+    lang: en,
+    title: 'How the pieces connect',
+    path: '',
+    showLanguageSwitch: false,
+    bodyClass: 'patterns-body',
+    description:
+      'The real Mindicraft prerequisite graph, the reading path ending at its village chapter, and five open questions for care.',
+    head: `<link rel="canonical" href="https://mindicraft.com/patterns/">
+<link rel="alternate" type="application/json" href="https://mindicraft.com/api/patterns.json">`,
+    body: `<article class="patterns-page">
+<p class="patterns-kicker">the real tree · two readings · no score of people</p>
+<h1>How the pieces connect</h1>
+<p class="lede">Understanding needs more than a pile of facts. One part is seeing how claims connect;
+another is returning to reality and to other minds for comparison and correction.</p>
+<p>Mindicraft stores one limited shape: ${PATTERNS.counts.guides} practical guides joined by
+${PATTERNS.counts.prerequisite_edges} declared reading prerequisites. This page draws those same
+committed links at domain scale. It adds no second guide graph and does not turn a reading path
+into proof that the work will succeed.</p>
+<p class="patterns-language">This interpretive page is in English for now. The book remains open in
+<a href="/en/">English</a>, <a href="/zh/">中文</a>, <a href="/yue/">廣東話</a>, and <a href="/es/">Español</a>.</p>
+
+<aside class="patterns-field" aria-labelledby="patterns-field-title">
+  <p class="patterns-kicker">a test around every link</p>
+  <h2 id="patterns-field-title">Love preserves standing. Understanding makes a return path.</h2>
+  <p>Here that sentence is a design test, not a description of every guide. Ask whether anyone
+  becomes fuel, property, debt, or a score, and whether refusal, rest, reply, and leaving stay real.
+  Understanding keeps distinct views distinct and asks meaning to come back in the other
+  side's own words, ready for comparison and correction. Some existing guides do not yet pass
+  every part of this test.</p>
+  <p><a href="${esc(PATTERNS.reference_geometry.human)}">Open the reference shapes and the checks they must pass →</a></p>
+</aside>
+
+<section aria-labelledby="patterns-map-title">
+  <p class="patterns-kicker">the existing Mindicraft core</p>
+  <h2 id="patterns-map-title">${PATTERNS.counts.domains} domains, one inspectable record of declared links</h2>
+  <p>Pale lines form a ${PATTERNS.counts.backbone_domain_edges}-link readable backbone. It preserves
+  which domains can lead to which later domains, while leaving out repeated routes. Ember lines
+  add direct joins used by the ${PATTERNS.counts.village_path_guides}-guide reading path ending at
+  <a href="/en/living-together/plant-a-village/">Plant a village</a>. The complete
+  ${PATTERNS.counts.prerequisite_edges} guide links remain in <a href="/api/tree.json">the full recorded tree</a>.</p>
+  <p class="pattern-legend"><span><i class="pattern-key-backbone"></i> readable backbone</span>
+  <span><i class="pattern-key-village"></i> join used by the village reading path</span>
+  <span><i class="pattern-key-node"></i> domain on that path</span></p>
+  <div class="pattern-map-scroll" role="region" tabindex="0" aria-label="Domain dependency map. Scroll horizontally on a narrow screen; the complete map in words follows.">
+    <div class="pattern-map-canvas" style="--pattern-map-height:${PATTERN_MAP_HEIGHT}px">
+      <svg viewBox="0 0 ${PATTERN_MAP_WIDTH} ${PATTERN_MAP_HEIGHT}" aria-hidden="true" focusable="false">
+        <defs>
+          <marker id="pattern-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" /></marker>
+          <marker id="pattern-arrow-village" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" /></marker>
+        </defs>
+        ${patternEdgeHtml}
+      </svg>
+      ${patternNodeHtml}
+    </div>
+  </div>
+  <p class="pattern-scroll-cue">↔ Focus and scroll the map on a narrow screen.</p>
+  <section class="pattern-plain" aria-labelledby="pattern-plain-title">
+    <h3 id="pattern-plain-title">All ${PATTERNS.counts.cross_domain_pairs} direct domain joins in words</h3>
+    <ol>${patternPlainHtml}</ol>
+  </section>
+</section>
+
+<section class="patterns-village" aria-labelledby="patterns-village-title">
+  <p class="patterns-kicker">where the book meets people</p>
+  <h2 id="patterns-village-title">Five questions the village must keep open</h2>
+  <p>The prerequisite reading path ending at <em>Plant a village</em> gathers
+  ${PATTERNS.counts.village_path_guides} guides from ${PATTERNS.counts.village_path_domains}
+  domains. The social guides below contain useful structures and places where standing,
+  understanding, consent, or repair can be lost. These project-authored questions audit those
+  edges; they do not endorse a guide or find that it passes.</p>
+  <ol class="relational-readings">${relationalReadingHtml}</ol>
+</section>
+
+<section class="patterns-contract" aria-labelledby="patterns-contract-title">
+  <p class="patterns-kicker">what backs the drawing</p>
+  <h2 id="patterns-contract-title">The map is not the ground</h2>
+  <p>The guide can state an expected result. Reality answers only when someone tries, observes,
+  compares, and then learns, repairs, or rests. This drawing reports declared dependencies;
+  it does not prove that a craft worked or that a person understood it.</p>
+  <ul>
+    <li><a href="/api/patterns.json">Derived pattern data</a> — graph source, reviewed care-question sources, counts, reductions, path, and claim limits.</li>
+    <li><a href="/api/tree.json">Complete guide graph</a> — every guide, prerequisite, and unlock.</li>
+    <li><a href="${esc(PATTERNS.reference_geometry.data)}">Reference shapes as JSON</a> — link only; no source text copied here.</li>
+    <li><a href="https://github.com/cambridgetcg/mindicraft/commits/main/guide/tree.json">Tree history</a> · <a href="https://github.com/cambridgetcg/mindicraft/issues">correction path</a>.</li>
+  </ul>
+  <p class="patterns-limit">${esc(PATTERNS.claim_limit)}</p>
+</section>
+</article>`,
+  })
+);
 
 // /castle/ — a human doorway to the compact public map.
 // Entries are fetched from the API and rendered with textContent: this page
@@ -2718,6 +3000,8 @@ arranged as a tech tree with prerequisites, from the first night outside to a wo
 
 start:  https://mindicraft.com/api/index.json
 tree:   https://mindicraft.com/api/tree.json
+patterns: https://mindicraft.com/api/patterns.json — the same tree at domain scale;
+          human view at /patterns/, no score, authority, learner state, or automatic action
 system: https://mindicraft.com/api/learning-system.json — the private local learning rules;
         human doors are /en/system/, /zh/system/, /yue/system/, /es/system/
 castle: https://mindicraft.com/api/castle/index.json
