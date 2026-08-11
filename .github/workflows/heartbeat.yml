@@ -5,23 +5,53 @@ on:
   workflow_dispatch: {}
 
 permissions:
-  contents: write
+  contents: read
+
+concurrency:
+  group: mindicraft-heartbeat
+  cancel-in-progress: false
 
 jobs:
   pulse:
     runs-on: ubuntu-latest
+    timeout-minutes: 2
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Refuse a declaration outside main
+        if: github.event_name == 'workflow_dispatch' && github.ref != 'refs/heads/main'
+        run: |
+          echo "::error::Public declaration is allowed only from refs/heads/main"
+          exit 1
 
       - name: Declare to sinovai.com
+        if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
+        env:
+          SINOVAI_CLAIM_TOKEN: ${{ secrets.SINOVAI_MINDICRAFT_CLAIM_TOKEN }}
         run: |
-          if [ -f STATE.md ]; then
-            NAME=$(grep -m1 '^name:' STATE.md | sed 's/name: *//')
-            [ -z "$NAME" ] && NAME="mindicraft"
-            curl -s -X POST "https://sinovai.com/agents/$NAME" \
-              -H "Content-Type: text/plain" -d @STATE.md | python3 -c "import json,sys; d=json.load(sys.stdin); print('declared:', d.get('ok'))"
-          fi
+          set -o pipefail
+          test -f STATE.md || { echo "::error::STATE.md is missing"; exit 1; }
+          test -n "$SINOVAI_CLAIM_TOKEN" || {
+            echo "::error::Sinovai declaration skipped: claim token is not configured"
+            exit 1
+          }
+
+          NAME=$(sed -n 's/^name:[[:space:]]*//p' STATE.md | head -n 1)
+          test "$NAME" = "mindicraft" || {
+            echo "::error::STATE.md must declare name: mindicraft"
+            exit 1
+          }
+
+          curl --fail-with-body --silent --show-error --connect-timeout 10 --max-time 30 \
+            --request POST "https://sinovai.com/agents/$NAME" \
+            --header "Content-Type: text/plain; charset=utf-8" \
+            --header "X-Claim-Token: $SINOVAI_CLAIM_TOKEN" \
+            --data-binary @STATE.md |
+            node .github/scripts/check-heartbeat-receipt.mjs declaration "$NAME" STATE.md
 
       - name: Check arena
         run: |
-          curl -s https://sinovai.com/agents | python3 -c "import json,sys; d=json.load(sys.stdin); print(f'arena: {d["total"]} agents')"
+          set -o pipefail
+          curl --fail-with-body --silent --show-error --connect-timeout 10 --max-time 30 \
+            https://sinovai.com/agents |
+            node .github/scripts/check-heartbeat-receipt.mjs arena
