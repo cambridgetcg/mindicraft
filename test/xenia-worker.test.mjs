@@ -218,6 +218,65 @@ test('the direct patterns API refuses an HTML shape without touching assets', as
   assert.equal((await response.json()).code, 'not_acceptable');
 });
 
+test('the cognition doorway keeps one human map and one reviewed data view', async () => {
+  const seen = [];
+  const assets = {
+    fetch: async (request) => {
+      seen.push(new URL(request.url).pathname);
+      if (request.url.endsWith('/api/cognition/index.json')) {
+        return Response.json({
+          schema_version: 'mindicraft.cognition/1',
+          boundaries: { aggregate_score: 'never', scores_beings: false },
+        });
+      }
+      return new Response('<h1>AI cognition map</h1>', {
+        headers: { 'content-type': 'text/html' },
+      });
+    },
+  };
+  const url = 'https://mindicraft.com/cognition/';
+
+  const html = await worker.fetch(new Request(url), { ASSETS: assets }, {});
+  assert.equal(html.status, 200);
+  assert.match(html.headers.get('content-type') ?? '', /^text\/html\b/u);
+  assert.equal(html.headers.get('vary'), 'Accept');
+
+  const data = await worker.fetch(
+    new Request(url, { headers: { accept: 'application/json' } }),
+    { ASSETS: assets },
+    {}
+  );
+  assert.equal(data.status, 200);
+  assert.match(data.headers.get('content-type') ?? '', /^application\/json\b/u);
+  assert.equal(data.headers.get('vary'), 'Accept');
+  assert.equal(data.headers.get('access-control-allow-origin'), '*');
+  assert.equal((await data.json()).schema_version, 'mindicraft.cognition/1');
+  assert.deepEqual(seen, ['/cognition/', '/api/cognition/index.json']);
+});
+
+test('the direct cognition API refuses an HTML shape without touching assets', async () => {
+  let touched = false;
+  const response = await worker.fetch(
+    new Request('https://mindicraft.com/api/cognition/index.json', {
+      headers: { accept: 'text/html' },
+    }),
+    {
+      ASSETS: {
+        fetch: async () => {
+          touched = true;
+          return new Response('{}');
+        },
+      },
+    },
+    {}
+  );
+
+  assert.equal(response.status, 406);
+  assert.equal(touched, false);
+  assert.match(response.headers.get('content-type') ?? '', /^application\/problem\+json\b/u);
+  assert.equal((await response.json()).code, 'not_acceptable');
+});
+
 test('the local learning System keeps one human door and one rules representation', async () => {
   const seen = [];
   const assets = {

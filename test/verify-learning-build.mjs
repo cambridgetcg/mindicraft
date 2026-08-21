@@ -166,6 +166,7 @@ for (const required of [
   'https://mindicraft.com/en/',
   'https://mindicraft.com/agents/',
   'https://mindicraft.com/castle/',
+  'https://mindicraft.com/cognition/',
   'https://mindicraft.com/frontier/',
   'https://mindicraft.com/remedies/',
   'https://mindicraft.com/remedies/healing-arts/',
@@ -228,6 +229,7 @@ for (const staticDoor of [
   join(DIST, 'remedies', 'healing-arts', 'index.html'),
   join(DIST, 'frontier', 'index.html'),
   join(DIST, 'castle', 'index.html'),
+  join(DIST, 'cognition', 'index.html'),
 ]) {
   const html = read(staticDoor);
   assert.doesNotMatch(html, /learning-ui|data-learning-page/u);

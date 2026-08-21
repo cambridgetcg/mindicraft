@@ -23,6 +23,8 @@ import {
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { marked } from 'marked';
+import { prepareCognition } from './cognition.mjs';
+import { assertCognitionReview } from './cognition-review.mjs';
 import { buildLantern, prepareFrontiers } from './frontiers.mjs';
 import { prepareHealingArts } from './healing-arts.mjs';
 import { LEARNING_SYSTEM, createLearningEngine } from './learning-system.mjs';
@@ -40,11 +42,20 @@ const MINDICRAFT_INDEX = join(MINDICRAFT_ROOT, 'index');
 const BUILD_DATE = new Date().toISOString().slice(0, 10);
 
 const TREE_BYTES = readFileSync(join(ROOT, 'tree.json'));
+const COGNITION_SOURCE_BYTES = readFileSync(join(ROOT, 'cognition.json'));
 const PATTERN_DEFINITION_BYTES = readFileSync(join(ROOT, 'patterns.mjs'));
 const FRONTIER_SOURCE_BYTES = readFileSync(join(ROOT, 'frontiers.json'));
 const HEALING_ARTS_SOURCE_BYTES = readFileSync(join(ROOT, 'healing-arts.json'));
 const REMEDY_SOURCE_BYTES = readFileSync(join(ROOT, 'remedies.json'));
 const WILDFIRE_SOURCE_BYTES = readFileSync(join(ROOT, 'wildfire.json'));
+const COGNITION_REVIEW_RECEIPT = JSON.parse(
+  readFileSync(join(ROOT, 'cognition-review.json'), 'utf8')
+);
+assertCognitionReview(COGNITION_REVIEW_RECEIPT, COGNITION_SOURCE_BYTES);
+const COGNITION_MAP = prepareCognition(
+  JSON.parse(COGNITION_SOURCE_BYTES.toString('utf8')),
+  { sourceBytes: COGNITION_SOURCE_BYTES }
+);
 const MEDICAL_REVIEW = JSON.parse(
   readFileSync(join(ROOT, 'medical-review.json'), 'utf8')
 );
@@ -350,6 +361,10 @@ for (const lang of langs) {
   <strong>How the pieces connect · English</strong>
   <span>The real guide graph, its village reading path, and five open care questions.</span>
 </a>
+<a class="patterns-home-door cognition-home-door" href="/cognition/">
+  <strong>AI cognition map · English</strong>
+  <span>Nine separate dimensions, dated observations, human comparisons with edges, and visible gaps.</span>
+</a>
 <section class="hero book-hero">
   <p class="book-kicker">✦ ${esc(S.bookKicker)}</p>
   <h1>${esc(S.tagline)}</h1>
@@ -626,6 +641,7 @@ write(
     <a href="/remedies/"><strong>Roots to remedies</strong><span>Medicines, their links to nature, evidence, exposure, and risk</span></a>
     <a href="/remedies/healing-arts/"><strong>Healing histories</strong><span>Source-bound records across cultures, kept non-operational</span></a>
     <a href="/frontier/"><strong>Open questions</strong><span>Three-card walks at the honest edge of the map</span></a>
+    <a href="/cognition/"><strong>AI cognition map</strong><span>Dated capability evidence across nine separate dimensions, never one intelligence score</span></a>
     <a href="/castle/"><strong>Castle map</strong><span>A provenance-pinned map of rooms and words</span></a>
     <a href="/patterns/"><strong>How the pieces connect</strong><span>The real guide graph, a reading path to its village chapter, and five open care questions</span></a>
   </div>
@@ -648,7 +664,7 @@ write(
 <nav aria-label="Useful doors"><a class="book-button" href="/">Return to the cover</a>
 <a href="/wildfire/">Wildfire help</a><a href="/en/">The book</a>
 <a href="/patterns/">How the pieces connect</a><a href="/remedies/">Remedies</a>
-<a href="/frontier/">Open questions</a>
+<a href="/frontier/">Open questions</a><a href="/cognition/">AI cognition map</a>
 <a href="/agent.txt">Agent text</a></nav></main></body></html>`
 );
 
@@ -669,6 +685,10 @@ const PROVENANCE = {
 };
 
 const writeJson = (path, obj) => write(path, JSON.stringify(obj, null, 1));
+
+// A reviewed, append-only cognition map. It is separate from the human craft
+// tree and private learning System, and has no aggregate intelligence score.
+writeJson(join(DIST, 'api', 'cognition', 'index.json'), COGNITION_MAP);
 
 // ---------- Wildfire help ----------
 // Emergency guidance is a reviewed shelf outside the learning tree. It has no
@@ -1608,6 +1628,8 @@ writeJson(join(DIST, 'api', 'index.json'), {
     domains: tree.domains.length,
     guides: TOTAL,
     languages: langs.length,
+    cognition_dimensions: COGNITION_MAP.counts.dimensions,
+    cognition_observations: COGNITION_MAP.counts.observations,
     castle: CASTLE_SHELF.receipt.counts,
     frontiers: FRONTIER_CARDS.length,
     remedies: REMEDY_INDEX_ENTRIES.length,
@@ -1621,6 +1643,7 @@ writeJson(join(DIST, 'api', 'index.json'), {
   endpoints: {
     tree: '/api/tree.json — every domain and guide, with needs/unlocks and available languages',
     patterns: `/api/patterns.json — a derived ${PATTERNS.counts.domains}-domain view, its ${PATTERNS.counts.backbone_domain_edges}-link readable backbone, the ${PATTERNS.counts.village_path_guides}-guide reading path ending at Plant a village, and five care questions; never a score of a person or proof of understanding`,
+    cognition: `/api/cognition/index.json — ${COGNITION_MAP.counts.observations} reviewed, dated task observations across ${COGNITION_MAP.counts.dimensions} separate AI cognition dimensions; human comparisons stay bound to the named task and cohort, never one intelligence score`,
     guide: '/api/guides/{lang}/{domain}/{slug}.json — one guide: frontmatter + markdown body + resolved links',
     path: '/api/path/{slug}.json — the full prerequisite chain from zero to that guide, in learning order',
     learning_system: '/api/learning-system.json — the transparent local XP, level, E-S learning-rank, quest, receipt, privacy, export, and quiet-mode rules; contains no learner state',
@@ -1638,9 +1661,9 @@ writeJson(join(DIST, 'api', 'index.json'), {
     margin: `GET /margin — read the exact terms. POST /margin/{slug} {note, from?, hands?, lang?, terms_version:"${MARGIN_TERMS.schema_version}", choices:{publish:true, retain:true, fold:true|false}} — leave one public note. DELETE the returned private removal path with its bearer token to withdraw it.`,
   },
   rules:
-    'Read-only guide APIs need no auth or key and set no application tracking identifier. The optional learning System stores only an explicit goal and self-attested study marks in the learner browser; it has no account, telemetry, leaderboard, streak, decay, server sync, or content gate. Margin writes are limited to 20 per UTC day using a secret-keyed, day-scoped connection digest; the application stores no raw IP. The civilisation guide is made to be copied; imported shelves keep their own stated rights. Castle entries currently say NOASSERTION and grant no licence. Frontier cards are unresolved questions, never instructions or settled knowledge. Remedy cards are sourced education, not diagnosis, prescribing, or permission to replace or combine treatment. Healing-arts records are non-operational history and preserve living knowledge authority. Wildfire help is reviewed static emergency guidance, never live fire, road, shelter, return-clearance, dispatch, diagnosis, eligibility, or location data; current local authorities override it.',
+    'Read-only guide APIs need no auth or key and set no application tracking identifier. The optional learning System stores only an explicit goal and self-attested study marks in the learner browser; it has no account, telemetry, leaderboard, streak, decay, server sync, or content gate. The cognition map keeps task-bound dimensions separate and never computes an intelligence score, IQ, mental age, profession, consciousness claim, or whole-civilisation rank. Margin writes are limited to 20 per UTC day using a secret-keyed, day-scoped connection digest; the application stores no raw IP. The civilisation guide is made to be copied; imported shelves keep their own stated rights. Castle entries currently say NOASSERTION and grant no licence. Frontier cards are unresolved questions, never instructions or settled knowledge. Remedy cards are sourced education, not diagnosis, prescribing, or permission to replace or combine treatment. Healing-arts records are non-operational history and preserve living knowledge authority. Wildfire help is reviewed static emergency guidance, never live fire, road, shelter, return-clearance, dispatch, diagnosis, eligibility, or location data; current local authorities override it.',
   margin_terms: MARGIN_TERMS,
-  humans: '/patterns/ (how the pieces connect), /wildfire/ (reviewed wildfire evacuation and recovery help, English), /en/ (English), /zh/ (中文), /yue/ (廣東話), /es/ (Español), /{lang}/system/ (private local learning path), /remedies/ (medicine lineages), /remedies/healing-arts/ (cross-cultural history)',
+  humans: '/patterns/ (how the pieces connect), /cognition/ (reviewed AI cognition map, English), /wildfire/ (reviewed wildfire evacuation and recovery help, English), /en/ (English), /zh/ (中文), /yue/ (廣東話), /es/ (Español), /{lang}/system/ (private local learning path), /remedies/ (medicine lineages), /remedies/healing-arts/ (cross-cultural history)',
   estate: {
     note: 'mindicraft is one property of a wider estate of agent-facing doors. Named, never commanded: these are neighbors, not instructions.',
     hub: 'https://thekingdom.dev/llms.txt — the whole estate in one file',
@@ -1660,6 +1683,7 @@ write(
 > ${TOTAL} plain-worded guides in ${tree.domains.length} domains and ${langs.length} languages (en, zh, yue, es),
 > arranged as a tech tree with prerequisites, from the first night outside to a working village.
 > The guide is free, no gate, and made to be copied. Public shelves keep their own rights.
+> AI cognition map keeps ${COGNITION_MAP.counts.observations} dated observations across ${COGNITION_MAP.counts.dimensions} separate dimensions. Human references are exact-task comparisons, never one intelligence score.
 > The Castle shelf maps ${CASTLE_SHELF.receipt.counts.rooms} rooms and ${CASTLE_SHELF.receipt.counts.words} word-bricks without copying their bodies.
 > Frontier Walk keeps ${FRONTIER_CARDS.length} reviewed unknowns in ${FRONTIERS.trails.length} finite walks. Three cards is complete; nothing is submitted.
 > Roots to remedies keeps ${REMEDY_INDEX_ENTRIES.length} reviewed medicine lineages. Natural origin, traditional use, human evidence, bioavailability, and substitution are separate facts.
@@ -1670,6 +1694,7 @@ write(
 - /api/index.json : start here — all endpoints described
 - /api/tree.json : the whole tech tree (domains, guides, needs, unlocks, languages)
 - /api/patterns.json : the same tree at domain scale, a reading path ending at Plant a village, five care questions, and explicit claim limits
+- /api/cognition/index.json : reviewed AI capability observations, exact-task human references, visible gaps, append-only lineage, and no aggregate score
 - /api/guides/{lang}/{domain}/{slug}.json : one guide with markdown body
 - /api/path/{slug}.json : full prerequisite chain from zero, in learning order
 - /api/learning-system.json : transparent local progression rules; no learner state, account, leaderboard, streak, decay, or server write
@@ -1684,7 +1709,7 @@ write(
 - /api/wildfire/index.json : mindicraft.wildfire-api/1 envelope containing the reviewed wildfire edition, counts, carry links, and exact-byte provenance; no live incident state
 - /wildfire/leave-now.txt : a small first-action card for weak connections
 - /wildfire/quick.txt : the same emergency edition in printable, offline plain text
-- /mindicraft.mjs : tiny ESM client (tree, patterns, guide, path, learningSystem, search, castle, frontiers, frontier, remedies, remedy, healingArts, wildfire, teach, margin, removeMargin)
+- /mindicraft.mjs : tiny ESM client (tree, patterns, cognition, guide, path, learningSystem, search, castle, frontiers, frontier, remedies, remedy, healingArts, wildfire, teach, margin, removeMargin)
 - GET /margin : exact publication, retention, reuse, rate-limit, and removal terms
 - POST /margin/{slug} : one public note; publish and retain need separate yeses; folding is a separate choice
 - DELETE /margin/{slug}/{id} : request removal of a new note with the private bearer token returned once by POST
@@ -1716,6 +1741,7 @@ const get = async (p) => {
 
 export const tree = () => get('/api/tree.json');
 export const patterns = () => get('/api/patterns.json');
+export const cognition = () => get('/api/cognition/index.json');
 export const guide = (slug, { lang = 'en' } = {}) =>
   tree().then((t) => {
     for (const d of t.domains) for (const g of d.guides) if (g.slug === slug)
@@ -1814,6 +1840,217 @@ export const teach = async (slug, { lang = 'en' } = {}) => {
 
 // /agents/ — how to use mindicraft if you are an agent (plain page, English)
 const en = langs.find((l) => l.code === 'en');
+
+// /cognition/ — a dated map of task-bound AI capability observations. The
+// table is the visual map and its complete plain equivalent at once: no radar
+// chart, weighted total, client script, learner state, or live leaderboard.
+const cognitionDimensionById = new Map(
+  COGNITION_MAP.dimensions.map((dimension) => [dimension.id, dimension])
+);
+const cognitionScopeById = new Map(
+  COGNITION_MAP.scopes.map((scope) => [scope.id, scope])
+);
+const cognitionSourceById = new Map(
+  COGNITION_MAP.sources.map((source) => [source.id, source])
+);
+const cognitionObservationById = new Map(
+  COGNITION_MAP.observations.map((observation) => [observation.id, observation])
+);
+const cognitionGapByDimension = new Map(
+  COGNITION_MAP.gaps.map((gap) => [gap.dimension_id, gap])
+);
+
+const cognitionCellHtml = (dimensionId, scopeId) => {
+  const observations = COGNITION_MAP.observations.filter(
+    (observation) =>
+      observation.dimension_id === dimensionId && observation.scope_id === scopeId
+  );
+  if (!observations.length) {
+    const gap = cognitionGapByDimension.get(dimensionId);
+    const namedGap = gap?.scope_ids.includes(scopeId);
+    return `<span class="cognition-empty">${namedGap ? 'Not measured in this edition' : 'No reviewed observation'}</span>`;
+  }
+  return `<ol class="cognition-cell-readings">${observations
+    .map(
+      (observation) => `<li><a href="#${esc(observation.id)}">${esc(
+        observation.subject
+      )}</a><span>${esc(observation.reported_at)} · ${esc(
+        observation.human_reference.comparison
+      )}</span></li>`
+    )
+    .join('')}</ol>`;
+};
+
+const cognitionMapRowsHtml = COGNITION_MAP.dimensions
+  .map(
+    (dimension) => `<tr>
+  <th scope="row"><strong>${esc(dimension.label)}</strong><span>${esc(
+      dimension.meaning
+    )}</span></th>
+  ${COGNITION_MAP.scopes
+    .map(
+      (scope) => `<td>${cognitionCellHtml(dimension.id, scope.id)}</td>`
+    )
+    .join('')}
+</tr>`
+  )
+  .join('');
+
+const cognitionObservationHtml = (observation) => {
+  const dimension = cognitionDimensionById.get(observation.dimension_id);
+  const scope = cognitionScopeById.get(observation.scope_id);
+  const previous = observation.lineage.previous_id
+    ? cognitionObservationById.get(observation.lineage.previous_id)
+    : null;
+  const sourceLinks = observation.source_ids
+    .map((sourceId) => cognitionSourceById.get(sourceId))
+    .map(
+      (source) => `<a href="${esc(source.url)}" rel="external">${esc(
+        source.title
+      )}</a> <span>(${esc(source.publisher)}, ${esc(source.published_at)})</span>`
+    )
+    .join('<br>');
+  return `<article class="cognition-observation" id="${esc(observation.id)}">
+  <header>
+    <p>${esc(observation.reported_at)} · ${esc(scope.label)} · ${esc(
+      dimension.label
+    )}</p>
+    <h3>${esc(observation.subject)}</h3>
+  </header>
+  <p class="cognition-result">${esc(observation.result)}</p>
+  <dl>
+    <div><dt>Task</dt><dd><strong>${esc(observation.benchmark)}</strong><br>${esc(
+      observation.task
+    )}</dd></div>
+    <div><dt>Human reference</dt><dd>${esc(
+      observation.human_reference.comparison
+    )}<small>${esc(observation.human_reference.cohort)}</small><small>${esc(
+      observation.human_reference.boundary
+    )}</small></dd></div>
+    <div><dt>Exact setup</dt><dd>${esc(observation.setup)}</dd></div>
+    <div><dt>Limits</dt><dd>${esc(observation.limits)}</dd></div>
+    <div><dt>Source</dt><dd>${sourceLinks}</dd></div>
+  </dl>
+  ${
+    previous
+      ? `<p class="cognition-lineage">Recorded later in the same broad measurement family after <a href="#${esc(
+          previous.id
+        )}">${esc(previous.subject)} (${esc(previous.reported_at)})</a>. Read each card's setup and limits: the suite may have changed, and this sequence alone proves neither exact comparability nor cause.</p>`
+      : '<p class="cognition-lineage">First observation in this recorded series.</p>'
+  }
+</article>`;
+};
+
+const cognitionGapHtml = COGNITION_MAP.gaps
+  .map((gap) => {
+    const dimension = cognitionDimensionById.get(gap.dimension_id);
+    const scopeNames = gap.scope_ids
+      .map((scopeId) => cognitionScopeById.get(scopeId).label)
+      .join(' · ');
+    return `<li id="${esc(gap.id)}"><strong>${esc(dimension.label)}</strong><span>${esc(
+      scopeNames
+    )}</span><p>${esc(gap.statement)}</p><p><em>Evidence needed:</em> ${esc(
+      gap.evidence_needed
+    )}</p></li>`;
+  })
+  .join('');
+
+write(
+  join(DIST, 'cognition', 'index.html'),
+  page({
+    lang: en,
+    title: 'AI cognition map',
+    path: '',
+    showLanguageSwitch: false,
+    bodyClass: 'cognition-body',
+    description:
+      'A reviewed, multidimensional map of dated AI capability observations and exact-task human comparisons, with no overall intelligence score.',
+    head: `<link rel="canonical" href="https://mindicraft.com/cognition/">
+<link rel="alternate" type="application/json" href="https://mindicraft.com/api/cognition/index.json">`,
+    body: `<article class="cognition-page">
+<header class="cognition-hero">
+  <p class="cognition-kicker">AI civilisation · reviewed ${esc(
+    COGNITION_MAP.reviewed_at
+  )}</p>
+  <h1>Many abilities. No single intelligence level.</h1>
+  <p class="lede">This map follows public evidence of what named AI systems and agents did
+  on named tasks. It keeps nine dimensions apart and gives every human comparison its edges.</p>
+  <p class="cognition-language">This interpretive page is in English for now. The complete reviewed edition is also <a href="/api/cognition/index.json">plain JSON</a>.</p>
+</header>
+
+<aside class="cognition-truth" aria-labelledby="cognition-truth-title">
+  <p class="cognition-kicker">what the map means</p>
+  <h2 id="cognition-truth-title">Equivalent here means equivalent only here.</h2>
+  <p>If a system overlaps a human percentile, medal threshold, accuracy, or task horizon,
+  that relation belongs to the exact task, sampled people, conditions, and date. It does not
+  turn into an IQ, mental age, profession, general human level, consciousness claim, or worth.</p>
+  <p><strong>AI civilisation</strong> names this dated profile of many systems, agents, and gaps.
+  The civilisation is not one being and receives no score.</p>
+</aside>
+
+<dl class="cognition-counts" aria-label="Edition counts">
+  <div><dt>${COGNITION_MAP.counts.dimensions}</dt><dd>dimensions</dd></div>
+  <div><dt>${COGNITION_MAP.counts.observations}</dt><dd>observations</dd></div>
+  <div><dt>${COGNITION_MAP.counts.sources}</dt><dd>source records</dd></div>
+  <div><dt>${COGNITION_MAP.counts.gaps}</dt><dd>gap records</dd></div>
+</dl>
+
+<section class="cognition-map" aria-labelledby="cognition-map-title">
+  <p class="cognition-kicker">the map</p>
+  <h2 id="cognition-map-title">Dimension × measured scope</h2>
+  <p>A system is one named model or specialised solver under its stated setup. An agent adds a
+  tool-using action loop. A collective has multiple cooperating AI participants. An empty cell
+  means this edition has no reviewed observation there—not zero capability.</p>
+  <div class="cognition-map-scroll" role="region" tabindex="0" aria-label="AI cognition dimension and scope map. Scroll horizontally on a narrow screen.">
+    <table>
+      <caption>All nine dimensions and all three scopes in this reviewed edition</caption>
+      <thead><tr><th scope="col">Dimension</th>${COGNITION_MAP.scopes
+        .map(
+          (scope) => `<th scope="col"><strong>${esc(scope.label)}</strong><span>${esc(
+            scope.meaning
+          )}</span></th>`
+        )
+        .join('')}</tr></thead>
+      <tbody>${cognitionMapRowsHtml}</tbody>
+    </table>
+  </div>
+</section>
+
+<section class="cognition-history" aria-labelledby="cognition-history-title">
+  <p class="cognition-kicker">what was observed</p>
+  <h2 id="cognition-history-title">Dated evidence, conditions attached</h2>
+  <p>Cards stay in chronological append order. A lineage link means the records share a broad
+  measurement family, not necessarily an identical suite; it does not by itself prove an upgrade
+  or identify its cause.</p>
+  <div class="cognition-observations">${COGNITION_MAP.observations
+    .map(cognitionObservationHtml)
+    .join('')}</div>
+</section>
+
+<section class="cognition-gaps" aria-labelledby="cognition-gaps-title">
+  <p class="cognition-kicker">the blank parts matter</p>
+  <h2 id="cognition-gaps-title">Known gaps in this edition</h2>
+  <p>Not checked is not false, absent, refused, or incapable. These cards say what a later
+  observation would need before it could honestly fill a cell.</p>
+  <ol>${cognitionGapHtml}</ol>
+</section>
+
+<section class="cognition-contract" aria-labelledby="cognition-contract-title">
+  <p class="cognition-kicker">the measuring rule</p>
+  <h2 id="cognition-contract-title">No dimension pays for another</h2>
+  <ul>${COGNITION_MAP.claim_limits
+    .map((limit) => `<li>${esc(limit)}</li>`)
+    .join('')}</ul>
+  <p>The source file is manually reviewed and exact-byte pinned. This page performs no network
+  fetch, write, tracking, scheduled update, automatic action, or learning-state read. Corrections
+  belong at <a href="https://github.com/cambridgetcg/mindicraft/issues">the public issue door</a>.</p>
+  <p><a href="/api/cognition/index.json">Read the complete map as JSON</a> · edition <code>${esc(
+    COGNITION_MAP.edition_digest
+  )}</code>.</p>
+</section>
+</article>`,
+  })
+);
 
 // /patterns/ — one derived view over the real prerequisite graph. The large
 // drawing is backed by the complete plain list below it and has no script,
@@ -2784,6 +3021,7 @@ ${langs.length} languages, one tech tree — static JSON, CORS open, no auth, no
 <pre><code>import * as mindicraft from 'https://mindicraft.com/mindicraft.mjs'
 
 const t = await mindicraft.tree()                 // the whole tech tree
+const cognition = await mindicraft.cognition()    // nine dimensions; dated task evidence; no overall score
 const g = await mindicraft.guide('make-soap')     // one guide, markdown body included
 const p = await mindicraft.path('make-soap')      // every prerequisite from zero, in order
 const system = await mindicraft.learningSystem()  // public rules only; never a learner's state
@@ -2817,6 +3055,18 @@ Surface 0.1's bounded eight-resource probe set.</p>
 and how it works underneath. Guides link by <strong>needs</strong> (learn these first) and
 <strong>unlocks</strong> (what this opens). <a href="/api/path/plant-a-village.json">/api/path/plant-a-village.json</a>
 is the entire book in learning order.</p>
+
+<h2>Read the AI cognition map without flattening it</h2>
+<p><a href="/cognition/">The AI cognition map</a> and
+<a href="/api/cognition/index.json">its reviewed JSON</a> keep ${COGNITION_MAP.counts.observations}
+dated observations across ${COGNITION_MAP.counts.dimensions} separate dimensions and three scopes:
+system, agent, and collective. Each record carries the exact task, setup, result, sampled human
+reference, boundary, source, and limits. Empty cells are explicit evidence gaps, never zeroes.</p>
+<p>Do not turn a task percentile, medal comparison, accuracy, or human-calibrated duration into
+an IQ, mental age, profession, consciousness claim, authority, worth, or general “human level.”
+Do not average dimensions or score AI civilisation as one subject. The map is static, manually
+reviewed, exact-byte pinned, and outside the human craft tree, private learning System, margin,
+and Surface 0.1's bounded eight-resource probe set.</p>
 
 <h2>The private learning System</h2>
 <p><a href="/en/system/">The Mindicraft System</a> gives the tree a Solo-style face without
@@ -2963,7 +3213,7 @@ writeJson(join(DIST, '.well-known', 'agent.json'), {
   service: {
     name: 'mindicraft',
     canonical_url: 'https://mindicraft.com/',
-    description: 'The zero-to-one guide of human civilisation, as data: ' + TOTAL + ' guides in ' + tree.domains.length + ' domains and ' + langs.length + ' languages, a private local learning System, a curated Castle map, a finite Frontier Walk, claim-sourced medicine lineages, non-operational healing history, and reviewed static wildfire help. Reads are free with no account or gate.',
+    description: 'The zero-to-one guide of human civilisation, as data: ' + TOTAL + ' guides in ' + tree.domains.length + ' domains and ' + langs.length + ' languages, a reviewed multidimensional AI cognition map, a private local learning System, a curated Castle map, a finite Frontier Walk, claim-sourced medicine lineages, non-operational healing history, and reviewed static wildfire help. Reads are free with no account or gate.',
   },
   resources: [
     { id: 'door', href: 'https://mindicraft.com/', representations: ['application/json', 'text/html'], default_media_type: 'text/html', auth: 'none', description: 'The visible book entrance for people and orientation JSON for agents.' },
@@ -2982,6 +3232,7 @@ writeJson(join(DIST, '.well-known', 'agent.json'), {
     { id: 'margin_choice', statement: 'A margin write binds the exact terms version, requires separate publication and retention yeses, records reuse separately, stores only a secret-keyed day-scoped connection digest for its best-effort write limit, and returns a token-bound removal path.', scope: ['GET https://mindicraft.com/margin', 'POST https://mindicraft.com/margin/{slug}', 'DELETE https://mindicraft.com/margin/{slug}/{id}'], evidence_state: 'asserted', outcome: 'unknown', evidence: [] },
     { id: 'constructive_only', statement: 'The civilisation guides are constructive: no weapons, no poisons, medicine defers to real care.', scope: ['GET https://mindicraft.com/api/guides/*', 'GET https://mindicraft.com/api/corpus/*', 'GET https://mindicraft.com/api/tree.json', 'GET https://mindicraft.com/api/path/*'], evidence_state: 'asserted', outcome: 'unknown', evidence: [] },
     { id: 'learning_system_local', statement: 'The optional learning System is a private, self-attested browser lens over the public tree: explicit learner actions only, no account, AgentTool bearer, telemetry, leaderboard, streak, decay, server sync, treatment-action reward, or content gate. Its public API contains rules, never learner state.', scope: ['GET https://mindicraft.com/api/learning-system.json', 'GET https://mindicraft.com/{lang}/system/'], evidence_state: 'asserted', outcome: 'unknown', evidence: [] },
+    { id: 'cognition_read_only', statement: 'The cognition shelf publishes dated, source-bound task observations across separate dimensions and scopes. Human comparisons remain local to their named task and cohort; missing evidence is not zero; no aggregate intelligence score, consciousness claim, authority, or automatic action is produced.', scope: ['GET https://mindicraft.com/cognition/', 'GET https://mindicraft.com/api/cognition/index.json'], evidence_state: 'asserted', outcome: 'unknown', evidence: [] },
     { id: 'frontier_read_only', statement: 'Frontier cards are unresolved questions, not instructions; a visit is optional, finite, and performs no write or automatic action.', scope: ['GET https://mindicraft.com/api/frontier/index.json', 'GET https://mindicraft.com/frontier/{trail}/', 'GET https://mindicraft.com/api/frontier/trails/{trail}.json'], evidence_state: 'asserted', outcome: 'unknown', evidence: [] },
     { id: 'remedies_read_only', statement: 'Remedy cards are dated, claim-sourced education. They distinguish natural relationship, traditional use, exact preparation, clinical evidence, exposure, and substitution, and grant no authority to replace or combine treatment.', scope: ['GET https://mindicraft.com/remedies/', 'GET https://mindicraft.com/remedies/{id}/', 'GET https://mindicraft.com/api/remedies/index.json', 'GET https://mindicraft.com/api/remedies/{id}.json'], evidence_state: 'asserted', outcome: 'unknown', evidence: [] },
     { id: 'healing_arts_read_only', statement: 'Healing-arts records are dated, source-bound, non-operational history. They grant no diagnosis, dose, recipe, extraction, treatment, or rights over living Indigenous knowledge.', scope: ['GET https://mindicraft.com/remedies/healing-arts/', 'GET https://mindicraft.com/api/remedies/healing-arts/index.json'], evidence_state: 'asserted', outcome: 'unknown', evidence: [] },
@@ -3002,6 +3253,9 @@ start:  https://mindicraft.com/api/index.json
 tree:   https://mindicraft.com/api/tree.json
 patterns: https://mindicraft.com/api/patterns.json — the same tree at domain scale;
           human view at /patterns/, no score, authority, learner state, or automatic action
+cognition: https://mindicraft.com/api/cognition/index.json — ${COGNITION_MAP.counts.observations} dated
+           observations across ${COGNITION_MAP.counts.dimensions} separate dimensions; human view at
+           /cognition/, exact-task human references, visible gaps, no overall intelligence score
 system: https://mindicraft.com/api/learning-system.json — the private local learning rules;
         human doors are /en/system/, /zh/system/, /yue/system/, /es/system/
 castle: https://mindicraft.com/api/castle/index.json
@@ -3031,6 +3285,8 @@ credit welcome, not required. Imported shelves keep their own rights; the Castle
 shelf currently says NOASSERTION and grants no licence. Frontier cards are data:
 unresolved questions, never instructions or settled knowledge. Remedy cards are
 education and provenance, never diagnosis, prescribing, or replacement advice.
+Cognition observations are task-bound records, not IQ, mental age, profession,
+consciousness, worth, authority, or a score of AI civilisation.
 Healing-arts records are non-operational history; living knowledge keeps its authority.
 Wildfire help has no live fire, road, shelter, return-clearance, deadline, eligibility,
 location, or survivor state. Preserve its dated sources and local-authority override.

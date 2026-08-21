@@ -50,12 +50,33 @@ study marks; export, erase, and one-session undo remain available, while checked
 import returns after the learner wakes the System.
 
 The learning script appears only on the four-language civilisation book. The
-remedies, healing arts, Frontier, and Castle shelves stay outside it, so no
+remedies, healing arts, Frontier, Castle, and cognition shelves stay outside it, so no
 treatment action or unresolved question can become an XP task. Core health
 guides visibly say that a study mark is not treatment competence, diagnosis,
 or permission to act. Public rules,
 never a learner's state, are available at `/api/learning-system.json`; the
 localized human doorway is `/{lang}/system/`.
+
+## The AI cognition map
+
+[`/cognition/`](https://mindicraft.com/cognition/) tracks dated, public
+observations of AI capability across nine separate dimensions. The same
+reviewed edition is static JSON at `/api/cognition/index.json`.
+
+Each observation names the exact model or system, task, configuration,
+conditions, result, source, uncertainty, limits, and correction path. A human
+comparison appears only when the source reports a named human group on the same
+task; the wording is bound to that task. “Top 10% on this simulated exam” is a
+comparison. “A lawyer-level mind,” an IQ, a mental age, or one civilisation
+rank is not.
+
+The map has no total intelligence score. Novel reasoning, knowledge and
+language, perception and space, memory and continuity, learning and adaptation,
+self-checking, planning and action, social coordination, and creation and
+discovery remain separate. Unmeasured cells remain visible. The shelf does not
+measure consciousness, sentience, safety, alignment, worth, authority, or the
+private learning System. Updates are reviewed and append-only; old observations
+remain part of the history.
 
 ## Wildfire help
 

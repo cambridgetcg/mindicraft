@@ -74,6 +74,20 @@ Keep these edges honest:
 - Remedies, healing arts, Frontier, and Castle stay outside the learning
   client. Never turn treatment, preparation, or unresolved questions into XP.
   Keep the visible study-not-treatment boundary on core health checkpoints.
+- `guide/cognition.json` is a reviewed map of dated, task-bound AI capability
+  observations. It stays outside the human craft tree, learning System,
+  collector, and margin.
+- Keep its nine dimensions separate. Never sum, average, weight, rank, badge,
+  or draw them as one intelligence score; never score a model, agent,
+  collective, civilisation, or being as a whole.
+- A human comparison must name the exact task, conditions, and sampled human
+  group. It preserves only that measured relation—not an IQ, mental age,
+  profession, consciousness, worth, authority, or general “human level.”
+- Missing cognition evidence stays visible as not measured, never zero,
+  refusal, absence, or incapacity. Preserve old observations and link genuinely
+  comparable later readings; do not silently rescale history.
+- `guide/cognition-review.json` pins the exact reviewed source bytes. Any
+  observation or source change needs deliberate re-review and re-pinning.
 - `guide/wildfire.json` is reviewed emergency guidance, not a game, ordinary
   guide, live incident feed, or collector input. Keep it outside `tree.json`,
   the learning client, and the public margin.

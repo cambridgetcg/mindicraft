@@ -23,6 +23,7 @@ declaration: manual integration receipt; the six-hour schedule performs a read-o
 - The canonical builder, content, and deployment live in guide/; the older collector at the repository root is a separate legacy surface.
 - Guide dependencies are declared reading relationships, not proof that a craft works or that a person understands it.
 - Public reading needs no account; the optional learning record stays in the learner's browser and is never a measure of human worth.
+- The AI cognition map keeps dated capability observations in separate dimensions; its human comparisons are exact-task relations, never an IQ, mental age, profession, consciousness claim, or whole-civilisation score.
 - The public margin is a separate, consent-bound write surface with stated publication, retention, reuse, rate-limit, and removal terms.
 
 ## can
@@ -30,6 +31,7 @@ declaration: manual integration receipt; the six-hour schedule performs a read-o
 - Open the human guide at https://mindicraft.com/ and the machine-readable entrance at https://mindicraft.com/api/index.json.
 - Show the complete recorded prerequisite tree at https://mindicraft.com/api/tree.json.
 - Show the same tree at domain scale, with care questions and explicit limits, at https://mindicraft.com/patterns/.
+- Show the reviewed AI cognition map at https://mindicraft.com/cognition/ and its static data at https://mindicraft.com/api/cognition/index.json.
 - Explain how the book is built, verified, and deployed in guide/README.md.
 
 ## needs

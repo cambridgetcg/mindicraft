@@ -25,6 +25,8 @@ const RESOURCES = {
   '/api/tree.json': { reps: ['application/json'], def: 'application/json' },
   '/patterns/': { reps: ['text/html', 'application/json'], def: 'text/html', jsonAsset: '/api/patterns.json' },
   '/api/patterns.json': { reps: ['application/json'], def: 'application/json' },
+  '/cognition/': { reps: ['text/html', 'application/json'], def: 'text/html', jsonAsset: '/api/cognition/index.json' },
+  '/api/cognition/index.json': { reps: ['application/json'], def: 'application/json' },
   '/api/castle/index.json': { reps: ['application/json'], def: 'application/json' },
   '/api/frontier/index.json': { reps: ['application/json'], def: 'application/json' },
   '/api/learning-system.json': { reps: ['application/json'], def: 'application/json' },

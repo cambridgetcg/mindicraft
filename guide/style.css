@@ -343,6 +343,8 @@ body[data-learning-page="guide"] main {
 .patterns-home-door strong, .patterns-home-door span { display: block; }
 .patterns-home-door span { margin-top: 0.08rem; color: var(--muted); font-size: 0.82rem; }
 .patterns-home-door:hover { border-color: var(--leaf); text-decoration: none; }
+.cognition-home-door { border-left-color: var(--plum); }
+.cognition-home-door:hover { border-color: var(--plum); }
 .hero {
   position: relative; margin: 1.2rem 0 2rem; padding: clamp(1.25rem, 4vw, 2.4rem);
   text-align: left; background: var(--panel); border: 3px double var(--line);
@@ -1111,4 +1113,126 @@ html[data-learning-mode="quiet"] .learning-card-mark { display: none !important;
   .wildfire-page a[href^="http"]::after {
     content: " (" attr(href) ")"; color: #333; font-size: 8pt; overflow-wrap: anywhere;
   }
+}
+
+/* AI cognition — many local rulers, never one intelligence score. */
+.cognition-body main, .cognition-body .top { max-width: 76rem; }
+.cognition-body {
+  background:
+    radial-gradient(circle at 72% 8%, color-mix(in srgb, var(--plum) 10%, transparent), transparent 32rem),
+    repeating-linear-gradient(0deg, transparent 0 6rem, color-mix(in srgb, var(--line) 24%, transparent) 6rem calc(6rem + 1px)),
+    var(--bg);
+}
+.cognition-page { padding-top: 1rem; }
+.cognition-hero { max-width: 58rem; }
+.cognition-hero h1 {
+  max-width: 54rem; margin: 0.15rem 0 0.5rem;
+  font-size: clamp(2.45rem, 7vw, 5.25rem); line-height: 1.02;
+}
+.cognition-hero .lede { max-width: 50rem; font-size: clamp(1.08rem, 2vw, 1.28rem); }
+.cognition-language { color: var(--muted); font-size: 0.88rem; }
+.cognition-kicker {
+  margin: 0; color: var(--plum); font: 780 0.74rem/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0.12em; text-transform: uppercase;
+}
+.cognition-truth {
+  position: relative; overflow: hidden; max-width: 62rem; margin: 2rem 0;
+  padding: clamp(1.1rem, 4vw, 2rem); border: 1px solid var(--line);
+  border-left: 5px solid var(--plum); border-radius: 1rem;
+  background: color-mix(in srgb, var(--plum) 7%, var(--panel)); box-shadow: var(--shadow);
+}
+.cognition-truth::after {
+  content: "≠"; position: absolute; right: 0.05em; bottom: -0.38em; pointer-events: none;
+  color: color-mix(in srgb, var(--plum) 10%, transparent); font: 12rem/1 Georgia, serif;
+}
+.cognition-truth > * { position: relative; z-index: 1; max-width: 50rem; }
+.cognition-truth h2 { margin: 0.15rem 0 0.55rem; font-size: clamp(1.4rem, 3vw, 2.15rem); }
+.cognition-counts {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.65rem;
+  max-width: 62rem; margin: 1.5rem 0 3rem;
+}
+.cognition-counts div {
+  padding: 0.8rem; border: 1px solid var(--line); border-radius: 0.7rem;
+  background: var(--panel); text-align: center;
+}
+.cognition-counts dt { color: var(--plum); font: 750 clamp(1.5rem, 4vw, 2.2rem)/1 Georgia, serif; }
+.cognition-counts dd { margin: 0.25rem 0 0; color: var(--muted); font-size: 0.78rem; }
+.cognition-page > section { margin-top: 3.5rem; }
+.cognition-page section > h2 { margin: 0.15rem 0 0.55rem; font-size: clamp(1.6rem, 3vw, 2.5rem); }
+.cognition-page section > p { max-width: 57rem; }
+.cognition-map-scroll {
+  overflow-x: auto; margin: 1.2rem 0; padding: 0.25rem;
+  border-radius: 0.85rem; scrollbar-color: var(--plum) var(--line);
+}
+.cognition-map-scroll:focus-visible { outline: 3px solid var(--plum); outline-offset: 3px; }
+.cognition-map table {
+  width: 100%; min-width: 70rem; border-collapse: separate; border-spacing: 0;
+  border: 1px solid var(--line); border-radius: 0.75rem; background: var(--panel);
+  box-shadow: var(--shadow);
+}
+.cognition-map caption { padding: 0.7rem; color: var(--muted); font-size: 0.8rem; caption-side: bottom; }
+.cognition-map th, .cognition-map td {
+  width: 24%; min-width: 15rem; padding: 0.8rem; vertical-align: top;
+  border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);
+}
+.cognition-map th:first-child { width: 28%; }
+.cognition-map tr > :last-child { border-right: 0; }
+.cognition-map tbody tr:last-child > * { border-bottom: 0; }
+.cognition-map thead th {
+  color: var(--ink); background: color-mix(in srgb, var(--plum) 7%, var(--panel)); text-align: left;
+}
+.cognition-map th strong, .cognition-map th span { display: block; }
+.cognition-map th span { margin-top: 0.2rem; color: var(--muted); font-size: 0.76rem; font-weight: 400; line-height: 1.45; }
+.cognition-cell-readings { margin: 0; padding: 0; list-style: none; }
+.cognition-cell-readings li + li { margin-top: 0.7rem; padding-top: 0.7rem; border-top: 1px solid var(--line); }
+.cognition-cell-readings a { display: block; font-weight: 750; }
+.cognition-cell-readings span { display: block; margin-top: 0.15rem; color: var(--muted); font-size: 0.72rem; line-height: 1.45; }
+.cognition-empty { color: var(--muted); font-size: 0.78rem; font-style: italic; }
+.cognition-observations {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 26rem), 1fr)); gap: 0.9rem;
+}
+.cognition-observation {
+  scroll-margin-top: 1rem; overflow: hidden; border: 1px solid var(--line);
+  border-top: 4px solid var(--plum); border-radius: 0.85rem; background: var(--panel); box-shadow: var(--shadow);
+}
+.cognition-observation:target { border-color: var(--plum); }
+.cognition-observation header { padding: 0.85rem 1rem 0.7rem; background: color-mix(in srgb, var(--plum) 7%, var(--panel)); }
+.cognition-observation header p { margin: 0; color: var(--plum); font-size: 0.7rem; font-weight: 780; letter-spacing: 0.06em; text-transform: uppercase; }
+.cognition-observation h3 { margin: 0.15rem 0 0; font-size: 1.35rem; }
+.cognition-result { margin: 0; padding: 0.9rem 1rem; font-size: 1.02rem; font-weight: 650; }
+.cognition-observation dl { margin: 0; }
+.cognition-observation dl > div {
+  display: grid; grid-template-columns: 7.2rem 1fr; gap: 0.65rem;
+  padding: 0.75rem 1rem; border-top: 1px solid var(--line);
+}
+.cognition-observation dt { color: var(--muted); font-size: 0.72rem; font-weight: 780; letter-spacing: 0.05em; text-transform: uppercase; }
+.cognition-observation dd { margin: 0; font-size: 0.86rem; overflow-wrap: anywhere; }
+.cognition-observation dd small { display: block; margin-top: 0.28rem; color: var(--muted); line-height: 1.45; }
+.cognition-observation dd span { color: var(--muted); font-size: 0.72rem; }
+.cognition-lineage { margin: 0; padding: 0.75rem 1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.78rem; }
+.cognition-gaps ol {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: 0.7rem;
+  margin: 1rem 0 0; padding: 0; list-style: none;
+}
+.cognition-gaps li { padding: 0.85rem 0.95rem; border: 1px dashed var(--line); border-radius: 0.75rem; background: var(--panel); }
+.cognition-gaps li > strong, .cognition-gaps li > span { display: block; }
+.cognition-gaps li > span { color: var(--plum); font-size: 0.7rem; font-weight: 750; text-transform: uppercase; }
+.cognition-gaps li p { margin: 0.4rem 0 0; font-size: 0.82rem; }
+.cognition-gaps li p:last-child { color: var(--muted); }
+.cognition-contract { max-width: 62rem; padding: clamp(1rem, 3vw, 1.6rem); border: 1px solid var(--line); border-radius: 0.9rem; background: var(--panel); }
+.cognition-contract code { font-size: 0.68rem; overflow-wrap: anywhere; }
+.cognition-page a:focus-visible { outline-color: var(--plum); }
+@media (max-width: 650px) {
+  .cognition-counts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cognition-observation dl > div { display: block; }
+  .cognition-observation dt { margin-bottom: 0.25rem; }
+}
+@media print {
+  .cognition-body { background: #fff; }
+  .cognition-map-scroll { overflow: visible; }
+  .cognition-map table { min-width: 0; font-size: 7.5pt; box-shadow: none; }
+  .cognition-map th, .cognition-map td { min-width: 0; padding: 0.35rem; }
+  .cognition-observation, .cognition-truth, .cognition-counts div { box-shadow: none; break-inside: avoid; }
+  .cognition-observations { display: block; }
+  .cognition-observation { margin: 0 0 0.7rem; }
 }

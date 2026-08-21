@@ -12,6 +12,11 @@ the whole thing — content, builder, and site.
   reachability-preserving backbone, the reading path ending at the Plant a
   village guide, and five project-authored care questions. It never becomes a
   second guide graph, a learner score, an endorsement, or an authority grant.
+- `cognition.json` + `cognition.mjs` — a reviewed, strictly validated map of
+  dated AI capability observations across nine independent dimensions, with
+  task-bound human comparisons and visible evidence gaps.
+- `cognition-review.json` + `cognition-review.mjs` — the exact-byte review
+  receipt and publication brake for the cognition edition.
 - `content/<lang>/<domain>/<slug>.md` — one markdown file per guide per
   language (`en`, `zh`, `yue`, `es`). Slugs stay English in every language so
   links never break.
@@ -55,7 +60,7 @@ npm run verify       # tests, builds dist/, then checks wildfire + Castle + Fron
 npx wrangler pages deploy dist --project-name=mindicraft
 ```
 
-`verify` also proves the learning contract and the patterns view: all four
+`verify` also proves the learning contract, patterns view, and cognition map: all four
 languages receive the same controls, every guide remains ordinary readable
 HTML, the graph portion of the pattern JSON exactly matches `tree.json`, and
 each care question is pinned to the exact English guide bytes reviewed for it.
@@ -89,6 +94,33 @@ The build also derives `robots.txt` and `sitemap.xml` from the finished human
 HTML pages. New chapters and shelves therefore join public discovery without a
 second route list. Search crawlers are pointed away from duplicate API data and
 dynamic public-margin routes; those interfaces remain directly available.
+
+## The AI cognition map
+
+`/cognition/` is a separate English shelf over `cognition.json`.
+`/api/cognition/index.json` is the same reviewed edition for tools. It does not
+join `tree.json`, load the learning client, accept a write, or run a live
+leaderboard or scheduled fetch.
+
+The map asks nine different questions and refuses to turn their answers into
+one number. Every observation is one versioned system or agent on one named
+task under named conditions. Human equivalence is deliberately narrow: the
+source must provide a human group on the same task, and the public sentence says
+exactly what relation was preserved. It never becomes an IQ, age, profession,
+general human level, consciousness claim, or measure of a being's worth.
+
+System, agent, and collective are separate scopes. A frontier system's result
+does not become a claim about every reachable AI, and even a collection of
+results does not make “AI civilisation” one scored subject. Dimensions or
+scopes without reviewed observations are printed as gaps, not zeroes. Later
+observations append to history; a change link is allowed only when the suite
+and comparison really remain comparable.
+
+The pure validator closes every source and lineage reference, rejects unknown
+fields, HTML-shaped text, impossible dates, unsupported source authorities,
+unbounded human-equivalent language, aggregate scores, and missing limits. The
+exact-byte review receipt stops publication after any source edit until the
+edition is deliberately re-reviewed and re-pinned.
 
 ## Wildfire help
 

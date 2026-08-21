@@ -1,0 +1,441 @@
+{
+  "schema_version": "mindicraft.cognition-source/1",
+  "title": "A map of AI cognition",
+  "description": "A first reviewed edition of dated, task-bound observations across nine dimensions. Human references are local rulers for named tasks, never a single scale of intelligence.",
+  "reviewed_at": "2026-08-20",
+  "profile": {
+    "id": "ai-civilisation",
+    "label": "AI civilisation",
+    "standing": "A dated profile of task-bound observations across AI systems, agents, and collectives; never a scored subject."
+  },
+  "lineage": {
+    "edition": 1,
+    "previous_edition_digest": null,
+    "policy": "An edition is immutable. A later edition names its predecessor digest and appends new records; it never rewrites this edition."
+  },
+  "claim_limits": [
+    "Each human reference belongs only to the named task, protocol, cohort, date, and setup.",
+    "A percentile, solved count, accuracy, or task horizon is not a general intelligence level.",
+    "System, agent, and collective results are different scopes and must not be merged.",
+    "Missing evidence is a gap, not zero capability.",
+    "This edition makes no aggregate score, overall rank, forecast, consciousness claim, or claim about human worth.",
+    "The source, setup, uncertainty, and limits travel with every observation."
+  ],
+  "dimensions": [
+    {
+      "id": "novel-reasoning",
+      "label": "Novel reasoning",
+      "meaning": "Working through unfamiliar formal problems without merely retrieving a known answer."
+    },
+    {
+      "id": "knowledge-language",
+      "label": "Knowledge and language",
+      "meaning": "Using learned knowledge through language in a specified domain and format."
+    },
+    {
+      "id": "perception-space",
+      "label": "Perception and space",
+      "meaning": "Interpreting images, diagrams, spatial relations, and other non-text structure."
+    },
+    {
+      "id": "memory-continuity",
+      "label": "Memory and continuity",
+      "meaning": "Keeping relevant information and commitments usable across distance or time."
+    },
+    {
+      "id": "learning-adaptation",
+      "label": "Learning and adaptation",
+      "meaning": "Changing future performance from new evidence or experience rather than a fresh prompt alone."
+    },
+    {
+      "id": "self-checking",
+      "label": "Self-checking",
+      "meaning": "Finding, naming, and repairing errors in one's own work under a stated checking protocol."
+    },
+    {
+      "id": "planning-action",
+      "label": "Planning and action",
+      "meaning": "Choosing and carrying out linked actions toward a goal in an environment."
+    },
+    {
+      "id": "social-coordination",
+      "label": "Social coordination",
+      "meaning": "Sharing information, roles, and decisions with other minds while preserving the joint task."
+    },
+    {
+      "id": "creation-discovery",
+      "label": "Creation and discovery",
+      "meaning": "Producing a new useful artefact, method, proof, program, or finding under test."
+    }
+  ],
+  "scopes": [
+    {
+      "id": "system",
+      "label": "System",
+      "meaning": "A model or purpose-built AI system evaluated without a continuing tool-using run loop."
+    },
+    {
+      "id": "agent",
+      "label": "Agent",
+      "meaning": "A model together with prompts, tools, scaffolding, an environment, and a run loop."
+    },
+    {
+      "id": "collective",
+      "label": "Collective",
+      "meaning": "Multiple AI systems or agents coordinating through shared work or messages."
+    }
+  ],
+  "observations": [
+    {
+      "sequence": 1,
+      "id": "alphacode-codeforces-2022",
+      "reported_at": "2022-12-08",
+      "subject": "AlphaCode",
+      "dimension_id": "creation-discovery",
+      "scope_id": "system",
+      "benchmark": "Codeforces contest simulation",
+      "task": "Generate programs for novel problems while simulating participation in 10 recent Codeforces contests that were newer than the training data.",
+      "result": "Google DeepMind reported an estimated rank within the top 54% of participants, approximately the level of the median competitor.",
+      "human_reference": {
+        "cohort": "Participants in the 10 selected Codeforces contests.",
+        "comparison": "AlphaCode's estimated contest placement was around the median participant in that selected contest set.",
+        "boundary": "This is an estimated competitive-programming placement, not a level for software engineering, creativity, or people in general."
+      },
+      "setup": "AlphaCode generated programs at large scale, filtered and clustered them, and submitted a small candidate set under a contest simulation.",
+      "limits": "The result covers short, testable algorithmic problems on one contest platform; it does not show production software work or open-ended invention.",
+      "source_ids": [
+        "alphacode-report"
+      ],
+      "lineage": {
+        "series_id": "alphacode-codeforces",
+        "previous_id": null
+      }
+    },
+    {
+      "sequence": 2,
+      "id": "gpt-4-uniform-bar-2023",
+      "reported_at": "2023-03-27",
+      "subject": "GPT-4",
+      "dimension_id": "knowledge-language",
+      "scope_id": "system",
+      "benchmark": "Simulated Uniform Bar Examination",
+      "task": "Answer and be graded on the MBE, MEE, and MPT components under a simulation of the real exam's conditions and 400-point scoring.",
+      "result": "OpenAI reported 298 out of 400, corresponding to an estimated 90th percentile among test takers in the comparison distribution.",
+      "human_reference": {
+        "cohort": "Test takers in the score distribution used by OpenAI for its simulated Uniform Bar Examination comparison.",
+        "comparison": "The reported 298 out of 400 mapped to about the 90th percentile in that task-specific distribution.",
+        "boundary": "A simulated exam percentile is not admission to practice law and does not measure client judgment, legal reliability, or general intelligence."
+      },
+      "setup": "Casetext and Stanford CodeX collaborators conducted the simulation; OpenAI reported exam-specific grading and zero detected training-data contamination for this exam.",
+      "limits": "This is a developer report on a simulated written exam. It does not establish reliable legal practice, and GPT-4's report separately warns that the model can hallucinate and reason incorrectly.",
+      "source_ids": [
+        "gpt-4-technical-report"
+      ],
+      "lineage": {
+        "series_id": "gpt-professional-exams",
+        "previous_id": null
+      }
+    },
+    {
+      "sequence": 3,
+      "id": "alphageometry-imo-ag-30-2024",
+      "reported_at": "2024-01-17",
+      "subject": "AlphaGeometry",
+      "dimension_id": "novel-reasoning",
+      "scope_id": "system",
+      "benchmark": "IMO-AG-30",
+      "task": "Solve 30 Olympiad geometry problems drawn from 2000 through 2022 under the standard Olympiad time limit.",
+      "result": "Google DeepMind reported that AlphaGeometry solved 25 of 30 problems; the prior state of the art solved 10.",
+      "human_reference": {
+        "cohort": "Human International Mathematical Olympiad medallists evaluated on the same 30 geometry problems.",
+        "comparison": "The source reports averages of 25.9 solved for gold medallists, 22.9 for silver medallists, and 19.3 for bronze medallists.",
+        "boundary": "This is a geometry-only comparison on a reconstructed problem set, not an entire Olympiad result or a general mathematical level."
+      },
+      "setup": "A neural language model proposed constructions and a rule-bound symbolic deduction engine derived machine-checkable geometry proofs.",
+      "limits": "Geometry is normally only about one third of an Olympiad. The specialised solver does not establish performance in algebra, combinatorics, number theory, or ordinary open research.",
+      "source_ids": [
+        "alphageometry-report"
+      ],
+      "lineage": {
+        "series_id": "alphageometry-imo-ag",
+        "previous_id": null
+      }
+    },
+    {
+      "sequence": 4,
+      "id": "gpt-4v-mmmu-2024",
+      "reported_at": "2024-01-31",
+      "subject": "GPT-4V",
+      "dimension_id": "perception-space",
+      "scope_id": "system",
+      "benchmark": "MMMU validation set",
+      "task": "Answer 900 image-and-text questions spanning 30 college-level subjects under the benchmark's zero-shot protocol.",
+      "result": "The MMMU paper reports 56.8% micro-averaged validation accuracy for GPT-4V in the Playground setup.",
+      "human_reference": {
+        "cohort": "Selected human experts reported by the official MMMU leaderboard on the same validation column.",
+        "comparison": "The leaderboard reports Human Expert Low at 76.2%, Medium at 82.6%, and High at 88.6% on MMMU validation.",
+        "boundary": "These selected expert bands are not population percentiles, and MMMU mixes perception with subject knowledge and reasoning."
+      },
+      "setup": "MMMU used a zero-shot evaluation with heterogeneous images such as charts, diagrams, maps, tables, music sheets, and chemical structures.",
+      "limits": "The result is below all three reported expert bands and cannot isolate pure vision from knowledge, language, and reasoning demands.",
+      "source_ids": [
+        "mmmu-paper",
+        "mmmu-leaderboard"
+      ],
+      "lineage": {
+        "series_id": "mmmu-multimodal",
+        "previous_id": null
+      }
+    },
+    {
+      "sequence": 5,
+      "id": "claude-3-7-metr-2025",
+      "reported_at": "2025-04-04",
+      "subject": "Claude 3.7 Sonnet agent",
+      "dimension_id": "planning-action",
+      "scope_id": "agent",
+      "benchmark": "METR General Autonomous Capabilities suite",
+      "task": "Attempt 96 tasks spanning cybersecurity, AI research and development, reasoning, environment exploration, and software engineering in a simple agent scaffold.",
+      "result": "METR's preliminary evaluation estimated a 50% time horizon of about 55 minutes.",
+      "human_reference": {
+        "cohort": "Human experts used by METR to establish task completion times.",
+        "comparison": "The fitted estimate means 50% predicted success at suite tasks that took those experts around 55 minutes.",
+        "boundary": "Human task duration is a difficulty ruler for this suite; it is not the agent's runtime and not a claim about all 55-minute work."
+      },
+      "setup": "METR equipped the model with a simple autonomous-agent scaffold and described the evaluation as preliminary, short, and imperfectly elicited.",
+      "limits": "Confidence intervals overlapped earlier systems, better elicitation may change results, and this older GAC suite is not byte-for-byte identical to later METR suites.",
+      "source_ids": [
+        "metr-claude-3-7"
+      ],
+      "lineage": {
+        "series_id": "metr-time-horizon",
+        "previous_id": null
+      }
+    },
+    {
+      "sequence": 6,
+      "id": "gpt-5-metr-2025",
+      "reported_at": "2025-08-07",
+      "subject": "GPT-5 Thinking agent",
+      "dimension_id": "planning-action",
+      "scope_id": "agent",
+      "benchmark": "METR task-completion time horizon",
+      "task": "Attempt METR's human-calibrated agentic software tasks, including software engineering, cybersecurity, environment exploration, and AI research and development.",
+      "result": "METR estimated a 50% time horizon of 2 hours 17 minutes, with a 95% confidence interval from 65 minutes to 4 hours 25 minutes.",
+      "human_reference": {
+        "cohort": "Human professionals unfamiliar with each particular codebase, used to calibrate task completion time.",
+        "comparison": "The fitted estimate means 50% predicted success at suite tasks taking those professionals around 2 hours 17 minutes.",
+        "boundary": "This duration measures task difficulty within METR's suite, not agent runtime, all software work, or independent operation for that long."
+      },
+      "setup": "METR evaluated gpt-5-thinking as an agent across HCAST, RE-Bench, and shorter Software Atomic Actions under its published methodology.",
+      "limits": "The interval is wide, the suite was nearing saturation, and scaffold, token budget, task mix, and reward-hacking treatment affect comparison.",
+      "source_ids": [
+        "metr-gpt-5"
+      ],
+      "lineage": {
+        "series_id": "metr-time-horizon",
+        "previous_id": "claude-3-7-metr-2025"
+      }
+    },
+    {
+      "sequence": 7,
+      "id": "gpt-5-1-codex-max-metr-2025",
+      "reported_at": "2025-11-19",
+      "subject": "GPT-5.1-Codex-Max agent",
+      "dimension_id": "planning-action",
+      "scope_id": "agent",
+      "benchmark": "METR task-completion time horizon",
+      "task": "Attempt 170 human-calibrated tasks drawn from HCAST, RE-Bench, and Software Atomic Actions in METR's software-agent evaluation.",
+      "result": "METR's summary gives a 50% time-horizon point estimate of 2 hours 42 minutes with a 95% interval from 75 to 350 minutes; its detailed section rounds the point to about 2 hours 40 minutes.",
+      "human_reference": {
+        "cohort": "Human contractors and professionals whose completion times supplied most task-duration estimates.",
+        "comparison": "The fitted estimate means 50% predicted success around the human-calibrated 2-hour-40-minute task point in this 170-task suite.",
+        "boundary": "This is a suite-specific difficulty estimate, not agent runtime or evidence of success on arbitrary projects of the same human duration."
+      },
+      "setup": "METR used 90 HCAST tasks plus RE-Bench and Software Atomic Actions, the Responses API, and a token budget of up to 32 million tokens per attempt.",
+      "limits": "Absolute token use is not directly comparable across models, the confidence interval is wide, and changed scaffolds and task subsets prevent a clean single-axis progression claim.",
+      "source_ids": [
+        "metr-gpt-5-1-codex-max"
+      ],
+      "lineage": {
+        "series_id": "metr-time-horizon",
+        "previous_id": "gpt-5-metr-2025"
+      }
+    }
+  ],
+  "gaps": [
+    {
+      "id": "gap-novel-reasoning",
+      "dimension_id": "novel-reasoning",
+      "scope_ids": [
+        "system",
+        "agent",
+        "collective"
+      ],
+      "statement": "This edition has one specialised geometry result and no reviewed evidence that the same reasoning transfers across unfamiliar domains or coordinated work.",
+      "evidence_needed": "Matched unseen tasks across several formal and informal domains, with held-out data, human baselines, repeated runs, and transfer tests."
+    },
+    {
+      "id": "gap-knowledge-language",
+      "dimension_id": "knowledge-language",
+      "scope_ids": [
+        "system",
+        "agent",
+        "collective"
+      ],
+      "statement": "A simulated bar exam does not establish current knowledge, grounded truthfulness, professional judgment, multilingual depth, or group knowledge work.",
+      "evidence_needed": "Dated, contamination-checked tasks with matched practitioners, source use, calibration, abstention, and consequential error review."
+    },
+    {
+      "id": "gap-perception-space",
+      "dimension_id": "perception-space",
+      "scope_ids": [
+        "system",
+        "agent",
+        "collective"
+      ],
+      "statement": "MMMU mixes visual perception with language, knowledge, and reasoning and leaves embodied, temporal, three-dimensional, and shared perception unmeasured.",
+      "evidence_needed": "Separate matched tests for recognition, spatial transformation, video, persistent scenes, embodied action, and multi-agent shared state."
+    },
+    {
+      "id": "gap-memory-continuity",
+      "dimension_id": "memory-continuity",
+      "scope_ids": [
+        "system",
+        "agent",
+        "collective"
+      ],
+      "statement": "This edition contains no reviewed, human-calibrated observation of memory or continuity at any scope.",
+      "evidence_needed": "Longitudinal tests of recall, source fidelity, commitment continuity, correction, forgetting, privacy, and transfer across sessions and agents."
+    },
+    {
+      "id": "gap-learning-adaptation",
+      "dimension_id": "learning-adaptation",
+      "scope_ids": [
+        "system",
+        "agent",
+        "collective"
+      ],
+      "statement": "This edition contains no reviewed observation that separates durable learning from prompting, retrieval, context, or a newly trained model.",
+      "evidence_needed": "Pre-registered before-and-after tasks showing durable change from experience, retained over time and transferred beyond trained examples."
+    },
+    {
+      "id": "gap-self-checking",
+      "dimension_id": "self-checking",
+      "scope_ids": [
+        "system",
+        "agent",
+        "collective"
+      ],
+      "statement": "Machine-checked AlphaGeometry proofs show verifiable output, but this edition has no matched test of a system finding and repairing its own hidden errors.",
+      "evidence_needed": "Blind error-seeded tasks measuring detection, calibration, repair, false alarms, and whether checks work without access to the answer."
+    },
+    {
+      "id": "gap-planning-action",
+      "dimension_id": "planning-action",
+      "scope_ids": [
+        "system",
+        "agent",
+        "collective"
+      ],
+      "statement": "METR provides software-agent task horizons, not a measure of reliable action in physical, social, high-context, adversarial, or collective settings.",
+      "evidence_needed": "Matched repeated tasks across environments and scopes, with failures, intervention load, resource use, side effects, and higher-reliability horizons reported."
+    },
+    {
+      "id": "gap-social-coordination",
+      "dimension_id": "social-coordination",
+      "scope_ids": [
+        "system",
+        "agent",
+        "collective"
+      ],
+      "statement": "This edition contains no reviewed, human-calibrated observation of reciprocal coordination, conflict repair, role sharing, or collective judgment.",
+      "evidence_needed": "Consent-based joint tasks with hidden information, changing roles, disagreement, handoffs, correction paths, and matched human teams."
+    },
+    {
+      "id": "gap-creation-discovery",
+      "dimension_id": "creation-discovery",
+      "scope_ids": [
+        "system",
+        "agent",
+        "collective"
+      ],
+      "statement": "AlphaCode establishes contest program generation under tests, not novelty, value, authorship, scientific discovery, or sustained creation across scopes.",
+      "evidence_needed": "Blind expert review of new artefacts and findings, independent replication or use, provenance checks, and comparisons with matched creators and teams."
+    }
+  ],
+  "sources": [
+    {
+      "id": "alphacode-report",
+      "title": "Competitive programming with AlphaCode",
+      "publisher": "Google DeepMind",
+      "kind": "developer_report",
+      "url": "https://deepmind.google/blog/competitive-programming-with-alphacode/",
+      "published_at": "2022-12-08",
+      "accessed_at": "2026-08-20"
+    },
+    {
+      "id": "gpt-4-technical-report",
+      "title": "GPT-4 Technical Report",
+      "publisher": "OpenAI",
+      "kind": "developer_report",
+      "url": "https://cdn.openai.com/papers/gpt-4.pdf",
+      "published_at": "2023-03-27",
+      "accessed_at": "2026-08-20"
+    },
+    {
+      "id": "alphageometry-report",
+      "title": "AlphaGeometry: An Olympiad-level AI system for geometry",
+      "publisher": "Google DeepMind",
+      "kind": "developer_report",
+      "url": "https://deepmind.google/blog/alphageometry-an-olympiad-level-ai-system-for-geometry/",
+      "published_at": "2024-01-17",
+      "accessed_at": "2026-08-20"
+    },
+    {
+      "id": "mmmu-paper",
+      "title": "MMMU: A Massive Multi-discipline Multimodal Understanding and Reasoning Benchmark for Expert AGI",
+      "publisher": "MMMU authors",
+      "kind": "primary_benchmark",
+      "url": "https://arxiv.org/abs/2311.16502",
+      "published_at": "2023-11-27",
+      "accessed_at": "2026-08-20"
+    },
+    {
+      "id": "mmmu-leaderboard",
+      "title": "MMMU official leaderboard",
+      "publisher": "MMMU Benchmark",
+      "kind": "official_benchmark",
+      "url": "https://mmmu-benchmark.github.io/",
+      "published_at": "2024-01-31",
+      "accessed_at": "2026-08-20"
+    },
+    {
+      "id": "metr-claude-3-7",
+      "title": "Details about METR's preliminary evaluation of Claude 3.7",
+      "publisher": "METR",
+      "kind": "independent_evaluation",
+      "url": "https://metr.org/evaluations/claude-3-7-report/",
+      "published_at": "2025-04-04",
+      "accessed_at": "2026-08-20"
+    },
+    {
+      "id": "metr-gpt-5",
+      "title": "Details about METR's evaluation of OpenAI GPT-5",
+      "publisher": "METR",
+      "kind": "independent_evaluation",
+      "url": "https://metr.org/evaluations/gpt-5-report/",
+      "published_at": "2025-08-07",
+      "accessed_at": "2026-08-20"
+    },
+    {
+      "id": "metr-gpt-5-1-codex-max",
+      "title": "Details about METR's evaluation of OpenAI GPT-5.1-Codex-Max",
+      "publisher": "METR",
+      "kind": "independent_evaluation",
+      "url": "https://metr.org/evaluations/gpt-5-1-codex-max-report/",
+      "published_at": "2025-11-19",
+      "accessed_at": "2026-08-20"
+    }
+  ]
+}
