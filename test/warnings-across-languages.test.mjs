@@ -33,7 +33,7 @@ function liveDocuments() {
 }
 const codes = (report) => [...new Set(report.signals.map((s) => s.code))].sort();
 
-test('warning pilot locates all four languages and preserves exact source spans and digests', () => {
+test('warning pilot reports live coverage without gating wording and preserves returned spans and digests', (t) => {
   const docs = liveDocuments();
   const report = buildReport(docs);
   assert.equal(report.sources.length, 8);
@@ -42,18 +42,15 @@ test('warning pilot locates all four languages and preserves exact source spans 
     assert.equal(source.sha256, createHash('sha256').update(docs[source.path]).digest('hex'));
   }
   for (const passage of report.passages) {
-    assert.equal(passage.status, 'located', `${passage.role}/${passage.lang}`);
-    const match = passage.matches[0];
-    const lines = docs[passage.path].split('\n');
-    assert.equal(match.text, lines.slice(match.line - 1, match.end_line).join('\n'));
-    for (const parent of match.parents) assert.equal(parent.text, lines[parent.line - 1]);
-    if (passage.role === 'trigger') assert.equal(match.parents.length, 1);
-    if (passage.role !== 'onward-care') {
-      assert.equal(match.quantities.length, 1);
-      assert.equal(match.quantities[0].unit, 'minute');
+    const lines = docs[passage.path].split(/\r?\n/u);
+    for (const match of passage.matches) {
+      assert.equal(match.text, lines.slice(match.line - 1, match.end_line).join('\n'));
+      for (const parent of match.parents) assert.equal(parent.text, lines[parent.line - 1]);
     }
   }
-  // Intentionally no assertion that the live number is correct, or must stay fixed.
+  // Live content may change independently of this aid; only report fidelity gates tests.
+  const located = report.passages.filter((p) => p.status === 'located').length;
+  t.diagnostic(`Live pilot: ${located}/${report.passages.length} passages located; signals: ${codes(report).join(', ') || 'none'}. Selection and quantity signals are advisory.`);
   assert.ok(report.review_questions.every((q) => q.status === 'pending'));
   assert.equal(report.review_questions.filter((q) => q.review === 'subject').length, 1);
 });
@@ -147,8 +144,29 @@ test('quantity candidates preserve raw evidence, repeated values, units and unsu
   }
   assert.deepEqual(extractQuantities('ten millimeters; diez libros'), []);
   assert.equal(extractQuantities('-10 minutes')[0].value, -10);
-  for (const ambiguous of ['one hundred ten minutes', '10 to 15 minutes', '十至十五分鐘', '1,000 minutes', '1.000 minutos', '10000000000000000 minutes']) {
+  for (const ambiguous of [
+    'one hundred ten minutes', '10 to 15 minutes', '十至十五分鐘',
+    '10 or 15 minutes', '10 o 15 minutos', '10 u 11 minutos', '十或十五分钟',
+    '1,000 minutes', '1.000 minutos', '10000000000000000 minutes',
+  ]) {
     assert.equal(extractQuantities(ambiguous)[0].status, 'unparsed', ambiguous);
+  }
+});
+
+test('alternative quantities cannot silently agree with their final candidate', () => {
+  for (const [lang, from, alternative, finalValue] of [
+    ['en', 'ten minutes', '10 or 15 minutes', '15'],
+    ['es', 'diez minutos', '10 o 15 minutos', '15'],
+    ['es', 'diez minutos', '10 u 11 minutos', '11'],
+  ]) {
+    const docs = syntheticDocuments();
+    docs[pathFor('card-a', lang)] = docs[pathFor('card-a', lang)].replace(from, alternative);
+    for (const path of Object.keys(docs)) {
+      docs[path] = docs[path].replace(/ten|diez|十/u, finalValue);
+    }
+    const report = buildReport(docs, pilot);
+    assert.deepEqual(codes(report), ['quantity-unparsed'], alternative);
+    assert.equal(report.comparisons[0].status, 'incomplete', alternative);
   }
 });
 

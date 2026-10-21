@@ -16,8 +16,12 @@ npm --prefix guide run verify
 
 The script reads only eight fixed source files, resolves them relative to itself,
 and prints to stdout. It uses Node built-ins, no network, clock, model, external
-service, dependency installation, or file writes. There is no write option and
-no build integration. The existing test glob includes its tests automatically.
+service, dependency installation, or file writes. There is no write option.
+The existing test glob includes its software tests in `verify` and CI. The live
+test checks report fidelity (returned source spans and digests); selection
+coverage and quantity signals are diagnostic only. Rewording or moving a
+selected passage, or changing its quantities, does not require a selector or
+test update to pass. The site builder does not consume the report.
 Exit 0 means a report was produced, even with differences or unresolved selectors;
 it never means safe. Missing or unparsed source files and invalid CLI arguments
 exit 1. A read failure also exits 1 with a relative-path error.
@@ -25,9 +29,11 @@ exit 1. A read failure also exits 1 with a relative-path error.
 ## The pilot and its provenance
 
 Selected on **2026-10-21** from [guide/REVIEW.md](../guide/REVIEW.md), reviewed
-2026-07-16, with the last follow-up recorded in commit `912ac7d` on 2026-07-17.
-That document identifies the `treat-cuts` / `when-to-get-help` discrepancy and
-records a later reconciliation. It also records a source error faithfully
+2026-07-16. That document identifies the `treat-cuts` / `when-to-get-help`
+discrepancy; commit `72acae8` records its reconciliation on 2026-07-16. The last
+document follow-up is commit `912ac7d` on 2026-07-17 and concerns other work.
+Both commit dates come from git, not dated follow-up headings in the document.
+The document also records a source error faithfully
 copied into translations. These are historical repository observations, not
 current clinical evidence.
 
@@ -92,7 +98,8 @@ the four languages; Arabic/fullwidth digits with a decimal point or comma;
 through 99. English `full`/`complete` between number and unit is tolerated.
 Other units, word-number forms, compound numbers, ranges, fractions, typography
 and quantities split across physical lines can be missed or misread. Some known
-compound/range contexts are flagged as unparsed. A comma is treated as a decimal
+compound/range/alternative contexts (including English `or`, Spanish `o`/`u`,
+and Chinese `或`) are flagged as unparsed. A comma is treated as a decimal
 separator; ambiguous three-digit separators and values beyond 15 digits are
 unparsed rather than guessed or rounded. Columns are
 JavaScript UTF-16 offsets, not visual screen columns. Always inspect raw text.
@@ -113,8 +120,12 @@ rules, never altered medical instructions. Tests demonstrate:
 | Every language and both guides share a number contrary to the fixture's stipulated rule | No signal | False negative: agreement cannot establish factual correctness. |
 
 These are demonstrations, not measured accuracy rates. The live pilot test
-checks selection coverage, source spans and digests, not a clinically correct
-number. To add a seam, deliberately review its anchors, context, quantity
+reports selection coverage without requiring all anchors to match or fixing
+quantity counts, units or values. It verifies returned source spans and digests,
+not clinical correctness. After a reviewed content edit, rerun the CLI and
+review any missing or ambiguous selectors to restore useful coverage; selectors
+remain exact heading-scoped prefixes, with no guessed matches. To add a seam,
+deliberately review its anchors, context, quantity
 grouping and fixtures; do not automatically crawl or rewrite the book.
 
 ## Publication and build boundaries

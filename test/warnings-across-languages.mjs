@@ -13,7 +13,7 @@ const selectors = (sections, anchors) => Object.fromEntries(
 
 export const PILOT = {
   id: 'bleeding-referral',
-  history: 'guide/REVIEW.md — reviewed 2026-07-16; follow-up recorded 2026-07-17',
+  history: 'guide/REVIEW.md — reviewed 2026-07-16; treat-cuts/when-to-get-help reconciliation recorded in 72acae8 (2026-07-16, git date); last document follow-up 912ac7d (2026-07-17, git date)',
   selected_on: '2026-10-21', // Selection date, never a medical review date.
   roles: [
     {
@@ -161,7 +161,7 @@ export function extractQuantities(text, firstLine = 1) {
       // Recognize a few unsupported compound/range contexts without pretending to
       // parse them. This is still a bounded lexicon, not natural-language arithmetic.
       const beforeNumber = prefix.slice(0, number?.index ?? prefix.length);
-      const compound = /(?:\b(?:hundred|thousand|million|billion|cien|ciento|mil|millones|and|y|to|a)\s+|[至到或]\s*)$/iu.test(beforeNumber);
+      const compound = /(?:\b(?:hundred|thousand|million|billion|cien|ciento|mil|millones|and|or|y|o|u|to|a)\s+|[至到或]\s*)$/iu.test(beforeNumber);
       const value = compound ? null : numberValue(token.normalize('NFKC'));
       quantities.push({
         line: firstLine + offset, column: (number?.index ?? match.index) + 1,
