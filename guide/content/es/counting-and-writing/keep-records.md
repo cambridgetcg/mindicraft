@@ -56,7 +56,7 @@ En este ejemplo, separas los cuadrados y vuelves a contar: 10. Nada entra ni sal
 
 Conserva la anotación de la mañana. Añade una nota como esta:
 
-> Más tarde, el mismo día — caja A. Saldo del libro: 12 cuadrados individuales de papel. Conteo: 10; nuevo conteo con los cuadrados separados: 10. Ajuste del saldo: −2, hasta 10, basándose en el nuevo conteo. Causa de la diferencia desconocida; no se presenció ninguna salida.
+> Más tarde, el mismo día — caja A. Saldo del libro: 12 cuadrados individuales de papel. Conteo: 10; nuevo conteo con los cuadrados separados: 10. Ajuste del saldo: −2, hasta 10, según el nuevo conteo. Causa de la diferencia desconocida; no se presenció ninguna salida.
 
 El ajuste hace que el saldo de trabajo coincida con el nuevo conteo. No convierte una explicación ausente en una pérdida presenciada. Usa 10 para calcular el siguiente saldo. Si después aparece una anotación de salida que faltaba, relaciónala con este ajuste en vez de restar otra vez los mismos dos cuadrados.
 
