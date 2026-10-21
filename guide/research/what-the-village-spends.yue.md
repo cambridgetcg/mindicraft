@@ -22,20 +22,20 @@
 
 ## 各種用途，同埋仲欠啲乜觀察
 
-呢度講用途「競爭」，係話佢哋可能向同一份供應提出需求，唔係已經發現實際短缺。最後一欄要知道嘅數量，喺呢個研究入面全部都係**未量度**。「你需要」「步驟」「注意」等位置，係指各語言相應章節嘅對應部分。
+呢度講用途「競爭」，係話佢哋可能向同一份供應提出需求，唔係已經發現實際短缺。最後一欄要知道嘅數量，喺呢個研究入面全部都係**未量度**。「你要有」「點做」「小心」等位置，係指各語言相應章節嘅對應部分。
 
 | 編號／用途 | 書中陳述同來源位置 | 要分清嘅存量或者經常性工作；欠缺嘅觀察 |
 | --- | --- | --- |
-| W1 · 屋企用嘅燃料 | [執火絨同柴](../content/yue/fire/gather-tinder.md)嘅步驟分開燃料粗幼同儲存。[留住爐火](../content/yue/fire/keep-fire-alive.md)同[用火煮食](../content/yue/fire/cook-on-fire.md)嘅材料清單列出木柴或者燒木形成嘅炭床；[煲滾水](../content/yue/water-and-wild-food/boil-water.md)嘅材料清單要求熱源。 | 存起嘅燃料同反覆消耗分開記。欠：每家同各季需求、熱水需求、共用火源、含水率、收集同運送工夫。同一堆火做幾樣嘢，唔可以重複計幾次。 |
-| W2 · 木炭 | [整木炭](../content/yue/fire/make-charcoal.md)嘅材料清單同步驟講到乾木、轉化、分揀同儲存。 | 入去嘅木材，同出嚟嘅木炭及存炭量分開記。欠：配對嘅投入／產出觀察、含水率計量基準、失敗批次、儲存同搬運損耗，以及下游需求。 |
-| W3 · 窰同磚 | [起窰](../content/yue/clay-and-kilns/build-kiln.md)嘅材料清單指定柴火。[整磚](../content/yue/clay-and-kilns/make-bricks.md)開頭同材料清單分開曬乾泥磚同燒磚，亦列出木製磚模。 | 用得返嘅設備同每次燒製嘅燃料分開記。欠：批次頻率、合用成品、廢品、窰同磚模維修。唔可以將燒窰燃料算落每一塊曬乾泥磚度。 |
-| W4 · 鐵同鍛造 | [煉鐵](../content/yue/metal/smelt-iron.md)同[鍛造基礎](../content/yue/metal/forge-basics.md)嘅材料清單明確需要木炭。 | 各項活動用咗嘅炭，同繼續用緊嘅工具分開記。欠：生產同維修頻率、合用成品，以及各項活動實際用幾多炭。 |
-| W5 · 石灰 | [燒石灰](../content/yue/everyday-chemistry/burn-lime.md)嘅材料清單講明要大量燃料，並且偏向用木炭。 | 整石灰時另一項燃料需求。欠：實際揀咗邊種燃料、合用產出、燒製頻率、建造同維修要幾多。呢個偏好係原書嘅講法，唔係呢篇嘅建議。 |
-| W6 · 房屋結構 | [斬木同劈木](../content/yue/a-home-that-lasts/fell-and-split-wood.md)開頭同材料清單講到結構木料同木製工具。[木屋架](../content/yue/a-home-that-lasts/timber-frame.md)嘅材料、步驟同注意事項列出柱、樑、椽、木釘，同埋反覆檢查接位。 | 留喺間屋入面嘅木料、最初嘅邊角料、之後嘅替換材料分開記。欠：有得用嘅尺寸同質素、合用材料回收率、狀況、使用年期同維修用料。檢查本身未必要用新木。 |
-| W7 · 細工具 | [削木工具](../content/yue/first-tools/carve-wood-tools.md)開頭同材料清單指定青枝。[磨利同保養](../content/yue/first-tools/sharpen-and-care.md)嘅材料清單同步驟講到儲存、油脂同綁口保養。 | 留用嘅工具，同保養或者更換要用嘅材料同工夫分開記。欠：工具清單、損壞、更換木料同非木質保養投入。未有建立任何慳木比率。 |
-| W8 · 圍籬同橋 | [起圍籬](../content/yue/keeping-animals/build-fences.md)嘅材料同注意事項講到柱、橫杆或者枝條，同埋換柱。[路同橋](../content/yue/moving-things/paths-and-bridges.md)嘅注意事項討論更換腐壞木段。 | 裝咗嘅木料同更新需求分開記。欠：規模、暴露條件、實際觀察到嘅狀況、更換情況同可回收材料。書入面嘅年期估計唔係本地觀察。 |
-| W9 · 經常性工作 | [公平分工](../content/yue/living-together/share-work-fairly.md)步驟 1 列出柴火同維修。[公共工程](../content/yue/living-together/common-works.md)步驟 8 同注意事項要求安排檢查同維修。 | 技能、時間同責任，同材料存量分開。欠：工作量、季節重疊、使用權同大家同意嘅安排；寫低一份工，唔等於有人手，亦唔等於有木。 |
-| W10 · 補充供應嘅問題 | [建立村落](../content/yue/living-together/plant-a-village.md)步驟 9–10 講到種樹同傳手藝。 | 種植同教學，同實測證明補得返取用量，係唔同嘅事。欠：地點、樹種、成活、生長、現有用途、生態需求、權利同時間。未有證明收支補得平。 |
+| W1 · 屋企用嘅燃料 | [執火絨同柴](../content/yue/fire/gather-tinder.md)嘅「點做」分開燃料粗幼同儲存。[留住爐火](../content/yue/fire/keep-fire-alive.md)同[用火煮食](../content/yue/fire/cook-on-fire.md)嘅「你要有」列出木柴或者燒木形成嘅炭床；[煲滾水](../content/yue/water-and-wild-food/boil-water.md)嘅「你要有」要求熱源。 | 存起嘅燃料同反覆消耗分開記。欠：每家同各季需求、熱水需求、共用火源、含水率、收集同運送工夫。同一堆火做幾樣嘢，唔可以重複計幾次。 |
+| W2 · 木炭 | [整木炭](../content/yue/fire/make-charcoal.md)嘅「你要有」同「點做」講到乾木、轉化、分揀同儲存。 | 入去嘅木材，同出嚟嘅木炭及存炭量分開記。欠：配對嘅投入／產出觀察、含水率計量基準、失敗批次、儲存同搬運損耗，以及下游需求。 |
+| W3 · 窰同磚 | [起窰](../content/yue/clay-and-kilns/build-kiln.md)嘅「你要有」指定柴火。[整磚](../content/yue/clay-and-kilns/make-bricks.md)開頭同「你要有」分開曬乾泥磚同燒磚，亦列出木製磚模。 | 用得返嘅設備同每次燒製嘅燃料分開記。欠：批次頻率、合用成品、廢品、窰同磚模維修。唔可以將燒窰燃料算落每一塊曬乾泥磚度。 |
+| W4 · 鐵同鍛造 | [煉鐵](../content/yue/metal/smelt-iron.md)同[鍛造基礎](../content/yue/metal/forge-basics.md)嘅「你要有」明確需要木炭。 | 各項活動用咗嘅炭，同繼續用緊嘅工具分開記。欠：生產同維修頻率、合用成品，以及各項活動實際用幾多炭。 |
+| W5 · 石灰 | [燒石灰](../content/yue/everyday-chemistry/burn-lime.md)嘅「你要有」講明要大量燃料，並且偏向用木炭。 | 整石灰時另一項燃料需求。欠：實際揀咗邊種燃料、合用產出、燒製頻率、建造同維修要幾多。呢個偏好係原書嘅講法，唔係呢篇嘅建議。 |
+| W6 · 房屋結構 | [斬木同劈木](../content/yue/a-home-that-lasts/fell-and-split-wood.md)開頭同「你要有」講到結構木料同木製工具。[木屋架](../content/yue/a-home-that-lasts/timber-frame.md)嘅「你要有」、「點做」同「小心」列出柱、樑、椽、木釘，同埋反覆檢查接位。 | 留喺間屋入面嘅木料、最初嘅邊角料、之後嘅替換材料分開記。欠：有得用嘅尺寸同質素、合用材料回收率、狀況、使用年期同維修用料。檢查本身未必要用新木。 |
+| W7 · 細工具 | [削木工具](../content/yue/first-tools/carve-wood-tools.md)開頭同「你要有」指定青枝。[磨利同保養](../content/yue/first-tools/sharpen-and-care.md)嘅「你要有」同「點做」講到儲存、油脂同綁口保養。 | 留用嘅工具，同保養或者更換要用嘅材料同工夫分開記。欠：工具清單、損壞、更換木料同非木質保養投入。未有建立任何慳木比率。 |
+| W8 · 圍籬同橋 | [起圍籬](../content/yue/keeping-animals/build-fences.md)嘅「你要有」同「小心」講到柱、橫杆或者枝條，同埋換柱。[路同橋](../content/yue/moving-things/paths-and-bridges.md)嘅「小心」討論更換腐壞木段。 | 裝咗嘅木料同更新需求分開記。欠：規模、暴露條件、實際觀察到嘅狀況、更換情況同可回收材料。書入面嘅年期估計唔係本地觀察。 |
+| W9 · 經常性工作 | [公平分工](../content/yue/living-together/share-work-fairly.md)嘅「點做」第 1 項列出柴火同維修。[公共工程](../content/yue/living-together/common-works.md)嘅「點做」第 8 項同「小心」要求安排檢查同維修。 | 技能、時間同責任，同材料存量分開。欠：工作量、季節重疊、使用權同大家同意嘅安排；寫低一份工，唔等於有人手，亦唔等於有木。 |
+| W10 · 補充供應嘅問題 | [建立村落](../content/yue/living-together/plant-a-village.md)嘅「點做」第 9–10 項講到種樹同傳手藝。 | 種植同教學，同實測證明補得返取用量，係唔同嘅事。欠：地點、樹種、成活、生長、現有用途、生態需求、權利同時間。未有證明收支補得平。 |
 
 呢個選段唔係成條村嘅總預算。保存食物、其他手藝、運輸器具、樹皮同樹脂、非木材料，同埋村外交換，都未入呢張表嘅詳細分析。冇列出唔等於冇消耗。
 
