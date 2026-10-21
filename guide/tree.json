@@ -1594,7 +1594,7 @@
     {
      "slug": "keep-records",
      "title": "Keep records and accounts",
-     "summary": "Write down harvests, stores, and debts so memory stops arguing with itself.",
+     "summary": "Record what came in and went out, check differences, and keep corrections visible.",
      "needs": [
       "learn-letters",
       "measure-things"
