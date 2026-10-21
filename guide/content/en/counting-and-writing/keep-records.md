@@ -10,25 +10,27 @@ A record gives you something to check. People can remember an exchange different
 
 Keep harvests, stores, loans, and repayments in a form someone else can follow. When the book and a fresh count disagree, keep both readings, check what you can, and say what remains unknown. You can change a plan without pretending to know the whole story.
 
+Comparable entries kept over seasons can show slow changes that memory misses, such as shrinking stores or a field yielding more. Before comparing, check that the units, methods, and area or stock covered stayed the same.
+
 ## You need
 
 - Marks or words you and the other people using the record can read back.
 - One main book, with numbered pages, and something to write with nearby.
-- Agreed units and a clear boundary: which item, which store, and what counts as one. Use the same reference measures as in measuring; note any change of unit or method.
-- A dry, protected place for the book and a separate place for a dated backup.
+- Agreed units and a clear boundary: which item, which store, and what counts as one. Use the same master units as in measuring; note any change of unit or method.
+- A dry shelf for the book, off the ground and protected from damp, mice, and fire, plus a separate place for a dated backup.
 - For loans, the people involved, so they can check the entry together. A witness can also note what they actually saw.
 
 ## Steps
 
 1. **Set out the page.** Use six columns: when, who or where, what happened, quantity and unit, book balance, notes. Start each kind of stock with a count, its place, and how it was counted. Keep different goods and units in separate totals.
-2. **Write promptly.** Make one line for each arrival or departure. Say what moved, how much, and where it came from or went. If you write later, label it a late entry; distinguish when the event happened from when you wrote it. Do not invent a missing date or quantity.
+2. **Write promptly.** Make one line for each arrival or departure, in the order they happen, each below the last. Say what moved, how much, and where it came from or went. If you write later, add a new line labelled as a late entry; distinguish when the event happened from when you wrote it. Do not invent a missing date or quantity.
 3. **Keep a running balance.** Add arrivals and subtract departures from the previous balance. Check the arithmetic. This is what the entries say should remain, not a fresh observation of what is there.
 4. **Make loans readable to both sides.** Record who lent and borrowed, the item, quantity, unit, and agreed return time. Read it back together before each person marks it. Record each repayment on a new dated line, with both marks and any amount still outstanding. Record disagreements as disagreements, not as settled terms.
 5. **Leave a correction you can follow.** For a known writing error, draw one line through it so the old entry stays readable. Add the correction, when it was made, and the reason or source. A later count alone does not prove an earlier count was wrong; record it on a new line.
 6. **Compare with the stock.** Choose a checking interval that fits how often it changes; once a month might suit a quiet store. Also check before making a promise that depends on the amount. Count the same items, place, and units. Pause movements while counting, or record them separately. Write the book balance and the count, including any difference.
-7. **Investigate without filling gaps with a story.** Check arithmetic, units, missed entries, and the count itself. List possible explanations as possibilities. Choose a check that could distinguish them. If the cause stays unknown, write that. Any balance adjustment needs its own line and a reason; it must not pretend to be an observed arrival or departure.
+7. **Investigate without filling gaps with a story.** Check arithmetic, units, missed entries, and the count itself. Check the stock and its containers too: look for damp, pests, spills, or spoilage. List possible explanations as possibilities. Choose a check that could distinguish them. If the cause stays unknown, write that. Any balance adjustment needs its own line and a reason; it must not pretend to be an observed arrival or departure.
 8. **Carry the record forward.** When a page fills, date it and carry each balance to the next page with the old page number. Carry unresolved differences too. Keep the old book when starting a new one.
-9. **Keep a usable backup.** Copy balances, outstanding loans, and unresolved notes at an interval suited to the record. Date the copy, note which page it reaches, and keep it separately. Check it against the original. A copy preserves a record; it is not an independent check of the stock.
+9. **Keep a usable backup.** Copy balances, outstanding loans, and unresolved notes regularly: for example, once a month for a book with few entries, more often if much changes. Date the copy and note which page it reaches. Keep it separately, in another building if possible, to reduce the chance that one fire or flood destroys both. Check it against the original. A copy preserves a record; it is not an independent check of the stock.
 
 ## When the record and the recount disagree
 
@@ -70,7 +72,7 @@ For the next use, record movements as they happen and separate squares while cou
 
 ## Watch out
 
-- **Changed units or scope.** A basketful is not a basket count; one box is not a whole room. Note changes before comparing totals.
+- **Changed units or scope.** How much one basket holds is not the same as how many baskets you have; one box is not a whole room. Note changes before comparing totals.
 - **Small repeated gaps.** Keep them visible. They deserve a check, but their size or repetition alone does not identify a cause or a culprit.
 - **Checks that disagree.** Keep each result and its method. Do not choose the number that best fits the plan or hide the disagreement in an average.
 - **Only one reader.** Where possible, let another person who uses the account learn to read and check it. Agreement still does not make an entry infallible.

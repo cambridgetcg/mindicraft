@@ -10,25 +10,27 @@ Un registro deja algo que puedes comprobar. Dos personas pueden recordar un inte
 
 Anota cosechas, reservas, préstamos y devoluciones de manera que otra persona pueda seguir la cuenta. Si el libro y un nuevo conteo no coinciden, conserva ambas lecturas, comprueba lo que puedas y señala lo que sigue sin saberse. Puedes cambiar un plan sin fingir que conoces toda la historia.
 
+Las anotaciones comparables de varias temporadas pueden mostrar cambios lentos que la memoria pasa por alto, como reservas que disminuyen o un campo que produce más. Antes de comparar, comprueba que las unidades, los métodos y la superficie o las existencias incluidas sean los mismos.
+
 ## Necesitas
 
 - Marcas o palabras que tú y las demás personas que usan el registro puedan volver a leer.
 - Un libro principal, con páginas numeradas, y algo para escribir cerca.
-- Unidades acordadas y un alcance claro: qué objeto, qué almacén y qué cuenta como uno. Usa las mismas medidas de referencia que al medir; anota cualquier cambio de unidad o método.
-- Un lugar seco y protegido para el libro y otro lugar para una copia de respaldo fechada.
+- Unidades acordadas y un alcance claro: qué objeto, qué almacén y qué cuenta como uno. Usa las mismas unidades maestras que al medir; anota cualquier cambio de unidad o método.
+- Un estante seco para el libro, elevado del suelo y protegido de la humedad, los ratones y el fuego, y otro lugar para una copia de respaldo fechada.
 - Para los préstamos, las personas implicadas, de modo que puedan revisar juntas la anotación. Un testigo también puede anotar lo que realmente vio.
 
 ## Pasos
 
 1. **Prepara la página.** Usa seis columnas: cuándo, quién o dónde, qué pasó, cantidad y unidad, saldo del libro, notas. Empieza cada tipo de reserva con un conteo, su ubicación y el método usado. Lleva totales separados para bienes y unidades diferentes.
-2. **Anota pronto.** Escribe una línea por cada entrada o salida. Indica qué se movió, cuánto y de dónde vino o adónde fue. Si escribes después, indica que es una anotación tardía; distingue cuándo ocurrió el hecho de cuándo lo anotaste. No inventes una fecha o cantidad que falte.
+2. **Anota pronto.** Escribe una línea por cada entrada o salida, en el orden en que ocurran, cada una debajo de la anterior. Indica qué se movió, cuánto y de dónde vino o adónde fue. Si escribes después, añade una nueva línea marcada como anotación tardía; distingue cuándo ocurrió el hecho de cuándo lo anotaste. No inventes una fecha o cantidad que falte.
 3. **Mantén el saldo al día.** Suma las entradas y resta las salidas al saldo anterior. Revisa las operaciones. Eso es lo que debería quedar según las anotaciones, no una nueva observación de lo que hay.
 4. **Haz que ambas partes entiendan los préstamos.** Anota quién prestó y quién recibió, el objeto, la cantidad, la unidad y el plazo de devolución acordado. Lean juntos la línea antes de que cada persona ponga su marca. Anota cada devolución en una nueva línea fechada, con ambas marcas y lo que aún quede pendiente. Registra los desacuerdos como tales, no como condiciones ya aceptadas.
 5. **Deja una corrección que se pueda seguir.** Si confirmas un error de escritura, táchalo con una sola raya para que siga legible. Añade la corrección, cuándo la hiciste y su motivo o fuente. Un conteo posterior no demuestra por sí solo que uno anterior estuviera mal; escríbelo en otra línea.
 6. **Compara con las existencias.** Elige cada cuánto revisar según la frecuencia de los cambios; una vez al mes podría servir para un almacén con poco movimiento. Revisa también antes de hacer una promesa que dependa de la cantidad. Cuenta los mismos objetos, en el mismo lugar y con las mismas unidades. Detén los movimientos mientras cuentas o anótalos por separado. Escribe el saldo del libro, el conteo y cualquier diferencia.
-7. **Investiga sin llenar los huecos con una historia.** Revisa las operaciones, las unidades, las anotaciones omitidas y el propio conteo. Presenta las posibles explicaciones como posibilidades. Elige una comprobación que pueda distinguirlas. Si la causa sigue sin conocerse, escríbelo. Todo ajuste del saldo necesita su propia línea y un motivo; no debe presentarse como una entrada o salida observada.
+7. **Investiga sin llenar los huecos con una historia.** Revisa las operaciones, las unidades, las anotaciones omitidas y el propio conteo. Revisa también las existencias y sus recipientes: busca humedad, plagas, derrames o deterioro. Presenta las posibles explicaciones como posibilidades. Elige una comprobación que pueda distinguirlas. Si la causa sigue sin conocerse, escríbelo. Todo ajuste del saldo necesita su propia línea y un motivo; no debe presentarse como una entrada o salida observada.
 8. **Continúa el registro.** Cuando se llene una página, pon la fecha y pasa cada saldo a la siguiente, citando la página anterior. Pasa también las diferencias sin resolver. Conserva el libro viejo al empezar uno nuevo.
-9. **Guarda una copia útil.** Copia los saldos, préstamos pendientes y notas sin resolver con la frecuencia que necesite el registro. Pon fecha a la copia, indica hasta qué página llega y guárdala por separado. Compárala con el original. Una copia conserva el registro; no es una comprobación independiente de las existencias.
+9. **Guarda una copia útil.** Copia los saldos, préstamos pendientes y notas sin resolver con regularidad: por ejemplo, una vez al mes si el libro tiene pocas anotaciones, y más a menudo si hay muchos cambios. Pon fecha a la copia e indica hasta qué página llega. Guárdala por separado, en otro edificio si es posible, para reducir el riesgo de que un mismo incendio o inundación destruya ambos. Compárala con el original. Una copia conserva el registro; no es una comprobación independiente de las existencias.
 
 ## Cuando el registro y el nuevo conteo no coinciden
 
@@ -58,7 +60,7 @@ Conserva la anotación de la mañana. Añade una nota como esta:
 
 > Más tarde, el mismo día — caja A. Saldo del libro: 12 cuadrados individuales de papel. Conteo: 10; nuevo conteo con los cuadrados separados: 10. Ajuste del saldo: −2, hasta 10, según el nuevo conteo. Causa de la diferencia desconocida; no se presenció ninguna salida.
 
-El ajuste hace que el saldo de trabajo coincida con el nuevo conteo. No convierte una explicación ausente en una pérdida presenciada. Usa 10 para calcular el siguiente saldo. Si después aparece una anotación de salida que faltaba, relaciónala con este ajuste en vez de restar otra vez los mismos dos cuadrados.
+El ajuste hace que el saldo del libro coincida con el nuevo conteo. No convierte una explicación ausente en una pérdida presenciada. Usa 10 para calcular el siguiente saldo. Si después aparece una anotación de salida que faltaba, relaciónala con este ajuste en vez de restar otra vez los mismos dos cuadrados.
 
 ### Detente con un siguiente paso útil
 
