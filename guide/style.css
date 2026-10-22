@@ -451,35 +451,36 @@ html[lang="zh"] .lede, html[lang="yue"] .lede { font-style: normal; }
 }
 .card-glance { padding: 0 0 0.9rem; border-bottom: 1px dashed var(--line); }
 .card-leads { margin: 0; padding-left: 1.7rem; }
-.card-leads li { margin: 0.18rem 0; }
+.card-leads li { margin: 0; }
 .card-leads li::marker { color: var(--ember); font-weight: 750; }
 .card-glance a {
   color: var(--ink); text-decoration: underline; text-decoration-color: var(--ember);
   text-decoration-thickness: 1px; text-underline-offset: 0.18em;
 }
 .card-glance a:hover { color: var(--ember); }
-.card-jumps { margin: 0.6rem 0 0; font-size: 0.92rem; color: var(--muted); }
-.card-glance .card-watch-jump { color: var(--ember); font-weight: 700; }
+/* room for a thumb in the dark */
+.card-leads a { display: block; padding: 0.12rem 0; }
+/* a headline the author's sentence runs on from: the step has the rest */
+.card-leads a.cut::after { content: "\00a0…"; content: "\00a0…" / ""; }
+.card-jumps { margin: 0.35rem 0 0; font-size: 0.92rem; color: var(--muted); }
+.card-jumps a { display: inline-block; padding: 0.4rem 0; }
+.card-glance .card-watch-jump { color: color-mix(in srgb, var(--ember) 70%, var(--ink)); font-weight: 700; }
 .card-print {
   margin-top: 0.7rem; padding: 0.4rem 0.9rem; font: inherit; font-size: 0.9rem; color: var(--ink);
-  background: var(--bg); border: 1px solid var(--line); border-radius: 0.4rem; cursor: pointer;
+  background: var(--bg); border: 1px solid var(--muted); border-radius: 0.4rem; cursor: pointer;
 }
 .card-print:hover { color: var(--ember); border-color: var(--ember); }
 .card-print:focus-visible { outline: 3px solid var(--ember); outline-offset: 2px; }
 .card-print[hidden] { display: none; }
 .field-card .card-section h2 { margin-top: 1.4rem; }
-/* what to have ready: a kit list with boxes to tick, on screen or paper */
-.card-need > ul { padding-left: 0; list-style: none; }
-.card-need > ul > li { position: relative; padding-left: 1.75rem; }
-.card-need > ul > li::before {
-  content: ""; position: absolute; left: 0.15rem; top: 0.28em; width: 0.95em; height: 0.95em;
-  border: 1.5px solid var(--muted); border-radius: 0.2em;
-}
 /* steps: numbers you can find again with busy hands */
 .card-steps > ol { padding-left: 2.1rem; }
 .card-steps > ol > li { margin: 0.65rem 0; padding-left: 0.15rem; }
 .card-steps > ol > li::marker { color: var(--ember); font-weight: 800; font-size: 1.12em; }
-.card-steps > ol > li:target { background: color-mix(in srgb, var(--amber) 13%, transparent); border-radius: 0.3rem; }
+.card-steps > ol > li:target {
+  background: color-mix(in srgb, var(--amber) 13%, transparent); border-radius: 0.3rem;
+  outline: 2px solid var(--amber); outline-offset: 2px;
+}
 /* warnings: their own panel, always open */
 .card-watch {
   margin: 1.3rem 0 0.9rem; padding: 0.15rem 1rem 0.5rem;
@@ -493,22 +494,35 @@ html[lang="zh"] .lede, html[lang="yue"] .lede { font-style: normal; }
 .card-back h2:first-of-type { margin-top: 0.3rem; }
 html[lang="zh"] .card-kicker, html[lang="yue"] .card-kicker { letter-spacing: 0.04em; }
 .card-colophon { display: none; }
+.card-edition { margin: 0.8rem 0 0; color: var(--muted); font: 0.78rem/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; }
 .field-card [id], .card-back [id] { scroll-margin-top: 1rem; }
 @media (max-width: 480px) {
   .field-card { margin-inline: -0.35rem; padding: 0.85rem 0.8rem 0.2rem; }
   .card-watch { margin-inline: -0.3rem; padding-inline: 0.8rem; }
 }
 @media print {
-  .card-glance, .card-print, .marginbox, .prevnext, .learning-strip, .learning-checkpoint { display: none !important; }
+  .card-glance .card-kicker, .card-leads, .card-print, .card-edition, .marginbox, .prevnext, .learning-strip, .learning-checkpoint { display: none !important; }
+  /* the glance keeps one line on paper: how much, and read the warnings first */
+  .card-glance { column-span: all; padding: 0 0 0.3rem; border-bottom: 1px solid #999; }
+  .card-glance a, .card-glance .card-watch-jump { color: #000; text-decoration: none; }
+  .card-jumps a { padding: 0; }
   .field-card { padding: 0; background: none; border: 0; box-shadow: none; }
   .card-watch { background: none; border-left: 3pt solid #000; }
-  .card-need > ul > li::before { border-color: #000; }
-  .card-steps > ol > li { break-inside: avoid; }
+  /* what to have ready: boxes to tick with a pen */
+  .card-need > ul { padding-left: 0; list-style: none; }
+  .card-need > ul > li { position: relative; padding-left: 1.75em; }
+  .card-need > ul > li::before {
+    content: ""; position: absolute; left: 0.15em; top: 0.28em; width: 0.95em; height: 0.95em;
+    border: 1.5px solid #000; border-radius: 0.2em;
+  }
+  .card-steps > ol > li, .card-watch > ul > li, .card-watch > ol > li { break-inside: avoid; }
   .card-colophon {
-    display: block; margin: 0.9rem 0 0; padding-top: 0.3rem;
-    color: #333; border-top: 1px solid #999; font-size: 8.5pt;
+    display: block; margin: 0 0 0.6rem; padding-bottom: 0.3rem; break-inside: avoid;
+    color: #333; border-bottom: 1px solid #999; font-size: 8.5pt;
   }
   .card-newer { display: block; }
+  .card-off { display: none; }
+  html.print-card .card-off { display: block; }
   body[data-learning-page="guide"] main { border-inline: 0; }
   /* "Print this card": the front only, two columns, one sheet for most guides */
   html.print-card .card-back, html.print-card .box.opens,
@@ -516,6 +530,7 @@ html[lang="zh"] .card-kicker, html[lang="yue"] .card-kicker { letter-spacing: 0.
   html.print-card body { font-size: 9.5pt; line-height: 1.38; }
   html.print-card .guide h1 { margin-top: 0; font-size: 15pt; }
   html.print-card .lede { font-size: 10pt; }
+  html.print-card .box, html.print-card .notice { font-size: 1em; }
   html.print-card .field-card { columns: 2; column-gap: 1.3rem; }
   html.print-card .field-card h2 { margin: 0.5rem 0 0.2rem; font-size: 11pt; break-after: avoid; }
   html.print-card .field-card p, html.print-card .field-card li { orphans: 2; widows: 2; }
