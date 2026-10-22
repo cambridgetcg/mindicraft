@@ -20,7 +20,9 @@ make the receipt say something untrue, so that is not an option.
 
 Every guide opens onto a card: what to have ready, the steps, and the
 warnings, whole and in the author's order, with the why on the back. "Print
-this card" prints the front on one sheet for most guides.
+this card" prints the front on one sheet for most guides. Each card carries
+an edition code taken from its own words, on screen and on paper, so a
+printed card can be checked against the page later.
 
 Paper is the first offline copy. Before the power goes, print the cards you
 would want in the drawer.
@@ -31,7 +33,14 @@ would want in the drawer.
   makes, never a silent download. One language of the book is about
   1–1.2 MB compressed (about 2.7 MB on disk); the API files are not needed
   for reading and stay online.
-- **A page that says what this copy is.** It lists the edition date, the
+- **The whole book, not single pages.** Warnings live on the pages a guide
+  links to as well as on the guide: boiling water over coals points to
+  "Cook food over fire", and that is where the carbon monoxide warning is.
+  A saved page whose links go dead offline loses them.
+- **A copy that keeps its own styles.** A page opened without its stylesheet
+  turns white at night and loses the warning panel. The saved copy carries
+  what it needs to look the same offline.
+- **A page that says what this copy is.** It lists the edition, the
   languages saved, and when each reviewed shelf's review runs out.
 - **Dates that stay honest offline.** Past a shelf's review date, the saved
   copy shows a banner saying to check official sources when you can. The
@@ -62,13 +71,15 @@ reviewer would need to check:
 Some craft guides already help here, such as staying warm without fire,
 boiling and storing water, and first aid. Others, like an open fire, are
 wrong indoors. Linking them from this shelf is a reviewed choice, not a
-keyword match.
+keyword match. The craft guides were written for the outdoors, too: at
+home, a reader skips past gourds and hot stones to reach the steps they can
+use, so the shelf's own guides put the home steps first.
 
 ## Stage 3: an iOS app
 
 The offline book as an app, built through
-[orchard](https://github.com/cambridgetcg/orchard) and published by
-Mindicraft Limited: the field cards, search, and saved editions with their
+[orchard](https://github.com/cambridgetcg/orchard) and published under
+Mindicraft's own name: the field cards, search, and saved editions with their
 review dates. Known App Review risks are guideline 4.2 (an app has to do
 more than a repackaged website) and 1.4.1 (apps with medical information
 get closer scrutiny). It also needs the privacy page and a support page.
