@@ -24,6 +24,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { marked } from 'marked';
 import { prepareCognition } from './cognition.mjs';
+import { countItems, numberSteps, splitFieldCard } from './field-card.mjs';
 import { assertCognitionReview } from './cognition-review.mjs';
 import { buildLantern, prepareFrontiers } from './frontiers.mjs';
 import { prepareHealingArts } from './healing-arts.mjs';
@@ -85,6 +86,7 @@ const PATTERNS = preparePatterns(tree, {
   definitionBytes: PATTERN_DEFINITION_BYTES,
 });
 const langs = JSON.parse(readFileSync(join(ROOT, 'langs.json'), 'utf8')).languages;
+const ENGLISH = langs.find((l) => l.code === 'en');
 // evidence.json: slug -> { state: 'hand-tested', evidence: [...] } — filled as
 // margin notes from real hands are verified. Absent slug = tradition-asserted.
 const evidence = JSON.parse(readFileSync(join(ROOT, 'evidence.json'), 'utf8'));
@@ -292,6 +294,95 @@ ${learningClient}
 const diffChip = (S, d) =>
   d ? `<span class="chip diff-${esc(d)}">${esc(S.difficultyWords[d] || d)}</span>` : '';
 
+// ---------- field cards ----------
+// The guide body cut (never edited) into a card to work from and its back;
+// see field-card.mjs. bodyLang is the language the body is written in, which
+// is English when English stands in for a missing translation.
+const fill = (template, values) =>
+  template.replace(/\{(\w+)\}/g, (all, key) => (key in values ? String(values[key]) : all));
+
+// Guides whose step headlines, read alone, are a list of what to eat from the
+// wild; only the full steps narrow it to the safe kinds. Their glance shows
+// no headlines until the headlines carry those limits themselves.
+const GLANCE_WITHOUT_LEADS = new Set(['easy-wild-foods', 'small-sure-protein']);
+
+function fieldCardHtml(lang, bodyLang, doc, path, slug) {
+  const S = lang.strings;
+  const F = S.fieldCard;
+  const card = splitFieldCard(doc.body, bodyLang.strings.fieldCard.headings);
+  if (!card) return marked.parse(doc.body);
+
+  const of = (kind) => card.front.find((s) => s.kind === kind).markdown;
+  const steps = numberSteps(marked.parse(of('steps')));
+  const section = ({ kind, markdown }) => {
+    const html = kind === 'steps' ? steps.html : marked.parse(markdown);
+    return kind
+      ? `<section class="card-section card-${kind}" id="${kind}">\n${html}</section>`
+      : `<section class="card-section">\n${html}</section>`;
+  };
+  // The edition names the reviewed words themselves, so paper and page can be
+  // compared: the same code means the same guide.
+  const edition = createHash('sha256').update(doc.body).digest('hex').slice(0, 8);
+  const evidenceWords = evidenceOf(slug) === 'hand-tested' ? S.evidenceTested : S.evidenceAsserted;
+  return `<p class="card-colophon">${esc(
+    fill(F.colophon, { url: `mindicraft.com/${lang.code}/${path}`, language: lang.name, edition, evidence: evidenceWords })
+  )}<span class="card-newer">${esc(F.checkNewer)}</span>${
+    card.back.length
+      ? `<span class="card-off">${esc(fill(F.offCard, { sections: card.back.map((s) => s.title).join(' · ') }))}</span>`
+      : ''
+  }</p>
+<div class="field-card">
+<nav class="card-glance" aria-labelledby="card-glance-title">
+<p class="card-kicker" id="card-glance-title">${esc(F.kicker)} · ${esc(F.glance)}</p>
+${
+  steps.leads && !GLANCE_WITHOUT_LEADS.has(slug)
+    ? `<ol class="card-leads">${steps.leads
+        .map(({ html, whole }, i) => `<li><a href="#step-${i + 1}"${whole ? '' : ' class="cut"'}>${html}</a></li>`)
+        .join('')}</ol>\n`
+    : ''
+}<p class="card-jumps"><a href="#need">${esc(fill(F.needCount, { n: countItems(of('need')) }))}</a> · <a href="#steps">${esc(
+    fill(F.stepsCount, { n: steps.count })
+  )}</a> · <a class="card-watch-jump" href="#watch">${esc(fill(F.watchCount, { n: countItems(of('watch')) }))}</a></p>
+<button class="card-print" type="button" hidden>${esc(F.print)}</button>
+</nav>
+${marked.parse(card.intro)}${card.front.map(section).join('\n')}
+</div>
+${
+  card.back.length
+    ? `<div class="card-back">
+<p class="card-kicker">${esc(F.back)}</p>
+${card.back.map(section).join('\n')}
+</div>\n`
+    : ''
+}<p class="card-edition">${esc(fill(F.edition, { edition }))}</p>
+<script>
+(function () {
+  var button = document.querySelector('.card-print');
+  if (!button || typeof window.print !== 'function') return;
+  var root = document.documentElement;
+  var cardOnly = false;
+  var reset = function () {
+    cardOnly = false;
+    root.classList.remove('print-card');
+  };
+  button.hidden = false;
+  button.addEventListener('click', function () {
+    cardOnly = true;
+    root.classList.add('print-card');
+    window.print();
+    // Not every browser sends afterprint; the next touch or key ends it too.
+    setTimeout(function () {
+      window.addEventListener('pointerdown', reset, { once: true });
+      window.addEventListener('keydown', reset, { once: true });
+    }, 0);
+  });
+  // Ctrl+P and the browser menu still print the whole guide.
+  window.addEventListener('beforeprint', function () { root.classList.toggle('print-card', cardOnly); });
+  window.addEventListener('afterprint', reset);
+})();
+</script>`;
+}
+
 const guideCard = (lang, domain, guide) => {
   const S = lang.strings;
   const local = content[lang.code][guide.slug]?.meta || {};
@@ -461,7 +552,7 @@ ${own ? '' : `<p class="notice">${esc(S.notYetTranslated)}</p>`}
 <p class="lede">${esc(meta.summary || guide.summary)}</p>
 <p class="meta">${diffChip(S, guide.difficulty)}<span class="chip">⏳ ${esc(meta.time || guide.time || '')}</span><span class="chip evid-${evidenceOf(guide.slug)}">${esc(evidenceOf(guide.slug) === 'hand-tested' ? S.evidenceTested : S.evidenceAsserted)}</span></p>
 ${needs.length ? `<div class="box needs"><strong>${esc(S.youNeedFirst)}:</strong> ${needs.join(' · ')}</div>` : ''}
-${marked.parse(doc.body)}
+${fieldCardHtml(lang, own ? lang : ENGLISH, doc, `${domain.key}/${guide.slug}/`, guide.slug)}
 ${opens.length ? `<div class="box opens"><strong>${esc(S.unlocks)}:</strong> ${opens.join(' · ')}</div>` : ''}
 <details class="marginbox">
 <summary>${esc(S.marginInvite)}</summary>
