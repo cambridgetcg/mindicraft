@@ -422,16 +422,79 @@ ${card.back.map(section).join('\n')}
 </script>`;
 }
 
-const guideCard = (lang, domain, guide) => {
+// ---------- the hall: shelves and shelf marks, after an old library ----------
+// Each domain is a numbered shelf and each guide has a shelf mark (IV·3), so a
+// place in the book can be found again, said aloud, or written on paper. The
+// marks follow the tree's order; the slugs stay the lasting names.
+const ROMAN = [['X', 10], ['IX', 9], ['V', 5], ['IV', 4], ['I', 1]];
+const roman = (n) => {
+  let out = '';
+  for (const [mark, value] of ROMAN) {
+    while (n >= value) {
+      out += mark;
+      n -= value;
+    }
+  }
+  return out;
+};
+const shelfOf = new Map(tree.domains.map((domain, i) => [domain.key, roman(i + 1)]));
+const shelfMark = (domain, gi) => `${shelfOf.get(domain.key)}·${gi + 1}`;
+const domainTitle = (lang, domain) =>
+  (lang.code !== 'en' && domain.i18n?.[lang.code]?.title) || domain.title;
+const markHtml = (domain, gi) => `<span class="shelfmark">${shelfMark(domain, gi)}</span>`;
+// The mark as search compares it: IV·3, IV.3 and iv 3 all become iv.3.
+const markKey = (domain, gi) => `${shelfOf.get(domain.key).toLowerCase()}.${gi + 1}`;
+// Chinese takes a full-width colon after a label; the others a colon and a space.
+const labelSep = (lang) => (lang.code === 'zh' || lang.code === 'yue' ? '：' : ': ');
+
+// A small engraving of the hall: an arched bookcase under a ribbed dome.
+// Decorative only; the same drawing every build.
+const HALL_SPINES = [7, 5, 9, 6, 8, 5, 7, 10, 6, 8, 5, 9];
+const HALL_HEIGHTS = [22, 19, 24, 17, 23, 20, 25, 18, 21, 24, 19, 22];
+const hallSvg = (className) => {
+  const books = [];
+  for (const [row, base] of [[0, 128], [1, 156]]) {
+    let x = 33;
+    for (let i = 0; x < 204; i++) {
+      const w = HALL_SPINES[(i + row * 5) % HALL_SPINES.length];
+      const h = HALL_HEIGHTS[(i * 7 + row * 3) % HALL_HEIGHTS.length];
+      if (x + w > 207) break;
+      books.push(
+        `<rect class="hv-book hv-book-${(i + row) % 4}" x="${x}" y="${base - h}" width="${w - 1}" height="${h}"/>`
+      );
+      x += w + (i % 5 === 4 ? 3 : 0);
+    }
+  }
+  const ribs = [-60, -30, 0, 30, 60]
+    .map((deg) => {
+      const r = (deg * Math.PI) / 180;
+      return `<line x1="120" y1="100" x2="${(120 + 88 * Math.sin(r)).toFixed(1)}" y2="${(
+        100 -
+        88 * Math.cos(r)
+      ).toFixed(1)}"/>`;
+    })
+    .join('');
+  return `<svg class="${className}" viewBox="0 0 240 162" aria-hidden="true" focusable="false">
+  <g class="hv-ribs">${ribs}</g>
+  <path class="hv-oculus" d="M104 100a16 16 0 0 1 32 0z"/>
+  <path class="hv-arch" d="M20 160V100a100 100 0 0 1 200 0v60"/>
+  <path class="hv-arch hv-inner" d="M30 160V100a90 90 0 0 1 180 0v60"/>
+  <path class="hv-shelf" d="M30 100h180M30 128h180M30 156h180"/>
+  <g>${books.join('')}</g>
+</svg>`;
+};
+
+const guideCard = (lang, domain, guide, gi) => {
   const S = lang.strings;
   const local = content[lang.code][guide.slug]?.meta || {};
   return `<a class="card" href="/${lang.code}/${domain.key}/${guide.slug}/" data-guide-card="${esc(
     guide.slug
   )}" data-domain-id="${esc(domain.key)}" data-difficulty="${esc(
     guide.difficulty
-  )}" data-search="${esc(
+  )}" data-mark="${markKey(domain, gi)}" data-search="${esc(
     `${local.title || guide.title} ${local.summary || guide.summary}`.toLowerCase()
   )}">
+  ${markHtml(domain, gi)}
   <strong>${esc(local.title || guide.title)}</strong>
   <span class="sum">${esc(local.summary || guide.summary)}</span>
   <span class="meta">${diffChip(S, guide.difficulty)}<span class="chip">${esc(local.time || guide.time || '')}</span></span>
@@ -440,16 +503,17 @@ const guideCard = (lang, domain, guide) => {
 
 // One line of the home contents: the guide's title, difficulty and time. The
 // summary stays searchable and lives on the domain page's full card.
-const tocRow = (lang, domain, guide) => {
+const tocRow = (lang, domain, guide, gi) => {
   const S = lang.strings;
   const local = content[lang.code][guide.slug]?.meta || {};
   return `<li><a class="card" href="/${lang.code}/${domain.key}/${guide.slug}/" data-guide-card="${esc(
     guide.slug
   )}" data-domain-id="${esc(domain.key)}" data-difficulty="${esc(
     guide.difficulty
-  )}" data-search="${esc(
+  )}" data-mark="${markKey(domain, gi)}" data-search="${esc(
     `${local.title || guide.title} ${local.summary || guide.summary}`.toLowerCase()
   )}">
+  ${markHtml(domain, gi)}
   <strong>${esc(local.title || guide.title)}</strong>
   <span class="toc-meta"><i class="diff-${esc(guide.difficulty)}">${esc(
     S.difficultyWords[guide.difficulty] || guide.difficulty
@@ -497,13 +561,14 @@ function seasonHtml(lang) {
     `<small>(${sources
       .map((source) => `<a href="${esc(source.url)}" rel="external">${esc(source.name)}</a>`)
       .join(' · ')})</small>`;
-  const place = (p) => `<li><strong>${esc(p.place)}</strong><p>${esc(p.tends)} ${cite(p.sources)}</p>${
+  // Each reader opens their own place; the sources travel inside it.
+  const place = (p) => `<li><details><summary>${esc(p.place)}</summary><p>${esc(p.tends)} ${cite(p.sources)}</p>${
     p.guides.length
       ? `<span class="season-go">${esc(W.go)}${W.go.endsWith('：') ? '' : ' '}${p.guides
           .map((slug) => seasonGuide(code, slug))
           .join(' · ')}</span>`
       : ''
-  }</li>`;
+  }</details></li>`;
   const outlook = `<a href="${esc(SEASON.outlook.url)}" rel="external">${esc(SEASON.outlook.publisher)}</a>`;
   return `<section class="season" id="season" aria-labelledby="season-title" data-check-by="${esc(SEASON.check_by)}">
 <p class="season-stale" role="note" hidden>${esc(fill(W.stale, { check_by: checkBy }))}</p>
@@ -540,7 +605,22 @@ ${W.places.map(place).join('\n')}
   if (!leaf || Date.now() <= Date.parse(leaf.dataset.checkBy + 'T23:59:59Z')) return;
   leaf.classList.add('is-stale');
   leaf.querySelector('.season-stale').hidden = false;
-})();</script>`;
+  const pin = document.querySelector('.season-pin');
+  if (pin) pin.hidden = true;
+})();
+// paper cannot be tapped open: every place prints whole
+addEventListener('beforeprint', () => {
+  document.querySelectorAll('#season details').forEach((d) => { d.open = true; });
+});</script>`;
+}
+
+// The notice pinned at the door: one line that leads to the season's leaf.
+function seasonPin(lang) {
+  if (!SEASON.current) return '';
+  const W = SEASON.languages[lang.code];
+  return `<a class="season-pin" href="#season"><span>${esc(W.kicker)}</span> <strong>${esc(
+    W.title
+  )}</strong> <span aria-hidden="true">↓</span></a>`;
 }
 
 const craftLawHtml = (S) => `<aside class="craft-law" aria-labelledby="craft-law-title">
@@ -566,15 +646,33 @@ const craftLawHtml = (S) => `<aside class="craft-law" aria-labelledby="craft-law
 for (const lang of langs) {
   const S = lang.strings;
 
-  // home: the whole tree on one page, searchable
+  // home: the whole tree on one page, searchable. The plan of the hall shows
+  // every shelf on one screen; each shelf below lists its guides by mark.
+  const planHtml = `<nav class="hall-plan" id="plan" aria-labelledby="plan-title">
+  <h2 id="plan-title">${esc(S.hall.plan)}</h2>
+  <ol>${tree.domains
+    .map(
+      (domain) => `<li><a href="#${domain.key}"><span class="bay-mark">${shelfOf.get(
+        domain.key
+      )}</span><span class="bay-name"><span aria-hidden="true">${esc(domain.emoji)}</span> ${esc(
+        domainTitle(lang, domain)
+      )}</span></a></li>`
+    )
+    .join('\n')}</ol>
+</nav>`;
   const domainsHtml = tree.domains
     .map(
-      (domain, i) => `<section class="domain" id="${domain.key}">
-  <h2><span class="dnum">${i + 1}</span> ${esc(domain.emoji)} <a href="/${lang.code}/${domain.key}/">${esc(
-        (lang.code !== 'en' && domain.i18n?.[lang.code]?.title) || domain.title
-      )}</a> <span class="count">${domain.guides.length} ${esc(S.guides)}</span></h2>
+      (domain) => `<section class="domain" id="${domain.key}">
+  <header class="bay-head">
+    <span class="bay-mark">${shelfOf.get(domain.key)}</span>
+    <h2><span aria-hidden="true">${esc(domain.emoji)}</span> <a href="/${lang.code}/${domain.key}/">${esc(
+        domainTitle(lang, domain)
+      )}</a></h2>
+    <span class="count">${domain.guides.length} ${esc(S.guides)}</span>
+  </header>
   <p class="intro">${esc((lang.code !== 'en' && domain.i18n?.[lang.code]?.intro) || domain.intro)}</p>
-  <ol class="toc">${domain.guides.map((g) => tocRow(lang, domain, g)).join('\n')}</ol>
+  <ol class="toc">${domain.guides.map((g, gi) => tocRow(lang, domain, g, gi)).join('\n')}</ol>
+  <p class="bay-foot"><a href="#plan"><span aria-hidden="true">↑</span> ${esc(S.hall.toPlan)}</a></p>
 </section>`
     )
     .join('\n');
@@ -592,21 +690,27 @@ for (const lang of langs) {
   </div>
   <a href="/wildfire/">Open now <span aria-hidden="true">→</span></a>
 </aside>
-${seasonHtml(lang)}
+${seasonPin(lang)}
 <section class="hero book-hero">
-  <p class="book-kicker">✦ ${esc(S.bookKicker)}</p>
+  ${hallSvg('hall-mark')}
+  <p class="book-kicker">${esc(S.bookKicker)}</p>
   <h1>${esc(S.tagline)}</h1>
   <p class="hero-intro">${esc(S.hero)}</p>
   <p class="book-truth">${esc(S.bookTruth)}</p>
   <p class="hero-actions"><a class="book-button" href="/${lang.code}/begin/">${esc(
   S.startHere
 )}</a></p>
-  ${craftLawHtml(S)}
+</section>
+<section class="catalogue" id="catalogue">
+  <p class="catalogue-kicker">${esc(S.hall.catalogue)}</p>
   <label class="search-label" for="q">${esc(S.searchLabel)}</label>
   <input id="q" type="search" placeholder="${esc(S.searchPlaceholder)}" autocomplete="off">
   <p id="noresults" role="status" aria-live="polite" hidden>${esc(S.noResults)}</p>
+  ${planHtml}
 </section>
-<div class="book-contents" id="contents">${domainsHtml}</div>
+${seasonHtml(lang)}
+${craftLawHtml(S)}
+<div class="book-contents hall" id="contents">${domainsHtml}</div>
 <nav class="home-shelves" aria-labelledby="home-shelves-title">
   <h2 id="home-shelves-title">${esc(S.moreShelves)}</h2>
   <div>
@@ -625,13 +729,18 @@ const q = document.getElementById('q');
 q.addEventListener('input', () => {
   const t = q.value.trim().toLowerCase();
   let any = false;
+  // a shelf mark finds its one guide, so IV·3 never also finds XIV·3
+  const mark = t.match(/^([ivx]+)\\s*[·.\\-\\s]?\\s*(\\d+)$/);
   document.querySelectorAll('.card').forEach(c => {
-    const hit = !t || c.dataset.search.includes(t);
+    const hit = !t || (mark ? c.dataset.mark === mark[1] + '.' + mark[2] : c.dataset.search.includes(t));
     c.hidden = !hit; if (hit) any = true;
   });
   document.querySelectorAll('.domain').forEach(d => {
     d.hidden = !!t && ![...d.querySelectorAll('.card')].some(c => !c.hidden);
   });
+  // while searching, the finds come straight after the box: the plan, the
+  // season's pin and leaf, and the law step aside until the box is empty again
+  document.body.classList.toggle('is-searching', !!t);
   document.getElementById('noresults').hidden = any;
 });
 </script>`,
@@ -639,21 +748,36 @@ q.addEventListener('input', () => {
     })
   );
 
-  for (const domain of tree.domains) {
-    const dTitle = (lang.code !== 'en' && domain.i18n?.[lang.code]?.title) || domain.title;
+  tree.domains.forEach((domain, di) => {
+    const dTitle = domainTitle(lang, domain);
     const dIntro = (lang.code !== 'en' && domain.i18n?.[lang.code]?.intro) || domain.intro;
+    const shelf = shelfOf.get(domain.key);
+    const shelfLink = (d, cls, label) =>
+      d
+        ? `<a class="${cls}" href="/${lang.code}/${d.key}/">${esc(label)}${labelSep(lang)}${shelfOf.get(d.key)} · ${esc(
+            domainTitle(lang, d)
+          )}</a>`
+        : '<span></span>';
 
-    // domain page
+    // domain page: one shelf, its guides as catalogue cards
     write(
       join(DIST, lang.code, domain.key, 'index.html'),
       page({
         lang,
         title: dTitle,
         path: `${domain.key}/`,
-        body: `<p class="crumb"><a href="/${lang.code}/">${esc(S.home)}</a></p>
+        body: `<p class="crumb"><a href="/${lang.code}/">${esc(S.home)}</a> / <a href="/${lang.code}/#plan">${esc(
+          S.hall.plan
+        )}</a></p>
+<p class="bay-kicker">${esc(S.hall.shelf)} ${shelf}</p>
 <h1>${esc(domain.emoji)} ${esc(dTitle)}</h1>
 <p class="intro">${esc(dIntro)}</p>
-<div class="grid">${domain.guides.map((g) => guideCard(lang, domain, g)).join('\n')}</div>`,
+<div class="grid">${domain.guides.map((g, gi) => guideCard(lang, domain, g, gi)).join('\n')}</div>
+<nav class="prevnext bay-nav" aria-label="${esc(S.hall.nearby)}">${shelfLink(
+          tree.domains[di - 1],
+          'prev',
+          S.hall.prevShelf
+        )}${shelfLink(tree.domains[di + 1], 'next', S.hall.nextShelf)}</nav>`,
         learning: { kind: 'domain', domain: domain.key },
       })
     );
@@ -682,7 +806,7 @@ q.addEventListener('input', () => {
       const next = domain.guides[gi + 1];
       const pn = (g, cls, label) =>
         g
-          ? `<a class="${cls}" href="/${lang.code}/${domain.key}/${g.slug}/">${esc(label)}: ${esc(
+          ? `<a class="${cls}" href="/${lang.code}/${domain.key}/${g.slug}/">${esc(label)}${labelSep(lang)}${esc(
               localTitle(g.slug)
             )}</a>`
           : '<span></span>';
@@ -695,9 +819,10 @@ q.addEventListener('input', () => {
           path: `${domain.key}/${guide.slug}/`,
           body: `<p class="crumb"><a href="/${lang.code}/">${esc(S.home)}</a> / <a href="/${lang.code}/${
             domain.key
-          }/">${esc(domain.emoji)} ${esc(dTitle)}</a></p>
+          }/">${esc(S.hall.shelf)} ${shelf} · ${esc(domain.emoji)} ${esc(dTitle)}</a></p>
 ${own ? '' : `<p class="notice">${esc(S.notYetTranslated)}</p>`}
 <article class="guide">
+<p class="callno">${shelfMark(domain, gi)}</p>
 <h1>${esc(title)}</h1>
 <p class="lede">${esc(meta.summary || guide.summary)}</p>
 <p class="meta">${diffChip(S, guide.difficulty)}<span class="chip">⏳ ${esc(meta.time || guide.time || '')}</span><span class="chip evid-${evidenceOf(guide.slug)}">${esc(evidenceOf(guide.slug) === 'hand-tested' ? S.evidenceTested : S.evidenceAsserted)}</span></p>
@@ -777,7 +902,19 @@ ${opens.length ? `<div class="box opens"><strong>${esc(S.unlocks)}:</strong> ${o
 })();
 </script>
 </article>
-<nav class="prevnext">${pn(prev, 'prev', S.prev)}${pn(next, 'next', S.next)}</nav>`,
+<nav class="prevnext">${pn(prev, 'prev', S.prev)}${pn(next, 'next', S.next)}</nav>
+<nav class="shelf" aria-labelledby="shelf-title">
+  <h2 id="shelf-title">${esc(S.hall.onShelf)} · ${shelf} ${esc(dTitle)}</h2>
+  <ol>${domain.guides
+    .map((g, i) =>
+      i === gi
+        ? `<li><span aria-current="page">${markHtml(domain, i)} ${esc(localTitle(g.slug))}</span></li>`
+        : `<li><a href="/${lang.code}/${domain.key}/${g.slug}/">${markHtml(domain, i)} ${esc(
+            localTitle(g.slug)
+          )}</a></li>`
+    )
+    .join('')}</ol>
+</nav>`,
           learning: {
             kind: 'guide',
             guide: guide.slug,
@@ -787,7 +924,7 @@ ${opens.length ? `<div class="box opens"><strong>${esc(S.unlocks)}:</strong> ${o
         })
       );
     });
-  }
+  });
 }
 
 // ---------- the learning System ----------
@@ -857,7 +994,8 @@ ${
 `
     : ''
 }<article class="root-cover" aria-labelledby="root-title">
-  <p class="root-kicker">✦ a working book of causes and craft</p>
+  ${hallSvg('hall-mark')}
+  <p class="root-kicker">a working book of causes and craft</p>
   <h1 id="root-title">mindicraft</h1>
   <p class="root-lede"><em>It may look like a spellbook. It works like a workshop.</em></p>
   <p>The practical chapters do not ask you to trust magic. Materials, conditions,
@@ -891,7 +1029,7 @@ ${
   </p>
 </article>
 <nav class="root-shelves" aria-labelledby="other-shelves">
-  <h2 id="other-shelves">Other shelves</h2>
+  <h2 id="other-shelves">Other rooms</h2>
   <div>
     <a href="/remedies/"><strong>Roots to remedies</strong><span>Medicines, their links to nature, evidence, exposure, and risk</span></a>
     <a href="/remedies/healing-arts/"><strong>Healing histories</strong><span>Source-bound records across cultures, kept non-operational</span></a>
