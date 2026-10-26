@@ -1,0 +1,460 @@
+{
+  "schema_version": "mindicraft.season/1",
+  "id": "el-nino-2026-27",
+  "as_of": "2026-10-26",
+  "check_by": "2026-11-19",
+  "outlook": {
+    "publisher": "NOAA Climate Prediction Center",
+    "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml",
+    "published": "2026-10-08",
+    "next_update": "2026-11-12"
+  },
+  "sea_anomaly_c": 2.1,
+  "sea_anomaly_month": "2026-09",
+  "print": [
+    "carry-and-store-water",
+    "boil-water",
+    "spot-danger",
+    "stop-sickness-spreading",
+    "when-to-get-help"
+  ],
+  "carbon_monoxide_sources": [
+    {
+      "name": "NHS",
+      "url": "https://www.nhs.uk/conditions/carbon-monoxide-poisoning/"
+    },
+    {
+      "name": "Ready.gov",
+      "url": "https://www.ready.gov/power-outages"
+    }
+  ],
+  "languages": {
+    "en": {
+      "date_locale": "en-GB",
+      "kicker": "The season ahead · Nov 2026 – Mar 2027",
+      "title": "A strong El Niño is building",
+      "lede": "The Pacific's warm water has spread east, and for months it moves rain and heat around the world: floods in some places, drought and power cuts in others. Here is what it tends to bring. What actually comes where you are is your local weather service's call.",
+      "diagram": {
+        "title": "How El Niño moves the rain",
+        "desc": "A sketch of the tropical Pacific. Warm surface water has spread east toward the Americas. The rain clouds follow it out over the central and eastern Pacific, leaving Indonesia, and often eastern Australia, drier.",
+        "west": "Indonesia · Australia",
+        "east": "Americas",
+        "drift": "warm water spreads east",
+        "rain": "the rain follows it",
+        "dry": "drier",
+        "caption": "In {month} the sea surface of the central Pacific was {anomaly} above normal. A sketch, not a map."
+      },
+      "where": "Where it tends to land",
+      "go": "Have on paper:",
+      "places": [
+        {
+          "place": "United Kingdom",
+          "tends": "El Niño is only one factor in a British winter, but it can raise the risk of a colder one.",
+          "sources": [
+            {
+              "name": "Met Office",
+              "url": "https://weather.metoffice.gov.uk/learn-about/weather/oceans/el-nino"
+            }
+          ],
+          "guides": []
+        },
+        {
+          "place": "United States",
+          "tends": "The official winter outlook favours a wetter South and East Coast, California included, and a milder North.",
+          "sources": [
+            {
+              "name": "NOAA",
+              "url": "https://www.noaa.gov/news-release/el-nino-looms-large-over-us-winter-outlook"
+            }
+          ],
+          "guides": [
+            "spot-danger",
+            "boil-water"
+          ]
+        },
+        {
+          "place": "Peru's coast",
+          "tends": "Peru's El Niño committee keeps its coastal El Niño alert: above-normal rain on the north and central coast, building through the rest of 2026 and into Peru's summer (December to March); northern rivers running high from November, and Lima's Rímac and Chillón from December; and heat along the coast that may break records.",
+          "sources": [
+            {
+              "name": "ENFEN",
+              "url": "https://enfen.imarpe.gob.pe/download/comunicado-oficial-enfen-n-18-2026/"
+            }
+          ],
+          "guides": [
+            "spot-danger",
+            "boil-water",
+            "stop-sickness-spreading"
+          ]
+        },
+        {
+          "place": "Southern Africa",
+          "tends": "The regional outlook favours a drier rainy season over much of the south through March. In 2024 an El Niño drought cut Zambia's hydropower, and its power cuts reached 21 hours a day.",
+          "sources": [
+            {
+              "name": "SADC",
+              "url": "https://sadc.int/latest-news/sadc-outlook-favours-drier-conditions-across-much-southern-africa-during-202627-rainy"
+            },
+            {
+              "name": "Wikipedia",
+              "url": "https://en.wikipedia.org/wiki/2024_Zambian_drought"
+            },
+            {
+              "name": "bne IntelliNews",
+              "url": "https://www.intellinews.com/historic-drought-compels-zambia-to-take-unprecedented-step-of-shuttering-its-largest-hydropower-plant-343318/"
+            }
+          ],
+          "guides": [
+            "carry-and-store-water"
+          ]
+        },
+        {
+          "place": "Australia",
+          "tends": "El Niño has often meant drought in eastern and northern Australia, but the Bureau of Meteorology says a strong El Niño does not necessarily mean strong impacts on Australia's rain and temperature. Its long-range forecast is the guide.",
+          "sources": [
+            {
+              "name": "WMO",
+              "url": "https://wmo.int/themes/el-nino-la-nina-phenomena"
+            },
+            {
+              "name": "Bureau of Meteorology",
+              "url": "https://www.bom.gov.au/climate/enso/"
+            }
+          ],
+          "guides": []
+        },
+        {
+          "place": "Indonesia and nearby",
+          "tends": "El Niño is associated with drought in Indonesia, and there is already less cloud than usual over the region.",
+          "sources": [
+            {
+              "name": "WMO",
+              "url": "https://wmo.int/themes/el-nino-la-nina-phenomena"
+            },
+            {
+              "name": "Bureau of Meteorology",
+              "url": "https://www.bom.gov.au/climate/enso/"
+            }
+          ],
+          "guides": [
+            "carry-and-store-water"
+          ]
+        }
+      ],
+      "print_title": "Print these cards before you need them",
+      "print_lede": "Paper still works when the power and the internet don't. Every guide has a Print this card button.",
+      "co_lead": "Power cut at home?",
+      "co_text": "Use a barbecue, camping stove or generator only outdoors, at least 6 metres (20 feet) from windows and doors. Never use one indoors, in a tent or in a garage, never leave a car engine running in a garage, and never heat your home with a gas oven or hob. They give off carbon monoxide, which you cannot see or smell. A headache, dizziness or feeling sick that eases outside can mean poisoning: get everyone into fresh air, stay out, and get medical help.",
+      "source_line": "Forecast: {outlook}, {published}; next update {next_update}. Mindicraft does not know live conditions. This panel comes down after {check_by} unless it is checked against a newer forecast.",
+      "stale": "This forecast was due to be checked by {check_by} and may be out of date. Read the latest from your weather service before relying on it."
+    },
+    "zh": {
+      "date_locale": "zh-CN",
+      "kicker": "未来一季 · 2026年11月至2027年3月",
+      "title": "强厄尔尼诺持续增强",
+      "lede": "太平洋的暖水已经向东扩散，接下来几个月会改变世界各地的降雨和气温：有的地方洪涝，有的地方干旱、停电。下面是它通常带来的影响；你所在的地方实际会怎样，以当地气象部门为准。",
+      "diagram": {
+        "title": "厄尔尼诺怎样搬动雨水",
+        "desc": "热带太平洋示意图。温暖的表层海水向东扩散到美洲一侧，雨云也跟着东移到太平洋中东部海面，印尼一带变得更干，澳大利亚东部也常常偏干。",
+        "west": "印尼 · 澳大利亚",
+        "east": "美洲",
+        "drift": "暖水向东扩散",
+        "rain": "雨跟着东移",
+        "dry": "更干",
+        "caption": "{month}，太平洋中部海面温度比常年高 {anomaly}。这是示意图，不是地图。"
+      },
+      "where": "通常会影响哪里",
+      "go": "先打印：",
+      "places": [
+        {
+          "place": "华南沿海（含香港、澳门）",
+          "tends": "冬春两季有厄尔尼诺时，雨水通常比平常多。",
+          "sources": [
+            {
+              "name": "香港天文台",
+              "url": "https://www.hko.gov.hk/sc/lrf/enso/enso-impact.htm"
+            }
+          ],
+          "guides": [
+            "spot-danger",
+            "boil-water"
+          ]
+        },
+        {
+          "place": "中国内地其他地区",
+          "tends": "厄尔尼诺对各地的影响不一样，以中国气象局的季节预测为准。",
+          "sources": [
+            {
+              "name": "中国气象局",
+              "url": "https://www.cma.gov.cn/"
+            }
+          ],
+          "guides": []
+        },
+        {
+          "place": "印尼、马来西亚、新加坡一带",
+          "tends": "厄尔尼诺常和印尼的干旱联系在一起，这一带的云量已经比平常少。",
+          "sources": [
+            {
+              "name": "WMO",
+              "url": "https://wmo.int/themes/el-nino-la-nina-phenomena"
+            },
+            {
+              "name": "澳大利亚气象局",
+              "url": "https://www.bom.gov.au/climate/enso/"
+            }
+          ],
+          "guides": [
+            "carry-and-store-water"
+          ]
+        },
+        {
+          "place": "美国",
+          "tends": "官方冬季展望认为，南部（从加州到佛罗里达）和东海岸较可能偏湿，北部较可能偏暖。",
+          "sources": [
+            {
+              "name": "NOAA",
+              "url": "https://www.noaa.gov/news-release/el-nino-looms-large-over-us-winter-outlook"
+            }
+          ],
+          "guides": [
+            "spot-danger",
+            "boil-water"
+          ]
+        },
+        {
+          "place": "澳大利亚",
+          "tends": "厄尔尼诺常导致澳大利亚东部和北部干旱，但澳大利亚气象局说，强厄尔尼诺不一定对澳大利亚的降雨和气温带来强烈影响，应以该局的长期预报为准。",
+          "sources": [
+            {
+              "name": "WMO",
+              "url": "https://wmo.int/themes/el-nino-la-nina-phenomena"
+            },
+            {
+              "name": "澳大利亚气象局",
+              "url": "https://www.bom.gov.au/climate/enso/"
+            }
+          ],
+          "guides": []
+        },
+        {
+          "place": "英国",
+          "tends": "厄尔尼诺只是影响英国冬天的因素之一，但可能增加冷冬的风险。",
+          "sources": [
+            {
+              "name": "英国气象局",
+              "url": "https://weather.metoffice.gov.uk/learn-about/weather/oceans/el-nino"
+            }
+          ],
+          "guides": []
+        }
+      ],
+      "print_title": "在需要之前，先把这些卡打印出来",
+      "print_lede": "停电、断网的时候，纸还能用。每篇指南都有“打印这张卡”按钮。",
+      "co_lead": "在家停电？",
+      "co_text": "烧烤炉、露营炉和发电机只能在户外使用，并离门窗至少 6 米。不要在室内、帐篷里或车库里使用，不要在车库里让汽车一直发动着，也不要用燃气灶或烤箱取暖。它们会产生一氧化碳，看不见，也闻不到。如果头痛、头晕、恶心，到户外后有所好转，可能是一氧化碳中毒：让所有人马上到室外呼吸新鲜空气，先别回去，并尽快就医。",
+      "source_line": "预测来源：{outlook}，{published}；下次更新：{next_update}。Mindicraft 不掌握实时情况。除非对照较新的预测重新核对，本栏会在{check_by}之后撤下。",
+      "stale": "这则预测应在{check_by}之前重新核对，可能已经过时。依据它行动之前，请先查看当地气象部门的最新预报。"
+    },
+    "yue": {
+      "date_locale": "zh-HK",
+      "kicker": "嚟緊呢一季 · 2026年11月至2027年3月",
+      "title": "強厄爾尼諾越嚟越強",
+      "lede": "太平洋嘅暖水已經向東擴散，之後幾個月會改變世界各地嘅雨量同氣溫：有啲地方水浸，有啲地方乾旱、停電。下面係佢通常帶嚟嘅影響；你身處嘅地方實際會點，就以當地天文台或者氣象部門為準。",
+      "diagram": {
+        "title": "厄爾尼諾點樣令啲雨搬位",
+        "desc": "熱帶太平洋示意圖。暖嘅表層海水向東擴散到美洲嗰邊，雨雲跟住移去太平洋中部同東部嘅海面，印尼一帶就會乾啲，澳洲東部亦經常偏乾。",
+        "west": "印尼 · 澳洲",
+        "east": "美洲",
+        "drift": "暖水向東擴散",
+        "rain": "雨跟住向東移",
+        "dry": "較乾",
+        "caption": "{month}，太平洋中部海面溫度比正常高 {anomaly}。呢個係示意圖，唔係地圖。"
+      },
+      "where": "通常會影響邊度",
+      "go": "先印定：",
+      "places": [
+        {
+          "place": "香港同廣東沿岸",
+          "tends": "冬季同春季有厄爾尼諾嘅時候，雨水通常比平時多。",
+          "sources": [
+            {
+              "name": "香港天文台",
+              "url": "https://www.hko.gov.hk/tc/lrf/enso/enso-impact.htm"
+            }
+          ],
+          "guides": [
+            "spot-danger",
+            "boil-water"
+          ]
+        },
+        {
+          "place": "香港颱風季開頭",
+          "tends": "如果到2027年4、5月仲有厄爾尼諾，嗰兩個月形成嘅熱帶氣旋通常較少，所以熱帶氣旋通常唔會喺6月前影響香港。到時厄爾尼諾仲喺唔喺度，要睇天文台嘅最新消息。",
+          "sources": [
+            {
+              "name": "香港天文台",
+              "url": "https://www.hko.gov.hk/tc/lrf/enso/enso-impact.htm"
+            }
+          ],
+          "guides": []
+        },
+        {
+          "place": "印尼、馬來西亞、新加坡一帶",
+          "tends": "厄爾尼諾往往同印尼嘅乾旱有關，呢一帶嘅雲量已經比平時少。",
+          "sources": [
+            {
+              "name": "WMO",
+              "url": "https://wmo.int/themes/el-nino-la-nina-phenomena"
+            },
+            {
+              "name": "澳洲氣象局",
+              "url": "https://www.bom.gov.au/climate/enso/"
+            }
+          ],
+          "guides": [
+            "carry-and-store-water"
+          ]
+        },
+        {
+          "place": "英國",
+          "tends": "厄爾尼諾只係影響英國冬天嘅其中一個因素，但有機會增加寒冬嘅風險。",
+          "sources": [
+            {
+              "name": "英國氣象局",
+              "url": "https://weather.metoffice.gov.uk/learn-about/weather/oceans/el-nino"
+            }
+          ],
+          "guides": []
+        },
+        {
+          "place": "美國",
+          "tends": "官方冬季展望認為，南部（由加州到佛羅里達）同東岸較大機會偏濕，北部較大機會偏暖。",
+          "sources": [
+            {
+              "name": "NOAA",
+              "url": "https://www.noaa.gov/news-release/el-nino-looms-large-over-us-winter-outlook"
+            }
+          ],
+          "guides": [
+            "spot-danger",
+            "boil-water"
+          ]
+        },
+        {
+          "place": "澳洲",
+          "tends": "厄爾尼諾成日令澳洲東部同北部乾旱，但澳洲氣象局話，強厄爾尼諾唔一定對澳洲嘅雨量同氣溫有強烈影響，要以佢哋嘅長期預報為準。",
+          "sources": [
+            {
+              "name": "WMO",
+              "url": "https://wmo.int/themes/el-nino-la-nina-phenomena"
+            },
+            {
+              "name": "澳洲氣象局",
+              "url": "https://www.bom.gov.au/climate/enso/"
+            }
+          ],
+          "guides": []
+        }
+      ],
+      "print_title": "未用得著之前，先印好呢幾張卡",
+      "print_lede": "停電、冇網嘅時候，紙仲用得。每篇指南都有「印呢張卡」掣。",
+      "co_lead": "屋企停電？",
+      "co_text": "燒烤爐、露營爐同發電機只可以喺戶外用，仲要離門窗最少 6 米。唔好喺室內、帳篷入面或者車房用，唔好喺車房度開住汽車引擎，亦唔好用煤氣爐或者焗爐嚟取暖。佢哋會產生一氧化碳，睇唔到，亦聞唔到。如果頭痛、頭暈、想嘔，一出到戶外就好返啲，可能係一氧化碳中毒：即刻帶所有人出去透氣，唔好返入去，盡快求醫。",
+      "source_line": "預測來源：{outlook}，{published}；下次更新：{next_update}。Mindicraft 唔知道實時情況。除非對照較新嘅預測再核對，呢欄會喺{check_by}之後撤走。",
+      "stale": "呢個預測應該喺{check_by}之前再核對，可能已經過時。信佢之前，請先睇吓當地天文台或者氣象部門嘅最新預報。"
+    },
+    "es": {
+      "date_locale": "es",
+      "kicker": "La temporada que viene · nov. 2026 – mar. 2027",
+      "title": "El Niño se hace cada vez más fuerte",
+      "lede": "El agua cálida del Pacífico se ha extendido hacia el este y, durante meses, cambia dónde llueve y dónde hace calor en el mundo: inundaciones en unos lugares, sequía y apagones en otros. Esto es lo que suele traer. Lo que de verdad pase en tu zona lo dirá tu servicio meteorológico.",
+      "diagram": {
+        "title": "Cómo mueve El Niño la lluvia",
+        "desc": "Esquema del Pacífico tropical. El agua cálida de la superficie se ha extendido hacia el este, hacia América. Las nubes de lluvia la siguen sobre el Pacífico central y oriental, e Indonesia y, a menudo, el este de Australia quedan más secos.",
+        "west": "Indonesia · Australia",
+        "east": "América",
+        "drift": "el agua cálida va al este",
+        "rain": "la lluvia la sigue",
+        "dry": "más seco",
+        "caption": "En {month}, la temperatura de la superficie del mar en el Pacífico central estaba {anomaly} por encima de lo normal. Es un esquema, no un mapa."
+      },
+      "where": "Dónde suele notarse",
+      "go": "Ten en papel:",
+      "places": [
+        {
+          "place": "Costa norte y centro del Perú",
+          "tends": "El ENFEN mantiene la alerta de El Niño costero: lluvias por encima de lo normal en la costa norte y central, que irán en aumento en lo que queda de 2026 y seguirán en el verano; ríos del norte más caudalosos de lo normal desde noviembre, y el Rímac y el Chillón desde diciembre; y un calor en toda la costa que puede batir récords.",
+          "sources": [
+            {
+              "name": "ENFEN",
+              "url": "https://enfen.imarpe.gob.pe/download/comunicado-oficial-enfen-n-18-2026/"
+            }
+          ],
+          "guides": [
+            "spot-danger",
+            "boil-water",
+            "stop-sickness-spreading"
+          ]
+        },
+        {
+          "place": "Sierra centro y sur del Perú",
+          "tends": "Las lluvias serían normales o inferiores a lo normal en la sierra sur y centro oriental. Si faltan, el ENFEN advierte que habrá racionamiento de agua.",
+          "sources": [
+            {
+              "name": "ENFEN",
+              "url": "https://enfen.imarpe.gob.pe/download/comunicado-oficial-enfen-n-18-2026/"
+            }
+          ],
+          "guides": [
+            "carry-and-store-water"
+          ]
+        },
+        {
+          "place": "Colombia",
+          "tends": "El Niño ya trajo sequía antes: en 1992 secó los embalses y obligó a racionar la electricidad, con cortes de luz diarios.",
+          "sources": [
+            {
+              "name": "El Colombiano",
+              "url": "https://www.elcolombiano.com/historico/hace_20_anos_colombia_sufrio_el_apagon-JVEC_180119"
+            }
+          ],
+          "guides": [
+            "carry-and-store-water"
+          ]
+        },
+        {
+          "place": "Estados Unidos",
+          "tends": "El pronóstico oficial de invierno favorece un sur y una costa este más lluviosos, California incluida, y un norte más templado.",
+          "sources": [
+            {
+              "name": "NOAA",
+              "url": "https://www.noaa.gov/news-release/el-nino-looms-large-over-us-winter-outlook"
+            }
+          ],
+          "guides": [
+            "spot-danger",
+            "boil-water"
+          ]
+        },
+        {
+          "place": "España",
+          "tends": "Un episodio fuerte de El Niño no decide por sí solo cómo será el invierno en España. Para el trimestre de octubre a diciembre, la AEMET daba a finales de septiembre un 70 % de probabilidad de temperaturas por encima de lo normal en la mayor parte del país.",
+          "sources": [
+            {
+              "name": "Euronews",
+              "url": "https://es.euronews.com/2026/09/29/el-nino-godzilla-podria-alcanzar-una-intensidad-historica-como-afectara-este-invierno-a-es"
+            }
+          ],
+          "guides": []
+        }
+      ],
+      "print_title": "Imprime estas fichas antes de necesitarlas",
+      "print_lede": "El papel sigue sirviendo cuando faltan la luz e internet. Cada guía tiene un botón «Imprimir esta ficha».",
+      "co_lead": "¿Apagón en casa?",
+      "co_text": "Usa la barbacoa o parrilla, el hornillo o estufa de camping y el generador solo al aire libre, a no menos de 6 metros de puertas y ventanas. Nunca los uses dentro de casa, en una carpa o tienda de campaña ni en un garaje; no dejes un vehículo encendido en un garaje, y no calientes la casa con la cocina o el horno de gas. Desprenden monóxido de carbono, que no se ve ni se huele. Si alguien tiene dolor de cabeza, mareo o náuseas que mejoran al salir, puede ser una intoxicación: saca a todos al aire libre, que nadie vuelva a entrar, y busca atención médica.",
+      "source_line": "Pronóstico: {outlook}, {published}; próxima actualización: {next_update}. Mindicraft no conoce las condiciones en tiempo real. Este aviso se retira después del {check_by} salvo que se revise con un pronóstico más reciente.",
+      "stale": "Este pronóstico debía revisarse antes del {check_by} y puede estar desactualizado. Consulta el pronóstico más reciente de tu servicio meteorológico antes de guiarte por él."
+    }
+  }
+}

@@ -53,6 +53,11 @@
           }
         },
         "footer": "Made to be copied. Take it, print it, translate it, pass it on.",
+        "moreShelves": "More from the book (English)",
+        "theme": {
+          "night": "Night",
+          "hint": "A dark, warm page for reading at night or in a power cut, remembered on this device only. On many phone screens it also saves battery. Pages without script, such as Wildfire help, follow your phone's own setting."
+        },
         "difficultyWords": {
           "easy": "easy",
           "steady": "takes patience",
@@ -194,6 +199,11 @@
           }
         },
         "footer": "欢迎复制。拿去、打印、翻译、传下去。",
+        "moreShelves": "书里的其他内容（英文）",
+        "theme": {
+          "night": "夜读",
+          "hint": "深色暖光页面，适合夜里或停电时阅读，只记在这台设备上。在不少手机屏幕上也更省电。不运行脚本的页面（例如英文的 Wildfire help）会跟随手机自己的设置。"
+        },
         "difficultyWords": {
           "easy": "容易",
           "steady": "要耐心",
@@ -335,6 +345,11 @@
           }
         },
         "footer": "整嚟俾人抄嘅。攞去、印出嚟、翻譯佢、傳落去。",
+        "moreShelves": "書入面其他內容（英文）",
+        "theme": {
+          "night": "夜讀",
+          "hint": "深色暖光頁面，夜晚或者停電嗰陣睇會舒服啲，只會記喺呢部機。好多手機屏幕咁樣仲慳電。唔行腳本嘅頁面（例如英文嘅 Wildfire help）會跟手機自己嘅設定。"
+        },
         "difficultyWords": {
           "easy": "容易",
           "steady": "要啲耐性",
@@ -476,6 +491,11 @@
           }
         },
         "footer": "Hecho para copiarse. Tómalo, imprímelo, tradúcelo, pásalo.",
+        "moreShelves": "Más del libro (en inglés)",
+        "theme": {
+          "night": "Noche",
+          "hint": "Página oscura y cálida para leer de noche o durante un apagón; se recuerda solo en este dispositivo. En muchas pantallas de móvil también ahorra batería. Las páginas sin scripts, como Wildfire help (en inglés), siguen el ajuste de tu teléfono."
+        },
         "difficultyWords": {
           "easy": "fácil",
           "steady": "con paciencia",

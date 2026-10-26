@@ -39,6 +39,9 @@ the whole thing — content, builder, and site.
 - `wildfire-review.json` + `wildfire-review.mjs` — an exact-byte emergency
   review receipt with a due date. Any wording or source change stops the public
   build until the whole affected safety context is reviewed and re-pinned.
+- `season.json` + `season.mjs` — the season ahead: one dated, sourced outlook
+  at the top of each home page, with a check date no more than 45 days after
+  the official outlook it rests on. After that date the build leaves it out.
 - `learning-system.mjs` — the pure, deterministic learning rules: local state,
   E–S craft ranks, levels, XP receipts, chosen quests, ready guides, and strict
   import validation. It performs no browser, file, clock, or network work.
@@ -344,6 +347,32 @@ The spellbook appearance is visual language only. The cover says the working
 rule plainly: materials, conditions, and process lead to an expected result.
 Practical chapters then show what is needed, what to do, what can fail, and why
 the process should work.
+
+## The season ahead
+
+Each home page opens with the season ahead. This edition covers the 2026–27
+El Niño: what it tends to bring where each language's readers live, which
+cards to print first, and one line on carbon monoxide in a power cut. Every
+place names its sources, and every claim stays inside them: an official
+outlook where one exists, the usual pattern where not, history marked as
+history. Where nothing official could be confirmed, the place points to its
+weather service instead of guessing.
+
+A forecast goes stale in weeks, so the edition carries `check_by`. Until then
+the build shows it. After that date the build leaves it out of every page and
+says so in its log. A copy saved or printed earlier marks itself out of date
+when opened with script. To renew it, read the newest official outlook,
+re-check every place and source in all four languages, and then move `as_of`
+and `check_by` on. Never move only the dates.
+
+Home pages list each domain as a contents page: title, difficulty and time.
+The full cards with summaries stay on each domain's own page, and search
+still matches the summaries.
+
+Pages that already run script carry a Night switch: a dark, warm palette for
+reading by a phone in a power cut. The reader's choice is kept on their device
+only. Pages that promise no script follow the system setting, and paper always
+prints in paper colours.
 
 ## Add a language
 
