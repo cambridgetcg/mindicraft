@@ -1,38 +1,63 @@
 /* Mindicraft — one stylesheet, light and dark, no framework.
    The feel: a working grimoire. Warm paper, clear ink, folio marks, and no
-   ornament that hides the causal chain. */
+   ornament that hides the causal chain.
+   Dark is lamplight: near-black and warm, for reading by a phone in a power
+   cut. Near-black pixels draw almost nothing on the OLED screens most phones
+   have. It follows the system, and pages with script can switch it by hand
+   (html[data-theme="night"|"day"]). */
 
 :root {
+  color-scheme: light;
   --bg: #f7f3ec;
   --panel: #fffdf8;
   --ink: #2b2620;
   --muted: #6f675c;
   --line: #e5dccc;
   --ember: #b0522b;
-  --leaf: #4a7c59;
+  --leaf: #44734f;
   --amber: #815b12;
   --plum: #7d5ba6;
+  --sea: #2b6a87;
   --system-accent: #2a6f9d;
   --system-control-ink: #174b70;
   --system-control-hover: #0e3c5e;
   --shadow: 0 1px 3px rgba(60, 45, 20, 0.08);
 }
 @media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #191613;
-    --panel: #211d19;
-    --ink: #ece5da;
-    --muted: #a99f92;
-    --line: #37302a;
-    --ember: #e07a4a;
-    --leaf: #7fb08a;
-    --amber: #d3a94e;
-    --plum: #b295d6;
+  :root:not([data-theme="day"]) {
+    color-scheme: dark;
+    --bg: #0d0b09;
+    --panel: #16130f;
+    --ink: #eee5d6;
+    --muted: #a99d8c;
+    --line: #2e2721;
+    --ember: #ee8b5c;
+    --leaf: #86b993;
+    --amber: #dfb25a;
+    --plum: #b9a0dc;
+    --sea: #6cb4d4;
     --system-accent: #72c9ff;
     --system-control-ink: #bfe7ff;
     --system-control-hover: #e9f7ff;
-    --shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
   }
+}
+:root[data-theme="night"] {
+  color-scheme: dark;
+  --bg: #0d0b09;
+  --panel: #16130f;
+  --ink: #eee5d6;
+  --muted: #a99d8c;
+  --line: #2e2721;
+  --ember: #ee8b5c;
+  --leaf: #86b993;
+  --amber: #dfb25a;
+  --plum: #b9a0dc;
+  --sea: #6cb4d4;
+  --system-accent: #72c9ff;
+  --system-control-ink: #bfe7ff;
+  --system-control-hover: #e9f7ff;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 * { box-sizing: border-box; }
@@ -89,6 +114,17 @@ main { max-width: 46rem; margin: 0 auto; padding: 0 1.1rem 3rem; }
   letter-spacing: 0.04em; box-shadow: 0 0 0.8rem rgba(55, 160, 230, 0.12);
 }
 .system-door:hover { color: #fff; border-color: #72c9ff; text-decoration: none; }
+.theme-toggle {
+  flex: none; display: inline-flex; align-items: center; gap: 0.3rem;
+  padding: 0.15rem 0.65rem; border: 1px solid var(--line); border-radius: 999px;
+  background: transparent; color: var(--muted); font: inherit; font-size: 0.85rem; cursor: pointer;
+}
+.theme-toggle:hover { border-color: var(--amber); color: var(--ink); }
+.theme-toggle[aria-pressed="true"] {
+  color: var(--amber); border-color: color-mix(in srgb, var(--amber) 70%, transparent);
+  background: color-mix(in srgb, var(--amber) 12%, transparent);
+}
+.theme-toggle[hidden] { display: none; }
 
 /* root cover — an obvious door dressed like a working book */
 .root-page,
@@ -192,6 +228,21 @@ body[data-learning-page="guide"] main {
 .wildfire-entry > span > span { margin-top: 0.08rem; color: var(--muted); font-size: 0.78rem; }
 .wildfire-entry::after { content: "Open now →"; flex: none; font-weight: 750; color: var(--amber); }
 .wildfire-entry:hover { border-color: var(--amber); text-decoration: none; }
+.season-entry {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.4rem 1rem;
+  margin: 0.6rem 0 0; padding: 0.75rem 1rem; color: var(--ink);
+  border: 1px solid var(--line); border-left: 4px solid var(--sea);
+  border-radius: 0.2rem; background: color-mix(in srgb, var(--sea) 6%, var(--panel));
+}
+.season-entry p { margin: 0; }
+.season-entry strong, .season-entry p > span { display: block; }
+.season-entry p > span { margin-top: 0.08rem; color: var(--muted); font-size: 0.78rem; }
+.season-entry-langs { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.season-entry-langs a {
+  padding: 0.2rem 0.6rem; border: 1px solid var(--line); border-radius: 999px;
+  background: var(--panel); font-size: 0.85rem;
+}
+.season-entry-langs a:hover { border-color: var(--sea); text-decoration: none; }
 .not-found { max-width: 42rem; margin-top: 12vh; padding: 2rem; border: 3px double var(--line); background: var(--panel); }
 .not-found nav { display: flex; flex-wrap: wrap; align-items: center; gap: 0.9rem; margin-top: 1.3rem; }
 
@@ -318,75 +369,145 @@ body[data-learning-page="guide"] main {
   .relational-readings::before { left: 1.68rem; }
 }
 
-/* home hero */
+/* home: an emergency door, the season ahead, the book, and its contents */
 .wildfire-home-door {
   display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-  margin: 1rem 0 0; padding: 0.9rem 1rem;
+  margin: 0.6rem 0 0; padding: 0.6rem 0.75rem 0.6rem 0.95rem;
   background: color-mix(in srgb, var(--amber) 7%, var(--panel));
   border: 1px solid var(--line); border-left: 4px solid var(--amber);
-  border-radius: 0.75rem; box-shadow: var(--shadow);
+  border-radius: 0.2rem;
 }
-.wildfire-home-door div { display: grid; gap: 0.08rem; }
+.wildfire-home-door div { display: grid; gap: 0.02rem; }
 .wildfire-home-door strong { font-family: "Iowan Old Style", Palatino, Georgia, serif; }
-.wildfire-home-door span { color: var(--muted); font-size: 0.84rem; }
+.wildfire-home-door span { color: var(--muted); font-size: 0.82rem; }
 .wildfire-home-door > a {
-  flex: none; min-height: 2.75rem; display: inline-flex; align-items: center;
-  padding: 0.55rem 0.8rem; border: 1px solid var(--amber); border-radius: 0.55rem;
+  flex: none; min-height: 2.5rem; display: inline-flex; align-items: center; gap: 0.3rem;
+  padding: 0.4rem 0.75rem; border: 1px solid var(--amber); border-radius: 0.2rem;
   color: var(--ink); font-weight: 750;
 }
 .wildfire-home-door > a:hover { background: var(--panel); text-decoration: none; }
-.patterns-home-door {
-  display: block; margin: 0.7rem 0 1rem; padding: 0.75rem 0.9rem;
-  color: var(--ink); background: color-mix(in srgb, var(--leaf) 6%, var(--panel));
-  border: 1px solid var(--line); border-left: 4px solid var(--leaf); border-radius: 0.75rem;
+
+/* The season ahead: an almanac leaf. Dated, sourced, and gone after its
+   check date; season.mjs holds the rules. */
+.season {
+  position: relative; margin: 1rem 0 0; padding: clamp(1.1rem, 3.6vw, 2.1rem);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--sea) 7%, transparent), transparent 14rem),
+    var(--panel);
+  border: 1px solid var(--line); border-top: 4px solid var(--sea); border-radius: 0.2rem;
+  box-shadow: var(--shadow);
 }
-.patterns-home-door strong, .patterns-home-door span { display: block; }
-.patterns-home-door span { margin-top: 0.08rem; color: var(--muted); font-size: 0.82rem; }
-.patterns-home-door:hover { border-color: var(--leaf); text-decoration: none; }
-.cognition-home-door { border-left-color: var(--plum); }
-.cognition-home-door:hover { border-color: var(--plum); }
-.hero {
-  position: relative; margin: 1.2rem 0 2rem; padding: clamp(1.25rem, 4vw, 2.4rem);
-  text-align: left; background: var(--panel); border: 3px double var(--line);
-  border-radius: 0.2rem; box-shadow: 0 1rem 2.5rem rgba(54, 38, 18, 0.09);
+.season-kicker {
+  margin: 0; color: var(--sea);
+  font: 750 0.74rem/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0.12em; text-transform: uppercase;
 }
-.hero h1 { max-width: 42rem; font-size: clamp(1.9rem, 4vw, 2.55rem); margin: 0.2rem 0 0.55rem; }
-.hero .hero-intro { color: var(--muted); max-width: 42rem; margin: 0 0 0.9rem; }
+.season h2 { margin: 0.2rem 0 0.55rem; font-size: clamp(1.65rem, 4.4vw, 2.45rem); letter-spacing: -0.02em; }
+.season-lede { max-width: 38rem; margin: 0; }
+.season-figure { margin: 1.1rem 0 0.2rem; }
+.season-figure svg { display: block; width: 100%; height: auto; max-width: 30rem; overflow: visible; }
+.season-figure figcaption { max-width: 38rem; margin-top: 0.35rem; color: var(--muted); font-size: 0.8rem; }
+.sv-sea { fill: var(--sea); fill-opacity: 0.14; stroke: var(--sea); stroke-opacity: 0.4; }
+.sv-land { fill: var(--ink); fill-opacity: 0.15; }
+.sv-warm-core { stop-color: var(--ember); stop-opacity: 0.78; }
+.sv-warm-edge { stop-color: var(--ember); stop-opacity: 0; }
+.sv-drift { fill: none; stroke: var(--ember); stroke-width: 2.5; stroke-linecap: round; }
+.sv-drift-head { fill: var(--ember); }
+.sv-rain { stroke: var(--sea); stroke-width: 2; stroke-linecap: round; }
+.sv-cloud { fill: var(--sea); opacity: 0.5; }
+.sv-sun { fill: none; stroke: var(--amber); stroke-width: 2; stroke-linecap: round; }
+.sv-label { fill: var(--muted); font: 600 16px/1 -apple-system, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif; }
+.sv-strong { fill: var(--ink); font-weight: 750; }
+.sv-hot {
+  fill: var(--ink); stroke: var(--panel); stroke-width: 5px; stroke-linejoin: round; paint-order: stroke;
+  font: 800 18px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+.season-where h3, .season-print h3 {
+  margin: 0 0 0.5rem; font-size: 1.05rem;
+}
+.season-places { margin: 0; padding: 0; list-style: none; }
+.season-places li { padding: 0.6rem 0; border-top: 1px solid var(--line); }
+.season-places li:first-child { border-top: 0; padding-top: 0; }
+.season-places strong { display: block; font-family: "Iowan Old Style", Palatino, Georgia, "Songti SC", serif; }
+.season-places p { margin: 0.1rem 0 0; font-size: 0.93rem; }
+.season-places small { color: var(--muted); font-size: 0.8rem; }
+.season-places .season-go { display: block; margin-top: 0.2rem; font-size: 0.85rem; }
+.season-print {
+  margin: 1.4rem 0 0; padding: 0.9rem 1rem;
+  background: color-mix(in srgb, var(--amber) 5%, var(--panel));
+  border-left: 4px solid var(--amber); border-radius: 0.2rem;
+}
+.season-print p { margin: 0 0 0.55rem; font-size: 0.93rem; }
+.season-print ul { display: flex; flex-wrap: wrap; gap: 0.45rem; margin: 0; padding: 0; list-style: none; }
+.season-print li a {
+  display: inline-flex; align-items: center; min-height: 2.4rem; padding: 0.3rem 0.7rem;
+  border: 1px solid var(--line); border-radius: 0.2rem; background: var(--panel); color: var(--ink);
+}
+.season-print li a:hover { border-color: var(--ember); text-decoration: none; }
+.season-co { margin: 0.9rem 0 0; padding-top: 0.7rem; border-top: 1px solid var(--line); font-size: 0.93rem; }
+.season-co strong { color: var(--ink); }
+.season-source { margin: 1rem 0 0; color: var(--muted); font-size: 0.8rem; }
+.season-stale {
+  margin: 0 0 1rem; padding: 0.7rem 0.85rem; border: 2px solid var(--ember); border-radius: 0.2rem;
+  font-weight: 650;
+}
+.season-stale[hidden] { display: none; }
+.season.is-stale .season-figure { opacity: 0.55; }
+@media (min-width: 52rem) {
+  .season-body {
+    display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    grid-template-areas: "head where" "print where"; column-gap: 2.2rem; align-items: start;
+  }
+  .season-head { grid-area: head; }
+  .season-print { grid-area: print; }
+  .season-where { grid-area: where; padding-left: 1.6rem; border-left: 1px solid var(--line); }
+}
+@media (max-width: 51.99rem) {
+  .season-where { margin-top: 1.4rem; padding-top: 1.1rem; border-top: 1px solid var(--line); }
+}
+
+/* the book: title page, then search */
+.hero { position: relative; margin: 2.4rem 0 0.6rem; padding: 0; text-align: left; }
+.hero h1 { max-width: 42rem; font-size: clamp(1.9rem, 4.6vw, 2.9rem); margin: 0.2rem 0 0.55rem; letter-spacing: -0.025em; }
+.hero .hero-intro { color: var(--muted); max-width: 40rem; margin: 0 0 0.9rem; font-size: 1.05rem; }
 .book-kicker { margin: 0; }
 .hero .book-truth {
-  max-width: 42rem; margin: 0 0 1rem; padding: 0.65rem 0 0.65rem 1rem;
+  max-width: 40rem; margin: 0 0 1rem; padding: 0.15rem 0 0.15rem 1rem;
   color: var(--ink); border-left: 3px solid var(--ember);
 }
 .hero-actions { margin: 0 0 1.2rem; }
-.craft-law { margin: 1.35rem 0; padding: 1rem 0; border-block: 1px solid var(--line); }
-.craft-law h2 { margin: 0 0 0.65rem; font-size: 1rem; }
+.craft-law { margin: 1.4rem 0; padding: 0.9rem 0; border-block: 1px solid var(--line); }
+.craft-law h2 { margin: 0 0 0.55rem; font-size: 1rem; }
 .craft-law ol {
   display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0; margin: 0; padding: 0; list-style: none; counter-reset: craft-step;
 }
 .craft-law li {
   counter-increment: craft-step; position: relative; min-width: 0;
-  padding: 0.45rem 0.75rem 0.45rem 2.1rem; border-left: 1px solid var(--line);
+  padding: 0.35rem 0.75rem 0.35rem 2.1rem; border-left: 1px solid var(--line);
 }
 .craft-law li:first-child { border-left: 0; }
 .craft-law li::before {
-  content: counter(craft-step); position: absolute; left: 0.55rem; top: 0.52rem;
+  content: counter(craft-step); position: absolute; left: 0.55rem; top: 0.45rem;
   color: var(--ember); font: 750 0.72rem/1 ui-monospace, monospace;
 }
 .craft-law strong, .craft-law span { display: block; }
 .craft-law strong { font-family: "Iowan Old Style", Palatino, Georgia, serif; font-size: 0.93rem; }
-.craft-law span { margin-top: 0.16rem; color: var(--muted); font-size: 0.74rem; line-height: 1.4; }
+.craft-law span { margin-top: 0.12rem; color: var(--muted); font-size: 0.74rem; line-height: 1.4; }
 .search-label { display: block; margin: 0 0 0.4rem; font-weight: 750; }
 #q {
-  width: 100%; max-width: 34rem; padding: 0.72rem 0.85rem; font: inherit;
-  border: 1.5px solid var(--line); border-radius: 0.18rem;
-  background: var(--panel); color: var(--ink); outline: none;
+  width: 100%; padding: 0.8rem 0.9rem 0.8rem 2.6rem; font: inherit; font-size: 1.05rem;
+  border: 1.5px solid var(--line); border-radius: 0.2rem; color: var(--ink); outline: none;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23998c7a' stroke-width='2.2' stroke-linecap='round'%3E%3Ccircle cx='10.5' cy='10.5' r='6.5'/%3E%3Cpath d='M15.5 15.5 21 21'/%3E%3C/svg%3E") no-repeat 0.85rem 50% / 1.1rem,
+    var(--panel);
 }
 #q:focus { border-color: var(--ember); }
 
-/* the tree: numbered domains */
+/* the tree: numbered domains. On the home page each domain is a contents
+   list; its own page keeps the full cards. */
 .book-contents { padding-bottom: 1rem; }
-.domain { margin-top: 2.8rem; padding-top: 1.15rem; border-top: 1px solid var(--line); }
+.domain { margin-top: 2.4rem; padding-top: 1.1rem; border-top: 1px solid var(--line); }
 .domain h2 { font-size: 1.42rem; margin: 0 0 0.25rem; }
 .domain h2 a { color: var(--ink); }
 .domain h2 a:hover { color: var(--ember); text-decoration: none; }
@@ -398,6 +519,34 @@ body[data-learning-page="guide"] main {
 }
 .count { font-family: inherit; font-size: 0.8rem; font-weight: 400; color: var(--muted); }
 .intro { color: var(--muted); margin: 0.1rem 0 0.9rem; }
+.domain .intro { margin-bottom: 0.4rem; font-size: 0.95rem; }
+.toc { margin: 0; padding: 0; list-style: none; columns: 2 19rem; column-gap: 2.4rem; }
+.toc li { break-inside: avoid; }
+.toc .card {
+  flex-direction: row; flex-wrap: wrap; align-items: baseline; gap: 0.15rem 0.6rem;
+  padding: 0.55rem 0.1rem; color: var(--ink); background: none;
+  border: 0; border-bottom: 1px dotted color-mix(in srgb, var(--muted) 45%, transparent); border-radius: 0;
+}
+.toc .card:hover { color: var(--ember); background: none; text-decoration: none; }
+.toc .card strong { flex: 1 1 11rem; font-weight: 600; line-height: 1.35; }
+.toc-meta { margin-left: auto; color: var(--muted); font-size: 0.78rem; white-space: nowrap; }
+.toc-meta i { font-style: normal; }
+.toc-meta .diff-easy, .toc-meta .diff-steady, .toc-meta .diff-hard, .toc-meta .diff-mastery { border: 0; }
+.toc .card.is-learned { border-color: color-mix(in srgb, var(--leaf) 65%, var(--line)); }
+.toc .learning-card-mark { align-self: center; }
+.home-shelves { margin: 2.6rem 0 0; padding-top: 1.1rem; border-top: 1px solid var(--line); }
+.home-shelves h2 { margin: 0 0 0.7rem; font-size: 1.1rem; }
+.home-shelves > div { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); gap: 0.6rem; }
+.patterns-home-door {
+  display: block; margin: 0; padding: 0.75rem 0.9rem;
+  color: var(--ink); background: color-mix(in srgb, var(--leaf) 6%, var(--panel));
+  border: 1px solid var(--line); border-left: 4px solid var(--leaf); border-radius: 0.2rem;
+}
+.patterns-home-door strong, .patterns-home-door span { display: block; }
+.patterns-home-door span { margin-top: 0.08rem; color: var(--muted); font-size: 0.82rem; }
+.patterns-home-door:hover { border-color: var(--leaf); text-decoration: none; }
+.cognition-home-door { border-left-color: var(--plum); }
+.cognition-home-door:hover { border-color: var(--plum); }
 
 /* guide cards */
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: 0.7rem; }
@@ -410,6 +559,8 @@ body[data-learning-page="guide"] main {
 .card:hover { border-color: var(--ember); background: var(--panel); text-decoration: none; }
 .card .sum { font-size: 0.88rem; color: var(--muted); flex: 1; }
 .card .meta { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+/* search hides with [hidden]; the cards' own display would otherwise win */
+.card[hidden], .domain[hidden] { display: none; }
 
 /* chips */
 .chip {
@@ -425,7 +576,7 @@ body[data-learning-page="guide"] main {
 .crumb { color: var(--muted); font-size: 0.9rem; margin: 1rem 0 0; }
 .guide h1 { font-size: 1.9rem; margin: 0.6rem 0 0.3rem; }
 .lede { font-size: 1.1rem; color: var(--muted); font-style: italic; margin: 0 0 0.6rem; }
-.guide .meta { display: flex; gap: 0.4rem; margin: 0 0 1.2rem; }
+.guide .meta { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0 0 1.2rem; }
 .guide h2 { font-size: 1.25rem; margin: 1.8rem 0 0.5rem; border-bottom: 1px solid var(--line); padding-bottom: 0.25rem; }
 .guide ol, .guide ul { padding-left: 1.4rem; }
 .guide li { margin: 0.35rem 0; }
@@ -564,9 +715,10 @@ html[lang="zh"] .card-kicker, html[lang="yue"] .card-kicker { letter-spacing: 0.
   .guide h1 { font-size: 1.5rem; }
   .grid { grid-template-columns: 1fr; }
   .top { align-items: flex-start; flex-wrap: wrap; }
-  .top-actions { width: 100%; align-items: flex-start; flex-direction: column; gap: 0.4rem; }
-  .wildfire-home-door { align-items: stretch; flex-direction: column; }
-  .wildfire-home-door > a { justify-content: center; }
+  .top-actions { width: 100%; justify-content: flex-start; flex-wrap: wrap; gap: 0.4rem; }
+  .wildfire-home-door { align-items: center; gap: 0.6rem; }
+  .wildfire-home-door span { font-size: 0.78rem; }
+  .season-places p { font-size: 0.95rem; }
   .root-cover { padding: 1.25rem; }
   .root-equation { grid-template-columns: 1fr; }
   .root-equation span { min-height: 3rem; }
@@ -574,9 +726,8 @@ html[lang="zh"] .card-kicker, html[lang="yue"] .card-kicker { letter-spacing: 0.
   .root-languages, .root-shelves > div { grid-template-columns: 1fr; }
   .wildfire-entry { align-items: flex-start; flex-direction: column; }
   .wildfire-entry::after { content: "Open now →"; }
-  .craft-law ol { grid-template-columns: 1fr; }
-  .craft-law li { border-top: 1px solid var(--line); border-left: 0; }
-  .craft-law li:first-child { border-top: 0; }
+  .craft-law ol { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 0.4rem; }
+  .craft-law li:nth-child(3) { border-left: 0; }
   body[data-learning-page="domain"] main,
   body[data-learning-page="guide"] main { border-inline: 0; }
 }
@@ -588,7 +739,9 @@ html[lang="zh"] .card-kicker, html[lang="yue"] .card-kicker { letter-spacing: 0.
   body[data-learning-page="domain"],
   body[data-learning-page="guide"] { background: #fff; }
   .root-cover, .hero { box-shadow: none; }
-  .root-agent-door, .system-door, .langs { display: none; }
+  .root-agent-door, .system-door, .langs, .theme-toggle { display: none; }
+  .season { box-shadow: none; }
+  .wildfire-home-door, .season-figure, .season-places li, .season-print { break-inside: avoid; }
   .pattern-map-scroll, .pattern-legend, .pattern-scroll-cue { display: none; transform: none; }
   .patterns-field, .patterns-contract, .relational-readings li { box-shadow: none; }
   .pattern-plain ol { display: block; }
@@ -1037,11 +1190,16 @@ html[data-learning-mode="quiet"] .learning-card-mark { display: none !important;
   padding-bottom: 1rem;
 }
 @media (prefers-color-scheme: dark) {
-  .wildfire-page {
+  :root:not([data-theme="day"]) .wildfire-page {
     --wildfire-urgent: #ff9b7d;
     --wildfire-calm: #81c7bd;
     --wildfire-gold: #e1b968;
   }
+}
+:root[data-theme="night"] .wildfire-page {
+  --wildfire-urgent: #ff9b7d;
+  --wildfire-calm: #81c7bd;
+  --wildfire-gold: #e1b968;
 }
 .wildfire-hero { padding: 1.8rem 0 0.8rem; }
 .wildfire-kicker {
@@ -1077,8 +1235,9 @@ html[data-learning-mode="quiet"] .learning-card-mark { display: none !important;
   border-color: var(--wildfire-urgent); background: var(--wildfire-urgent); color: #fff;
 }
 @media (prefers-color-scheme: dark) {
-  .wildfire-now-actions .wildfire-primary-action { color: #1b100c; }
+  :root:not([data-theme="day"]) .wildfire-now-actions .wildfire-primary-action { color: #1b100c; }
 }
+:root[data-theme="night"] .wildfire-now-actions .wildfire-primary-action { color: #1b100c; }
 .wildfire-boundary {
   margin: 1.2rem 0 1.6rem; padding: 0.9rem 1rem;
   border: 1px solid var(--line); border-left: 4px solid var(--wildfire-gold);
@@ -1337,4 +1496,32 @@ html[data-learning-mode="quiet"] .learning-card-mark { display: none !important;
   .cognition-observation, .cognition-truth, .cognition-counts div { box-shadow: none; break-inside: avoid; }
   .cognition-observations { display: block; }
   .cognition-observation { margin: 0 0 0.7rem; }
+}
+
+/* Paper is always paper: night colours never reach the printer. Kept last so
+   it outranks the night rules above. */
+@media print {
+  :root:not([data-theme="print"]), :root[data-theme] {
+    color-scheme: light;
+    --bg: #fff;
+    --panel: #fff;
+    --ink: #111;
+    --muted: #4a4540;
+    --line: #c9c1b4;
+    --ember: #8f3b17;
+    --leaf: #2f5f3d;
+    --amber: #6b4a0c;
+    --plum: #5f437f;
+    --sea: #1f5570;
+    --system-accent: #2a6f9d;
+    --system-control-ink: #174b70;
+    --system-control-hover: #0e3c5e;
+    --shadow: none;
+  }
+  :root:not([data-theme="print"]) .wildfire-page {
+    --wildfire-urgent: #9d3f29;
+    --wildfire-calm: #2d6f68;
+    --wildfire-gold: #9a681c;
+  }
+  :root:not([data-theme="print"]) .castle-door { --castle-gold: #9a721f; }
 }

@@ -32,6 +32,7 @@ import { LEARNING_SYSTEM, createLearningEngine } from './learning-system.mjs';
 import { assertMedicalReview } from './medical-review.mjs';
 import { PATTERN_CARE_GUIDES, preparePatterns } from './patterns.mjs';
 import { prepareRemedies } from './remedies.mjs';
+import { prepareSeason, seasonWords } from './season.mjs';
 import { prepareWildfireHelp } from './wildfire.mjs';
 import { assertWildfireReview } from './wildfire-review.mjs';
 import { MARGIN_TERMS } from './xenia-worker.js';
@@ -188,6 +189,13 @@ const WILDFIRE = prepareWildfireHelp(
   JSON.parse(WILDFIRE_SOURCE_BYTES.toString('utf8')),
   { sourceBytes: WILDFIRE_SOURCE_BYTES, today: BUILD_DATE }
 );
+const SEASON = prepareSeason(
+  JSON.parse(readFileSync(join(ROOT, 'season.json'), 'utf8')),
+  { slugs: new Set(bySlug.keys()), languages: langs.map((l) => l.code), today: BUILD_DATE }
+);
+if (!SEASON.current) {
+  console.log(`season: ${SEASON.id} passed its check date (${SEASON.check_by}) and is left off every page until it is checked against a newer forecast`);
+}
 
 // Shared public sources may use different kind vocabularies in the two
 // schemas, but their identity must not drift between shelves.
@@ -232,6 +240,27 @@ const langSwitch = (currentCode, pathAfterLang) =>
 
 const safeScriptJson = (value) => JSON.stringify(value).replaceAll('<', '\\u003c');
 
+// html[data-theme] is set only when a reader chose; absent, the system decides.
+const THEME_KEY = 'mindicraft-theme';
+const THEME_HEAD = `try{const t=localStorage.getItem('${THEME_KEY}');if(t==='night'||t==='day')document.documentElement.dataset.theme=t}catch{}`;
+const THEME_CLIENT = `(() => {
+  const button = document.querySelector('[data-theme-toggle]');
+  if (!button) return;
+  const root = document.documentElement;
+  const dark = matchMedia('(prefers-color-scheme: dark)');
+  const night = () => (root.dataset.theme ? root.dataset.theme === 'night' : dark.matches);
+  const show = () => button.setAttribute('aria-pressed', String(night()));
+  button.addEventListener('click', () => {
+    root.dataset.theme = night() ? 'day' : 'night';
+    try { localStorage.setItem('${THEME_KEY}', root.dataset.theme); } catch {}
+    show();
+  });
+  button.hidden = false;
+  show();
+  if (dark.addEventListener) dark.addEventListener('change', show);
+  else if (dark.addListener) dark.addListener(show);
+})();`;
+
 function page({
   lang,
   title,
@@ -266,6 +295,16 @@ function page({
       )}</script>
 <script type="module" src="/learning-ui.mjs"></script>`
     : '';
+  // Night reading by hand, on the pages that already run script. The stored
+  // choice is applied in <head> so the page never flashes the wrong colours;
+  // without script the button stays hidden and the system setting decides.
+  const themeHead = learning ? `<script>${THEME_HEAD}</script>` : '';
+  const themeToggle = learning
+    ? `<button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" title="${esc(
+        S.theme.hint
+      )}" hidden><span aria-hidden="true">☾</span> ${esc(S.theme.night)}</button>`
+    : '';
+  const themeClient = learning ? `<script>${THEME_CLIENT}</script>` : '';
   return `<!doctype html>
 <html lang="${lang.code}">
 <head>
@@ -275,18 +314,18 @@ function page({
 <meta name="description" content="${esc(description || S.tagline)}">
 <link rel="stylesheet" href="/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
-${head}
+${themeHead}${head}
 </head>
 <body${bodyClass ? ` class="${esc(bodyClass)}"` : ''}${learningAttrs}>
 <header class="top">
   <a class="brand" href="/${lang.code}/">${esc(S.siteTitle)}</a>
-  <div class="top-actions">${showLanguageSwitch ? langSwitch(lang.code, path) : ''}${learningDoor}</div>
+  <div class="top-actions">${showLanguageSwitch ? langSwitch(lang.code, path) : ''}${themeToggle}${learningDoor}</div>
 </header>
 <main>
 ${body}
 </main>
 <footer class="foot">${esc(S.footer)}</footer>
-${learningClient}
+${themeClient}${learningClient}
 </body>
 </html>`;
 }
@@ -299,7 +338,7 @@ const diffChip = (S, d) =>
 // see field-card.mjs. bodyLang is the language the body is written in, which
 // is English when English stands in for a missing translation.
 const fill = (template, values) =>
-  template.replace(/\{(\w+)\}/g, (all, key) => (key in values ? String(values[key]) : all));
+  template.replace(/\{(\w+)\}/g, (all, key) => (Object.hasOwn(values, key) ? String(values[key]) : all));
 
 // Guides whose step headlines, read alone, are a list of what to eat from the
 // wild; only the full steps narrow it to the safe kinds. Their glance shows
@@ -399,6 +438,111 @@ const guideCard = (lang, domain, guide) => {
 </a>`;
 };
 
+// One line of the home contents: the guide's title, difficulty and time. The
+// summary stays searchable and lives on the domain page's full card.
+const tocRow = (lang, domain, guide) => {
+  const S = lang.strings;
+  const local = content[lang.code][guide.slug]?.meta || {};
+  return `<li><a class="card" href="/${lang.code}/${domain.key}/${guide.slug}/" data-guide-card="${esc(
+    guide.slug
+  )}" data-domain-id="${esc(domain.key)}" data-difficulty="${esc(
+    guide.difficulty
+  )}" data-search="${esc(
+    `${local.title || guide.title} ${local.summary || guide.summary}`.toLowerCase()
+  )}">
+  <strong>${esc(local.title || guide.title)}</strong>
+  <span class="toc-meta"><i class="diff-${esc(guide.difficulty)}">${esc(
+    S.difficultyWords[guide.difficulty] || guide.difficulty
+  )}</i> · ${esc(local.time || guide.time || '')}</span>
+</a></li>`;
+};
+
+// ---------- the season ahead ----------
+// Rules and dates live in season.mjs; this only lays the leaf out.
+
+const titleIn = (code, slug) =>
+  content[code][slug]?.meta?.title || content.en[slug]?.meta?.title || bySlug.get(slug)?.guide.title || slug;
+const seasonGuide = (code, slug) =>
+  `<a href="/${code}/${bySlug.get(slug).domain.key}/${slug}/">${esc(titleIn(code, slug))}</a>`;
+
+// A strip of the tropical Pacific: warm water spread east, the rain moving
+// with it, the west left drier. A sketch of the mechanism, not a map.
+const seasonSvg = (d, anomaly) => `<svg viewBox="0 0 440 212" role="img" aria-labelledby="season-svg-title season-svg-desc">
+<title id="season-svg-title">${esc(d.title)}</title>
+<desc id="season-svg-desc">${esc(d.desc)}</desc>
+<defs>
+<radialGradient id="sv-warm"><stop offset="0%" class="sv-warm-core"/><stop offset="100%" class="sv-warm-edge"/></radialGradient>
+<clipPath id="sv-ocean"><rect x="52" y="108" width="336" height="62" rx="6"/></clipPath>
+</defs>
+<rect class="sv-sea" x="52" y="108" width="336" height="62" rx="6"/>
+<g clip-path="url(#sv-ocean)"><ellipse cx="296" cy="139" rx="132" ry="40" fill="url(#sv-warm)"/></g>
+<path class="sv-land" d="M4 102C20 94 40 98 52 108V170C38 180 18 178 4 170Z"/>
+<path class="sv-land" d="M388 106C402 98 422 100 436 108V172C422 182 402 180 388 172Z"/>
+<path class="sv-drift" d="M86 139H190"/><path class="sv-drift-head" d="M204 139 190 131.5V146.5Z"/>
+<text class="sv-label" x="62" y="101">${esc(d.drift)}</text>
+<text class="sv-hot" x="300" y="145" text-anchor="middle">+${esc(anomaly)}</text>
+<g transform="translate(64 54)"><circle class="sv-sun" r="10"/><path class="sv-sun" d="M0-17v-6M0 17v6M-17 0h-6M17 0h6M-12-12-16-16M12 12 16 16M-12 12-16 16M12-12 16-16"/></g>
+<text class="sv-label sv-strong" x="64" y="20" text-anchor="middle">${esc(d.dry)}</text>
+<g transform="translate(290 52)"><g class="sv-cloud"><circle cx="-17" cy="2" r="12"/><circle cx="2" cy="-6" r="16"/><circle cx="20" cy="2" r="12"/><rect x="-29" y="0" width="61" height="14" rx="7"/></g><path class="sv-rain" d="M-18 21l-4 12M-4 21l-4 12M10 21l-4 12M24 21l-4 12"/></g>
+<text class="sv-label sv-strong" x="290" y="20" text-anchor="middle">${esc(d.rain)}</text>
+<text class="sv-label" x="4" y="202">${esc(d.west)}</text>
+<text class="sv-label" x="436" y="202" text-anchor="end">${esc(d.east)}</text>
+</svg>`;
+
+function seasonHtml(lang) {
+  if (!SEASON.current) return '';
+  const { words: W, anomaly, month, published, nextUpdate, checkBy } = seasonWords(SEASON, lang.code);
+  const code = lang.code;
+  const cite = (sources) =>
+    `<small>(${sources
+      .map((source) => `<a href="${esc(source.url)}" rel="external">${esc(source.name)}</a>`)
+      .join(' · ')})</small>`;
+  const place = (p) => `<li><strong>${esc(p.place)}</strong><p>${esc(p.tends)} ${cite(p.sources)}</p>${
+    p.guides.length
+      ? `<span class="season-go">${esc(W.go)}${W.go.endsWith('：') ? '' : ' '}${p.guides
+          .map((slug) => seasonGuide(code, slug))
+          .join(' · ')}</span>`
+      : ''
+  }</li>`;
+  const outlook = `<a href="${esc(SEASON.outlook.url)}" rel="external">${esc(SEASON.outlook.publisher)}</a>`;
+  return `<section class="season" id="season" aria-labelledby="season-title" data-check-by="${esc(SEASON.check_by)}">
+<p class="season-stale" role="note" hidden>${esc(fill(W.stale, { check_by: checkBy }))}</p>
+<div class="season-body">
+<div class="season-head">
+<p class="season-kicker">${esc(W.kicker)}</p>
+<h2 id="season-title">${esc(W.title)}</h2>
+<p class="season-lede">${esc(W.lede)}</p>
+<figure class="season-figure">${seasonSvg(W.diagram, anomaly)}
+<figcaption>${esc(fill(W.diagram.caption, { anomaly, month }))}</figcaption></figure>
+</div>
+<div class="season-where">
+<h3>${esc(W.where)}</h3>
+<ul class="season-places">
+${W.places.map(place).join('\n')}
+</ul>
+</div>
+<div class="season-print">
+<h3>${esc(W.print_title)}</h3>
+<p>${esc(W.print_lede)}</p>
+<ul>${SEASON.print.map((slug) => `<li>${seasonGuide(code, slug)}</li>`).join('')}</ul>
+<p class="season-co"><strong>${esc(W.co_lead)}</strong> ${esc(W.co_text)} ${cite(SEASON.carbon_monoxide_sources)}</p>
+</div>
+</div>
+<p class="season-source">${fill(esc(W.source_line), {
+    outlook,
+    published: esc(published),
+    next_update: esc(nextUpdate),
+    check_by: esc(checkBy),
+  })}</p>
+</section>
+<script>(() => {
+  const leaf = document.getElementById('season');
+  if (!leaf || Date.now() <= Date.parse(leaf.dataset.checkBy + 'T23:59:59Z')) return;
+  leaf.classList.add('is-stale');
+  leaf.querySelector('.season-stale').hidden = false;
+})();</script>`;
+}
+
 const craftLawHtml = (S) => `<aside class="craft-law" aria-labelledby="craft-law-title">
   <h2 id="craft-law-title">${esc(S.craftLaw.title)}</h2>
   <ol>
@@ -430,7 +574,7 @@ for (const lang of langs) {
         (lang.code !== 'en' && domain.i18n?.[lang.code]?.title) || domain.title
       )}</a> <span class="count">${domain.guides.length} ${esc(S.guides)}</span></h2>
   <p class="intro">${esc((lang.code !== 'en' && domain.i18n?.[lang.code]?.intro) || domain.intro)}</p>
-  <div class="grid">${domain.guides.map((g) => guideCard(lang, domain, g)).join('\n')}</div>
+  <ol class="toc">${domain.guides.map((g) => tocRow(lang, domain, g)).join('\n')}</ol>
 </section>`
     )
     .join('\n');
@@ -448,14 +592,7 @@ for (const lang of langs) {
   </div>
   <a href="/wildfire/">Open now <span aria-hidden="true">→</span></a>
 </aside>
-<a class="patterns-home-door" href="/patterns/">
-  <strong>How the pieces connect · English</strong>
-  <span>The real guide graph, its village reading path, and five open care questions.</span>
-</a>
-<a class="patterns-home-door cognition-home-door" href="/cognition/">
-  <strong>AI cognition map · English</strong>
-  <span>Nine separate dimensions, dated observations, human comparisons with edges, and visible gaps.</span>
-</a>
+${seasonHtml(lang)}
 <section class="hero book-hero">
   <p class="book-kicker">✦ ${esc(S.bookKicker)}</p>
   <h1>${esc(S.tagline)}</h1>
@@ -470,6 +607,19 @@ for (const lang of langs) {
   <p id="noresults" role="status" aria-live="polite" hidden>${esc(S.noResults)}</p>
 </section>
 <div class="book-contents" id="contents">${domainsHtml}</div>
+<nav class="home-shelves" aria-labelledby="home-shelves-title">
+  <h2 id="home-shelves-title">${esc(S.moreShelves)}</h2>
+  <div>
+    <a class="patterns-home-door" href="/patterns/">
+      <strong>How the pieces connect · English</strong>
+      <span>The real guide graph, its village reading path, and five open care questions.</span>
+    </a>
+    <a class="patterns-home-door cognition-home-door" href="/cognition/">
+      <strong>AI cognition map · English</strong>
+      <span>Nine separate dimensions, dated observations, human comparisons with edges, and visible gaps.</span>
+    </a>
+  </div>
+</nav>
 <script>
 const q = document.getElementById('q');
 q.addEventListener('input', () => {
@@ -692,7 +842,21 @@ write(
 <a class="wildfire-entry" href="/wildfire/">
   <span><strong>Wildfire help</strong><span>Leave safely · find official help · return and rebuild</span></span>
 </a>
-<article class="root-cover" aria-labelledby="root-title">
+${
+  SEASON.current
+    ? `<nav class="season-entry" aria-labelledby="season-entry-title">
+  <p><strong id="season-entry-title">${esc(SEASON.languages.en.kicker)}: ${esc(
+        SEASON.languages.en.title
+      )}</strong><span>${esc(SEASON.languages.en.where)}, and the cards to print first. Forecast of ${esc(
+        seasonWords(SEASON, 'en').published
+      )}; it comes down after ${esc(seasonWords(SEASON, 'en').checkBy)}.</span></p>
+  <p class="season-entry-langs">${langs
+    .map((language) => `<a href="/${language.code}/#season" hreflang="${esc(language.code)}">${esc(language.name)}</a>`)
+    .join('')}</p>
+</nav>
+`
+    : ''
+}<article class="root-cover" aria-labelledby="root-title">
   <p class="root-kicker">✦ a working book of causes and craft</p>
   <h1 id="root-title">mindicraft</h1>
   <p class="root-lede"><em>It may look like a spellbook. It works like a workshop.</em></p>
