@@ -350,24 +350,46 @@ the process should work.
 
 ## The season ahead
 
-Each home page opens with the season ahead. This edition covers the 2026–27
+Each home page pins the season ahead at its door, just after Wildfire help,
+and carries the full leaf after the catalogue. This edition covers the 2026–27
 El Niño: what it tends to bring where each language's readers live, which
 cards to print first, and one line on carbon monoxide in a power cut. Every
 place names its sources, and every claim stays inside them: an official
 outlook where one exists, the usual pattern where not, history marked as
 history. Where nothing official could be confirmed, the place points to its
-weather service instead of guessing.
+weather service instead of guessing. Each place folds, so a reader opens their
+own; on paper every place prints whole.
 
 A forecast goes stale in weeks, so the edition carries `check_by`. Until then
 the build shows it. After that date the build leaves it out of every page and
 says so in its log. A copy saved or printed earlier marks itself out of date
-when opened with script. To renew it, read the newest official outlook,
+when opened with script, and the pin at the door comes down. To renew it, read the newest official outlook,
 re-check every place and source in all four languages, and then move `as_of`
 and `check_by` on. Never move only the dates.
 
-Home pages list each domain as a contents page: title, difficulty and time.
-The full cards with summaries stay on each domain's own page, and search
-still matches the summaries.
+## The hall
+
+The book is laid out like an old library, after the State Hall in Vienna.
+Each domain is a numbered shelf (I–XVII, in the tree's order) and each guide
+has a shelf mark, such as IV·3 for the third guide on shelf IV. The marks
+appear on the home page, on each shelf's page, on each guide and on its
+printed card, so a place can be found again, said aloud, or written down.
+Typing a mark into search (IV·3, IV.3 or iv 3) finds exactly that guide.
+They follow the tree's order, so adding a guide renumbers the ones after it on
+its shelf, like a new edition; the slugs stay the lasting names.
+
+The home page opens with Wildfire help, the season's pin, and the title page.
+Then the catalogue: one search box and the plan of the hall, every shelf on
+one screen. While a search has text, the plan, the season's leaf and the
+craft law step aside so the finds come straight after the box. Each shelf on
+the home page lists its guides by mark, title, difficulty and time; the full
+catalogue cards with summaries stay on each shelf's own page, and search
+still matches the summaries. Shelf pages lead to the shelves on either side,
+and each guide ends with the rest of its shelf, itself marked.
+
+Body text is set in a book face for Latin script and the system's own face
+for Chinese. On paper, Chinese uses faces that survive being saved as PDF:
+Chrome on a Mac drops PingFang text from PDFs.
 
 Pages that already run script carry a Night switch: a dark, warm palette for
 reading by a phone in a power cut. The reader's choice is kept on their device

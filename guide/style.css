@@ -1,6 +1,7 @@
 /* Mindicraft — one stylesheet, light and dark, no framework.
-   The feel: a working grimoire. Warm paper, clear ink, folio marks, and no
-   ornament that hides the causal chain.
+   The feel: an old library that still works, after the State Hall in
+   Vienna. Vellum and walnut, gilt lines, numbered shelves and typed shelf
+   marks, and no ornament that hides the causal chain.
    Dark is lamplight: near-black and warm, for reading by a phone in a power
    cut. Near-black pixels draw almost nothing on the OLED screens most phones
    have. It follows the system, and pages with script can switch it by hand
@@ -8,11 +9,11 @@
 
 :root {
   color-scheme: light;
-  --bg: #f7f3ec;
-  --panel: #fffdf8;
-  --ink: #2b2620;
-  --muted: #6f675c;
-  --line: #e5dccc;
+  --bg: #f4ede1;
+  --panel: #fffcf5;
+  --ink: #2a2119;
+  --muted: #6b5f51;
+  --line: #e3d7c3;
   --ember: #b0522b;
   --leaf: #44734f;
   --amber: #815b12;
@@ -22,15 +23,22 @@
   --system-control-ink: #174b70;
   --system-control-hover: #0e3c5e;
   --shadow: 0 1px 3px rgba(60, 45, 20, 0.08);
+  /* the hall: walnut, gilt, and the paper of a shelf label */
+  --wood: #3b2617;
+  --wood-lit: #4a3120;
+  --gilt: #b48d43;
+  --gilt-ink: #e8cb85;
+  --board-ink: #f5e9d0;
+  --label: #fffaf0;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="day"]) {
     color-scheme: dark;
-    --bg: #0d0b09;
-    --panel: #16130f;
-    --ink: #eee5d6;
-    --muted: #a99d8c;
-    --line: #2e2721;
+    --bg: #0d0a07;
+    --panel: #16110c;
+    --ink: #eee4d2;
+    --muted: #ab9d89;
+    --line: #31271d;
     --ember: #ee8b5c;
     --leaf: #86b993;
     --amber: #dfb25a;
@@ -40,15 +48,21 @@
     --system-control-ink: #bfe7ff;
     --system-control-hover: #e9f7ff;
     --shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    --wood: #22170e;
+    --wood-lit: #2e2014;
+    --gilt: #9d7b3c;
+    --gilt-ink: #e0bf73;
+    --board-ink: #eadcc1;
+    --label: #1c150f;
   }
 }
 :root[data-theme="night"] {
   color-scheme: dark;
-  --bg: #0d0b09;
-  --panel: #16130f;
-  --ink: #eee5d6;
-  --muted: #a99d8c;
-  --line: #2e2721;
+  --bg: #0d0a07;
+  --panel: #16110c;
+  --ink: #eee4d2;
+  --muted: #ab9d89;
+  --line: #31271d;
   --ember: #ee8b5c;
   --leaf: #86b993;
   --amber: #dfb25a;
@@ -58,6 +72,12 @@
   --system-control-ink: #bfe7ff;
   --system-control-hover: #e9f7ff;
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  --wood: #22170e;
+  --wood-lit: #2e2014;
+  --gilt: #9d7b3c;
+  --gilt-ink: #e0bf73;
+  --board-ink: #eadcc1;
+  --label: #1c150f;
 }
 
 * { box-sizing: border-box; }
@@ -71,7 +91,16 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--ink);
-  font: 17px/1.65 -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "PingFang SC",
+  font: 17px/1.65 "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia,
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", serif;
+}
+html[lang="yue"] body {
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia,
+    "PingFang HK", "PingFang TC", "Microsoft JhengHei", "Noto Sans CJK TC", serif;
+}
+/* Wildfire help keeps a plain sans: calm and quick to read under stress. */
+.wildfire-page {
+  font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "PingFang SC",
     "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
 }
 h1, h2, h3 {
@@ -97,7 +126,8 @@ main { max-width: 46rem; margin: 0 auto; padding: 0 1.1rem 3rem; }
 .top-actions { display: flex; align-items: center; justify-content: flex-end; gap: 0.55rem; }
 .brand {
   font-family: "Iowan Old Style", Palatino, Georgia, serif;
-  font-weight: 700; font-size: 1.15rem; color: var(--ink);
+  font-weight: 700; font-size: 1.2rem; color: var(--ink);
+  font-variant-caps: small-caps; letter-spacing: 0.06em;
 }
 .brand:hover { text-decoration: none; color: var(--ember); }
 .langs { display: flex; flex-wrap: wrap; gap: 0.35rem; }
@@ -156,28 +186,30 @@ body[data-learning-page="guide"] main {
 }
 .root-main { max-width: 60rem; padding-bottom: 4rem; }
 .root-cover {
-  position: relative; isolation: isolate; overflow: hidden;
-  margin: 1.25rem 0; padding: clamp(1.5rem, 5vw, 3.5rem);
+  position: relative; isolation: isolate;
+  margin: 1.25rem 0; padding: clamp(2rem, 6vw, 3.5rem) clamp(1.25rem, 5vw, 3.5rem) clamp(1.5rem, 5vw, 3rem);
   background:
-    linear-gradient(115deg, color-mix(in srgb, var(--amber) 5%, transparent), transparent 36%),
+    radial-gradient(ellipse 70% 10rem at 50% 0, color-mix(in srgb, var(--sea) 11%, transparent), transparent),
     var(--panel);
-  border: 3px double var(--line); border-radius: 0.2rem;
-  box-shadow: 0 1.4rem 3rem rgba(54, 38, 18, 0.12);
+  border: 1px solid var(--line);
+  border-radius: 50% 50% 0.3rem 0.3rem / 8rem 8rem 0.3rem 0.3rem;
+  box-shadow: inset 0 0 0 5px var(--panel), inset 0 0 0 6px var(--gilt), 0 1.4rem 3rem rgba(54, 38, 18, 0.12);
 }
-.root-cover::after {
-  content: "✦"; position: absolute; z-index: -1; right: -0.04em; top: -0.34em;
-  color: color-mix(in srgb, var(--amber) 9%, transparent);
-  font: 20rem/1 "Iowan Old Style", Palatino, Georgia, serif;
-}
+.root-cover > .root-kicker, .root-cover > h1, .root-cover > .root-lede { text-align: center; }
 .root-kicker, .book-kicker {
-  color: var(--ember); font: 750 0.74rem/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
-  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--ember); font-weight: 700; font-size: 0.95rem; line-height: 1.5;
+  font-variant-caps: all-small-caps; letter-spacing: 0.16em;
+}
+/* small capitals are a Latin idea: Chinese labels keep their own spacing */
+html[lang="zh"] :is(.book-kicker, .catalogue-kicker, .bay-kicker, .season-kicker, .season-pin > span:first-child, .hall-plan h2),
+html[lang="yue"] :is(.book-kicker, .catalogue-kicker, .bay-kicker, .season-kicker, .season-pin > span:first-child, .hall-plan h2) {
+  font-size: 0.85rem; letter-spacing: 0.06em;
 }
 .root-cover h1 {
   margin: 0.15rem 0 0.25rem; font-size: clamp(2.9rem, 9vw, 5.8rem);
-  letter-spacing: -0.045em;
+  letter-spacing: -0.03em;
 }
-.root-lede { margin: 0 0 1rem; font-size: clamp(1.1rem, 2.4vw, 1.35rem); color: var(--muted); }
+.root-lede { margin: 0 0 1.4rem; font-size: clamp(1.1rem, 2.4vw, 1.35rem); color: var(--muted); }
 .root-cover > p:not(.root-kicker, .root-lede, .root-equation, .root-actions) { max-width: 42rem; }
 .root-equation {
   display: grid; grid-template-columns: 1fr auto 1fr auto 1fr auto 1.2fr;
@@ -387,10 +419,26 @@ body[data-learning-page="guide"] main {
 }
 .wildfire-home-door > a:hover { background: var(--panel); text-decoration: none; }
 
+/* The notice pinned at the door, leading to the season's leaf below. */
+.season-pin {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.05rem 0.55rem;
+  margin: 0.5rem 0 0; padding: 0.55rem 0.95rem; color: var(--ink);
+  background: color-mix(in srgb, var(--sea) 6%, var(--panel));
+  border: 1px solid var(--line); border-left: 4px solid var(--sea); border-radius: 0.2rem;
+}
+.season-pin > span:first-child {
+  color: var(--sea); font-size: 0.9rem; font-weight: 700;
+  font-variant-caps: all-small-caps; letter-spacing: 0.1em;
+}
+.season-pin strong { font-family: "Iowan Old Style", Palatino, Georgia, "Songti SC", serif; }
+.season-pin > span:last-child { color: var(--sea); }
+.season-pin:hover { border-color: var(--sea); text-decoration: none; }
+.season-pin[hidden] { display: none; }
+
 /* The season ahead: an almanac leaf. Dated, sourced, and gone after its
    check date; season.mjs holds the rules. */
 .season {
-  position: relative; margin: 1rem 0 0; padding: clamp(1.1rem, 3.6vw, 2.1rem);
+  position: relative; margin: 2rem 0 0; scroll-margin-top: 0.8rem; padding: clamp(1.1rem, 3.6vw, 2.1rem);
   background:
     linear-gradient(180deg, color-mix(in srgb, var(--sea) 7%, transparent), transparent 14rem),
     var(--panel);
@@ -398,9 +446,8 @@ body[data-learning-page="guide"] main {
   box-shadow: var(--shadow);
 }
 .season-kicker {
-  margin: 0; color: var(--sea);
-  font: 750 0.74rem/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
-  letter-spacing: 0.12em; text-transform: uppercase;
+  margin: 0; color: var(--sea); font-size: 0.95rem; font-weight: 700; line-height: 1.5;
+  font-variant-caps: all-small-caps; letter-spacing: 0.14em;
 }
 .season h2 { margin: 0.2rem 0 0.55rem; font-size: clamp(1.65rem, 4.4vw, 2.45rem); letter-spacing: -0.02em; }
 .season-lede { max-width: 38rem; margin: 0; }
@@ -416,7 +463,8 @@ body[data-learning-page="guide"] main {
 .sv-rain { stroke: var(--sea); stroke-width: 2; stroke-linecap: round; }
 .sv-cloud { fill: var(--sea); opacity: 0.5; }
 .sv-sun { fill: none; stroke: var(--amber); stroke-width: 2; stroke-linecap: round; }
-.sv-label { fill: var(--muted); font: 600 16px/1 -apple-system, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif; }
+/* a book face, not the system UI face: it embeds when the page is saved as PDF */
+.sv-label { fill: var(--muted); font: 700 16px/1 "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "PingFang SC", "Microsoft YaHei", serif; }
 .sv-strong { fill: var(--ink); font-weight: 750; }
 .sv-hot {
   fill: var(--ink); stroke: var(--panel); stroke-width: 5px; stroke-linejoin: round; paint-order: stroke;
@@ -426,10 +474,22 @@ body[data-learning-page="guide"] main {
   margin: 0 0 0.5rem; font-size: 1.05rem;
 }
 .season-places { margin: 0; padding: 0; list-style: none; }
-.season-places li { padding: 0.6rem 0; border-top: 1px solid var(--line); }
-.season-places li:first-child { border-top: 0; padding-top: 0; }
-.season-places strong { display: block; font-family: "Iowan Old Style", Palatino, Georgia, "Songti SC", serif; }
-.season-places p { margin: 0.1rem 0 0; font-size: 0.93rem; }
+.season-places li { border-top: 1px solid var(--line); }
+.season-places li:first-child { border-top: 0; }
+.season-places summary {
+  display: flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; padding: 0.3rem 0;
+  cursor: pointer; list-style: none; font-weight: 700;
+  font-family: "Iowan Old Style", Palatino, Georgia, "Songti SC", serif;
+}
+.season-places summary::-webkit-details-marker { display: none; }
+.season-places summary::before {
+  content: "▸"; flex: none; width: 1rem; color: var(--sea); transition: transform 0.15s;
+}
+.season-places details[open] > summary::before { transform: rotate(90deg); }
+.season-places summary:hover { color: var(--sea); }
+.season-places details > :not(summary) { margin-left: 1.5rem; }
+.season-places details[open] { padding-bottom: 0.7rem; }
+.season-places p { margin: 0; font-size: 0.93rem; }
 .season-places small { color: var(--muted); font-size: 0.8rem; }
 .season-places .season-go { display: block; margin-top: 0.2rem; font-size: 0.85rem; }
 .season-print {
@@ -452,6 +512,7 @@ body[data-learning-page="guide"] main {
   font-weight: 650;
 }
 .season-stale[hidden] { display: none; }
+.is-searching :is(.hall-plan, .season-pin, .season, .craft-law) { display: none; }
 .season.is-stale .season-figure { opacity: 0.55; }
 @media (min-width: 52rem) {
   .season-body {
@@ -466,18 +527,45 @@ body[data-learning-page="guide"] main {
   .season-where { margin-top: 1.4rem; padding-top: 1.1rem; border-top: 1px solid var(--line); }
 }
 
-/* the book: title page, then search */
-.hero { position: relative; margin: 2.4rem 0 0.6rem; padding: 0; text-align: left; }
-.hero h1 { max-width: 42rem; font-size: clamp(1.9rem, 4.6vw, 2.9rem); margin: 0.2rem 0 0.55rem; letter-spacing: -0.025em; }
-.hero .hero-intro { color: var(--muted); max-width: 40rem; margin: 0 0 0.9rem; font-size: 1.05rem; }
-.book-kicker { margin: 0; }
-.hero .book-truth {
-  max-width: 40rem; margin: 0 0 1rem; padding: 0.15rem 0 0.15rem 1rem;
-  color: var(--ink); border-left: 3px solid var(--ember);
+/* the book: a title page under the dome, after the State Hall of an old
+   library. The arch, its fanlight and the gilt line are decoration; the
+   words and the order of the book stay plain. */
+.hero {
+  position: relative; margin: 2.2rem 0 0; padding: clamp(2rem, 6vw, 3rem) clamp(1.1rem, 5vw, 3rem) 1.3rem;
+  text-align: center;
+  background:
+    radial-gradient(ellipse 70% 9rem at 50% 0, color-mix(in srgb, var(--sea) 12%, transparent), transparent),
+    var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 50% 50% 0.3rem 0.3rem / 7rem 7rem 0.3rem 0.3rem;
+  box-shadow: inset 0 0 0 5px var(--panel), inset 0 0 0 6px var(--gilt), var(--shadow);
 }
-.hero-actions { margin: 0 0 1.2rem; }
-.craft-law { margin: 1.4rem 0; padding: 0.9rem 0; border-block: 1px solid var(--line); }
-.craft-law h2 { margin: 0 0 0.55rem; font-size: 1rem; }
+.hall-mark { display: block; width: min(10.5rem, 48%); height: auto; margin: 0 auto 0.55rem; }
+.hv-arch { fill: none; stroke: var(--gilt); stroke-width: 2; }
+.hv-inner { stroke-width: 1; }
+.hv-ribs line { stroke: var(--gilt); stroke-width: 1; stroke-opacity: 0.55; }
+.hv-oculus { fill: var(--sea); fill-opacity: 0.18; stroke: var(--gilt); stroke-width: 1; }
+.hv-shelf { fill: none; stroke: var(--ink); stroke-opacity: 0.55; stroke-width: 1.5; }
+.hv-book-0 { fill: var(--ember); fill-opacity: 0.72; }
+.hv-book-1 { fill: var(--ink); fill-opacity: 0.6; }
+.hv-book-2 { fill: var(--sea); fill-opacity: 0.68; }
+.hv-book-3 { fill: var(--amber); fill-opacity: 0.75; }
+.book-kicker { margin: 0; }
+.hero h1 { max-width: 40rem; margin: 0.15rem auto 0.55rem; font-size: clamp(1.8rem, 4.6vw, 2.8rem); letter-spacing: -0.02em; }
+.hero .hero-intro { max-width: 38rem; margin: 0 auto 1rem; color: var(--muted); font-size: 1.05rem; }
+.hero .book-truth {
+  max-width: 34rem; margin: 0 auto 1.1rem; padding: 0.55rem 0.2rem;
+  border-block: 1px solid color-mix(in srgb, var(--gilt) 50%, transparent);
+  font-style: italic;
+}
+html[lang="zh"] .hero .book-truth, html[lang="yue"] .hero .book-truth { font-style: normal; }
+.hero-actions { margin: 0 0 1.3rem; }
+/* the law over the shelves: how every craft below is written */
+.craft-law {
+  margin: 2rem 0 0; padding: 0.9rem 0 0.7rem;
+  border-block: 3px double color-mix(in srgb, var(--gilt) 60%, transparent);
+}
+.craft-law h2 { margin: 0 0 0.55rem; font-size: 1rem; text-align: center; }
 .craft-law ol {
   display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0; margin: 0; padding: 0; list-style: none; counter-reset: craft-step;
@@ -488,38 +576,95 @@ body[data-learning-page="guide"] main {
 }
 .craft-law li:first-child { border-left: 0; }
 .craft-law li::before {
-  content: counter(craft-step); position: absolute; left: 0.55rem; top: 0.45rem;
-  color: var(--ember); font: 750 0.72rem/1 ui-monospace, monospace;
+  content: counter(craft-step, upper-roman); position: absolute; left: 0.5rem; top: 0.42rem;
+  color: var(--amber); font: 700 0.78rem/1 "Iowan Old Style", Palatino, Georgia, serif;
 }
 .craft-law strong, .craft-law span { display: block; }
 .craft-law strong { font-family: "Iowan Old Style", Palatino, Georgia, serif; font-size: 0.93rem; }
-.craft-law span { margin-top: 0.12rem; color: var(--muted); font-size: 0.74rem; line-height: 1.4; }
-.search-label { display: block; margin: 0 0 0.4rem; font-weight: 750; }
+.craft-law span { margin-top: 0.12rem; color: var(--muted); font-size: 0.76rem; line-height: 1.4; }
+
+/* the catalogue: one box to search every guide, then the plan of the hall */
+.catalogue { margin: 2.2rem 0 0; }
+.catalogue-kicker, .bay-kicker {
+  margin: 0; color: var(--amber); font-weight: 700;
+  font-variant-caps: all-small-caps; letter-spacing: 0.14em;
+}
+.search-label { display: block; margin: 0 0 0.45rem; font-family: "Iowan Old Style", Palatino, Georgia, "Songti SC", serif; font-size: 1.2rem; font-weight: 700; }
 #q {
   width: 100%; padding: 0.8rem 0.9rem 0.8rem 2.6rem; font: inherit; font-size: 1.05rem;
-  border: 1.5px solid var(--line); border-radius: 0.2rem; color: var(--ink); outline: none;
+  border: 1px solid var(--line); border-bottom: 3px double var(--gilt); border-radius: 0.2rem;
+  color: var(--ink); outline: none;
   background:
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23998c7a' stroke-width='2.2' stroke-linecap='round'%3E%3Ccircle cx='10.5' cy='10.5' r='6.5'/%3E%3Cpath d='M15.5 15.5 21 21'/%3E%3C/svg%3E") no-repeat 0.85rem 50% / 1.1rem,
     var(--panel);
 }
 #q:focus { border-color: var(--ember); }
+#noresults { margin: 0.8rem 0 0; color: var(--muted); }
 
-/* the tree: numbered domains. On the home page each domain is a contents
-   list; its own page keeps the full cards. */
+/* The plan of the hall: a walnut board with gilt letters, every shelf on one
+   screen. It folds away while a search is showing its finds. */
+.hall-plan {
+  margin: 1.3rem 0 0; padding: 0.95rem clamp(0.8rem, 3vw, 1.4rem) 1rem;
+  color: var(--board-ink);
+  background:
+    repeating-linear-gradient(90deg, rgba(255, 240, 210, 0.025) 0 2px, transparent 2px 9px),
+    linear-gradient(180deg, var(--wood-lit), var(--wood) 70%);
+  border-radius: 0.35rem;
+  box-shadow: inset 0 0 0 5px var(--wood), inset 0 0 0 6px var(--gilt), var(--shadow);
+}
+.hall-plan h2 {
+  display: flex; align-items: center; gap: 0.8rem; margin: 0.15rem 0 0.75rem;
+  color: var(--gilt-ink); font-size: 1.05rem; font-weight: 600;
+  font-variant-caps: all-small-caps; letter-spacing: 0.16em;
+}
+.hall-plan h2::before, .hall-plan h2::after {
+  content: ""; flex: 1; height: 1px; background: var(--gilt); opacity: 0.6;
+}
+.hall-plan ol {
+  margin: 0; padding: 0; list-style: none;
+  columns: 4 11.5rem; column-gap: 1.3rem;
+  column-rule: 1px solid color-mix(in srgb, var(--gilt) 30%, transparent);
+}
+.hall-plan li { break-inside: avoid; }
+.hall-plan a {
+  display: grid; grid-template-columns: 2.2rem minmax(0, 1fr); align-items: baseline; gap: 0.4rem;
+  padding: 0.42rem 0.2rem; color: var(--board-ink); line-height: 1.3;
+  border-bottom: 1px solid color-mix(in srgb, var(--gilt) 20%, transparent);
+}
+.hall-plan a:hover { color: var(--gilt-ink); background: var(--wood-lit); text-decoration: none; }
+.hall-plan a:focus-visible { outline-color: var(--gilt-ink); }
+.hall-plan .bay-mark {
+  color: var(--gilt-ink); text-align: right;
+  font: 700 0.86rem/1.3 "Iowan Old Style", Palatino, Georgia, serif; letter-spacing: 0.03em;
+}
+.hall-plan .bay-name { font-family: "Iowan Old Style", Palatino, Georgia, "Songti SC", serif; font-size: 0.96rem; }
+
+/* the shelves: each domain a bookcase, a walnut cornice with a gilt line,
+   its guides in order by shelf mark */
 .book-contents { padding-bottom: 1rem; }
 .domain { margin-top: 2.4rem; padding-top: 1.1rem; border-top: 1px solid var(--line); }
-.domain h2 { font-size: 1.42rem; margin: 0 0 0.25rem; }
+.hall .domain {
+  margin-top: 1.6rem; padding: 1.1rem clamp(0.9rem, 3vw, 1.5rem) 0.55rem;
+  background: var(--panel); border: 1px solid var(--line); border-top: 6px solid var(--wood);
+  border-radius: 0.3rem 0.3rem 0.2rem 0.2rem;
+  box-shadow: inset 0 1px 0 var(--gilt), var(--shadow);
+  scroll-margin-top: 0.8rem;
+}
+.bay-head {
+  display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; column-gap: 0.85rem;
+}
+.bay-head .bay-mark {
+  grid-row: 1 / span 2; display: grid; place-items: center;
+  min-width: 3.1rem; height: 2.5rem; padding: 0 0.45rem;
+  color: var(--amber); border: 3px double var(--gilt); border-radius: 50%;
+  font: 700 0.9rem/1 "Iowan Old Style", Palatino, Georgia, serif; letter-spacing: 0.02em;
+}
+.bay-head h2 { margin: 0; font-size: 1.42rem; }
 .domain h2 a { color: var(--ink); }
 .domain h2 a:hover { color: var(--ember); text-decoration: none; }
-.dnum {
-  display: inline-block; min-width: 1.7em; text-align: center;
-  font-size: 0.8rem; font-family: inherit; font-weight: 600;
-  border: 1.5px solid var(--line); border-radius: 0.12rem;
-  color: var(--muted); vertical-align: 0.25em; margin-right: 0.2rem;
-}
 .count { font-family: inherit; font-size: 0.8rem; font-weight: 400; color: var(--muted); }
 .intro { color: var(--muted); margin: 0.1rem 0 0.9rem; }
-.domain .intro { margin-bottom: 0.4rem; font-size: 0.95rem; }
+.domain .intro { margin: 0.55rem 0 0.35rem; font-size: 0.95rem; }
 .toc { margin: 0; padding: 0; list-style: none; columns: 2 19rem; column-gap: 2.4rem; }
 .toc li { break-inside: avoid; }
 .toc .card {
@@ -528,13 +673,26 @@ body[data-learning-page="guide"] main {
   border: 0; border-bottom: 1px dotted color-mix(in srgb, var(--muted) 45%, transparent); border-radius: 0;
 }
 .toc .card:hover { color: var(--ember); background: none; text-decoration: none; }
-.toc .card strong { flex: 1 1 11rem; font-weight: 600; line-height: 1.35; }
+.toc .card strong { flex: 1 1 10rem; font-weight: 600; line-height: 1.35; }
 .toc-meta { margin-left: auto; color: var(--muted); font-size: 0.78rem; white-space: nowrap; }
 .toc-meta i { font-style: normal; }
 .toc-meta .diff-easy, .toc-meta .diff-steady, .toc-meta .diff-hard, .toc-meta .diff-mastery { border: 0; }
 .toc .card.is-learned { border-color: color-mix(in srgb, var(--leaf) 65%, var(--line)); }
 .toc .learning-card-mark { align-self: center; }
-.home-shelves { margin: 2.6rem 0 0; padding-top: 1.1rem; border-top: 1px solid var(--line); }
+.bay-foot { margin: 0.45rem 0 0; text-align: right; font-size: 0.84rem; }
+.bay-foot a { display: inline-block; padding: 0.3rem 0; color: var(--muted); }
+.bay-foot a:hover { color: var(--ember); }
+
+/* shelf marks: the typed paper label on a spine */
+.shelfmark {
+  flex: none; display: inline-block; min-width: 3.5rem; padding: 0 0.3rem;
+  color: var(--muted); background: var(--label);
+  border: 1px solid var(--line); border-radius: 0.15rem;
+  font: 600 0.7rem/1.65 ui-monospace, SFMono-Regular, Menlo, Consolas, "Courier New", monospace;
+  text-align: center; letter-spacing: 0.02em; white-space: nowrap;
+}
+
+.home-shelves { margin: 2.6rem 0 0; padding-top: 1.1rem; border-top: 3px double color-mix(in srgb, var(--gilt) 55%, transparent); }
 .home-shelves h2 { margin: 0 0 0.7rem; font-size: 1.1rem; }
 .home-shelves > div { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); gap: 0.6rem; }
 .patterns-home-door {
@@ -559,6 +717,19 @@ body[data-learning-page="guide"] main {
 .card:hover { border-color: var(--ember); background: var(--panel); text-decoration: none; }
 .card .sum { font-size: 0.88rem; color: var(--muted); flex: 1; }
 .card .meta { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+/* on a shelf's own page each guide is a catalogue card: a typed mark, a red
+   rule, and the punched hole the drawer rod went through */
+.grid .card {
+  position: relative; padding: 0.75rem 1rem 1.55rem;
+  background: var(--label); border-left-width: 1px; border-top: 2px solid color-mix(in srgb, var(--ember) 55%, var(--line));
+  box-shadow: var(--shadow);
+}
+.grid .card::after {
+  content: ""; position: absolute; left: 50%; bottom: 0.5rem; width: 0.6rem; height: 0.6rem; margin-left: -0.3rem;
+  border-radius: 50%; background: var(--bg); box-shadow: inset 0 1px 2px rgba(40, 25, 10, 0.3);
+}
+.grid .card .shelfmark { align-self: flex-start; }
+.grid .card strong { font-size: 1.05rem; line-height: 1.3; }
 /* search hides with [hidden]; the cards' own display would otherwise win */
 .card[hidden], .domain[hidden] { display: none; }
 
@@ -574,6 +745,14 @@ body[data-learning-page="guide"] main {
 
 /* guide page */
 .crumb { color: var(--muted); font-size: 0.9rem; margin: 1rem 0 0; }
+.bay-kicker { margin-top: 1.1rem; }
+.bay-kicker + h1 { margin-top: 0.1rem; }
+.callno {
+  display: inline-block; margin: 1rem 0 0; padding: 0 0.45rem;
+  color: var(--muted); background: var(--label); border: 1px solid var(--line); border-radius: 0.15rem;
+  font: 600 0.75rem/1.7 ui-monospace, SFMono-Regular, Menlo, Consolas, "Courier New", monospace;
+}
+.callno + h1 { margin-top: 0.35rem; }
 .guide h1 { font-size: 1.9rem; margin: 0.6rem 0 0.3rem; }
 .lede { font-size: 1.1rem; color: var(--muted); font-style: italic; margin: 0 0 0.6rem; }
 .guide .meta { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0 0 1.2rem; }
@@ -704,6 +883,25 @@ html[lang="zh"] .card-kicker, html[lang="yue"] .card-kicker { letter-spacing: 0.
 /* prev / next */
 .prevnext { display: flex; justify-content: space-between; gap: 1rem; margin-top: 2rem; font-size: 0.92rem; }
 .prevnext .next { margin-left: auto; text-align: right; }
+.bay-nav { padding-top: 0.9rem; border-top: 1px solid var(--line); }
+
+/* the rest of this shelf, in order, with this guide marked */
+.shelf {
+  margin: 1.6rem 0 0; padding: 0.9rem 1rem 0.6rem;
+  background: var(--panel); border: 1px solid var(--line); border-top: 6px solid var(--wood);
+  border-radius: 0.3rem 0.3rem 0.2rem 0.2rem; box-shadow: inset 0 1px 0 var(--gilt);
+}
+.shelf h2 { margin: 0 0 0.45rem; font-size: 1rem; }
+.shelf ol { margin: 0; padding: 0; list-style: none; }
+.shelf li > a, .shelf li > span {
+  display: flex; align-items: baseline; gap: 0.6rem; padding: 0.38rem 0.2rem;
+  border-bottom: 1px dotted color-mix(in srgb, var(--muted) 40%, transparent);
+}
+.shelf li:last-child > a, .shelf li:last-child > span { border-bottom: 0; }
+.shelf li > a { color: var(--ink); }
+.shelf li > a:hover { color: var(--ember); text-decoration: none; }
+.shelf [aria-current="page"] { font-weight: 700; background: color-mix(in srgb, var(--gilt) 14%, transparent); }
+.shelf [aria-current="page"] .shelfmark { color: var(--ink); border-color: var(--gilt); }
 
 .foot {
   text-align: center; color: var(--muted); font-size: 0.85rem;
@@ -712,6 +910,22 @@ html[lang="zh"] .card-kicker, html[lang="yue"] .card-kicker { letter-spacing: 0.
 
 @media (max-width: 480px) {
   .hero h1 { font-size: 1.55rem; }
+  .hero { border-radius: 50% 50% 0.3rem 0.3rem / 4.5rem 4.5rem 0.3rem 0.3rem; }
+  .root-cover { border-radius: 50% 50% 0.3rem 0.3rem / 5rem 5rem 0.3rem 0.3rem; }
+  .hall-mark { width: 8rem; }
+  .hall-plan ol { columns: 2; column-gap: 0.8rem; }
+  .hall-plan a { grid-template-columns: 2.4rem minmax(0, 1fr); gap: 0.3rem; padding-inline: 0; }
+  .hall-plan .bay-name { font-size: 0.9rem; }
+  .bay-head h2 { font-size: 1.25rem; }
+  /* a phone row: the mark, then the title with its difficulty and time under it */
+  .toc .card {
+    display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 0.65rem; row-gap: 0.05rem;
+    padding: 0.5rem 0.1rem;
+  }
+  .toc .card .shelfmark { grid-row: 1 / span 2; align-self: start; margin-top: 0.25rem; }
+  .toc .card > :not(.shelfmark) { grid-column: 2; }
+  .toc-meta { margin-left: 0; white-space: normal; }
+  .toc .learning-card-mark { justify-self: start; }
   .guide h1 { font-size: 1.5rem; }
   .grid { grid-template-columns: 1fr; }
   .top { align-items: flex-start; flex-wrap: wrap; }
@@ -740,6 +954,14 @@ html[lang="zh"] .card-kicker, html[lang="yue"] .card-kicker { letter-spacing: 0.
   body[data-learning-page="guide"] { background: #fff; }
   .root-cover, .hero { box-shadow: none; }
   .root-agent-door, .system-door, .langs, .theme-toggle { display: none; }
+  .hall-plan, .bay-foot, .bay-nav, .shelf, .hall-mark { display: none; }
+  /* paper cannot be tapped open: every place prints whole */
+  .season-places details::details-content { content-visibility: visible; display: block; }
+  .season-places summary::before { content: none; }
+  .craft-law { break-inside: avoid; }
+  .book-button { color: #111; background: none; border-color: #111; }
+  .hero, .root-cover { border-radius: 0; }
+  .hall .domain { box-shadow: none; border-top: 1px solid #999; }
   .season { box-shadow: none; }
   .wildfire-home-door, .season-figure, .season-places li, .season-print { break-inside: avoid; }
   .pattern-map-scroll, .pattern-legend, .pattern-scroll-cue { display: none; transform: none; }
@@ -905,6 +1127,7 @@ html[data-learning-mode="quiet"] .learning-card-mark { display: none !important;
   .system-quest-path li > small { grid-column: 2; }
 }
 @media (prefers-reduced-motion: reduce) {
+  .season-places summary::before { transition: none; }
   *, *::before, *::after { scroll-behavior: auto !important; }
   .system-receipt { animation: none; }
 }
@@ -1498,6 +1721,20 @@ html[data-learning-mode="quiet"] .learning-card-mark { display: none !important;
   .cognition-observation { margin: 0 0 0.7rem; }
 }
 
+/* Faces for paper. Chrome on a Mac drops PingFang text when it writes a PDF
+   (the Chinese simply vanishes), so on paper Chinese uses faces that survive:
+   Hiragino on a Mac, YaHei or JhengHei on Windows, Noto elsewhere. */
+@media print {
+  body, .sv-label {
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia,
+      "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "Noto Sans CJK SC", serif;
+  }
+  html[lang="yue"] body, html[lang="yue"] .sv-label {
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia,
+      "Hiragino Sans CNS", "Heiti TC", "Microsoft JhengHei", "Noto Sans CJK TC", serif;
+  }
+}
+
 /* Paper is always paper: night colours never reach the printer. Kept last so
    it outranks the night rules above. */
 @media print {
@@ -1517,6 +1754,12 @@ html[data-learning-mode="quiet"] .learning-card-mark { display: none !important;
     --system-control-ink: #174b70;
     --system-control-hover: #0e3c5e;
     --shadow: none;
+    --wood: #fff;
+    --wood-lit: #fff;
+    --gilt: #8a8378;
+    --gilt-ink: #111;
+    --board-ink: #111;
+    --label: #fff;
   }
   :root:not([data-theme="print"]) .wildfire-page {
     --wildfire-urgent: #9d3f29;
