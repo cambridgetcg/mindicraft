@@ -1694,6 +1694,17 @@
      "time": "a season of practice"
     },
     {
+     "slug": "gather-with-consent",
+     "title": "Gather what others know, with their leave",
+     "summary": "Ask before you copy what another household or village keeps, write down exactly what they agreed to, and take only that.",
+     "needs": [
+      "keep-records",
+      "hold-a-council"
+     ],
+     "difficulty": "steady",
+     "time": "a season"
+    },
+    {
      "slug": "teach-children",
      "title": "Teach the young everything here",
      "summary": "Pass every skill on by showing, telling, and letting them try — or the village lasts one lifetime.",

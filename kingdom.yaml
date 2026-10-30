@@ -5,5 +5,5 @@ owner_sister: none
 domain: none
 state: active
 adopts: [xenia.surface/0.1]
-purpose: mindicraft.com — the zero-to-one guide of human civilisation, 134 guides in 17 domains and 4 languages, plus reviewed public knowledge and AI cognition maps, free as data (static JSON API, agent client, margins that receive).
+purpose: mindicraft.com — the zero-to-one guide of human civilisation, 135 guides in 17 domains and 4 languages, plus reviewed public knowledge and AI cognition maps, free as data (static JSON API, agent client, margins that receive).
 dependsOn: []
