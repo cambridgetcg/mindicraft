@@ -1,0 +1,83 @@
+{
+  "notice": "Synthetic paper-card rules, not care instructions. Translations are test material, not bilingual-reviewed content. The stipulated fixture rule is ten minutes; it is not a real-world recommendation.",
+  "sections": { "en": "Steps", "zh": "步骤", "yue": "點做", "es": "Pasos" },
+  "anchors": { "en": "Review card:", "zh": "检查卡片：", "yue": "檢查卡片：", "es": "Tarjeta:" },
+  "lines": {
+    "en": "Review card: If the card is blue, wait ten minutes. Do not fold it. Keep reading while someone checks it.",
+    "zh": "检查卡片：如果卡片是蓝色，等十分钟。不要折叠。别人检查时继续阅读。",
+    "yue": "檢查卡片：如果張卡係藍色，等十分鐘。唔好摺。有人檢查嗰陣繼續睇。",
+    "es": "Tarjeta: Si es azul, espera diez minutos. No la dobles. Sigue leyendo mientras alguien la revisa."
+  },
+  "cases": [
+    {
+      "id": "one-translation-number",
+      "classification": "detected",
+      "edits": [{ "guide": "card-a", "lang": "es", "from": "diez", "to": "quince" }],
+      "signals": ["quantity-difference"]
+    },
+    {
+      "id": "related-guide-drifts-in-every-language",
+      "classification": "detected",
+      "edits": [
+        { "guide": "card-b", "lang": "en", "from": "ten", "to": "fifteen" },
+        { "guide": "card-b", "lang": "zh", "from": "十", "to": "十五" },
+        { "guide": "card-b", "lang": "yue", "from": "十", "to": "十五" },
+        { "guide": "card-b", "lang": "es", "from": "diez", "to": "quince" }
+      ],
+      "signals": ["quantity-difference"]
+    },
+    {
+      "id": "unit-drift",
+      "classification": "detected",
+      "edits": [{ "guide": "card-a", "lang": "en", "from": "ten minutes", "to": "ten seconds" }],
+      "signals": ["quantity-difference"]
+    },
+    {
+      "id": "equivalent-units-still-flagged",
+      "classification": "false-positive",
+      "edits": [{ "guide": "card-a", "lang": "en", "from": "ten minutes", "to": "600 seconds" }],
+      "signals": ["quantity-difference"]
+    },
+    {
+      "id": "formatting-only-heading",
+      "classification": "false-positive",
+      "edits": [{ "guide": "card-a", "lang": "es", "from": "## Pasos", "to": "### Pasos" }],
+      "signals": ["structure-difference"]
+    },
+    {
+      "id": "unsupported-number-word",
+      "classification": "coverage-gap",
+      "edits": [{ "guide": "card-a", "lang": "es", "from": "diez", "to": "doce" }],
+      "signals": ["quantity-unparsed"]
+    },
+    {
+      "id": "lost-condition-same-number",
+      "classification": "false-negative",
+      "edits": [{ "guide": "card-a", "lang": "en", "from": "If the card is blue, wait", "to": "Wait" }],
+      "signals": []
+    },
+    {
+      "id": "lost-prohibition-same-number",
+      "classification": "false-negative",
+      "edits": [{ "guide": "card-a", "lang": "es", "from": "No la dobles.", "to": "Dóblala." }],
+      "signals": []
+    },
+    {
+      "id": "concurrent-action-becomes-sequential",
+      "classification": "false-negative",
+      "edits": [{ "guide": "card-a", "lang": "en", "from": "while someone checks", "to": "after someone checks" }],
+      "signals": []
+    },
+    {
+      "id": "shared-source-mistake",
+      "classification": "false-negative",
+      "edits": [
+        { "lang": "en", "from": "ten", "to": "fifteen" },
+        { "lang": "zh", "from": "十", "to": "十五" },
+        { "lang": "yue", "from": "十", "to": "十五" },
+        { "lang": "es", "from": "diez", "to": "quince" }
+      ],
+      "signals": []
+    }
+  ]
+}
