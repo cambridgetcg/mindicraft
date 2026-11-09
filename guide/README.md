@@ -382,5 +382,15 @@ Optional: the why behind it.
 
 `difficulty` is one of: `easy`, `steady`, `hard`, `mastery`.
 
+The page lays this out as a field card, cut from your words and never
+rewritten. Everything up to the end of `## Watch out` is the front, and the
+front is what "Print this card" puts on paper; `## How it works` and anything
+after it is the back. So each guide has one `## You need`, one `## Steps` and
+one `## Watch out`, in that order, and every warning goes under Watch out.
+When every step opens with bold (`1. **Light it.** Then…`), the card's glance
+lists those bold words as links to the steps, so let the bold end where the
+sentence does. In Chinese and Cantonese, keep the punctuation outside the
+closing `**` (`**晾皂**。`), or the page shows the asterisks.
+
 House rule: constructive knowledge only — no weapons, explosives, poisons.
 Plain words a person with zero background can follow.
