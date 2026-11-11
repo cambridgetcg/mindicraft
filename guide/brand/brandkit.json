@@ -1,0 +1,57 @@
+{
+  "format": "brandkit.project/1",
+  "name": "mindicraft",
+  "kind": "planned",
+  "owner": "not recorded. AGENTS.md names no lane; open PRs come from bobi/* and astra/* branches",
+  "waits_on": "an owner's word for a kit (none is recorded, and no ledger item names one), after open PRs #4–#8, which change the home and the hall",
+  "decided": [
+    {
+      "part": "the working-book look",
+      "what": "paper #f7f3ec, panel #fffdf8, ink #2b2620, ember #b0522b, with a dark scheme (#191613, ink #ece5da); Iowan Old Style, Palatino and Georgia; a 🔥 emoji favicon",
+      "by": "an agent (Claude, co-author of commit 72c9339d; session not recorded)",
+      "under": "not recorded",
+      "date": "2026-07-08",
+      "record": "cambridgetcg/mindicraft commit 72c9339d ('guide: the zero-to-one guide of human civilisation'), which created guide/style.css"
+    },
+    {
+      "part": "later changes to the look",
+      "status": "not-recorded",
+      "what": "such as the 'working book' front door",
+      "record": "commit 8fa147d4 (2026-08-03, git author 'yu'): the message doesn't say who made or chose it, and a git author name isn't evidence of that"
+    }
+  ],
+  "site": {
+    "urls": [
+      "https://mindicraft.com/",
+      "https://mindicraft.pages.dev/"
+    ],
+    "framework": "other",
+    "html": [
+      "/guide/build.mjs"
+    ]
+  },
+  "serve": {
+    "via": "/guide/build.mjs",
+    "files": []
+  },
+  "build": {},
+  "guards": [
+    {
+      "path": "check.mjs",
+      "wired": false
+    }
+  ],
+  "deploy": {
+    "on_merge": "Nothing deploys on merge: .github/workflows/verify.yml installs, tests, builds and verifies. A release is `npx wrangler pages deploy dist --project-name=mindicraft`, run by hand from guide/ (build.mjs header; guide/wrangler.toml).",
+    "after_deploy": "not recorded in the repository",
+    "rules": "AGENTS.md: `npm --prefix guide run verify` proves the committed build; the reviewed shelves (remedies, healing arts, cognition, wildfire) keep their pinned bytes and need deliberate re-review to change. Open PRs #4–#8 change the home and the hall, so the look may move before a kit lands."
+  },
+  "media": [],
+  "notes": [
+    "The site is generated: guide/build.mjs writes every page into guide/dist (gitignored) from template strings, and copies static files by name (cpSync of style.css, learning-system.mjs, xenia-worker.js as _worker.js). So the page heads are read from build.mjs (site.html), and the kit's files would be copied into dist by build.mjs (serve.via): after `npm --prefix guide run build`, run `node guide/brand/check.mjs --served guide/dist`.",
+    "build.mjs holds three page heads (the book pages, the root door and one more template). The check reads a site.html file as one page, so once a kit exists it would see three theme-color sets and three color-scheme lines in it and fail even when every head is right. Until it reads each head on its own, the alternative is site.html on the built pages (../dist/**/*.html), which exist only after a build and fail in a fresh clone.",
+    "check.mjs is not wired yet; planned: `node brand/check.mjs --served dist` appended after the build inside the `verify` script in guide/package.json (scripts run in guide/), which .github/workflows/verify.yml runs.",
+    "Today: the favicon is a 🔥 emoji data URI in build.mjs's templates; /favicon.ico answers 404 (2026-11-05); mindicraft.com answers 200, although ledger kgdm-hub-pr100-ai-invitation (2026-10-20) called the site suspended.",
+    "guide/ is the canonical site (AGENTS.md). The root's site/index.html and vercel.json (outputDirectory site) are an older Vercel path; whether anything still deploys it was not checked."
+  ]
+}
